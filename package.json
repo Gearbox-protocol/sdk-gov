@@ -1,0 +1,19 @@
+{
+  "name": "@gearbox-protocol/sdk-gov",
+  "version": "0.0.1",
+  "description": "Gearbox Governance SDK",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "npx mocha -r ts-node/register -r dotenv/config src/**/*.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gearbox-protocol/sdk-gov.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gearbox-protocol/sdk-gov/issues"
+  },
+  "homepage": "https://github.com/Gearbox-protocol/sdk-gov#readme"
+}
