@@ -1,0 +1,7 @@
+/node_modules/
+/*.log
+/lib
+.DS_Store
+/forge-out/
+/cache/
+.env

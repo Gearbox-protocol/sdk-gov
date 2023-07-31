@@ -1,0 +1,4 @@
+node_modules
+lib
+src/types
+*.d.ts
