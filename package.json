@@ -15,5 +15,24 @@
   "bugs": {
     "url": "https://github.com/Gearbox-protocol/sdk-gov/issues"
   },
-  "homepage": "https://github.com/Gearbox-protocol/sdk-gov#readme"
+  "homepage": "https://github.com/Gearbox-protocol/sdk-gov#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
+    "@gearbox-protocol/devops": "^1.6.3",
+    "@gearbox-protocol/eslint-config": "^1.6.1",
+    "@gearbox-protocol/prettier-config": "^1.5.0",
+    "@gearbox-protocol/sdk": "^2.0.0",
+    "eslint": "^8.46.0",
+    "ethers": "v5",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.0",
+    "ts-node": "^10.9.1",
+    "ts-toolbelt": "^9.6.0",
+    "typechain": "^8.3.1",
+    "typescript": "^5.1.6",
+    "web3": "^4.0.3"
+  }
 }
