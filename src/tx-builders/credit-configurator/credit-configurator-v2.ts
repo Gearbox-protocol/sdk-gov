@@ -6,22 +6,22 @@ import { ethers } from "ethers";
 
 import { TxBuilder } from "../../base/TxBuilder";
 
-export class CreditConfiguratorV2TxBuilder {
+export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   #contract: ICreditConfigurator;
-  #txManager: TxBuilder;
+
   constructor(address: string) {
+    super();
     this.#contract = ICreditConfigurator__factory.connect(
       address,
       ethers.getDefaultProvider()
     );
-    this.#txManager = new TxBuilder();
   }
 
   async setMaxEnabledTokens(maxEnabledTokens: number, force = false) {
     const errors = await this.setMaxEnabledTokensValidate(maxEnabledTokens);
     if (errors && !force) throw errors;
 
-    return this.#txManager.createTx({
+    return this.createTx({
       contract: this.#contract,
       method: "setMaxEnabledTokens(uint8)",
       args: [maxEnabledTokens],
@@ -44,7 +44,7 @@ export class CreditConfiguratorV2TxBuilder {
     const errors = await this.allowTokenValidate(address);
     if (errors && !force) throw errors;
 
-    return this.#txManager.createTx({
+    return this.createTx({
       contract: this.#contract,
       method: "allowToken(address)",
       args: [address],
