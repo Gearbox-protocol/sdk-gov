@@ -5,4 +5,5 @@
 /forge-out/
 /cache/
 .env
-./src/dev/
+src/dev/
+
