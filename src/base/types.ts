@@ -1,4 +1,7 @@
+import { SupportedToken } from "@gearbox-protocol/sdk";
+
 export type Address = string;
+export type Uint16 = number;
 
 export interface SafeTransaction {
   to: Address;
@@ -43,12 +46,18 @@ export interface ContractMethod {
   payable: boolean;
 }
 
+export interface ValidationResult {
+  errors: string[];
+  warnings: string[];
+}
+
 export interface ProposedTransaction {
   to: string;
   value: string;
   contractMethod: ContractMethod;
   contractFieldsValues: Record<string, string>;
   callData: string;
+  validationResult: ValidationResult;
 }
 
 export interface BatchJson {
@@ -82,8 +91,7 @@ export interface ContractInput {
   type: string;
 }
 
-// tx builders types
-export interface ValidationResult {
-  errors: string[];
-  warnings: string[];
+export interface UnderlyingToken {
+  token: SupportedToken | undefined;
+  decimals: number | undefined;
 }

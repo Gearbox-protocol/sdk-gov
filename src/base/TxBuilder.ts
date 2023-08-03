@@ -1,15 +1,20 @@
 import { BigNumber, Contract } from "ethers";
 import { String } from "ts-toolbelt";
 
-import { ProposedTransaction } from "./types";
+import { ProposedTransaction, ValidationResult } from "./types";
 
 export class TxBuilder {
   createTx<
     T extends Contract,
     U extends string & keyof T["interface"]["functions"],
     V extends Parameters<T[String.Split<U, "(">[0]]>,
-  >(callArgs: { contract: T; method: U; args: V }): ProposedTransaction {
-    const { contract, method, args } = callArgs;
+  >(callArgs: {
+    contract: T;
+    method: U;
+    args: V;
+    validationResult: ValidationResult;
+  }): ProposedTransaction {
+    const { contract, method, args, validationResult } = callArgs;
 
     const abi = JSON.parse(
       contract.interface.getFunction(method).format("json")
@@ -49,6 +54,7 @@ export class TxBuilder {
       },
       contractFieldsValues,
       callData: functionEncodedData,
+      validationResult,
     };
 
     return tx;
