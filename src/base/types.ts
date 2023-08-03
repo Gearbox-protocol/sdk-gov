@@ -81,3 +81,9 @@ export interface ContractInput {
   name: string;
   type: string;
 }
+
+// tx builders types
+export interface ValidationResult {
+  errors: string[];
+  warnings: string[];
+}
