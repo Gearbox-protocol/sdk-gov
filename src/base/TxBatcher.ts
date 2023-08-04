@@ -20,6 +20,12 @@ export class TxBatcher {
     return this;
   }
 
+  setEtaDays(etaDays: number) {
+    const eta = Math.floor(Date.now() / 1000) + etaDays * 24 * 60 * 60;
+    this.#eta = eta;
+    return this;
+  }
+
   setDescription(description: string) {
     this.#description = description;
     return this;
