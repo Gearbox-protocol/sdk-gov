@@ -19,7 +19,7 @@ export const minTokenPriceUSD = (token: SupportedToken) => {
     case "USDC":
       return 1;
     case "WETH":
-      return 2000;
+      return maxETHPice;
     case "WBTC":
       return 20000;
     case "wstETH":

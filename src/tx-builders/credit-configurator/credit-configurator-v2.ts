@@ -2,6 +2,7 @@ import {
   ADDRESS_PROVIDER,
   detectNetwork,
   extractTokenData,
+  formatBN,
   ICreditConfigurator,
   ICreditConfigurator__factory,
   ICreditFacade,
@@ -10,6 +11,8 @@ import {
   ICreditManagerV2__factory,
   NetworkType,
   supportedChains,
+  SupportedToken,
+  tokenDataByNetwork,
 } from "@gearbox-protocol/sdk";
 import { BigNumber, ethers } from "ethers";
 
@@ -81,11 +84,19 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
   async setMaxEnabledTokens(maxEnabledTokens: number, force = false) {
     await this.#initialize();
+
+    this.logger.info(
+      `CC: ${
+        this.#underlying!.token
+      }: setMaxEnabledTokens to ${maxEnabledTokens}`
+    );
     const validationResult = await this.setMaxEnabledTokensValidate(
       maxEnabledTokens
     );
 
     if (validationResult.errors.length && !force) throw validationResult;
+    if (validationResult.warnings.length)
+      this.logger.warn(validationResult.warnings.toString());
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -97,6 +108,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
   async setMaxEnabledTokensValidate(maxEnabledTokens: number) {
     await this.#initialize();
+    this.logger.info(
+      `CC: ${
+        this.#underlying!.token
+      }: Validating setMaxEnabledTokens to ${maxEnabledTokens}`
+    );
     const validationResult: ValidationResult = {
       errors: [],
       warnings: [],
@@ -104,7 +120,6 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
     const minBorrowedAmount = (await this.#creditFacade!.limits())
       .minBorrowedAmount;
-    console.log("minBorrowedAmount", minBorrowedAmount.toString());
 
     const [liquidationFee, liquidationDiscount] = await this.#fees();
 
@@ -116,15 +131,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const liquidationCostETH = await this.#liquidationCostETH(maxEnabledTokens);
 
     // liquidation premium in ETH whould be more than liquidation cost in ETH
-    if (liquidationCostETH.gt(liquidationPremiumETH)) {
-      validationResult.warnings.push(
-        "setMaxEnabledTokens: Liquation cost is bigger than liquidation premium"
-      );
-    } else {
-      validationResult.warnings.push(
-        "setMaxEnabledTokens: Liquation cost is less than liquidation premium for eth 2000$"
-      );
-    }
+    this.#checkPremiumCoverage({
+      premium: liquidationPremiumETH,
+      cost: liquidationCostETH,
+      result: validationResult,
+    });
 
     return validationResult;
   }
@@ -135,6 +146,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     force = false
   ) {
     await this.#initialize();
+    this.logger.info(
+      `CC: ${
+        this.#underlying!.token
+      }: setLimits to minBorrowedAmount: ${minBorrowedAmount.toString()}, maxBorrowedAmount: ${maxBorrowedAmount.toString()}`
+    );
 
     const validationResult = await this.setLimitsValidate(
       minBorrowedAmount,
@@ -142,6 +158,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     );
 
     if (validationResult.errors.length && !force) throw validationResult;
+    if (validationResult.warnings.length)
+      this.logger.warn(validationResult.warnings.toString());
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -155,6 +173,13 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     minBorrowedAmount: BigNumber,
     maxBorrowedAmount: BigNumber
   ) {
+    await this.#initialize();
+    this.logger.info(
+      `CC: ${
+        this.#underlying!.token
+      }: Validating setLimits to minBorrowedAmount: ${minBorrowedAmount.toString()}, maxBorrowedAmount: ${maxBorrowedAmount.toString()}`
+    );
+
     const validationResult: ValidationResult = {
       errors: [],
       warnings: [],
@@ -162,7 +187,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
     if (minBorrowedAmount.gt(maxBorrowedAmount)) {
       validationResult.errors.push(
-        "setLimits: minBorrowedAmount is bigger than maxBorrowedAmount"
+        "minBorrowedAmount is bigger than maxBorrowedAmount"
       );
       return validationResult;
     }
@@ -171,7 +196,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
     if (maxBorrowedAmount.gt(blockLimit)) {
       validationResult.errors.push(
-        "setLimits: maxBorrowedAmount is bigger than blockLimit"
+        `maxBorrowedAmount ${maxBorrowedAmount.toString()} is bigger than blockLimit ${blockLimit.toString()}`
       );
       return validationResult;
     }
@@ -179,9 +204,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const maxEnabledTokens =
       await this.#creditManager!.maxAllowedEnabledTokenLength();
 
-    console.log("maxEnabledTokens", maxEnabledTokens.toString());
-
-    const liquidationCostETH = await this.#liquidationCostETH(maxEnabledTokens);
+    const liquidationCostETH = this.#liquidationCostETH(maxEnabledTokens);
 
     const [liquidationFee, liquidationDiscount] = await this.#fees();
 
@@ -191,15 +214,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       liquidationDiscount
     );
 
-    if (liquidationCostETH.gt(liquidationPremiumETH)) {
-      validationResult.warnings.push(
-        "setMaxEnabledTokens: Liquation cost is bigger than liquidation premium"
-      );
-    } else {
-      validationResult.warnings.push(
-        "setMaxEnabledTokens: Liquation cost is less than liquidation premium for eth 2000$"
-      );
-    }
+    this.#checkPremiumCoverage({
+      premium: liquidationPremiumETH,
+      cost: liquidationCostETH,
+      result: validationResult,
+    });
 
     return validationResult;
   }
@@ -213,6 +232,12 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     force = false
   ) {
     await this.#initialize();
+    this.logger.info(
+      `CC: ${
+        this.#underlying!.token
+      }: Setting fees to feeInterest: ${feeInterest} feeLiquidation: ${feeLiquidation} liquidationPremium: ${liquidationPremium} feeLiquidationExpired: ${feeLiquidationExpired} liquidationPremiumExpired: ${liquidationPremiumExpired}`
+    );
+
     const validationResult = await this.setFeesValidate(
       feeInterest,
       feeLiquidation,
@@ -221,6 +246,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       liquidationPremiumExpired
     );
     if (validationResult.errors.length && !force) throw validationResult;
+    if (validationResult.warnings.length)
+      this.logger.warn(validationResult.warnings.toString());
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -244,24 +271,28 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     liquidationPremiumExpired: number
   ) {
     await this.#initialize();
+    this.logger.info(
+      `CC: ${
+        this.#underlying!.token
+      }: Validating fees to feeInterest: ${feeInterest} feeLiquidation: ${feeLiquidation} liquidationPremium: ${liquidationPremium} feeLiquidationExpired: ${feeLiquidationExpired} liquidationPremiumExpired: ${liquidationPremiumExpired}`
+    );
+
     const validationResult: ValidationResult = {
       errors: [],
       warnings: [],
     };
 
     if (feeInterest > PERCENTAGE_FACTOR) {
-      validationResult.errors.push("setFees: feeInterest > 100%");
+      validationResult.errors.push("feeInterest > 100%");
     }
 
     if (liquidationPremium + feeInterest > PERCENTAGE_FACTOR) {
-      validationResult.errors.push(
-        "setFees: liquidationPremium + feeInterest > 100%"
-      );
+      validationResult.errors.push("liquidationPremium + feeInterest > 100%");
     }
 
     if (liquidationPremiumExpired + feeLiquidationExpired > PERCENTAGE_FACTOR) {
       validationResult.errors.push(
-        "setFees: liquidationPremiumExpired + feeLiquidationExpired > 100%"
+        "liquidationPremiumExpired + feeLiquidationExpired > 100%"
       );
     }
 
@@ -283,47 +314,123 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       liquidationDiscount
     );
 
-    if (liquidationCostETH.gt(liquidationPremiumETH)) {
-      validationResult.warnings.push(
-        "setMaxEnabledTokens: Liquation cost is bigger than liquidation premium"
-      );
-    } else {
-      validationResult.warnings.push(
-        "setMaxEnabledTokens: Liquation cost is less than liquidation premium for eth 2000$"
-      );
-    }
+    this.#checkPremiumCoverage({
+      premium: liquidationPremiumETH,
+      cost: liquidationCostETH,
+      result: validationResult,
+    });
 
     return validationResult;
   }
 
-  async allowToken(address: string, force = false) {
+  async allowToken(token: SupportedToken, force = false) {
     await this.#initialize();
-    const validationResult = await this.allowTokenValidate(address);
+    this.logger.info(
+      `CC: ${this.#underlying!.token}: allowTokenValidate ${token}`
+    );
+
+    const validationResult = await this.allowTokenValidate(token);
 
     if (validationResult.errors.length && !force) throw validationResult;
+    if (validationResult.warnings.length)
+      this.logger.warn(validationResult.warnings.toString());
+
+    const tokenAddress = tokenDataByNetwork[this.#network!][token];
 
     return this.createTx({
       contract: this.#creditConfigurator,
       method: "allowToken(address)",
-      args: [address],
+      args: [tokenAddress],
       validationResult,
     });
   }
 
-  async allowTokenValidate(address: string) {
+  async allowTokenValidate(token: SupportedToken) {
     await this.#initialize();
+    this.logger.info(
+      `CC: ${
+        this.#underlying!.token
+      }: Validating token ${token} for allowTokenValidate`
+    );
+
     const validationResult: ValidationResult = {
       errors: [],
       warnings: [],
     };
 
+    const tokenAddress = tokenDataByNetwork[this.#network!][token];
+
     // check if address is supported token
-    const mask = await this.#creditManager!.tokenMasksMap(address);
+    const mask = await this.#creditManager!.tokenMasksMap(tokenAddress);
     if (mask.eq(BigNumber.from("0")))
-      validationResult.errors.push("allowToken: Token is not collateral");
+      validationResult.errors.push(`Token ${tokenAddress} is not collateral`);
 
     if (mask.eq(BigNumber.from("1")))
       validationResult.errors.push("allowToken: Token is underlyng");
+
+    return validationResult;
+  }
+
+  async setLiquidationThreshold(
+    token: SupportedToken,
+    liquidationThreshold: number
+  ) {
+    await this.#initialize();
+
+    this.logger.info(
+      `CC: ${
+        this.#underlying!.token
+      }: Setting liquidation threshold to ${liquidationThreshold} for token ${token}`
+    );
+
+    const validationResult = await this.setLiquidationThresholdValidate(
+      token,
+      liquidationThreshold
+    );
+
+    if (validationResult.errors.length) throw validationResult;
+
+    const tokenAddress = tokenDataByNetwork[this.#network!][token];
+
+    return this.createTx({
+      contract: this.#creditConfigurator,
+      method: "setLiquidationThreshold(address,uint16)",
+      args: [tokenAddress, liquidationThreshold],
+      validationResult,
+    });
+  }
+
+  async setLiquidationThresholdValidate(
+    token: SupportedToken,
+    liquidationThreshold: number
+  ) {
+    await this.#initialize();
+    this.logger.info(
+      `CC: ${
+        this.#underlying!.token
+      }: Validating liquidation threshold to ${liquidationThreshold} for token ${token}`
+    );
+
+    const validationResult: ValidationResult = {
+      errors: [],
+      warnings: [],
+    };
+
+    const tokenAddress = tokenDataByNetwork[this.#network!][token];
+
+    // Checks that the token is not underlying
+    const underlying = await this.#creditManager!.underlying();
+    if (tokenAddress === underlying) {
+      validationResult.errors.push(
+        "setLiquidationThreshold: Token is underlying"
+      );
+    }
+
+    if (liquidationThreshold > PERCENTAGE_FACTOR) {
+      validationResult.errors.push(
+        "setLiquidationThreshold: liquidationThreshold > 100%"
+      );
+    }
 
     return validationResult;
   }
@@ -376,5 +483,31 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const liquidationDiscount = fees.liquidationDiscount;
 
     return [liquidationFee, liquidationDiscount];
+  }
+
+  #checkPremiumCoverage(args: {
+    cost: BigNumber;
+    premium: BigNumber;
+    result: ValidationResult;
+  }) {
+    const { cost, premium, result } = args;
+    if (cost.gt(premium)) {
+      result.warnings.push(
+        `Liquation cost ${formatBN(
+          cost,
+          18
+        )} ETH is bigger than liquidation premium ${formatBN(
+          premium,
+          18
+        )} ETH for $3000/450 gwei for $2000/680 gwei`
+      );
+    } else {
+      result.warnings.push(
+        `Liquation cost ${formatBN(cost, 18)} ETH covered by premium ${formatBN(
+          premium,
+          18
+        )} ETH for $3000/450 gwei or $2000/680 gwei`
+      );
+    }
   }
 }

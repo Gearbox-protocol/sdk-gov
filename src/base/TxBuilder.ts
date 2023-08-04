@@ -1,9 +1,15 @@
 import { BigNumber, Contract } from "ethers";
 import { String } from "ts-toolbelt";
 
+import { Logged } from "./Logger";
 import { ProposedTransaction, ValidationResult } from "./types";
 
-export class TxBuilder {
+export class TxBuilder extends Logged {
+  constructor() {
+    super();
+    this.enableLogs();
+  }
+
   createTx<
     T extends Contract,
     U extends string & keyof T["interface"]["functions"],
