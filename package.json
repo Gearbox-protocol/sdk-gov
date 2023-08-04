@@ -22,7 +22,7 @@
     "@commitlint/config-conventional": "^17.6.7",
     "@gearbox-protocol/eslint-config": "^1.6.1",
     "@gearbox-protocol/prettier-config": "^1.5.0",
-    "@gearbox-protocol/sdk": "^2.0.0",
+    "@gearbox-protocol/sdk": "^2.1.11",
     "eslint": "^8.46.0",
     "ethers": "v5",
     "husky": "^8.0.3",
