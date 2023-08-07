@@ -39,13 +39,13 @@ export class PriceOracleV2TxBuilder extends TxBuilder {
     const addressProviderAddress = ADDRESS_PROVIDER[this.#network];
     const addressProvider = await IAddressProvider__factory.connect(
       addressProviderAddress,
-      this.#provider
+      this.#provider,
     );
 
     const priceOracleAddress = await addressProvider.getPriceOracle();
     this.#priceOracle = await IPriceOracleV2Ext__factory.connect(
       priceOracleAddress,
-      this.#provider
+      this.#provider,
     );
 
     this.#isInit = true;
@@ -82,19 +82,19 @@ export class PriceOracleV2TxBuilder extends TxBuilder {
     // check if priceFeed is address of priceFeed contract
     const priceFeedContract = AggregatorV3Interface__factory.connect(
       priceFeed,
-      this.#provider
+      this.#provider,
     );
 
     try {
       const decimals = await priceFeedContract.decimals();
       if (decimals.toString() !== "8") {
         validationResult.errors.push(
-          `Price feed ${priceFeed} has invalid decimals ${decimals.toString()}`
+          `Price feed ${priceFeed} has invalid decimals ${decimals.toString()}`,
         );
       }
     } catch (e) {
       validationResult.errors.push(
-        `Price feed ${priceFeed} is not valid address`
+        `Price feed ${priceFeed} is not valid address`,
       );
     }
 
