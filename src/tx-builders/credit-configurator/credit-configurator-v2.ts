@@ -41,7 +41,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     super();
     this.#creditConfigurator = ICreditConfigurator__factory.connect(
       address,
-      provider
+      provider,
     );
     this.#provider = provider;
   }
@@ -63,7 +63,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const cmAddress = await this.#creditConfigurator.creditManager();
     this.#creditManager = ICreditManagerV2__factory.connect(
       cmAddress,
-      this.#provider
+      this.#provider,
     );
 
     const underlyingAddress = await this.#creditConfigurator.underlying();
@@ -76,7 +76,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const cfAddress = await this.#creditConfigurator.creditFacade();
     this.#creditFacade = ICreditFacade__factory.connect(
       cfAddress,
-      this.#provider
+      this.#provider,
     );
 
     this.#isInit = true;
@@ -88,10 +88,10 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     this.logger.info(
       `CC: ${
         this.#underlying!.token
-      }: setMaxEnabledTokens to ${maxEnabledTokens}`
+      }: setMaxEnabledTokens to ${maxEnabledTokens}`,
     );
     const validationResult = await this.setMaxEnabledTokensValidate(
-      maxEnabledTokens
+      maxEnabledTokens,
     );
 
     if (validationResult.errors.length && !force) throw validationResult;
@@ -111,7 +111,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     this.logger.info(
       `CC: ${
         this.#underlying!.token
-      }: Validating setMaxEnabledTokens to ${maxEnabledTokens}`
+      }: Validating setMaxEnabledTokens to ${maxEnabledTokens}`,
     );
     const validationResult: ValidationResult = {
       errors: [],
@@ -121,13 +121,13 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const minBorrowedAmount = (await this.#creditFacade!.limits())
       .minBorrowedAmount;
 
-      // todo refactor to object named fields
-    const {liquidationFee, liquidationDiscount} = await this.#fees();
+    // todo refactor to object named fields
+    const { liquidationFee, liquidationDiscount } = await this.#fees();
 
     const liquidationPremiumETH = await this.#liquidationPremiumETH(
       minBorrowedAmount,
       liquidationFee,
-      liquidationDiscount
+      liquidationDiscount,
     );
     const liquidationCostETH = await this.#liquidationCostETH(maxEnabledTokens);
 
@@ -144,18 +144,18 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   async setLimits(
     minBorrowedAmount: BigNumber,
     maxBorrowedAmount: BigNumber,
-    force = false
+    force = false,
   ) {
     await this.#initialize();
     this.logger.info(
       `CC: ${
         this.#underlying!.token
-      }: setLimits to minBorrowedAmount: ${minBorrowedAmount.toString()}, maxBorrowedAmount: ${maxBorrowedAmount.toString()}`
+      }: setLimits to minBorrowedAmount: ${minBorrowedAmount.toString()}, maxBorrowedAmount: ${maxBorrowedAmount.toString()}`,
     );
 
     const validationResult = await this.setLimitsValidate(
       minBorrowedAmount,
-      maxBorrowedAmount
+      maxBorrowedAmount,
     );
 
     if (validationResult.errors.length && !force) throw validationResult;
@@ -172,13 +172,13 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
   async setLimitsValidate(
     minBorrowedAmount: BigNumber,
-    maxBorrowedAmount: BigNumber
+    maxBorrowedAmount: BigNumber,
   ) {
     await this.#initialize();
     this.logger.info(
       `CC: ${
         this.#underlying!.token
-      }: Validating setLimits to minBorrowedAmount: ${minBorrowedAmount.toString()}, maxBorrowedAmount: ${maxBorrowedAmount.toString()}`
+      }: Validating setLimits to minBorrowedAmount: ${minBorrowedAmount.toString()}, maxBorrowedAmount: ${maxBorrowedAmount.toString()}`,
     );
 
     const validationResult: ValidationResult = {
@@ -188,7 +188,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
     if (minBorrowedAmount.gt(maxBorrowedAmount)) {
       validationResult.errors.push(
-        "minBorrowedAmount is bigger than maxBorrowedAmount"
+        "minBorrowedAmount is bigger than maxBorrowedAmount",
       );
       return validationResult;
     }
@@ -197,23 +197,23 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
     if (maxBorrowedAmount.gt(blockLimit)) {
       validationResult.errors.push(
-        `maxBorrowedAmount ${maxBorrowedAmount.toString()} is bigger than blockLimit ${blockLimit.toString()}`
+        `maxBorrowedAmount ${maxBorrowedAmount.toString()} is bigger than blockLimit ${blockLimit.toString()}`,
       );
       return validationResult;
     }
 
     const maxEnabledTokens =
       await this.#creditManager!.maxAllowedEnabledTokenLength();
-      console.log("current maxEnabledTokens", maxEnabledTokens)
+    console.log("current maxEnabledTokens", maxEnabledTokens);
 
     const liquidationCostETH = this.#liquidationCostETH(maxEnabledTokens);
 
-    const {liquidationFee, liquidationDiscount} = await this.#fees();
+    const { liquidationFee, liquidationDiscount } = await this.#fees();
 
     const liquidationPremiumETH = this.#liquidationPremiumETH(
       minBorrowedAmount,
       liquidationFee,
-      liquidationDiscount
+      liquidationDiscount,
     );
 
     this.#checkPremiumCoverage({
@@ -231,13 +231,13 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     liquidationPremium: number,
     feeLiquidationExpired: number,
     liquidationPremiumExpired: number,
-    force = false
+    force = false,
   ) {
     await this.#initialize();
     this.logger.info(
       `CC: ${
         this.#underlying!.token
-      }: Setting fees to feeInterest: ${feeInterest} feeLiquidation: ${feeLiquidation} liquidationPremium: ${liquidationPremium} feeLiquidationExpired: ${feeLiquidationExpired} liquidationPremiumExpired: ${liquidationPremiumExpired}`
+      }: Setting fees to feeInterest: ${feeInterest} feeLiquidation: ${feeLiquidation} liquidationPremium: ${liquidationPremium} feeLiquidationExpired: ${feeLiquidationExpired} liquidationPremiumExpired: ${liquidationPremiumExpired}`,
     );
 
     const validationResult = await this.setFeesValidate(
@@ -245,7 +245,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       feeLiquidation,
       liquidationPremium,
       feeLiquidationExpired,
-      liquidationPremiumExpired
+      liquidationPremiumExpired,
     );
     if (validationResult.errors.length && !force) throw validationResult;
     if (validationResult.warnings.length)
@@ -270,13 +270,13 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     feeLiquidation: number,
     liquidationPremium: number,
     feeLiquidationExpired: number,
-    liquidationPremiumExpired: number
+    liquidationPremiumExpired: number,
   ) {
     await this.#initialize();
     this.logger.info(
       `CC: ${
         this.#underlying!.token
-      }: Validating fees to feeInterest: ${feeInterest} feeLiquidation: ${feeLiquidation} liquidationPremium: ${liquidationPremium} feeLiquidationExpired: ${feeLiquidationExpired} liquidationPremiumExpired: ${liquidationPremiumExpired}`
+      }: Validating fees to feeInterest: ${feeInterest} feeLiquidation: ${feeLiquidation} liquidationPremium: ${liquidationPremium} feeLiquidationExpired: ${feeLiquidationExpired} liquidationPremiumExpired: ${liquidationPremiumExpired}`,
     );
 
     const validationResult: ValidationResult = {
@@ -294,7 +294,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
     if (liquidationPremiumExpired + feeLiquidationExpired > PERCENTAGE_FACTOR) {
       validationResult.errors.push(
-        "liquidationPremiumExpired + feeLiquidationExpired > 100%"
+        "liquidationPremiumExpired + feeLiquidationExpired > 100%",
       );
     }
 
@@ -313,7 +313,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const liquidationPremiumETH = this.#liquidationPremiumETH(
       minBorrowedAmount,
       feeLiquidation,
-      liquidationDiscount
+      liquidationDiscount,
     );
 
     this.#checkPremiumCoverage({
@@ -328,7 +328,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   async allowToken(token: SupportedToken, force = false) {
     await this.#initialize();
     this.logger.info(
-      `CC: ${this.#underlying!.token}: allowTokenValidate ${token}`
+      `CC: ${this.#underlying!.token}: allowTokenValidate ${token}`,
     );
 
     const validationResult = await this.allowTokenValidate(token);
@@ -352,7 +352,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     this.logger.info(
       `CC: ${
         this.#underlying!.token
-      }: Validating token ${token} for allowTokenValidate`
+      }: Validating token ${token} for allowTokenValidate`,
     );
 
     const validationResult: ValidationResult = {
@@ -375,19 +375,19 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
   async setLiquidationThreshold(
     token: SupportedToken,
-    liquidationThreshold: number
+    liquidationThreshold: number,
   ) {
     await this.#initialize();
 
     this.logger.info(
       `CC: ${
         this.#underlying!.token
-      }: Setting liquidation threshold to ${liquidationThreshold} for token ${token}`
+      }: Setting liquidation threshold to ${liquidationThreshold} for token ${token}`,
     );
 
     const validationResult = await this.setLiquidationThresholdValidate(
       token,
-      liquidationThreshold
+      liquidationThreshold,
     );
 
     if (validationResult.errors.length) throw validationResult;
@@ -404,13 +404,13 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
   async setLiquidationThresholdValidate(
     token: SupportedToken,
-    liquidationThreshold: number// todo try bigint 
+    liquidationThreshold: number,
   ) {
     await this.#initialize();
     this.logger.info(
       `CC: ${
         this.#underlying!.token
-      }: Validating liquidation threshold to ${liquidationThreshold} for token ${token}`
+      }: Validating liquidation threshold to ${liquidationThreshold} for token ${token}`,
     );
 
     const validationResult: ValidationResult = {
@@ -426,26 +426,25 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const underlying = await this.#creditManager!.underlying();
     if (tokenAddress === underlying) {
       validationResult.errors.push(
-        "setLiquidationThreshold: Token is underlying"
+        "setLiquidationThreshold: Token is underlying",
       );
     }
 
     if (liquidationThreshold > PERCENTAGE_FACTOR) {
       validationResult.errors.push(
-        "setLiquidationThreshold: liquidationThreshold > 100%"
+        "setLiquidationThreshold: liquidationThreshold > 100%",
       );
     }
 
     return validationResult;
   }
 
-
   async #fees() {
     const fees = await this.#creditManager!.fees();
     const liquidationFee = fees.feeLiquidation;
     const liquidationDiscount = fees.liquidationDiscount;
 
-    return {liquidationFee, liquidationDiscount};
+    return { liquidationFee, liquidationDiscount };
   }
 
   // utils  - move to sdk class
@@ -453,14 +452,19 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const liquidationCostETH = maxGasPrice
       .mul(maxGasPerEnabledToken)
       .mul(maxEnabledTokens);
-    console.log(`liquidationCost ${formatBN(liquidationCostETH, 18)} ETH for ${maxEnabledTokens} enabled tokens`);
+    console.log(
+      `liquidationCost ${formatBN(
+        liquidationCostETH,
+        18,
+      )} ETH for ${maxEnabledTokens} enabled tokens`,
+    );
     return liquidationCostETH;
   }
 
-   #liquidationPremiumETH(
+  #liquidationPremiumETH(
     minBorrowedAmount: BigNumber,
     liquidationFee: number,
-    liquidationDiscount: number
+    liquidationDiscount: number,
   ) {
     console.log("liquidationFee", liquidationFee.toString());
     console.log("liquidationDiscount", liquidationDiscount.toString());
@@ -486,11 +490,12 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       .div(BigNumber.from(10).pow(this.#underlying!.decimals!));
 
     const liquidationPremiumInETH = liquidationPremiumInUSD.div(maxETHPice);
-    console.log(`liquidationPremiumInETH ${formatBN(liquidationPremiumInETH, 18)} ETH`);
+    console.log(
+      `liquidationPremiumInETH ${formatBN(liquidationPremiumInETH, 18)} ETH`,
+    );
 
     return liquidationPremiumInETH;
   }
-
 
   // todo extract calculations to separate class
   #checkPremiumCoverage(args: {
@@ -503,18 +508,18 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       result.warnings.push(
         `Liquation cost ${formatBN(
           cost,
-          18
+          18,
         )} ETH is bigger than liquidation premium ${formatBN(
           premium,
-          18
-        )} ETH for $3000/450 gwei for $2000/680 gwei`
+          18,
+        )} ETH for $3000/450 gwei for $2000/680 gwei`,
       );
     } else {
       result.warnings.push(
         `Liquation cost ${formatBN(cost, 18)} ETH covered by premium ${formatBN(
           premium,
-          18
-        )} ETH for $3000/450 gwei or $2000/680 gwei`
+          18,
+        )} ETH for $3000/450 gwei or $2000/680 gwei`,
       );
     }
   }

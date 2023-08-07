@@ -15,7 +15,7 @@ export function hasDefinedProp<
   Prop extends string,
 >(
   obj: Obj,
-  prop: Prop
+  prop: Prop,
 ): obj is Obj &
   Record<
     Prop,

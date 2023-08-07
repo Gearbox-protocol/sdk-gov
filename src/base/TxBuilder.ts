@@ -23,7 +23,7 @@ export class TxBuilder extends Logged {
     const { contract, method, args, validationResult } = callArgs;
 
     const abi = JSON.parse(
-      contract.interface.getFunction(method).format("json")
+      contract.interface.getFunction(method).format("json"),
     );
 
     const contractFieldsValues: Record<string, string> = {};
@@ -47,7 +47,7 @@ export class TxBuilder extends Logged {
 
     const functionEncodedData = contract.interface.encodeFunctionData(
       method,
-      args
+      args,
     );
 
     const tx: ProposedTransaction = {
