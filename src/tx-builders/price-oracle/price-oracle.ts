@@ -85,6 +85,7 @@ export class PriceOracleV2TxBuilder extends TxBuilder {
       this.#provider
     );
 
+    // todo check if contract is verified and similar to github - error if not
     try {
       const decimals = await priceFeedContract.decimals();
       if (decimals.toString() !== "8") {

@@ -121,7 +121,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const minBorrowedAmount = (await this.#creditFacade!.limits())
       .minBorrowedAmount;
 
-    const [liquidationFee, liquidationDiscount] = await this.#fees();
+      // todo refactor to object named fields
+    const {liquidationFee, liquidationDiscount} = await this.#fees();
 
     const liquidationPremiumETH = await this.#liquidationPremiumETH(
       minBorrowedAmount,
@@ -203,12 +204,13 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
     const maxEnabledTokens =
       await this.#creditManager!.maxAllowedEnabledTokenLength();
+      console.log("current maxEnabledTokens", maxEnabledTokens)
 
     const liquidationCostETH = this.#liquidationCostETH(maxEnabledTokens);
 
-    const [liquidationFee, liquidationDiscount] = await this.#fees();
+    const {liquidationFee, liquidationDiscount} = await this.#fees();
 
-    const liquidationPremiumETH = await this.#liquidationPremiumETH(
+    const liquidationPremiumETH = this.#liquidationPremiumETH(
       minBorrowedAmount,
       liquidationFee,
       liquidationDiscount
@@ -301,14 +303,14 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const maxEnabledTokens =
       await this.#creditManager!.maxAllowedEnabledTokenLength();
 
-    const liquidationCostETH = await this.#liquidationCostETH(maxEnabledTokens);
+    const liquidationCostETH = this.#liquidationCostETH(maxEnabledTokens);
 
     const minBorrowedAmount = (await this.#creditFacade!.limits())
       .minBorrowedAmount;
 
     const liquidationDiscount = PERCENTAGE_FACTOR - liquidationPremium;
 
-    const liquidationPremiumETH = await this.#liquidationPremiumETH(
+    const liquidationPremiumETH = this.#liquidationPremiumETH(
       minBorrowedAmount,
       feeLiquidation,
       liquidationDiscount
@@ -402,7 +404,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
   async setLiquidationThresholdValidate(
     token: SupportedToken,
-    liquidationThreshold: number
+    liquidationThreshold: number// todo try bigint 
   ) {
     await this.#initialize();
     this.logger.info(
@@ -417,6 +419,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     };
 
     const tokenAddress = tokenDataByNetwork[this.#network!][token];
+
+    // todo liquidationThreshold >= 0
 
     // Checks that the token is not underlying
     const underlying = await this.#creditManager!.underlying();
@@ -435,16 +439,25 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     return validationResult;
   }
 
-  // utils
+
+  async #fees() {
+    const fees = await this.#creditManager!.fees();
+    const liquidationFee = fees.feeLiquidation;
+    const liquidationDiscount = fees.liquidationDiscount;
+
+    return {liquidationFee, liquidationDiscount};
+  }
+
+  // utils  - move to sdk class
   #liquidationCostETH(maxEnabledTokens: number) {
     const liquidationCostETH = maxGasPrice
       .mul(maxGasPerEnabledToken)
       .mul(maxEnabledTokens);
-    console.log("liquidationCostETH", liquidationCostETH.toString());
+    console.log(`liquidationCost ${formatBN(liquidationCostETH, 18)} ETH for ${maxEnabledTokens} enabled tokens`);
     return liquidationCostETH;
   }
 
-  async #liquidationPremiumETH(
+   #liquidationPremiumETH(
     minBorrowedAmount: BigNumber,
     liquidationFee: number,
     liquidationDiscount: number
@@ -456,11 +469,12 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
     console.log("ltUnderlying", ltUnderlying.toString());
 
+    // PERCENTAGE_FACTOR = 10000
     const minAmountOnAccount = minBorrowedAmount
       .mul(10000)
       .div(BigNumber.from(ltUnderlying));
 
-    console.log("minAmountOnAccount", minAmountOnAccount.toString());
+    console.log(`minAmountOnAccount ${formatBN(minAmountOnAccount, 18)} ETH`);
 
     const liquidationPremium = minAmountOnAccount
       .mul(10000 - liquidationDiscount)
@@ -472,19 +486,13 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       .div(BigNumber.from(10).pow(this.#underlying!.decimals!));
 
     const liquidationPremiumInETH = liquidationPremiumInUSD.div(maxETHPice);
-    console.log("liquidationPremiumInETH", liquidationPremiumInETH.toString());
+    console.log(`liquidationPremiumInETH ${formatBN(liquidationPremiumInETH, 18)} ETH`);
 
     return liquidationPremiumInETH;
   }
 
-  async #fees() {
-    const fees = await this.#creditManager!.fees();
-    const liquidationFee = fees.feeLiquidation;
-    const liquidationDiscount = fees.liquidationDiscount;
 
-    return [liquidationFee, liquidationDiscount];
-  }
-
+  // todo extract calculations to separate class
   #checkPremiumCoverage(args: {
     cost: BigNumber;
     premium: BigNumber;

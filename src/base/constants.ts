@@ -23,7 +23,7 @@ export const minTokenPriceUSD = (token: SupportedToken) => {
     case "WBTC":
       return 20000;
     case "wstETH":
-      return 2000;
+      return maxETHPice;
     case "FRAX":
       return 1;
     default:
