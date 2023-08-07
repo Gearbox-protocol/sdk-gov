@@ -76,7 +76,7 @@ export class TxBatcher {
         safeAddress: this.#multisigAddress,
         action,
         eta: this.#eta,
-      })
+      }),
     );
 
     return batch;
@@ -115,7 +115,7 @@ export class TxBatcher {
 
   #serializeJSONObject = (json: any): string => {
     if (Array.isArray(json)) {
-      return `[${json.map((el) => this.#serializeJSONObject(el)).join(",")}]`;
+      return `[${json.map(el => this.#serializeJSONObject(el)).join(",")}]`;
     }
 
     if (typeof json === "object" && json !== null) {
@@ -165,16 +165,14 @@ export class TxBatcher {
         createdFromSafeAddress: safeAddress ?? process.env.MULTISIG,
         createdFromOwnerAddress: "",
       },
-      transactions: transactions.map((tx) =>
-        this.#wrapTimelock(tx, action, eta)
-      ),
+      transactions: transactions.map(tx => this.#wrapTimelock(tx, action, eta)),
     };
   }
 
   #wrapTimelock(
     tx: ProposedTransaction,
     action: TimelockAction,
-    eta: number
+    eta: number,
   ): BatchTransaction {
     return {
       to: "0xa133C9A92Fb8dDB962Af1cbae58b2723A0bdf23b",
