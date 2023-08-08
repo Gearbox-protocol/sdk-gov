@@ -16,13 +16,8 @@ import {
 } from "@gearbox-protocol/sdk";
 import { BigNumber, ethers } from "ethers";
 
-import {
-  maxETHPice,
-  maxGasPerEnabledToken,
-  maxGasPrice,
-  minTokenPriceUSD,
-  PERCENTAGE_FACTOR,
-} from "../../base/constants";
+import { PERCENTAGE_FACTOR } from "../../base/constants";
+import { calculateLiquidationCoverage } from "../../base/premium-coverage";
 import { TxBuilder } from "../../base/TxBuilder";
 import { UnderlyingToken, ValidationResult } from "../../base/types";
 
@@ -121,22 +116,38 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const minBorrowedAmount = (await this.#creditFacade!.limits())
       .minBorrowedAmount;
 
-    // todo refactor to object named fields
     const { liquidationFee, liquidationDiscount } = await this.#fees();
 
-    const liquidationPremiumETH = await this.#liquidationPremiumETH(
-      minBorrowedAmount,
-      liquidationFee,
-      liquidationDiscount,
-    );
-    const liquidationCostETH = await this.#liquidationCostETH(maxEnabledTokens);
+    const { isCovered, liquidationCostETH, liquidationPremiumInETH } =
+      calculateLiquidationCoverage({
+        minBorrowedAmount,
+        liquidationFee,
+        liquidationDiscount,
+        maxEnabledTokens,
+        underlyingToken: this.#underlying!,
+      });
 
-    // liquidation premium in ETH whould be more than liquidation cost in ETH
-    this.#checkPremiumCoverage({
-      premium: liquidationPremiumETH,
-      cost: liquidationCostETH,
-      result: validationResult,
-    });
+    if (!isCovered) {
+      validationResult.warnings.push(
+        `Liquation cost ${formatBN(
+          liquidationCostETH,
+          18,
+        )} ETH is bigger than liquidation premium ${formatBN(
+          liquidationPremiumInETH,
+          18,
+        )} ETH for $3000/450 gwei for $2000/680 gwei`,
+      );
+    } else {
+      validationResult.warnings.push(
+        `Liquation cost ${formatBN(
+          liquidationCostETH,
+          18,
+        )} ETH covered by premium ${formatBN(
+          liquidationPremiumInETH,
+          18,
+        )} ETH for $3000/450 gwei or $2000/680 gwei`,
+      );
+    }
 
     return validationResult;
   }
@@ -206,21 +217,38 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       await this.#creditManager!.maxAllowedEnabledTokenLength();
     console.log("current maxEnabledTokens", maxEnabledTokens);
 
-    const liquidationCostETH = this.#liquidationCostETH(maxEnabledTokens);
-
     const { liquidationFee, liquidationDiscount } = await this.#fees();
 
-    const liquidationPremiumETH = this.#liquidationPremiumETH(
-      minBorrowedAmount,
-      liquidationFee,
-      liquidationDiscount,
-    );
+    const { isCovered, liquidationCostETH, liquidationPremiumInETH } =
+      calculateLiquidationCoverage({
+        minBorrowedAmount,
+        liquidationFee,
+        liquidationDiscount,
+        maxEnabledTokens,
+        underlyingToken: this.#underlying!,
+      });
 
-    this.#checkPremiumCoverage({
-      premium: liquidationPremiumETH,
-      cost: liquidationCostETH,
-      result: validationResult,
-    });
+    if (!isCovered) {
+      validationResult.warnings.push(
+        `Liquation cost ${formatBN(
+          liquidationCostETH,
+          18,
+        )} ETH is bigger than liquidation premium ${formatBN(
+          liquidationPremiumInETH,
+          18,
+        )} ETH for $3000/450 gwei for $2000/680 gwei`,
+      );
+    } else {
+      validationResult.warnings.push(
+        `Liquation cost ${formatBN(
+          liquidationCostETH,
+          18,
+        )} ETH covered by premium ${formatBN(
+          liquidationPremiumInETH,
+          18,
+        )} ETH for $3000/450 gwei or $2000/680 gwei`,
+      );
+    }
 
     return validationResult;
   }
@@ -303,24 +331,41 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const maxEnabledTokens =
       await this.#creditManager!.maxAllowedEnabledTokenLength();
 
-    const liquidationCostETH = this.#liquidationCostETH(maxEnabledTokens);
-
     const minBorrowedAmount = (await this.#creditFacade!.limits())
       .minBorrowedAmount;
 
     const liquidationDiscount = PERCENTAGE_FACTOR - liquidationPremium;
 
-    const liquidationPremiumETH = this.#liquidationPremiumETH(
-      minBorrowedAmount,
-      feeLiquidation,
-      liquidationDiscount,
-    );
+    const { isCovered, liquidationCostETH, liquidationPremiumInETH } =
+      calculateLiquidationCoverage({
+        minBorrowedAmount,
+        liquidationFee: feeLiquidation,
+        liquidationDiscount,
+        maxEnabledTokens,
+        underlyingToken: this.#underlying!,
+      });
 
-    this.#checkPremiumCoverage({
-      premium: liquidationPremiumETH,
-      cost: liquidationCostETH,
-      result: validationResult,
-    });
+    if (!isCovered) {
+      validationResult.warnings.push(
+        `Liquation cost ${formatBN(
+          liquidationCostETH,
+          18,
+        )} ETH is bigger than liquidation premium ${formatBN(
+          liquidationPremiumInETH,
+          18,
+        )} ETH for $3000/450 gwei for $2000/680 gwei`,
+      );
+    } else {
+      validationResult.warnings.push(
+        `Liquation cost ${formatBN(
+          liquidationCostETH,
+          18,
+        )} ETH covered by premium ${formatBN(
+          liquidationPremiumInETH,
+          18,
+        )} ETH for $3000/450 gwei or $2000/680 gwei`,
+      );
+    }
 
     return validationResult;
   }
@@ -420,7 +465,9 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
     const tokenAddress = tokenDataByNetwork[this.#network!][token];
 
-    // todo liquidationThreshold >= 0
+    if (liquidationThreshold < 0) {
+      validationResult.errors.push("liquidationThreshold < 0");
+    }
 
     // Checks that the token is not underlying
     const underlying = await this.#creditManager!.underlying();
@@ -445,82 +492,5 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const liquidationDiscount = fees.liquidationDiscount;
 
     return { liquidationFee, liquidationDiscount };
-  }
-
-  // utils  - move to sdk class
-  #liquidationCostETH(maxEnabledTokens: number) {
-    const liquidationCostETH = maxGasPrice
-      .mul(maxGasPerEnabledToken)
-      .mul(maxEnabledTokens);
-    console.log(
-      `liquidationCost ${formatBN(
-        liquidationCostETH,
-        18,
-      )} ETH for ${maxEnabledTokens} enabled tokens`,
-    );
-    return liquidationCostETH;
-  }
-
-  #liquidationPremiumETH(
-    minBorrowedAmount: BigNumber,
-    liquidationFee: number,
-    liquidationDiscount: number,
-  ) {
-    console.log("liquidationFee", liquidationFee.toString());
-    console.log("liquidationDiscount", liquidationDiscount.toString());
-
-    const ltUnderlying = liquidationDiscount - liquidationFee;
-
-    console.log("ltUnderlying", ltUnderlying.toString());
-
-    // PERCENTAGE_FACTOR = 10000
-    const minAmountOnAccount = minBorrowedAmount
-      .mul(10000)
-      .div(BigNumber.from(ltUnderlying));
-
-    console.log(`minAmountOnAccount ${formatBN(minAmountOnAccount, 18)} ETH`);
-
-    const liquidationPremium = minAmountOnAccount
-      .mul(10000 - liquidationDiscount)
-      .div(10000);
-
-    const liquidationPremiumInUSD = liquidationPremium
-      .mul(minTokenPriceUSD(this.#underlying!.token!))
-      .mul(BigNumber.from(10).pow(18))
-      .div(BigNumber.from(10).pow(this.#underlying!.decimals!));
-
-    const liquidationPremiumInETH = liquidationPremiumInUSD.div(maxETHPice);
-    console.log(
-      `liquidationPremiumInETH ${formatBN(liquidationPremiumInETH, 18)} ETH`,
-    );
-
-    return liquidationPremiumInETH;
-  }
-
-  // todo extract calculations to separate class
-  #checkPremiumCoverage(args: {
-    cost: BigNumber;
-    premium: BigNumber;
-    result: ValidationResult;
-  }) {
-    const { cost, premium, result } = args;
-    if (cost.gt(premium)) {
-      result.warnings.push(
-        `Liquation cost ${formatBN(
-          cost,
-          18,
-        )} ETH is bigger than liquidation premium ${formatBN(
-          premium,
-          18,
-        )} ETH for $3000/450 gwei for $2000/680 gwei`,
-      );
-    } else {
-      result.warnings.push(
-        `Liquation cost ${formatBN(cost, 18)} ETH covered by premium ${formatBN(
-          premium,
-          18,
-        )} ETH for $3000/450 gwei or $2000/680 gwei`,
-      );
-    }
   }
 }
