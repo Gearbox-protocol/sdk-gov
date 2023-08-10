@@ -12,8 +12,8 @@ import {
 } from "@gearbox-protocol/sdk";
 import { ethers } from "ethers";
 
-import { TxBuilder } from "../../base/TxBuilder";
-import { ValidationResult } from "../../base/types";
+import { TxBuilder } from "../base/TxBuilder";
+import { ValidationResult } from "../base/types";
 
 export class PriceOracleV2TxBuilder extends TxBuilder {
   #provider: ethers.providers.Provider;

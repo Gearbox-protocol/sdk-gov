@@ -30,3 +30,5 @@ export const minTokenPriceUSD = (token: SupportedToken) => {
       throw new Error(`Invalid token: ${token}`);
   }
 };
+
+export const UNIVERSAL_CONTRACT = "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC";
