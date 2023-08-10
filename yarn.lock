@@ -580,6 +580,13 @@
     "@ethersproject/properties" "^5.7.0"
     "@ethersproject/strings" "^5.7.0"
 
+"@gearbox-protocol/core-v2@^1.19.0":
+  version "1.20.1"
+  resolved "https://registry.yarnpkg.com/@gearbox-protocol/core-v2/-/core-v2-1.20.1.tgz#e2764e0b302e8a588ae046701b68d92bf60c5921"
+  integrity sha512-Wk4vBKZr/Gx5EMAnX4whf+kQkekZmDI+uuMwwm8/NbFka7rtbqsPLWYkYeAQf//8Jf3PrxvXh0FG9PwDptsxPw==
+  dependencies:
+    "@typechain/ethers-v5" "^10.2.1"
+
 "@gearbox-protocol/eslint-config@^1.6.1":
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/@gearbox-protocol/eslint-config/-/eslint-config-1.6.1.tgz#315a5c0b19593e925db32de72c27964adc44d2f8"
@@ -600,10 +607,10 @@
   resolved "https://registry.yarnpkg.com/@gearbox-protocol/prettier-config/-/prettier-config-1.5.0.tgz#4df8e9fd2305fee6ab8c1417a02e31343836932a"
   integrity sha512-FUoprSsBdZyBjgxXCKL6mTkbeUJytaLzPJqIOoQpDmBRTX0seCc2o5I9PI9tySoRIlNnd/XXnKCXq1xHDEGbxw==
 
-"@gearbox-protocol/sdk@^2.1.11":
-  version "2.1.11"
-  resolved "https://registry.yarnpkg.com/@gearbox-protocol/sdk/-/sdk-2.1.11.tgz#d2cb7e3d47b66b78395195da6a6bf7d6022c620f"
-  integrity sha512-16edMu0qAaSnice/HdOL737ul7kc0PKlv89SFkp7npZ91ztOFQWQB0n4mZY7EVg/2HVE2F0HN0YTVUZda1ALYw==
+"@gearbox-protocol/sdk@^2.1.17":
+  version "2.1.17"
+  resolved "https://registry.yarnpkg.com/@gearbox-protocol/sdk/-/sdk-2.1.17.tgz#e61cd2b7cd002f549ba80e970d4db1d7e49572dd"
+  integrity sha512-h1VFud073RyQ1b/IWQSnv/GLDVH87agAhKfA+fh9s0iAQjy1rtlwDVUk3kW8O445CtM2Akp79ZiyNfBm7ezF3Q==
   dependencies:
     "@types/deep-eql" "^4.0.0"
     axios "^1.2.6"
@@ -734,6 +741,14 @@
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.4.tgz#0b92dcc0cc1c81f6f306a381f28e31b1a56536e9"
   integrity sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==
+
+"@typechain/ethers-v5@^10.2.1":
+  version "10.2.1"
+  resolved "https://registry.yarnpkg.com/@typechain/ethers-v5/-/ethers-v5-10.2.1.tgz#50241e6957683281ecfa03fb5a6724d8a3ce2391"
+  integrity sha512-n3tQmCZjRE6IU4h6lqUGiQ1j866n5MTCBJreNEHHVWXa2u9GJTaeYyU1/k+1qLutkyw+sS6VAN+AbeiTqsxd/A==
+  dependencies:
+    lodash "^4.17.15"
+    ts-essentials "^7.0.1"
 
 "@types/deep-eql@^4.0.0":
   version "4.0.0"
