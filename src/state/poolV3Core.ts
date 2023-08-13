@@ -1,4 +1,4 @@
-import { NetworkType, SupportedToken } from "@gearbox-protocol/sdk";
+import { CHAINS, NetworkType, SupportedToken } from "@gearbox-protocol/sdk";
 
 import { CreditManagerV3Configurator } from "./creditManagerV3Config";
 import { GaugeV3Configurator } from "./gaugeV3";
@@ -8,6 +8,7 @@ import { PoolV3Configurator } from "./poolV3";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 
 export class PoolV3CoreConfigurator {
+  id: string;
   network: NetworkType;
   underlying: SupportedToken;
   supportsQuotas: boolean;
@@ -19,6 +20,7 @@ export class PoolV3CoreConfigurator {
   creditManagers: Array<CreditManagerV3Configurator>;
 
   static new(config: PoolV3DeployConfig): PoolV3CoreConfigurator {
+    const id = config.id;
     const network = config.network;
     const underlying = config.underlying;
     const supportsQuotas = config.supportsQuotas;
@@ -32,6 +34,7 @@ export class PoolV3CoreConfigurator {
     );
 
     return new PoolV3CoreConfigurator({
+      id,
       network,
       underlying,
       supportsQuotas,
@@ -50,6 +53,7 @@ export class PoolV3CoreConfigurator {
     const poolQuotaKeeper = await PoolQuotaKeeperV3Configurator.attach(address);
     const pool = await PoolV3Configurator.attach(address);
     return new PoolV3CoreConfigurator({
+      id: "attached id",
       network: "Mainnet",
       underlying: "USDC",
       supportsQuotas: true,
@@ -63,6 +67,7 @@ export class PoolV3CoreConfigurator {
   }
 
   private constructor(opts: {
+    id: string;
     network: NetworkType;
     supportsQuotas: boolean;
     underlying: SupportedToken;
@@ -73,6 +78,7 @@ export class PoolV3CoreConfigurator {
     pool: PoolV3Configurator;
     creditManagers: Array<CreditManagerV3Configurator>;
   }) {
+    this.id = opts.id;
     this.network = opts.network;
     this.underlying = opts.underlying;
     this.accountAmount = opts.accountAmount;
@@ -132,10 +138,13 @@ ${creditManagers}`;
         CollateralTokenHuman
     } from "@gearbox-protocol/core-v3/contracts/test/interfaces/ICreditConfig.sol";
     
-    contract PoolV3DeployConfig_${this.pool.state.symbol.toUpperCase()} is IPoolV3DeployConfig {
+    contract CONFIG_${this.id
+      .replaceAll("-", "_")
+      .toUpperCase()} is IPoolV3DeployConfig {
+        string public constant id = "${this.id}";
         string public constant symbol = "${this.pool.state.symbol}";
         string public constant name = "${this.pool.state.name}";
-        uint256 public constant chainId = ${this.network};
+        uint256 public constant chainId = ${CHAINS[this.network]};
     
         Tokens public constant underlying = Tokens.${this.underlying};
         bool public constant supportsQuotas = ${this.supportsQuotas};
