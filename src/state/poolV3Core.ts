@@ -143,8 +143,10 @@ ${creditManagers}`;
         uint256 public constant getAccountAmount = ${this.accountAmount.toString()};
     
         PoolV3DeployParams _poolParams = PoolV3DeployParams({withdrawalFee: ${
-          this.pool.state.withdrawalFee
-        }, expectedLiquidityLimit: ${this.pool.state.expectedLiquidityLimit}});
+          this.pool.state.withdrawalFee.value
+        }, expectedLiquidityLimit: ${
+          this.pool.state.expectedLiquidityLimit.value
+        }});
     
         LinearIRMV3DeployParams _irm = LinearIRMV3DeployParams({
             U_1: ${this.irm.params.U1},
@@ -155,7 +157,7 @@ ${creditManagers}`;
             R_slope3: ${this.irm.params.Rslope3},
             _isBorrowingMoreU2Forbidden: ${
               this.irm.params.isBorrowingMoreU2Forbidden
-            },
+            }
         });
     
         GaugeRate[] _gaugeRates;

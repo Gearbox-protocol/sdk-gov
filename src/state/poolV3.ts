@@ -53,11 +53,11 @@ export class PoolV3Configurator {
   }
 
   toString(): string {
-    return `Withdrawal Fee: ${this.state.withdrawalFee.toString()},
-ExpectedLiquidityLimit: ${this.state.expectedLiquidityLimit.toString()}
+    return `Withdrawal Fee: ${this.state.withdrawalFee.value},
+ExpectedLiquidityLimit: ${this.state.expectedLiquidityLimit.value}
 CreditManagersAllowance:
 ${Object.entries(this.state.creditManagersAllowance)
-  .map(([cm, allowance]) => `[${cm}]: ${allowance.toString()}`)
+  .map(([cm, allowance]) => `[${cm}]: ${allowance.value}`)
   .join("\n")}`;
   }
 }
