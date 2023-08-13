@@ -4,6 +4,8 @@ import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 import { UpdatedValue } from "./updatedValue";
 
 export interface PoolV3State {
+  symbol: string;
+  name: string;
   underlying: SupportedToken;
   withdrawalFee: UpdatedValue<number>;
   expectedLiquidityLimit: UpdatedValue<bigint>;
@@ -16,6 +18,8 @@ export class PoolV3Configurator {
 
   static new(config: PoolV3DeployConfig): PoolV3Configurator {
     const state: PoolV3State = {
+      symbol: config.symbol,
+      name: config.name,
       underlying: config.underlying,
       withdrawalFee: UpdatedValue.new(config.withdrawalFee),
       expectedLiquidityLimit: UpdatedValue.new(config.expectedLiquidityLimit),
@@ -32,6 +36,8 @@ export class PoolV3Configurator {
 
   static async attach(address: string): Promise<PoolV3Configurator> {
     const state: PoolV3State = {
+      symbol: "dUSDC",
+      name: "dUSDC attached",
       underlying: "USDC",
       withdrawalFee: UpdatedValue.new(0),
       expectedLiquidityLimit: UpdatedValue.new(BigInt(0)),

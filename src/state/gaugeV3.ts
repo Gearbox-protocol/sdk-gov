@@ -1,5 +1,6 @@
 import { NOT_DEPLOYED, SupportedToken } from "@gearbox-protocol/sdk";
 
+import { IConfigurator, ValidationResult } from "./iConfigurator";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 import { UpdatedValue } from "./updatedValue";
 
@@ -14,7 +15,7 @@ export interface GaugeV3State {
   quotaTokenParams: Partial<Record<SupportedToken, QuotaRateParams>>;
 }
 
-export class GaugeV3Configurator {
+export class GaugeV3Configurator implements IConfigurator {
   address: string;
   state: GaugeV3State;
 
@@ -45,6 +46,19 @@ export class GaugeV3Configurator {
   private constructor(opts: { address: string; state: GaugeV3State }) {
     this.address = opts.address;
     this.state = opts.state;
+  }
+
+  validate(): ValidationResult {
+    return { warnings: [], errors: [] };
+  }
+
+  deployConfig(): string {
+    return Object.entries(this.state.quotaTokenParams)
+      .map(
+        ([token, params]) =>
+          `_gaugeRates.push(GaugeRate({token: Tokens.${token}, minRate: ${params.minRate.value.toString()}, maxRate: ${params.maxRate.value.toString()}}));`,
+      )
+      .join("\n");
   }
 
   toString(): string {

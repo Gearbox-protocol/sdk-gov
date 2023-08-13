@@ -1,6 +1,6 @@
 import { NOT_DEPLOYED } from "@gearbox-protocol/sdk";
 
-import { IConfigurator, Warning } from "./iConfigurator";
+import { IConfigurator, Message, ValidationResult } from "./iConfigurator";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 
 export interface LinearIRMParams {
@@ -38,17 +38,38 @@ export class LinearIRM implements IConfigurator {
     this.params = params;
   }
 
-  validate(): Array<Warning> {
+  toString(): string {
+    return `{U_optimal: ${this.params.U1}, U_reserve: ${this.params.U2}, R_base: ${this.params.Rbase}, R_1: ${this.params.Rslope1}, R_2: ${this.params.Rslope2}, R_3: ${this.params.Rslope3}, isBorrmowinMoreU_reserveForbidden: ${this.params.isBorrowingMoreU2Forbidden}}`;
+  }
+
+  validate(): ValidationResult {
+    const warnings: Array<Message> = [];
+    const errors: Array<Message> = [];
+
     if (this.address === NOT_DEPLOYED) {
-      return [];
+      if (this.params.U1 < 0) {
+        errors.push({
+          component: "Linear IRM",
+          address: this.address,
+          message: "U1 < 0",
+        });
+      }
     }
 
-    const warnings: Array<Warning> = [];
+    return { warnings, errors };
+  }
 
-    if (this.params.U1 < 0) {
-      warnings.push({ address: "LinearIRM", message: "U1 < 0" });
-    }
-
-    return warnings;
+  deployConfig(): string {
+    return `LinearIRMV3DeployParams _irm = LinearIRMV3DeployParams({
+  U_1: ${this.params.U1},
+  U_2: ${this.params.U2},
+  R_base: ${this.params.Rbase},
+  R_slope1: ${this.params.Rslope1},
+  R_slope2: ${this.params.Rslope2},
+  R_slope3: ${this.params.Rslope3},
+  isBorrowingMoreU2Forbidden: ${this.params.isBorrowingMoreU2Forbidden},
+  });
+     
+    `;
   }
 }

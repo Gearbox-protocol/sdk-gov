@@ -1,3 +1,5 @@
+import { formatBN } from "@gearbox-protocol/sdk";
+
 export class UpdatedValue<T> {
   private _value: T;
   isUpdated: boolean;
@@ -31,30 +33,30 @@ export class UpdatedValue<T> {
     }
   }
 
-  toString(): string {
+  toString(opts?: { decimals: number }): string {
     if (this.isUpdated) {
       return this.originalValue
-        ? `${this._valueToString(
+        ? `${this._valueToString(this.originalValue)} => ${this._valueToString(
             this._value,
-          )} was set, original value was ${this._valueToString(
-            this.originalValue,
+            opts?.decimals,
           )}`
-        : `${this._valueToString(this._value)} was added`;
+        : `${this._valueToString(this._value, opts?.decimals)} [ new ]`;
     } else {
-      return this._valueToString(this._value);
+      return this._valueToString(this._value, opts?.decimals);
     }
   }
 
-  private _valueToString(value: T): string {
+  private _valueToString(value: T, decimals?: number): string {
     switch (typeof value) {
       case "string":
         return value;
       case "number":
-        return value.toString();
       case "bigint":
-        return value.toString();
+        return decimals ? formatBN(value, decimals) : value.toString();
       case "boolean":
         return value.toString();
+      case "object":
+        return JSON.stringify(value);
       default:
         return `${this._value}`;
     }

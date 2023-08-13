@@ -22,6 +22,7 @@ export interface CreditManagerV3DeployConfig {
   degenNft: boolean;
   minDebt: bigint;
   maxDebt: bigint;
+  expirationDate?: number;
   collateralTokens: Array<CollateralToken>;
   adapters: Array<SupportedContract>;
   poolLimit: bigint;
@@ -33,6 +34,9 @@ export interface PoolV3DeployConfig {
   network: NetworkType;
 
   underlying: SupportedToken;
+  supportsQuotas: boolean;
+  accountAmount: bigint;
+
   irm: LinearIRMParams;
   expectedLiquidityLimit: bigint;
   withdrawalFee: number;
