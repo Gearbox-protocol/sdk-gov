@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Gearbox Governance SDK",
   "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib",
+    "contracts"
+  ],
   "scripts": {
     "clean": "rm -rf lib",
     "build": "tsc --p tsconfig.build.json",
