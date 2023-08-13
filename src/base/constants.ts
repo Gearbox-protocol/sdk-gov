@@ -31,4 +31,5 @@ export const minTokenPriceUSD = (token: SupportedToken) => {
   }
 };
 
+export const MAX_WITHDRAW_FEE = 100;
 export const UNIVERSAL_CONTRACT = "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC";

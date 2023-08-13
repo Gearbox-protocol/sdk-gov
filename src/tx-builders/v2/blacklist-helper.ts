@@ -11,11 +11,11 @@ import {
 } from "@gearbox-protocol/sdk";
 import { ethers } from "ethers";
 
-import { TxBuilder } from "../base/TxBuilder";
-import { Address, ValidationResult } from "../base/types";
-import { IsContract } from "../base/utils";
+import { TxBuilder } from "../../base/TxBuilder";
+import { Address, ValidationResult } from "../../base/types";
+import { IsContract } from "../../base/utils";
 
-export class BlacklistHelperTxBuilder extends TxBuilder {
+export class BlacklistHelperV2TxBuilder extends TxBuilder {
   #provider: ethers.providers.Provider;
   #network: NetworkType | undefined;
   #isInit = false;
@@ -93,9 +93,7 @@ export class BlacklistHelperTxBuilder extends TxBuilder {
 
     const isContract = await IsContract(creditFacade, this.#provider);
     if (!isContract) {
-      validationResult.errors.push(
-        `CreditFacade ${creditFacade} is not a contract`,
-      );
+      validationResult.errors.push(`Address ${creditFacade} is not a contract`);
     }
 
     const creditFacadeContract = CreditFacade__factory.connect(

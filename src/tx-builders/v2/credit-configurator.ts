@@ -28,11 +28,11 @@ import {
 } from "@gearbox-protocol/sdk";
 import { BigNumber, ethers } from "ethers";
 
-import { PERCENTAGE_FACTOR, UNIVERSAL_CONTRACT } from "../base/constants";
-import { calculateLiquidationCoverage } from "../base/premium-coverage";
-import { TxBuilder } from "../base/TxBuilder";
-import { Address, UnderlyingToken, ValidationResult } from "../base/types";
-import { IsContract } from "../base/utils";
+import { PERCENTAGE_FACTOR, UNIVERSAL_CONTRACT } from "../../base/constants";
+import { calculateLiquidationCoverage } from "../../base/premium-coverage";
+import { TxBuilder } from "../../base/TxBuilder";
+import { Address, UnderlyingToken, ValidationResult } from "../../base/types";
+import { IsContract } from "../../base/utils";
 
 export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   #provider: ethers.providers.Provider;
@@ -382,7 +382,6 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     if (tokenMask.eq(BigNumber.from("1")))
       validationResult.errors.push(`Token ${token} is underlyng`);
 
-    // todo warning if already forbidden
     const forbiddenTokenMask = await this.#creditManager!.forbiddenTokenMask();
     if (!forbiddenTokenMask.and(tokenMask).eq(0)) {
       validationResult.warnings.push(`Token ${token} is already forbidden`);
@@ -625,7 +624,6 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       validationResult.errors.push(
         "minBorrowedAmount is bigger than maxBorrowedAmount",
       );
-      return validationResult;
     }
 
     const [blockLimit] = await this.#creditFacade!.params();
@@ -634,7 +632,6 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       validationResult.errors.push(
         `maxBorrowedAmount ${maxBorrowedAmount.toString()} is bigger than blockLimit ${blockLimit.toString()}`,
       );
-      return validationResult;
     }
 
     const maxEnabledTokens =

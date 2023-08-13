@@ -12,8 +12,8 @@ import {
 } from "@gearbox-protocol/sdk";
 import { ethers } from "ethers";
 
-import { TxBuilder } from "../base/TxBuilder";
-import { ValidationResult } from "../base/types";
+import { TxBuilder } from "../../base/TxBuilder";
+import { ValidationResult } from "../../base/types";
 
 export class PriceOracleV2TxBuilder extends TxBuilder {
   #provider: ethers.providers.Provider;
@@ -43,6 +43,7 @@ export class PriceOracleV2TxBuilder extends TxBuilder {
     );
 
     const priceOracleAddress = await addressProvider.getPriceOracle();
+
     this.#priceOracle = await IPriceOracleV2Ext__factory.connect(
       priceOracleAddress,
       this.#provider,
@@ -51,9 +52,13 @@ export class PriceOracleV2TxBuilder extends TxBuilder {
     this.#isInit = true;
   }
 
+  // https://www.google.com/url?q=https://github.com/Gearbox-protocol/risk-framework/blob/main/src/data/actions/sc-add-price-feed.ts&sa=D&source=editors&ust=1691738002067810&usg=AOvVaw2fg8wQnqVDmcWcS_URJtpg
   async addPriceFeed(token: SupportedToken, priceFeed: string, force = false) {
-    this.logger.info(`Adding price feed ${priceFeed} for token ${token}`);
     await this.#initialize();
+
+    this.logger.info(
+      `PriceOracle: addPriceFeed ${priceFeed} for token ${token}`,
+    );
 
     const validationResult = await this.addPriceFeedValidate(token, priceFeed);
 
@@ -71,9 +76,12 @@ export class PriceOracleV2TxBuilder extends TxBuilder {
     });
   }
 
-  async addPriceFeedValidate(_token: SupportedToken, priceFeed: string) {
-    this.logger.info(`Validating price feed ${priceFeed} for token ${_token}`);
+  async addPriceFeedValidate(token: SupportedToken, priceFeed: string) {
     await this.#initialize();
+
+    this.logger.info(
+      `PriceOracle: validate addPriceFeed ${priceFeed} for token ${token}`,
+    );
     const validationResult: ValidationResult = {
       errors: [],
       warnings: [],
