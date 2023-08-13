@@ -16,5 +16,5 @@
     "outDir": "./lib/"
   },
   "include": ["src", "scripts"],
-  "exclude": ["node_modules", "lib"]
+  "exclude": ["node_modules", "lib", "src/dev"]
 }
