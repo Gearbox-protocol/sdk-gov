@@ -1,9 +1,4 @@
 import {
-  CreditAccount__factory,
-  CreditManager__factory,
-  ERC20__factory,
-} from "@gearbox-protocol/core-v2/types";
-import {
   IBalancerV2VaultAdapter,
   IBalancerV2VaultAdapter__factory,
 } from "@gearbox-protocol/integrations-v3/types";
@@ -11,7 +6,6 @@ import {
   detectNetwork,
   NetworkType,
   supportedChains,
-  SupportedToken,
 } from "@gearbox-protocol/sdk";
 import { ethers } from "ethers";
 
@@ -44,14 +38,19 @@ export class BalancerV2VaultAdapterTxBuilder extends TxBuilder {
       throw new Error("Provider's network is not supported");
     this.#network = network;
 
-    // check if address is BalancerV2VaultAdapter, it has  _gearboxAdapterVersion = 1
+    // check if address is BalancerV2VaultAdapter, it has  _gearboxAdapterVersion = 1 and _gearboxAdapterType = 16
     try {
       const version =
         await this.#balancerV2VaultAdapter._gearboxAdapterVersion();
       if (version !== 1)
         throw new Error("This contract has gearboxAdapterVersion, but not 1");
+
+      const adapterType =
+        await this.#balancerV2VaultAdapter._gearboxAdapterType();
+      if (adapterType !== 16)
+        throw new Error("This contract has gearboxAdapterType, but not 16");
     } catch {
-      throw new Error("This address is not AccountFactory contract, no head()");
+      throw new Error("This address is not BalancerV2VaultAdapter contract");
     }
 
     this.#isInit = true;
