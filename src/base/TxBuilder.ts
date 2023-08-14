@@ -2,7 +2,7 @@ import { BigNumber, Contract } from "ethers";
 import { String } from "ts-toolbelt";
 
 import { Logged } from "./Logger";
-import { ProposedTransaction, ValidationResult } from "./types";
+import { ProposedTransaction, TxValidationResult } from "./types";
 
 export class TxBuilder extends Logged {
   constructor() {
@@ -18,7 +18,7 @@ export class TxBuilder extends Logged {
     contract: T;
     method: U;
     args: V;
-    validationResult: ValidationResult;
+    validationResult: TxValidationResult;
   }): ProposedTransaction {
     const { contract, method, args, validationResult } = callArgs;
 

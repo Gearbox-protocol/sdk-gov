@@ -14,7 +14,7 @@ import { BigNumber, ethers } from "ethers";
 
 import { MAX_WITHDRAW_FEE } from "../../base/constants";
 import { TxBuilder } from "../../base/TxBuilder";
-import { Address, ValidationResult } from "../../base/types";
+import { Address, TxValidationResult } from "../../base/types";
 import { IsContract } from "../../base/utils";
 
 export class PoolServiceV2TxBuilder extends TxBuilder {
@@ -87,7 +87,7 @@ export class PoolServiceV2TxBuilder extends TxBuilder {
       }: validating connectCreditManager ${creditManager}`,
     );
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -157,7 +157,7 @@ export class PoolServiceV2TxBuilder extends TxBuilder {
       }: validating setExpectedLiquidityLimit ${newLimit}`,
     );
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -204,7 +204,7 @@ export class PoolServiceV2TxBuilder extends TxBuilder {
       }: validating setWithdrawFee ${fee}`,
     );
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -253,7 +253,7 @@ export class PoolServiceV2TxBuilder extends TxBuilder {
       }: validating updateInterestRateModel ${interestRateModel}`,
     );
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };

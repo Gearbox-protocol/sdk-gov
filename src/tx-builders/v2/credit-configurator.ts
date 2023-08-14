@@ -31,7 +31,7 @@ import { BigNumber, ethers } from "ethers";
 import { PERCENTAGE_FACTOR, UNIVERSAL_CONTRACT } from "../../base/constants";
 import { calculateLiquidationCoverage } from "../../base/premium-coverage";
 import { TxBuilder } from "../../base/TxBuilder";
-import { Address, UnderlyingToken, ValidationResult } from "../../base/types";
+import { Address, TxValidationResult, UnderlyingToken } from "../../base/types";
 import { IsContract } from "../../base/utils";
 
 export class CreditConfiguratorV2TxBuilder extends TxBuilder {
@@ -152,7 +152,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       `CC: ${this.#underlying!.token}: Validating addCollateralToken ${token} `,
     );
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -234,7 +234,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       }: Validating liquidation threshold to ${liquidationThreshold} for token ${token}`,
     );
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -316,7 +316,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       }: Validating token ${token} for allowTokenValidate`,
     );
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -368,7 +368,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       }: Validating token ${token} for forbidTokenValidate`,
     );
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -427,7 +427,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
     const adapterAddress = contractsByNetwork[this.#network!][adapter];
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -510,7 +510,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   async forbidContractValidate(targetContract: string) {
     await this.#initialize();
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -550,7 +550,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   async forbidAdapterValidate(adapter: SupportedContract) {
     await this.#initialize();
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -615,7 +615,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       }: Validating setLimits to minBorrowedAmount: ${minBorrowedAmount.toString()}, maxBorrowedAmount: ${maxBorrowedAmount.toString()}`,
     );
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -729,7 +729,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       }: Validating fees to feeInterest: ${feeInterest} feeLiquidation: ${feeLiquidation} liquidationPremium: ${liquidationPremium} feeLiquidationExpired: ${feeLiquidationExpired} liquidationPremiumExpired: ${liquidationPremiumExpired}`,
     );
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -816,7 +816,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
   async upgradePriceOracleValidate() {
     await this.#initialize();
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -864,7 +864,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     _migrateParams: boolean,
   ) {
     await this.#initialize();
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -919,7 +919,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
   async upgradeCreditConfiguratorValidate(creditConfigurator: string) {
     await this.#initialize();
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -968,7 +968,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
   async setIncreaseDebtForbiddenValidate(mode: boolean) {
     await this.#initialize();
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -1017,7 +1017,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   async setLimitPerBlockValidate(newLimit: BigNumber) {
     await this.#initialize();
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -1069,7 +1069,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   async setExpirationDateValidate(newExpirationDate: number) {
     await this.#initialize();
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -1130,7 +1130,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
         this.#underlying!.token
       }: Validating setMaxEnabledTokens to ${maxEnabledTokens}`,
     );
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -1209,7 +1209,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   async addEmergencyLiquidatorValidate(liquidator: string) {
     await this.#initialize();
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -1255,7 +1255,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   async removeEmergencyLiquidatorValidate(liquidator: string) {
     await this.#initialize();
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -1301,7 +1301,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   async setMaxCumulativeLossValidate(cumulativeLoss: BigNumber) {
     await this.#initialize();
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -1338,7 +1338,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   async resetCumulativeLossValidate() {
     await this.#initialize();
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -1376,7 +1376,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   async setEmergencyLiquidationDiscountValidate(newPremium: number) {
     await this.#initialize();
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -1423,7 +1423,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   async setTotalDebtLimitValidate(newLimit: BigNumber) {
     await this.#initialize();
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -1474,7 +1474,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   ) {
     await this.#initialize();
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };

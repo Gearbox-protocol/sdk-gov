@@ -10,7 +10,7 @@ import {
 import { BigNumber, ethers } from "ethers";
 
 import { TxBuilder } from "../../base/TxBuilder";
-import { Address, ValidationResult } from "../../base/types";
+import { Address, TxValidationResult } from "../../base/types";
 
 export class LpPriceFeedV2TxBuilder extends TxBuilder {
   #provider: ethers.providers.Provider;
@@ -78,7 +78,7 @@ export class LpPriceFeedV2TxBuilder extends TxBuilder {
       }: validating setLimiter ${lowerBound} `,
     );
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };

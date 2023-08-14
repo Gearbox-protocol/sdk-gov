@@ -17,7 +17,7 @@ import {
 import { ethers } from "ethers";
 
 import { TxBuilder } from "../../base/TxBuilder";
-import { Address, ValidationResult } from "../../base/types";
+import { Address, TxValidationResult } from "../../base/types";
 import { IsContract } from "../../base/utils";
 
 export class DegenNFTV2TxBuilder extends TxBuilder {
@@ -93,7 +93,7 @@ export class DegenNFTV2TxBuilder extends TxBuilder {
     await this.#initialize();
     this.logger.info(`DegenNFT: Validating addCreditFacade ${creditFacade}`);
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -196,7 +196,7 @@ export class DegenNFTV2TxBuilder extends TxBuilder {
     await this.#initialize();
     this.logger.info(`DegenNFT: Validating removeCreditFacade ${creditFacade}`);
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -237,7 +237,7 @@ export class DegenNFTV2TxBuilder extends TxBuilder {
     await this.#initialize();
     this.logger.info(`DegenNFT: Validating setBaseUri ${baseURI}`);
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -271,7 +271,7 @@ export class DegenNFTV2TxBuilder extends TxBuilder {
     await this.#initialize();
     this.logger.info(`DegenNFT: Validating setMinter ${minter}`);
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };

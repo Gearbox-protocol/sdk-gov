@@ -10,7 +10,7 @@ import {
 import { ethers } from "ethers";
 
 import { TxBuilder } from "../../base/TxBuilder";
-import { Address, ValidationResult } from "../../base/types";
+import { Address, TxValidationResult } from "../../base/types";
 
 export class CreditManagerV2TxBuilder extends TxBuilder {
   #provider: ethers.providers.Provider;
@@ -73,7 +73,7 @@ export class CreditManagerV2TxBuilder extends TxBuilder {
   async pauseValidate() {
     await this.#initialize();
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };

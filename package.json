@@ -10,7 +10,8 @@
   ],
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "tsc --p tsconfig.build.json",
+    "barrels": "barrelsby --config .barrelsby.json && yarn lint --fix ",
+    "build": "yarn run barrels && tsc --p tsconfig.build.json",
     "test": "npx mocha -r ts-node/register -r dotenv/config src/**/*.spec.ts",
     "prepare": "husky install",
     "prettier": "prettier --write .",
@@ -29,7 +30,9 @@
     "url": "https://github.com/Gearbox-protocol/sdk-gov/issues"
   },
   "homepage": "https://github.com/Gearbox-protocol/sdk-gov#readme",
-  "dependencies": {},
+  "dependencies": {
+    "barrelsby": "^2.8.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",

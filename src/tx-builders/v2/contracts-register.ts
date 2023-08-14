@@ -11,7 +11,7 @@ import {
 import { ethers } from "ethers";
 
 import { TxBuilder } from "../../base/TxBuilder";
-import { Address, ValidationResult } from "../../base/types";
+import { Address, TxValidationResult } from "../../base/types";
 import { IsContract } from "../../base/utils";
 
 export class ContractsRegisterV2TxBuilder extends TxBuilder {
@@ -82,7 +82,7 @@ export class ContractsRegisterV2TxBuilder extends TxBuilder {
       `ContractsRegister: Validating addCreditManager ${newCreditManager}`,
     );
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -137,7 +137,7 @@ export class ContractsRegisterV2TxBuilder extends TxBuilder {
     await this.#initialize();
     this.logger.info(`ContractsRegister: Validating addPool ${newPoolAddress}`);
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };

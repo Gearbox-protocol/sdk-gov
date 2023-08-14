@@ -14,7 +14,7 @@ import {
 import { ethers } from "ethers";
 
 import { TxBuilder } from "../../base/TxBuilder";
-import { Address, ValidationResult } from "../../base/types";
+import { Address, TxValidationResult } from "../../base/types";
 
 export class AcountFactoryV2TxBuilder extends TxBuilder {
   #provider: ethers.providers.Provider;
@@ -93,7 +93,7 @@ export class AcountFactoryV2TxBuilder extends TxBuilder {
     this.logger.info(
       `Acount ${account}: validating cancelAllowance of token ${token} for contract ${targetContract}`,
     );
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -162,7 +162,7 @@ export class AcountFactoryV2TxBuilder extends TxBuilder {
     this.logger.info(
       `AcountFactory: validating takeOut creditAccount ${creditAccount} with prev ${prev} and to ${to}`,
     );
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };

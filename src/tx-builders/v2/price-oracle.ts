@@ -13,7 +13,7 @@ import {
 import { ethers } from "ethers";
 
 import { TxBuilder } from "../../base/TxBuilder";
-import { ValidationResult } from "../../base/types";
+import { TxValidationResult } from "../../base/types";
 
 export class PriceOracleV2TxBuilder extends TxBuilder {
   #provider: ethers.providers.Provider;
@@ -82,7 +82,7 @@ export class PriceOracleV2TxBuilder extends TxBuilder {
     this.logger.info(
       `PriceOracle: validate addPriceFeed ${priceFeed} for token ${token}`,
     );
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };

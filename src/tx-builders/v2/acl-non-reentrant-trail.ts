@@ -6,7 +6,7 @@ import {
 import { Contract, ethers } from "ethers";
 
 import { TxBuilder } from "../../base/TxBuilder";
-import { Address, ValidationResult } from "../../base/types";
+import { Address, TxValidationResult } from "../../base/types";
 
 const aclNonReentrantTraitABI = [
   "function setController(address newController) external",
@@ -85,7 +85,7 @@ export class ACLNonReentrantTraitV2TxBuilder extends TxBuilder {
       }: validating setController ${newController}`,
     );
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };

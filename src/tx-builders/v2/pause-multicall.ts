@@ -10,7 +10,7 @@ import {
 import { ethers } from "ethers";
 
 import { TxBuilder } from "../../base/TxBuilder";
-import { Address, ValidationResult } from "../../base/types";
+import { Address, TxValidationResult } from "../../base/types";
 
 export class PauseMulticallV2TxBuilder extends TxBuilder {
   #provider: ethers.providers.Provider;
@@ -71,7 +71,7 @@ export class PauseMulticallV2TxBuilder extends TxBuilder {
   async pauseAllCreditManagersValidate() {
     await this.#initialize();
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
@@ -104,7 +104,7 @@ export class PauseMulticallV2TxBuilder extends TxBuilder {
   async pauseAllContractsValidate() {
     await this.#initialize();
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };

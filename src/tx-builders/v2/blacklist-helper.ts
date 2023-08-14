@@ -12,7 +12,7 @@ import {
 import { ethers } from "ethers";
 
 import { TxBuilder } from "../../base/TxBuilder";
-import { Address, ValidationResult } from "../../base/types";
+import { Address, TxValidationResult } from "../../base/types";
 import { IsContract } from "../../base/utils";
 
 export class BlacklistHelperV2TxBuilder extends TxBuilder {
@@ -86,7 +86,7 @@ export class BlacklistHelperV2TxBuilder extends TxBuilder {
       `BlacklistHelper: Validating addCreditFacade ${creditFacade}`,
     );
 
-    const validationResult: ValidationResult = {
+    const validationResult: TxValidationResult = {
       errors: [],
       warnings: [],
     };
