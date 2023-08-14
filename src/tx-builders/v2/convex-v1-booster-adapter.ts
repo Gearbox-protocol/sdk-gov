@@ -1,30 +1,30 @@
 import {
-  ILidoV1Adapter,
-  ILidoV1Adapter__factory,
+  IConvexV1BoosterAdapter,
+  IConvexV1BoosterAdapter__factory,
 } from "@gearbox-protocol/integrations-v3/types";
 import {
   detectNetwork,
   NetworkType,
   supportedChains,
 } from "@gearbox-protocol/sdk";
-import { BigNumber, ethers } from "ethers";
+import { ethers } from "ethers";
 
 import { TxBuilder } from "../../base/TxBuilder";
 import { Address, TxValidationResult } from "../../base/types";
 
-export class LidoV1AdapterTxBuilder extends TxBuilder {
+export class ConvexV1BoosterAdapterTxBuilder extends TxBuilder {
   #provider: ethers.providers.Provider;
   // eslint-disable-next-line no-unused-private-class-members
   #network: NetworkType | undefined;
   #isInit = false;
 
-  #lidoV1Adapter: ILidoV1Adapter;
+  #convexV1BoosterAdapter: IConvexV1BoosterAdapter;
 
   constructor(args: { address: Address; provider: ethers.providers.Provider }) {
     const { provider, address } = args;
     super();
     this.#provider = provider;
-    this.#lidoV1Adapter = ILidoV1Adapter__factory.connect(
+    this.#convexV1BoosterAdapter = IConvexV1BoosterAdapter__factory.connect(
       address,
       this.#provider,
     );
@@ -38,45 +38,49 @@ export class LidoV1AdapterTxBuilder extends TxBuilder {
       throw new Error("Provider's network is not supported");
     this.#network = network;
 
-    // check if address is LidoV1Adapter,  _gearboxAdapterType = 13 and _gearboxAdapterVersion = 2
+    // check if address is ConvexV1BoosterAdapter, _gearboxAdapterType = 11 and _gearboxAdapterVersion = 2
     try {
-      const version = await this.#lidoV1Adapter._gearboxAdapterVersion();
+      const version =
+        await this.#convexV1BoosterAdapter._gearboxAdapterVersion();
       if (version !== 2)
         throw new Error("This contract has gearboxAdapterVersion, but not 2");
-      const adapterType = await this.#lidoV1Adapter._gearboxAdapterType();
-      if (adapterType !== 13)
+      const adapterType =
+        await this.#convexV1BoosterAdapter._gearboxAdapterType();
+      if (adapterType !== 11)
         throw new Error("This contract has gearboxAdapterType, but not 13");
     } catch {
-      throw new Error("This address is not LidoV1Adapter");
+      throw new Error("This address is not ConvexV1BoosterAdapter");
     }
 
     this.#isInit = true;
   }
 
-  // https://github.com/Gearbox-protocol/risk-framework/blob/main/src/data/actions/sc-set-lido-deposit-limit.ts
-  async setLimit(limit: BigNumber, force = false) {
+  // https://github.com/Gearbox-protocol/risk-framework/blob/main/src/data/actions/sc-update-convex-staked-token-map.ts
+  async updateStakedPhantomTokensMap(force = false) {
     await this.#initialize();
 
-    this.logger.info(`LidoV1Adapter: setLimit to ${limit.toString()}`);
+    this.logger.info(`ConvexV1BoosterAdapter: updateStakedPhantomTokensMap()`);
 
-    const validationResult = await this.setLimitValidate(limit);
+    const validationResult = await this.updateStakedPhantomTokensMapValidate();
 
     if (validationResult.errors.length && !force) throw validationResult;
     if (validationResult.warnings.length)
       this.logger.warn(validationResult.warnings);
 
     return this.createTx({
-      contract: this.#lidoV1Adapter!,
-      method: "setLimit(uint256)",
-      args: [limit],
+      contract: this.#convexV1BoosterAdapter!,
+      method: "updateStakedPhantomTokensMap()",
+      args: [],
       validationResult: validationResult,
     });
   }
 
-  async setLimitValidate(limit: BigNumber) {
+  async updateStakedPhantomTokensMapValidate() {
     await this.#initialize();
 
-    this.logger.info(`LidoV1Adapter: validate setLimit to ${limit.toString()}`);
+    this.logger.info(
+      `ConvexV1BoosterAdapter: validate updateStakedPhantomTokensMap()`,
+    );
 
     const validationResult: TxValidationResult = {
       errors: [],

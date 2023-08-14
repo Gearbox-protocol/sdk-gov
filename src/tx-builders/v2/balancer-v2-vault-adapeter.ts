@@ -56,7 +56,7 @@ export class BalancerV2VaultAdapterTxBuilder extends TxBuilder {
     this.#isInit = true;
   }
 
-  // https://github.com/Gearbox-protocol/risk-framework/blob/main/src/data/actions/sc-cancel-account-allowance.ts
+  // https://github.com/Gearbox-protocol/risk-framework/blob/main/src/data/actions/sc-set-balancer-pool-status.ts
   async setPoolIDStatus(
     poolId: string,
     status: number, // enum PoolStatus { NOT_ALLOWED, ALLOWED, SWAP_ONLY }
