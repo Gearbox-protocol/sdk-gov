@@ -580,7 +580,7 @@
     "@ethersproject/properties" "^5.7.0"
     "@ethersproject/strings" "^5.7.0"
 
-"@gearbox-protocol/core-v2@^1.19.0":
+"@gearbox-protocol/core-v2@^1.16.2", "@gearbox-protocol/core-v2@^1.19.0":
   version "1.20.1"
   resolved "https://registry.yarnpkg.com/@gearbox-protocol/core-v2/-/core-v2-1.20.1.tgz#e2764e0b302e8a588ae046701b68d92bf60c5921"
   integrity sha512-Wk4vBKZr/Gx5EMAnX4whf+kQkekZmDI+uuMwwm8/NbFka7rtbqsPLWYkYeAQf//8Jf3PrxvXh0FG9PwDptsxPw==
@@ -602,10 +602,30 @@
     eslint-plugin-simple-import-sort "^7.0.0"
     eslint-plugin-unused-imports "^2.0.0"
 
+"@gearbox-protocol/integrations-v3@1.7.0-legacy.6":
+  version "1.7.0-legacy.6"
+  resolved "https://registry.yarnpkg.com/@gearbox-protocol/integrations-v3/-/integrations-v3-1.7.0-legacy.6.tgz#a8d21863c5c5d543d784b5f1f46514b87f45c37d"
+  integrity sha512-Ba6qUAeuMVoC8GTweNxCI0qJNwP/jh0mCbTuqGos/n11OL0SC+PBuvY8OWjylos9TfMX2p72wXTPbd/JEv0YRg==
+  dependencies:
+    "@gearbox-protocol/core-v2" "^1.16.2"
+    "@gearbox-protocol/sdk" "1.22.1"
+    axios "^1.1.3"
+
 "@gearbox-protocol/prettier-config@^1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@gearbox-protocol/prettier-config/-/prettier-config-1.5.0.tgz#4df8e9fd2305fee6ab8c1417a02e31343836932a"
   integrity sha512-FUoprSsBdZyBjgxXCKL6mTkbeUJytaLzPJqIOoQpDmBRTX0seCc2o5I9PI9tySoRIlNnd/XXnKCXq1xHDEGbxw==
+
+"@gearbox-protocol/sdk@1.22.1":
+  version "1.22.1"
+  resolved "https://registry.yarnpkg.com/@gearbox-protocol/sdk/-/sdk-1.22.1.tgz#ef92774be0f3dac70f4a7b75ed69d9b6afbd4aa9"
+  integrity sha512-3jk/4KuyJFjJvRcX6bdI7gj03yb27e9RYvF7z6YXUCKcqyA5l+BL6Wy2TOSU/KS/X82AgCtPov7S+QkXdf35IA==
+  dependencies:
+    "@types/deep-eql" "^4.0.0"
+    axios "^1.2.0"
+    decimal.js-light "^2.5.1"
+    deep-eql "^4.1.0"
+    moment "^2.29.4"
 
 "@gearbox-protocol/sdk@^2.1.17":
   version "2.1.17"
@@ -1121,7 +1141,7 @@ available-typed-arrays@^1.0.5:
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
   integrity sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==
 
-axios@^1.2.6:
+axios@^1.1.3, axios@^1.2.0, axios@^1.2.6:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/axios/-/axios-1.4.0.tgz#38a7bf1224cd308de271146038b551d725f0be1f"
   integrity sha512-S4XCWMEmzvo64T9GfvQDOXgYRDJ/wsSZc7Jvdgx5u1sd0JwsuPLqb3SYmusag+edF6ziyMensPVqLTSc1PiSEA==
