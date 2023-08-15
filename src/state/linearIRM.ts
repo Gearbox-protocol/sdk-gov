@@ -1,5 +1,6 @@
-import { NOT_DEPLOYED } from "@gearbox-protocol/sdk";
+import { NOT_DEPLOYED, PERCENTAGE_FACTOR } from "@gearbox-protocol/sdk";
 
+import { bnToContractPercentage } from "../base/convert";
 import { IConfigurator, Message, ValidationResult } from "./iConfigurator";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 
@@ -46,14 +47,20 @@ export class LinearIRM implements IConfigurator {
     const warnings: Array<Message> = [];
     const errors: Array<Message> = [];
 
-    if (this.address === NOT_DEPLOYED) {
-      if (this.params.U1 < 0) {
-        errors.push({
-          component: "Linear IRM",
-          address: this.address,
-          message: "U1 < 0",
-        });
-      }
+    if (this.params.U1 < 0 || this.params.U1 >= PERCENTAGE_FACTOR) {
+      errors.push({
+        component: "Linear IRM",
+        address: this.address,
+        message: "U1 < 0 || U1 > 100_00",
+      });
+    }
+
+    if (this.params.U2 < 0 || this.params.U2 >= PERCENTAGE_FACTOR) {
+      errors.push({
+        component: "Linear IRM",
+        address: this.address,
+        message: "U2 < 0 || U2 > 100_00",
+      });
     }
 
     return { warnings, errors };
@@ -61,15 +68,14 @@ export class LinearIRM implements IConfigurator {
 
   deployConfig(): string {
     return `LinearIRMV3DeployParams _irm = LinearIRMV3DeployParams({
-  U_1: ${this.params.U1},
-  U_2: ${this.params.U2},
-  R_base: ${this.params.Rbase},
-  R_slope1: ${this.params.Rslope1},
-  R_slope2: ${this.params.Rslope2},
-  R_slope3: ${this.params.Rslope3},
+  U_1: ${bnToContractPercentage(this.params.U1)},
+  U_2: ${bnToContractPercentage(this.params.U2)},
+  R_base: ${bnToContractPercentage(this.params.Rbase)},
+  R_slope1: ${bnToContractPercentage(this.params.Rslope1)},
+  R_slope2: ${bnToContractPercentage(this.params.Rslope2)},
+  R_slope3: ${bnToContractPercentage(this.params.Rslope3)},
   isBorrowingMoreU2Forbidden: ${this.params.isBorrowingMoreU2Forbidden},
   });
-     
     `;
   }
 }

@@ -5,6 +5,7 @@ import {
   SupportedToken,
 } from "@gearbox-protocol/sdk";
 
+import { bnToContractPercentage, bnToContractString } from "../base/convert";
 import { IConfigurator, ValidationResult } from "./iConfigurator";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 import { UpdatedValue } from "./updatedValue";
@@ -105,7 +106,9 @@ ${adapters};`;
           this.state.collateralTokens
             .map(
               ct => `
-    cts.push(CollateralTokenHuman({token: Tokens.${ct.token}, lt: ${ct.lt.value}}));`,
+    cts.push(CollateralTokenHuman({token: Tokens.${
+      ct.token
+    }, lt: ${bnToContractPercentage(ct.lt.value)}}));`,
             )
             .join("\n");
 
@@ -121,12 +124,12 @@ ${adapters};`;
 /// CREDIT_MANAGER_${this.index}
 CreditManagerV3DeployParams storage cp = _creditManagers.push();
 
-cp.minDebt = ${this.state.minDebt.value.toString()};
-cp.maxDebt = ${this.state.maxDebt.value.toString()};
+cp.minDebt = ${bnToContractString(this.state.minDebt.value)};
+cp.maxDebt = ${bnToContractString(this.state.maxDebt.value)};
 cp.whitelisted = ${this.state.degenNft.value};
 cp.expirable = ${this.state.expirable.value};
 cp.skipInit = false;
-cp.poolLimit = ${this.state.poolLimit.value};
+cp.poolLimit = ${bnToContractString(this.state.poolLimit.value)};
 
 ${collateralTokens}
 ${contracts}
