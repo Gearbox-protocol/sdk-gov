@@ -31,11 +31,7 @@
   },
   "homepage": "https://github.com/Gearbox-protocol/sdk-gov#readme",
   "dependencies": {
-    "barrelsby": "^2.8.0"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^17.6.7",
-    "@commitlint/config-conventional": "^17.6.7",
+    "barrelsby": "^2.8.0",
     "@gearbox-protocol/core-v2": "^1.20.2",
     "@gearbox-protocol/eslint-config": "^1.6.1",
     "@gearbox-protocol/integrations-v3": "1.7.0-legacy.6",
@@ -43,18 +39,22 @@
     "@gearbox-protocol/sdk": "^2.1.17",
     "axios": "^1.4.0",
     "dotenv": "^16.3.1",
+    "tslog": "^4.8.2",
+    "web3": "^4.0.3",
+    "ethers": "v5"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
     "eslint": "^8.46.0",
-    "ethers": "v5",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "mocha": "^10.2.0",
     "prettier": "^3.0.0",
     "ts-node": "^10.9.1",
     "ts-toolbelt": "^9.6.0",
-    "tslog": "^4.8.2",
     "typechain": "^8.3.1",
-    "typescript": "^5.1.6",
-    "web3": "^4.0.3"
+    "typescript": "^5.1.6"
   },
   "prettier": "@gearbox-protocol/prettier-config",
   "lint-staged": {
