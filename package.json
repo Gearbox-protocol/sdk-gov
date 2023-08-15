@@ -10,14 +10,14 @@
   ],
   "scripts": {
     "clean": "rm -rf lib",
-    "barrels": "barrelsby --config .barrelsby.json && yarn lint --fix ",
+    "barrels": "barrelsby --config .barrelsby.json && yarn lint",
     "build": "yarn run barrels && tsc --p tsconfig.build.json",
     "test": "npx mocha -r ts-node/register -r dotenv/config src/**/*.spec.ts",
     "prepare": "husky install",
     "prettier": "prettier --write .",
     "prettier:ci": "npx prettier --check .",
     "lint": "eslint \"**/*.ts\" --fix",
-    "lint:ci": "eslint \"**/*.ts\"",
+    "lint:ci": "eslint \"**/*.ts\" --fix",
     "typecheck:ci": "tsc --noEmit"
   },
   "repository": {
