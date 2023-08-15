@@ -12,8 +12,9 @@ import {
 } from "@gearbox-protocol/sdk";
 import { ethers } from "ethers";
 
+import { isContractIdentical } from "../../base/is-contract-identical";
 import { TxBuilder } from "../../base/TxBuilder";
-import { TxValidationResult } from "../../base/types";
+import { Address, TxValidationResult } from "../../base/types";
 
 export class PriceOracleV2TxBuilder extends TxBuilder {
   #provider: ethers.providers.Provider;
@@ -53,7 +54,7 @@ export class PriceOracleV2TxBuilder extends TxBuilder {
   }
 
   // https://www.google.com/url?q=https://github.com/Gearbox-protocol/risk-framework/blob/main/src/data/actions/sc-add-price-feed.ts&sa=D&source=editors&ust=1691738002067810&usg=AOvVaw2fg8wQnqVDmcWcS_URJtpg
-  async addPriceFeed(token: SupportedToken, priceFeed: string, force = false) {
+  async addPriceFeed(token: SupportedToken, priceFeed: Address, force = false) {
     await this.#initialize();
 
     this.logger.info(
@@ -86,6 +87,13 @@ export class PriceOracleV2TxBuilder extends TxBuilder {
       errors: [],
       warnings: [],
     };
+
+    const identityCheckResult = await isContractIdentical(priceFeed);
+    if (!identityCheckResult.identical) {
+      validationResult.errors.push(
+        `Address ${priceFeed} is not identical to github repo, error: ${identityCheckResult.error}`,
+      );
+    }
 
     // check if priceFeed is address of priceFeed contract
     const priceFeedContract = AggregatorV3Interface__factory.connect(

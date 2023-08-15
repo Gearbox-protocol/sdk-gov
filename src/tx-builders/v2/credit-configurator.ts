@@ -29,6 +29,7 @@ import {
 import { BigNumber, ethers } from "ethers";
 
 import { PERCENTAGE_FACTOR, UNIVERSAL_CONTRACT } from "../../base/constants";
+import { isContractIdentical } from "../../base/is-contract-identical";
 import { calculateLiquidationCoverage } from "../../base/premium-coverage";
 import { TxBuilder } from "../../base/TxBuilder";
 import { Address, TxValidationResult, UnderlyingToken } from "../../base/types";
@@ -831,6 +832,13 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       );
     }
 
+    const identityCheckResult = await isContractIdentical(priceOracle);
+    if (!identityCheckResult.identical) {
+      validationResult.errors.push(
+        `Address ${priceOracle} is not identical to github repo, error: ${identityCheckResult.error}`,
+      );
+    }
+
     return validationResult;
   }
 
@@ -886,6 +894,13 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       validationResult.errors.push(`Address ${creditFacade} is not a contract`);
     }
 
+    const identityCheckResult = await isContractIdentical(creditFacade);
+    if (!identityCheckResult.identical) {
+      validationResult.errors.push(
+        `Address ${creditFacade} is not identical to github repo, error: ${identityCheckResult.error}`,
+      );
+    }
+
     const isContractCompatible = await this.#isContractCompatible(creditFacade);
 
     if (!isContractCompatible) {
@@ -933,6 +948,13 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     if (creditConfigurator === this.#creditConfigurator!.address) {
       validationResult.warnings.push(
         `Address ${creditConfigurator} is actual credit configurator`,
+      );
+    }
+
+    const identityCheckResult = await isContractIdentical(creditConfigurator);
+    if (!identityCheckResult.identical) {
+      validationResult.errors.push(
+        `Address ${creditConfigurator} is not identical to github repo, error: ${identityCheckResult.error}`,
       );
     }
 

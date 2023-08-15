@@ -16,6 +16,7 @@ import {
 } from "@gearbox-protocol/sdk";
 import { ethers } from "ethers";
 
+import { isContractIdentical } from "../../base/is-contract-identical";
 import { TxBuilder } from "../../base/TxBuilder";
 import { Address, TxValidationResult } from "../../base/types";
 import { IsContract } from "../../base/utils";
@@ -101,6 +102,13 @@ export class DegenNFTV2TxBuilder extends TxBuilder {
     const isContract = await IsContract(creditFacade, this.#provider);
     if (!isContract) {
       validationResult.errors.push(`Address ${creditFacade} is not a contract`);
+    }
+
+    const identityCheckResult = await isContractIdentical(creditFacade);
+    if (!identityCheckResult.identical) {
+      validationResult.errors.push(
+        `Address ${creditFacade} is not identical to github repo, error: ${identityCheckResult.error}`,
+      );
     }
 
     const creditFacadeContract = CreditFacade__factory.connect(

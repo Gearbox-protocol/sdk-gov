@@ -13,6 +13,7 @@ import {
 import { BigNumber, ethers } from "ethers";
 
 import { MAX_WITHDRAW_FEE } from "../../base/constants";
+import { isContractIdentical } from "../../base/is-contract-identical";
 import { TxBuilder } from "../../base/TxBuilder";
 import { Address, TxValidationResult } from "../../base/types";
 import { IsContract } from "../../base/utils";
@@ -94,6 +95,13 @@ export class PoolServiceV2TxBuilder extends TxBuilder {
 
     // check if address is creditManager compatible, it has poolService() = this pool address
     try {
+      const identityCheckResult = await isContractIdentical(creditManager);
+      if (!identityCheckResult.identical) {
+        validationResult.errors.push(
+          `Address ${creditManager} is not identical to github repo, error: ${identityCheckResult.error}`,
+        );
+      }
+
       const creditManagerContract = CreditManager__factory.connect(
         creditManager,
         this.#provider,

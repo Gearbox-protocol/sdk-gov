@@ -10,6 +10,7 @@ import {
 } from "@gearbox-protocol/sdk";
 import { ethers } from "ethers";
 
+import { isContractIdentical } from "../../base/is-contract-identical";
 import { TxBuilder } from "../../base/TxBuilder";
 import { Address, TxValidationResult } from "../../base/types";
 import { IsContract } from "../../base/utils";
@@ -94,6 +95,13 @@ export class ContractsRegisterV2TxBuilder extends TxBuilder {
       );
     }
 
+    const identityCheckResult = await isContractIdentical(newCreditManager);
+    if (!identityCheckResult.identical) {
+      validationResult.errors.push(
+        `Address ${newCreditManager} is not identical to github repo, error: ${identityCheckResult.error}`,
+      );
+    }
+
     if (newCreditManager === ADDRESS_0X0) {
       validationResult.errors.push(
         `Address ${newCreditManager} is zero address`,
@@ -156,6 +164,13 @@ export class ContractsRegisterV2TxBuilder extends TxBuilder {
     const isAlreadyAdded = await this.#contractsRegister.isPool(newPoolAddress);
     if (isAlreadyAdded) {
       validationResult.warnings.push(`Pool ${newPoolAddress} is already added`);
+    }
+
+    const identityCheckResult = await isContractIdentical(newPoolAddress);
+    if (!identityCheckResult.identical) {
+      validationResult.errors.push(
+        `Address ${newPoolAddress} is not identical to github repo, error: ${identityCheckResult.error}`,
+      );
     }
 
     return validationResult;
