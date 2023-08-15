@@ -3,18 +3,19 @@
     "target": "ESNext",
     "module": "commonjs",
     "lib": ["esnext"],
-    "declaration": true,
+    // "declaration": true,
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
     "noImplicitReturns": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "outDir": "./lib/"
+    "outDir": "./lib/",
+    "types": []
   },
-  "include": ["src", "scripts", "node_modules/**/*"],
+  "include": ["src"],
   "exclude": ["node_modules", "lib", "src/dev"]
 }
