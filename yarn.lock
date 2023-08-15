@@ -580,10 +580,17 @@
     "@ethersproject/properties" "^5.7.0"
     "@ethersproject/strings" "^5.7.0"
 
-"@gearbox-protocol/core-v2@^1.16.2", "@gearbox-protocol/core-v2@^1.19.0":
+"@gearbox-protocol/core-v2@^1.16.2":
   version "1.20.1"
   resolved "https://registry.yarnpkg.com/@gearbox-protocol/core-v2/-/core-v2-1.20.1.tgz#e2764e0b302e8a588ae046701b68d92bf60c5921"
   integrity sha512-Wk4vBKZr/Gx5EMAnX4whf+kQkekZmDI+uuMwwm8/NbFka7rtbqsPLWYkYeAQf//8Jf3PrxvXh0FG9PwDptsxPw==
+  dependencies:
+    "@typechain/ethers-v5" "^10.2.1"
+
+"@gearbox-protocol/core-v2@^1.20.2":
+  version "1.20.2"
+  resolved "https://registry.yarnpkg.com/@gearbox-protocol/core-v2/-/core-v2-1.20.2.tgz#3ae22d84e7e98cd60e152390c5e4cf8dee329dac"
+  integrity sha512-nbMCieO2psJs+FNDCTvGMiTpO04WOIIK5nad6p01pD+X/wVTbrC0JqT/4cf5IuYv5DDhnYUlaRLD9eOZB9rWGw==
   dependencies:
     "@typechain/ethers-v5" "^10.2.1"
 
