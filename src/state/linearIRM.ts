@@ -74,7 +74,7 @@ export class LinearIRM implements IConfigurator {
   R_slope1: ${bnToContractPercentage(this.params.Rslope1)},
   R_slope2: ${bnToContractPercentage(this.params.Rslope2)},
   R_slope3: ${bnToContractPercentage(this.params.Rslope3)},
-  isBorrowingMoreU2Forbidden: ${this.params.isBorrowingMoreU2Forbidden},
+  isBorrowingMoreU2Forbidden: ${this.params.isBorrowingMoreU2Forbidden}
   });
     `;
   }
