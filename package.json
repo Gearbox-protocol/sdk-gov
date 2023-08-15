@@ -10,13 +10,14 @@
   ],
   "scripts": {
     "clean": "rm -rf lib",
-    "build": "tsc --p tsconfig.build.json",
+    "barrels": "barrelsby --config .barrelsby.json && yarn lint",
+    "build": "yarn run barrels && tsc --p tsconfig.build.json",
     "test": "npx mocha -r ts-node/register -r dotenv/config src/**/*.spec.ts",
     "prepare": "husky install",
     "prettier": "prettier --write .",
     "prettier:ci": "npx prettier --check .",
     "lint": "eslint \"**/*.ts\" --fix",
-    "lint:ci": "eslint \"**/*.ts\"",
+    "lint:ci": "eslint \"**/*.ts\" --fix",
     "typecheck:ci": "tsc --noEmit"
   },
   "repository": {
@@ -29,13 +30,18 @@
     "url": "https://github.com/Gearbox-protocol/sdk-gov/issues"
   },
   "homepage": "https://github.com/Gearbox-protocol/sdk-gov#readme",
-  "dependencies": {},
+  "dependencies": {
+    "barrelsby": "^2.8.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",
+    "@gearbox-protocol/core-v2": "^1.19.0",
     "@gearbox-protocol/eslint-config": "^1.6.1",
+    "@gearbox-protocol/integrations-v3": "1.7.0-legacy.6",
     "@gearbox-protocol/prettier-config": "^1.5.0",
-    "@gearbox-protocol/sdk": "^2.1.11",
+    "@gearbox-protocol/sdk": "^2.1.17",
+    "axios": "^1.4.0",
     "dotenv": "^16.3.1",
     "eslint": "^8.46.0",
     "ethers": "v5",

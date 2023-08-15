@@ -23,10 +23,13 @@ export const minTokenPriceUSD = (token: SupportedToken) => {
     case "WBTC":
       return 20000;
     case "wstETH":
-      return 2000;
+      return maxETHPice;
     case "FRAX":
       return 1;
     default:
       throw new Error(`Invalid token: ${token}`);
   }
 };
+
+export const MAX_WITHDRAW_FEE = 100;
+export const UNIVERSAL_CONTRACT = "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC";

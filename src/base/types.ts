@@ -46,7 +46,7 @@ export interface ContractMethod {
   payable: boolean;
 }
 
-export interface ValidationResult {
+export interface TxValidationResult {
   errors: string[];
   warnings: string[];
 }
@@ -57,7 +57,7 @@ export interface ProposedTransaction {
   contractMethod: ContractMethod;
   contractFieldsValues: Record<string, string>;
   callData: string;
-  validationResult: ValidationResult;
+  validationResult: TxValidationResult;
 }
 
 export interface BatchJson {
