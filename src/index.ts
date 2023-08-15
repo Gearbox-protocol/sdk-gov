@@ -24,7 +24,6 @@ export * from "./state/poolV3";
 export * from "./state/poolV3Core";
 export * from "./state/poolV3DeployConfig";
 export * from "./state/priceOracleV3";
-export * from "./state/testConfig";
 export * from "./state/updatedValue";
 export * from "./tx-builders/v2/account-factory";
 export * from "./tx-builders/v2/acl-non-reentrant-trail";
