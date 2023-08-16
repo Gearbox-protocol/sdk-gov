@@ -587,10 +587,10 @@
   dependencies:
     "@typechain/ethers-v5" "^10.2.1"
 
-"@gearbox-protocol/core-v2@^1.20.2":
-  version "1.20.2"
-  resolved "https://registry.yarnpkg.com/@gearbox-protocol/core-v2/-/core-v2-1.20.2.tgz#3ae22d84e7e98cd60e152390c5e4cf8dee329dac"
-  integrity sha512-nbMCieO2psJs+FNDCTvGMiTpO04WOIIK5nad6p01pD+X/wVTbrC0JqT/4cf5IuYv5DDhnYUlaRLD9eOZB9rWGw==
+"@gearbox-protocol/core-v2@^1.21.0":
+  version "1.21.0"
+  resolved "https://registry.yarnpkg.com/@gearbox-protocol/core-v2/-/core-v2-1.21.0.tgz#5a899c4f96200a28e6516f8416cfd2d39ce20695"
+  integrity sha512-9pv8K2gdoGMByVkdbT9OWRnn2Xp5p+zanoOCghzTgcC245UZabEfmm3ZrWIo9rqMNZZY64W7RH1Pbt1TU7hqHw==
   dependencies:
     "@typechain/ethers-v5" "^10.2.1"
 
