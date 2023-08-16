@@ -1,7 +1,7 @@
 import {
   ILidoV1Adapter,
   ILidoV1Adapter__factory,
-} from "@gearbox-protocol/integrations-v3/types";
+} from "@gearbox-protocol/integrations-v3";
 import {
   detectNetwork,
   NetworkType,

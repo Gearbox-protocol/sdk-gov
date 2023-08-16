@@ -1,7 +1,7 @@
 import {
   IBalancerV2VaultAdapter,
   IBalancerV2VaultAdapter__factory,
-} from "@gearbox-protocol/integrations-v3/types";
+} from "@gearbox-protocol/integrations-v3";
 import {
   detectNetwork,
   NetworkType,
