@@ -1,7 +1,4 @@
-import {
-  LPPriceFeed,
-  LPPriceFeed__factory,
-} from "@gearbox-protocol/core-v2/types";
+import { LPPriceFeed, LPPriceFeed__factory } from "@gearbox-protocol/core-v2";
 import {
   detectNetwork,
   NetworkType,

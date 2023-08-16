@@ -4,7 +4,7 @@ import {
   CreditAccount__factory,
   CreditManager__factory,
   ERC20__factory,
-} from "@gearbox-protocol/core-v2/types";
+} from "@gearbox-protocol/core-v2";
 import {
   detectNetwork,
   NetworkType,

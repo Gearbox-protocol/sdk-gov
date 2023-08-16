@@ -1,7 +1,7 @@
 import {
   ContractsRegister,
   ContractsRegister__factory,
-} from "@gearbox-protocol/core-v2/types";
+} from "@gearbox-protocol/core-v2/";
 import {
   ADDRESS_0X0,
   detectNetwork,
