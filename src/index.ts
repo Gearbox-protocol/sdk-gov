@@ -27,7 +27,7 @@ export * from "./state/priceOracleV3";
 export * from "./state/updatedValue";
 export * from "./tx-builders/v2/account-factory";
 export * from "./tx-builders/v2/acl-non-reentrant-trail";
-export * from "./tx-builders/v2/balancer-v2-vault-adapeter";
+export * from "./tx-builders/v2/balancer-v2-vault-adapter";
 export * from "./tx-builders/v2/blacklist-helper";
 export * from "./tx-builders/v2/contracts-register";
 export * from "./tx-builders/v2/convex-v1-booster-adapter";
