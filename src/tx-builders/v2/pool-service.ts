@@ -63,9 +63,8 @@ export class PoolServiceV2TxBuilder extends TxBuilder {
       }: connectCreditManager ${creditManager}`,
     );
 
-    const validationResult = await this.connectCreditManagerValidate(
-      creditManager,
-    );
+    const validationResult =
+      await this.connectCreditManagerValidate(creditManager);
 
     if (validationResult.errors.length && !force) throw validationResult;
     if (validationResult.warnings.length)
@@ -118,9 +117,8 @@ export class PoolServiceV2TxBuilder extends TxBuilder {
     }
 
     // check if this cm is added already
-    const isExist = await this.#poolService.creditManagersCanRepay(
-      creditManager,
-    );
+    const isExist =
+      await this.#poolService.creditManagersCanRepay(creditManager);
     if (isExist) {
       validationResult.errors.push(
         `CreditManager ${creditManager} is already added`,
@@ -140,9 +138,8 @@ export class PoolServiceV2TxBuilder extends TxBuilder {
       }: setExpectedLiquidityLimit ${newLimit}`,
     );
 
-    const validationResult = await this.setExpectedLiquidityLimitValidate(
-      newLimit,
-    );
+    const validationResult =
+      await this.setExpectedLiquidityLimitValidate(newLimit);
 
     if (validationResult.errors.length && !force) throw validationResult;
     if (validationResult.warnings.length)
@@ -236,9 +233,8 @@ export class PoolServiceV2TxBuilder extends TxBuilder {
       }: updateInterestRateModel ${interestRateModel}`,
     );
 
-    const validationResult = await this.updateInterestRateModelValidate(
-      interestRateModel,
-    );
+    const validationResult =
+      await this.updateInterestRateModelValidate(interestRateModel);
 
     if (validationResult.errors.length && !force) throw validationResult;
     if (validationResult.warnings.length)

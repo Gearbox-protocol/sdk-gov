@@ -61,9 +61,8 @@ export class ContractsRegisterV2TxBuilder extends TxBuilder {
 
     this.logger.info(`ContractsRegister: addCreditManager ${newCreditManager}`);
 
-    const validationResult = await this.addCreditManagerValidate(
-      newCreditManager,
-    );
+    const validationResult =
+      await this.addCreditManagerValidate(newCreditManager);
 
     if (validationResult.errors.length && !force) throw validationResult;
     if (validationResult.warnings.length)
@@ -108,9 +107,8 @@ export class ContractsRegisterV2TxBuilder extends TxBuilder {
       );
     }
 
-    const isAlreadyAdded = await this.#contractsRegister.isCreditManager(
-      newCreditManager,
-    );
+    const isAlreadyAdded =
+      await this.#contractsRegister.isCreditManager(newCreditManager);
 
     if (isAlreadyAdded) {
       validationResult.warnings.push(
