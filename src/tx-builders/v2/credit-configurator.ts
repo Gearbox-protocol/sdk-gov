@@ -64,8 +64,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       throw new Error("Provider's network is not supported");
     this.#network = network;
 
-    // Check if contract is configurator
-    // It has valid addressProvider property
+    // Check if contract is configurator, it has valid addressProvider property
     const addressProvider = await this.#creditConfigurator.addressProvider();
     if (addressProvider !== ADDRESS_PROVIDER[this.#network])
       throw new Error("This address is not Credit Configurator");
