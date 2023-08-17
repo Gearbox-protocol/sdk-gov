@@ -274,11 +274,18 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     }
 
     // current lt is not the same
-    const currentLT =
-      await this.#creditManager!.liquidationThresholds(tokenAddress);
-    if (currentLT === liquidationThreshold) {
-      validationResult.warnings.push(
-        `liquidationThreshold ${liquidationThreshold} is the same as current LT ${currentLT}`,
+    try {
+      const currentLT =
+        await this.#creditManager!.liquidationThresholds(tokenAddress);
+      if (currentLT === liquidationThreshold) {
+        validationResult.warnings.push(
+          `liquidationThreshold ${liquidationThreshold} is the same as current LT ${currentLT}`,
+        );
+      }
+    } catch (e: any) {
+      console.error(e);
+      validationResult.errors.push(
+        "error getting current liquidation threshold, token not added maybe?",
       );
     }
 
