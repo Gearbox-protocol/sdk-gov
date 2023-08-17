@@ -7,7 +7,7 @@ import {
   CreditManager__factory,
   DegenNFT,
   DegenNFT__factory,
-} from "@gearbox-protocol/core-v2/types";
+} from "@gearbox-protocol/core-v2";
 import {
   ADDRESS_PROVIDER,
   detectNetwork,
@@ -144,9 +144,8 @@ export class DegenNFTV2TxBuilder extends TxBuilder {
       return validationResult;
     }
 
-    const isCreditManager = await this.#contractsRegister!.isCreditManager(
-      creditManager,
-    );
+    const isCreditManager =
+      await this.#contractsRegister!.isCreditManager(creditManager);
 
     if (!isCreditManager) {
       validationResult.errors.push(
@@ -184,9 +183,8 @@ export class DegenNFTV2TxBuilder extends TxBuilder {
 
     this.logger.info(`DegenNFT: removeCreditFacade ${creditFacade}`);
 
-    const validationResult = await this.removeCreditFacadeValidate(
-      creditFacade,
-    );
+    const validationResult =
+      await this.removeCreditFacadeValidate(creditFacade);
 
     if (validationResult.errors.length && !force) throw validationResult;
     if (validationResult.warnings.length)

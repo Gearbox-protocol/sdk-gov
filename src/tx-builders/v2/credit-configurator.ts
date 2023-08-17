@@ -8,7 +8,7 @@ import {
   CreditManager,
   CreditManager__factory,
   PriceOracle__factory,
-} from "@gearbox-protocol/core-v2/types";
+} from "@gearbox-protocol/core-v2";
 import {
   ADDRESS_0X0,
   ADDRESS_PROVIDER,
@@ -274,9 +274,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     }
 
     // current lt is not the same
-    const currentLT = await this.#creditManager!.liquidationThresholds(
-      tokenAddress,
-    );
+    const currentLT =
+      await this.#creditManager!.liquidationThresholds(tokenAddress);
     if (currentLT === liquidationThreshold) {
       validationResult.warnings.push(
         `liquidationThreshold ${liquidationThreshold} is the same as current LT ${currentLT}`,
@@ -477,9 +476,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     }
 
     // Checks that adapter is not used for another target
-    const adapterToContract = await this.#creditManager!.adapterToContract(
-      adapterAddress,
-    );
+    const adapterToContract =
+      await this.#creditManager!.adapterToContract(adapterAddress);
 
     if (adapterToContract !== ADDRESS_0X0) {
       validationResult.errors.push(
@@ -517,9 +515,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     };
 
     // Checks that targetContract has a connected adapter
-    const contractToAdapter = await this.#creditManager!.contractToAdapter(
-      targetContract,
-    );
+    const contractToAdapter =
+      await this.#creditManager!.contractToAdapter(targetContract);
 
     if (contractToAdapter === ADDRESS_0X0) {
       validationResult.errors.push(
@@ -558,9 +555,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
     const adapterAddress = contractsByNetwork[this.#network!][adapter];
     /// If the adapter already has no linked target contract, then there is nothing to change
-    const adapterToContract = await this.#creditManager!.adapterToContract(
-      adapterAddress,
-    );
+    const adapterToContract =
+      await this.#creditManager!.adapterToContract(adapterAddress);
 
     if (adapterToContract === ADDRESS_0X0) {
       validationResult.errors.push(
@@ -916,9 +912,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   async upgradeCreditConfigurator(creditConfigurator: string, force = false) {
     await this.#initialize();
 
-    const validationResult = await this.upgradeCreditConfiguratorValidate(
-      creditConfigurator,
-    );
+    const validationResult =
+      await this.upgradeCreditConfiguratorValidate(creditConfigurator);
 
     if (validationResult.errors.length && !force) throw validationResult;
     if (validationResult.warnings.length)
@@ -958,9 +953,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       );
     }
 
-    const isContractCompatible = await this.#isContractCompatible(
-      creditConfigurator,
-    );
+    const isContractCompatible =
+      await this.#isContractCompatible(creditConfigurator);
     if (!isContractCompatible) {
       validationResult.errors.push(
         `Address ${creditConfigurator} is not compatible with Credit Configurator`,
@@ -1071,9 +1065,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
         this.#underlying!.token
       }: setExpirationDate to ${newExpirationDate}`,
     );
-    const validationResult = await this.setExpirationDateValidate(
-      newExpirationDate,
-    );
+    const validationResult =
+      await this.setExpirationDateValidate(newExpirationDate);
 
     if (validationResult.errors.length && !force) throw validationResult;
 
@@ -1129,9 +1122,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
         this.#underlying!.token
       }: setMaxEnabledTokens to ${maxEnabledTokens}`,
     );
-    const validationResult = await this.setMaxEnabledTokensValidate(
-      maxEnabledTokens,
-    );
+    const validationResult =
+      await this.setMaxEnabledTokensValidate(maxEnabledTokens);
 
     if (validationResult.errors.length && !force) throw validationResult;
     if (validationResult.warnings.length)
@@ -1212,9 +1204,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     this.logger.info(
       `CC: ${this.#underlying!.token}: addEmergencyLiquidator to ${liquidator}`,
     );
-    const validationResult = await this.addEmergencyLiquidatorValidate(
-      liquidator,
-    );
+    const validationResult =
+      await this.addEmergencyLiquidatorValidate(liquidator);
 
     if (validationResult.errors.length && !force) throw validationResult;
     if (validationResult.warnings.length)
@@ -1236,9 +1227,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       warnings: [],
     };
 
-    const statusCurrent = await this.#creditManager!.canLiquidateWhilePaused(
-      liquidator,
-    );
+    const statusCurrent =
+      await this.#creditManager!.canLiquidateWhilePaused(liquidator);
 
     if (statusCurrent) {
       validationResult.warnings.push(
@@ -1258,9 +1248,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
         this.#underlying!.token
       }: removeEmergencyLiquidator to ${liquidator}`,
     );
-    const validationResult = await this.removeEmergencyLiquidatorValidate(
-      liquidator,
-    );
+    const validationResult =
+      await this.removeEmergencyLiquidatorValidate(liquidator);
 
     if (validationResult.errors.length && !force) throw validationResult;
     if (validationResult.warnings.length)
@@ -1282,9 +1271,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       warnings: [],
     };
 
-    const statusCurrent = await this.#creditManager!.canLiquidateWhilePaused(
-      liquidator,
-    );
+    const statusCurrent =
+      await this.#creditManager!.canLiquidateWhilePaused(liquidator);
 
     if (!statusCurrent) {
       validationResult.warnings.push(
@@ -1304,9 +1292,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
         this.#underlying!.token
       }: setMaxCumulativeLoss to ${cumulativeLoss}`,
     );
-    const validationResult = await this.setMaxCumulativeLossValidate(
-      cumulativeLoss,
-    );
+    const validationResult =
+      await this.setMaxCumulativeLossValidate(cumulativeLoss);
 
     if (validationResult.errors.length && !force) throw validationResult;
     if (validationResult.warnings.length)
@@ -1379,9 +1366,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
         this.#underlying!.token
       }: setEmergencyLiquidationDiscount to ${newPremium}`,
     );
-    const validationResult = await this.setEmergencyLiquidationDiscountValidate(
-      newPremium,
-    );
+    const validationResult =
+      await this.setEmergencyLiquidationDiscountValidate(newPremium);
 
     if (validationResult.errors.length && !force) throw validationResult;
     if (validationResult.warnings.length)

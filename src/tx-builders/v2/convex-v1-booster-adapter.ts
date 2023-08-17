@@ -1,7 +1,7 @@
 import {
   IConvexV1BoosterAdapter,
   IConvexV1BoosterAdapter__factory,
-} from "@gearbox-protocol/integrations-v3/types";
+} from "@gearbox-protocol/integrations-v3";
 import {
   detectNetwork,
   NetworkType,

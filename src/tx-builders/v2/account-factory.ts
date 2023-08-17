@@ -4,7 +4,7 @@ import {
   CreditAccount__factory,
   CreditManager__factory,
   ERC20__factory,
-} from "@gearbox-protocol/core-v2/types";
+} from "@gearbox-protocol/core-v2";
 import {
   detectNetwork,
   NetworkType,
@@ -168,9 +168,8 @@ export class AcountFactoryV2TxBuilder extends TxBuilder {
     };
 
     // check if creditAccount is in the list
-    const isCreditAccount = await this.#accountFactory.isCreditAccount(
-      creditAccount,
-    );
+    const isCreditAccount =
+      await this.#accountFactory.isCreditAccount(creditAccount);
     if (!isCreditAccount) {
       validationResult.errors.push(
         `Address ${creditAccount} is not a in list of CreditAccounts`,
@@ -178,9 +177,8 @@ export class AcountFactoryV2TxBuilder extends TxBuilder {
     }
 
     // check if prev is in the list
-    const isPrevCreditAccount = await this.#accountFactory.isCreditAccount(
-      prev,
-    );
+    const isPrevCreditAccount =
+      await this.#accountFactory.isCreditAccount(prev);
     if (!isPrevCreditAccount) {
       validationResult.errors.push(
         `Address ${prev} is not a in list of CreditAccounts`,
