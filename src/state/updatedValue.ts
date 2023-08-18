@@ -1,5 +1,7 @@
 import { formatBN } from "@gearbox-protocol/sdk";
 
+import { bnToContractString } from "../base/convert";
+
 export class UpdatedValue<T> {
   private _value: T;
   isUpdated: boolean;
@@ -51,10 +53,11 @@ export class UpdatedValue<T> {
       case "string":
         return value;
       case "number":
-      case "bigint":
         return decimals ? formatBN(value, decimals) : value.toString();
       case "boolean":
         return value.toString();
+      case "bigint":
+        return decimals ? formatBN(value, decimals) : bnToContractString(value);
       case "object":
         return JSON.stringify(value);
       default:

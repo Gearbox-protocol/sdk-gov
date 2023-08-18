@@ -4,6 +4,7 @@ import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 const USDC_DECIMALS = BigInt(1e6);
 
 export const config: PoolV3DeployConfig = {
+  id: "mainnet-dusd-full",
   symbol: "dUSDCV3",
   name: "Diesel USDC V3 pool",
   network: "Mainnet",

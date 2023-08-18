@@ -29,6 +29,7 @@ export interface CreditManagerV3DeployConfig {
 }
 
 export interface PoolV3DeployConfig {
+  id: string;
   symbol: string;
   name: string;
   network: NetworkType;
