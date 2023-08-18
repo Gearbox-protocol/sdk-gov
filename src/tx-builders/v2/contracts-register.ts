@@ -65,8 +65,11 @@ export class ContractsRegisterV2TxBuilder extends TxBuilder {
       await this.addCreditManagerValidate(newCreditManager);
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#contractsRegister,
@@ -128,8 +131,11 @@ export class ContractsRegisterV2TxBuilder extends TxBuilder {
     const validationResult = await this.addPoolValidate(newPoolAddress);
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#contractsRegister,

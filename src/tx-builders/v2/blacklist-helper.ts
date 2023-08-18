@@ -70,8 +70,11 @@ export class BlacklistHelperV2TxBuilder extends TxBuilder {
     const validationResult = await this.addCreditFacadeValidate(creditFacade);
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#blacklistHelper,
