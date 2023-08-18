@@ -207,7 +207,7 @@ export class TxBatcher {
       contractInputsValues: {
         target: tx.to,
         value: "0",
-        signature: tx.contractMethod.name,
+        signature: tx.contractMethod,
         data: "0x" + tx.callData.slice(10),
         eta: eta.toString(),
       },

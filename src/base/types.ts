@@ -54,7 +54,7 @@ export interface TxValidationResult {
 export interface ProposedTransaction {
   to: string;
   value: string;
-  contractMethod: ContractMethod;
+  contractMethod: string;
   contractFieldsValues: Record<string, string>;
   callData: string;
   validationResult: TxValidationResult;
