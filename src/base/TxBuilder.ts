@@ -53,11 +53,7 @@ export class TxBuilder extends Logged {
     const tx: ProposedTransaction = {
       to: contract.address,
       value: "0",
-      contractMethod: {
-        inputs: abi.inputs,
-        name: abi.name,
-        payable: abi.payable,
-      },
+      contractMethod: method,
       contractFieldsValues,
       callData: functionEncodedData,
       validationResult,
