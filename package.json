@@ -32,10 +32,11 @@
   "homepage": "https://github.com/Gearbox-protocol/sdk-gov#readme",
   "dependencies": {
     "@gearbox-protocol/core-v2": "^1.21.0",
+    "@gearbox-protocol/core-v3": "^1.34.1",
     "@gearbox-protocol/eslint-config": "^1.6.1",
+    "@gearbox-protocol/integrations-v3": "1.7.0-legacy.7",
     "@gearbox-protocol/prettier-config": "^1.5.0",
     "@gearbox-protocol/sdk": "^2.1.17",
-    "@gearbox-protocol/integrations-v3": "1.7.0-legacy.7",
     "axios": "^1.4.0",
     "barrelsby": "^2.8.0",
     "dotenv": "^16.3.1",
