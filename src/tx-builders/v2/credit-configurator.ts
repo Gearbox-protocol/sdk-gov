@@ -288,10 +288,10 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
         );
       }
     } catch (e: any) {
-      console.error(e);
-      validationResult.errors.push(
-        `Error: ${e.errorName || "look at console"}`,
-      );
+      validationResult.errors.push(`${e.errorName || "Look at console"}`);
+      if (!e.errorName) {
+        console.log(e);
+      }
     }
 
     return validationResult;
