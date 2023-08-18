@@ -3,6 +3,7 @@
  */
 
 export * from "./base/constants";
+export * from "./base/convert";
 export * from "./base/detect-network";
 export * from "./base/github-checker";
 export * from "./base/is-contract-identical";

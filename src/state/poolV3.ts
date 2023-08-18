@@ -53,7 +53,8 @@ export class PoolV3Configurator implements IConfigurator {
     this.state = state;
     this.address = address;
   }
-  validate(): ValidationResult {
+
+  async validate(): Promise<ValidationResult> {
     return { warnings: [], errors: [] };
   }
 

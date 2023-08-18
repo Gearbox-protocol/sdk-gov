@@ -117,12 +117,14 @@ Credit Managers:
 ${creditManagers}`;
   }
 
-  validate(): ValidationResult {
-    const pool = this.pool.validate();
-    const gauge = this.gauge.validate();
-    const irm = this.irm.validate();
-    const poolQuotaKeeper = this.poolQuotaKeeper.validate();
-    const creditManagers = this.creditManagers.map(cm => cm.validate());
+  async validate(): Promise<ValidationResult> {
+    const pool = await this.pool.validate();
+    const gauge = await this.gauge.validate();
+    const irm = await this.irm.validate();
+    const poolQuotaKeeper = await this.poolQuotaKeeper.validate();
+    const creditManagers = await Promise.all(
+      this.creditManagers.map(cm => cm.validate()),
+    );
 
     return {
       warnings: [

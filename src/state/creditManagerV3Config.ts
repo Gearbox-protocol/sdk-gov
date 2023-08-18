@@ -6,8 +6,8 @@ import {
 } from "@gearbox-protocol/sdk";
 
 import { CoreConfigurator } from "..";
-import { IConfigurator, Message, ValidationResult } from "./iConfigurator";
 import { bnToContractPercentage, bnToContractString } from "../base/convert";
+import { IConfigurator, Message, ValidationResult } from "./iConfigurator";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 import { UpdatedValue } from "./updatedValue";
 
