@@ -115,22 +115,10 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     );
 
     // according to the sc code, check two internal functions: addCollateralToken and _setLiquidationThreshold
-    const addCollateralTokenValidationResult =
-      await this.addCollateralTokenValidate(token);
-
-    const thresholdValidationResult =
-      await this.setLiquidationThresholdValidate(token, liquidationThreshold);
-
-    const validationResult = {
-      errors: [
-        ...addCollateralTokenValidationResult.errors,
-        ...thresholdValidationResult.errors,
-      ],
-      warnings: [
-        ...addCollateralTokenValidationResult.warnings,
-        ...thresholdValidationResult.warnings,
-      ],
-    };
+    const validationResult = await this.addCollateralTokenValidate(
+      token,
+      liquidationThreshold,
+    );
 
     if (validationResult.errors.length && !force) throw validationResult;
     if (validationResult.warnings.length || validationResult.errors.length)
@@ -149,7 +137,10 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     });
   }
 
-  async addCollateralTokenValidate(token: SupportedToken) {
+  async addCollateralTokenValidate(
+    token: SupportedToken,
+    liquidationThreshold: number,
+  ) {
     await this.#initialize();
     this.logger.info(
       `CC: ${this.#underlying!.token}: Validating addCollateralToken ${token} `,
@@ -187,6 +178,14 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     } catch (e) {
       validationResult.errors.push(
         `Token ${token} does not have correct priceFeed in priceOracle`,
+      );
+    }
+
+    // check liquidation threshold
+    const [_, ltUnderlying] = await this.#creditManager!.collateralTokens(0);
+    if (liquidationThreshold > ltUnderlying) {
+      validationResult.errors.push(
+        `liquidationThreshold ${liquidationThreshold} > ltUnderlying ${ltUnderlying}`,
       );
     }
 
