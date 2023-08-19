@@ -5,8 +5,9 @@ import {
   SupportedToken,
 } from "@gearbox-protocol/sdk";
 
+import { CoreConfigurator } from "..";
 import { bnToContractPercentage, bnToContractString } from "../base/convert";
-import { IConfigurator, ValidationResult } from "./iConfigurator";
+import { IConfigurator, Message, ValidationResult } from "./iConfigurator";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 import { UpdatedValue } from "./updatedValue";
 
@@ -27,6 +28,7 @@ export interface CreditManagerV3State {
 }
 
 export class CreditManagerV3Configurator implements IConfigurator {
+  core?: CoreConfigurator;
   address: string;
   index?: number;
   underlying: SupportedToken;
@@ -56,6 +58,29 @@ export class CreditManagerV3Configurator implements IConfigurator {
       index,
       state,
       underlying: poolConfig.underlying,
+    });
+  }
+
+  static async attach(
+    address: string,
+    index: number,
+  ): Promise<CreditManagerV3Configurator> {
+    const state: CreditManagerV3State = {
+      degenNft: UpdatedValue.new(false),
+      expirable: UpdatedValue.new(false),
+      expiredAt: UpdatedValue.new(0),
+      minDebt: UpdatedValue.new(BigInt(0)),
+      maxDebt: UpdatedValue.new(BigInt(0)),
+      poolLimit: UpdatedValue.new(BigInt(0)),
+      collateralTokens: [],
+      adapters: [],
+    };
+
+    return new CreditManagerV3Configurator({
+      address,
+      index,
+      state,
+      underlying: "DAI",
     });
   }
 
@@ -94,10 +119,6 @@ adapters:
 ${adapters};`;
   }
 
-  validate(): ValidationResult {
-    return { warnings: [], errors: [] };
-  }
-
   deployConfig(): string {
     const collateralTokens =
       this.state.collateralTokens.length === 0
@@ -134,5 +155,27 @@ cp.poolLimit = ${bnToContractString(this.state.poolLimit.value)};
 ${collateralTokens}
 ${contracts}
 `;
+  }
+
+  addToken(token: SupportedToken, lt: number): void {
+    this.state.collateralTokens.push({
+      token,
+      lt: UpdatedValue.new(lt),
+    });
+  }
+
+  async validate(): Promise<ValidationResult> {
+    const warnings: Array<Message> = [];
+    const errors: Array<Message> = [];
+
+    for (const ct of this.state.collateralTokens) {
+      // if (priceOracleV23.state.pricefeeds[ct.token] === undefinded) {
+      //   errors.push({
+      //     message: `Collateral token ${ct.token} is not supported by the price oracle`,
+      //   });
+      // }
+    }
+
+    return { warnings, errors };
   }
 }

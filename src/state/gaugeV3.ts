@@ -49,7 +49,7 @@ export class GaugeV3Configurator implements IConfigurator {
     this.state = opts.state;
   }
 
-  validate(): ValidationResult {
+  async validate(): Promise<ValidationResult> {
     return { warnings: [], errors: [] };
   }
 

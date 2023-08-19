@@ -43,7 +43,7 @@ export class LinearIRM implements IConfigurator {
     return `{U_optimal: ${this.params.U1}, U_reserve: ${this.params.U2}, R_base: ${this.params.Rbase}, R_1: ${this.params.Rslope1}, R_2: ${this.params.Rslope2}, R_3: ${this.params.Rslope3}, isBorrmowinMoreU_reserveForbidden: ${this.params.isBorrowingMoreU2Forbidden}}`;
   }
 
-  validate(): ValidationResult {
+  async validate(): Promise<ValidationResult> {
     const warnings: Array<Message> = [];
     const errors: Array<Message> = [];
 

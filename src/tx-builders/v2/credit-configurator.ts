@@ -64,8 +64,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       throw new Error("Provider's network is not supported");
     this.#network = network;
 
-    // Check if contract is configurator
-    // It has valid addressProvider property
+    // Check if contract is configurator, it has valid addressProvider property
     const addressProvider = await this.#creditConfigurator.addressProvider();
     if (addressProvider !== ADDRESS_PROVIDER[this.#network])
       throw new Error("This address is not Credit Configurator");
@@ -116,26 +115,17 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     );
 
     // according to the sc code, check two internal functions: addCollateralToken and _setLiquidationThreshold
-    const addCollateralTokenValidationResult =
-      await this.addCollateralTokenValidate(token);
-
-    const thresholdValidationResult =
-      await this.setLiquidationThresholdValidate(token, liquidationThreshold);
-
-    const validationResult = {
-      errors: [
-        ...addCollateralTokenValidationResult.errors,
-        ...thresholdValidationResult.errors,
-      ],
-      warnings: [
-        ...addCollateralTokenValidationResult.warnings,
-        ...thresholdValidationResult.warnings,
-      ],
-    };
+    const validationResult = await this.addCollateralTokenValidate(
+      token,
+      liquidationThreshold,
+    );
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     const tokenAddress = tokenDataByNetwork[this.#network!][token];
 
@@ -147,7 +137,10 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     });
   }
 
-  async addCollateralTokenValidate(token: SupportedToken) {
+  async addCollateralTokenValidate(
+    token: SupportedToken,
+    liquidationThreshold: number,
+  ) {
     await this.#initialize();
     this.logger.info(
       `CC: ${this.#underlying!.token}: Validating addCollateralToken ${token} `,
@@ -188,6 +181,14 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       );
     }
 
+    // check liquidation threshold
+    const [_, ltUnderlying] = await this.#creditManager!.collateralTokens(0);
+    if (liquidationThreshold > ltUnderlying) {
+      validationResult.errors.push(
+        `liquidationThreshold ${liquidationThreshold} > ltUnderlying ${ltUnderlying}`,
+      );
+    }
+
     return validationResult;
   }
 
@@ -211,8 +212,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     );
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     const tokenAddress = tokenDataByNetwork[this.#network!][token];
 
@@ -274,12 +278,19 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     }
 
     // current lt is not the same
-    const currentLT =
-      await this.#creditManager!.liquidationThresholds(tokenAddress);
-    if (currentLT === liquidationThreshold) {
-      validationResult.warnings.push(
-        `liquidationThreshold ${liquidationThreshold} is the same as current LT ${currentLT}`,
-      );
+    try {
+      const currentLT =
+        await this.#creditManager!.liquidationThresholds(tokenAddress);
+      if (currentLT === liquidationThreshold) {
+        validationResult.warnings.push(
+          `liquidationThreshold ${liquidationThreshold} is the same as current LT ${currentLT}`,
+        );
+      }
+    } catch (e: any) {
+      validationResult.errors.push(`${e.errorName || "Look at console"}`);
+      if (!e.errorName) {
+        console.log(e);
+      }
     }
 
     return validationResult;
@@ -295,8 +306,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const validationResult = await this.allowTokenValidate(token);
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     const tokenAddress = tokenDataByNetwork[this.#network!][token];
 
@@ -347,8 +361,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const validationResult = await this.forbidTokenValidate(token);
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     const tokenAddress = tokenDataByNetwork[this.#network!][token];
 
@@ -408,8 +425,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     );
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -495,8 +515,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const validationResult = await this.forbidContractValidate(targetContract);
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -534,8 +557,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const validationResult = await this.forbidAdapterValidate(adapter);
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -590,8 +616,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     );
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -695,8 +724,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       liquidationPremiumExpired,
     );
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -800,8 +832,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const validationResult = await this.upgradePriceOracleValidate();
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -852,8 +887,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     );
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -916,8 +954,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       await this.upgradeCreditConfiguratorValidate(creditConfigurator);
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -971,8 +1012,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const validationResult = await this.setIncreaseDebtForbiddenValidate(mode);
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -1019,8 +1063,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
     if (validationResult.errors.length && !force) throw validationResult;
 
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -1070,8 +1117,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
     if (validationResult.errors.length && !force) throw validationResult;
 
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -1126,8 +1176,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       await this.setMaxEnabledTokensValidate(maxEnabledTokens);
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -1208,8 +1261,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       await this.addEmergencyLiquidatorValidate(liquidator);
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -1252,8 +1308,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       await this.removeEmergencyLiquidatorValidate(liquidator);
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -1296,8 +1355,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       await this.setMaxCumulativeLossValidate(cumulativeLoss);
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -1333,8 +1395,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const validationResult = await this.resetCumulativeLossValidate();
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -1370,8 +1435,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       await this.setEmergencyLiquidationDiscountValidate(newPremium);
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -1417,8 +1485,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     const validationResult = await this.setTotalDebtLimitValidate(newLimit);
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,
@@ -1465,8 +1536,11 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     );
 
     if (validationResult.errors.length && !force) throw validationResult;
-    if (validationResult.warnings.length)
-      this.logger.warn(validationResult.warnings.toString());
+    if (validationResult.warnings.length || validationResult.errors.length)
+      this.logger.warn(
+        "Validation has errors/warnings",
+        JSON.stringify(validationResult, null, 2),
+      );
 
     return this.createTx({
       contract: this.#creditConfigurator,

@@ -3,6 +3,7 @@
  */
 
 export * from "./base/constants";
+export * from "./base/convert";
 export * from "./base/detect-network";
 export * from "./base/github-checker";
 export * from "./base/is-contract-identical";
@@ -13,6 +14,9 @@ export * from "./base/TxBuilder";
 export * from "./base/types";
 export * from "./base/types/etherscan";
 export * from "./base/utils";
+export * from "./deployV3";
+export * from "./state/acl";
+export * from "./state/addressProviderV3";
 export * from "./state/contractsRegister";
 export * from "./state/core";
 export * from "./state/creditManagerV3Config";

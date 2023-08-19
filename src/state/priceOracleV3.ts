@@ -23,8 +23,20 @@ export class PriceOracleV3Configurator {
     };
     return new PriceOracleV3Configurator(address, state);
   }
+
   private constructor(address: string, state: PriceOracleV3State) {
     this.address = address;
     this.state = state;
   }
+
+  addPriceFeed(token: SupportedToken, address: string): void {
+    if (this.state.priceFeeds[token] === undefined) {
+      this.state.priceFeeds[token] = UpdatedValue.new(address);
+    } else {
+      this.state.priceFeeds[token]!.value = address;
+    }
+  }
+
+  // priceOracle.add(Token.USDC, "0x000000000")
+  // priceOracle.add(Token.USDC, "0xba66FF")
 }

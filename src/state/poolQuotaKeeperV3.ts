@@ -73,7 +73,7 @@ export class PoolQuotaKeeperV3Configurator implements IConfigurator {
     this.underlying = opts.underlying;
   }
 
-  validate(): ValidationResult {
+  async validate(): Promise<ValidationResult> {
     return { warnings: [], errors: [] };
   }
 
