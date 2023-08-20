@@ -140,7 +140,7 @@ ${adapters};`;
         : `Contracts[] storage cs = cp.contracts;` +
           this.state.adapters
             .map(a => `cs.push(Contracts.${safeEnum(a.value)});`)
-            .join(", ");
+            .join("\n");
 
     return `
 /// CREDIT_MANAGER_${this.index}
