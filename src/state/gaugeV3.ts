@@ -1,4 +1,4 @@
-import { NOT_DEPLOYED, SupportedToken } from "@gearbox-protocol/sdk";
+import { NOT_DEPLOYED, safeEnum, SupportedToken } from "@gearbox-protocol/sdk";
 
 import { bnToContractPercentage } from "../base/convert";
 import { IConfigurator, ValidationResult } from "./iConfigurator";
@@ -57,7 +57,9 @@ export class GaugeV3Configurator implements IConfigurator {
     return Object.entries(this.state.quotaTokenParams)
       .map(
         ([token, params]) =>
-          `_gaugeRates.push(GaugeRate({token: Tokens.${token}, minRate: ${bnToContractPercentage(
+          `_gaugeRates.push(GaugeRate({token: Tokens.${safeEnum(
+            token,
+          )}, minRate: ${bnToContractPercentage(
             params.minRate.value,
           )}, maxRate: ${bnToContractPercentage(params.maxRate.value)}}));`,
       )

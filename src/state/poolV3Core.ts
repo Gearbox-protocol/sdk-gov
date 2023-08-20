@@ -1,4 +1,9 @@
-import { CHAINS, NetworkType, SupportedToken } from "@gearbox-protocol/sdk";
+import {
+  CHAINS,
+  NetworkType,
+  safeEnum,
+  SupportedToken,
+} from "@gearbox-protocol/sdk";
 
 import { bnToContractString } from "../base/convert";
 import { CreditManagerV3Configurator } from "./creditManagerV3Config";
@@ -172,7 +177,7 @@ ${creditManagers}`;
       .toUpperCase()} is IPoolV3DeployConfig {
         string public constant id = "${this.id}";
         uint256 public constant chainId = ${CHAINS[this.network]};
-        Tokens public constant underlying = Tokens.${this.underlying};
+        Tokens public constant underlying = Tokens.${safeEnum(this.underlying)};
         bool public constant supportsQuotas = ${this.supportsQuotas};
         uint256 public constant getAccountAmount = ${bnToContractString(
           this.accountAmount,
