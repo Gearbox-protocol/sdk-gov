@@ -4,13 +4,9 @@ import {
   contractParams,
   contractsByNetwork,
   CurveLPTokenData,
-  HOUR_24,
   LPTokens,
   lpTokens,
   NOT_DEPLOYED,
-  PriceFeedData,
-  priceFeedsByToken,
-  PriceFeedType,
   supportedChains,
   SupportedContract,
   SupportedToken,
@@ -20,6 +16,12 @@ import {
 } from "@gearbox-protocol/sdk";
 import * as fs from "fs";
 
+import { priceFeedsByToken } from "../oracles/priceFeeds";
+import {
+  HOUR_24,
+  PriceFeedData,
+  PriceFeedType,
+} from "../oracles/pricefeedType";
 import { safeEnum } from "../utils/safeEnum";
 
 class BindingsGenerator {
