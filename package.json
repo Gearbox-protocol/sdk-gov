@@ -36,6 +36,7 @@
     "@gearbox-protocol/eslint-config": "^1.6.1",
     "@gearbox-protocol/integrations-v3": "1.7.0-legacy.7",
     "@gearbox-protocol/prettier-config": "^1.5.0",
+    "@gearbox-protocol/sdk": "^2.1.25",
     "axios": "^1.4.0",
     "barrelsby": "^2.8.0",
     "dotenv": "^16.3.1",
@@ -47,7 +48,6 @@
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",
     "@commitlint/config-conventional": "^17.6.7",
-    "@gearbox-protocol/sdk": "^2.1.25",
     "eslint": "^8.46.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
