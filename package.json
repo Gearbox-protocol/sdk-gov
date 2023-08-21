@@ -12,6 +12,8 @@
     "clean": "rm -rf lib",
     "barrels": "barrelsby --config .barrelsby.json && yarn lint",
     "build": "yarn run barrels && tsc --p tsconfig.build.json",
+    "bindings": "yarn ts-node ./src/bindings/generate.ts && forge b && forge fmt",
+    "decimals": "yarn ts-node ./src/bindings/generate_decimals.ts",
     "test": "npx mocha -r ts-node/register -r dotenv/config src/**/*.spec.ts",
     "prepare": "husky install",
     "prettier": "prettier --write .",
@@ -39,7 +41,7 @@
     "axios": "^1.4.0",
     "barrelsby": "^2.8.0",
     "dotenv": "^16.3.1",
-    "ethers": "v5",
+    "ethers": "5.6.9",
     "ts-toolbelt": "^9.6.0",
     "tslog": "^4.8.2",
     "web3": "^4.0.3"
