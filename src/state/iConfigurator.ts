@@ -10,7 +10,7 @@ export interface ValidationResult {
 }
 
 export interface IConfigurator {
-  validate: () => ValidationResult;
+  validate: () => Promise<ValidationResult>;
 
   deployConfig: () => string;
 }

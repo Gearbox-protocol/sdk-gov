@@ -2,9 +2,11 @@ import {
   decimals,
   formatBN,
   NOT_DEPLOYED,
+  safeEnum,
   SupportedToken,
 } from "@gearbox-protocol/sdk";
 
+import { bnToContractPercentage, bnToContractString } from "../base/convert";
 import { IConfigurator, ValidationResult } from "./iConfigurator";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 import { UpdatedValue } from "./updatedValue";
@@ -72,7 +74,7 @@ export class PoolQuotaKeeperV3Configurator implements IConfigurator {
     this.underlying = opts.underlying;
   }
 
-  validate(): ValidationResult {
+  async validate(): Promise<ValidationResult> {
     return { warnings: [], errors: [] };
   }
 
@@ -80,7 +82,11 @@ export class PoolQuotaKeeperV3Configurator implements IConfigurator {
     return Object.entries(this.state.quotaLimits)
       .map(
         ([token, params]) =>
-          `_quotaLimits.push(PoolQuotaLimit({token: Tokens.${token}, quotaIncreaseFee: ${params.quotaIncreaseFee.value.toString()}, limit: ${params.limit.value.toString()}}));`,
+          `_quotaLimits.push(PoolQuotaLimit({token: Tokens.${safeEnum(
+            token,
+          )}, quotaIncreaseFee: ${bnToContractPercentage(
+            params.quotaIncreaseFee.value,
+          )}, limit: ${bnToContractString(params.limit.value)}}));`,
       )
       .join("\n");
   }

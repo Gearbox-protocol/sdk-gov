@@ -1,5 +1,7 @@
 import { NOT_DEPLOYED, SupportedToken } from "@gearbox-protocol/sdk";
 
+import { bnToContractString } from "../base/convert";
+import { IConfigurator, ValidationResult } from "./iConfigurator";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 import { UpdatedValue } from "./updatedValue";
 
@@ -12,7 +14,7 @@ export interface PoolV3State {
   creditManagersAllowance: Record<string, UpdatedValue<bigint>>;
 }
 
-export class PoolV3Configurator {
+export class PoolV3Configurator implements IConfigurator {
   address: string;
   state: PoolV3State;
 
@@ -52,12 +54,31 @@ export class PoolV3Configurator {
     this.address = address;
   }
 
+  async validate(): Promise<ValidationResult> {
+    return { warnings: [], errors: [] };
+  }
+
+  deployConfig(): string {
+    return `
+string public constant symbol = "${this.state.symbol}";
+string public constant name = "${this.state.name}";
+
+PoolV3DeployParams _poolParams = PoolV3DeployParams({withdrawalFee: ${
+      this.state.withdrawalFee.value
+    }, expectedLiquidityLimit: ${bnToContractString(
+      this.state.expectedLiquidityLimit.value,
+    )}});
+`;
+  }
+
   toString(): string {
-    return `Withdrawal Fee: ${this.state.withdrawalFee.toString()},
-ExpectedLiquidityLimit: ${this.state.expectedLiquidityLimit.toString()}
+    return `Withdrawal Fee: ${this.state.withdrawalFee.value},
+ExpectedLiquidityLimit: ${bnToContractString(
+      this.state.expectedLiquidityLimit.value,
+    )}
 CreditManagersAllowance:
 ${Object.entries(this.state.creditManagersAllowance)
-  .map(([cm, allowance]) => `[${cm}]: ${allowance.toString()}`)
+  .map(([cm, allowance]) => `[${cm}]: ${bnToContractString(allowance.value)}`)
   .join("\n")}`;
   }
 }

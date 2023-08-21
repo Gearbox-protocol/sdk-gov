@@ -1,13 +1,21 @@
-import { NetworkType, SupportedToken } from "@gearbox-protocol/sdk";
+import {
+  CHAINS,
+  NetworkType,
+  safeEnum,
+  SupportedToken,
+} from "@gearbox-protocol/sdk";
 
+import { bnToContractString } from "../base/convert";
 import { CreditManagerV3Configurator } from "./creditManagerV3Config";
 import { GaugeV3Configurator } from "./gaugeV3";
+import { IConfigurator, ValidationResult } from "./iConfigurator";
 import { LinearIRM } from "./linearIRM";
 import { PoolQuotaKeeperV3Configurator } from "./poolQuotaKeeperV3";
 import { PoolV3Configurator } from "./poolV3";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 
-export class PoolV3CoreConfigurator {
+export class PoolV3CoreConfigurator implements IConfigurator {
+  id: string;
   network: NetworkType;
   underlying: SupportedToken;
   supportsQuotas: boolean;
@@ -19,6 +27,7 @@ export class PoolV3CoreConfigurator {
   creditManagers: Array<CreditManagerV3Configurator>;
 
   static new(config: PoolV3DeployConfig): PoolV3CoreConfigurator {
+    const id = config.id;
     const network = config.network;
     const underlying = config.underlying;
     const supportsQuotas = config.supportsQuotas;
@@ -32,6 +41,7 @@ export class PoolV3CoreConfigurator {
     );
 
     return new PoolV3CoreConfigurator({
+      id,
       network,
       underlying,
       supportsQuotas,
@@ -50,6 +60,7 @@ export class PoolV3CoreConfigurator {
     const poolQuotaKeeper = await PoolQuotaKeeperV3Configurator.attach(address);
     const pool = await PoolV3Configurator.attach(address);
     return new PoolV3CoreConfigurator({
+      id: "attached id",
       network: "Mainnet",
       underlying: "USDC",
       supportsQuotas: true,
@@ -63,6 +74,7 @@ export class PoolV3CoreConfigurator {
   }
 
   private constructor(opts: {
+    id: string;
     network: NetworkType;
     supportsQuotas: boolean;
     underlying: SupportedToken;
@@ -73,6 +85,7 @@ export class PoolV3CoreConfigurator {
     pool: PoolV3Configurator;
     creditManagers: Array<CreditManagerV3Configurator>;
   }) {
+    this.id = opts.id;
     this.network = opts.network;
     this.underlying = opts.underlying;
     this.accountAmount = opts.accountAmount;
@@ -109,6 +122,33 @@ Credit Managers:
 ${creditManagers}`;
   }
 
+  async validate(): Promise<ValidationResult> {
+    const pool = await this.pool.validate();
+    const gauge = await this.gauge.validate();
+    const irm = await this.irm.validate();
+    const poolQuotaKeeper = await this.poolQuotaKeeper.validate();
+    const creditManagers = await Promise.all(
+      this.creditManagers.map(cm => cm.validate()),
+    );
+
+    return {
+      warnings: [
+        ...pool.warnings,
+        ...gauge.warnings,
+        ...irm.warnings,
+        ...poolQuotaKeeper.warnings,
+        ...creditManagers.map(v => v.warnings).flat(),
+      ],
+      errors: [
+        ...pool.errors,
+        ...gauge.errors,
+        ...irm.errors,
+        ...poolQuotaKeeper.errors,
+        ...creditManagers.map(v => v.warnings).flat(),
+      ],
+    };
+  }
+
   deployConfig(): string {
     const creditManagers = this.creditManagers
       .map(cm => cm.deployConfig())
@@ -132,31 +172,21 @@ ${creditManagers}`;
         CollateralTokenHuman
     } from "@gearbox-protocol/core-v3/contracts/test/interfaces/ICreditConfig.sol";
     
-    contract PoolV3DeployConfig_${this.pool.state.symbol.toUpperCase()} is IPoolV3DeployConfig {
-        string public constant symbol = "${this.pool.state.symbol}";
-        string public constant name = "${this.pool.state.name}";
-        uint256 public constant chainId = ${this.network};
-    
-        Tokens public constant underlying = Tokens.${this.underlying};
+    contract CONFIG_${this.id
+      .replaceAll("-", "_")
+      .toUpperCase()} is IPoolV3DeployConfig {
+        string public constant id = "${this.id}";
+        uint256 public constant chainId = ${CHAINS[this.network]};
+        Tokens public constant underlying = Tokens.${safeEnum(this.underlying)};
         bool public constant supportsQuotas = ${this.supportsQuotas};
+        uint256 public constant getAccountAmount = ${bnToContractString(
+          this.accountAmount,
+        )};
     
-        uint256 public constant getAccountAmount = ${this.accountAmount.toString()};
-    
-        PoolV3DeployParams _poolParams = PoolV3DeployParams({withdrawalFee: ${
-          this.pool.state.withdrawalFee
-        }, expectedLiquidityLimit: ${this.pool.state.expectedLiquidityLimit}});
-    
-        LinearIRMV3DeployParams _irm = LinearIRMV3DeployParams({
-            U_1: ${this.irm.params.U1},
-            U_2: ${this.irm.params.U2},
-            R_base: ${this.irm.params.Rbase},
-            R_slope1:  ${this.irm.params.Rslope1},
-            R_slope2: ${this.irm.params.Rslope2},
-            R_slope3: ${this.irm.params.Rslope3},
-            _isBorrowingMoreU2Forbidden: ${
-              this.irm.params.isBorrowingMoreU2Forbidden
-            },
-        });
+        // POOL
+        ${this.pool.deployConfig()}
+
+        ${this.irm.deployConfig()}
     
         GaugeRate[] _gaugeRates;
         PoolQuotaLimit[] _quotaLimits;
