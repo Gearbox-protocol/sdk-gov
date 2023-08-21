@@ -21,7 +21,6 @@ jobs:
       - name: Perform checks
         run: |
           yarn install --frozen-lockfile
-          yarn barrels
           yarn typecheck:ci
           yarn lint:ci
           yarn prettier:ci
