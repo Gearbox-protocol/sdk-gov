@@ -17,4 +17,8 @@ export async function deploy() {
   console.error(vr.warnings);
 }
 
-deploy();
+deploy()
+  .then(() => {
+    console.log("done");
+  })
+  .catch(console.error);

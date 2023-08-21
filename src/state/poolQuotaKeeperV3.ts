@@ -2,6 +2,7 @@ import {
   decimals,
   formatBN,
   NOT_DEPLOYED,
+  safeEnum,
   SupportedToken,
 } from "@gearbox-protocol/sdk";
 
@@ -81,7 +82,9 @@ export class PoolQuotaKeeperV3Configurator implements IConfigurator {
     return Object.entries(this.state.quotaLimits)
       .map(
         ([token, params]) =>
-          `_quotaLimits.push(PoolQuotaLimit({token: Tokens.${token}, quotaIncreaseFee: ${bnToContractPercentage(
+          `_quotaLimits.push(PoolQuotaLimit({token: Tokens.${safeEnum(
+            token,
+          )}, quotaIncreaseFee: ${bnToContractPercentage(
             params.quotaIncreaseFee.value,
           )}, limit: ${bnToContractString(params.limit.value)}}));`,
       )

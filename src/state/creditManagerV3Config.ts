@@ -1,6 +1,7 @@
 import {
   decimals,
   NOT_DEPLOYED,
+  safeEnum,
   SupportedContract,
   SupportedToken,
 } from "@gearbox-protocol/sdk";
@@ -127,9 +128,9 @@ ${adapters};`;
           this.state.collateralTokens
             .map(
               ct => `
-    cts.push(CollateralTokenHuman({token: Tokens.${
-      ct.token
-    }, lt: ${bnToContractPercentage(ct.lt.value)}}));`,
+    cts.push(CollateralTokenHuman({token: Tokens.${safeEnum(
+      ct.token,
+    )}, lt: ${bnToContractPercentage(ct.lt.value)}}));`,
             )
             .join("\n");
 
@@ -138,8 +139,8 @@ ${adapters};`;
         ? ""
         : `Contracts[] storage cs = cp.contracts;` +
           this.state.adapters
-            .map(a => `cs.push(Contracts.${a.value});`)
-            .join(", ");
+            .map(a => `cs.push(Contracts.${safeEnum(a.value)});`)
+            .join("\n");
 
     return `
 /// CREDIT_MANAGER_${this.index}

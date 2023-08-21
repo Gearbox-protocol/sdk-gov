@@ -46,7 +46,6 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",
-    "@gearbox-protocol/sdk": "^2.1.17",
     "@commitlint/config-conventional": "^17.6.7",
     "eslint": "^8.46.0",
     "husky": "^8.0.3",
