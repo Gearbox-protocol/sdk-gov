@@ -43,3 +43,4 @@ export * from "./tx-builders/v2/lp-price-feed";
 export * from "./tx-builders/v2/pause-multicall";
 export * from "./tx-builders/v2/pool-service";
 export * from "./tx-builders/v2/price-oracle";
+export * from "./utils/safeEnum";
