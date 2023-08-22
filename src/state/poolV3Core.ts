@@ -165,7 +165,10 @@ ${creditManagers}`;
         PoolQuotaLimit,
         CollateralToken,
         IPoolV3DeployConfig,
-        CollateralTokenHuman
+        CollateralTokenHuman,
+        UniswapV2Pair,
+        UniswapV3Pair,
+        BalancerPool
     } from "@gearbox-protocol/core-v3/contracts/test/interfaces/ICreditConfig.sol";
     
     contract CONFIG_${this.id
