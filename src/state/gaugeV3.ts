@@ -1,6 +1,7 @@
-import { NOT_DEPLOYED, safeEnum, SupportedToken } from "@gearbox-protocol/sdk";
+import { NOT_DEPLOYED, SupportedToken } from "@gearbox-protocol/sdk";
 
 import { bnToContractPercentage } from "../base/convert";
+import { safeEnum } from "../utils/safeEnum";
 import { IConfigurator, ValidationResult } from "./iConfigurator";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 import { UpdatedValue } from "./updatedValue";

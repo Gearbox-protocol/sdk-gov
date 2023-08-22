@@ -1000,7 +1000,7 @@
     deep-eql "^4.1.0"
     moment "^2.29.4"
 
-"@gearbox-protocol/sdk@^2.1.18", "@gearbox-protocol/sdk@^2.1.24":
+"@gearbox-protocol/sdk@^2.1.18", "@gearbox-protocol/sdk@^2.1.27":
   version "2.1.27"
   resolved "https://registry.yarnpkg.com/@gearbox-protocol/sdk/-/sdk-2.1.27.tgz#93cd56948d23aca7a05f9302152cd65be174dfd8"
   integrity sha512-gjPPqf2AW1Bz1HmkAmPsIrDkafLF2J5BzX9Dloti6EYYXx8quxLN4f6+n/K9HbDG4yRfZOdeRJJQce9QTmTisA==

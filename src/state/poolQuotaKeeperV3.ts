@@ -2,11 +2,11 @@ import {
   decimals,
   formatBN,
   NOT_DEPLOYED,
-  safeEnum,
   SupportedToken,
 } from "@gearbox-protocol/sdk";
 
 import { bnToContractPercentage, bnToContractString } from "../base/convert";
+import { safeEnum } from "../utils/safeEnum";
 import { IConfigurator, ValidationResult } from "./iConfigurator";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 import { UpdatedValue } from "./updatedValue";
