@@ -458,7 +458,7 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       validationResult.errors.push(`Target contract is zero address`);
 
     // sanity checks that the address is a contract compatible with the current Credit Manager
-    const isContract = await IsContract(targetContract, this.#provider!);
+    const isContract = await IsContract(targetContractAddress, this.#provider!);
     if (!isContract && targetContractAddress !== UNIVERSAL_CONTRACT) {
       validationResult.errors.push(
         `Target contract ${targetContract} is not a contract`,
