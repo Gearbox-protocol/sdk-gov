@@ -1,4 +1,5 @@
 import { getNetworkType, MULTISIG } from "@gearbox-protocol/sdk";
+import { ethers } from "ethers";
 import { utils } from "web3";
 
 import {
@@ -20,8 +21,9 @@ export class TxBatcher {
     return this;
   }
 
-  setEtaDays(etaDays: number) {
-    const eta = Math.floor(Date.now() / 1000) + etaDays * 24 * 60 * 60;
+  setEtaDays(etaDays: number, from?: number) {
+    const eta =
+      Math.floor((from ?? Date.now()) / 1000) + etaDays * 24 * 60 * 60;
     this.#eta = eta;
     return this;
   }
