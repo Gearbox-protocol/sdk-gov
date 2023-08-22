@@ -208,6 +208,7 @@ ${contracts}
         const pairs = ((a as UniV2Config).allowed || [])
           .map(
             pair => `uv2p.push(UniswapV2Pair({
+          router: Contracts.${a.contract},
           token0: Tokens.${safeEnum(pair.token0)},
           token1: Tokens.${safeEnum(pair.token1)}
         }));`,
@@ -215,14 +216,14 @@ ${contracts}
           .join("\n");
 
         return `${contractLine}{
-        UniswapV2Pair[] storage uv2p = cp.uniswapV2Pairs[${a.contract}];
+        UniswapV2Pair[] storage uv2p = cp.uniswapV2Pairs;
         ${pairs}}`;
       }
 
       case "UNISWAP_V3_ROUTER": {
         const pairs = ((a as UniV3Config).allowed || [])
           .map(
-            pair => `uv3p.push(UniswapV2Pair({
+            pair => `uv3p.push(UniswapV3Pair({
           token0: Tokens.${safeEnum(pair.token0)},
           token1: Tokens.${safeEnum(pair.token1)},
           fee: ${pair.fee}
