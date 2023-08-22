@@ -4,16 +4,12 @@ import {
   SupportedToken,
   supportedTokens,
 } from "@gearbox-protocol/sdk";
-import {
-  BalancerLPToken,
-  BalancerLpTokenData,
-} from "@gearbox-protocol/sdk/lib/tokens/balancer";
+import { BalancerLpTokenData } from "@gearbox-protocol/sdk/lib/tokens/balancer";
 
 import { CoreConfigurator, safeEnum } from "..";
 import { bnToContractPercentage, bnToContractString } from "../base/convert";
 import {
   AdapterConfig,
-  BalancerPoolConfig,
   BalancerVaultConfig,
   UniV2Config,
   UniV3Config,
@@ -178,13 +174,13 @@ ${contracts}
     const warnings: Array<Message> = [];
     const errors: Array<Message> = [];
 
-    for (const ct of this.state.collateralTokens) {
-      // if (priceOracleV23.state.pricefeeds[ct.token] === undefinded) {
-      //   errors.push({
-      //     message: `Collateral token ${ct.token} is not supported by the price oracle`,
-      //   });
-      // }
-    }
+    // for (const ct of this.state.collateralTokens) {
+    //    if (priceOracleV23.state.pricefeeds[ct.token] === undefinded) {
+    //      errors.push({
+    //        message: `Collateral token ${ct.token} is not supported by the price oracle`,
+    //      });
+    //    }
+    // }
 
     return { warnings, errors };
   }
