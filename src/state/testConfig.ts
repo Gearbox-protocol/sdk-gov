@@ -42,24 +42,24 @@ export const config: PoolV3DeployConfig = {
     },
   },
   creditManagers: [
-    {
-      degenNft: false,
-      expirationDate: undefined,
-      minDebt: BigInt(1e5) * BigInt(1e6),
-      maxDebt: BigInt(1e6) * BigInt(1e6),
-      poolLimit: BigInt(0),
-      collateralTokens: [
-        {
-          token: "CVX",
-          lt: 2500,
-        },
-        {
-          token: "FXS",
-          lt: 2000,
-        },
-      ],
-      adapters: ["UNISWAP_V3_ROUTER"],
-    },
+    // {
+    //   degenNft: false,
+    //   expirationDate: undefined,
+    //   minDebt: BigInt(1e5) * BigInt(1e6),
+    //   maxDebt: BigInt(1e6) * BigInt(1e6),
+    //   poolLimit: BigInt(0),
+    //   collateralTokens: [
+    //     {
+    //       token: "CVX",
+    //       lt: 2500,
+    //     },
+    //     {
+    //       token: "FXS",
+    //       lt: 2000,
+    //     },
+    //   ],
+    //   adapters: ["UNISWAP_V3_ROUTER"],
+    // },
   ],
   supportsQuotas: false,
 };
