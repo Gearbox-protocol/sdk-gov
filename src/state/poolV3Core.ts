@@ -1,10 +1,6 @@
-import {
-  CHAINS,
-  NetworkType,
-  safeEnum,
-  SupportedToken,
-} from "@gearbox-protocol/sdk";
+import { CHAINS, NetworkType, SupportedToken } from "@gearbox-protocol/sdk";
 
+import { safeEnum } from "..";
 import { bnToContractString } from "../base/convert";
 import { CreditManagerV3Configurator } from "./creditManagerV3Config";
 import { GaugeV3Configurator } from "./gaugeV3";
