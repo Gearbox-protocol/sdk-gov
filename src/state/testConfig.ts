@@ -42,6 +42,7 @@ export const config: PoolV3DeployConfig = {
     },
   },
   creditManagers: [
+
     {
       degenNft: false,
       expirationDate: undefined,
@@ -71,6 +72,7 @@ export const config: PoolV3DeployConfig = {
         },
       ],
     },
+
   ],
   supportsQuotas: false,
 };

@@ -1000,7 +1000,18 @@
     deep-eql "^4.1.0"
     moment "^2.29.4"
 
-"@gearbox-protocol/sdk@^2.1.18", "@gearbox-protocol/sdk@^2.1.27":
+"@gearbox-protocol/sdk@^2.1.18":
+  version "2.1.19"
+  resolved "https://registry.yarnpkg.com/@gearbox-protocol/sdk/-/sdk-2.1.19.tgz#2cb831bd6c7afdc83e8b331f35e186b6f4512625"
+  integrity sha512-awrsKlTsa9leXQpFkNSM5gBVXe2WgiKfObmOFhp0NiX9cfcrddhLalSbTAkA7YdU2yWUNatGz7buEQg3v76LCw==
+  dependencies:
+    "@types/deep-eql" "^4.0.0"
+    axios "^1.2.6"
+    decimal.js-light "^2.5.1"
+    deep-eql "^4.1.0"
+    moment "^2.29.4"
+
+"@gearbox-protocol/sdk@^2.1.27":
   version "2.1.27"
   resolved "https://registry.yarnpkg.com/@gearbox-protocol/sdk/-/sdk-2.1.27.tgz#93cd56948d23aca7a05f9302152cd65be174dfd8"
   integrity sha512-gjPPqf2AW1Bz1HmkAmPsIrDkafLF2J5BzX9Dloti6EYYXx8quxLN4f6+n/K9HbDG4yRfZOdeRJJQce9QTmTisA==
