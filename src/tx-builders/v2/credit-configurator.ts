@@ -413,8 +413,8 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
 
   // https://github.com/Gearbox-protocol/risk-framework/blob/main/src/data/actions/sc-allow-contract.ts
   async allowContract(
-    targetContract: Address,
-    adapter: SupportedContract,
+    targetContract: SupportedContract,
+    adapter: Address,
     force = false,
   ) {
     await this.#initialize();
@@ -440,12 +440,13 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
   }
 
   async allowContractValidate(
-    targetContract: Address,
-    adapter: SupportedContract,
+    targetContract: SupportedContract,
+    adapter: Address,
   ) {
     await this.#initialize();
 
-    const adapterAddress = contractsByNetwork[this.#network!][adapter];
+    const targetContractAddress =
+      contractsByNetwork[this.#network!][targetContract];
 
     const validationResult: TxValidationResult = {
       errors: [],
@@ -453,18 +454,18 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
     };
 
     // zero-address exception
-    if (targetContract === ADDRESS_0X0)
+    if (targetContractAddress === ADDRESS_0X0)
       validationResult.errors.push(`Target contract is zero address`);
 
     // sanity checks that the address is a contract compatible with the current Credit Manager
     const isContract = await IsContract(targetContract, this.#provider!);
-    if (!isContract && targetContract !== UNIVERSAL_CONTRACT) {
+    if (!isContract && targetContractAddress !== UNIVERSAL_CONTRACT) {
       validationResult.errors.push(
         `Target contract ${targetContract} is not a contract`,
       );
     }
 
-    if (!this.#isContractCompatible(adapterAddress)) {
+    if (!this.#isContractCompatible(adapter)) {
       validationResult.errors.push(
         `Target contract ${targetContract} is not compatible with adapter ${adapter}`,
       );
@@ -483,21 +484,21 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
       );
     }
 
-    if (adapterAddress === this.#creditManager!.address) {
+    if (adapter === this.#creditManager!.address) {
       validationResult.errors.push(
-        `Adapter contract ${adapterAddress} is creditManager`,
+        `Adapter contract ${adapter} is creditManager`,
       );
     }
 
-    if (adapterAddress === this.#creditFacade!.address) {
+    if (adapter === this.#creditFacade!.address) {
       validationResult.errors.push(
-        `Adapter contract ${adapterAddress} is creditFacade`,
+        `Adapter contract ${adapter} is creditFacade`,
       );
     }
 
     // Checks that adapter is not used for another target
     const adapterToContract =
-      await this.#creditManager!.adapterToContract(adapterAddress);
+      await this.#creditManager!.adapterToContract(adapter);
 
     if (adapterToContract !== ADDRESS_0X0) {
       validationResult.errors.push(
