@@ -225,7 +225,7 @@ ${contracts}
             pair => `uv3p.push(UniswapV2Pair({
           token0: Tokens.${safeEnum(pair.token0)},
           token1: Tokens.${safeEnum(pair.token1)},
-          fee: ${pair.fee}"
+          fee: ${pair.fee}
         }));`,
           )
           .join("\n");
