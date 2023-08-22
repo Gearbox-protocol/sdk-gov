@@ -194,7 +194,7 @@ ${contracts}
 
     switch (a.contract) {
       case "BALANCER_V2_VAULT": {
-        const balancerConfig = (a as BalancerVaultConfig).allowed
+        const balancerConfig = ((a as BalancerVaultConfig).allowed || [])
           .map(
             pool => `
     bp.push(BalancerPool({
@@ -209,7 +209,7 @@ ${contracts}
 
       case "UNISWAP_V2_ROUTER":
       case "SUSHISWAP_ROUTER": {
-        const pairs = (a as UniV2Config).allowed
+        const pairs = ((a as UniV2Config).allowed || [])
           .map(
             pair => `uv2p.push(UniswapV2Pair({
           token0: Tokens.${safeEnum(pair.token0)},
@@ -224,7 +224,7 @@ ${contracts}
       }
 
       case "UNISWAP_V3_ROUTER": {
-        const pairs = (a as UniV3Config).allowed
+        const pairs = ((a as UniV3Config).allowed || [])
           .map(
             pair => `uv3p.push(UniswapV2Pair({
           token0: Tokens.${safeEnum(pair.token0)},
