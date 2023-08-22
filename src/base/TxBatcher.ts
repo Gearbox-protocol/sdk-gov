@@ -21,9 +21,9 @@ export class TxBatcher {
     return this;
   }
 
+  // from is blocktime, passed in case of warped testnet
   setEtaDays(etaDays: number, from?: number) {
-    const eta =
-      Math.floor((from ?? Date.now()) / 1000) + etaDays * 24 * 60 * 60;
+    const eta = Math.floor(from ?? Date.now() / 1000) + etaDays * 24 * 60 * 60;
     this.#eta = eta;
     return this;
   }
