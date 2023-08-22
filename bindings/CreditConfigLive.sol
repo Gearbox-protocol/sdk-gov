@@ -14,6 +14,24 @@ struct CollateralTokenHuman {
     uint16 liquidationThreshold;
 }
 
+struct BalancerPool {
+    bytes32 poolId;
+    uint8 status;
+}
+
+struct UniswapV2Pair {
+    Tokens token0;
+    Tokens token1;
+    bool whitelisted;
+}
+
+struct UniswapV3Pool {
+    Tokens token0;
+    Tokens token1;
+    uint24 fee;
+    bool whitelisted;
+}
+
 /// @dev A struct representing the initial Credit Manager configuration parameters
 struct CreditManagerV3HumanOpts {
     Tokens underlying;
@@ -33,6 +51,14 @@ struct CreditManagerV3HumanOpts {
     bool skipInit;
     /// @dev Contracts which should become adapters
     Contracts[] contracts;
+    /// @dev List of balancer pools to add to the balancer vault adapter
+    BalancerPool[] balancerPools;
+    /// @dev List of UniswapV2 pairs to add to the UniswapV2 adapter
+    UniswapV2Pair[] uniswapV2Pairs;
+    /// @dev List of UniswapV3 pools to add to the UniswapV3 adapter
+    UniswapV3Pool[] uniswapV3Pools;
+    /// @dev List of pairs to add to the Sushiswap adapter
+    UniswapV2Pair[] sushiswapPairs;
 }
 
 contract CreditConfigLive {
