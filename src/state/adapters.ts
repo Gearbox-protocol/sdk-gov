@@ -6,6 +6,12 @@ enum BalanceStatus {
   SWAP_ONLY = 2,
 }
 
+export type AdapterDeployConfig =
+  | DefaultAdapterConfig
+  | UniV3Config
+  | UniV2Config
+  | BalancerVaultConfig;
+
 export interface DefaultAdapterConfig {
   contract: SupportedContract;
 }
