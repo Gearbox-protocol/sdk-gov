@@ -1,5 +1,0 @@
-{
-  "directory": ["./src/state", "./src/tx-builders", "./src/base", "./src"],
-  "exclude": ["dev", ".spec.ts", "testConfig"],
-  "delete": true
-}
