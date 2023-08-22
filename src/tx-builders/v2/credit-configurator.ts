@@ -431,10 +431,13 @@ export class CreditConfiguratorV2TxBuilder extends TxBuilder {
         JSON.stringify(validationResult, null, 2),
       );
 
+    const targetContractAddress =
+      contractsByNetwork[this.#network!][targetContract];
+
     return this.createTx({
       contract: this.#creditConfigurator,
       method: "allowContract(address,address)",
-      args: [targetContract, adapter],
+      args: [targetContractAddress, adapter],
       validationResult,
     });
   }
