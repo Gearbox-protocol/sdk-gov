@@ -14,7 +14,6 @@ export * from "./base/TxBuilder";
 export * from "./base/types";
 export * from "./base/types/etherscan";
 export * from "./base/utils";
-export * from "./deployV3";
 export * from "./state/acl";
 export * from "./state/addressProviderV3";
 export * from "./state/contractsRegister";
