@@ -1,7 +1,6 @@
 import {
   decimals,
   NOT_DEPLOYED,
-  SupportedContract,
   SupportedToken,
   supportedTokens,
 } from "@gearbox-protocol/sdk";
@@ -12,6 +11,13 @@ import {
 
 import { CoreConfigurator, safeEnum } from "..";
 import { bnToContractPercentage, bnToContractString } from "../base/convert";
+import {
+  AdapterConfig,
+  BalancerPoolConfig,
+  BalancerVaultConfig,
+  UniV2Config,
+  UniV3Config,
+} from "./adapters";
 import { IConfigurator, Message, ValidationResult } from "./iConfigurator";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 import { UpdatedValue } from "./updatedValue";
@@ -21,24 +27,6 @@ interface CollateralTokenValue {
   lt: UpdatedValue<number>;
 }
 
-interface BalancerPoolConfigValue {
-  pool: BalancerLPToken;
-  status: UpdatedValue<"NOT_ALLOWED" | "ALLOWED" | "SWAP_ONLY">;
-}
-
-interface UniswapV2PairConfigValue {
-  token0: SupportedToken;
-  token1: SupportedToken;
-  whitelisted: UpdatedValue<boolean>;
-}
-
-interface UniswapV3PoolConfigValue {
-  token0: SupportedToken;
-  token1: SupportedToken;
-  fee: 100 | 500 | 3000 | 10000;
-  whitelisted: UpdatedValue<boolean>;
-}
-
 export interface CreditManagerV3State {
   degenNft: UpdatedValue<boolean>;
   expirable: UpdatedValue<boolean>;
@@ -46,12 +34,8 @@ export interface CreditManagerV3State {
   minDebt: UpdatedValue<bigint>;
   maxDebt: UpdatedValue<bigint>;
   collateralTokens: Array<CollateralTokenValue>;
-  adapters: Array<UpdatedValue<SupportedContract>>;
+  adapters: Array<UpdatedValue<AdapterConfig>>;
   poolLimit: UpdatedValue<bigint>;
-  balancerPools: Array<BalancerPoolConfigValue>;
-  uniswapV2Pairs: Array<UniswapV2PairConfigValue>;
-  uniswapV3Pools: Array<UniswapV3PoolConfigValue>;
-  sushiswapPairs: Array<UniswapV2PairConfigValue>;
 }
 
 export class CreditManagerV3Configurator implements IConfigurator {
@@ -78,26 +62,6 @@ export class CreditManagerV3Configurator implements IConfigurator {
         lt: UpdatedValue.new(t.lt),
       })),
       adapters: config.adapters.map(a => UpdatedValue.new(a)),
-      balancerPools: config.balancerPools.map(t => ({
-        pool: t.pool,
-        status: UpdatedValue.new(t.status),
-      })),
-      uniswapV2Pairs: config.uniswapV2Pairs.map(t => ({
-        token0: t.token0,
-        token1: t.token1,
-        whitelisted: UpdatedValue.new(t.whitelisted),
-      })),
-      uniswapV3Pools: config.uniswapV3Pools.map(t => ({
-        token0: t.token0,
-        token1: t.token1,
-        fee: t.fee,
-        whitelisted: UpdatedValue.new(t.whitelisted),
-      })),
-      sushiswapPairs: config.sushiswapPairs.map(t => ({
-        token0: t.token0,
-        token1: t.token1,
-        whitelisted: UpdatedValue.new(t.whitelisted),
-      })),
     };
 
     return new CreditManagerV3Configurator({
@@ -121,10 +85,6 @@ export class CreditManagerV3Configurator implements IConfigurator {
       poolLimit: UpdatedValue.new(BigInt(0)),
       collateralTokens: [],
       adapters: [],
-      balancerPools: [],
-      uniswapV2Pairs: [],
-      uniswapV3Pools: [],
-      sushiswapPairs: [],
     };
 
     return new CreditManagerV3Configurator({
@@ -188,73 +148,7 @@ ${adapters};`;
       this.state.adapters.length === 0
         ? ""
         : `Contracts[] storage cs = cp.contracts;` +
-          this.state.adapters
-            .map(a => `cs.push(Contracts.${safeEnum(a.value)});`)
-            .join("\n");
-
-    const balancerPools =
-      this.state.balancerPools.length === 0
-        ? ""
-        : `BalancerPool[] storage bp = cp.balancerPools;` +
-          this.state.balancerPools
-            .map(
-              poolConfig => `bp.push(BalancerPool({
-        poolId: ${
-          (supportedTokens[poolConfig.pool] as BalancerLpTokenData).poolId
-        },
-        status: ${
-          poolConfig.status.value === "NOT_ALLOWED"
-            ? 0
-            : poolConfig.status.value === "ALLOWED"
-            ? 1
-            : 2
-        }
-      }));`,
-            )
-            .join("\n");
-
-    const uniswapV2Pairs =
-      this.state.uniswapV2Pairs.length === 0
-        ? ""
-        : `UniswapV2Pair[] storage uv2p = cp.uniswapV2Pairs;` +
-          this.state.uniswapV2Pairs
-            .map(
-              pairConfig => `uv2p.push(UniswapV2Pair({
-        token0: Tokens.${pairConfig.token0},
-        token1: Tokens.${pairConfig.token1},
-        whitelisted: ${pairConfig.whitelisted}
-      }));`,
-            )
-            .join("\n");
-
-    const sushiswapPairs =
-      this.state.sushiswapPairs.length === 0
-        ? ""
-        : `UniswapV2Pair[] storage ssp = cp.sushiswapPairs;` +
-          this.state.sushiswapPairs
-            .map(
-              pairConfig => `ssp.push(UniswapV2Pair({
-    token0: Tokens.${pairConfig.token0},
-    token1: Tokens.${pairConfig.token1},
-    whitelisted: ${pairConfig.whitelisted}
-  }));`,
-            )
-            .join("\n");
-
-    const uniswapV3Pools =
-      this.state.uniswapV3Pools.length === 0
-        ? ""
-        : `UniswapV3Pools[] storage uv3p = cp.uniswapV3Pools;` +
-          this.state.uniswapV3Pools
-            .map(
-              poolConfig => `uv3p.push(UniswapV3Pool({
-      token0: Tokens.${poolConfig.token0},
-      token1: Tokens.${poolConfig.token1},
-      fee: ${poolConfig.fee},
-      whitelisted: ${poolConfig.whitelisted}
-    }));`,
-            )
-            .join("\n");
+          this.state.adapters.map(a => this.adapterConfig(a.value)).join("\n");
 
     return `
 /// CREDIT_MANAGER_${this.index}
@@ -269,10 +163,7 @@ cp.poolLimit = ${bnToContractString(this.state.poolLimit.value)};
 
 ${collateralTokens}
 ${contracts}
-${balancerPools}
-${uniswapV2Pairs}
-${uniswapV3Pools}
-${sushiswapPairs}
+
 `;
   }
 
@@ -296,5 +187,59 @@ ${sushiswapPairs}
     }
 
     return { warnings, errors };
+  }
+
+  adapterConfig(a: AdapterConfig): string {
+    const contractLine = `cs.push(Contracts.${safeEnum(a.contract)});`;
+
+    switch (a.contract) {
+      case "BALANCER_V2_VAULT": {
+        const balancerConfig = (a as BalancerVaultConfig).allowed
+          .map(
+            pool => `
+    bp.push(BalancerPool({
+      poolId: ${(supportedTokens[pool.pool] as BalancerLpTokenData).poolId},
+      status: ${pool.status.toFixed()}}));`,
+          )
+          .join("\n");
+        return `${contractLine}
+        BalancerPool[] storage bp = cp.balancerPools;
+        ${balancerConfig}`;
+      }
+
+      case "UNISWAP_V2_ROUTER":
+      case "SUSHISWAP_ROUTER": {
+        const pairs = (a as UniV2Config).allowed
+          .map(
+            pair => `uv2p.push(UniswapV2Pair({
+          token0: Tokens.${safeEnum(pair.token0)},
+          token1: Tokens.${safeEnum(pair.token1)}
+        }));`,
+          )
+          .join("\n");
+
+        return `${contractLine}{
+        UniswapV2Pair[] storage uv2p = cp.uniswapV2Pairs[${a.contract}];
+        ${pairs}}`;
+      }
+
+      case "UNISWAP_V3_ROUTER": {
+        const pairs = (a as UniV3Config).allowed
+          .map(
+            pair => `uv3p.push(UniswapV2Pair({
+          token0: Tokens.${safeEnum(pair.token0)},
+          token1: Tokens.${safeEnum(pair.token1)},
+          fee: ${pair.fee}"
+        }));`,
+          )
+          .join("\n");
+
+        return `${contractLine}
+        UniswapV3Pair[] storage uv3p = cp.uniswapV3Pairs;
+        ${pairs}`;
+      }
+      default:
+        return contractLine;
+    }
   }
 }

@@ -58,7 +58,18 @@ export const config: PoolV3DeployConfig = {
           lt: 2000,
         },
       ],
-      adapters: ["UNISWAP_V3_ROUTER"],
+      adapters: [
+        {
+          contract: "UNISWAP_V3_ROUTER",
+          allowed: [
+            {
+              token0: "USDC",
+              token1: "WETH",
+              fee: 100,
+            },
+          ],
+        },
+      ],
     },
   ],
   supportsQuotas: false,
