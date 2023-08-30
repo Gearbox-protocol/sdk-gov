@@ -538,9 +538,17 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
   },
 
   crvUSD: {
-    type: PriceFeedType.CURVE_USD_ORACLE,
-    pool: "CURVE_CRVUSD_USDC_POOL",
-    underlying: "USDC",
+    type: PriceFeedType.NETWORK_DEPENDENT,
+    feeds: {
+      Mainnet: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9",
+      },
+      Arbitrum: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: NOT_DEPLOYED,
+      },
+    },
   },
 
   crvUSDUSDC: {
