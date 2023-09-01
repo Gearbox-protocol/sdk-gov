@@ -837,7 +837,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     type: PriceFeedType.COMPOUND_V2_ORACLE,
     underlying: "LINK",
   },
-  cWETH: {
+  cETH: {
     type: PriceFeedType.COMPOUND_V2_ORACLE,
     underlying: "WETH",
   },
