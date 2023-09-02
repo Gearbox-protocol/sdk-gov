@@ -177,13 +177,6 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ FEI ------------------------
-        chainlinkPriceFeedsByNetwork[1].push(
-            ChainlinkPriceFeedData({
-                token: Tokens.FEI,
-                priceFeed: 0x31e0a88fecB6eC0a411DBe0e9E76391498296EE9,
-                stalenessPeriod: 86400
-            })
-        );
 
         // ------------------------ GUSD ------------------------
         chainlinkPriceFeedsByNetwork[1].push(
