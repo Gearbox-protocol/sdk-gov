@@ -94,7 +94,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     feeds: {
       Mainnet: {
         type: PriceFeedType.CHAINLINK_ORACLE,
-        address: "0x31e0a88fecB6eC0a411DBe0e9E76391498296EE9",
+        address: NOT_DEPLOYED, // OUTDATED: "0x31e0a88fecB6eC0a411DBe0e9E76391498296EE9",
       },
       Arbitrum: {
         type: PriceFeedType.CHAINLINK_ORACLE,
