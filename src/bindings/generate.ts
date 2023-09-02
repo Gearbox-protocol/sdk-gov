@@ -203,6 +203,25 @@ class BindingsGenerator {
     result = this.generateCrvUSDPriceFeedData(token, priceFeedData, chainId);
     if (result) return result;
 
+    result = this.generateBalancerLPPriceFeedData(
+      token,
+      priceFeedData,
+      chainId,
+      "balancerStableLPPriceFeedsByNetwork",
+      PriceFeedType.BALANCER_STABLE_LP_ORACLE,
+    );
+    if (result) return result;
+
+    result = this.generateBalancerLPPriceFeedData(
+      token,
+      priceFeedData,
+      chainId,
+      "balancerWeightedLPPriceFeedsByNetwork",
+      PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
+    );
+
+    if (result) return result;
+
     result = this.generateRedStoneFeedData(token, priceFeedData, chainId);
     if (result) return result;
 
@@ -372,6 +391,28 @@ class BindingsGenerator {
       underlying: ${this.tokensEnum(
         priceFeedData.underlying as SupportedToken,
       )}}));`;
+    }
+    return undefined;
+  }
+
+  protected generateBalancerLPPriceFeedData(
+    token: string,
+    priceFeedData: PriceFeedData,
+    chainId: number,
+    varName: string,
+    oracleType: PriceFeedType,
+  ): string | undefined {
+    if (priceFeedData.type === oracleType) {
+      if (
+        priceFeedData.type === PriceFeedType.BALANCER_STABLE_LP_ORACLE ||
+        priceFeedData.type === PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE
+      ) {
+        return `${varName}[${chainId}].push(BalancerLPPriceFeedData({ lpToken: ${this.tokensEnum(
+          token,
+        )}, assets: TokensLib.arrayOf(${priceFeedData.assets
+          .map(t => this.tokensEnum(t))
+          .join(",")})}));`;
+      }
     }
     return undefined;
   }

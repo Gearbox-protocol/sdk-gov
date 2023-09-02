@@ -273,7 +273,7 @@ contract TokensDataLive {
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.crvUSD,
-                addr: 0x95ECDC6caAf7E4805FCeF2679A92338351D24297,
+                addr: 0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E,
                 symbol: "crvUSD",
                 tokenType: TokenType.NORMAL_TOKEN
             })
@@ -720,6 +720,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.USDC_DAI_USDT,
+                addr: 0x79c58f70905F734641735BC61e45c19dD9Ad60bC,
+                symbol: "USDC-DAI-USDT",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.aDAI,
                 addr: 0x028171bCA77440897B824Ca71D1c56caC55b68A3,
                 symbol: "aDAI",
@@ -751,6 +759,46 @@ contract TokensDataLive {
             })
         );
 
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.cDAI,
+                addr: 0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643,
+                symbol: "cDAI",
+                tokenType: TokenType.COMPOUND_V2_C_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.cUSDC,
+                addr: 0x39AA39c021dfbaE8faC545936693aC917d5E7563,
+                symbol: "cUSDC",
+                tokenType: TokenType.COMPOUND_V2_C_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.cUSDT,
+                addr: 0xf650C3d88D12dB855b8bf7D11Be6C55A4e07dCC9,
+                symbol: "cUSDT",
+                tokenType: TokenType.COMPOUND_V2_C_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.cETH,
+                addr: 0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5,
+                symbol: "cETH",
+                tokenType: TokenType.COMPOUND_V2_C_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.cLINK,
+                addr: 0xFAce851a4921ce59e912d19329929CE6da6EB0c7,
+                symbol: "cLINK",
+                tokenType: TokenType.COMPOUND_V2_C_TOKEN
+            })
+        );
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.dDAI,

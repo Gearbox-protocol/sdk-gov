@@ -680,6 +680,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
   },
   "50OHM_50DAI": {
     type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
+
     assets: ["OHM", "DAI"],
   },
   "50OHM_50WETH": {
@@ -689,6 +690,10 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
   OHM_wstETH: {
     type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
     assets: ["OHM", "wstETH"],
+  },
+  "USDC-DAI-USDT": {
+    type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
+    assets: ["USDC", "DAI", "USDT"],
   },
 
   // GEARBOX
@@ -837,7 +842,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     type: PriceFeedType.COMPOUND_V2_ORACLE,
     underlying: "LINK",
   },
-  cWETH: {
+  cETH: {
     type: PriceFeedType.COMPOUND_V2_ORACLE,
     underlying: "WETH",
   },

@@ -31,4 +31,62 @@ library TokensLib {
         tokensList[2] = t3;
         tokensList[3] = t4;
     }
+
+    function arrayOf(Tokens t1, Tokens t2, Tokens t3, Tokens t4, Tokens t5)
+        external
+        pure
+        returns (Tokens[] memory tokensList)
+    {
+        tokensList = new Tokens[](5);
+        tokensList[0] = t1;
+        tokensList[1] = t2;
+        tokensList[2] = t3;
+        tokensList[3] = t4;
+        tokensList[4] = t5;
+    }
+
+    function arrayOf(Tokens t1, Tokens t2, Tokens t3, Tokens t4, Tokens t5, Tokens t6)
+        external
+        pure
+        returns (Tokens[] memory tokensList)
+    {
+        tokensList = new Tokens[](6);
+        tokensList[0] = t1;
+        tokensList[1] = t2;
+        tokensList[2] = t3;
+        tokensList[3] = t4;
+        tokensList[4] = t5;
+        tokensList[5] = t6;
+    }
+
+    function arrayOf(Tokens t1, Tokens t2, Tokens t3, Tokens t4, Tokens t5, Tokens t6, Tokens t7)
+        external
+        pure
+        returns (Tokens[] memory tokensList)
+    {
+        tokensList = new Tokens[](6);
+        tokensList[0] = t1;
+        tokensList[1] = t2;
+        tokensList[2] = t3;
+        tokensList[3] = t4;
+        tokensList[4] = t5;
+        tokensList[5] = t6;
+        tokensList[6] = t7;
+    }
+
+    function arrayOf(Tokens t1, Tokens t2, Tokens t3, Tokens t4, Tokens t5, Tokens t6, Tokens t7, Tokens t8)
+        external
+        pure
+        returns (Tokens[] memory tokensList)
+    {
+        tokensList = new Tokens[](6);
+        tokensList[0] = t1;
+        tokensList[1] = t2;
+        tokensList[2] = t3;
+        tokensList[3] = t4;
+        tokensList[4] = t5;
+        tokensList[5] = t6;
+        tokensList[6] = t7;
+        tokensList[7] = t8;
+    }
 }

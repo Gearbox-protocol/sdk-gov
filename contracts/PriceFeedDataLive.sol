@@ -55,6 +55,11 @@ struct GenericLPPriceFeedData {
     Tokens underlying;
 }
 
+struct BalancerLPPriceFeedData {
+    Tokens lpToken;
+    Tokens[] assets;
+}
+
 struct RedStonePriceFeedData {
     Tokens token;
     string tokenSymbol;
@@ -78,6 +83,8 @@ contract PriceFeedDataLive {
     mapping(uint256 => GenericLPPriceFeedData[]) erc4626PriceFeedsByNetwork;
     mapping(uint256 => CrvUsdPriceFeedData[]) crvUSDPriceFeedsByNetwork;
     mapping(uint256 => RedStonePriceFeedData[]) redStonePriceFeedsByNetwork;
+    mapping(uint256 => BalancerLPPriceFeedData[]) balancerStableLPPriceFeedsByNetwork;
+    mapping(uint256 => BalancerLPPriceFeedData[]) balancerWeightedLPPriceFeedsByNetwork;
 
     constructor() {
         // ------------------------ 1INCH ------------------------
@@ -1059,10 +1066,42 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ 50OHM_50DAI ------------------------
+        balancerWeightedLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({lpToken: Tokens._50OHM_50DAI, assets: TokensLib.arrayOf(Tokens.OHM, Tokens.DAI)})
+        );
+        balancerWeightedLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({lpToken: Tokens._50OHM_50DAI, assets: TokensLib.arrayOf(Tokens.OHM, Tokens.DAI)})
+        );
 
         // ------------------------ 50OHM_50WETH ------------------------
+        balancerWeightedLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({lpToken: Tokens._50OHM_50WETH, assets: TokensLib.arrayOf(Tokens.OHM, Tokens.WETH)})
+        );
+        balancerWeightedLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({lpToken: Tokens._50OHM_50WETH, assets: TokensLib.arrayOf(Tokens.OHM, Tokens.WETH)})
+        );
 
         // ------------------------ OHM_wstETH ------------------------
+        balancerWeightedLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({lpToken: Tokens.OHM_wstETH, assets: TokensLib.arrayOf(Tokens.OHM, Tokens.wstETH)})
+        );
+        balancerWeightedLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({lpToken: Tokens.OHM_wstETH, assets: TokensLib.arrayOf(Tokens.OHM, Tokens.wstETH)})
+        );
+
+        // ------------------------ USDC-DAI-USDT ------------------------
+        balancerStableLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({
+                lpToken: Tokens.USDC_DAI_USDT,
+                assets: TokensLib.arrayOf(Tokens.USDC, Tokens.DAI, Tokens.USDT)
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({
+                lpToken: Tokens.USDC_DAI_USDT,
+                assets: TokensLib.arrayOf(Tokens.USDC, Tokens.DAI, Tokens.USDT)
+            })
+        );
 
         // ------------------------ dDAI ------------------------
 
@@ -1166,10 +1205,10 @@ contract PriceFeedDataLive {
             GenericLPPriceFeedData({lpToken: Tokens.cLINK, underlying: Tokens.LINK})
         );
 
-        // ------------------------ cWETH ------------------------
-        compoundV2PriceFeedsByNetwork[1].push(GenericLPPriceFeedData({lpToken: Tokens.cWETH, underlying: Tokens.WETH}));
+        // ------------------------ cETH ------------------------
+        compoundV2PriceFeedsByNetwork[1].push(GenericLPPriceFeedData({lpToken: Tokens.cETH, underlying: Tokens.WETH}));
         compoundV2PriceFeedsByNetwork[42161].push(
-            GenericLPPriceFeedData({lpToken: Tokens.cWETH, underlying: Tokens.WETH})
+            GenericLPPriceFeedData({lpToken: Tokens.cETH, underlying: Tokens.WETH})
         );
 
         // ------------------------ MKR ------------------------

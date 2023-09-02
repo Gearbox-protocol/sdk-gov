@@ -5,6 +5,7 @@ import {
   SupportedToken,
 } from "@gearbox-protocol/sdk";
 import { AaveV2LPToken } from "@gearbox-protocol/sdk/lib/tokens/aave";
+import { BalancerLPToken } from "@gearbox-protocol/sdk/lib/tokens/balancer";
 
 export interface PriceFeed {
   token: string;
@@ -80,6 +81,10 @@ export type PriceFeedData =
     }
   | {
       type: PriceFeedType.CURVE_CRYPTO_ORACLE;
+      assets: Array<SupportedToken>;
+    }
+  | {
+      type: PriceFeedType.BALANCER_STABLE_LP_ORACLE;
       assets: Array<SupportedToken>;
     }
   | {

@@ -55,6 +55,11 @@ struct GenericLPPriceFeedData {
     Tokens underlying;
 }
 
+struct BalancerLPPriceFeedData {
+    Tokens lpToken;
+    Tokens[] assets;
+}
+
 struct RedStonePriceFeedData {
     Tokens token;
     string tokenSymbol;
@@ -78,6 +83,8 @@ contract PriceFeedDataLive {
     mapping(uint256 => GenericLPPriceFeedData[]) erc4626PriceFeedsByNetwork;
     mapping(uint256 => CrvUsdPriceFeedData[]) crvUSDPriceFeedsByNetwork;
     mapping(uint256 => RedStonePriceFeedData[]) redStonePriceFeedsByNetwork;
+    mapping(uint256 => BalancerLPPriceFeedData[]) balancerStableLPPriceFeedsByNetwork;
+    mapping(uint256 => BalancerLPPriceFeedData[]) balancerWeightedLPPriceFeedsByNetwork;
 
     constructor() {
         // $GENERATE_HERE$
