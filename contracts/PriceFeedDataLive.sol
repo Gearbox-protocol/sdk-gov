@@ -62,7 +62,7 @@ struct BalancerLPPriceFeedData {
 
 struct RedStonePriceFeedData {
     Tokens token;
-    string tokenSymbol;
+    string dataServiceId;
     bytes32 dataFeedId;
     address[10] signers;
     uint8 signersThreshold;
@@ -83,6 +83,7 @@ contract PriceFeedDataLive {
     mapping(uint256 => GenericLPPriceFeedData[]) erc4626PriceFeedsByNetwork;
     mapping(uint256 => CrvUsdPriceFeedData[]) crvUSDPriceFeedsByNetwork;
     mapping(uint256 => RedStonePriceFeedData[]) redStonePriceFeedsByNetwork;
+    mapping(address => string) redstoneServiceIdByPriceFeed;
     mapping(uint256 => BalancerLPPriceFeedData[]) balancerStableLPPriceFeedsByNetwork;
     mapping(uint256 => BalancerLPPriceFeedData[]) balancerWeightedLPPriceFeedsByNetwork;
 
@@ -483,8 +484,8 @@ contract PriceFeedDataLive {
         redStonePriceFeedsByNetwork[1].push(
             RedStonePriceFeedData({
                 token: Tokens.SHIB,
-                tokenSymbol: "SHIB",
-                dataFeedId: "redstone-main-demo",
+                dataServiceId: "redstone-main-demo",
+                dataFeedId: "SHIB",
                 signers: [
                     0x0C39486f770B26F5527BBBf942726537986Cd7eb,
                     address(0),
@@ -503,8 +504,8 @@ contract PriceFeedDataLive {
         redStonePriceFeedsByNetwork[42161].push(
             RedStonePriceFeedData({
                 token: Tokens.SHIB,
-                tokenSymbol: "SHIB",
-                dataFeedId: "redstone-main-demo",
+                dataServiceId: "redstone-main-demo",
+                dataFeedId: "SHIB",
                 signers: [
                     0x0C39486f770B26F5527BBBf942726537986Cd7eb,
                     address(0),

@@ -109,6 +109,7 @@ export type PriceFeedData =
     }
   | {
       type: PriceFeedType.REDSTONE_ORACLE;
+      dataServiceId: string;
       dataId: string;
       signers: Array<string>;
       signersThreshold: number;

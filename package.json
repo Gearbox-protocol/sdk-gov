@@ -39,6 +39,7 @@
     "@gearbox-protocol/oracles-v3": "^1.7.3",
     "@gearbox-protocol/prettier-config": "^1.5.0",
     "@gearbox-protocol/sdk": "^2.1.32",
+    "@redstone-finance/evm-connector": "^0.2.5",
     "@types/chai": "^4.3.5",
     "@types/mocha": "^10.0.1",
     "axios": "^1.4.0",

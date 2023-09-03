@@ -434,7 +434,7 @@ class BindingsGenerator {
 
       return `redStonePriceFeedsByNetwork[${chainId}].push(RedStonePriceFeedData({ 
             token: ${this.tokensEnum(token)},
-            tokenSymbol: "${token}", 
+            dataServiceId: "${priceFeedData.dataServiceId}", 
             dataFeedId: "${priceFeedData.dataId}", signers: [${signers.join(
               ",",
             )}], signersThreshold: ${priceFeedData.signersThreshold} }));`;

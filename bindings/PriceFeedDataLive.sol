@@ -62,7 +62,7 @@ struct BalancerLPPriceFeedData {
 
 struct RedStonePriceFeedData {
     Tokens token;
-    string tokenSymbol;
+    string dataServiceId;
     bytes32 dataFeedId;
     address[10] signers;
     uint8 signersThreshold;
@@ -83,6 +83,7 @@ contract PriceFeedDataLive {
     mapping(uint256 => GenericLPPriceFeedData[]) erc4626PriceFeedsByNetwork;
     mapping(uint256 => CrvUsdPriceFeedData[]) crvUSDPriceFeedsByNetwork;
     mapping(uint256 => RedStonePriceFeedData[]) redStonePriceFeedsByNetwork;
+    mapping(address => string) redstoneServiceIdByPriceFeed;
     mapping(uint256 => BalancerLPPriceFeedData[]) balancerStableLPPriceFeedsByNetwork;
     mapping(uint256 => BalancerLPPriceFeedData[]) balancerWeightedLPPriceFeedsByNetwork;
 

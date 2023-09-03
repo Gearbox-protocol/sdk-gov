@@ -422,7 +422,8 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
 
   SHIB: {
     type: PriceFeedType.REDSTONE_ORACLE,
-    dataId: "redstone-main-demo",
+    dataServiceId: "redstone-main-demo",
+    dataId: "SHIB",
     signers: ["0x0C39486f770B26F5527BBBf942726537986Cd7eb"],
     signersThreshold: 1,
   },
