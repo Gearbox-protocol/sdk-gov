@@ -189,7 +189,7 @@ ${contracts}
     const contractLine = `cs.push(Contracts.${safeEnum(a.contract)});`;
 
     switch (a.contract) {
-      case "BALANCER_V2_VAULT": {
+      case "BALANCER_VAULT": {
         const balancerConfig = ((a as BalancerVaultConfig).allowed || [])
           .map(
             pool => `
