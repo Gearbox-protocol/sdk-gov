@@ -361,6 +361,42 @@ contract SupportedContracts is Test, ISupportedContracts {
             })
         );
 
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.COMPOUND_V2_DAI_POOL,
+                addr: 0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643,
+                name: "COMPOUND_V2_DAI_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.COMPOUND_V2_USDC_POOL,
+                addr: 0x39AA39c021dfbaE8faC545936693aC917d5E7563,
+                name: "COMPOUND_V2_USDC_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.COMPOUND_V2_USDT_POOL,
+                addr: 0xf650C3d88D12dB855b8bf7D11Be6C55A4e07dCC9,
+                name: "COMPOUND_V2_USDT_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.COMPOUND_V2_LINK_POOL,
+                addr: 0xFAce851a4921ce59e912d19329929CE6da6EB0c7,
+                name: "COMPOUND_V2_LINK_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.COMPOUND_V2_ETH_POOL,
+                addr: 0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5,
+                name: "COMPOUND_V2_ETH_POOL"
+            })
+        );
+
         contractDataByNetwork[42161].push(
             ContractData({
                 id: Contracts.CURVE_CRVUSD_USDC_POOL,
@@ -403,6 +439,14 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.UNIVERSAL_ADAPTER,
                 addr: 0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC,
                 name: "UNIVERSAL_ADAPTER"
+            })
+        );
+
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.COMPOUND_V2_LINK_POOL,
+                addr: 0xFAce851a4921ce59e912d19329929CE6da6EB0c7,
+                name: "COMPOUND_V2_LINK_POOL"
             })
         );
 

@@ -94,7 +94,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     feeds: {
       Mainnet: {
         type: PriceFeedType.CHAINLINK_ORACLE,
-        address: "0x31e0a88fecB6eC0a411DBe0e9E76391498296EE9",
+        address: NOT_DEPLOYED, // OUTDATED: "0x31e0a88fecB6eC0a411DBe0e9E76391498296EE9",
       },
       Arbitrum: {
         type: PriceFeedType.CHAINLINK_ORACLE,
@@ -422,7 +422,8 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
 
   SHIB: {
     type: PriceFeedType.REDSTONE_ORACLE,
-    dataId: "redstone-main-demo",
+    dataServiceId: "redstone-main-demo",
+    dataId: "SHIB",
     signers: ["0x0C39486f770B26F5527BBBf942726537986Cd7eb"],
     signersThreshold: 1,
   },
@@ -538,9 +539,17 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
   },
 
   crvUSD: {
-    type: PriceFeedType.CURVE_USD_ORACLE,
-    pool: "CURVE_CRVUSD_USDC_POOL",
-    underlying: "USDC",
+    type: PriceFeedType.NETWORK_DEPENDENT,
+    feeds: {
+      Mainnet: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9",
+      },
+      Arbitrum: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: NOT_DEPLOYED,
+      },
+    },
   },
 
   crvUSDUSDC: {
@@ -680,6 +689,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
   },
   "50OHM_50DAI": {
     type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
+
     assets: ["OHM", "DAI"],
   },
   "50OHM_50WETH": {
@@ -689,6 +699,10 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
   OHM_wstETH: {
     type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
     assets: ["OHM", "wstETH"],
+  },
+  "USDC-DAI-USDT": {
+    type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
+    assets: ["USDC", "DAI", "USDT"],
   },
 
   // GEARBOX
@@ -837,7 +851,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     type: PriceFeedType.COMPOUND_V2_ORACLE,
     underlying: "LINK",
   },
-  cWETH: {
+  cETH: {
     type: PriceFeedType.COMPOUND_V2_ORACLE,
     underlying: "WETH",
   },

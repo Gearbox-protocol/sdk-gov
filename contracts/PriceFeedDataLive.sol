@@ -55,9 +55,14 @@ struct GenericLPPriceFeedData {
     Tokens underlying;
 }
 
+struct BalancerLPPriceFeedData {
+    Tokens lpToken;
+    Tokens[] assets;
+}
+
 struct RedStonePriceFeedData {
     Tokens token;
-    string tokenSymbol;
+    string dataServiceId;
     bytes32 dataFeedId;
     address[10] signers;
     uint8 signersThreshold;
@@ -78,6 +83,9 @@ contract PriceFeedDataLive {
     mapping(uint256 => GenericLPPriceFeedData[]) erc4626PriceFeedsByNetwork;
     mapping(uint256 => CrvUsdPriceFeedData[]) crvUSDPriceFeedsByNetwork;
     mapping(uint256 => RedStonePriceFeedData[]) redStonePriceFeedsByNetwork;
+    mapping(address => string) redstoneServiceIdByPriceFeed;
+    mapping(uint256 => BalancerLPPriceFeedData[]) balancerStableLPPriceFeedsByNetwork;
+    mapping(uint256 => BalancerLPPriceFeedData[]) balancerWeightedLPPriceFeedsByNetwork;
 
     constructor() {
         // ------------------------ 1INCH ------------------------
@@ -170,13 +178,6 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ FEI ------------------------
-        chainlinkPriceFeedsByNetwork[1].push(
-            ChainlinkPriceFeedData({
-                token: Tokens.FEI,
-                priceFeed: 0x31e0a88fecB6eC0a411DBe0e9E76391498296EE9,
-                stalenessPeriod: 86400
-            })
-        );
 
         // ------------------------ GUSD ------------------------
         chainlinkPriceFeedsByNetwork[1].push(
@@ -483,8 +484,8 @@ contract PriceFeedDataLive {
         redStonePriceFeedsByNetwork[1].push(
             RedStonePriceFeedData({
                 token: Tokens.SHIB,
-                tokenSymbol: "SHIB",
-                dataFeedId: "redstone-main-demo",
+                dataServiceId: "redstone-main-demo",
+                dataFeedId: "SHIB",
                 signers: [
                     0x0C39486f770B26F5527BBBf942726537986Cd7eb,
                     address(0),
@@ -503,8 +504,8 @@ contract PriceFeedDataLive {
         redStonePriceFeedsByNetwork[42161].push(
             RedStonePriceFeedData({
                 token: Tokens.SHIB,
-                tokenSymbol: "SHIB",
-                dataFeedId: "redstone-main-demo",
+                dataServiceId: "redstone-main-demo",
+                dataFeedId: "SHIB",
                 signers: [
                     0x0C39486f770B26F5527BBBf942726537986Cd7eb,
                     address(0),
@@ -1059,10 +1060,42 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ 50OHM_50DAI ------------------------
+        balancerWeightedLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({lpToken: Tokens._50OHM_50DAI, assets: TokensLib.arrayOf(Tokens.OHM, Tokens.DAI)})
+        );
+        balancerWeightedLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({lpToken: Tokens._50OHM_50DAI, assets: TokensLib.arrayOf(Tokens.OHM, Tokens.DAI)})
+        );
 
         // ------------------------ 50OHM_50WETH ------------------------
+        balancerWeightedLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({lpToken: Tokens._50OHM_50WETH, assets: TokensLib.arrayOf(Tokens.OHM, Tokens.WETH)})
+        );
+        balancerWeightedLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({lpToken: Tokens._50OHM_50WETH, assets: TokensLib.arrayOf(Tokens.OHM, Tokens.WETH)})
+        );
 
         // ------------------------ OHM_wstETH ------------------------
+        balancerWeightedLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({lpToken: Tokens.OHM_wstETH, assets: TokensLib.arrayOf(Tokens.OHM, Tokens.wstETH)})
+        );
+        balancerWeightedLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({lpToken: Tokens.OHM_wstETH, assets: TokensLib.arrayOf(Tokens.OHM, Tokens.wstETH)})
+        );
+
+        // ------------------------ USDC-DAI-USDT ------------------------
+        balancerStableLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({
+                lpToken: Tokens.USDC_DAI_USDT,
+                assets: TokensLib.arrayOf(Tokens.USDC, Tokens.DAI, Tokens.USDT)
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({
+                lpToken: Tokens.USDC_DAI_USDT,
+                assets: TokensLib.arrayOf(Tokens.USDC, Tokens.DAI, Tokens.USDT)
+            })
+        );
 
         // ------------------------ dDAI ------------------------
 
@@ -1166,10 +1199,10 @@ contract PriceFeedDataLive {
             GenericLPPriceFeedData({lpToken: Tokens.cLINK, underlying: Tokens.LINK})
         );
 
-        // ------------------------ cWETH ------------------------
-        compoundV2PriceFeedsByNetwork[1].push(GenericLPPriceFeedData({lpToken: Tokens.cWETH, underlying: Tokens.WETH}));
+        // ------------------------ cETH ------------------------
+        compoundV2PriceFeedsByNetwork[1].push(GenericLPPriceFeedData({lpToken: Tokens.cETH, underlying: Tokens.WETH}));
         compoundV2PriceFeedsByNetwork[42161].push(
-            GenericLPPriceFeedData({lpToken: Tokens.cWETH, underlying: Tokens.WETH})
+            GenericLPPriceFeedData({lpToken: Tokens.cETH, underlying: Tokens.WETH})
         );
 
         // ------------------------ MKR ------------------------

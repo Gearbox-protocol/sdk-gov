@@ -171,7 +171,7 @@ export class GithubChecker {
   public async compareWithGithub(
     address: string,
   ): Promise<FullContractAndImportsResult> {
-    // console.log(`Checking contracts from ${address}`)
+    console.log(`Checking contracts from ${address}`);
     const url = `${this.baseURL}/api/contracts/verified?address=${address}&returnContracts=true`;
     const source = await axios.get<VerifiedResponse>(url);
     if (!source.data) {
@@ -206,7 +206,13 @@ export class GithubChecker {
     for (let [entry, data] of Object.entries(etherscanData.sources)) {
       console.log("checking entry", entry);
 
-      if (!entry.startsWith("@gearbox-protocol")) continue;
+      if (!entry.startsWith("@gearbox-protocol")) {
+        if (entry.startsWith("contracts/")) {
+          entry = "@gearbox-protocol/core-v2/" + entry;
+        } else {
+          continue;
+        }
+      }
 
       // console.log("checking entry", entry);
 

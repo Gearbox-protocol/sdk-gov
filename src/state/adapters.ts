@@ -22,7 +22,7 @@ export interface BalancerPoolConfig {
 }
 
 export interface BalancerVaultConfig {
-  contract: "BALANCER_V2_VAULT";
+  contract: "BALANCER_VAULT";
   allowed: Array<BalancerPoolConfig>;
 }
 

@@ -5,6 +5,7 @@ import {
   SupportedToken,
 } from "@gearbox-protocol/sdk";
 import { AaveV2LPToken } from "@gearbox-protocol/sdk/lib/tokens/aave";
+import { BalancerLPToken } from "@gearbox-protocol/sdk/lib/tokens/balancer";
 
 export interface PriceFeed {
   token: string;
@@ -83,6 +84,10 @@ export type PriceFeedData =
       assets: Array<SupportedToken>;
     }
   | {
+      type: PriceFeedType.BALANCER_STABLE_LP_ORACLE;
+      assets: Array<SupportedToken>;
+    }
+  | {
       type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE;
       assets: Array<SupportedToken>;
     }
@@ -104,6 +109,7 @@ export type PriceFeedData =
     }
   | {
       type: PriceFeedType.REDSTONE_ORACLE;
+      dataServiceId: string;
       dataId: string;
       signers: Array<string>;
       signersThreshold: number;
