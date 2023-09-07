@@ -772,11 +772,12 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ crvUSD ------------------------
-        crvUSDPriceFeedsByNetwork[1].push(
-            CrvUsdPriceFeedData({token: Tokens.crvUSD, pool: Contracts.CURVE_CRVUSD_USDC_POOL, underlying: Tokens.USDC})
-        );
-        crvUSDPriceFeedsByNetwork[42161].push(
-            CrvUsdPriceFeedData({token: Tokens.crvUSD, pool: Contracts.CURVE_CRVUSD_USDC_POOL, underlying: Tokens.USDC})
+        chainlinkPriceFeedsByNetwork[1].push(
+            ChainlinkPriceFeedData({
+                token: Tokens.crvUSD,
+                priceFeed: 0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9,
+                stalenessPeriod: 86400
+            })
         );
 
         // ------------------------ crvUSDUSDC ------------------------
