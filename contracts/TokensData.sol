@@ -273,7 +273,7 @@ contract TokensDataLive {
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.crvUSD,
-                addr: 0x95ECDC6caAf7E4805FCeF2679A92338351D24297,
+                addr: 0xf939E0A03FB07F59A73314E73794Be0E57ac1b4E,
                 symbol: "crvUSD",
                 tokenType: TokenType.NORMAL_TOKEN
             })

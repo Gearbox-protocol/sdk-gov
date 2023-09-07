@@ -477,16 +477,19 @@ class BindingsGenerator {
           contractParam.type === AdapterInterface.CURVE_V1_4ASSETS
         ) {
           if (contractParam.lpToken === "GEAR") return "";
-          const basePool: SupportedContract | "NO_CONTRACT" =
-            contractParam.tokens.includes("3Crv")
-              ? "CURVE_3CRV_POOL"
-              : "NO_CONTRACT";
+          let basePool: SupportedContract | "NO_CONTRACT" = "NO_CONTRACT";
+          for (let coin of contractParam.tokens) {
+            const coinParams = supportedTokens[coin];
+            if (coinParams.type === TokenType.CURVE_LP_TOKEN) {
+              basePool = coinParams.pool;
+            }
+          }
           return `curveAdapters.push(CurveAdapter({targetContract:  Contracts.${contract},
-  adapterType: AdapterType.${
-    AdapterInterface[contractParam.type]
-  }, lpToken: ${this.tokensEnum(
-    contractParam.lpToken,
-  )}, basePool: Contracts.${basePool}}));`;
+      adapterType: AdapterType.${
+        AdapterInterface[contractParam.type]
+      }, lpToken: Tokens.${safeEnum(
+        contractParam.lpToken,
+      )}, basePool: Contracts.${basePool}}));`;
         }
 
         return "";

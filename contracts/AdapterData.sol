@@ -147,7 +147,7 @@ contract AdapterData {
                 targetContract: Contracts.CURVE_OHMFRAXBP_POOL,
                 adapterType: AdapterType.CURVE_V1_2ASSETS,
                 lpToken: Tokens.OHMFRAXBP,
-                basePool: Contracts.NO_CONTRACT
+                basePool: Contracts.CURVE_FRAX_USDC_POOL
             })
         );
         curveAdapters.push(
