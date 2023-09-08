@@ -1046,10 +1046,21 @@
     deep-eql "^4.1.0"
     moment "^2.29.4"
 
-"@gearbox-protocol/sdk@^2.1.18", "@gearbox-protocol/sdk@^2.1.32":
+"@gearbox-protocol/sdk@^2.1.18":
   version "2.1.32"
   resolved "https://registry.yarnpkg.com/@gearbox-protocol/sdk/-/sdk-2.1.32.tgz#bac1bb73a87ddce924321edc439692fda9118b41"
   integrity sha512-bdOfMCIMNJaAMdAQ5zEOGvTSOkFgjmXz3moeQqkdFFW0XGR9vw1PJywUQcEXx3JQK29vB+7USAJ5t9lj0CZ6GQ==
+  dependencies:
+    "@types/deep-eql" "^4.0.0"
+    axios "^1.2.6"
+    decimal.js-light "^2.5.1"
+    deep-eql "^4.1.0"
+    moment "^2.29.4"
+
+"@gearbox-protocol/sdk@^2.1.33":
+  version "2.1.33"
+  resolved "https://registry.yarnpkg.com/@gearbox-protocol/sdk/-/sdk-2.1.33.tgz#db50e5b2a6956019409e04ae8ec36a27d450bc27"
+  integrity sha512-Tg0kj+hq9H3HvFCSUtUvJDkNHLG2qO1csNoi2Aec/xS8dRwLioQQNQ5j0AsXwgj8qu1l7azU4g2+dPxKpy3Ltw==
   dependencies:
     "@types/deep-eql" "^4.0.0"
     axios "^1.2.6"
