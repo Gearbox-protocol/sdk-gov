@@ -700,7 +700,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
     assets: ["OHM", "wstETH"],
   },
-  "USDC-DAI-USDT": {
+  USDC_DAI_USDT: {
     type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
     assets: ["USDC", "DAI", "USDT"],
   },
