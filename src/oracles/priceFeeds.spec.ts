@@ -16,14 +16,7 @@ import { PriceFeedData, PriceFeedType } from "./pricefeedType";
 
 type PricesDict = Record<
   string,
-  {
-    error: boolean;
-    value?:
-      | {
-          answer: BigNumber;
-        }
-      | undefined;
-  }
+  { error?: Error | undefined; value?: { answer: BigNumber } | undefined }
 >;
 
 const iFeed = AggregatorV3Interface__factory.createInterface();
