@@ -16,6 +16,7 @@ export * from "./tokens/tokenData";
 export { TokenType } from "./tokens/tokenType";
 export * from "./tokens/yearn";
 export * from "./utils/formatter";
+export * from "./utils/mappers";
 export * from "./utils/multicall";
 export * from "./utils/safeEnum";
 export * from "./utils/types";
