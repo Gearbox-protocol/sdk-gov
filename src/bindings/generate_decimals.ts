@@ -1,11 +1,12 @@
+import { ethers } from "ethers";
+import * as fs from "fs";
+
 import {
-  IERC20Metadata__factory,
   SupportedToken,
   supportedTokens,
   tokenDataByNetwork,
-} from "@gearbox-protocol/sdk";
-import { ethers } from "ethers";
-import * as fs from "fs";
+} from "../tokens/token";
+import { erc20Interface } from "../tokens/tokens.spec";
 
 async function generateTokens() {
   const deployer = await ethers.providers.getDefaultProvider();
@@ -13,8 +14,9 @@ async function generateTokens() {
   const tokenList: Array<string> = [];
   for (let token of Object.keys(supportedTokens)) {
     const address = tokenDataByNetwork.Mainnet[token as SupportedToken];
-    const decimals = await IERC20Metadata__factory.connect(
+    const decimals = await new ethers.Contract(
       address,
+      erc20Interface,
       deployer,
     ).decimals();
     tokenList.push(`"${token}": ${decimals.toString()}`);

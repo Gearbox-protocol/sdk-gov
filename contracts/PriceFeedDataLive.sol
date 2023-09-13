@@ -1084,7 +1084,7 @@ contract PriceFeedDataLive {
             BalancerLPPriceFeedData({lpToken: Tokens.OHM_wstETH, assets: TokensLib.arrayOf(Tokens.OHM, Tokens.wstETH)})
         );
 
-        // ------------------------ USDC-DAI-USDT ------------------------
+        // ------------------------ USDC_DAI_USDT ------------------------
         balancerStableLPPriceFeedsByNetwork[1].push(
             BalancerLPPriceFeedData({
                 lpToken: Tokens.USDC_DAI_USDT,

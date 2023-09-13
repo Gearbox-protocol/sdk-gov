@@ -1,16 +1,10 @@
-import { AggregatorV3InterfaceInterface } from "@gearbox-protocol/core-v3/dist/AggregatorV3Interface";
-import {
-  AggregatorV3Interface__factory,
-  CHAINS,
-  formatBN,
-  KeyedCall,
-  NetworkType,
-  safeMulticall,
-  SupportedToken,
-} from "@gearbox-protocol/sdk";
 import { expect } from "chai";
 import { BigNumber, ethers } from "ethers";
+import { Interface } from "ethers/lib/utils";
 
+import { CHAINS, NetworkType } from "../core/chains";
+import { SupportedToken } from "../tokens/token";
+import { KeyedCall, safeMulticall } from "../utils/multicall";
 import { priceFeedsByToken } from "./priceFeeds";
 import { PriceFeedData, PriceFeedType } from "./pricefeedType";
 
@@ -19,7 +13,11 @@ type PricesDict = Record<
   { error?: Error | undefined; value?: { answer: BigNumber } | undefined }
 >;
 
-const iFeed = AggregatorV3Interface__factory.createInterface();
+const iFeed = new Interface([
+  "function latestRoundData() external view returns (uint80, int256, uint256, uint256, uint80)",
+]);
+
+type AggregatorV3InterfaceInterface = typeof iFeed;
 
 class PriceFeedsSuite {
   public readonly networkTypes: NetworkType[];
@@ -171,10 +169,7 @@ describe("Price feeds", () => {
           // );
           expect(
             deviation,
-            `Mainnet price: ${formatBN(
-              mainPrice,
-              8,
-            )}$, ${chain} price: ${formatBN(chainPrice, 8)}$ at ${
+            `Mainnet price: ${mainPrice.toString()}, ${chain} price: ${chainPrice} at ${
               call.address
             }`,
           ).to.be.below(THRESHOLD);

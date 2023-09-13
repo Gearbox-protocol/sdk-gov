@@ -1,5 +1,5 @@
-import { NOT_DEPLOYED, SupportedToken } from "@gearbox-protocol/sdk";
-
+import { NOT_DEPLOYED } from "../core/constants";
+import { SupportedToken } from "../tokens/token";
 import { PriceFeedData, PriceFeedType } from "./pricefeedType";
 
 export const GAS_PRICE_FEED = "0x169e633a2d1e6c10dd91238ba11c4a708dfef37c";

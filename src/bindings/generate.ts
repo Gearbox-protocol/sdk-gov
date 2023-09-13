@@ -1,27 +1,28 @@
-import {
-  AdapterInterface,
-  CHAINS,
-  contractParams,
-  contractsByNetwork,
-  CurveLPTokenData,
-  LPTokens,
-  lpTokens,
-  NOT_DEPLOYED,
-  supportedChains,
-  SupportedContract,
-  SupportedToken,
-  supportedTokens,
-  tokenDataByNetwork,
-  TokenType,
-} from "@gearbox-protocol/sdk";
 import * as fs from "fs";
 
+import { AdapterInterface } from "../contracts/adapters";
+import {
+  contractParams,
+  contractsByNetwork,
+  SupportedContract,
+} from "../contracts/contracts";
+import { CHAINS, supportedChains } from "../core/chains";
+import { NOT_DEPLOYED } from "../core/constants";
 import { priceFeedsByToken } from "../oracles/priceFeeds";
 import {
   HOUR_24,
   PriceFeedData,
   PriceFeedType,
 } from "../oracles/pricefeedType";
+import { CurveLPTokenData } from "../tokens/curveLP";
+import {
+  LPTokens,
+  lpTokens,
+  SupportedToken,
+  supportedTokens,
+  tokenDataByNetwork,
+} from "../tokens/token";
+import { TokenType } from "../tokens/tokenType";
 import { safeEnum } from "../utils/safeEnum";
 
 class BindingsGenerator {

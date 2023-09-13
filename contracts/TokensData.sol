@@ -722,7 +722,7 @@ contract TokensDataLive {
             TokenData({
                 id: Tokens.USDC_DAI_USDT,
                 addr: 0x79c58f70905F734641735BC61e45c19dD9Ad60bC,
-                symbol: "USDC-DAI-USDT",
+                symbol: "USDC_DAI_USDT",
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );

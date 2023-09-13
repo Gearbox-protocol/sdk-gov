@@ -1,11 +1,8 @@
-import {
-  CurvePoolContract,
-  NetworkType,
-  NormalToken,
-  SupportedToken,
-} from "@gearbox-protocol/sdk";
-import { AaveV2LPToken } from "@gearbox-protocol/sdk/lib/tokens/aave";
-import { BalancerLPToken } from "@gearbox-protocol/sdk/lib/tokens/balancer";
+import { CurvePoolContract } from "../contracts/contracts";
+import { NetworkType } from "../core/chains";
+import { AaveV2LPToken } from "../tokens/aave";
+import { NormalToken } from "../tokens/normal";
+import { SupportedToken } from "../tokens/token";
 
 export interface PriceFeed {
   token: string;
