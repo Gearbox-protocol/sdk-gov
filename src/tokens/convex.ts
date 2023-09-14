@@ -56,7 +56,7 @@ export type ConvexPhantomTokenData = {
   lpToken: ConvexLPToken;
 } & BaseConvexToken;
 
-const convexLpTokens: Record<ConvexLPToken, ConvexLPTokenData> = {
+export const convexLpTokens: Record<ConvexLPToken, ConvexLPTokenData> = {
   cvx3Crv: {
     name: "Convex cvx3Crv",
 
@@ -357,7 +357,7 @@ const convexLpTokens: Record<ConvexLPToken, ConvexLPTokenData> = {
   },
 };
 
-const convexStakedPhantomTokens: Record<
+export const convexStakedPhantomTokens: Record<
   ConvexStakedPhantomToken,
   ConvexPhantomTokenData
 > = {
