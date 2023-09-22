@@ -194,6 +194,8 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: "0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
         baseToUsdPriceFeed: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+        baseStalenessPeriod: 3600 * 24 * 10,
+        targetStalenessPeriod: 3600 * 24 * 10,
       },
       Arbitrum: {
         type: PriceFeedType.COMPOSITE_ORACLE,
