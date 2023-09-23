@@ -7,3 +7,6 @@ export const toBigInt = (v: BigNumberish): bigint => {
       : v.toString();
   return BigInt(value);
 };
+
+export const percentFmt = (v: number): string =>
+  `${(v / 100).toFixed(2)}% [ ${v} ]`;

@@ -33,7 +33,11 @@
   },
   "homepage": "https://github.com/Gearbox-protocol/sdk-gov#readme",
   "dependencies": {
-    "ethers": "5.6.9"
+    "@types/yaml": "^1.9.7",
+    "ethers": "5.6.9",
+    "humanize-duration-ts": "^2.1.1",
+    "yaml": "^2.3.2",
+    "zod": "^3.22.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.7",
