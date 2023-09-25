@@ -636,6 +636,11 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     token: "LDOETH",
   },
 
+  cvxcrvUSDETHCRV: {
+    type: PriceFeedType.THE_SAME_AS,
+    token: "crvUSDETHCRV",
+  },
+
   // CVX tokens
   stkcvx3Crv: {
     type: PriceFeedType.THE_SAME_AS,
@@ -688,6 +693,10 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
   stkcvxLDOETH: {
     type: PriceFeedType.THE_SAME_AS,
     token: "LDOETH",
+  },
+  stkcvxcrvUSDETHCRV: {
+    type: PriceFeedType.THE_SAME_AS,
+    token: "crvUSDETHCRV",
   },
   "50OHM_50DAI": {
     type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,

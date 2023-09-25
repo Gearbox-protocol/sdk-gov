@@ -58,7 +58,8 @@ export type ConvexPoolContract =
   | "CONVEX_CRVETH_POOL"
   | "CONVEX_CVXETH_POOL"
   | "CONVEX_3CRYPTO_POOL"
-  | "CONVEX_LDOETH_POOL";
+  | "CONVEX_LDOETH_POOL"
+  | "CONVEX_TRI_CRV_POOL";
 
 export type AaveV2PoolContract =
   | "AAVE_V2_DAI_POOL"
@@ -152,6 +153,7 @@ export const contractsByNetwork: Record<
     CONVEX_CVXETH_POOL: "0xb1Fb0BA0676A1fFA83882c7F4805408bA232C1fA",
     CONVEX_3CRYPTO_POOL: "0xb05262D4aaAA38D0Af4AaB244D446ebDb5afd4A7",
     CONVEX_LDOETH_POOL: "0x8CA990E954611E5E3d2cc51C013fCC372c8c1D38",
+    CONVEX_TRI_CRV_POOL: "0xF956a46DbA1A0a567168db8655bc18E9050C7738",
 
     // LIDO
     LIDO_STETH_GATEWAY: "0x6f4b4aB5142787c05b7aB9A9692A0f46b997C29D",
@@ -242,6 +244,7 @@ export const contractsByNetwork: Record<
     CONVEX_CVXETH_POOL: NOT_DEPLOYED,
     CONVEX_3CRYPTO_POOL: NOT_DEPLOYED,
     CONVEX_LDOETH_POOL: NOT_DEPLOYED,
+    CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
 
     // LIDO
     LIDO_STETH_GATEWAY: NOT_DEPLOYED,
@@ -797,6 +800,21 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
         rewardToken: "LDO",
         poolAddress: {
           Mainnet: "0x95e6092449a0f3946A5a0f308Ead4adcff244E2B",
+          Arbitrum: NOT_DEPLOYED,
+        },
+      },
+    ],
+  },
+  CONVEX_TRI_CRV_POOL: {
+    name: "Convex TRICRV",
+    protocol: Protocols.Convex,
+    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
+    stakedToken: "stkcvxcrvUSDETHCRV",
+    extraRewards: [
+      {
+        rewardToken: "CVX",
+        poolAddress: {
+          Mainnet: "0x01eC96F1eEBF470E3fEAEEfB843fbC63424e668d",
           Arbitrum: NOT_DEPLOYED,
         },
       },
