@@ -811,13 +811,13 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
     stakedToken: "stkcvxcrvUSDETHCRV",
     extraRewards: [
-      // {
-      //   rewardToken: "",
-      //   poolAddress: {
-      //     Mainnet: "",
-      //     Arbitrum: NOT_DEPLOYED,
-      //   },
-      // },
+      {
+        rewardToken: "CVX",
+        poolAddress: {
+          Mainnet: "0x01eC96F1eEBF470E3fEAEEfB843fbC63424e668d",
+          Arbitrum: NOT_DEPLOYED,
+        },
+      },
     ],
   },
 
