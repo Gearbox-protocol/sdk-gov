@@ -545,7 +545,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     feeds: {
       Mainnet: {
         type: PriceFeedType.CHAINLINK_ORACLE,
-        address: "0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9",
+        address: "0xEEf0C605546958c1f899b6fB336C20671f9cD49F",
       },
       Arbitrum: {
         type: PriceFeedType.CHAINLINK_ORACLE,
