@@ -5,6 +5,7 @@ import { PartialRecord } from "../utils/types";
 import { NormalToken } from "./normal";
 import type { SupportedToken, TokenBase } from "./token";
 import { TokenType } from "./tokenType";
+import { WrappedToken } from "./wrapped";
 
 export type CurveMetaTokens =
   | "FRAX3CRV"
@@ -30,7 +31,7 @@ export type CurveLPToken =
 export type CurveLPTokenData = {
   symbol: CurveLPToken;
   type: TokenType.CURVE_LP_TOKEN;
-  tokenOut: Array<CurveLPToken | NormalToken>;
+  tokenOut: Array<CurveLPToken | WrappedToken | NormalToken>;
   pool: CurvePoolContract;
   wrapper?: CurvePoolContract;
 } & TokenBase;
@@ -38,7 +39,7 @@ export type CurveLPTokenData = {
 export type MetaCurveLPTokenData = {
   symbol: CurveLPToken;
   type: TokenType.CURVE_LP_TOKEN;
-  tokenOut: Array<CurveLPToken | NormalToken>;
+  tokenOut: Array<CurveLPToken | WrappedToken | NormalToken>;
   pool: CurvePoolContract;
   wrapper?: CurvePoolContract;
 } & TokenBase;

@@ -23,7 +23,6 @@ enum Tokens {
     WETH,
     YFI,
     STETH,
-    wstETH,
     CVX,
     FRAX,
     FXS,
@@ -44,6 +43,7 @@ enum Tokens {
     MKR,
     RPL,
     APE,
+    wstETH,
     _3Crv,
     crvFRAX,
     steCRV,
@@ -74,6 +74,7 @@ enum Tokens {
     cvxcrvCVXETH,
     cvxcrvUSDTWBTCWETH,
     cvxLDOETH,
+    cvxcrvUSDETHCRV,
     stkcvx3Crv,
     stkcvxcrvFRAX,
     stkcvxsteCRV,
@@ -87,6 +88,7 @@ enum Tokens {
     stkcvxcrvCVXETH,
     stkcvxcrvUSDTWBTCWETH,
     stkcvxLDOETH,
+    stkcvxcrvUSDETHCRV,
     yvDAI,
     yvUSDC,
     yvWETH,
@@ -132,5 +134,7 @@ enum TokenType {
     COMPOUND_V2_C_TOKEN,
     BALANCER_LP_TOKEN,
     AAVE_V2_A_TOKEN,
-    WRAPPED_AAVE_V2_TOKEN
+    WRAPPED_AAVE_V2_TOKEN,
+    ERC4626_VAULT_TOKEN,
+    WRAPPED_TOKEN
 }

@@ -20,7 +20,6 @@ export type NormalToken =
 
   // NEW TOKENS
   | "STETH"
-  | "wstETH"
   | "CVX"
   | "FRAX"
   | "FXS"
@@ -163,13 +162,6 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
     name: "stETH",
 
     symbol: "STETH",
-    type: TokenType.NORMAL_TOKEN,
-  },
-
-  wstETH: {
-    name: "wstETH",
-
-    symbol: "wstETH",
     type: TokenType.NORMAL_TOKEN,
   },
 
