@@ -1,6 +1,7 @@
 import { NormalToken } from "./normal";
 import type { TokenBase } from "./token";
 import { TokenType } from "./tokenType";
+import { WrappedToken } from "./wrapped";
 
 export type BalancerLPToken =
   | "50OHM_50DAI"
@@ -11,7 +12,7 @@ export type BalancerLPToken =
 export type BalancerLpTokenData = {
   symbol: BalancerLPToken;
   type: TokenType.BALANCER_LP_TOKEN;
-  underlying: Array<NormalToken | BalancerLPToken>;
+  underlying: Array<NormalToken | WrappedToken | BalancerLPToken>;
   poolId: string;
 } & TokenBase;
 

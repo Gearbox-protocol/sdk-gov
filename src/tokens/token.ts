@@ -41,6 +41,7 @@ import {
   gearTokens,
 } from "./gear";
 import { NormalToken, NormalTokenData, normalTokens } from "./normal";
+import { WrappedToken, WrappedTokenData, wrappedTokens } from "./wrapped";
 import {
   YearnLPToken,
   yearnTokens,
@@ -61,6 +62,7 @@ export type LPTokens =
 
 export type SupportedToken =
   | NormalToken
+  | WrappedToken
   | LPTokens
   | DieselTokenTypes
   | GearboxToken;
@@ -85,6 +87,7 @@ export type LPTokenDataI =
 
 export type TokenDataI =
   | NormalTokenData
+  | WrappedTokenData
   | LPTokenDataI
   | DieselTokenData
   | GearboxTokenData;
@@ -101,6 +104,7 @@ export const lpTokens: Record<LPTokens, LPTokenDataI> = {
 
 export const supportedTokens: Record<SupportedToken, TokenDataI> = {
   ...normalTokens,
+  ...wrappedTokens,
   ...lpTokens,
   ...gearTokens,
 };

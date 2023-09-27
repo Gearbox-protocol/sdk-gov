@@ -318,5 +318,12 @@ contract AdapterData {
                 stakedToken: Tokens.stkcvxLDOETH
             })
         );
+        convexBasePoolAdapters.push(
+            ConvexBasePoolAdapter({
+                targetContract: Contracts.CONVEX_TRI_CRV_POOL,
+                adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
+                stakedToken: Tokens.stkcvxcrvUSDETHCRV
+            })
+        );
     }
 }
