@@ -8,7 +8,6 @@ export const toBigInt = (v: BigNumberish): bigint => {
   return BigInt(value);
 };
 
-
 export const percentFmt = (v: number): string =>
   `${(v / 100).toFixed(2)}% [ ${v} ]`;
 
@@ -89,4 +88,3 @@ export function formatBn4dig(num: bigint, precision = 2): string {
     numStr.length - 6 + precision,
   )}`;
 }
-

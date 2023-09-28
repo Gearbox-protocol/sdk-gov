@@ -9,6 +9,7 @@ export * from "./core/chains";
 export * from "./core/constants";
 export * from "./oracles/priceFeeds";
 export * from "./oracles/pricefeedType";
+export * from "./state/globalState";
 export * from "./tokens/convex";
 export * from "./tokens/curveLP";
 export * from "./tokens/decimals";
