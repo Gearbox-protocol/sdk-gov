@@ -1,30 +1,10 @@
-import {
-  HumanizeDuration,
-  HumanizeDurationLanguage,
-} from "humanize-duration-ts";
 import { z } from "zod";
 
 import { SupportedToken, tokenSymbolByAddress } from "../tokens/token";
 import { percentFmt } from "../utils/formatter";
 import { PartialRecord } from "../utils/types";
 
-const ltParamsSchema = z.object({
-  ltNow: z.number(),
-  ltFinal: z.number(),
-  ltInitial: z.number(),
-  rampDuration: z.number(),
-  timestampRampStart: z.number(),
-});
-
-interface LtParamsHuman {
-  ltNow: string;
-  ltFinal: string;
-  ltInitial: string;
-  rampDuration: string;
-  timestampRampStart: string;
-}
-
-const creditManagerV3Schema = z.object({
+const creditManagerV2Schema = z.object({
   address: z.string(),
   name: z.string(),
 
@@ -40,7 +20,7 @@ const creditManagerV3Schema = z.object({
   forbiddenTokenMask: z.coerce.bigint(),
   isDegenMode: z.boolean(),
   liquidationDiscount: z.number(),
-  liquidationThresholds: z.record(z.string().length(42), ltParamsSchema),
+  liquidationThresholds: z.record(z.string().length(42), z.number()),
   minDebt: z.coerce.bigint(),
   maxDebt: z.coerce.bigint(),
   maxEnabledTokensLength: z.number(),
@@ -48,11 +28,11 @@ const creditManagerV3Schema = z.object({
   underlying: z.string().length(42),
 });
 
-type CreditManagerV3Payload = z.infer<typeof creditManagerV3Schema>;
+type CreditManagerV2Payload = z.infer<typeof creditManagerV2Schema>;
 
-const poolsV1ArraySchema = z.array(creditManagerV3Schema);
+const poolsV1ArraySchema = z.array(creditManagerV2Schema);
 
-export class CreditManagerV3State {
+export class CreditManagerV2State {
   address: string;
   name: string;
   underlying: SupportedToken;
@@ -69,13 +49,13 @@ export class CreditManagerV3State {
   forbiddenTokenMask: string;
   isDegenMode: boolean;
   liquidationDiscount: string;
-  liquidationThresholds: PartialRecord<SupportedToken, LtParamsHuman>;
+  liquidationThresholds: PartialRecord<SupportedToken, string>;
   minDebt: string;
   maxDebt: string;
   maxEnabledTokensLength: number;
   pool: string;
 
-  constructor(payload: CreditManagerV3Payload) {
+  constructor(payload: CreditManagerV2Payload) {
     this.address = payload.address;
     this.name = payload.name;
 
@@ -95,28 +75,16 @@ export class CreditManagerV3State {
     this.isDegenMode = payload.isDegenMode;
     this.liquidationDiscount = percentFmt(payload.liquidationDiscount);
 
-    const langService = new HumanizeDurationLanguage();
-    const humanizer = new HumanizeDuration(langService);
-
     this.liquidationThresholds = Object.entries(payload.liquidationThresholds)
       .sort((a, b) => {
         return tokenSymbolByAddress[a[0]] > tokenSymbolByAddress[b[0]] ? 1 : -1;
       })
-      .map(([token, ltParams]) => ({
+      .map(([token, lt]) => ({
         token: tokenSymbolByAddress[token],
-        ltParams: {
-          ltNow: percentFmt(ltParams.ltNow),
-          ltInitial: percentFmt(ltParams.ltInitial),
-          ltFinal: percentFmt(ltParams.ltFinal),
-
-          rampDuration: `${humanizer.humanize(
-            ltParams.rampDuration,
-          )} [ ${ltParams.rampDuration.toString()}]`,
-          timestampRampStart: new Date(ltParams.timestampRampStart * 1000),
-        },
+        lt: percentFmt(lt),
       }))
       .reduce(
-        (acc, { token, ltParams: liquidationThresholds }) => ({
+        (acc, { token, lt: liquidationThresholds }) => ({
           ...acc,
           [token]: liquidationThresholds,
         }),
@@ -129,8 +97,8 @@ export class CreditManagerV3State {
     this.pool = payload.pool;
   }
 
-  static fromJson(json: string): Array<CreditManagerV3State> {
+  static fromJson(json: string): Array<CreditManagerV2State> {
     const payload = poolsV1ArraySchema.parse(JSON.parse(json));
-    return payload.map(p => new CreditManagerV3State(p));
+    return payload.map(p => new CreditManagerV2State(p));
   }
 }

@@ -1,5 +1,6 @@
 import { ACLState } from "./aclState";
 import { AddressProviderV3State } from "./addressProviderState";
+import { CreditManagerV2State } from "./creditManagerV2State";
 import { CreditManagerV3State } from "./creditManagerV3State";
 import { PoolV1State } from "./poolV1State";
 import { PoolV3State } from "./poolV3State";
@@ -15,6 +16,7 @@ export class GlobalState {
   poolsV1: Record<string, PoolV1State>;
   poolsV3: Record<string, PoolV3State>;
 
+  creditManagersV2: Record<string, CreditManagerV2State>;
   creditManagersV3: Record<string, CreditManagerV3State>;
 
   constructor(state: {
@@ -24,6 +26,7 @@ export class GlobalState {
     priceOracleV3State: PriceOracleV3State;
     poolsV1: Record<string, PoolV1State>;
     poolsV3: Record<string, PoolV3State>;
+    creditManagersV2: Record<string, CreditManagerV2State>;
     creditManagersV3: Record<string, CreditManagerV3State>;
   }) {
     this.addressProviderV3State = state.addressProviderV3State;
@@ -32,6 +35,7 @@ export class GlobalState {
     this.priceOracleV3State = state.priceOracleV3State;
     this.poolsV1 = state.poolsV1;
     this.poolsV3 = state.poolsV3;
+    this.creditManagersV2 = state.creditManagersV2;
     this.creditManagersV3 = state.creditManagersV3;
   }
 
@@ -55,6 +59,12 @@ export class GlobalState {
       ),
       poolsV3: PoolV3State.fromJson(JSON.stringify(parsed["poolsV3"])).reduce(
         (acc, pool) => ({ ...acc, [`Pool v3: ${pool.name}`]: pool }),
+        {},
+      ),
+      creditManagersV2: CreditManagerV2State.fromJson(
+        JSON.stringify(parsed["creditManagersV2"]),
+      ).reduce(
+        (acc, cm) => ({ ...acc, [`CreditManager v2: ${cm.name}`]: cm }),
         {},
       ),
       creditManagersV3: CreditManagerV3State.fromJson(

@@ -3,8 +3,10 @@ import yaml from "yaml";
 
 import { GlobalState } from "./globalState";
 
-const stateJson = fs.readFileSync("1.json", "utf-8");
+const jsonName =
+  process.argv.length > 2 ? process.argv[process.argv.length - 1] : "1.json";
 
+const stateJson = fs.readFileSync(jsonName, "utf-8");
 const globalState = GlobalState.fromJson(stateJson);
 
 console.log(yaml.stringify(globalState));
