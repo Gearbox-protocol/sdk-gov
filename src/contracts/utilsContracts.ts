@@ -30,3 +30,8 @@ export const MULTISIG: Record<NetworkType, string> = {
   Mainnet: "0xA7D5DDc1b8557914F158076b228AA91eF613f1D5",
   Arbitrum: NOT_DEPLOYED,
 };
+
+export const TREASURY: Record<NetworkType, string> = {
+  Mainnet: "0x7b065fcb0760df0cea8cfd144e08554f3cea73d1",
+  Arbitrum: NOT_DEPLOYED,
+};
