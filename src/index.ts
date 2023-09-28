@@ -1,3 +1,6 @@
+export * from "./config/adapters";
+export * from "./config/poolV3Core";
+export * from "./config/poolV3DeployConfig";
 export { AdapterInterface } from "./contracts/adapters";
 export * from "./contracts/contracts";
 export * from "./contracts/protocols";

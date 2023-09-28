@@ -19,7 +19,8 @@ export type ConvexLPToken =
   | "cvxcrvCRVETH"
   | "cvxcrvCVXETH"
   | "cvxcrvUSDTWBTCWETH"
-  | "cvxLDOETH";
+  | "cvxLDOETH"
+  | "cvxcrvUSDETHCRV";
 
 export type ConvexStakedPhantomToken =
   | "stkcvx3Crv"
@@ -34,7 +35,8 @@ export type ConvexStakedPhantomToken =
   | "stkcvxcrvCRVETH"
   | "stkcvxcrvCVXETH"
   | "stkcvxcrvUSDTWBTCWETH"
-  | "stkcvxLDOETH";
+  | "stkcvxLDOETH"
+  | "stkcvxcrvUSDETHCRV";
 
 type BaseConvexToken = {
   pool: ConvexPoolContract;
@@ -197,6 +199,16 @@ export const convexLpTokens: Record<ConvexLPToken, ConvexLPTokenData> = {
     underlying: "LDOETH",
     stakedToken: "stkcvxLDOETH",
   },
+
+  cvxcrvUSDETHCRV: {
+    name: "Convex cvxcrvUSDETHCRV",
+    symbol: "cvxcrvUSDETHCRV",
+    type: TokenType.CONVEX_LP_TOKEN,
+    pool: "CONVEX_TRI_CRV_POOL",
+    pid: 211,
+    underlying: "crvUSDETHCRV",
+    stakedToken: "stkcvxcrvUSDETHCRV",
+  },
 };
 
 export const convexStakedPhantomTokens: Record<
@@ -342,6 +354,16 @@ export const convexStakedPhantomTokens: Record<
     pid: 149,
     underlying: "LDOETH",
     lpToken: "cvxLDOETH",
+  },
+
+  stkcvxcrvUSDETHCRV: {
+    name: "Convex stkcvxcrvUSDETHCRV",
+    symbol: "stkcvxcrvUSDETHCRV",
+    type: TokenType.CONVEX_STAKED_TOKEN,
+    pool: "CONVEX_TRI_CRV_POOL",
+    pid: 211,
+    underlying: "crvUSDETHCRV",
+    lpToken: "cvxcrvUSDETHCRV",
   },
 };
 

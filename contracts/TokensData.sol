@@ -150,15 +150,6 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
-                id: Tokens.wstETH,
-                address: 0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0,
-                symbol: "wstETH",
-                tokenType: TokenType.NORMAL_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: Tokens.CVX,
                 address: 0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B,
                 symbol: "CVX",
                 tokenType: TokenType.NORMAL_TOKEN
@@ -300,6 +291,14 @@ contract TokensDataLive {
                 address: 0x4d224452801ACEd8B2F0aebE155379bb5D594381,
                 symbol: "APE",
                 tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.wstETH,
+                addr: 0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0,
+                symbol: "wstETH",
+                tokenType: TokenType.WRAPPED_TOKEN
             })
         );
         tokenDataByNetwork[1].push(
@@ -544,6 +543,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.cvxcrvUSDETHCRV,
+                addr: 0xa11a2c04D62b4A2324Fc857Fa14762Ad94751b4F,
+                symbol: "cvxcrvUSDETHCRV",
+                tokenType: TokenType.CONVEX_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.stkcvx3Crv,
                 address: 0xbAc7a431146aeAf3F57A16b9954f332Fd292F270,
                 symbol: "stkcvx3Crv",
@@ -643,6 +650,14 @@ contract TokensDataLive {
                 id: Tokens.stkcvxLDOETH,
                 address: 0x2Fd6bD5b81c1060039D619E76e4e1f924B173006,
                 symbol: "stkcvxLDOETH",
+                tokenType: TokenType.CONVEX_STAKED_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.stkcvxcrvUSDETHCRV,
+                addr: 0x0Bf1626d4925F8A872801968be11c052862AC2D3,
+                symbol: "stkcvxcrvUSDETHCRV",
                 tokenType: TokenType.CONVEX_STAKED_TOKEN
             })
         );
@@ -953,14 +968,7 @@ contract TokensDataLive {
             })
         );
 
-        tokenDataByNetwork[42161].push(
-            TokenData({
-                id: Tokens.wstETH,
-                address: 0x5979D7b546E38E414F7E9822514be443A4800529,
-                symbol: "wstETH",
-                tokenType: TokenType.NORMAL_TOKEN
-            })
-        );
+
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: Tokens.CVX,
@@ -1072,6 +1080,15 @@ contract TokensDataLive {
                 address: 0x040d1EdC9569d4Bab2D15287Dc5A4F10F56a56B8,
                 symbol: "BAL",
                 tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[42161].push(
+            TokenData({
+                id: Tokens.wstETH,
+                addr: 0x5979D7b546E38E414F7E9822514be443A4800529,
+                symbol: "wstETH",
+                tokenType: TokenType.WRAPPED_TOKEN
             })
         );
 

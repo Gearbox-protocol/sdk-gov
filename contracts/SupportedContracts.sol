@@ -334,6 +334,13 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CONVEX_TRI_CRV_POOL,
+                addr: 0xF956a46DbA1A0a567168db8655bc18E9050C7738,
+                name: "CONVEX_TRI_CRV_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.LIDO_STETH_GATEWAY,
                 address: 0x6f4b4aB5142787c05b7aB9A9692A0f46b997C29D,
                 name: "LIDO_STETH_GATEWAY"
