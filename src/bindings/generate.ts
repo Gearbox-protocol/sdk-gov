@@ -74,7 +74,7 @@ class BindingsGenerator {
           if (addr !== NOT_DEPLOYED) {
             return `tokenDataByNetwork[${chainId}].push(TokenData({ id: ${this.tokensEnum(
               t,
-            )}, address: ${addr}, symbol: "${t}", tokenType: TokenType.${
+            )}, addr: ${addr}, symbol: "${t}", tokenType: TokenType.${
               TokenType[supportedTokens[t].type]
             } }));`;
           } else return "";
@@ -461,7 +461,7 @@ class BindingsGenerator {
       data += contracts
         .map(t => {
           if (contractsByNetwork[chain][t] !== NOT_DEPLOYED) {
-            return `contractDataByNetwork[${chainId}].push(ContractData({ id: Contracts.${t}, address:  ${contractsByNetwork[chain][t]}, name: "${t}" }));`;
+            return `contractDataByNetwork[${chainId}].push(ContractData({ id: Contracts.${t}, addr:  ${contractsByNetwork[chain][t]}, name: "${t}" }));`;
           } else return "";
         })
         .join("\n");
