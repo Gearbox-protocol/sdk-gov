@@ -198,13 +198,7 @@ export const curveTokens: Record<
     symbol: "rETH_f",
     type: TokenType.CURVE_LP_TOKEN,
     pool: "CURVE_RETH_ETH_POOL",
-    lpActions: [
-      {
-        type: TradeType.CurveWithdrawLP,
-        contract: "CURVE_RETH_ETH_POOL",
-        tokenOut: ["rETH", "WETH"],
-      },
-    ],
+    tokenOut: ["rETH", "WETH"],
   },
   ...curveMetaTokens,
 };

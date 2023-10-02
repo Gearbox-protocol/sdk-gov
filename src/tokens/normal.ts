@@ -298,13 +298,6 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
     name: "Rocket Pool ETH",
     symbol: "rETH",
     type: TokenType.NORMAL_TOKEN,
-    swapActions: [
-      {
-        type: TradeType.CurveExchange,
-        contract: "CURVE_RETH_ETH_POOL",
-        tokenOut: ["WETH"],
-      },
-    ],
   },
 };
 

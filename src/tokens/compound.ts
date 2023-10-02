@@ -59,14 +59,6 @@ export const compoundV2Tokens: Record<
     symbol: "fUSDC",
     type: TokenType.COMPOUND_V2_C_TOKEN,
     underlying: "USDC",
-
-    lpActions: [
-      {
-        type: TradeType.CompoundV2Withdraw,
-        contract: "FLUX_USDC_POOL",
-        tokenOut: "USDC",
-      },
-    ],
   },
 };
 
