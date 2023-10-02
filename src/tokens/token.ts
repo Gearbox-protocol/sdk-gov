@@ -56,6 +56,7 @@ import {
   gearTokens,
 } from "./gear";
 import { NormalToken, NormalTokenData, normalTokens } from "./normal";
+import { WrappedToken, WrappedTokenData, wrappedTokens } from "./wrapped";
 import {
   YearnLPToken,
   yearnTokens,
@@ -79,6 +80,7 @@ export type LPTokens =
 
 export type SupportedToken =
   | NormalToken
+  | WrappedToken
   | LPTokens
   | DieselTokenTypes
   | GearboxToken;
@@ -108,6 +110,7 @@ export type LPTokenDataI =
 
 export type TokenDataI =
   | NormalTokenData
+  | WrappedTokenData
   | LPTokenDataI
   | DieselTokenData
   | GearboxTokenData;
@@ -127,6 +130,7 @@ export const lpTokens: Record<LPTokens, LPTokenDataI> = {
 
 export const supportedTokens: Record<SupportedToken, TokenDataI> = {
   ...normalTokens,
+  ...wrappedTokens,
   ...lpTokens,
   ...gearTokens,
 };
@@ -216,6 +220,7 @@ export const tokenDataByNetwork: Record<
     cvxcrvCVXETH: "0x0bC857f97c0554d1d0D602b56F2EEcE682016fBA",
     cvxcrvUSDTWBTCWETH: "0xB77BA8B4b9d981269466eE95796A9Af57d4E82DB",
     cvxLDOETH: "0x4eBE557ae39F87D2a014719777FD4cF4d01Dc8Ee",
+    cvxcrvUSDETHCRV: "0xa11a2c04D62b4A2324Fc857Fa14762Ad94751b4F",
 
     // CONVEX PHANTOM TOKEN ADDRESSES
     stkcvx3Crv: "0xbAc7a431146aeAf3F57A16b9954f332Fd292F270",
@@ -231,6 +236,7 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvCVXETH: "0x948bEd0211076b05d22e98929217d0f04D068C5c",
     stkcvxcrvUSDTWBTCWETH: "0xEE3EE8373384BBfea3227E527C1B9b4e7821273E",
     stkcvxLDOETH: "0x2Fd6bD5b81c1060039D619E76e4e1f924B173006",
+    stkcvxcrvUSDETHCRV: "0x0Bf1626d4925F8A872801968be11c052862AC2D3",
 
     // YEARN TOKENS
     yvDAI: "0xdA816459F1AB5631232FE5e97a05BBBb94970c95",
@@ -377,6 +383,7 @@ export const tokenDataByNetwork: Record<
     cvxcrvCVXETH: NOT_DEPLOYED,
     cvxcrvUSDTWBTCWETH: NOT_DEPLOYED,
     cvxLDOETH: NOT_DEPLOYED,
+    cvxcrvUSDETHCRV: NOT_DEPLOYED,
 
     crvUSD: NOT_DEPLOYED,
 
@@ -394,6 +401,7 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvCVXETH: NOT_DEPLOYED,
     stkcvxcrvUSDTWBTCWETH: NOT_DEPLOYED,
     stkcvxLDOETH: NOT_DEPLOYED,
+    stkcvxcrvUSDETHCRV: NOT_DEPLOYED,
 
     // BALANCER TOKENS
     "50OHM_50DAI": NOT_DEPLOYED,

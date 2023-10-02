@@ -348,6 +348,13 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CONVEX_TRI_CRV_POOL,
+                addr: 0xF956a46DbA1A0a567168db8655bc18E9050C7738,
+                name: "CONVEX_TRI_CRV_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.AURA_BOOSTER,
                 addr: 0xA57b8d98dAE62B26Ec3bcC4a365338157060B234,
                 name: "AURA_BOOSTER"

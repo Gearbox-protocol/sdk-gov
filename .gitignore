@@ -6,4 +6,5 @@
 /cache/
 .env
 src/dev/
-
+/1.json
+/2.json

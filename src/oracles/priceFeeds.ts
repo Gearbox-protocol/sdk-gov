@@ -194,6 +194,8 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: "0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
         baseToUsdPriceFeed: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+        baseStalenessPeriod: 3600 * 24 * 10,
+        targetStalenessPeriod: 3600 * 24 * 10,
       },
       Arbitrum: {
         type: PriceFeedType.COMPOSITE_ORACLE,
@@ -558,7 +560,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     feeds: {
       Mainnet: {
         type: PriceFeedType.CHAINLINK_ORACLE,
-        address: "0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9",
+        address: "0xEEf0C605546958c1f899b6fB336C20671f9cD49F",
       },
       Arbitrum: {
         type: PriceFeedType.CHAINLINK_ORACLE,
@@ -654,6 +656,11 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     token: "LDOETH",
   },
 
+  cvxcrvUSDETHCRV: {
+    type: PriceFeedType.THE_SAME_AS,
+    token: "crvUSDETHCRV",
+  },
+
   // CVX tokens
   stkcvx3Crv: {
     type: PriceFeedType.THE_SAME_AS,
@@ -706,6 +713,10 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
   stkcvxLDOETH: {
     type: PriceFeedType.THE_SAME_AS,
     token: "LDOETH",
+  },
+  stkcvxcrvUSDETHCRV: {
+    type: PriceFeedType.THE_SAME_AS,
+    token: "crvUSDETHCRV",
   },
   "50OHM_50DAI": {
     type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,

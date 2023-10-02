@@ -394,6 +394,13 @@ contract AdapterData {
         );
         convexBasePoolAdapters.push(
             ConvexBasePoolAdapter({
+                targetContract: Contracts.CONVEX_TRI_CRV_POOL,
+                adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
+                stakedToken: Tokens.stkcvxcrvUSDETHCRV
+            })
+        );
+        convexBasePoolAdapters.push(
+            ConvexBasePoolAdapter({
                 targetContract: Contracts.AURA_B_RETH_STABLE_POOL,
                 adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
                 stakedToken: Tokens.auraB_rETH_STABLE_vault

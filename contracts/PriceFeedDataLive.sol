@@ -273,9 +273,9 @@ contract PriceFeedDataLive {
             CompositePriceFeedData({
                 token: Tokens.WBTC,
                 targetToBaseFeed: 0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23,
-                targetStalenessPeriod: 86400,
+                targetStalenessPeriod: 864000,
                 baseToUSDFeed: 0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c,
-                baseStalenessPeriod: 86400
+                baseStalenessPeriod: 864000
             })
         );
         compositePriceFeedsByNetwork[42161].push(
@@ -786,7 +786,7 @@ contract PriceFeedDataLive {
         chainlinkPriceFeedsByNetwork[1].push(
             ChainlinkPriceFeedData({
                 token: Tokens.crvUSD,
-                priceFeed: 0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9,
+                priceFeed: 0xEEf0C605546958c1f899b6fB336C20671f9cD49F,
                 stalenessPeriod: 86400
             })
         );
@@ -983,6 +983,14 @@ contract PriceFeedDataLive {
             TheSamePriceFeedData({token: Tokens.cvxLDOETH, tokenHasSamePriceFeed: Tokens.LDOETH})
         );
 
+        // ------------------------ cvxcrvUSDETHCRV ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.cvxcrvUSDETHCRV, tokenHasSamePriceFeed: Tokens.crvUSDETHCRV})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.cvxcrvUSDETHCRV, tokenHasSamePriceFeed: Tokens.crvUSDETHCRV})
+        );
+
         // ------------------------ stkcvx3Crv ------------------------
         theSamePriceFeedsByNetwork[1].push(
             TheSamePriceFeedData({token: Tokens.stkcvx3Crv, tokenHasSamePriceFeed: Tokens._3Crv})
@@ -1085,6 +1093,14 @@ contract PriceFeedDataLive {
         );
         theSamePriceFeedsByNetwork[42161].push(
             TheSamePriceFeedData({token: Tokens.stkcvxLDOETH, tokenHasSamePriceFeed: Tokens.LDOETH})
+        );
+
+        // ------------------------ stkcvxcrvUSDETHCRV ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.stkcvxcrvUSDETHCRV, tokenHasSamePriceFeed: Tokens.crvUSDETHCRV})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.stkcvxcrvUSDETHCRV, tokenHasSamePriceFeed: Tokens.crvUSDETHCRV})
         );
 
         // ------------------------ 50OHM_50DAI ------------------------
