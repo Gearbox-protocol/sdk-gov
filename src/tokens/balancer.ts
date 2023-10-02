@@ -7,7 +7,8 @@ export type BalancerLPToken =
   | "50OHM_50DAI"
   | "50OHM_50WETH"
   | "OHM_wstETH"
-  | "USDC_DAI_USDT";
+  | "USDC_DAI_USDT"
+  | "B_rETH_STABLE";
 
 export type BalancerLpTokenData = {
   symbol: BalancerLPToken;
@@ -86,6 +87,22 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
         type: TradeType.BalancerExit,
         contract: "BALANCER_VAULT",
         tokenOut: ["USDC", "DAI", "USDT"],
+      },
+    ],
+  },
+
+  B_rETH_STABLE: {
+    name: "Balancer rETH Stable Pool",
+    symbol: "B_rETH_STABLE",
+    type: TokenType.BALANCER_LP_TOKEN,
+    underlying: ["rETH", "WETH"],
+    poolId:
+      "0x1e19cf2d73a72ef1332c882f20534b6519be0276000200000000000000000112",
+    lpActions: [
+      {
+        type: TradeType.BalancerExit,
+        contract: "BALANCER_VAULT",
+        tokenOut: ["rETH", "WETH"],
       },
     ],
   },

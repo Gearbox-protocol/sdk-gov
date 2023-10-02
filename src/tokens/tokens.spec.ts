@@ -38,6 +38,7 @@ const EXCEPTIONS_IN_SYMBOLS: Record<NetworkType, Record<string, string>> = {
   Mainnet: {
     // Our Symbol <-> On-chain Symbol
     [tokenDataByNetwork.Mainnet.STETH]: "stETH",
+    [tokenDataByNetwork.Mainnet.rETH_f]: "rETH-f",
   },
   Arbitrum: {
     // Our Symbol <-> On-chain Symbol

@@ -41,6 +41,7 @@ export type NormalToken =
   | "MKR"
   | "RPL"
   | "APE"
+  | "rETH"
 
   // REDSTONE
   | "SHIB"
@@ -1018,6 +1019,18 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
       {
         type: TradeType.UniswapV2Swap,
         contract: "SUSHISWAP_ROUTER",
+      },
+    ],
+  },
+  rETH: {
+    name: "Rocket Pool ETH",
+    symbol: "rETH",
+    type: TokenType.NORMAL_TOKEN,
+    swapActions: [
+      {
+        type: TradeType.CurveExchange,
+        contract: "CURVE_RETH_ETH_POOL",
+        tokenOut: ["WETH"],
       },
     ],
   },

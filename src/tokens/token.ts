@@ -10,6 +10,14 @@ import {
   wrappedAaveV2Tokens,
 } from "./aave";
 import {
+  AuraLPToken,
+  AuraLPTokenData,
+  auraLpTokens,
+  AuraStakedToken,
+  AuraStakedTokenData,
+  auraStakedTokens,
+} from "./aura";
+import {
   BalancerLPToken,
   BalancerLpTokenData,
   balancerLpTokens,
@@ -34,6 +42,13 @@ import {
 } from "./curveLP";
 import { decimals } from "./decimals";
 import {
+  ERC4626LPToken,
+  erc4626Tokens,
+  ERC4626VaultOfCurveLPTokenData,
+  ERC4626VaultOfMetaCurveLPTokenData,
+  ERC4626VaultTokenData,
+} from "./erc4626";
+import {
   DieselTokenData,
   DieselTokenTypes,
   GearboxToken,
@@ -57,7 +72,10 @@ export type LPTokens =
   | BalancerLPToken
   | AaveV2LPToken
   | WrappedAaveV2LPToken
-  | CompoundV2LPToken;
+  | CompoundV2LPToken
+  | ERC4626LPToken
+  | AuraLPToken
+  | AuraStakedToken;
 
 export type SupportedToken =
   | NormalToken
@@ -81,7 +99,12 @@ export type LPTokenDataI =
   | BalancerLpTokenData
   | AaveV2PoolTokenData
   | WrappedAaveV2PoolTokenData
-  | CompoundV2PoolTokenData;
+  | CompoundV2PoolTokenData
+  | ERC4626VaultTokenData
+  | ERC4626VaultOfCurveLPTokenData
+  | ERC4626VaultOfMetaCurveLPTokenData
+  | AuraLPTokenData
+  | AuraStakedTokenData;
 
 export type TokenDataI =
   | NormalTokenData
@@ -97,6 +120,9 @@ export const lpTokens: Record<LPTokens, LPTokenDataI> = {
   ...aaveV2Tokens,
   ...wrappedAaveV2Tokens,
   ...compoundV2Tokens,
+  ...erc4626Tokens,
+  ...auraLpTokens,
+  ...auraStakedTokens,
 };
 
 export const supportedTokens: Record<SupportedToken, TokenDataI> = {
@@ -150,6 +176,7 @@ export const tokenDataByNetwork: Record<
     MKR: "0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2",
     RPL: "0xB4EFd85c19999D84251304bDA99E90B92300Bd93",
     APE: "0x4d224452801ACEd8B2F0aebE155379bb5D594381",
+    rETH: "0xae78736Cd615f374D3085123A210448E74Fc6393",
 
     // CURVE LP TOKENS
     "3Crv": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
@@ -172,6 +199,8 @@ export const tokenDataByNetwork: Record<
     crvUSDUSDT: "0x390f3595bCa2Df7d23783dFd126427CCeb997BF4",
     crvUSDFRAX: "0x0CD6f267b2086bea681E922E19D40512511BE538",
     crvUSDETHCRV: "0x4eBdF703948ddCEA3B11f675B4D1Fba9d2414A14",
+
+    rETH_f: "0x6c38cE8984a890F5e46e6dF6117C26b3F1EcfC9C",
 
     // CONVEX LP TOKENS
     cvx3Crv: "0x30D9410ED1D5DA1F6C8391af5338C93ab8d4035C",
@@ -243,6 +272,12 @@ export const tokenDataByNetwork: Record<
     cUSDT: "0xf650C3d88D12dB855b8bf7D11Be6C55A4e07dCC9",
     cETH: "0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5",
     cLINK: "0xFAce851a4921ce59e912d19329929CE6da6EB0c7",
+
+    // FLUX
+    fUSDC: "0x465a5a630482f3abD6d3b84B39B29b07214d19e5",
+    sDAI: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
+    YieldETH: "0xb5b29320d2Dde5BA5BAFA1EbcD270052070483ec",
+    B_rETH_STABLE: "0x1E19CF2D73a72Ef1332C882F20534B6519Be0276",
   },
 
   ///
@@ -288,6 +323,7 @@ export const tokenDataByNetwork: Record<
     MKR: NOT_DEPLOYED,
     RPL: NOT_DEPLOYED,
     APE: NOT_DEPLOYED,
+    rETH: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -319,6 +355,8 @@ export const tokenDataByNetwork: Record<
     crvUSDUSDT: NOT_DEPLOYED,
     crvUSDFRAX: NOT_DEPLOYED,
     crvUSDETHCRV: NOT_DEPLOYED,
+
+    rETH_f: NOT_DEPLOYED,
 
     // CONVEX LP TOKENS
     cvx3Crv: NOT_DEPLOYED,
@@ -357,6 +395,7 @@ export const tokenDataByNetwork: Record<
     "50OHM_50WETH": "0x89dc7e71e362faF88D92288fE2311D25c6a1B5E0",
     OHM_wstETH: NOT_DEPLOYED,
     USDC_DAI_USDT: NOT_DEPLOYED,
+    B_rETH_STABLE: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -384,6 +423,10 @@ export const tokenDataByNetwork: Record<
     cUSDT: NOT_DEPLOYED,
     cETH: NOT_DEPLOYED,
     cLINK: NOT_DEPLOYED,
+
+    fUSDC: NOT_DEPLOYED,
+    sDAI: NOT_DEPLOYED,
+    YieldETH: NOT_DEPLOYED,
   },
 };
 

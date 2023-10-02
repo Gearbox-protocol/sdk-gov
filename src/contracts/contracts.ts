@@ -6,6 +6,7 @@
 import { NetworkType } from "../core/chains";
 import { NOT_DEPLOYED } from "../core/constants";
 import { AaveV2LPToken } from "../tokens/aave";
+import { AuraStakedToken } from "../tokens/aura";
 import { ConvexStakedPhantomToken } from "../tokens/convex";
 import type { CurveLPToken } from "../tokens/curveLP";
 import { NormalToken } from "../tokens/normal";
@@ -35,7 +36,8 @@ export type CurvePoolContract =
   | "CURVE_CRVUSD_USDC_POOL"
   | "CURVE_CRVUSD_USDT_POOL"
   | "CURVE_CRVUSD_FRAX_POOL"
-  | "CURVE_TRI_CRV_POOL";
+  | "CURVE_TRI_CRV_POOL"
+  | "CURVE_RETH_ETH_POOL";
 
 export type YearnVaultContract =
   | "YEARN_DAI_VAULT"
@@ -44,6 +46,8 @@ export type YearnVaultContract =
   | "YEARN_WBTC_VAULT"
   | "YEARN_CURVE_FRAX_VAULT"
   | "YEARN_CURVE_STETH_VAULT";
+
+export type ERC4626VaultContract = "MAKER_DSR_VAULT" | "YIELD_ETH_VAULT";
 
 export type ConvexPoolContract =
   | "CONVEX_3CRV_POOL"
@@ -59,6 +63,8 @@ export type ConvexPoolContract =
   | "CONVEX_CVXETH_POOL"
   | "CONVEX_3CRYPTO_POOL"
   | "CONVEX_LDOETH_POOL";
+
+export type AuraPoolContract = "AURA_B_RETH_STABLE_POOL";
 
 export type AaveV2PoolContract =
   | "AAVE_V2_DAI_POOL"
@@ -77,7 +83,8 @@ export type CompoundV2PoolContract =
   | "COMPOUND_V2_USDC_POOL"
   | "COMPOUND_V2_USDT_POOL"
   | "COMPOUND_V2_ETH_POOL"
-  | "COMPOUND_V2_LINK_POOL";
+  | "COMPOUND_V2_LINK_POOL"
+  | "FLUX_USDC_POOL";
 
 export type SupportedContract =
   | UniswapV2Contract
@@ -87,7 +94,8 @@ export type SupportedContract =
   | YearnVaultContract
   | "CONVEX_BOOSTER"
   | ConvexPoolContract
-  | "CONVEX_CLAIM_ZAP"
+  | "AURA_BOOSTER"
+  | AuraPoolContract
   | "LIDO_STETH_GATEWAY"
   | "LIDO_WSTETH"
   | "UNIVERSAL_ADAPTER"
@@ -128,6 +136,8 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Mainnet.crvUSDFRAX,
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Mainnet.crvUSDETHCRV,
 
+    CURVE_RETH_ETH_POOL: "0x0f3159811670c117c372428d4e69ac32325e4d0f",
+
     // YEARN
     YEARN_DAI_VAULT: tokenDataByNetwork.Mainnet.yvDAI,
     YEARN_USDC_VAULT: tokenDataByNetwork.Mainnet.yvUSDC,
@@ -145,13 +155,15 @@ export const contractsByNetwork: Record<
     CONVEX_STECRV_POOL: "0x0A760466E1B4621579a82a39CB56Dda2F4E70f03",
     CONVEX_FRAX3CRV_POOL: "0xB900EF131301B307dB5eFcbed9DBb50A3e209B2e",
     CONVEX_LUSD3CRV_POOL: "0x2ad92A7aE036a038ff02B96c88de868ddf3f8190",
-    CONVEX_CLAIM_ZAP: "0x92Cf9E5e4D1Dfbf7dA0d2BB3e884a68416a65070",
     CONVEX_OHMFRAXBP_POOL: "0x27A8c58e3DE84280826d615D80ddb33930383fE9",
     CONVEX_MIM3CRV_POOL: "0xFd5AbF66b003881b88567EB9Ed9c651F14Dc4771",
     CONVEX_CRVETH_POOL: "0x085A2054c51eA5c91dbF7f90d65e728c0f2A270f",
     CONVEX_CVXETH_POOL: "0xb1Fb0BA0676A1fFA83882c7F4805408bA232C1fA",
     CONVEX_3CRYPTO_POOL: "0xb05262D4aaAA38D0Af4AaB244D446ebDb5afd4A7",
     CONVEX_LDOETH_POOL: "0x8CA990E954611E5E3d2cc51C013fCC372c8c1D38",
+
+    AURA_BOOSTER: "0xA57b8d98dAE62B26Ec3bcC4a365338157060B234",
+    AURA_B_RETH_STABLE_POOL: "0x9497df26e5bD669Cb925eC68E730492b9300c482",
 
     // LIDO
     LIDO_STETH_GATEWAY: "0x6f4b4aB5142787c05b7aB9A9692A0f46b997C29D",
@@ -179,6 +191,8 @@ export const contractsByNetwork: Record<
     COMPOUND_V2_USDT_POOL: tokenDataByNetwork.Mainnet.cUSDT,
     COMPOUND_V2_LINK_POOL: tokenDataByNetwork.Mainnet.cLINK,
     COMPOUND_V2_ETH_POOL: tokenDataByNetwork.Mainnet.cETH,
+
+    FLUX_USDC_POOL: tokenDataByNetwork.Mainnet.fUSDC,
   },
 
   //
@@ -218,6 +232,8 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Mainnet.crvUSDFRAX,
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Mainnet.crvUSDETHCRV,
 
+    CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
+
     // YEARN
     YEARN_DAI_VAULT: tokenDataByNetwork.Arbitrum.yvDAI,
     YEARN_USDC_VAULT: tokenDataByNetwork.Arbitrum.yvUSDC,
@@ -235,13 +251,15 @@ export const contractsByNetwork: Record<
     CONVEX_FRAX3CRV_POOL: NOT_DEPLOYED,
     CONVEX_LUSD3CRV_POOL: NOT_DEPLOYED,
     CONVEX_GUSD_POOL: NOT_DEPLOYED,
-    CONVEX_CLAIM_ZAP: NOT_DEPLOYED,
     CONVEX_OHMFRAXBP_POOL: NOT_DEPLOYED,
     CONVEX_MIM3CRV_POOL: NOT_DEPLOYED,
     CONVEX_CRVETH_POOL: NOT_DEPLOYED,
     CONVEX_CVXETH_POOL: NOT_DEPLOYED,
     CONVEX_3CRYPTO_POOL: NOT_DEPLOYED,
     CONVEX_LDOETH_POOL: NOT_DEPLOYED,
+
+    AURA_BOOSTER: NOT_DEPLOYED,
+    AURA_B_RETH_STABLE_POOL: NOT_DEPLOYED,
 
     // LIDO
     LIDO_STETH_GATEWAY: NOT_DEPLOYED,
@@ -267,8 +285,10 @@ export const contractsByNetwork: Record<
     COMPOUND_V2_DAI_POOL: tokenDataByNetwork.Arbitrum.cDAI,
     COMPOUND_V2_USDC_POOL: tokenDataByNetwork.Arbitrum.cUSDC,
     COMPOUND_V2_USDT_POOL: tokenDataByNetwork.Arbitrum.cUSDT,
-    COMPOUND_V2_LINK_POOL: tokenDataByNetwork.Mainnet.cLINK,
+    COMPOUND_V2_LINK_POOL: tokenDataByNetwork.Arbitrum.cLINK,
     COMPOUND_V2_ETH_POOL: tokenDataByNetwork.Arbitrum.cETH,
+
+    FLUX_USDC_POOL: tokenDataByNetwork.Arbitrum.fUSDC,
   },
 };
 
@@ -331,9 +351,7 @@ export type YearnParams = {
 
 type ConvexParams = {
   protocol: Protocols.Convex;
-  type:
-    | AdapterInterface.CONVEX_V1_BOOSTER
-    | AdapterInterface.CONVEX_V1_CLAIM_ZAP;
+  type: AdapterInterface.CONVEX_V1_BOOSTER;
 } & BaseContractParams;
 
 interface ConvexExtraPoolParams {
@@ -347,6 +365,25 @@ export type ConvexPoolParams = {
   stakedToken: ConvexStakedPhantomToken;
   extraRewards: Array<ConvexExtraPoolParams>;
 } & BaseContractParams;
+
+// AURA
+
+export type AuraPoolParams = {
+  protocol: Protocols.Aura;
+  type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL;
+  stakedToken: AuraStakedToken;
+  extraRewards: Array<AuraExtraPoolParams>;
+} & BaseContractParams;
+
+type AuraParams = {
+  protocol: Protocols.Aura;
+  type: AdapterInterface.CONVEX_V1_BOOSTER;
+} & BaseContractParams;
+
+interface AuraExtraPoolParams {
+  rewardToken: NormalToken;
+  poolAddress: Record<NetworkType, string>;
+}
 
 export type LidoParams = {
   protocol: Protocols.Lido;
@@ -383,7 +420,7 @@ export type WrapperAaveV2Params = {
 } & BaseContractParams;
 
 export type CompoundV2Params = {
-  protocol: Protocols.CompoundV2;
+  protocol: Protocols.CompoundV2 | Protocols.Flux;
   type:
     | AdapterInterface.COMPOUND_V2_CERC20
     | AdapterInterface.COMPOUND_V2_CETHER;
@@ -405,7 +442,9 @@ export type ContractParams =
   | BalancerParams
   | AaveV2Params
   | WrapperAaveV2Params
-  | CompoundV2Params;
+  | CompoundV2Params
+  | AuraParams
+  | AuraPoolParams;
 
 export const contractParams: Record<SupportedContract, ContractParams> = {
   UNISWAP_V2_ROUTER: {
@@ -598,6 +637,15 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     tokens: ["crvUSD", "WETH", "CRV"],
   },
 
+  CURVE_RETH_ETH_POOL: {
+    name: "Curve rETH",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_V1_2ASSETS,
+    lpToken: "rETH_f",
+    tokens: ["WETH", "rETH"],
+  },
+
   YEARN_DAI_VAULT: {
     name: "Yearn DAI",
     protocol: Protocols.Yearn,
@@ -639,11 +687,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Convex BOOSTER",
     protocol: Protocols.Convex,
     type: AdapterInterface.CONVEX_V1_BOOSTER,
-  },
-  CONVEX_CLAIM_ZAP: {
-    name: "Convex ZAP",
-    protocol: Protocols.Convex,
-    type: AdapterInterface.CONVEX_V1_CLAIM_ZAP,
   },
 
   CONVEX_3CRV_POOL: {
@@ -803,6 +846,20 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     ],
   },
 
+  AURA_BOOSTER: {
+    name: "Aura BOOSTER",
+    protocol: Protocols.Aura,
+    type: AdapterInterface.CONVEX_V1_BOOSTER,
+  },
+
+  AURA_B_RETH_STABLE_POOL: {
+    name: "Balancer rETH Stable Pool Aura Deposit",
+    protocol: Protocols.Aura,
+    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
+    stakedToken: "auraB_rETH_STABLE_vault",
+    extraRewards: [],
+  },
+
   LIDO_STETH_GATEWAY: {
     name: "Lido STETH",
     protocol: Protocols.Lido,
@@ -911,6 +968,12 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     protocol: Protocols.CompoundV2,
     type: AdapterInterface.COMPOUND_V2_CETHER,
     underlying: "WETH",
+  },
+  FLUX_USDC_POOL: {
+    name: "Flux USDC",
+    protocol: Protocols.Flux,
+    type: AdapterInterface.COMPOUND_V2_CERC20,
+    underlying: "USDC",
   },
 };
 
