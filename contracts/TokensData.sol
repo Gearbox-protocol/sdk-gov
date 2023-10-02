@@ -304,6 +304,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.rETH,
+                addr: 0xae78736Cd615f374D3085123A210448E74Fc6393,
+                symbol: "rETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens._3Crv,
                 addr: 0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490,
                 symbol: "3Crv",
@@ -395,6 +403,14 @@ contract TokensDataLive {
                 id: Tokens.crvUSDETHCRV,
                 addr: 0x4eBdF703948ddCEA3B11f675B4D1Fba9d2414A14,
                 symbol: "crvUSDETHCRV",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.rETH_f,
+                addr: 0x6c38cE8984a890F5e46e6dF6117C26b3F1EcfC9C,
+                symbol: "rETH_f",
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
         );
@@ -728,6 +744,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.B_rETH_STABLE,
+                addr: 0x1E19CF2D73a72Ef1332C882F20534B6519Be0276,
+                symbol: "B_rETH_STABLE",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.aDAI,
                 addr: 0x028171bCA77440897B824Ca71D1c56caC55b68A3,
                 symbol: "aDAI",
@@ -797,6 +821,46 @@ contract TokensDataLive {
                 addr: 0xFAce851a4921ce59e912d19329929CE6da6EB0c7,
                 symbol: "cLINK",
                 tokenType: TokenType.COMPOUND_V2_C_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.fUSDC,
+                addr: 0x465a5a630482f3abD6d3b84B39B29b07214d19e5,
+                symbol: "fUSDC",
+                tokenType: TokenType.COMPOUND_V2_C_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.sDAI,
+                addr: 0x83F20F44975D03b1b09e64809B757c47f942BEeA,
+                symbol: "sDAI",
+                tokenType: TokenType.ERC4626_VAULT_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.YieldETH,
+                addr: 0xb5b29320d2Dde5BA5BAFA1EbcD270052070483ec,
+                symbol: "YieldETH",
+                tokenType: TokenType.ERC4626_VAULT_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.auraB_rETH_STABLE,
+                addr: 0x9497df26e5bD669Cb925eC68E730492b9300c482,
+                symbol: "auraB_rETH_STABLE",
+                tokenType: TokenType.AURA_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.auraB_rETH_STABLE_vault,
+                addr: 0xDd1fE5AD401D4777cE89959b7fa587e569Bf125D,
+                symbol: "auraB_rETH_STABLE_vault",
+                tokenType: TokenType.AURA_STAKED_TOKEN
             })
         );
         tokenDataByNetwork[1].push(

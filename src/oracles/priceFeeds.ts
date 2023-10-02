@@ -828,6 +828,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
       },
     },
   },
+  // AAVE
   aDAI: {
     type: PriceFeedType.THE_SAME_AS,
     token: "DAI",
@@ -923,6 +924,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
       },
     },
   },
+  // ERC4626
   sDAI: {
     type: PriceFeedType.ERC4626_VAULT_ORACLE,
     underlying: "DAI",
@@ -930,5 +932,14 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
   YieldETH: {
     type: PriceFeedType.ERC4626_VAULT_ORACLE,
     underlying: "WETH",
+  },
+  // AURA
+  auraB_rETH_STABLE: {
+    type: PriceFeedType.THE_SAME_AS,
+    token: "B_rETH_STABLE",
+  },
+  auraB_rETH_STABLE_vault: {
+    type: PriceFeedType.THE_SAME_AS,
+    token: "B_rETH_STABLE",
   },
 };

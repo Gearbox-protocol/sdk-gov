@@ -102,7 +102,8 @@ export type SupportedContract =
   | "BALANCER_VAULT"
   | AaveV2PoolContract
   | AaveV2TokenWrapperContract
-  | CompoundV2PoolContract;
+  | CompoundV2PoolContract
+  | ERC4626VaultContract;
 
 export const contractsByNetwork: Record<
   NetworkType,
@@ -136,7 +137,7 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Mainnet.crvUSDFRAX,
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Mainnet.crvUSDETHCRV,
 
-    CURVE_RETH_ETH_POOL: "0x0f3159811670c117c372428d4e69ac32325e4d0f",
+    CURVE_RETH_ETH_POOL: "0x0f3159811670c117c372428D4E69AC32325e4D0F",
 
     // YEARN
     YEARN_DAI_VAULT: tokenDataByNetwork.Mainnet.yvDAI,
@@ -145,6 +146,10 @@ export const contractsByNetwork: Record<
     YEARN_WBTC_VAULT: tokenDataByNetwork.Mainnet.yvWBTC,
     YEARN_CURVE_FRAX_VAULT: tokenDataByNetwork.Mainnet.yvCurve_FRAX,
     YEARN_CURVE_STETH_VAULT: tokenDataByNetwork.Mainnet.yvCurve_stETH,
+
+    // ERC4626
+    MAKER_DSR_VAULT: tokenDataByNetwork.Mainnet.sDAI,
+    YIELD_ETH_VAULT: tokenDataByNetwork.Mainnet.YieldETH,
 
     // CONVEX
     CONVEX_BOOSTER: "0xF403C135812408BFbE8713b5A23a04b3D48AAE31",
@@ -241,6 +246,10 @@ export const contractsByNetwork: Record<
     YEARN_WBTC_VAULT: tokenDataByNetwork.Arbitrum.yvWBTC,
     YEARN_CURVE_FRAX_VAULT: tokenDataByNetwork.Arbitrum.yvCurve_FRAX,
     YEARN_CURVE_STETH_VAULT: tokenDataByNetwork.Arbitrum.yvCurve_stETH,
+
+    /// ERC4626
+    MAKER_DSR_VAULT: tokenDataByNetwork.Arbitrum.sDAI,
+    YIELD_ETH_VAULT: tokenDataByNetwork.Arbitrum.YieldETH,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -349,6 +358,12 @@ export type YearnParams = {
   shareToken: YearnLPToken;
 } & BaseContractParams;
 
+export type ERC4626Params = {
+  protocol: Protocols.MakerDSR | Protocols.Sommelier;
+  type: AdapterInterface.ERC4626_VAULT;
+  underlying: NormalToken;
+} & BaseContractParams;
+
 type ConvexParams = {
   protocol: Protocols.Convex;
   type: AdapterInterface.CONVEX_V1_BOOSTER;
@@ -444,7 +459,8 @@ export type ContractParams =
   | WrapperAaveV2Params
   | CompoundV2Params
   | AuraParams
-  | AuraPoolParams;
+  | AuraPoolParams
+  | ERC4626Params;
 
 export const contractParams: Record<SupportedContract, ContractParams> = {
   UNISWAP_V2_ROUTER: {
@@ -682,7 +698,18 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.YEARN_V2,
     shareToken: "yvCurve_stETH",
   },
-
+  MAKER_DSR_VAULT: {
+    name: "Maker DSR ERC4626 Vault",
+    protocol: Protocols.MakerDSR,
+    type: AdapterInterface.ERC4626_VAULT,
+    underlying: "DAI",
+  },
+  YIELD_ETH_VAULT: {
+    name: "Sommelier YieldETH",
+    protocol: Protocols.Sommelier,
+    type: AdapterInterface.ERC4626_VAULT,
+    underlying: "WETH",
+  },
   CONVEX_BOOSTER: {
     name: "Convex BOOSTER",
     protocol: Protocols.Convex,

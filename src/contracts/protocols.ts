@@ -11,4 +11,6 @@ export enum Protocols {
   CompoundV2,
   Flux,
   Aura,
+  MakerDSR,
+  Sommelier,
 }

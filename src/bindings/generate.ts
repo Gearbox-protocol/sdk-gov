@@ -496,7 +496,13 @@ class BindingsGenerator {
           contractParam.type === AdapterInterface.CONVEX_V1_BOOSTER ||
           contractParam.type === AdapterInterface.LIDO_V1 ||
           contractParam.type === AdapterInterface.UNIVERSAL ||
-          contractParam.type === AdapterInterface.LIDO_WSTETH_V1,
+          contractParam.type === AdapterInterface.LIDO_WSTETH_V1 ||
+          contractParam.type === AdapterInterface.AAVE_V2_LENDING_POOL ||
+          contractParam.type === AdapterInterface.AAVE_V2_WRAPPED_ATOKEN ||
+          contractParam.type === AdapterInterface.COMPOUND_V2_CERC20 ||
+          contractParam.type === AdapterInterface.COMPOUND_V2_CETHER ||
+          contractParam.type === AdapterInterface.ERC4626_VAULT ||
+          contractParam.type === AdapterInterface.BALANCER_VAULT,
       )
       .map(
         ([contract, contractParam]) =>
