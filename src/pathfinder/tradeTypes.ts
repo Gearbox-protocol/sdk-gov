@@ -1,16 +1,20 @@
 import type {
   AaveV2PoolContract,
+  AuraPoolContract,
   CompoundV2PoolContract,
   ConvexPoolContract,
   CurvePoolContract,
+  ERC4626VaultContract,
   UniswapV2Contract,
   YearnVaultContract,
 } from "../contracts/contracts";
 import { AaveV2LPToken } from "../tokens/aave";
+import { AuraStakedToken } from "../tokens/aura";
 import { BalancerLPToken } from "../tokens/balancer";
 import { CompoundV2LPToken } from "../tokens/compound";
 import type { ConvexLPToken, ConvexStakedPhantomToken } from "../tokens/convex";
 import type { CurveLPToken } from "../tokens/curveLP";
+import { ERC4626LPToken } from "../tokens/erc4626";
 import type { NormalToken } from "../tokens/normal";
 import type { YearnLPToken } from "../tokens/yearn";
 
@@ -37,6 +41,14 @@ export enum TradeType {
   AaveV2Unwrap,
   CompoundV2Deposit,
   CompoundV2Withdraw,
+  ERC4626Deposit,
+  ERC4626Withdraw,
+  AuraDepositLP,
+  AuraStake,
+  AuraDepositLPAndStake,
+  AuraWithdrawLP,
+  AuraWithdraw,
+  AuraWithdrawAndUnwrap,
 }
 
 export type TradeAction =
@@ -121,6 +133,21 @@ export type TradeAction =
       tokenOut: Array<NormalToken | BalancerLPToken>;
     }
   | {
+      type: TradeType.AuraStake;
+      contract: AuraPoolContract;
+      tokenOut: AuraStakedToken;
+    }
+  | {
+      type: TradeType.AuraDepositLPAndStake;
+      contract: "AURA_BOOSTER";
+      tokenOut: AuraStakedToken;
+    }
+  | {
+      type: TradeType.AuraWithdrawLP;
+      contract: "AURA_BOOSTER";
+      tokenOut: BalancerLPToken;
+    }
+  | {
       type: TradeType.AaveV2Deposit;
       contract: AaveV2PoolContract;
       tokenOut: AaveV2LPToken;
@@ -139,4 +166,14 @@ export type TradeAction =
       type: TradeType.CompoundV2Withdraw;
       contract: CompoundV2PoolContract;
       tokenOut: NormalToken;
+    }
+  | {
+      type: TradeType.ERC4626Deposit;
+      contract: ERC4626VaultContract;
+      tokenOut: ERC4626LPToken;
+    }
+  | {
+      type: TradeType.ERC4626Withdraw;
+      contract: ERC4626VaultContract;
+      tokenOut: NormalToken | CurveLPToken;
     };

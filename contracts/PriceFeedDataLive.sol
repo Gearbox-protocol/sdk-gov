@@ -547,6 +547,17 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ rETH ------------------------
+        compositePriceFeedsByNetwork[1].push(
+            CompositePriceFeedData({
+                token: Tokens.rETH,
+                targetToBaseFeed: 0x536218f9E9Eb48863970252233c8F271f554C2d0,
+                targetStalenessPeriod: 86400,
+                baseToUSDFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
+                baseStalenessPeriod: 86400
+            })
+        );
+
         // ------------------------ yvDAI ------------------------
         yearnPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.yvDAI}));
         yearnPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: Tokens.yvDAI}));
@@ -844,6 +855,22 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ rETH_f ------------------------
+        curveCryptoPriceFeedsByNetwork[1].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.rETH_f,
+                assets: TokensLib.arrayOf(Tokens.rETH, Tokens.WETH),
+                pool: Contracts.CURVE_RETH_ETH_POOL
+            })
+        );
+        curveCryptoPriceFeedsByNetwork[42161].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.rETH_f,
+                assets: TokensLib.arrayOf(Tokens.rETH, Tokens.WETH),
+                pool: Contracts.CURVE_RETH_ETH_POOL
+            })
+        );
+
         // ------------------------ yvCurve_stETH ------------------------
         yearnPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.yvCurve_stETH}));
         yearnPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: Tokens.yvCurve_stETH}));
@@ -1114,6 +1141,14 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ B_rETH_STABLE ------------------------
+        balancerStableLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({lpToken: Tokens.B_rETH_STABLE, assets: TokensLib.arrayOf(Tokens.rETH, Tokens.WETH)})
+        );
+        balancerStableLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({lpToken: Tokens.B_rETH_STABLE, assets: TokensLib.arrayOf(Tokens.rETH, Tokens.WETH)})
+        );
+
         // ------------------------ dDAI ------------------------
 
         // ------------------------ dUSDC ------------------------
@@ -1222,6 +1257,12 @@ contract PriceFeedDataLive {
             GenericLPPriceFeedData({lpToken: Tokens.cETH, underlying: Tokens.WETH})
         );
 
+        // ------------------------ fUSDC ------------------------
+        compoundV2PriceFeedsByNetwork[1].push(GenericLPPriceFeedData({lpToken: Tokens.fUSDC, underlying: Tokens.USDC}));
+        compoundV2PriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: Tokens.fUSDC, underlying: Tokens.USDC})
+        );
+
         // ------------------------ MKR ------------------------
         chainlinkPriceFeedsByNetwork[1].push(
             ChainlinkPriceFeedData({
@@ -1268,6 +1309,32 @@ contract PriceFeedDataLive {
                 priceFeed: 0x221912ce795669f628c51c69b7d0873eDA9C03bB,
                 stalenessPeriod: 86400
             })
+        );
+
+        // ------------------------ sDAI ------------------------
+        erc4626PriceFeedsByNetwork[1].push(GenericLPPriceFeedData({lpToken: Tokens.sDAI, underlying: Tokens.DAI}));
+        erc4626PriceFeedsByNetwork[42161].push(GenericLPPriceFeedData({lpToken: Tokens.sDAI, underlying: Tokens.DAI}));
+
+        // ------------------------ YieldETH ------------------------
+        erc4626PriceFeedsByNetwork[1].push(GenericLPPriceFeedData({lpToken: Tokens.YieldETH, underlying: Tokens.WETH}));
+        erc4626PriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: Tokens.YieldETH, underlying: Tokens.WETH})
+        );
+
+        // ------------------------ auraB_rETH_STABLE ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.auraB_rETH_STABLE, tokenHasSamePriceFeed: Tokens.B_rETH_STABLE})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.auraB_rETH_STABLE, tokenHasSamePriceFeed: Tokens.B_rETH_STABLE})
+        );
+
+        // ------------------------ auraB_rETH_STABLE_vault ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.auraB_rETH_STABLE_vault, tokenHasSamePriceFeed: Tokens.B_rETH_STABLE})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.auraB_rETH_STABLE_vault, tokenHasSamePriceFeed: Tokens.B_rETH_STABLE})
         );
     }
 

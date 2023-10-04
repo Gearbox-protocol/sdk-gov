@@ -113,4 +113,12 @@ export const decimals: Record<SupportedToken, number> = {
   cLINK: 18,
   cETH: 18,
   SHIB: 18,
+  fUSDC: 8,
+  sDAI: 18,
+  YieldETH: 18,
+  rETH: 18,
+  rETH_f: 18,
+  B_rETH_STABLE: 18,
+  auraB_rETH_STABLE: 18,
+  auraB_rETH_STABLE_vault: 18,
 };

@@ -9,4 +9,8 @@ export enum Protocols {
   Balancer,
   AaveV2,
   CompoundV2,
+  Flux,
+  Aura,
+  MakerDSR,
+  Sommelier,
 }

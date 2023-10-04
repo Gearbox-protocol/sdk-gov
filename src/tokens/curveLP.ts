@@ -13,6 +13,7 @@ export type CurveMetaTokens =
   | "gusd3CRV"
   | "MIM_3LP3CRV"
   | "OHMFRAXBP";
+
 export type CurveLPToken =
   | "3Crv"
   | "steCRV"
@@ -26,6 +27,7 @@ export type CurveLPToken =
   | "crvUSDUSDT"
   | "crvUSDFRAX"
   | "crvUSDETHCRV"
+  | "rETH_f"
   | CurveMetaTokens;
 
 export type CurveLPTokenData = {
@@ -189,6 +191,14 @@ export const curveTokens: Record<
     type: TokenType.CURVE_LP_TOKEN,
     pool: "CURVE_TRI_CRV_POOL",
     tokenOut: ["crvUSD", "WETH", "CRV"],
+  },
+
+  rETH_f: {
+    name: "Curve.fi Factory Crypto Pool: Rocketpool rETH/ETH",
+    symbol: "rETH_f",
+    type: TokenType.CURVE_LP_TOKEN,
+    pool: "CURVE_RETH_ETH_POOL",
+    tokenOut: ["rETH", "WETH"],
   },
   ...curveMetaTokens,
 };

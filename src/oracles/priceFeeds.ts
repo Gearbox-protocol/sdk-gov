@@ -458,6 +458,21 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     },
   },
 
+  rETH: {
+    type: PriceFeedType.NETWORK_DEPENDENT,
+    feeds: {
+      Mainnet: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: "0x536218f9E9Eb48863970252233c8F271f554C2d0",
+        baseToUsdPriceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+      },
+      Arbitrum: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: NOT_DEPLOYED,
+      },
+    },
+  },
+
   yvDAI: {
     type: PriceFeedType.YEARN_ORACLE,
     token: "DAI",
@@ -569,6 +584,11 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
   crvUSDETHCRV: {
     type: PriceFeedType.CURVE_CRYPTO_ORACLE,
     assets: ["crvUSD", "WETH", "CRV"],
+  },
+
+  rETH_f: {
+    type: PriceFeedType.CURVE_CRYPTO_ORACLE,
+    assets: ["rETH", "WETH"],
   },
   // YEARN- CURVE TOKENS
   yvCurve_stETH: {
@@ -716,6 +736,11 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     assets: ["USDC", "DAI", "USDT"],
   },
 
+  B_rETH_STABLE: {
+    type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
+    assets: ["rETH", "WETH"],
+  },
+
   // GEARBOX
   dDAI: {
     type: PriceFeedType.NETWORK_DEPENDENT,
@@ -814,6 +839,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
       },
     },
   },
+  // AAVE
   aDAI: {
     type: PriceFeedType.THE_SAME_AS,
     token: "DAI",
@@ -866,6 +892,10 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     type: PriceFeedType.COMPOUND_V2_ORACLE,
     underlying: "WETH",
   },
+  fUSDC: {
+    type: PriceFeedType.COMPOUND_V2_ORACLE,
+    underlying: "USDC",
+  },
   MKR: {
     type: PriceFeedType.NETWORK_DEPENDENT,
     feeds: {
@@ -904,5 +934,23 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
         address: "0x221912ce795669f628c51c69b7d0873eDA9C03bB",
       },
     },
+  },
+  // ERC4626
+  sDAI: {
+    type: PriceFeedType.ERC4626_VAULT_ORACLE,
+    underlying: "DAI",
+  },
+  YieldETH: {
+    type: PriceFeedType.ERC4626_VAULT_ORACLE,
+    underlying: "WETH",
+  },
+  // AURA
+  auraB_rETH_STABLE: {
+    type: PriceFeedType.THE_SAME_AS,
+    token: "B_rETH_STABLE",
+  },
+  auraB_rETH_STABLE_vault: {
+    type: PriceFeedType.THE_SAME_AS,
+    token: "B_rETH_STABLE",
   },
 };
