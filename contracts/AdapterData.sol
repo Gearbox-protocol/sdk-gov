@@ -146,7 +146,10 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.COMPOUND_V2_LINK_POOL, adapterType: AdapterType.COMPOUND_V2_CERC20})
         );
         simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.COMPOUND_V2_ETH_POOL, adapterType: AdapterType.COMPOUND_V2_CETHER})
+            SimpleAdapter({
+                targetContract: Contracts.COMPOUND_V2_ETH_GATEWAY,
+                adapterType: AdapterType.COMPOUND_V2_CETHER
+            })
         );
         simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.FLUX_USDC_POOL, adapterType: AdapterType.COMPOUND_V2_CERC20})
