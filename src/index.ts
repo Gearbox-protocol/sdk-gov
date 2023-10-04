@@ -24,3 +24,4 @@ export * from "./utils/mappers";
 export * from "./utils/multicall";
 export * from "./utils/safeEnum";
 export * from "./utils/types";
+export * from "./verification/github-checker";
