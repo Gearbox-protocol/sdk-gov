@@ -11,7 +11,6 @@ export type ERC4626VaultTokenData = {
   symbol: ERC4626LPToken;
   type: TokenType.ERC4626_VAULT_TOKEN;
   underlying: NormalToken;
-  lpActions: Array<TradeAction>;
   vault: ERC4626VaultContract;
 } & TokenBase;
 
@@ -19,7 +18,6 @@ export type ERC4626VaultOfCurveLPTokenData = {
   symbol: ERC4626LPToken;
   type: TokenType.ERC4626_VAULT_TOKEN;
   underlying: CurveLPToken;
-  lpActions: Array<TradeAction>;
   vault: ERC4626VaultContract;
 } & TokenBase;
 
@@ -27,7 +25,6 @@ export type ERC4626VaultOfMetaCurveLPTokenData = {
   symbol: ERC4626LPToken;
   type: TokenType.ERC4626_VAULT_TOKEN;
   underlying: CurveLPToken;
-  lpActions: Array<TradeAction>;
   vault: ERC4626VaultContract;
 } & TokenBase;
 
@@ -44,13 +41,6 @@ export const erc4626Tokens: Record<
     type: TokenType.ERC4626_VAULT_TOKEN,
     underlying: "DAI",
     vault: "MAKER_DSR_VAULT",
-    lpActions: [
-      {
-        type: TradeType.ERC4626Withdraw,
-        contract: "MAKER_DSR_VAULT",
-        tokenOut: "DAI",
-      },
-    ],
   },
 
   YieldETH: {
@@ -59,13 +49,6 @@ export const erc4626Tokens: Record<
     type: TokenType.ERC4626_VAULT_TOKEN,
     underlying: "WETH",
     vault: "YIELD_ETH_VAULT",
-    lpActions: [
-      {
-        type: TradeType.ERC4626Withdraw,
-        contract: "YIELD_ETH_VAULT",
-        tokenOut: "DAI",
-      },
-    ],
   },
 };
 
