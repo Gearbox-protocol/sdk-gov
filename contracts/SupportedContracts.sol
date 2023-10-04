@@ -424,13 +424,7 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "COMPOUND_V2_LINK_POOL"
             })
         );
-        contractDataByNetwork[1].push(
-            ContractData({
-                id: Contracts.COMPOUND_V2_ETH_POOL,
-                addr: 0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5,
-                name: "COMPOUND_V2_ETH_POOL"
-            })
-        );
+
         contractDataByNetwork[1].push(
             ContractData({
                 id: Contracts.FLUX_USDC_POOL,
