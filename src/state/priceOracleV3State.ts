@@ -10,7 +10,7 @@ import { PartialRecord } from "../utils/types";
 
 const priceFeedV3Param = z.object({
   address: z.string(),
-  priceFeedType: z.number(),
+  extraParams: z.any(),
   decimals: z.number(),
   stalenessPeriod: z.number(),
   skipCheck: z.boolean(),
@@ -23,7 +23,7 @@ const priceOracleV3Schema = z.object({
 
 interface PriceFeedV3Param {
   address: string;
-  priceFeedType: string;
+  extraParams: any;
   decimals: number;
   stalenessPeriod: string;
   skipCheck: boolean;
@@ -49,7 +49,7 @@ export class PriceOracleV3State {
       .forEach(([token, priceFeed]) => {
         this.priceFeeds[tokenSymbolByAddress[token] || token] = {
           address: priceFeed.address,
-          priceFeedType: PriceFeedType[priceFeed.priceFeedType],
+          extraParams: priceFeed.extraParams,
           decimals: priceFeed.decimals,
           stalenessPeriod: `${humanizer.humanize(
             priceFeed.stalenessPeriod * 1000,

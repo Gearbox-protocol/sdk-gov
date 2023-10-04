@@ -1,5 +1,9 @@
 import { BigNumberish } from "ethers";
 
+import { contractsByAddress } from "../contracts/contracts";
+import { TREASURY } from "../contracts/utilsContracts";
+import { tokenSymbolByAddress } from "../tokens/token";
+
 export const toBigInt = (v: BigNumberish): bigint => {
   const value =
     typeof v === "object" && (v as any).type === "BigNumber"
@@ -87,4 +91,24 @@ export function formatBn4dig(num: bigint, precision = 2): string {
     numStr.length - 6,
     numStr.length - 6 + precision,
   )}`;
+}
+
+export function getTokenSymbolOrAddress(address: string): string {
+  return tokenSymbolByAddress[address] || address;
+}
+
+export function fmtBinaryMask(mask: bigint): string {
+  return mask.toString(2).padStart(64, "0");
+}
+
+export function fmtTreasury(treasury: string): string {
+  return treasury === TREASURY.Mainnet
+    ? `GEARBOX TREASURY: [${treasury}]`
+    : treasury;
+}
+
+export function fmtContract(address: string): string {
+  return contractsByAddress[address.toLocaleLowerCase()]
+    ? `[${contractsByAddress[address.toLowerCase()]}]`
+    : address;
 }

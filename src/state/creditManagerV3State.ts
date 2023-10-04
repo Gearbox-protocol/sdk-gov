@@ -2,11 +2,22 @@ import {
   HumanizeDuration,
   HumanizeDurationLanguage,
 } from "humanize-duration-ts";
-import { z } from "zod";
+import { string, z } from "zod";
 
 import { SupportedToken, tokenSymbolByAddress } from "../tokens/token";
-import { percentFmt } from "../utils/formatter";
+import { fmtContract, percentFmt } from "../utils/formatter";
 import { PartialRecord } from "../utils/types";
+import { AaveV2WrappedTokenAdapterState } from "./adapters/aaveV2WrappedToken";
+import { BalancerVaultAdapterState } from "./adapters/balancerVault";
+import { CompoundV2CEtherAdapterState } from "./adapters/compoundV2CEther";
+import { ConvexV1BaseRewardPoolAdapterState } from "./adapters/convexV1BaseRewardPool";
+import { ConvexV1BoosterAdapterState } from "./adapters/convexV1Booster";
+import { CurveV2AdapterState } from "./adapters/curveV2Base";
+import { ERC4626AdapterState } from "./adapters/erc4626";
+import { LidoV1AdapterState } from "./adapters/lidoV1";
+import { UniswapV2AdapterState } from "./adapters/uniswapV2";
+import { UniswapV3AdapterState } from "./adapters/uniswapV3";
+import { WstETHV1AdapterState } from "./adapters/wstETHV1";
 
 const ltParamsSchema = z.object({
   ltNow: z.number(),
@@ -46,6 +57,7 @@ const creditManagerV3Schema = z.object({
   maxEnabledTokensLength: z.number(),
   pool: z.string().length(42),
   underlying: z.string().length(42),
+  adapters: z.record(z.string().length(42), z.record(z.string(), z.any())),
 });
 
 type CreditManagerV3Payload = z.infer<typeof creditManagerV3Schema>;
@@ -74,6 +86,7 @@ export class CreditManagerV3State {
   maxDebt: string;
   maxEnabledTokensLength: number;
   pool: string;
+  adapters: Record<string, Record<string, any>>;
 
   constructor(payload: CreditManagerV3Payload) {
     this.address = payload.address;
@@ -127,6 +140,75 @@ export class CreditManagerV3State {
     this.maxDebt = payload.maxDebt.toString();
     this.maxEnabledTokensLength = payload.maxEnabledTokensLength;
     this.pool = payload.pool;
+    this.adapters = Object.entries(payload.adapters)
+      .map(([address, data]) => {
+        const { adapterType, state } =
+          CreditManagerV3State.parseTypeAndState(data);
+
+        let adapterData = {};
+
+        switch (adapterType) {
+          case "curveV1ExchangeOnly":
+          case "curve2Assets":
+          case "curve3Assets":
+          case "curve4Assets":
+          case "curveSteCrv":
+          case "curveWrapper":
+            adapterData = CurveV2AdapterState.fromJson(state);
+            break;
+          case "compoundV2CERC2":
+            adapterData = CompoundV2CEtherAdapterState.fromJson(state);
+            break;
+          case "compoundV2Ether":
+            adapterData = CompoundV2CEtherAdapterState.fromJson(state);
+            break;
+          case "convexV1BaseRewardPool":
+            adapterData = ConvexV1BaseRewardPoolAdapterState.fromJson(state);
+            break;
+          case "convexV1Booster":
+            adapterData = ConvexV1BoosterAdapterState.fromJson(state);
+            break;
+          case "lidoV1":
+            adapterData = LidoV1AdapterState.fromJson(state);
+            break;
+          case "lidoWstETHV1":
+            adapterData = WstETHV1AdapterState.fromJson(state);
+            break;
+          case "balancerVault":
+            adapterData = BalancerVaultAdapterState.fromJson(state);
+            break;
+          case "eRC4626Vault":
+            adapterData = ERC4626AdapterState.fromJson(state);
+            break;
+          case "uniswapV2Router":
+            adapterData = UniswapV2AdapterState.fromJson(state);
+            break;
+          case "uniswapV3Router":
+            adapterData = UniswapV3AdapterState.fromJson(state);
+            break;
+          default:
+            adapterData = data;
+        }
+
+        return { address, data: { adapterType, ...adapterData } };
+      })
+      .reduce(
+        (acc, { address, data }) => ({ ...acc, [fmtContract(address)]: data }),
+        {},
+      );
+  }
+
+  static parseTypeAndState(data: Record<string, any>): {
+    adapterType: string;
+    state: string;
+  } {
+    if (Object.keys(data).length !== 1) {
+      throw new Error("Unexpected adapter data");
+    }
+    const adapterType = Object.keys(data)[0];
+    const { state } = Object.values(data)[0];
+
+    return { adapterType, state: JSON.stringify(state) };
   }
 
   static fromJson(json: string): Array<CreditManagerV3State> {
