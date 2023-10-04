@@ -98,16 +98,10 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.BALANCER_VAULT, adapterType: AdapterType.BALANCER_VAULT})
         );
         simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.AAVE_V2_DAI_POOL, adapterType: AdapterType.AAVE_V2_LENDING_POOL})
-        );
-        simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.AAVE_V2_USDC_POOL, adapterType: AdapterType.AAVE_V2_LENDING_POOL})
-        );
-        simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.AAVE_V2_USDT_POOL, adapterType: AdapterType.AAVE_V2_LENDING_POOL})
-        );
-        simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.AAVE_V2_WETH_POOL, adapterType: AdapterType.AAVE_V2_LENDING_POOL})
+            SimpleAdapter({
+                targetContract: Contracts.AAVE_V2_LENDING_POOL,
+                adapterType: AdapterType.AAVE_V2_LENDING_POOL
+            })
         );
         simpleAdapters.push(
             SimpleAdapter({
