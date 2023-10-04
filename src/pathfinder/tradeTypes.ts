@@ -1,5 +1,4 @@
 import type {
-  AaveV2PoolContract,
   AuraPoolContract,
   CompoundV2PoolContract,
   ConvexPoolContract,
@@ -149,12 +148,12 @@ export type TradeAction =
     }
   | {
       type: TradeType.AaveV2Deposit;
-      contract: AaveV2PoolContract;
+      contract: "AAVE_V2_LENDING_POOL";
       tokenOut: AaveV2LPToken;
     }
   | {
       type: TradeType.AaveV2Withdraw;
-      contract: AaveV2PoolContract;
+      contract: "AAVE_V2_LENDING_POOL";
       tokenOut: NormalToken;
     }
   | {

@@ -395,6 +395,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "UNIVERSAL_ADAPTER"
             })
         );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.AAVE_V2_LENDING_POOL,
+                addr: 0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9,
+                name: "AAVE_V2_LENDING_POOL"
+            })
+        );
 
         contractDataByNetwork[1].push(
             ContractData({

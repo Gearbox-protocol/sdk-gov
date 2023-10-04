@@ -1,4 +1,3 @@
-import type { AaveV2PoolContract } from "../contracts/contracts";
 import { NormalToken } from "./normal";
 import type { TokenBase } from "./token";
 import { TokenType } from "./tokenType";
@@ -10,7 +9,6 @@ export type AaveV2PoolTokenData = {
   symbol: AaveV2LPToken;
   type: TokenType.AAVE_V2_A_TOKEN;
   underlying: NormalToken;
-  pool: AaveV2PoolContract;
 } & TokenBase;
 
 export type WrappedAaveV2PoolTokenData = {
@@ -25,7 +23,6 @@ export const aaveV2Tokens: Record<AaveV2LPToken, AaveV2PoolTokenData> = {
     symbol: "aDAI",
     type: TokenType.AAVE_V2_A_TOKEN,
     underlying: "DAI",
-    pool: "AAVE_V2_DAI_POOL",
   },
 
   aUSDC: {
@@ -33,7 +30,6 @@ export const aaveV2Tokens: Record<AaveV2LPToken, AaveV2PoolTokenData> = {
     symbol: "aUSDC",
     type: TokenType.AAVE_V2_A_TOKEN,
     underlying: "USDC",
-    pool: "AAVE_V2_USDC_POOL",
   },
 
   aUSDT: {
@@ -41,7 +37,6 @@ export const aaveV2Tokens: Record<AaveV2LPToken, AaveV2PoolTokenData> = {
     symbol: "aUSDT",
     type: TokenType.AAVE_V2_A_TOKEN,
     underlying: "USDT",
-    pool: "AAVE_V2_USDT_POOL",
   },
 
   aWETH: {
@@ -49,7 +44,6 @@ export const aaveV2Tokens: Record<AaveV2LPToken, AaveV2PoolTokenData> = {
     symbol: "aWETH",
     type: TokenType.AAVE_V2_A_TOKEN,
     underlying: "WETH",
-    pool: "AAVE_V2_WETH_POOL",
   },
 };
 

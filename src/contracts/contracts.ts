@@ -67,12 +67,6 @@ export type ConvexPoolContract =
 
 export type AuraPoolContract = "AURA_B_RETH_STABLE_POOL";
 
-export type AaveV2PoolContract =
-  | "AAVE_V2_DAI_POOL"
-  | "AAVE_V2_USDC_POOL"
-  | "AAVE_V2_USDT_POOL"
-  | "AAVE_V2_WETH_POOL";
-
 export type AaveV2TokenWrapperContract =
   | "AAVE_V2_DAI_TOKEN_WRAPPER"
   | "AAVE_V2_USDC_TOKEN_WRAPPER"
@@ -101,7 +95,7 @@ export type SupportedContract =
   | "LIDO_WSTETH"
   | "UNIVERSAL_ADAPTER"
   | "BALANCER_VAULT"
-  | AaveV2PoolContract
+  | "AAVE_V2_LENDING_POOL"
   | AaveV2TokenWrapperContract
   | CompoundV2PoolContract
   | ERC4626VaultContract;
@@ -183,10 +177,7 @@ export const contractsByNetwork: Record<
     UNIVERSAL_ADAPTER: "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC",
 
     // AAVE
-    AAVE_V2_DAI_POOL: NOT_DEPLOYED,
-    AAVE_V2_USDC_POOL: NOT_DEPLOYED,
-    AAVE_V2_USDT_POOL: NOT_DEPLOYED,
-    AAVE_V2_WETH_POOL: NOT_DEPLOYED,
+    AAVE_V2_LENDING_POOL: "0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9",
 
     AAVE_V2_DAI_TOKEN_WRAPPER: tokenDataByNetwork.Mainnet.waDAI,
     AAVE_V2_USDC_TOKEN_WRAPPER: tokenDataByNetwork.Mainnet.waUSDC,
@@ -284,10 +275,7 @@ export const contractsByNetwork: Record<
     UNIVERSAL_ADAPTER: "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC",
 
     // AAVE
-    AAVE_V2_DAI_POOL: NOT_DEPLOYED,
-    AAVE_V2_USDC_POOL: NOT_DEPLOYED,
-    AAVE_V2_USDT_POOL: NOT_DEPLOYED,
-    AAVE_V2_WETH_POOL: NOT_DEPLOYED,
+    AAVE_V2_LENDING_POOL: NOT_DEPLOYED,
 
     AAVE_V2_DAI_TOKEN_WRAPPER: tokenDataByNetwork.Arbitrum.waDAI,
     AAVE_V2_USDC_TOKEN_WRAPPER: tokenDataByNetwork.Arbitrum.waUSDC,
@@ -428,7 +416,6 @@ export type BalancerParams = {
 export type AaveV2Params = {
   protocol: Protocols.AaveV2;
   type: AdapterInterface.AAVE_V2_LENDING_POOL;
-  underlying: NormalToken;
 } & BaseContractParams;
 
 export type WrapperAaveV2Params = {
@@ -933,32 +920,11 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     protocol: Protocols.Balancer,
     type: AdapterInterface.BALANCER_VAULT,
   },
-
-  AAVE_V2_DAI_POOL: {
-    name: "Aave V2 DAI",
+  AAVE_V2_LENDING_POOL: {
+    name: "Aave V2 Lending Pool",
     protocol: Protocols.AaveV2,
     type: AdapterInterface.AAVE_V2_LENDING_POOL,
-    underlying: "DAI",
   },
-  AAVE_V2_USDC_POOL: {
-    name: "Aave V2 USDC",
-    protocol: Protocols.AaveV2,
-    type: AdapterInterface.AAVE_V2_LENDING_POOL,
-    underlying: "USDC",
-  },
-  AAVE_V2_USDT_POOL: {
-    name: "Aave V2 USDT",
-    protocol: Protocols.AaveV2,
-    type: AdapterInterface.AAVE_V2_LENDING_POOL,
-    underlying: "USDT",
-  },
-  AAVE_V2_WETH_POOL: {
-    name: "Aave V2 WETH",
-    protocol: Protocols.AaveV2,
-    type: AdapterInterface.AAVE_V2_LENDING_POOL,
-    underlying: "WETH",
-  },
-
   AAVE_V2_DAI_TOKEN_WRAPPER: {
     name: "Aave V2 DAI Token Wrapper",
     protocol: Protocols.AaveV2,
