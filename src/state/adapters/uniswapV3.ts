@@ -29,7 +29,6 @@ export class UniswapV3AdapterState {
   }
 
   static fromJson(json: string): UniswapV3AdapterState {
-    console.error(json);
     const parsed = uniswapV3Schema.parse(JSON.parse(json));
     return new UniswapV3AdapterState(parsed);
   }

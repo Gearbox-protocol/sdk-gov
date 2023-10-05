@@ -46,7 +46,6 @@ export class CurveV2AdapterState {
   }
 
   static fromJson(json: string): CurveV2AdapterState {
-    console.error(json);
     const parsed = curveV2BaseSchema.parse(JSON.parse(json));
     return new CurveV2AdapterState(parsed);
   }

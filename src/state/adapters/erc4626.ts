@@ -25,7 +25,6 @@ export class ERC4626AdapterState {
   }
 
   static fromJson(json: string): ERC4626AdapterState {
-    console.error(json);
     const parsed = erc4626Schema.parse(JSON.parse(json));
     return new ERC4626AdapterState(parsed);
   }

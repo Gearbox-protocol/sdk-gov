@@ -35,7 +35,6 @@ export class LidoV1AdapterState {
   }
 
   static fromJson(json: string): LidoV1AdapterState {
-    console.error(json);
     const parsed = lidoV1Schema.parse(JSON.parse(json));
     return new LidoV1AdapterState(parsed);
   }

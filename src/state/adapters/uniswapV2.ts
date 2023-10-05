@@ -28,7 +28,6 @@ export class UniswapV2AdapterState {
   }
 
   static fromJson(json: string): UniswapV2AdapterState {
-    console.error(json);
     const parsed = uniswapV2Schema.parse(JSON.parse(json));
     return new UniswapV2AdapterState(parsed);
   }

@@ -28,7 +28,6 @@ export class CompoundV2CERC20AdapterState {
   }
 
   static fromJson(json: string): CompoundV2CERC20AdapterState {
-    console.error(json);
     const parsed = compoundV2CERC20Schema.parse(JSON.parse(json));
     return new CompoundV2CERC20AdapterState(parsed);
   }

@@ -24,7 +24,6 @@ export class WstETHV1AdapterState {
   }
 
   static fromJson(json: string): WstETHV1AdapterState {
-    console.error(json);
     const parsed = wstETHV1Schema.parse(JSON.parse(json));
     return new WstETHV1AdapterState(parsed);
   }

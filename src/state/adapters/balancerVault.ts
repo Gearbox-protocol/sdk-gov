@@ -17,7 +17,6 @@ export class BalancerVaultAdapterState {
   }
 
   static fromJson(json: string): BalancerVaultAdapterState {
-    console.error(json);
     const parsed = balancerVaultSchema.parse(JSON.parse(json));
     return new BalancerVaultAdapterState(parsed);
   }

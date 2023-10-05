@@ -38,7 +38,6 @@ export class ConvexV1BaseRewardPoolAdapterState {
   }
 
   static fromJson(json: string): ConvexV1BaseRewardPoolAdapterState {
-    console.error(json);
     const parsed = coonvexV1BaseRewardPoolSchema.parse(JSON.parse(json));
     return new ConvexV1BaseRewardPoolAdapterState(parsed);
   }
