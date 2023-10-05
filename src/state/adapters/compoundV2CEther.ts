@@ -29,7 +29,6 @@ export class CompoundV2CEtherAdapterState {
   }
 
   static fromJson(json: string): CompoundV2CEtherAdapterState {
-    console.error(json);
     const parsed = compoundV2CEtherSchema.parse(JSON.parse(json));
     return new CompoundV2CEtherAdapterState(parsed);
   }

@@ -35,7 +35,6 @@ export class AaveV2WrappedTokenAdapterState {
   }
 
   static fromJson(json: string): AaveV2WrappedTokenAdapterState {
-    console.error(json);
     const parsed = aaveV2WrappedTokenSchema.parse(JSON.parse(json));
     return new AaveV2WrappedTokenAdapterState(parsed);
   }
