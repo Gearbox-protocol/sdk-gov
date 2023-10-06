@@ -16,14 +16,14 @@ export const percentFmt = (v: number): string =>
   `${(v / 100).toFixed(2)}% [ ${v} ]`;
 
 export function formatBN(
-  num: bigint,
+  num: BigNumberish | undefined,
   decimals: number,
   precision?: number,
 ): string {
   if (num === undefined) return "-";
-
+  const numBInt = toBigInt(num);
   // GUSD: 2 decimals
-  const limitedNum = limitNum(num, decimals);
+  const limitedNum = limitNum(numBInt, decimals);
   const limitedPrecision = limitPrecision(limitedNum, precision);
   return toHumanFormat(limitedNum, limitedPrecision);
 }
