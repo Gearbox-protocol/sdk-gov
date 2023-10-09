@@ -304,6 +304,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.AURA,
+                addr: 0xC0c293ce456fF0ED870ADd98a0828Dd4d2903DBF,
+                symbol: "AURA",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.wstETH,
                 addr: 0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0,
                 symbol: "wstETH",
@@ -1147,6 +1155,14 @@ contract TokensDataLive {
             })
         );
 
+        tokenDataByNetwork[42161].push(
+            TokenData({
+                id: Tokens.AURA,
+                addr: 0x1509706a6c66CA549ff0cB464de88231DDBe213B,
+                symbol: "AURA",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: Tokens.wstETH,

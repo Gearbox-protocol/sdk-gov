@@ -363,7 +363,7 @@ contract SupportedContracts is Test, ISupportedContracts {
         contractDataByNetwork[1].push(
             ContractData({
                 id: Contracts.AURA_B_RETH_STABLE_POOL,
-                addr: 0x9497df26e5bD669Cb925eC68E730492b9300c482,
+                addr: 0xDd1fE5AD401D4777cE89959b7fa587e569Bf125D,
                 name: "AURA_B_RETH_STABLE_POOL"
             })
         );

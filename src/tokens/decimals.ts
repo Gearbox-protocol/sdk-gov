@@ -36,6 +36,7 @@ export const decimals: Record<SupportedToken, number> = {
   MKR: 18,
   RPL: 18,
   APE: 18,
+  AURA: 18,
   "3Crv": 18,
   crvFRAX: 18,
   OHMFRAXBP: 18,
