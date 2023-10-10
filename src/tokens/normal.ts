@@ -40,6 +40,7 @@ export type NormalToken =
   | "RPL"
   | "APE"
   | "rETH"
+  | "AURA"
 
   // REDSTONE
   | "SHIB"
@@ -297,6 +298,11 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   rETH: {
     name: "Rocket Pool ETH",
     symbol: "rETH",
+    type: TokenType.NORMAL_TOKEN,
+  },
+  AURA: {
+    name: "Aura Token",
+    symbol: "AURA",
     type: TokenType.NORMAL_TOKEN,
   },
 };

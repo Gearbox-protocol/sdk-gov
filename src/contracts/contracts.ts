@@ -411,6 +411,7 @@ export type UniversalParams = {
 export type BalancerParams = {
   protocol: Protocols.Balancer;
   type: AdapterInterface.BALANCER_VAULT;
+  queries: Record<NetworkType, string>;
 } & BaseContractParams;
 
 export type AaveV2Params = {
@@ -919,6 +920,10 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Balancer Vault",
     protocol: Protocols.Balancer,
     type: AdapterInterface.BALANCER_VAULT,
+    queries: {
+      Mainnet: "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5",
+      Arbitrum: "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5",
+    },
   },
   AAVE_V2_LENDING_POOL: {
     name: "Aave V2 Lending Pool",

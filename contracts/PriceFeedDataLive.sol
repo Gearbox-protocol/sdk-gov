@@ -558,6 +558,10 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ AURA ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.AURA}));
+        zeroPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: Tokens.AURA}));
+
         // ------------------------ yvDAI ------------------------
         yearnPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.yvDAI}));
         yearnPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: Tokens.yvDAI}));

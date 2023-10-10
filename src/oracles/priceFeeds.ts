@@ -473,6 +473,18 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     },
   },
 
+  AURA: {
+    type: PriceFeedType.NETWORK_DEPENDENT,
+    feeds: {
+      Mainnet: {
+        type: PriceFeedType.ZERO_ORACLE,
+      },
+      Arbitrum: {
+        type: PriceFeedType.ZERO_ORACLE,
+      },
+    },
+  },
+
   yvDAI: {
     type: PriceFeedType.YEARN_ORACLE,
     token: "DAI",

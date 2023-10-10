@@ -44,6 +44,7 @@ enum Tokens {
     RPL,
     APE,
     rETH,
+    AURA,
     wstETH,
     _3Crv,
     crvFRAX,
