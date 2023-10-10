@@ -23,6 +23,7 @@ export interface CreditManagerV3DeployConfig {
   collateralTokens: Array<CollateralToken>;
   adapters: Array<AdapterConfig>;
   poolLimit: bigint;
+  name: string;
 }
 
 export interface PoolV3DeployConfig {
