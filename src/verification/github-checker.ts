@@ -32,6 +32,7 @@ export interface BranchLink {
 }
 
 export const repos = [
+  "core-v3",
   "core-v2",
   "integrations-v2",
   "integrations-v3",
@@ -88,9 +89,21 @@ const reports: Record<string, Report> = {
     reportLink:
       "https://github.com/Gearbox-protocol/security/blob/main/audits/2023%20Sep%20-%20ChainSecurity_Gearbox_Protocol_Gearbox_V2_1_audit.pdf",
   },
+  "2023_Oct_ChainSec": {
+    auditor: Auditor.ChainSecurity,
+    reportLink:
+      "https://github.com/Gearbox-protocol/security/blob/main/audits/2023%20Oct%20-%20ChainSecurity_Gearbox_Protocol_Gearbox_V3_Core_audit_draft_2.pdf",
+  },
 };
 
 export const audits: Audits = {
+  "core-v3": [
+    {
+      type: "commit",
+      commit: "44d2c116885f0f90725d2cc66201766141a1b23b",
+      report: reports["2023_Oct_ChainSec"],
+    },
+  ],
   "core-v2": [
     {
       type: "commit",
