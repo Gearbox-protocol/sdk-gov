@@ -92,7 +92,7 @@ const reports: Record<string, Report> = {
   "2023_Oct_ChainSec": {
     auditor: Auditor.ChainSecurity,
     reportLink:
-      "https://github.com/Gearbox-protocol/security/blob/main/audits/2023%20Oct%20-%20ChainSecurity_Gearbox_Protocol_Gearbox_V3_Core_audit_draft_2.pdf",
+      "https://github.com/Gearbox-protocol/security/blob/main/audits/2023%20Oct%20-%20ChainSecurity_Gearbox_Protocol_Partial_Migration_to_V3_audit.pdf",
   },
 };
 
