@@ -100,7 +100,7 @@ export const audits: Audits = {
   "core-v3": [
     {
       type: "commit",
-      commit: "44d2c116885f0f90725d2cc66201766141a1b23b",
+      commit: "519647cc73f74db3af3730549e450e19e994d0d8",
       report: reports["2023_Oct_ChainSec"],
     },
   ],
