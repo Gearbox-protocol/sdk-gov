@@ -170,7 +170,8 @@ ${contracts}
       }
 
       case "UNISWAP_V2_ROUTER":
-      case "SUSHISWAP_ROUTER": {
+      case "SUSHISWAP_ROUTER":
+      case "FRAXSWAP_ROUTER": {
         const pairs = ((a as UniV2Config).allowed || [])
           .map(
             pair => `uv2p.push(UniswapV2Pair({

@@ -28,7 +28,7 @@ export interface BalancerVaultConfig {
 }
 
 export interface UniV2Config {
-  contract: "UNISWAP_V2_ROUTER" | "SUSHISWAP_ROUTER";
+  contract: "UNISWAP_V2_ROUTER" | "SUSHISWAP_ROUTER" | "FRAXSWAP_ROUTER";
   allowed: Array<UniswapV2Pair>;
 }
 

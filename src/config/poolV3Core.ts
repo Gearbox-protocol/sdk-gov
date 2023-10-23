@@ -126,7 +126,11 @@ ${creditManagers}`;
 
   deployConfig(): string {
     const creditManagers = this.creditManagers
-      .map(cm => cm.deployConfig())
+      .map(
+        cm => `{
+        ${cm.deployConfig()}
+      }`,
+      )
       .join("\n");
 
     return `// SPDX-License-Identifier: UNLICENSED
@@ -175,7 +179,7 @@ ${creditManagers}`;
             ${this.gauge.deployConfig()}
             ${this.poolQuotaKeeper.deployConfig()}
     
-           ${creditManagers}
+            ${creditManagers}
         }
     
         // GETTERS
