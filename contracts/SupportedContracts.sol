@@ -54,6 +54,13 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.FRAXSWAP_ROUTER,
+                addr: 0xC14d550632db8592D1243Edc8B95b0Ad06703867,
+                name: "FRAXSWAP_ROUTER"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_3CRV_POOL,
                 addr: 0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7,
                 name: "CURVE_3CRV_POOL"

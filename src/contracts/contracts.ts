@@ -16,7 +16,10 @@ import { TypedObjectUtils } from "../utils/mappers";
 import { AdapterInterface } from "./adapters";
 import { Protocols } from "./protocols";
 
-export type UniswapV2Contract = "UNISWAP_V2_ROUTER" | "SUSHISWAP_ROUTER";
+export type UniswapV2Contract =
+  | "UNISWAP_V2_ROUTER"
+  | "SUSHISWAP_ROUTER"
+  | "FRAXSWAP_ROUTER";
 
 export type CurvePoolContract =
   | "CURVE_3CRV_POOL"
@@ -108,6 +111,7 @@ export const contractsByNetwork: Record<
     UNISWAP_V2_ROUTER: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
     UNISWAP_V3_ROUTER: "0xE592427A0AEce92De3Edee1F18E0157C05861564",
     SUSHISWAP_ROUTER: "0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F",
+    FRAXSWAP_ROUTER: "0xC14d550632db8592D1243Edc8B95b0Ad06703867",
 
     // CURVE
     CURVE_3CRV_POOL: "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7", // SEPARATE TOKEN
@@ -206,6 +210,7 @@ export const contractsByNetwork: Record<
     UNISWAP_V2_ROUTER: NOT_DEPLOYED,
     UNISWAP_V3_ROUTER: NOT_DEPLOYED,
     SUSHISWAP_ROUTER: NOT_DEPLOYED,
+    FRAXSWAP_ROUTER: NOT_DEPLOYED,
 
     // CURVE
     CURVE_3CRV_POOL: NOT_DEPLOYED,
@@ -299,7 +304,7 @@ export interface BaseContractParams {
 }
 
 type UniswapV2Params = {
-  protocol: Protocols.Uniswap | Protocols.Sushiswap;
+  protocol: Protocols.Uniswap | Protocols.Sushiswap | Protocols.Fraxswap;
   type: AdapterInterface.UNISWAP_V2_ROUTER;
 } & BaseContractParams;
 
@@ -469,6 +474,12 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
   SUSHISWAP_ROUTER: {
     name: "Sushiswap",
     protocol: Protocols.Sushiswap,
+    type: AdapterInterface.UNISWAP_V2_ROUTER,
+  },
+
+  FRAXSWAP_ROUTER: {
+    name: "Fraxswap",
+    protocol: Protocols.Fraxswap,
     type: AdapterInterface.UNISWAP_V2_ROUTER,
   },
 
