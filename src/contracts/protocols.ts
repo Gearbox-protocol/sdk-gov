@@ -13,4 +13,5 @@ export enum Protocols {
   Aura,
   MakerDSR,
   Sommelier,
+  Fraxswap,
 }
