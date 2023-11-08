@@ -7,7 +7,6 @@ export const GOERLI_NETWORK = 5;
 export const OPTIMISM_NETWORK = 10;
 export const POLYGON_NETWORK = 137;
 export const LOCAL_NETWORK = 1337;
-export const TENDERLY_NETWORK = 123456;
 export const HARDHAT_NETWORK = 31337;
 export const ARBITRUM_NETWORK = 42161;
 
@@ -16,7 +15,6 @@ export const CHAINS = {
   Arbitrum: ARBITRUM_NETWORK,
   Local: LOCAL_NETWORK,
   Hardhat: HARDHAT_NETWORK,
-  Tenderly: TENDERLY_NETWORK,
   Optimism: OPTIMISM_NETWORK,
   Polygon: POLYGON_NETWORK,
 } as const;
@@ -28,7 +26,6 @@ const SUPPORTED_CHAINS: Record<number, NetworkType> = {
   [CHAINS.Mainnet]: "Mainnet",
   [CHAINS.Arbitrum]: "Arbitrum",
   [CHAINS.Local]: "Mainnet",
-  [CHAINS.Tenderly]: "Mainnet",
   // [CHAINS.Optimism]: "Optimism",
   // [CHAINS.Polygon]: "Polygon",
 };
