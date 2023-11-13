@@ -113,7 +113,13 @@ export type PriceFeedData =
     }
   | {
       type: PriceFeedType.NETWORK_DEPENDENT;
-      feeds: Record<NetworkType, PriceFeedData>;
+      feeds: Record<
+        NetworkType,
+        {
+          Main: PriceFeedData & { trusted: boolean };
+          Reserve?: PriceFeedData;
+        }
+      >;
     }
   | {
       type: PriceFeedType.CURVE_USD_ORACLE;
