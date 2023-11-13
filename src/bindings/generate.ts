@@ -108,7 +108,9 @@ class BindingsGenerator {
         const chainId = CHAINS[chain];
         const priceFeedData = this.getPriceFeedData(
           token,
-          pf.type === PriceFeedType.NETWORK_DEPENDENT ? pf.feeds[chain] : pf,
+          pf.type === PriceFeedType.NETWORK_DEPENDENT
+            ? pf.feeds[chain].Main
+            : pf,
           chainId,
         );
         if (priceFeedData) {
