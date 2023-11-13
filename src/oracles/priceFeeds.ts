@@ -4,6 +4,17 @@ import { PriceFeedData, PriceFeedType } from "./pricefeedType";
 
 export const GAS_PRICE_FEED = "0x169e633a2d1e6c10dd91238ba11c4a708dfef37c";
 
+export const REDSTONE_SIGNERS = {
+  signers: [
+    "0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774",
+    "0xdEB22f54738d54976C4c0fe5ce6d408E40d88499",
+    "0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202",
+    "0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE",
+    "0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de",
+  ],
+  signersThreshold: 5,
+};
+
 export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
   "1INCH": {
     type: PriceFeedType.NETWORK_DEPENDENT,
@@ -98,14 +109,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
           type: PriceFeedType.REDSTONE_ORACLE,
           dataServiceId: "redstone-primary-prod",
           dataId: "DAI",
-          signers: [
-            "0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774",
-            "0xdEB22f54738d54976C4c0fe5ce6d408E40d88499",
-            "0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202",
-            "0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE",
-            "0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de",
-          ],
-          signersThreshold: 5,
+          ...REDSTONE_SIGNERS,
         },
       },
       Arbitrum: {
@@ -251,14 +255,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
           type: PriceFeedType.REDSTONE_ORACLE,
           dataServiceId: "redstone-primary-prod",
           dataId: "USDC",
-          signers: [
-            "0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774",
-            "0xdEB22f54738d54976C4c0fe5ce6d408E40d88499",
-            "0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202",
-            "0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE",
-            "0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de",
-          ],
-          signersThreshold: 5,
+          ...REDSTONE_SIGNERS,
         },
       },
       Arbitrum: {
@@ -284,14 +281,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
           type: PriceFeedType.REDSTONE_ORACLE,
           dataServiceId: "redstone-primary-prod",
           dataId: "USDT",
-          signers: [
-            "0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774",
-            "0xdEB22f54738d54976C4c0fe5ce6d408E40d88499",
-            "0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202",
-            "0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE",
-            "0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de",
-          ],
-          signersThreshold: 5,
+          ...REDSTONE_SIGNERS,
         },
       },
       Arbitrum: {
@@ -320,14 +310,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
           type: PriceFeedType.REDSTONE_ORACLE,
           dataServiceId: "redstone-primary-prod",
           dataId: "BTC",
-          signers: [
-            "0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774",
-            "0xdEB22f54738d54976C4c0fe5ce6d408E40d88499",
-            "0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202",
-            "0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE",
-            "0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de",
-          ],
-          signersThreshold: 5,
+          ...REDSTONE_SIGNERS,
         },
       },
       Arbitrum: {
@@ -354,14 +337,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
           type: PriceFeedType.REDSTONE_ORACLE,
           dataServiceId: "redstone-primary-prod",
           dataId: "ETH",
-          signers: [
-            "0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774",
-            "0xdEB22f54738d54976C4c0fe5ce6d408E40d88499",
-            "0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202",
-            "0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE",
-            "0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de",
-          ],
-          signersThreshold: 5,
+          ...REDSTONE_SIGNERS,
         },
       },
       Arbitrum: {
@@ -410,14 +386,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
           type: PriceFeedType.REDSTONE_ORACLE,
           dataServiceId: "redstone-primary-prod",
           dataId: "STETH",
-          signers: [
-            "0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774",
-            "0xdEB22f54738d54976C4c0fe5ce6d408E40d88499",
-            "0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202",
-            "0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE",
-            "0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de",
-          ],
-          signersThreshold: 5,
+          ...REDSTONE_SIGNERS,
         },
       },
       Arbitrum: {
@@ -484,14 +453,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
           type: PriceFeedType.REDSTONE_ORACLE,
           dataServiceId: "redstone-primary-prod",
           dataId: "FRAX",
-          signers: [
-            "0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774",
-            "0xdEB22f54738d54976C4c0fe5ce6d408E40d88499",
-            "0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202",
-            "0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE",
-            "0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de",
-          ],
-          signersThreshold: 5,
+          ...REDSTONE_SIGNERS,
         },
       },
       Arbitrum: {
@@ -557,15 +519,8 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
         Reserve: {
           type: PriceFeedType.REDSTONE_ORACLE,
           dataServiceId: "redstone-primary-prod",
-          dataId: "FXS",
-          signers: [
-            "0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774",
-            "0xdEB22f54738d54976C4c0fe5ce6d408E40d88499",
-            "0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202",
-            "0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE",
-            "0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de",
-          ],
-          signersThreshold: 5,
+          dataId: "DAI",
+          ...REDSTONE_SIGNERS,
         },
       },
       Arbitrum: {
