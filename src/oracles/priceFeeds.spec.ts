@@ -64,7 +64,7 @@ class PriceFeedsSuite {
     switch (data.type) {
       case PriceFeedType.NETWORK_DEPENDENT:
         calls.push(
-          ...this.getCallsForToken(network, token, data.feeds[network]),
+          ...this.getCallsForToken(network, token, data.feeds[network].Main),
         );
         break;
       case PriceFeedType.CHAINLINK_ORACLE:
