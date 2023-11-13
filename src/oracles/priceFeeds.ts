@@ -103,7 +103,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
         Main: {
           type: PriceFeedType.CHAINLINK_ORACLE,
           address: "0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9",
-          trusted: false,
+          trusted: true,
         },
         Reserve: {
           type: PriceFeedType.REDSTONE_ORACLE,
@@ -249,7 +249,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
         Main: {
           type: PriceFeedType.CHAINLINK_ORACLE,
           address: "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
-          trusted: false,
+          trusted: true,
         },
         Reserve: {
           type: PriceFeedType.REDSTONE_ORACLE,
@@ -304,7 +304,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
           baseToUsdPriceFeed: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
           baseStalenessPeriod: 3600 * 24 * 10,
           targetStalenessPeriod: 3600 * 24 * 10,
-          trusted: false,
+          trusted: true,
         },
         Reserve: {
           type: PriceFeedType.REDSTONE_ORACLE,
@@ -331,7 +331,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
         Main: {
           type: PriceFeedType.CHAINLINK_ORACLE,
           address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
-          trusted: false,
+          trusted: true,
         },
         Reserve: {
           type: PriceFeedType.REDSTONE_ORACLE,
