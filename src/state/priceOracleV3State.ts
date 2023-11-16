@@ -4,7 +4,6 @@ import {
 } from "humanize-duration-ts";
 import { z } from "zod";
 
-import { PriceFeedType } from "../oracles/pricefeedType";
 import { SupportedToken, tokenSymbolByAddress } from "../tokens/token";
 import { PartialRecord } from "../utils/types";
 
