@@ -71,7 +71,7 @@ export class CreditManagerV2State {
 
     this.feeInterest = percentFmt(payload.feeInterest);
     this.feeLiquidation = percentFmt(payload.feeLiquidation);
-    this.forbiddenTokenMask = payload.forbiddenTokenMask.toString();
+    this.forbiddenTokenMask = payload.forbiddenTokenMask.toString(2);
     this.isDegenMode = payload.isDegenMode;
     this.liquidationDiscount = percentFmt(payload.liquidationDiscount);
 
