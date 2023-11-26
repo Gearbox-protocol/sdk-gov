@@ -385,11 +385,13 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ sUSD ------------------------
-        chainlinkPriceFeedsByNetwork[1].push(
-            ChainlinkPriceFeedData({
+        compositePriceFeedsByNetwork[1].push(
+            CompositePriceFeedData({
                 token: Tokens.sUSD,
-                priceFeed: 0xad35Bd71b9aFE6e4bDc266B345c198eaDEf9Ad94,
-                stalenessPeriod: 86400
+                targetToBaseFeed: 0x8e0b7e6062272B5eF4524250bFFF8e5Bd3497757,
+                targetStalenessPeriod: 86400,
+                baseToUSDFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
+                baseStalenessPeriod: 86400
             })
         );
 
