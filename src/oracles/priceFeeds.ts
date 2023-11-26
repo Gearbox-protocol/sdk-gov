@@ -492,8 +492,9 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     feeds: {
       Mainnet: {
         Main: {
-          type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0xad35Bd71b9aFE6e4bDc266B345c198eaDEf9Ad94",
+          type: PriceFeedType.COMPOSITE_ORACLE,
+          targetToBasePriceFeed: "0x8e0b7e6062272B5eF4524250bFFF8e5Bd3497757",
+          baseToUsdPriceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
           trusted: false,
         },
       },
