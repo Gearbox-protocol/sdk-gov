@@ -22,7 +22,7 @@ export const DEGEN_NFT: Record<NetworkType, string> = {
 };
 
 export const CREATE2FACTORY: Record<NetworkType, string> = {
-  Mainnet: "0x59b7B8Dd9E6e1F934C9c3Def4a1Eb69Bc17Ec9cc",
+  Mainnet: "0x45d146CAA25aa565Cfc7434926633f4F1C97c873",
   Arbitrum: NOT_DEPLOYED,
 };
 
