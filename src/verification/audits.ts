@@ -29,6 +29,7 @@ export enum Auditor {
   ChainSecurity = "ChainSecurity",
   Consensys = "Consensys Diligence",
   SigmaPrime = "Sigma Prime",
+  Decurity = "Decurity",
 }
 
 export interface Report {
@@ -79,6 +80,12 @@ export const auditReports: Record<string, Report> = {
     revision: "2023 October",
     reportLink:
       "https://github.com/Gearbox-protocol/security/blob/main/audits/2023%20Oct%20-%20ChainSecurity_Gearbox_Protocol_Gearbox_V3_Core_audit_draft_2.pdf",
+  },
+  "2023_Nov_Decurity": {
+    auditor: Auditor.Decurity,
+    revision: "2023 December",
+    reportLink:
+      "https://github.com/Gearbox-protocol/security/blob/main/audits/2023%20Dec%20-%20Decurity_Governor_Report.pdf",
   },
 };
 
@@ -133,9 +140,9 @@ export const audits: Audits = {
   ],
   governance: [
     {
-      type: "branch",
-      branch: "master",
-      comment: "Uniswap/governance fork",
+      type: "commit",
+      commit: "c90434702c163f3f1c2cb4db90cece525160ee07",
+      report: auditReports["2023_Nov_Decurity"],
     },
   ],
   "contracts-v2": [
