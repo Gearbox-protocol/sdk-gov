@@ -520,7 +520,7 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
         Reserve: {
           type: PriceFeedType.REDSTONE_ORACLE,
           dataServiceId: "redstone-primary-prod",
-          dataId: "DAI",
+          dataId: "FXS",
           ...REDSTONE_SIGNERS,
         },
       },
