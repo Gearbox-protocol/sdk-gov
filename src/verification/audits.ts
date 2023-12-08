@@ -81,11 +81,21 @@ export const auditReports: Record<string, Report> = {
     reportLink:
       "https://github.com/Gearbox-protocol/security/blob/main/audits/2023%20Oct%20-%20ChainSecurity_Gearbox_Protocol_Gearbox_V3_Core_audit_draft_2.pdf",
   },
-  "2023_Nov_Decurity": {
+  "2023_Dec_Decurity": {
     auditor: Auditor.Decurity,
     revision: "2023 December",
     reportLink:
       "https://github.com/Gearbox-protocol/security/blob/main/audits/2023%20Dec%20-%20Decurity_Governor_Report.pdf",
+  },
+  "2023_Dec_ChainSecurity_Governance": {
+    auditor: Auditor.ChainSecurity,
+    revision: "2023 December",
+    reportLink: "",
+  },
+  "2023_Dec_ChainSecurity_CoreV3": {
+    auditor: Auditor.ChainSecurity,
+    revision: "2023 December",
+    reportLink: "",
   },
 };
 
@@ -95,6 +105,11 @@ export const audits: Audits = {
       type: "commit",
       commit: "519647cc73f74db3af3730549e450e19e994d0d8",
       report: auditReports["2023_Oct_ChainSec"],
+    },
+    {
+      type: "commit",
+      commit: "e16559ae82f0f24c3dc29693c444f40d676ebff9",
+      report: auditReports["2023_Dec_ChainSecurity_CoreV3"],
     },
   ],
   "core-v2": [
@@ -143,6 +158,11 @@ export const audits: Audits = {
       type: "commit",
       commit: "c90434702c163f3f1c2cb4db90cece525160ee07",
       report: auditReports["2023_Nov_Decurity"],
+    },
+    {
+      type: "commit",
+      commit: "c90434702c163f3f1c2cb4db90cece525160ee07",
+      report: auditReports["2023_Dec_ChainSecurity_Governance"],
     },
   ],
   "contracts-v2": [
