@@ -16,6 +16,7 @@ export const repos = [
   "integrations-v3",
   "governance",
   "contracts-v2",
+  "oracles-v3",
 ] as const;
 
 export type Repo = (typeof repos)[number];
@@ -97,6 +98,11 @@ export const auditReports: Record<string, Report> = {
     revision: "2023 December",
     reportLink: "",
   },
+  "2023_Dec_ChainSecurity_OraclesV3": {
+    auditor: Auditor.ChainSecurity,
+    revision: "2023 December",
+    reportLink: "",
+  },
 };
 
 export const audits: Audits = {
@@ -170,6 +176,13 @@ export const audits: Audits = {
       type: "commit",
       commit: "0f500f03bf924715fb88844d942837a914b16b5b",
       report: auditReports["2022_Aug_Sigma"],
+    },
+  ],
+  "oracles-v3": [
+    {
+      type: "commit",
+      commit: "c6e4bd0a42331daeec599f3d8a688fab79f9879a",
+      report: auditReports["2023_Dec_ChainSecurity_OraclesV3"],
     },
   ],
 };
