@@ -1,3 +1,5 @@
+import { interfaces } from "mocha";
+
 import { CurvePoolContract } from "../contracts/contracts";
 import { NetworkType } from "../core/chains";
 import { AaveV2LPToken } from "../tokens/aave";
@@ -33,6 +35,22 @@ export enum PriceFeedType {
 
 export const HOUR_1 = 60 * 60;
 export const HOUR_24 = 24 * HOUR_1;
+export const FOUR_MINUTES = 4 * 60;
+
+const ANSWER_UPDATE_DELAY = 15 * 60;
+
+export const HOUR_24_BUFFERED = 24 * HOUR_1 + ANSWER_UPDATE_DELAY;
+export const HOUR_1_BUFFERED = HOUR_1 + ANSWER_UPDATE_DELAY;
+
+// TODO: implement in the future
+export type PriceFeedEntry =
+  | {
+      Main: PriceFeedData & { trusted: boolean };
+      Reserve?: PriceFeedData;
+    }
+  | {
+      feeds: Record<NetworkType, PriceFeedEntry>;
+    };
 
 export type PriceFeedData =
   | {
@@ -110,6 +128,7 @@ export type PriceFeedData =
       dataId: string;
       signers: Array<string>;
       signersThreshold: number;
+      stalenessPeriod: number;
     }
   | {
       type: PriceFeedType.NETWORK_DEPENDENT;
