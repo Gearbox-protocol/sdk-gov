@@ -91,17 +91,26 @@ export const auditReports: Record<string, Report> = {
   "2023_Dec_ChainSecurity_Governance": {
     auditor: Auditor.ChainSecurity,
     revision: "2023 December",
-    reportLink: "",
+    reportLink:
+      "https://github.com/Gearbox-protocol/security/blob/main/audits/2023%20Dec%20-%20ChainSecurity_Gearbox_Gearbox_V3_Governance_audit.pdf",
   },
   "2023_Dec_ChainSecurity_CoreV3": {
     auditor: Auditor.ChainSecurity,
     revision: "2023 December",
-    reportLink: "",
+    reportLink:
+      "https://github.com/Gearbox-protocol/security/blob/main/audits/2023%20Dec%20-%20ChainSecurity_Gearbox_Protocol_Gearbox_V3_Core_audit.pdf",
+  },
+  "2023_Dec_ChainSecurity_IntegrationsV3": {
+    auditor: Auditor.ChainSecurity,
+    revision: "2023 December",
+    reportLink:
+      "https://github.com/Gearbox-protocol/security/blob/main/audits/2023%20Dec%20-%20ChainSecurity_Gearbox_Protocol_Gearbox_V3_Integrations_audit.pdf",
   },
   "2023_Dec_ChainSecurity_OraclesV3": {
     auditor: Auditor.ChainSecurity,
     revision: "2023 December",
-    reportLink: "",
+    reportLink:
+      "https://github.com/Gearbox-protocol/security/blob/main/audits/2023%20Dec%20-%20ChainSecurity_Gearbox_Protocol_Gearbox_V3_Oracles_audit.pdf",
   },
 };
 
@@ -157,6 +166,11 @@ export const audits: Audits = {
       type: "commit",
       commit: "02f239fee250fb11b16a28974e71e73264de50b2",
       report: auditReports["2023_Aug_ChainSec"],
+    },
+    {
+      type: "commit",
+      commit: "302c635e67c0017f5f7d91d9c4c56199c624c4f6",
+      report: auditReports["2023_Dec_ChainSecurity_IntegrationsV3"],
     },
   ],
   governance: [
