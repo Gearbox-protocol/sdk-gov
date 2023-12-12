@@ -318,8 +318,9 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
           type: PriceFeedType.COMPOSITE_ORACLE,
           targetToBasePriceFeed: "0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23",
           baseToUsdPriceFeed: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
-          baseStalenessPeriod: HOUR_24_BUFFERED,
-          targetStalenessPeriod: HOUR_1_BUFFERED,
+          targetStalenessPeriod: HOUR_24_BUFFERED,
+          baseStalenessPeriod: HOUR_1_BUFFERED,
+
           trusted: true,
         },
         Reserve: {
@@ -398,8 +399,8 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
           type: PriceFeedType.COMPOSITE_ORACLE,
           targetToBasePriceFeed: "0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
           baseToUsdPriceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
-          baseStalenessPeriod: HOUR_24_BUFFERED,
-          targetStalenessPeriod: HOUR_1_BUFFERED,
+          targetStalenessPeriod: HOUR_24_BUFFERED,
+          baseStalenessPeriod: HOUR_1_BUFFERED,
           trusted: false,
         },
         Reserve: {
