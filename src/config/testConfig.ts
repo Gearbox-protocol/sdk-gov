@@ -47,6 +47,11 @@ export const config: PoolV3DeployConfig = {
       expirationDate: undefined,
       minDebt: BigInt(1e5) * BigInt(1e6),
       maxDebt: BigInt(1e6) * BigInt(1e6),
+      feeInterest: 2500,
+      feeLiquidation: 150,
+      liquidationPremium: 400,
+      feeLiquidationExpired: 100,
+      liquidationPremiumExpired: 200,
       poolLimit: BigInt(0),
       name: "dUSDCV3",
       collateralTokens: [
