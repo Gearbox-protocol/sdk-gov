@@ -3,7 +3,6 @@ import { SupportedToken } from "../tokens/token";
 import {
   FOUR_MINUTES,
   HOUR_1_BUFFERED,
-  HOUR_24,
   HOUR_24_BUFFERED,
   PriceFeedData,
   PriceFeedType,
