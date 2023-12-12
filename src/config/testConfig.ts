@@ -11,7 +11,7 @@ export const config: PoolV3DeployConfig = {
   underlying: "USDC",
   accountAmount: BigInt(1_000_000) * USDC_DECIMALS,
   withdrawalFee: 0,
-  expectedLiquidityLimit: BigInt(0),
+  totalDebtLimit: BigInt(100_000_000) * USDC_DECIMALS,
   irm: {
     U1: 8000,
     U2: 9000,

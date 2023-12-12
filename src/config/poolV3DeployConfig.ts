@@ -42,7 +42,7 @@ export interface PoolV3DeployConfig {
   accountAmount: bigint;
 
   irm: LinearIRMParams;
-  expectedLiquidityLimit: bigint;
+  totalDebtLimit: bigint;
   withdrawalFee: number;
 
   ratesAndLimits: Partial<Record<SupportedToken, RatesAndLimits>>;
