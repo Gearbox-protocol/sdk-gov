@@ -92,6 +92,13 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
           stalenessPeriod: HOUR_24_BUFFERED,
           trusted: false,
         },
+        Reserve: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "CRV",
+          stalenessPeriod: FOUR_MINUTES,
+          ...REDSTONE_SIGNERS,
+        },
       },
       Arbitrum: {
         Main: {
@@ -201,6 +208,13 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
           stalenessPeriod: HOUR_1_BUFFERED,
           trusted: false,
         },
+        Reserve: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "LINK",
+          stalenessPeriod: FOUR_MINUTES,
+          ...REDSTONE_SIGNERS,
+        },
       },
       Arbitrum: {
         Main: {
@@ -241,6 +255,13 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
           address: "0x553303d460EE0afB37EdFf9bE42922D8FF63220e",
           stalenessPeriod: HOUR_1_BUFFERED,
           trusted: false,
+        },
+        Reserve: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "UNI",
+          stalenessPeriod: FOUR_MINUTES,
+          ...REDSTONE_SIGNERS,
         },
       },
       Arbitrum: {
@@ -450,6 +471,13 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
           address: "0xd962fC30A72A84cE50161031391756Bf2876Af5D",
           stalenessPeriod: HOUR_24_BUFFERED,
           trusted: false,
+        },
+        Reserve: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "CVX",
+          stalenessPeriod: FOUR_MINUTES,
+          ...REDSTONE_SIGNERS,
         },
       },
       Arbitrum: {
@@ -1252,6 +1280,13 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
           address: "0xec1D1B3b0443256cc3860e24a46F108e699484Aa",
           stalenessPeriod: HOUR_1_BUFFERED,
           trusted: false,
+        },
+        Reserve: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "MKR",
+          stalenessPeriod: FOUR_MINUTES,
+          ...REDSTONE_SIGNERS,
         },
       },
       Arbitrum: {
