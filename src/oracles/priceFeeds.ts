@@ -1255,6 +1255,66 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     },
   },
 
+  sdUSDCV3: {
+    type: PriceFeedType.NETWORK_DEPENDENT,
+    feeds: {
+      Mainnet: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+      Arbitrum: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+    },
+  },
+
+  sdWBTCV3: {
+    type: PriceFeedType.NETWORK_DEPENDENT,
+    feeds: {
+      Mainnet: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+      Arbitrum: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+    },
+  },
+
+  sdWETHV3: {
+    type: PriceFeedType.NETWORK_DEPENDENT,
+    feeds: {
+      Mainnet: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+      Arbitrum: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+    },
+  },
+
   GEAR: {
     type: PriceFeedType.NETWORK_DEPENDENT,
     feeds: {

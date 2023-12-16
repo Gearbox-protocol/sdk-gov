@@ -100,6 +100,9 @@ export const decimals: Record<SupportedToken, number> = {
   dUSDCV3: 6,
   dWBTCV3: 8,
   dWETHV3: 18,
+  sdUSDCV3: 6,
+  sdWBTCV3: 8,
+  sdWETHV3: 18,
 
   GEAR: 18,
 
