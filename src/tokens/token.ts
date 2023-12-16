@@ -49,6 +49,8 @@ import {
   ERC4626VaultTokenData,
 } from "./erc4626";
 import {
+  DieselStakedTokenData,
+  DieselStakedTokenTypes,
   DieselTokenData,
   DieselTokenTypes,
   GearboxToken,
@@ -83,6 +85,7 @@ export type SupportedToken =
   | WrappedToken
   | LPTokens
   | DieselTokenTypes
+  | DieselStakedTokenTypes
   | GearboxToken;
 
 export interface TokenBase {
@@ -113,6 +116,7 @@ export type TokenDataI =
   | WrappedTokenData
   | LPTokenDataI
   | DieselTokenData
+  | DieselStakedTokenData
   | GearboxTokenData;
 
 export const lpTokens: Record<LPTokens, LPTokenDataI> = {
@@ -265,6 +269,13 @@ export const tokenDataByNetwork: Record<
     dWETH: "0xF21fc650C1B34eb0FDE786D52d23dA99Db3D6278",
     dwstETH: "0x2158034dB06f06dcB9A786D2F1F8c38781bA779d",
     dFRAX: "0x8A1112AFef7F4FC7c066a77AABBc01b3Fff31D47",
+
+    dUSDCV3: "0xda00000035fef4082F78dEF6A8903bee419FbF8E",
+    dWBTCV3: "0xda00010eDA646913F273E10E7A5d1F659242757d",
+    dWETHV3: "0xda0002859B2d05F66a753d8241fCDE8623f26F4f",
+    sdUSDCV3: "0x9ef444a6d7F4A5adcd68FD5329aA5240C90E14d2",
+    sdWBTCV3: "0xA8cE662E45E825DAF178DA2c8d5Fae97696A788A",
+    sdWETHV3: "0x0418fEB7d0B25C411EB77cD654305d29FcbFf685",
 
     GEAR: "0xBa3335588D9403515223F109EdC4eB7269a9Ab5D",
 
@@ -423,6 +434,13 @@ export const tokenDataByNetwork: Record<
     dWETH: NOT_DEPLOYED,
     dwstETH: NOT_DEPLOYED,
     dFRAX: NOT_DEPLOYED,
+
+    dUSDCV3: NOT_DEPLOYED,
+    dWBTCV3: NOT_DEPLOYED,
+    dWETHV3: NOT_DEPLOYED,
+    sdUSDCV3: NOT_DEPLOYED,
+    sdWBTCV3: NOT_DEPLOYED,
+    sdWETHV3: NOT_DEPLOYED,
 
     GEAR: NOT_DEPLOYED,
 

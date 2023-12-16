@@ -1195,6 +1195,126 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     },
   },
 
+  dUSDCV3: {
+    type: PriceFeedType.NETWORK_DEPENDENT,
+    feeds: {
+      Mainnet: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+      Arbitrum: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+    },
+  },
+
+  dWBTCV3: {
+    type: PriceFeedType.NETWORK_DEPENDENT,
+    feeds: {
+      Mainnet: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+      Arbitrum: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+    },
+  },
+
+  dWETHV3: {
+    type: PriceFeedType.NETWORK_DEPENDENT,
+    feeds: {
+      Mainnet: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+      Arbitrum: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+    },
+  },
+
+  sdUSDCV3: {
+    type: PriceFeedType.NETWORK_DEPENDENT,
+    feeds: {
+      Mainnet: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+      Arbitrum: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+    },
+  },
+
+  sdWBTCV3: {
+    type: PriceFeedType.NETWORK_DEPENDENT,
+    feeds: {
+      Mainnet: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+      Arbitrum: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+    },
+  },
+
+  sdWETHV3: {
+    type: PriceFeedType.NETWORK_DEPENDENT,
+    feeds: {
+      Mainnet: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+      Arbitrum: {
+        Main: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: NOT_DEPLOYED,
+          trusted: false,
+        },
+      },
+    },
+  },
+
   GEAR: {
     type: PriceFeedType.NETWORK_DEPENDENT,
     feeds: {
