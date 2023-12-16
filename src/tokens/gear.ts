@@ -1,7 +1,7 @@
 import type { TokenBase } from "./token";
 import { TokenType } from "./tokenType";
 
-export type DieselV1TokenTypes =
+export type DieselSimpleTokenTypes =
   | "dDAI"
   | "dUSDC"
   | "dWBTC"
@@ -9,21 +9,21 @@ export type DieselV1TokenTypes =
   | "dwstETH"
   | "dFRAX";
 
-export type DieselV3TokenTypes = "dUSDCV3" | "dWBTCV3" | "dWETHV3";
+export type DieselTokenWithStkTypes = "dUSDCV3" | "dWBTCV3" | "dWETHV3";
 
-export type DieselTokenTypes = DieselV1TokenTypes | DieselV3TokenTypes;
+export type DieselTokenTypes = DieselSimpleTokenTypes | DieselTokenWithStkTypes;
 
 export type DieselStakedTokenTypes = "sdUSDCV3" | "sdWBTCV3" | "sdWETHV3";
 
 export type GearboxToken = "GEAR";
 
-export type DieselTokenV1Data = {
-  symbol: DieselV1TokenTypes;
+export type DieselSimpleTokenData = {
+  symbol: DieselSimpleTokenTypes;
   type: TokenType.DIESEL_LP_TOKEN;
 } & TokenBase;
 
-export type DieselTokenV3Data = {
-  symbol: DieselV3TokenTypes;
+export type DieselWithStkTokenV3Data = {
+  symbol: DieselTokenWithStkTypes;
   type: TokenType.DIESEL_LP_TOKEN;
   stakedToken: DieselStakedTokenTypes;
 } & TokenBase;
@@ -31,17 +31,20 @@ export type DieselTokenV3Data = {
 export type DieselStakedTokenData = {
   symbol: DieselStakedTokenTypes;
   type: TokenType.DIESEL_LP_TOKEN;
-  underlying: DieselV3TokenTypes;
+  underlying: DieselTokenWithStkTypes;
 } & TokenBase;
 
-export type DieselTokenData = DieselTokenV1Data | DieselTokenV3Data;
+export type DieselTokenData = DieselSimpleTokenData | DieselWithStkTokenV3Data;
 
 export type GearboxTokenData = {
   symbol: GearboxToken;
   type: TokenType.GEAR_TOKEN;
 } & TokenBase;
 
-const dieselV1Tokens: Record<DieselV1TokenTypes, DieselTokenV1Data> = {
+const dieselSimpleTokens: Record<
+  DieselSimpleTokenTypes,
+  DieselSimpleTokenData
+> = {
   dDAI: {
     name: "dDAI",
     symbol: "dDAI",
@@ -79,7 +82,10 @@ const dieselV1Tokens: Record<DieselV1TokenTypes, DieselTokenV1Data> = {
   },
 };
 
-const dieselV3Tokens: Record<DieselV3TokenTypes, DieselTokenV3Data> = {
+const dieselWithStkTokens: Record<
+  DieselTokenWithStkTypes,
+  DieselWithStkTokenV3Data
+> = {
   dUSDCV3: {
     name: "dUSDCV3",
     symbol: "dUSDCV3",
@@ -100,7 +106,7 @@ const dieselV3Tokens: Record<DieselV3TokenTypes, DieselTokenV3Data> = {
   },
 };
 
-const dieselTokens = { ...dieselV1Tokens, ...dieselV3Tokens };
+const dieselTokens = { ...dieselSimpleTokens, ...dieselWithStkTokens };
 
 const dieselStakedTokens: Record<
   DieselStakedTokenTypes,
@@ -142,11 +148,13 @@ export const gearTokens: Record<
 export const isDieselToken = (t: unknown): t is DieselTokenTypes =>
   typeof t === "string" && !!dieselTokens[t as DieselTokenTypes];
 
-export const isDieselV1Token = (t: unknown): t is DieselV1TokenTypes =>
-  typeof t === "string" && !!dieselV1Tokens[t as DieselV1TokenTypes];
+export const isDieselSimpleToken = (t: unknown): t is DieselSimpleTokenTypes =>
+  typeof t === "string" && !!dieselSimpleTokens[t as DieselSimpleTokenTypes];
 
-export const isDieselV3Token = (t: unknown): t is DieselV3TokenTypes =>
-  typeof t === "string" && !!dieselV3Tokens[t as DieselV3TokenTypes];
+export const isDieselWithStkToken = (
+  t: unknown,
+): t is DieselTokenWithStkTypes =>
+  typeof t === "string" && !!dieselWithStkTokens[t as DieselTokenWithStkTypes];
 
 export const isDieselStakedToken = (t: unknown): t is DieselStakedTokenTypes =>
   typeof t === "string" && !!dieselStakedTokens[t as DieselStakedTokenTypes];
