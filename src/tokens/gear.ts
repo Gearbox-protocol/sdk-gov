@@ -7,7 +7,11 @@ export type DieselTokenTypes =
   | "dWBTC"
   | "dWETH"
   | "dwstETH"
-  | "dFRAX";
+  | "dFRAX"
+  | "dUSDCV3" //  - 0x9ef444a6d7F4A5adcd68FD5329aA5240C90E14d2
+  | "dWBTCV3" //  - 0xA8cE662E45E825DAF178DA2c8d5Fae97696A788A
+  | "dWETHV3"; //  - 0x0418fEB7d0B25C411EB77cD654305d29FcbFf685
+
 export type GearboxToken = "GEAR";
 
 export type DieselTokenData = {
@@ -55,6 +59,22 @@ const dieselTokens: Record<DieselTokenTypes, DieselTokenData> = {
   dFRAX: {
     name: "dFRAX",
     symbol: "dFRAX",
+    type: TokenType.DIESEL_LP_TOKEN,
+  },
+
+  dUSDCV3: {
+    name: "dUSDCV3",
+    symbol: "dUSDCV3",
+    type: TokenType.DIESEL_LP_TOKEN,
+  },
+  dWBTCV3: {
+    name: "dWBTCV3",
+    symbol: "dWBTCV3",
+    type: TokenType.DIESEL_LP_TOKEN,
+  },
+  dWETHV3: {
+    name: "dWETHV3",
+    symbol: "dWETHV3",
     type: TokenType.DIESEL_LP_TOKEN,
   },
 };
