@@ -390,7 +390,7 @@ class BindingsGenerator {
       return `crvUSDPriceFeedsByNetwork[${chainId}].push(CrvUsdPriceFeedData({ token: ${this.tokensEnum(
         token,
       )}, 
-      pool: Contracts.${priceFeedData.pool},
+      pool: Contracts.${(lpTokens[token as LPTokens] as CurveLPTokenData).pool},
       underlying: ${this.tokensEnum(
         priceFeedData.underlying as SupportedToken,
       )}}));`;
