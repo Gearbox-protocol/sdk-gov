@@ -31,6 +31,21 @@ export enum PriceFeedType {
   CURVE_USD_ORACLE,
 }
 
+export const lpPriceFeedTypes: Array<PriceFeedType> = [
+  PriceFeedType.YEARN_ORACLE,
+  PriceFeedType.CURVE_2LP_ORACLE,
+  PriceFeedType.CURVE_3LP_ORACLE,
+  PriceFeedType.CURVE_4LP_ORACLE,
+  PriceFeedType.WSTETH_ORACLE,
+  PriceFeedType.WRAPPED_AAVE_V2_ORACLE,
+  PriceFeedType.COMPOUND_V2_ORACLE,
+  PriceFeedType.BALANCER_STABLE_LP_ORACLE,
+  PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
+  PriceFeedType.CURVE_CRYPTO_ORACLE,
+  PriceFeedType.ERC4626_VAULT_ORACLE,
+  PriceFeedType.CURVE_USD_ORACLE,
+];
+
 export const HOUR_1 = 60 * 60;
 export const HOUR_24 = 24 * HOUR_1;
 
@@ -123,6 +138,5 @@ export type PriceFeedData =
     }
   | {
       type: PriceFeedType.CURVE_USD_ORACLE;
-      pool: CurvePoolContract;
       underlying: NormalToken;
     };
