@@ -640,11 +640,10 @@ export const priceFeedsByToken: Record<
     Mainnet: {
       Main: {
         type: PriceFeedType.REDSTONE_ORACLE,
-        dataServiceId: "redstone-main-demo",
+        dataServiceId: "redstone-primary-prod",
         dataId: "SHIB",
-        signers: ["0x0C39486f770B26F5527BBBf942726537986Cd7eb"],
         stalenessPeriod: FOUR_MINUTES,
-        signersThreshold: 1,
+        ...REDSTONE_SIGNERS,
         trusted: false,
       },
     },
