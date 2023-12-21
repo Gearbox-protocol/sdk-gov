@@ -141,7 +141,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: Tokens.CRV,
                 priceFeed: 0xCd627aA160A6fA45Eb793D19Ef54f5062F20f33f,
-                stalenessPeriod: 86400
+                stalenessPeriod: 87300
             })
         );
         chainlinkPriceFeedsByNetwork[42161].push(
@@ -157,7 +157,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: Tokens.DAI,
                 priceFeed: 0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9,
-                stalenessPeriod: 86400
+                stalenessPeriod: 4500
             })
         );
         chainlinkPriceFeedsByNetwork[42161].push(
@@ -193,7 +193,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: Tokens.LINK,
                 priceFeed: 0x2c1d072e956AFFC0D435Cb7AC38EF18d24d9127c,
-                stalenessPeriod: 86400
+                stalenessPeriod: 4500
             })
         );
         chainlinkPriceFeedsByNetwork[42161].push(
@@ -225,7 +225,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: Tokens.UNI,
                 priceFeed: 0x553303d460EE0afB37EdFf9bE42922D8FF63220e,
-                stalenessPeriod: 86400
+                stalenessPeriod: 4500
             })
         );
         chainlinkPriceFeedsByNetwork[42161].push(
@@ -241,7 +241,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: Tokens.USDC,
                 priceFeed: 0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6,
-                stalenessPeriod: 86400
+                stalenessPeriod: 87300
             })
         );
         chainlinkPriceFeedsByNetwork[42161].push(
@@ -257,7 +257,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: Tokens.USDT,
                 priceFeed: 0x3E7d1eAB13ad0104d2750B8863b489D65364e32D,
-                stalenessPeriod: 86400
+                stalenessPeriod: 87300
             })
         );
         chainlinkPriceFeedsByNetwork[42161].push(
@@ -273,9 +273,9 @@ contract PriceFeedDataLive {
             CompositePriceFeedData({
                 token: Tokens.WBTC,
                 targetToBaseFeed: 0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23,
-                targetStalenessPeriod: 864000,
+                targetStalenessPeriod: 87300,
                 baseToUSDFeed: 0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c,
-                baseStalenessPeriod: 864000
+                baseStalenessPeriod: 4500
             })
         );
         compositePriceFeedsByNetwork[42161].push(
@@ -293,7 +293,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: Tokens.WETH,
                 priceFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
-                stalenessPeriod: 86400
+                stalenessPeriod: 4500
             })
         );
         chainlinkPriceFeedsByNetwork[42161].push(
@@ -325,9 +325,9 @@ contract PriceFeedDataLive {
             CompositePriceFeedData({
                 token: Tokens.STETH,
                 targetToBaseFeed: 0x86392dC19c0b719886221c78AB11eb8Cf5c52812,
-                targetStalenessPeriod: 86400,
+                targetStalenessPeriod: 87300,
                 baseToUSDFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
-                baseStalenessPeriod: 86400
+                baseStalenessPeriod: 4500
             })
         );
 
@@ -339,7 +339,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: Tokens.CVX,
                 priceFeed: 0xd962fC30A72A84cE50161031391756Bf2876Af5D,
-                stalenessPeriod: 86400
+                stalenessPeriod: 87300
             })
         );
         chainlinkPriceFeedsByNetwork[42161].push(
@@ -355,7 +355,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: Tokens.FRAX,
                 priceFeed: 0xB9E1E3A9feFf48998E45Fa90847ed4D467E8BcfD,
-                stalenessPeriod: 86400
+                stalenessPeriod: 4500
             })
         );
         chainlinkPriceFeedsByNetwork[42161].push(
@@ -400,7 +400,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: Tokens.FXS,
                 priceFeed: 0x6Ebc52C8C1089be9eB3945C4350B68B8E4C2233f,
-                stalenessPeriod: 86400
+                stalenessPeriod: 87300
             })
         );
         chainlinkPriceFeedsByNetwork[42161].push(
@@ -416,9 +416,9 @@ contract PriceFeedDataLive {
             CompositePriceFeedData({
                 token: Tokens.LDO,
                 targetToBaseFeed: 0x4e844125952D32AcdF339BE976c98E22F6F318dB,
-                targetStalenessPeriod: 86400,
+                targetStalenessPeriod: 87300,
                 baseToUSDFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
-                baseStalenessPeriod: 86400
+                baseStalenessPeriod: 4500
             })
         );
         zeroPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: Tokens.LDO}));
@@ -484,26 +484,6 @@ contract PriceFeedDataLive {
 
         // ------------------------ SHIB ------------------------
         redStonePriceFeedsByNetwork[1].push(
-            RedStonePriceFeedData({
-                token: Tokens.SHIB,
-                dataServiceId: "redstone-main-demo",
-                dataFeedId: "SHIB",
-                signers: [
-                    0x0C39486f770B26F5527BBBf942726537986Cd7eb,
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0)
-                ],
-                signersThreshold: 1
-            })
-        );
-        redStonePriceFeedsByNetwork[42161].push(
             RedStonePriceFeedData({
                 token: Tokens.SHIB,
                 dataServiceId: "redstone-main-demo",
@@ -1167,6 +1147,18 @@ contract PriceFeedDataLive {
 
         // ------------------------ dFRAX ------------------------
 
+        // ------------------------ dUSDCV3 ------------------------
+
+        // ------------------------ dWBTCV3 ------------------------
+
+        // ------------------------ dWETHV3 ------------------------
+
+        // ------------------------ sdUSDCV3 ------------------------
+
+        // ------------------------ sdWBTCV3 ------------------------
+
+        // ------------------------ sdWETHV3 ------------------------
+
         // ------------------------ GEAR ------------------------
 
         // ------------------------ aDAI ------------------------
@@ -1274,7 +1266,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: Tokens.MKR,
                 priceFeed: 0xec1D1B3b0443256cc3860e24a46F108e699484Aa,
-                stalenessPeriod: 86400
+                stalenessPeriod: 4500
             })
         );
         chainlinkPriceFeedsByNetwork[42161].push(
@@ -1306,7 +1298,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: Tokens.APE,
                 priceFeed: 0xD10aBbC76679a20055E167BB80A24ac851b37056,
-                stalenessPeriod: 86400
+                stalenessPeriod: 87300
             })
         );
         chainlinkPriceFeedsByNetwork[42161].push(

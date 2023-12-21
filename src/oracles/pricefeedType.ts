@@ -58,14 +58,12 @@ export const HOUR_24_BUFFERED = 24 * HOUR_1 + ANSWER_UPDATE_DELAY;
 export const HOUR_1_BUFFERED = HOUR_1 + ANSWER_UPDATE_DELAY;
 
 // TODO: implement in the future
-export type PriceFeedEntry =
-  | {
-      Main: PriceFeedData & { trusted: boolean };
-      Reserve?: PriceFeedData;
-    }
-  | {
-      feeds: Record<NetworkType, PriceFeedEntry>;
-    };
+export interface PriceFeedEntry {
+  Main: PriceFeedData & { trusted: boolean };
+  Reserve?: PriceFeedData;
+}
+
+export type PriceFeedNetwork = NetworkType | "AllNetworks";
 
 export type PriceFeedData =
   | {
