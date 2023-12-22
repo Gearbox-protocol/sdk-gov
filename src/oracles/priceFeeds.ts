@@ -1,3 +1,4 @@
+import { NetworkType } from "../core/chains";
 import { NOT_DEPLOYED } from "../core/constants";
 import { SupportedToken } from "../tokens/token";
 import { PartialRecord } from "../utils/types";
@@ -23,7 +24,16 @@ export const REDSTONE_SIGNERS = {
   signersThreshold: 5,
 };
 
-export const priceFeedsByToken: Record<
+export function getPriceFeedsByToken(
+  token: SupportedToken,
+  network: NetworkType,
+): PriceFeedEntry | undefined {
+  const priceFeed = priceFeedsByToken[token];
+  const networkPf = "AllNetworks" in priceFeed ? "AllNetworks" : network;
+  return priceFeedsByToken[token][networkPf];
+}
+
+const priceFeedsByToken: Record<
   SupportedToken,
   PartialRecord<PriceFeedNetwork, PriceFeedEntry>
 > = {
