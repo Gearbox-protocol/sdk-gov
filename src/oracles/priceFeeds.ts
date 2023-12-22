@@ -33,7 +33,7 @@ export function getPriceFeedsByToken(
   return priceFeedsByToken[token][networkPf];
 }
 
-const priceFeedsByToken: Record<
+export const priceFeedsByToken: Record<
   SupportedToken,
   PartialRecord<PriceFeedNetwork, PriceFeedEntry>
 > = {
