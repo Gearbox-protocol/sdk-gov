@@ -394,6 +394,27 @@ contract AdapterData {
         );
         convexBasePoolAdapters.push(
             ConvexBasePoolAdapter({
+                targetContract: Contracts.CONVEX_CRVUSD_USDC_POOL,
+                adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
+                stakedToken: Tokens.stkcvxcrvUSDUSDC
+            })
+        );
+        convexBasePoolAdapters.push(
+            ConvexBasePoolAdapter({
+                targetContract: Contracts.CONVEX_CRVUSD_USDT_POOL,
+                adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
+                stakedToken: Tokens.stkcvxcrvUSDUSDT
+            })
+        );
+        convexBasePoolAdapters.push(
+            ConvexBasePoolAdapter({
+                targetContract: Contracts.CONVEX_CRVUSD_FRAX_POOL,
+                adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
+                stakedToken: Tokens.stkcvxcrvUSDFRAX
+            })
+        );
+        convexBasePoolAdapters.push(
+            ConvexBasePoolAdapter({
                 targetContract: Contracts.CONVEX_TRI_CRV_POOL,
                 adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
                 stakedToken: Tokens.stkcvxcrvUSDETHCRV

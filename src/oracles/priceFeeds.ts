@@ -961,6 +961,21 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
     token: "LDOETH",
   },
 
+  cvxcrvUSDUSDC: {
+    type: PriceFeedType.THE_SAME_AS,
+    token: "crvUSDUSDC",
+  },
+
+  cvxcrvUSDUSDT: {
+    type: PriceFeedType.THE_SAME_AS,
+    token: "crvUSDUSDT",
+  },
+
+  cvxcrvUSDFRAX: {
+    type: PriceFeedType.THE_SAME_AS,
+    token: "crvUSDFRAX",
+  },
+
   cvxcrvUSDETHCRV: {
     type: PriceFeedType.THE_SAME_AS,
     token: "crvUSDETHCRV",
@@ -1018,6 +1033,20 @@ export const priceFeedsByToken: Record<SupportedToken, PriceFeedData> = {
   stkcvxLDOETH: {
     type: PriceFeedType.THE_SAME_AS,
     token: "LDOETH",
+  },
+  stkcvxcrvUSDUSDC: {
+    type: PriceFeedType.THE_SAME_AS,
+    token: "crvUSDUSDC",
+  },
+
+  stkcvxcrvUSDUSDT: {
+    type: PriceFeedType.THE_SAME_AS,
+    token: "crvUSDUSDT",
+  },
+
+  stkcvxcrvUSDFRAX: {
+    type: PriceFeedType.THE_SAME_AS,
+    token: "crvUSDFRAX",
   },
   stkcvxcrvUSDETHCRV: {
     type: PriceFeedType.THE_SAME_AS,

@@ -355,6 +355,27 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CONVEX_CRVUSD_USDC_POOL,
+                addr: 0x44D8FaB7CD8b7877D5F79974c2F501aF6E65AbBA,
+                name: "CONVEX_CRVUSD_USDC_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CONVEX_CRVUSD_USDT_POOL,
+                addr: 0xD1DdB0a0815fD28932fBb194C84003683AF8a824,
+                name: "CONVEX_CRVUSD_USDT_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CONVEX_CRVUSD_FRAX_POOL,
+                addr: 0x3CfB4B26dc96B124D15A6f360503d028cF2a3c00,
+                name: "CONVEX_CRVUSD_FRAX_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CONVEX_TRI_CRV_POOL,
                 addr: 0xF956a46DbA1A0a567168db8655bc18E9050C7738,
                 name: "CONVEX_TRI_CRV_POOL"
