@@ -1098,18 +1098,33 @@ export const priceFeedsByToken: Record<
   },
 
   cvxcrvUSDUSDC: {
-    type: PriceFeedType.THE_SAME_AS,
-    token: "crvUSDUSDC",
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "crvUSDUSDC",
+        trusted: false,
+      },
+    },
   },
 
   cvxcrvUSDUSDT: {
-    type: PriceFeedType.THE_SAME_AS,
-    token: "crvUSDUSDT",
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "crvUSDUSDT",
+        trusted: false,
+      },
+    },
   },
 
   cvxcrvUSDFRAX: {
-    type: PriceFeedType.THE_SAME_AS,
-    token: "crvUSDFRAX",
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "crvUSDFRAX",
+        trusted: false,
+      },
+    },
   },
 
   cvxcrvUSDETHCRV: {
@@ -1241,19 +1256,35 @@ export const priceFeedsByToken: Record<
     },
   },
   stkcvxcrvUSDUSDC: {
-    type: PriceFeedType.THE_SAME_AS,
-    token: "crvUSDUSDC",
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "crvUSDUSDC",
+        trusted: false,
+      },
+    },
   },
 
   stkcvxcrvUSDUSDT: {
-    type: PriceFeedType.THE_SAME_AS,
-    token: "crvUSDUSDT",
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "crvUSDUSDT",
+        trusted: false,
+      },
+    },
   },
 
   stkcvxcrvUSDFRAX: {
-    type: PriceFeedType.THE_SAME_AS,
-    token: "crvUSDFRAX",
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "crvUSDFRAX",
+        trusted: false,
+      },
+    },
   },
+
   stkcvxcrvUSDETHCRV: {
     AllNetworks: {
       Main: {
