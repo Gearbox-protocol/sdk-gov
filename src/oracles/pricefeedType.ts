@@ -33,6 +33,21 @@ export enum PriceFeedType {
   CURVE_USD_ORACLE,
 }
 
+export const lpPriceFeedTypes: Array<PriceFeedType> = [
+  PriceFeedType.YEARN_ORACLE,
+  PriceFeedType.CURVE_2LP_ORACLE,
+  PriceFeedType.CURVE_3LP_ORACLE,
+  PriceFeedType.CURVE_4LP_ORACLE,
+  PriceFeedType.WSTETH_ORACLE,
+  PriceFeedType.WRAPPED_AAVE_V2_ORACLE,
+  PriceFeedType.COMPOUND_V2_ORACLE,
+  PriceFeedType.BALANCER_STABLE_LP_ORACLE,
+  PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
+  PriceFeedType.CURVE_CRYPTO_ORACLE,
+  PriceFeedType.ERC4626_VAULT_ORACLE,
+  PriceFeedType.CURVE_USD_ORACLE,
+];
+
 export const HOUR_1 = 60 * 60;
 export const HOUR_24 = 24 * HOUR_1;
 export const FOUR_MINUTES = 4 * 60;
@@ -43,14 +58,12 @@ export const HOUR_24_BUFFERED = 24 * HOUR_1 + ANSWER_UPDATE_DELAY;
 export const HOUR_1_BUFFERED = HOUR_1 + ANSWER_UPDATE_DELAY;
 
 // TODO: implement in the future
-export type PriceFeedEntry =
-  | {
-      Main: PriceFeedData & { trusted: boolean };
-      Reserve?: PriceFeedData;
-    }
-  | {
-      feeds: Record<NetworkType, PriceFeedEntry>;
-    };
+export interface PriceFeedEntry {
+  Main: PriceFeedData & { trusted: boolean };
+  Reserve?: PriceFeedData;
+}
+
+export type PriceFeedNetwork = NetworkType | "AllNetworks";
 
 export type PriceFeedData =
   | {
@@ -142,6 +155,5 @@ export type PriceFeedData =
     }
   | {
       type: PriceFeedType.CURVE_USD_ORACLE;
-      pool: CurvePoolContract;
       underlying: NormalToken;
     };

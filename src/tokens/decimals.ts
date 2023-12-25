@@ -95,13 +95,23 @@ export const decimals: Record<SupportedToken, number> = {
   yvWBTC: 8,
   yvCurve_stETH: 18,
   yvCurve_FRAX: 18,
+
   dDAI: 18,
   dUSDC: 6,
   dWBTC: 8,
   dWETH: 18,
   dFRAX: 18,
   dwstETH: 18,
+
+  dUSDCV3: 6,
+  dWBTCV3: 8,
+  dWETHV3: 18,
+  sdUSDCV3: 6,
+  sdWBTCV3: 8,
+  sdWETHV3: 18,
+
   GEAR: 18,
+
   "50OHM_50DAI": 18,
   "50OHM_50WETH": 18,
   OHM_wstETH: 18,

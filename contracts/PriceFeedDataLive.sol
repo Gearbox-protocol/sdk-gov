@@ -273,9 +273,9 @@ contract PriceFeedDataLive {
             CompositePriceFeedData({
                 token: Tokens.WBTC,
                 targetToBaseFeed: 0xfdFD9C85aD200c506Cf9e21F1FD8dd01932FBB23,
-                targetStalenessPeriod: 4500,
+                targetStalenessPeriod: 87300,
                 baseToUSDFeed: 0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c,
-                baseStalenessPeriod: 87300
+                baseStalenessPeriod: 4500
             })
         );
         compositePriceFeedsByNetwork[42161].push(
@@ -325,9 +325,9 @@ contract PriceFeedDataLive {
             CompositePriceFeedData({
                 token: Tokens.STETH,
                 targetToBaseFeed: 0x86392dC19c0b719886221c78AB11eb8Cf5c52812,
-                targetStalenessPeriod: 4500,
+                targetStalenessPeriod: 87300,
                 baseToUSDFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
-                baseStalenessPeriod: 87300
+                baseStalenessPeriod: 4500
             })
         );
 
@@ -484,26 +484,6 @@ contract PriceFeedDataLive {
 
         // ------------------------ SHIB ------------------------
         redStonePriceFeedsByNetwork[1].push(
-            RedStonePriceFeedData({
-                token: Tokens.SHIB,
-                dataServiceId: "redstone-main-demo",
-                dataFeedId: "SHIB",
-                signers: [
-                    0x0C39486f770B26F5527BBBf942726537986Cd7eb,
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0)
-                ],
-                signersThreshold: 1
-            })
-        );
-        redStonePriceFeedsByNetwork[42161].push(
             RedStonePriceFeedData({
                 token: Tokens.SHIB,
                 dataServiceId: "redstone-main-demo",
@@ -1214,6 +1194,18 @@ contract PriceFeedDataLive {
         // ------------------------ dwstETH ------------------------
 
         // ------------------------ dFRAX ------------------------
+
+        // ------------------------ dUSDCV3 ------------------------
+
+        // ------------------------ dWBTCV3 ------------------------
+
+        // ------------------------ dWETHV3 ------------------------
+
+        // ------------------------ sdUSDCV3 ------------------------
+
+        // ------------------------ sdWBTCV3 ------------------------
+
+        // ------------------------ sdWETHV3 ------------------------
 
         // ------------------------ GEAR ------------------------
 

@@ -106,13 +106,16 @@ class BindingsGenerator {
 
       for (const chain of supportedChains) {
         const chainId = CHAINS[chain];
-        const priceFeedData = this.getPriceFeedData(
-          token,
-          pf.type === PriceFeedType.NETWORK_DEPENDENT
-            ? pf.feeds[chain].Main
-            : pf,
-          chainId,
-        );
+
+        const pfData =
+          "AllNetworks" in pf ? pf["AllNetworks"]?.Main : pf[chain]?.Main;
+
+        if (!pfData) {
+          console.warn(`No price feed data for ${token} on ${chain}`);
+          continue;
+        }
+
+        const priceFeedData = this.getPriceFeedData(token, pfData, chainId);
         if (priceFeedData) {
           data += priceFeedData;
         } else {
@@ -390,7 +393,7 @@ class BindingsGenerator {
       return `crvUSDPriceFeedsByNetwork[${chainId}].push(CrvUsdPriceFeedData({ token: ${this.tokensEnum(
         token,
       )}, 
-      pool: Contracts.${priceFeedData.pool},
+      pool: Contracts.${(lpTokens[token as LPTokens] as CurveLPTokenData).pool},
       underlying: ${this.tokensEnum(
         priceFeedData.underlying as SupportedToken,
       )}}));`;

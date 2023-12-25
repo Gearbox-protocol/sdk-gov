@@ -133,6 +133,12 @@ enum Tokens {
     dWETH,
     dwstETH,
     dFRAX,
+    dUSDCV3,
+    dWBTCV3,
+    dWETHV3,
+    sdUSDCV3,
+    sdWBTCV3,
+    sdWETHV3,
     GEAR
 }
 
