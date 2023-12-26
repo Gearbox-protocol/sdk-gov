@@ -568,6 +568,30 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.cvxcrvUSDUSDC,
+                addr: 0x75A2F59eC37c18962c53b0244D60B53f749DF25E,
+                symbol: "cvxcrvUSDUSDC",
+                tokenType: TokenType.CONVEX_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.cvxcrvUSDUSDT,
+                addr: 0x939e4C11E391a28CD81248163f3a2e595f12CE5E,
+                symbol: "cvxcrvUSDUSDT",
+                tokenType: TokenType.CONVEX_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.cvxcrvUSDFRAX,
+                addr: 0x01CcDe1dFb6c84e1Cc13a6Bf777aa2160ABd11BA,
+                symbol: "cvxcrvUSDFRAX",
+                tokenType: TokenType.CONVEX_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.cvxcrvUSDETHCRV,
                 addr: 0xa11a2c04D62b4A2324Fc857Fa14762Ad94751b4F,
                 symbol: "cvxcrvUSDETHCRV",
@@ -675,6 +699,30 @@ contract TokensDataLive {
                 id: Tokens.stkcvxLDOETH,
                 addr: 0x2Fd6bD5b81c1060039D619E76e4e1f924B173006,
                 symbol: "stkcvxLDOETH",
+                tokenType: TokenType.CONVEX_STAKED_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.stkcvxcrvUSDUSDC,
+                addr: 0xDb4217B9C8DB788Aa3871d45B4BE6ac5D1FF8C49,
+                symbol: "stkcvxcrvUSDUSDC",
+                tokenType: TokenType.CONVEX_STAKED_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.stkcvxcrvUSDUSDT,
+                addr: 0x5C5e5117E26374870c80a5FA04c3f75a821440D6,
+                symbol: "stkcvxcrvUSDUSDT",
+                tokenType: TokenType.CONVEX_STAKED_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.stkcvxcrvUSDFRAX,
+                addr: 0x7376AD488AB2bd8dF7665d619A4148f0E5094813,
+                symbol: "stkcvxcrvUSDFRAX",
                 tokenType: TokenType.CONVEX_STAKED_TOKEN
             })
         );

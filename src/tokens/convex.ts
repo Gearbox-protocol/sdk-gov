@@ -20,6 +20,9 @@ export type ConvexLPToken =
   | "cvxcrvCVXETH"
   | "cvxcrvUSDTWBTCWETH"
   | "cvxLDOETH"
+  | "cvxcrvUSDUSDC"
+  | "cvxcrvUSDUSDT"
+  | "cvxcrvUSDFRAX"
   | "cvxcrvUSDETHCRV";
 
 export type ConvexStakedPhantomToken =
@@ -36,6 +39,9 @@ export type ConvexStakedPhantomToken =
   | "stkcvxcrvCVXETH"
   | "stkcvxcrvUSDTWBTCWETH"
   | "stkcvxLDOETH"
+  | "stkcvxcrvUSDUSDC"
+  | "stkcvxcrvUSDUSDT"
+  | "stkcvxcrvUSDFRAX"
   | "stkcvxcrvUSDETHCRV";
 
 type BaseConvexToken = {
@@ -191,13 +197,42 @@ export const convexLpTokens: Record<ConvexLPToken, ConvexLPTokenData> = {
 
   cvxLDOETH: {
     name: "Convex cvxLDOETH",
-
     symbol: "cvxLDOETH",
     type: TokenType.CONVEX_LP_TOKEN,
     pool: "CONVEX_LDOETH_POOL",
     pid: 149,
     underlying: "LDOETH",
     stakedToken: "stkcvxLDOETH",
+  },
+
+  cvxcrvUSDUSDC: {
+    name: "Convex cvxcrvUSDUSDC",
+    symbol: "cvxcrvUSDUSDC",
+    type: TokenType.CONVEX_LP_TOKEN,
+    pool: "CONVEX_CRVUSD_USDC_POOL",
+    pid: 182,
+    underlying: "crvUSDUSDC",
+    stakedToken: "stkcvxcrvUSDUSDC",
+  },
+
+  cvxcrvUSDUSDT: {
+    name: "Convex cvxcrvUSDUSDT",
+    symbol: "cvxcrvUSDUSDT",
+    type: TokenType.CONVEX_LP_TOKEN,
+    pool: "CONVEX_CRVUSD_USDT_POOL",
+    pid: 179,
+    underlying: "crvUSDUSDT",
+    stakedToken: "stkcvxcrvUSDUSDT",
+  },
+
+  cvxcrvUSDFRAX: {
+    name: "Convex cvxcrvUSDFRAX",
+    symbol: "cvxcrvUSDFRAX",
+    type: TokenType.CONVEX_LP_TOKEN,
+    pool: "CONVEX_CRVUSD_FRAX_POOL",
+    pid: 187,
+    underlying: "crvUSDFRAX",
+    stakedToken: "stkcvxcrvUSDFRAX",
   },
 
   cvxcrvUSDETHCRV: {
@@ -354,6 +389,36 @@ export const convexStakedPhantomTokens: Record<
     pid: 149,
     underlying: "LDOETH",
     lpToken: "cvxLDOETH",
+  },
+
+  stkcvxcrvUSDUSDC: {
+    name: "Convex stkcvxcrvUSDUSDC",
+    symbol: "stkcvxcrvUSDUSDC",
+    type: TokenType.CONVEX_STAKED_TOKEN,
+    pool: "CONVEX_CRVUSD_USDC_POOL",
+    pid: 182,
+    underlying: "crvUSDUSDC",
+    lpToken: "cvxcrvUSDUSDC",
+  },
+
+  stkcvxcrvUSDUSDT: {
+    name: "Convex stkcvxcrvUSDUSDT",
+    symbol: "stkcvxcrvUSDUSDT",
+    type: TokenType.CONVEX_STAKED_TOKEN,
+    pool: "CONVEX_CRVUSD_USDT_POOL",
+    pid: 179,
+    underlying: "crvUSDUSDT",
+    lpToken: "cvxcrvUSDUSDT",
+  },
+
+  stkcvxcrvUSDFRAX: {
+    name: "Convex stkcvxcrvUSDFRAX",
+    symbol: "stkcvxcrvUSDFRAX",
+    type: TokenType.CONVEX_STAKED_TOKEN,
+    pool: "CONVEX_CRVUSD_FRAX_POOL",
+    pid: 187,
+    underlying: "crvUSDFRAX",
+    lpToken: "cvxcrvUSDFRAX",
   },
 
   stkcvxcrvUSDETHCRV: {

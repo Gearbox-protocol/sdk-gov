@@ -181,7 +181,7 @@ export const curveTokens: Record<
     name: "Curve crvUSDFRAX",
     symbol: "crvUSDFRAX",
     type: TokenType.CURVE_LP_TOKEN,
-    pool: "CURVE_CRVUSD_USDC_POOL",
+    pool: "CURVE_CRVUSD_FRAX_POOL",
     tokenOut: ["crvUSD", "FRAX"],
   },
 

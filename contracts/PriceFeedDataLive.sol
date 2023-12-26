@@ -486,21 +486,21 @@ contract PriceFeedDataLive {
         redStonePriceFeedsByNetwork[1].push(
             RedStonePriceFeedData({
                 token: Tokens.SHIB,
-                dataServiceId: "redstone-main-demo",
+                dataServiceId: "redstone-primary-prod",
                 dataFeedId: "SHIB",
                 signers: [
-                    0x0C39486f770B26F5527BBBf942726537986Cd7eb,
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
                     address(0),
                     address(0),
                     address(0),
                     address(0),
                     address(0)
                 ],
-                signersThreshold: 1
+                signersThreshold: 5
             })
         );
 
@@ -814,14 +814,14 @@ contract PriceFeedDataLive {
             CurvePriceFeedData({
                 lpToken: Tokens.crvUSDFRAX,
                 assets: TokensLib.arrayOf(Tokens.crvUSD, Tokens.FRAX),
-                pool: Contracts.CURVE_CRVUSD_USDC_POOL
+                pool: Contracts.CURVE_CRVUSD_FRAX_POOL
             })
         );
         curvePriceFeedsByNetwork[42161].push(
             CurvePriceFeedData({
                 lpToken: Tokens.crvUSDFRAX,
                 assets: TokensLib.arrayOf(Tokens.crvUSD, Tokens.FRAX),
-                pool: Contracts.CURVE_CRVUSD_USDC_POOL
+                pool: Contracts.CURVE_CRVUSD_FRAX_POOL
             })
         );
 
@@ -969,6 +969,30 @@ contract PriceFeedDataLive {
             TheSamePriceFeedData({token: Tokens.cvxLDOETH, tokenHasSamePriceFeed: Tokens.LDOETH})
         );
 
+        // ------------------------ cvxcrvUSDUSDC ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.cvxcrvUSDUSDC, tokenHasSamePriceFeed: Tokens.crvUSDUSDC})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.cvxcrvUSDUSDC, tokenHasSamePriceFeed: Tokens.crvUSDUSDC})
+        );
+
+        // ------------------------ cvxcrvUSDUSDT ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.cvxcrvUSDUSDT, tokenHasSamePriceFeed: Tokens.crvUSDUSDT})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.cvxcrvUSDUSDT, tokenHasSamePriceFeed: Tokens.crvUSDUSDT})
+        );
+
+        // ------------------------ cvxcrvUSDFRAX ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.cvxcrvUSDFRAX, tokenHasSamePriceFeed: Tokens.crvUSDFRAX})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.cvxcrvUSDFRAX, tokenHasSamePriceFeed: Tokens.crvUSDFRAX})
+        );
+
         // ------------------------ cvxcrvUSDETHCRV ------------------------
         theSamePriceFeedsByNetwork[1].push(
             TheSamePriceFeedData({token: Tokens.cvxcrvUSDETHCRV, tokenHasSamePriceFeed: Tokens.crvUSDETHCRV})
@@ -1079,6 +1103,30 @@ contract PriceFeedDataLive {
         );
         theSamePriceFeedsByNetwork[42161].push(
             TheSamePriceFeedData({token: Tokens.stkcvxLDOETH, tokenHasSamePriceFeed: Tokens.LDOETH})
+        );
+
+        // ------------------------ stkcvxcrvUSDUSDC ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.stkcvxcrvUSDUSDC, tokenHasSamePriceFeed: Tokens.crvUSDUSDC})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.stkcvxcrvUSDUSDC, tokenHasSamePriceFeed: Tokens.crvUSDUSDC})
+        );
+
+        // ------------------------ stkcvxcrvUSDUSDT ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.stkcvxcrvUSDUSDT, tokenHasSamePriceFeed: Tokens.crvUSDUSDT})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.stkcvxcrvUSDUSDT, tokenHasSamePriceFeed: Tokens.crvUSDUSDT})
+        );
+
+        // ------------------------ stkcvxcrvUSDFRAX ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.stkcvxcrvUSDFRAX, tokenHasSamePriceFeed: Tokens.crvUSDFRAX})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.stkcvxcrvUSDFRAX, tokenHasSamePriceFeed: Tokens.crvUSDFRAX})
         );
 
         // ------------------------ stkcvxcrvUSDETHCRV ------------------------

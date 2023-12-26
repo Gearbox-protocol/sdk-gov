@@ -66,6 +66,9 @@ export type ConvexPoolContract =
   | "CONVEX_CVXETH_POOL"
   | "CONVEX_3CRYPTO_POOL"
   | "CONVEX_LDOETH_POOL"
+  | "CONVEX_CRVUSD_USDC_POOL"
+  | "CONVEX_CRVUSD_USDT_POOL"
+  | "CONVEX_CRVUSD_FRAX_POOL"
   | "CONVEX_TRI_CRV_POOL";
 
 export type AuraPoolContract = "AURA_B_RETH_STABLE_POOL";
@@ -165,6 +168,9 @@ export const contractsByNetwork: Record<
     CONVEX_CVXETH_POOL: "0xb1Fb0BA0676A1fFA83882c7F4805408bA232C1fA",
     CONVEX_3CRYPTO_POOL: "0xb05262D4aaAA38D0Af4AaB244D446ebDb5afd4A7",
     CONVEX_LDOETH_POOL: "0x8CA990E954611E5E3d2cc51C013fCC372c8c1D38",
+    CONVEX_CRVUSD_USDC_POOL: "0x44D8FaB7CD8b7877D5F79974c2F501aF6E65AbBA",
+    CONVEX_CRVUSD_USDT_POOL: "0xD1DdB0a0815fD28932fBb194C84003683AF8a824",
+    CONVEX_CRVUSD_FRAX_POOL: "0x3CfB4B26dc96B124D15A6f360503d028cF2a3c00",
     CONVEX_TRI_CRV_POOL: "0xF956a46DbA1A0a567168db8655bc18E9050C7738",
 
     AURA_BOOSTER: "0xA57b8d98dAE62B26Ec3bcC4a365338157060B234",
@@ -264,6 +270,9 @@ export const contractsByNetwork: Record<
     CONVEX_CVXETH_POOL: NOT_DEPLOYED,
     CONVEX_3CRYPTO_POOL: NOT_DEPLOYED,
     CONVEX_LDOETH_POOL: NOT_DEPLOYED,
+    CONVEX_CRVUSD_USDC_POOL: NOT_DEPLOYED,
+    CONVEX_CRVUSD_USDT_POOL: NOT_DEPLOYED,
+    CONVEX_CRVUSD_FRAX_POOL: NOT_DEPLOYED,
     CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
 
     AURA_BOOSTER: NOT_DEPLOYED,
@@ -869,6 +878,51 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
         rewardToken: "LDO",
         poolAddress: {
           Mainnet: "0x95e6092449a0f3946A5a0f308Ead4adcff244E2B",
+          Arbitrum: NOT_DEPLOYED,
+        },
+      },
+    ],
+  },
+  CONVEX_CRVUSD_USDC_POOL: {
+    name: "Convex crvUSDUSDC",
+    protocol: Protocols.Convex,
+    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
+    stakedToken: "stkcvxcrvUSDUSDC",
+    extraRewards: [
+      {
+        rewardToken: "CVX",
+        poolAddress: {
+          Mainnet: "0xac183F7cd62d5b04Fa40362EB67249A80339541A",
+          Arbitrum: NOT_DEPLOYED,
+        },
+      },
+    ],
+  },
+  CONVEX_CRVUSD_USDT_POOL: {
+    name: "Convex crvUSDUSDT",
+    protocol: Protocols.Convex,
+    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
+    stakedToken: "stkcvxcrvUSDUSDT",
+    extraRewards: [
+      {
+        rewardToken: "CVX",
+        poolAddress: {
+          Mainnet: "0xD490178B568b07c6DDbDfBBfaF9043772209Ec01",
+          Arbitrum: NOT_DEPLOYED,
+        },
+      },
+    ],
+  },
+  CONVEX_CRVUSD_FRAX_POOL: {
+    name: "Convex crvUSDFRAX",
+    protocol: Protocols.Convex,
+    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
+    stakedToken: "stkcvxcrvUSDFRAX",
+    extraRewards: [
+      {
+        rewardToken: "CVX",
+        poolAddress: {
+          Mainnet: "0x749cFfCb53e008841d7387ba37f9284BDeCEe0A9",
           Arbitrum: NOT_DEPLOYED,
         },
       },
