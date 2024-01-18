@@ -1,6 +1,7 @@
+import { PartialRecord } from "../utils/types";
 import { NormalToken } from "./normal";
 import type { TokenBase } from "./token";
-import { TokenType } from "./tokenType";
+import { TokenNetwork, TokenType } from "./tokenType";
 
 export type CompoundV2LPToken =
   | "cDAI"
@@ -12,7 +13,7 @@ export type CompoundV2LPToken =
 
 export type CompoundV2PoolTokenData = {
   symbol: CompoundV2LPToken;
-  type: TokenType.COMPOUND_V2_C_TOKEN;
+  type: PartialRecord<TokenNetwork, TokenType.COMPOUND_V2_C_TOKEN>;
   underlying: NormalToken;
 } & TokenBase;
 
@@ -23,41 +24,53 @@ export const compoundV2Tokens: Record<
   cDAI: {
     name: "CompoundV2 cDAI",
     symbol: "cDAI",
-    type: TokenType.COMPOUND_V2_C_TOKEN,
+    type: {
+      AllNetworks: TokenType.COMPOUND_V2_C_TOKEN,
+    },
     underlying: "DAI",
   },
 
   cUSDC: {
     name: "CompoundV2 cUSDC",
     symbol: "cUSDC",
-    type: TokenType.COMPOUND_V2_C_TOKEN,
+    type: {
+      AllNetworks: TokenType.COMPOUND_V2_C_TOKEN,
+    },
     underlying: "USDC",
   },
 
   cUSDT: {
     name: "CompoundV2 cUSDT",
     symbol: "cUSDT",
-    type: TokenType.COMPOUND_V2_C_TOKEN,
+    type: {
+      AllNetworks: TokenType.COMPOUND_V2_C_TOKEN,
+    },
     underlying: "USDT",
   },
 
   cETH: {
     name: "CompoundV2 cETH",
     symbol: "cETH",
-    type: TokenType.COMPOUND_V2_C_TOKEN,
+    type: {
+      AllNetworks: TokenType.COMPOUND_V2_C_TOKEN,
+    },
     underlying: "WETH",
   },
   cLINK: {
     name: "CompoundV2 cLINK",
     symbol: "cLINK",
-    type: TokenType.COMPOUND_V2_C_TOKEN,
+    type: {
+      AllNetworks: TokenType.COMPOUND_V2_C_TOKEN,
+    },
     underlying: "LINK",
   },
 
   fUSDC: {
     name: "Flux fUSDC",
     symbol: "fUSDC",
-    type: TokenType.COMPOUND_V2_C_TOKEN,
+    type: {
+      AllNetworks: TokenType.COMPOUND_V2_C_TOKEN,
+    },
     underlying: "USDC",
   },
 };

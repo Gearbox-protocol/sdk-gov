@@ -21,7 +21,7 @@ export const CHAINS = {
   Polygon: POLYGON_NETWORK,
 } as const;
 
-export const supportedChains = ["Mainnet", "Arbitrum"] as const;
+export const supportedChains = ["Mainnet", "Arbitrum", "Optimism"] as const;
 export type NetworkType = (typeof supportedChains)[number]; // | "Optimism" | "Polygon";
 
 const SUPPORTED_CHAINS: Record<number, NetworkType> = {
@@ -29,7 +29,7 @@ const SUPPORTED_CHAINS: Record<number, NetworkType> = {
   [CHAINS.Arbitrum]: "Arbitrum",
   [CHAINS.Local]: "Mainnet",
   [CHAINS.Tenderly]: "Mainnet",
-  // [CHAINS.Optimism]: "Optimism",
+  [CHAINS.Optimism]: "Optimism",
   // [CHAINS.Polygon]: "Polygon",
 };
 
@@ -59,6 +59,7 @@ export const detectNetwork = async (
 
   const mainnetUSDC = tokenDataByNetwork.Mainnet["USDC"];
   const arbitrumUSDC = tokenDataByNetwork.Arbitrum["USDC"];
+  const optimismUSDC = tokenDataByNetwork.Optimism["USDC"];
 
   const mainnetUSDCContract = new ethers.Contract(
     mainnetUSDC,
@@ -72,6 +73,12 @@ export const detectNetwork = async (
     provider,
   );
 
+  const optimismUSDCContract = new ethers.Contract(
+    optimismUSDC,
+    usdcABI,
+    provider,
+  );
+
   try {
     await mainnetUSDCContract.symbol();
     return "Mainnet" as NetworkType;
@@ -80,6 +87,11 @@ export const detectNetwork = async (
   try {
     await arbitrumUSDCContract.symbol();
     return "Arbitrum" as NetworkType;
+  } catch {}
+
+  try {
+    await optimismUSDCContract.symbol();
+    return "Optimism" as NetworkType;
   } catch {}
 
   throw new Error("Unsupported network");

@@ -57,6 +57,11 @@ const ANSWER_UPDATE_DELAY = 15 * 60;
 export const HOUR_24_BUFFERED = 24 * HOUR_1 + ANSWER_UPDATE_DELAY;
 export const HOUR_1_BUFFERED = HOUR_1 + ANSWER_UPDATE_DELAY;
 
+const L2_ANSWER_UPDATE_DELAY = 2 * 60;
+
+export const MINUTES_20_BUFFERED_L2 = 20 * 60 + L2_ANSWER_UPDATE_DELAY;
+export const HOUR_24_BUFFERED_L2 = 24 * HOUR_1 + L2_ANSWER_UPDATE_DELAY;
+
 // TODO: implement in the future
 export interface PriceFeedEntry {
   Main: PriceFeedData & { trusted: boolean };

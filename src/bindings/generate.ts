@@ -75,7 +75,9 @@ class BindingsGenerator {
             return `tokenDataByNetwork[${chainId}].push(TokenData({ id: ${this.tokensEnum(
               t,
             )}, addr: ${addr}, symbol: "${t}", tokenType: TokenType.${
-              TokenType[supportedTokens[t].type]
+              "AllNetworks" in supportedTokens[t].type
+                ? TokenType[supportedTokens[t].type["AllNetworks"] as TokenType]
+                : TokenType[supportedTokens[t].type[chain] as TokenType]
             } }));`;
           } else return "";
         })
@@ -533,8 +535,11 @@ class BindingsGenerator {
           let basePool: SupportedContract | "NO_CONTRACT" = "NO_CONTRACT";
           for (let coin of contractParam.tokens) {
             const coinParams = supportedTokens[coin];
-            if (coinParams.type === TokenType.CURVE_LP_TOKEN) {
-              basePool = coinParams.pool;
+            if (
+              (coinParams.type["AllNetworks"] as TokenType) ===
+              TokenType.CURVE_LP_TOKEN
+            ) {
+              basePool = (coinParams as CurveLPTokenData).pool;
             }
           }
           return `curveAdapters.push(CurveAdapter({targetContract:  Contracts.${contract},

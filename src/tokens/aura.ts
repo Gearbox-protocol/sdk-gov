@@ -3,13 +3,20 @@ import type {
   SupportedContract,
 } from "../contracts/contracts";
 import { TradeAction, TradeType } from "../pathfinder/tradeTypes";
+import { PartialRecord } from "../utils/types";
 import { BalancerLPToken } from "./balancer";
 import type { SupportedToken, TokenBase } from "./token";
-import { TokenType } from "./tokenType";
+import { TokenNetwork, TokenType } from "./tokenType";
 
-export type AuraLPToken = "auraB_rETH_STABLE";
+export type AuraLPToken =
+  | "auraB_rETH_STABLE"
+  | "auraBPT_rETH_ETH"
+  | "auraBPT_WSTETH_ETH";
 
-export type AuraStakedToken = "auraB_rETH_STABLE_vault";
+export type AuraStakedToken =
+  | "auraB_rETH_STABLE_vault"
+  | "auraBPT_rETH_ETH_vault"
+  | "auraBPT_WSTETH_ETH_vault";
 
 type BaseAuraToken = {
   pool: AuraPoolContract;
@@ -20,13 +27,13 @@ type BaseAuraToken = {
 
 export type AuraLPTokenData = {
   symbol: AuraLPToken;
-  type: TokenType.AURA_LP_TOKEN;
+  type: PartialRecord<TokenNetwork, TokenType.AURA_LP_TOKEN>;
   stakedToken: AuraStakedToken;
 } & BaseAuraToken;
 
 export type AuraStakedTokenData = {
   symbol: AuraStakedToken;
-  type: TokenType.AURA_STAKED_TOKEN;
+  type: PartialRecord<TokenNetwork, TokenType.AURA_STAKED_TOKEN>;
   lpToken: AuraLPToken;
 } & BaseAuraToken;
 
@@ -35,7 +42,9 @@ export const auraLpTokens: Record<AuraLPToken, AuraLPTokenData> = {
     name: "Balancer rETH Stable Pool Aura Deposit",
 
     symbol: "auraB_rETH_STABLE",
-    type: TokenType.AURA_LP_TOKEN,
+    type: {
+      AllNetworks: TokenType.AURA_LP_TOKEN,
+    },
     pool: "AURA_B_RETH_STABLE_POOL",
     pid: 109,
     underlying: "B_rETH_STABLE",
@@ -53,6 +62,54 @@ export const auraLpTokens: Record<AuraLPToken, AuraLPTokenData> = {
       },
     ],
   },
+  auraBPT_rETH_ETH: {
+    name: "BeethovenX rETH-ETH Aura Deposit",
+
+    symbol: "auraBPT_rETH_ETH",
+    type: {
+      AllNetworks: TokenType.AURA_LP_TOKEN,
+    },
+    pool: "AURA_BPT_RETH_ETH_POOL",
+    pid: 0,
+    underlying: "BPT_rETH_ETH",
+    stakedToken: "auraBPT_rETH_ETH_vault",
+    lpActions: [
+      {
+        type: TradeType.AuraWithdrawLP,
+        contract: "AURA_BOOSTER",
+        tokenOut: "BPT_rETH_ETH",
+      },
+      {
+        type: TradeType.AuraStake,
+        contract: "AURA_BPT_RETH_ETH_POOL",
+        tokenOut: "auraBPT_rETH_ETH_vault",
+      },
+    ],
+  },
+  auraBPT_WSTETH_ETH: {
+    name: "BeethovenX wstETH-ETH Aura Deposit",
+
+    symbol: "auraBPT_WSTETH_ETH",
+    type: {
+      AllNetworks: TokenType.AURA_LP_TOKEN,
+    },
+    pool: "AURA_BPT_WSTETH_ETH_POOL",
+    pid: 4,
+    underlying: "BPT_WSTETH_ETH",
+    stakedToken: "auraBPT_WSTETH_ETH_vault",
+    lpActions: [
+      {
+        type: TradeType.AuraWithdrawLP,
+        contract: "AURA_BOOSTER",
+        tokenOut: "BPT_WSTETH_ETH",
+      },
+      {
+        type: TradeType.AuraStake,
+        contract: "AURA_BPT_WSTETH_ETH_POOL",
+        tokenOut: "auraBPT_WSTETH_ETH_vault",
+      },
+    ],
+  },
 };
 
 export const auraStakedTokens: Record<AuraStakedToken, AuraStakedTokenData> = {
@@ -60,24 +117,40 @@ export const auraStakedTokens: Record<AuraStakedToken, AuraStakedTokenData> = {
     name: "Aura B_rETH_STABLE_vault",
 
     symbol: "auraB_rETH_STABLE_vault",
-    type: TokenType.AURA_STAKED_TOKEN,
+    type: {
+      AllNetworks: TokenType.AURA_STAKED_TOKEN,
+    },
     pool: "AURA_B_RETH_STABLE_POOL",
     pid: 149,
     underlying: "B_rETH_STABLE",
     lpToken: "auraB_rETH_STABLE",
-    lpActions: [
-      // TODO: add actions here
-      // {
-      //   type: TradeType.AuraWithdrawLP,
-      //   contract: "auraB_rETH_STABLE_vault",
-      //   tokenOut: "cvxLDOETH",
-      // },
-      // {
-      //   type: TradeType.ConvexWithdrawAndUnwrap,
-      //   contract: "CONVEX_3CRYPTO_POOL",
-      //   tokenOut: "LDOETH",
-      // },
-    ],
+    lpActions: [],
+  },
+  auraBPT_rETH_ETH_vault: {
+    name: "Aura BPT_rETH_ETH vault",
+
+    symbol: "auraBPT_rETH_ETH_vault",
+    type: {
+      AllNetworks: TokenType.AURA_STAKED_TOKEN,
+    },
+    pool: "AURA_BPT_RETH_ETH_POOL",
+    pid: 0,
+    underlying: "BPT_rETH_ETH",
+    lpToken: "auraBPT_rETH_ETH",
+    lpActions: [],
+  },
+  auraBPT_WSTETH_ETH_vault: {
+    name: "Aura BPT_WSTETH_ETH vault",
+
+    symbol: "auraBPT_WSTETH_ETH_vault",
+    type: {
+      AllNetworks: TokenType.AURA_STAKED_TOKEN,
+    },
+    pool: "AURA_BPT_WSTETH_ETH_POOL",
+    pid: 0,
+    underlying: "BPT_WSTETH_ETH",
+    lpToken: "auraBPT_WSTETH_ETH",
+    lpActions: [],
   },
 };
 
