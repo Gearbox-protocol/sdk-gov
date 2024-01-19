@@ -1,3 +1,5 @@
+import { NetworkType } from "../core/chains";
+
 export enum TokenType {
   NO_TOKEN,
   NORMAL_TOKEN,
@@ -17,3 +19,5 @@ export enum TokenType {
   AURA_LP_TOKEN,
   AURA_STAKED_TOKEN,
 }
+
+export type TokenNetwork = NetworkType | "AllNetworks";

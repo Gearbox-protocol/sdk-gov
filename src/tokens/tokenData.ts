@@ -3,7 +3,8 @@ import { SupportedToken, tokenDataByNetwork } from "./token";
 
 export const connectors: Record<NetworkType, Array<SupportedToken>> = {
   Mainnet: ["WETH", "DAI", "USDC", "FRAX"],
-  Arbitrum: ["WETH", "DAI", "USDC", "WBTC"],
+  Arbitrum: ["WETH", "DAI", "USDC", "USDT"],
+  Optimism: ["WETH", "USDC", "USDT"],
 };
 
 export function getConnectors(networkType: NetworkType) {
