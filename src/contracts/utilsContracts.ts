@@ -34,7 +34,13 @@ export const CREATE2FACTORY: Record<NetworkType, string> = {
 export const MULTISIG: Record<NetworkType, string> = {
   Mainnet: "0xA7D5DDc1b8557914F158076b228AA91eF613f1D5",
   Arbitrum: NOT_DEPLOYED,
-  Optimism: NOT_DEPLOYED,
+  Optimism: "0x8bA8cd6D00919ceCc19D9B4A2c8669a524883C4c",
+};
+
+export const VETO_ADMIN: Record<NetworkType, string> = {
+  Mainnet: "0xbb803559B4D58b75E12dd74641AB955e8B0Df40E",
+  Arbitrum: NOT_DEPLOYED,
+  Optimism: "0x9744f76dc5239Eb4DC2CE8D5538e1BA89C8FA90f",
 };
 
 export const TREASURY: Record<NetworkType, string> = {
