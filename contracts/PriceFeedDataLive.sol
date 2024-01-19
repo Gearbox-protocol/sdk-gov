@@ -621,7 +621,7 @@ contract PriceFeedDataLive {
                 token: Tokens.rETH,
                 targetToBaseFeed: 0xb429DE60943a8e6DeD356dca2F93Cd31201D9ed0,
                 targetStalenessPeriod: 86520,
-                baseToUSDFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
+                baseToUSDFeed: 0x13e3Ee699D1909E989722E753853AE30b17e08c5,
                 baseStalenessPeriod: 1320
             })
         );

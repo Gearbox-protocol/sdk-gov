@@ -801,7 +801,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: "0xb429DE60943a8e6DeD356dca2F93Cd31201D9ed0",
-        baseToUsdPriceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+        baseToUsdPriceFeed: "0x13e3Ee699D1909E989722E753853AE30b17e08c5",
         targetStalenessPeriod: HOUR_24_BUFFERED_L2,
         baseStalenessPeriod: MINUTES_20_BUFFERED_L2,
         trusted: false,
@@ -1059,6 +1059,15 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  wstETHCRV: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["WETH", "wstETH"],
+        trusted: false,
+      },
+    },
+  },
   crvUSDETHCRV: {
     AllNetworks: {
       Main: {
@@ -1074,16 +1083,6 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CURVE_CRYPTO_ORACLE,
         assets: ["rETH", "WETH"],
-        trusted: false,
-      },
-    },
-  },
-
-  wstETHCRV: {
-    AllNetworks: {
-      Main: {
-        type: PriceFeedType.CURVE_2LP_ORACLE,
-        assets: ["WETH", "wstETH"],
         trusted: false,
       },
     },
