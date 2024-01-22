@@ -13,6 +13,12 @@ export const TIMELOCK: Record<NetworkType, string> = {
   Optimism: NOT_DEPLOYED,
 };
 
+export const GOVERNOR: Record<NetworkType, string> = {
+  Mainnet: "0x29B97F37B3E0C704bCFD785F5b7bBa2A0B7df2c7",
+  Arbitrum: NOT_DEPLOYED,
+  Optimism: NOT_DEPLOYED,
+};
+
 export const BLACKLIST_HELPER: Record<NetworkType, string> = {
   Mainnet: "0xFfbF344741654a1B9Ab1286Cf05A42f275F67839",
   Arbitrum: NOT_DEPLOYED,
@@ -46,5 +52,5 @@ export const VETO_ADMIN: Record<NetworkType, string> = {
 export const TREASURY: Record<NetworkType, string> = {
   Mainnet: "0x7b065fcb0760df0cea8cfd144e08554f3cea73d1",
   Arbitrum: NOT_DEPLOYED,
-  Optimism: NOT_DEPLOYED,
+  Optimism: "0x1ACc5BC353f23B901801f3Ba48e1E51a14263808",
 };
