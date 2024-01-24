@@ -31,7 +31,7 @@ export type ControllableParam =
   | "TOTAL_DEBT_LIMIT"
   | "WITHDRAW_FEE";
 
-type PolicyKey = PolicyGroup | ControllableParam;
+export type PolicyKey = PolicyGroup | ControllableParam;
 
 export const POLICY_KEYS: Record<ControllableParam, Array<PolicyKey>> = {
   EXPIRATION_DATE: ["CREDIT_MANAGER", "EXPIRATION_DATE"],
