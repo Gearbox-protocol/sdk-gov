@@ -151,7 +151,8 @@ ${creditManagers}`;
         CollateralTokenHuman,
         UniswapV2Pair,
         UniswapV3Pair,
-        BalancerPool
+        BalancerPool,
+        VelodromeV2Pool
     } from "@gearbox-protocol/core-v3/contracts/test/interfaces/ICreditConfig.sol";
     
     contract CONFIG_${this.id

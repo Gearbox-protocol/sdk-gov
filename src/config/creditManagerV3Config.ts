@@ -9,6 +9,7 @@ import {
   BalancerVaultConfig,
   UniV2Config,
   UniV3Config,
+  VelodromeV2Config,
 } from "./adapters";
 import { bnToContractPercentage, bnToContractString } from "./convert";
 import { IConfigurator, Message, ValidationResult } from "./iConfigurator";
@@ -221,6 +222,22 @@ ${contracts}
         return `${contractLine}
         UniswapV3Pair[] storage uv3p = cp.uniswapV3Pairs;
         ${pairs}`;
+      }
+      case "VELODROME_V2_ROUTER": {
+        const pools = ((a as VelodromeV2Config).allowed || [])
+          .map(
+            pool => `vv2p.push(VelodromeV2Pool({
+            token0: Tokens.${safeEnum(pool.token0)},
+            token1: Tokens.${safeEnum(pool.token1)},
+            stable: ${pool.stable},
+            factory: ${pool.factory}
+          }));`,
+          )
+          .join("\n");
+
+        return `${contractLine}
+          VelodromeV2Pool[] storage vv2p = cp.velodromeV2Pools;
+          ${pools}`;
       }
       default:
         return contractLine;
