@@ -509,7 +509,8 @@ class BindingsGenerator {
           contractParam.type === AdapterInterface.COMPOUND_V2_CERC20 ||
           contractParam.type === AdapterInterface.COMPOUND_V2_CETHER ||
           contractParam.type === AdapterInterface.ERC4626_VAULT ||
-          contractParam.type === AdapterInterface.BALANCER_VAULT,
+          contractParam.type === AdapterInterface.BALANCER_VAULT ||
+          contractParam.type === AdapterInterface.VELODROME_V2_ROUTER,
       )
       .map(
         ([contract, contractParam]) =>

@@ -59,6 +59,7 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "FRAXSWAP_ROUTER"
             })
         );
+
         contractDataByNetwork[1].push(
             ContractData({
                 id: Contracts.CURVE_3CRV_POOL,
@@ -536,6 +537,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.FRAXSWAP_ROUTER,
                 addr: 0xB9A55F455e46e8D717eEA5E47D2c449416A0437F,
                 name: "FRAXSWAP_ROUTER"
+            })
+        );
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.VELODROME_V2_ROUTER,
+                addr: 0xa062aE8A9c5e11aaA026fc2670B0D65cCc8B2858,
+                name: "VELODROME_V2_ROUTER"
             })
         );
         contractDataByNetwork[10].push(

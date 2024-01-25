@@ -11,7 +11,8 @@ export type AdapterDeployConfig =
   | DefaultAdapterConfig
   | UniV3Config
   | UniV2Config
-  | BalancerVaultConfig;
+  | BalancerVaultConfig
+  | VelodromeV2Config;
 
 export interface DefaultAdapterConfig {
   contract: SupportedContract;
@@ -46,8 +47,21 @@ export interface UniswapV3Pair extends UniswapV2Pair {
   fee: 100 | 500 | 3_000 | 10000;
 }
 
+export interface VelodromeV2Pool {
+  token0: SupportedToken;
+  token1: SupportedToken;
+  stable: boolean;
+  factory: string;
+}
+
+export interface VelodromeV2Config {
+  contract: "VELODROME_V2_ROUTER";
+  allowed: Array<VelodromeV2Pool>;
+}
+
 export type AdapterConfig =
   | DefaultAdapterConfig
   | UniV3Config
   | UniV2Config
-  | BalancerVaultConfig;
+  | BalancerVaultConfig
+  | VelodromeV2Config;

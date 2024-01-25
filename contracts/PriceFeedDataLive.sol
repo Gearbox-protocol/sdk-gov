@@ -1038,6 +1038,29 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ wstETHCRV ------------------------
+        curvePriceFeedsByNetwork[1].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.wstETHCRV,
+                assets: TokensLib.arrayOf(Tokens.WETH, Tokens.wstETH),
+                pool: Contracts.CURVE_ETH_WSTETH_GATEWAY
+            })
+        );
+        curvePriceFeedsByNetwork[42161].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.wstETHCRV,
+                assets: TokensLib.arrayOf(Tokens.WETH, Tokens.wstETH),
+                pool: Contracts.CURVE_ETH_WSTETH_GATEWAY
+            })
+        );
+        curvePriceFeedsByNetwork[10].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.wstETHCRV,
+                assets: TokensLib.arrayOf(Tokens.WETH, Tokens.wstETH),
+                pool: Contracts.CURVE_ETH_WSTETH_GATEWAY
+            })
+        );
+
         // ------------------------ crvUSDETHCRV ------------------------
         curveCryptoPriceFeedsByNetwork[1].push(
             CurvePriceFeedData({
@@ -1081,29 +1104,6 @@ contract PriceFeedDataLive {
                 lpToken: Tokens.rETH_f,
                 assets: TokensLib.arrayOf(Tokens.rETH, Tokens.WETH),
                 pool: Contracts.CURVE_RETH_ETH_POOL
-            })
-        );
-
-        // ------------------------ wstETHCRV ------------------------
-        curvePriceFeedsByNetwork[1].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.wstETHCRV,
-                assets: TokensLib.arrayOf(Tokens.WETH, Tokens.wstETH),
-                pool: Contracts.CURVE_ETH_WSTETH_GATEWAY
-            })
-        );
-        curvePriceFeedsByNetwork[42161].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.wstETHCRV,
-                assets: TokensLib.arrayOf(Tokens.WETH, Tokens.wstETH),
-                pool: Contracts.CURVE_ETH_WSTETH_GATEWAY
-            })
-        );
-        curvePriceFeedsByNetwork[10].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.wstETHCRV,
-                assets: TokensLib.arrayOf(Tokens.WETH, Tokens.wstETH),
-                pool: Contracts.CURVE_ETH_WSTETH_GATEWAY
             })
         );
 
