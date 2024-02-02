@@ -44,6 +44,8 @@ export type NormalToken =
   | "APE"
   | "rETH"
   | "AURA"
+  | "osETH"
+  | "weETH"
 
   // REDSTONE
   | "SHIB"
@@ -318,6 +320,16 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   AURA: {
     name: "Aura Token",
     symbol: "AURA",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  osETH: {
+    name: "Stakewise ETH",
+    symbol: "osETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  weETH: {
+    name: "ether.fi ETH",
+    symbol: "weETH",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };

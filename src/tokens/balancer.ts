@@ -12,7 +12,8 @@ export type BalancerLPToken =
   | "B_rETH_STABLE"
   | "BPT_rETH_ETH"
   | "BPT_WSTETH_ETH"
-  | "BPT_ROAD";
+  | "BPT_ROAD"
+  | "ECLP_wstETH_WETH";
 
 export type BalancerLpTokenData = {
   symbol: BalancerLPToken;
@@ -105,6 +106,17 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     underlying: ["WETH", "OP", "USDC"],
     poolId:
       "0x39965c9dab5448482cf7e002f583c812ceb53046000100000000000000000003",
+  },
+
+  ECLP_wstETH_WETH: {
+    name: "BeethovenX ECLP wstETH-ETH Pool",
+    symbol: "ECLP_wstETH_WETH",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["wstETH", "WETH"],
+    poolId:
+      "0x7ca75bdea9dede97f8b13c6641b768650cb837820002000000000000000000d5",
   },
 };
 

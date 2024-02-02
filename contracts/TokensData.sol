@@ -321,6 +321,22 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.osETH,
+                addr: 0xf1C9acDc66974dFB6dEcB12aA385b9cD01190E38,
+                symbol: "osETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.weETH,
+                addr: 0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee,
+                symbol: "weETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.wstETH,
                 addr: 0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0,
                 symbol: "wstETH",
@@ -1281,6 +1297,7 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
+
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: Tokens.wstETH,
@@ -1523,6 +1540,7 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
+
         tokenDataByNetwork[10].push(
             TokenData({
                 id: Tokens.wstETH,
@@ -1619,6 +1637,14 @@ contract TokensDataLive {
                 id: Tokens.BPT_ROAD,
                 addr: 0x39965c9dAb5448482Cf7e002F583c812Ceb53046,
                 symbol: "BPT_ROAD",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.ECLP_wstETH_WETH,
+                addr: 0x7Ca75bdEa9dEde97F8B13C6641B768650CB83782,
+                symbol: "ECLP_wstETH_WETH",
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
