@@ -112,3 +112,7 @@ export function fmtContract(address: string): string {
     ? `[${contractsByAddress[address.toLowerCase()]}]`
     : address;
 }
+
+export function numberWithCommas(x: number | bigint): string {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
