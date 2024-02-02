@@ -626,6 +626,50 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ osETH ------------------------
+        redStonePriceFeedsByNetwork[1].push(
+            RedStonePriceFeedData({
+                token: Tokens.osETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "osETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5
+            })
+        );
+
+        // ------------------------ weETH ------------------------
+        redStonePriceFeedsByNetwork[1].push(
+            RedStonePriceFeedData({
+                token: Tokens.weETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "weETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5
+            })
+        );
+
         // ------------------------ AURA ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.AURA}));
         zeroPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: Tokens.AURA}));
@@ -1605,6 +1649,11 @@ contract PriceFeedDataLive {
                 assets: TokensLib.arrayOf(Tokens.WETH, Tokens.OP, Tokens.USDC)
             })
         );
+
+        // ------------------------ ECLP_wstETH_WETH ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.ECLP_wstETH_WETH}));
+        zeroPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: Tokens.ECLP_wstETH_WETH}));
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: Tokens.ECLP_wstETH_WETH}));
 
         // ------------------------ dDAI ------------------------
 

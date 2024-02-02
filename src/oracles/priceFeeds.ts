@@ -809,6 +809,32 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  osETH: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "osETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+        trusted: false,
+      },
+    },
+  },
+
+  weETH: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "weETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+        trusted: false,
+      },
+    },
+  },
+
   AURA: {
     Mainnet: {
       Main: {
@@ -1495,6 +1521,14 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
         assets: ["WETH", "OP", "USDC"],
         trusted: false,
+      },
+    },
+  },
+  ECLP_wstETH_WETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: true,
       },
     },
   },
