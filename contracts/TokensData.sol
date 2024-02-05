@@ -857,6 +857,22 @@ contract TokensDataLive {
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.weETH_rETH,
+                addr: 0x05ff47AFADa98a98982113758878F9A8B9FddA0a,
+                symbol: "weETH_rETH",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.osETH_wETH_BPT,
+                addr: 0xDACf5Fa19b1f720111609043ac67A9818262850c,
+                symbol: "osETH_wETH_BPT",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
 
         tokenDataByNetwork[1].push(
             TokenData({

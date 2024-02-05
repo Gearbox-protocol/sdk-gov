@@ -737,11 +737,7 @@ export const priceFeedsByToken: Record<
   SHIB: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.REDSTONE_ORACLE,
-        dataServiceId: "redstone-primary-prod",
-        dataId: "SHIB",
-        stalenessPeriod: FOUR_MINUTES,
-        ...REDSTONE_SIGNERS,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -1493,6 +1489,24 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
         assets: ["rETH", "WETH"],
+        trusted: false,
+      },
+    },
+  },
+  weETH_rETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
+        assets: ["weETH", "rETH"],
+        trusted: false,
+      },
+    },
+  },
+  osETH_wETH_BPT: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
+        assets: ["WETH", "osETH"],
         trusted: false,
       },
     },

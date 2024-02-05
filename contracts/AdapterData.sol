@@ -41,7 +41,7 @@ struct ConvexBasePoolAdapter {
 contract AdapterData {
     SimpleAdapter[] simpleAdapters;
     CurveAdapter[] curveAdapters;
-    CurveStETHAdapter curveStEthAdapter;
+    CurveStETHAdapter[] curveStEthAdapters;
     CurveWrapper[] curveWrappers;
     ConvexBasePoolAdapter[] convexBasePoolAdapters;
 
@@ -297,16 +297,20 @@ contract AdapterData {
                 basePool: Contracts.NO_CONTRACT
             })
         );
-        curveStEthAdapter = CurveStETHAdapter({
-            curveETHGateway: Contracts.CURVE_STETH_GATEWAY,
-            adapterType: AdapterType.CURVE_V1_STECRV_POOL,
-            lpToken: Tokens.steCRV
-        });
-        curveStEthAdapter = CurveStETHAdapter({
-            curveETHGateway: Contracts.CURVE_ETH_WSTETH_GATEWAY,
-            adapterType: AdapterType.CURVE_V1_STECRV_POOL,
-            lpToken: Tokens.wstETHCRV
-        });
+        curveStEthAdapters.push(
+            CurveStETHAdapter({
+                curveETHGateway: Contracts.CURVE_STETH_GATEWAY,
+                adapterType: AdapterType.CURVE_V1_STECRV_POOL,
+                lpToken: Tokens.steCRV
+            })
+        );
+        curveStEthAdapters.push(
+            CurveStETHAdapter({
+                curveETHGateway: Contracts.CURVE_ETH_WSTETH_GATEWAY,
+                adapterType: AdapterType.CURVE_V1_STECRV_POOL,
+                lpToken: Tokens.wstETHCRV
+            })
+        );
         curveWrappers.push(
             CurveWrapper({
                 targetContract: Contracts.CURVE_SUSD_DEPOSIT,

@@ -562,10 +562,10 @@ class BindingsGenerator {
       )
       .map(([contract, contractParam]) => {
         if (contractParam.type === AdapterInterface.CURVE_V1_STECRV_POOL) {
-          return `curveStEthAdapter = CurveStETHAdapter({curveETHGateway:  Contracts.${contract},
+          return `curveStEthAdapters.push(CurveStETHAdapter({curveETHGateway:  Contracts.${contract},
         adapterType: AdapterType.${
           AdapterInterface[contractParam.type]
-        }, lpToken: ${this.tokensEnum(contractParam.lpToken)}});`;
+        }, lpToken: ${this.tokensEnum(contractParam.lpToken)}}));`;
         }
         return "";
       })
