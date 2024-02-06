@@ -116,6 +116,8 @@ enum Tokens {
     OHM_wstETH,
     USDC_DAI_USDT,
     B_rETH_STABLE,
+    weETH_rETH,
+    osETH_wETH_BPT,
     BPT_rETH_ETH,
     BPT_WSTETH_ETH,
     BPT_ROAD,

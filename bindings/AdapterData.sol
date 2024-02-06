@@ -41,7 +41,7 @@ struct ConvexBasePoolAdapter {
 contract AdapterData {
     SimpleAdapter[] simpleAdapters;
     CurveAdapter[] curveAdapters;
-    CurveStETHAdapter curveStEthAdapter;
+    CurveStETHAdapter[] curveStEthAdapters;
     CurveWrapper[] curveWrappers;
     ConvexBasePoolAdapter[] convexBasePoolAdapters;
 

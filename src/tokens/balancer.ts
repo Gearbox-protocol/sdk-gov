@@ -10,6 +10,8 @@ export type BalancerLPToken =
   | "OHM_wstETH"
   | "USDC_DAI_USDT"
   | "B_rETH_STABLE"
+  | "weETH_rETH"
+  | "osETH_wETH_BPT"
   | "BPT_rETH_ETH"
   | "BPT_WSTETH_ETH"
   | "BPT_ROAD"
@@ -73,6 +75,28 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     underlying: ["rETH", "WETH"],
     poolId:
       "0x1e19cf2d73a72ef1332c882f20534b6519be0276000200000000000000000112",
+  },
+
+  weETH_rETH: {
+    name: "Balancer weETH/rETH Stable pool",
+    symbol: "weETH_rETH",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["rETH", "weETH"],
+    poolId:
+      "0x05ff47afada98a98982113758878f9a8b9fdda0a000000000000000000000645",
+  },
+
+  osETH_wETH_BPT: {
+    name: "Balancer osETH/WETH Stable pool",
+    symbol: "osETH_wETH_BPT",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["WETH", "osETH"],
+    poolId:
+      "0xdacf5fa19b1f720111609043ac67a9818262850c000000000000000000000635",
   },
 
   BPT_rETH_ETH: {
