@@ -9,7 +9,7 @@ export interface PoolV3State {
   name: string;
   underlying: SupportedToken;
   withdrawalFee: number;
-  expectedLiquidityLimit: bigint;
+  totalDebtLimit: bigint;
   creditManagersAllowance: Record<string, bigint>;
 }
 
@@ -23,7 +23,7 @@ export class PoolV3Configurator implements IConfigurator {
       name: config.name,
       underlying: config.underlying,
       withdrawalFee: config.withdrawalFee,
-      expectedLiquidityLimit: config.expectedLiquidityLimit,
+      totalDebtLimit: config.totalDebtLimit,
       creditManagersAllowance: config.creditManagers.reduce((a, b, num) => {
         return {
           ...a,
@@ -51,15 +51,13 @@ string public constant name = "${this.state.name}";
 
 PoolV3DeployParams _poolParams = PoolV3DeployParams({withdrawalFee: ${
       this.state.withdrawalFee
-    }, expectedLiquidityLimit: ${bnToContractString(
-      this.state.expectedLiquidityLimit,
-    )}});
+    }, totalDebtLimit: ${bnToContractString(this.state.totalDebtLimit)}});
 `;
   }
 
   toString(): string {
     return `Withdrawal Fee: ${this.state.withdrawalFee},
-ExpectedLiquidityLimit: ${bnToContractString(this.state.expectedLiquidityLimit)}
+TotalDebtLimit: ${bnToContractString(this.state.totalDebtLimit)}
 CreditManagersAllowance:
 ${Object.entries(this.state.creditManagersAllowance)
   .map(([cm, allowance]) => `[${cm}]: ${bnToContractString(allowance)}`)

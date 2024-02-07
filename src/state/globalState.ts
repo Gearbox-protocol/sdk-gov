@@ -11,19 +11,19 @@ export class GlobalState {
   addressProviderV3State: AddressProviderV3State;
   aclState: ACLState;
   priceOracleV2State: PriceOracleV2State;
-  priceOracleV3State: PriceOracleV3State;
+  priceOracleV3State: PriceOracleV3State | undefined;
 
   poolsV1: Record<string, PoolV1State>;
   poolsV3: Record<string, PoolV3State>;
 
   creditManagersV2: Record<string, CreditManagerV2State>;
-  creditManagersV3: Record<string, CreditManagerV3State>;
+  creditManagersV3?: Record<string, CreditManagerV3State>;
 
   constructor(state: {
     addressProviderV3State: AddressProviderV3State;
     aclState: ACLState;
     priceOracleV2State: PriceOracleV2State;
-    priceOracleV3State: PriceOracleV3State;
+    priceOracleV3State: PriceOracleV3State | undefined;
     poolsV1: Record<string, PoolV1State>;
     poolsV3: Record<string, PoolV3State>;
     creditManagersV2: Record<string, CreditManagerV2State>;
@@ -50,29 +50,33 @@ export class GlobalState {
       priceOracleV2State: PriceOracleV2State.fromJson(
         JSON.stringify(parsed["priceOracleV2"]),
       ),
-      priceOracleV3State: PriceOracleV3State.fromJson(
-        JSON.stringify(parsed["priceOracleV3"]),
-      ),
+      priceOracleV3State: parsed["priceOracleV3"]
+        ? PriceOracleV3State.fromJson(JSON.stringify(parsed["priceOracleV3"]))
+        : undefined,
       poolsV1: PoolV1State.fromJson(JSON.stringify(parsed["poolsV1"])).reduce(
         (acc, pool) => ({ ...acc, [`Pool v1: ${pool.name}`]: pool }),
         {},
       ),
-      poolsV3: PoolV3State.fromJson(JSON.stringify(parsed["poolsV3"])).reduce(
-        (acc, pool) => ({ ...acc, [`Pool v3: ${pool.name}`]: pool }),
-        {},
-      ),
+      poolsV3: parsed["poolsV3"]
+        ? PoolV3State.fromJson(JSON.stringify(parsed["poolsV3"])).reduce(
+            (acc, pool) => ({ ...acc, [`Pool v3: ${pool.name}`]: pool }),
+            {},
+          )
+        : {},
       creditManagersV2: CreditManagerV2State.fromJson(
         JSON.stringify(parsed["creditManagersV2"]),
       ).reduce(
         (acc, cm) => ({ ...acc, [`CreditManager v2: ${cm.name}`]: cm }),
         {},
       ),
-      creditManagersV3: CreditManagerV3State.fromJson(
-        JSON.stringify(parsed["creditManagersV3"]),
-      ).reduce(
-        (acc, cm) => ({ ...acc, [`CreditManager v3: ${cm.name}`]: cm }),
-        {},
-      ),
+      creditManagersV3: parsed["poolsV3"]
+        ? CreditManagerV3State.fromJson(
+            JSON.stringify(parsed["creditManagersV3"]),
+          ).reduce(
+            (acc, cm) => ({ ...acc, [`CreditManager v3: ${cm.name}`]: cm }),
+            {},
+          )
+        : {},
     });
   }
 }

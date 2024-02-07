@@ -59,6 +59,7 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "FRAXSWAP_ROUTER"
             })
         );
+
         contractDataByNetwork[1].push(
             ContractData({
                 id: Contracts.CURVE_3CRV_POOL,
@@ -157,6 +158,7 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "CURVE_LDOETH_POOL"
             })
         );
+
         contractDataByNetwork[1].push(
             ContractData({
                 id: Contracts.CURVE_GEAR_POOL,
@@ -227,6 +229,14 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "YEARN_WBTC_VAULT"
             })
         );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.YEARN_USDT_VAULT,
+                addr: 0x3B27F92C0e212C671EA351827EDF93DB27cc0c65,
+                name: "YEARN_USDT_VAULT"
+            })
+        );
+
         contractDataByNetwork[1].push(
             ContractData({
                 id: Contracts.YEARN_CURVE_FRAX_VAULT,
@@ -355,6 +365,27 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CONVEX_CRVUSD_USDC_POOL,
+                addr: 0x44D8FaB7CD8b7877D5F79974c2F501aF6E65AbBA,
+                name: "CONVEX_CRVUSD_USDC_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CONVEX_CRVUSD_USDT_POOL,
+                addr: 0xD1DdB0a0815fD28932fBb194C84003683AF8a824,
+                name: "CONVEX_CRVUSD_USDT_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CONVEX_CRVUSD_FRAX_POOL,
+                addr: 0x3CfB4B26dc96B124D15A6f360503d028cF2a3c00,
+                name: "CONVEX_CRVUSD_FRAX_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CONVEX_TRI_CRV_POOL,
                 addr: 0xF956a46DbA1A0a567168db8655bc18E9050C7738,
                 name: "CONVEX_TRI_CRV_POOL"
@@ -374,6 +405,7 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "AURA_B_RETH_STABLE_POOL"
             })
         );
+
         contractDataByNetwork[1].push(
             ContractData({
                 id: Contracts.LIDO_STETH_GATEWAY,
@@ -485,6 +517,117 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
 
         contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.UNIVERSAL_ADAPTER,
+                addr: 0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC,
+                name: "UNIVERSAL_ADAPTER"
+            })
+        );
+
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.UNISWAP_V3_ROUTER,
+                addr: 0xE592427A0AEce92De3Edee1F18E0157C05861564,
+                name: "UNISWAP_V3_ROUTER"
+            })
+        );
+
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.FRAXSWAP_ROUTER,
+                addr: 0xB9A55F455e46e8D717eEA5E47D2c449416A0437F,
+                name: "FRAXSWAP_ROUTER"
+            })
+        );
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.VELODROME_V2_ROUTER,
+                addr: 0xa062aE8A9c5e11aaA026fc2670B0D65cCc8B2858,
+                name: "VELODROME_V2_ROUTER"
+            })
+        );
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.CURVE_3CRV_POOL,
+                addr: 0x1337BedC9D22ecbe766dF105c9623922A27963EC,
+                name: "CURVE_3CRV_POOL"
+            })
+        );
+
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.YEARN_DAI_VAULT,
+                addr: 0x65343F414FFD6c97b0f6add33d16F6845Ac22BAc,
+                name: "YEARN_DAI_VAULT"
+            })
+        );
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.YEARN_USDC_VAULT,
+                addr: 0xaD17A225074191d5c8a37B50FdA1AE278a2EE6A2,
+                name: "YEARN_USDC_VAULT"
+            })
+        );
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.YEARN_WETH_VAULT,
+                addr: 0x5B977577Eb8a480f63e11FC615D6753adB8652Ae,
+                name: "YEARN_WETH_VAULT"
+            })
+        );
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.YEARN_WBTC_VAULT,
+                addr: 0x7Edf16076e56FA4c111055fbA1fF5556b8757cFB,
+                name: "YEARN_WBTC_VAULT"
+            })
+        );
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.YEARN_USDT_VAULT,
+                addr: 0xFaee21D0f0Af88EE72BB6d68E54a90E6EC2616de,
+                name: "YEARN_USDT_VAULT"
+            })
+        );
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.YEARN_OP_VAULT,
+                addr: 0x7D2382b1f8Af621229d33464340541Db362B4907,
+                name: "YEARN_OP_VAULT"
+            })
+        );
+
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.AURA_BOOSTER,
+                addr: 0x98Ef32edd24e2c92525E59afc4475C1242a30184,
+                name: "AURA_BOOSTER"
+            })
+        );
+
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.AURA_BPT_RETH_ETH_POOL,
+                addr: 0x61ac9315a1Ae71633E95Fb35601B59180eC8d61d,
+                name: "AURA_BPT_RETH_ETH_POOL"
+            })
+        );
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.AURA_BPT_WSTETH_ETH_POOL,
+                addr: 0xe110b862E4D076596707892c0C5163BC183eb161,
+                name: "AURA_BPT_WSTETH_ETH_POOL"
+            })
+        );
+
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.BALANCER_VAULT,
+                addr: 0xBA12222222228d8Ba445958a75a0704d566BF2C8,
+                name: "BALANCER_VAULT"
+            })
+        );
+        contractDataByNetwork[10].push(
             ContractData({
                 id: Contracts.UNIVERSAL_ADAPTER,
                 addr: 0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC,

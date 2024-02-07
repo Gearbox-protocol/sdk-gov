@@ -142,6 +142,15 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.WLD,
+                addr: 0x163f8C2467924be0ae7B5347228CABF260318753,
+                symbol: "WLD",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.STETH,
                 addr: 0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84,
                 symbol: "STETH",
@@ -312,6 +321,22 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.osETH,
+                addr: 0xf1C9acDc66974dFB6dEcB12aA385b9cD01190E38,
+                symbol: "osETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.weETH,
+                addr: 0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee,
+                symbol: "weETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.wstETH,
                 addr: 0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0,
                 symbol: "wstETH",
@@ -422,6 +447,7 @@ contract TokensDataLive {
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
         );
+
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.FRAX3CRV,
@@ -568,6 +594,30 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.cvxcrvUSDUSDC,
+                addr: 0x75A2F59eC37c18962c53b0244D60B53f749DF25E,
+                symbol: "cvxcrvUSDUSDC",
+                tokenType: TokenType.CONVEX_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.cvxcrvUSDUSDT,
+                addr: 0x939e4C11E391a28CD81248163f3a2e595f12CE5E,
+                symbol: "cvxcrvUSDUSDT",
+                tokenType: TokenType.CONVEX_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.cvxcrvUSDFRAX,
+                addr: 0x01CcDe1dFb6c84e1Cc13a6Bf777aa2160ABd11BA,
+                symbol: "cvxcrvUSDFRAX",
+                tokenType: TokenType.CONVEX_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.cvxcrvUSDETHCRV,
                 addr: 0xa11a2c04D62b4A2324Fc857Fa14762Ad94751b4F,
                 symbol: "cvxcrvUSDETHCRV",
@@ -680,6 +730,30 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.stkcvxcrvUSDUSDC,
+                addr: 0xDb4217B9C8DB788Aa3871d45B4BE6ac5D1FF8C49,
+                symbol: "stkcvxcrvUSDUSDC",
+                tokenType: TokenType.CONVEX_STAKED_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.stkcvxcrvUSDUSDT,
+                addr: 0x5C5e5117E26374870c80a5FA04c3f75a821440D6,
+                symbol: "stkcvxcrvUSDUSDT",
+                tokenType: TokenType.CONVEX_STAKED_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.stkcvxcrvUSDFRAX,
+                addr: 0x7376AD488AB2bd8dF7665d619A4148f0E5094813,
+                symbol: "stkcvxcrvUSDFRAX",
+                tokenType: TokenType.CONVEX_STAKED_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.stkcvxcrvUSDETHCRV,
                 addr: 0x0Bf1626d4925F8A872801968be11c052862AC2D3,
                 symbol: "stkcvxcrvUSDETHCRV",
@@ -718,6 +792,15 @@ contract TokensDataLive {
                 tokenType: TokenType.YEARN_ON_NORMAL_TOKEN
             })
         );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.yvUSDT,
+                addr: 0x3B27F92C0e212C671EA351827EDF93DB27cc0c65,
+                symbol: "yvUSDT",
+                tokenType: TokenType.YEARN_ON_NORMAL_TOKEN
+            })
+        );
+
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.yvCurve_stETH,
@@ -774,6 +857,23 @@ contract TokensDataLive {
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.weETH_rETH,
+                addr: 0x05ff47AFADa98a98982113758878F9A8B9FddA0a,
+                symbol: "weETH_rETH",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.osETH_wETH_BPT,
+                addr: 0xDACf5Fa19b1f720111609043ac67A9818262850c,
+                symbol: "osETH_wETH_BPT",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.aDAI,
@@ -879,6 +979,7 @@ contract TokensDataLive {
                 tokenType: TokenType.AURA_LP_TOKEN
             })
         );
+
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.auraB_rETH_STABLE_vault,
@@ -887,6 +988,7 @@ contract TokensDataLive {
                 tokenType: TokenType.AURA_STAKED_TOKEN
             })
         );
+
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.dDAI,
@@ -932,6 +1034,54 @@ contract TokensDataLive {
                 id: Tokens.dFRAX,
                 addr: 0x8A1112AFef7F4FC7c066a77AABBc01b3Fff31D47,
                 symbol: "dFRAX",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.dUSDCV3,
+                addr: 0xda00000035fef4082F78dEF6A8903bee419FbF8E,
+                symbol: "dUSDCV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.dWBTCV3,
+                addr: 0xda00010eDA646913F273E10E7A5d1F659242757d,
+                symbol: "dWBTCV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.dWETHV3,
+                addr: 0xda0002859B2d05F66a753d8241fCDE8623f26F4f,
+                symbol: "dWETHV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.sdUSDCV3,
+                addr: 0x9ef444a6d7F4A5adcd68FD5329aA5240C90E14d2,
+                symbol: "sdUSDCV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.sdWBTCV3,
+                addr: 0xA8cE662E45E825DAF178DA2c8d5Fae97696A788A,
+                symbol: "sdWBTCV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.sdWETHV3,
+                addr: 0x0418fEB7d0B25C411EB77cD654305d29FcbFf685,
+                symbol: "sdWETHV3",
                 tokenType: TokenType.DIESEL_LP_TOKEN
             })
         );
@@ -1003,7 +1153,7 @@ contract TokensDataLive {
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: Tokens.USDC,
-                addr: 0xaf88d065e77c8cC2239327C5EDb3A432268e5831,
+                addr: 0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8,
                 symbol: "USDC",
                 tokenType: TokenType.NORMAL_TOKEN
             })
@@ -1163,12 +1313,13 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
+
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: Tokens.wstETH,
                 addr: 0x5979D7b546E38E414F7E9822514be443A4800529,
                 symbol: "wstETH",
-                tokenType: TokenType.WRAPPED_TOKEN
+                tokenType: TokenType.NORMAL_TOKEN
             })
         );
 
@@ -1211,6 +1362,340 @@ contract TokensDataLive {
                 addr: 0xe50fA9b3c56FfB159cB0FCA61F5c9D750e8128c8,
                 symbol: "aWETH",
                 tokenType: TokenType.AAVE_V2_A_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.AAVE,
+                addr: 0x76FB31fb4af56892A25e32cFC43De717950c9278,
+                symbol: "AAVE",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.CRV,
+                addr: 0x0994206dfE8De6Ec6920FF4D779B0d950605Fb53,
+                symbol: "CRV",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.DAI,
+                addr: 0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1,
+                symbol: "DAI",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.LINK,
+                addr: 0x350a791Bfc2C21F9Ed5d10980Dad2e2638ffa7f6,
+                symbol: "LINK",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.SNX,
+                addr: 0x8700dAec35aF8Ff88c16BdF0418774CB3D7599B4,
+                symbol: "SNX",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.UNI,
+                addr: 0x6fd9d7AD17242c41f7131d257212c54A0e816691,
+                symbol: "UNI",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.USDC,
+                addr: 0x7F5c764cBc14f9669B88837ca1490cCa17c31607,
+                symbol: "USDC",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.USDT,
+                addr: 0x94b008aA00579c1307B0EF2c499aD98a8ce58e58,
+                symbol: "USDT",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.WBTC,
+                addr: 0x68f180fcCe6836688e9084f035309E29Bf0A2095,
+                symbol: "WBTC",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.WETH,
+                addr: 0x4200000000000000000000000000000000000006,
+                symbol: "WETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.YFI,
+                addr: 0x9046D36440290FfDE54FE0DD84Db8b1CfEE9107B,
+                symbol: "YFI",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.WLD,
+                addr: 0xdC6fF44d5d932Cbd77B52E5612Ba0529DC6226F1,
+                symbol: "WLD",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.OP,
+                addr: 0x4200000000000000000000000000000000000042,
+                symbol: "OP",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.FRAX,
+                addr: 0x2E3D870790dC77A83DD1d18184Acc7439A53f475,
+                symbol: "FRAX",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.FXS,
+                addr: 0x67CCEA5bb16181E7b4109c9c2143c24a1c2205Be,
+                symbol: "FXS",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.LDO,
+                addr: 0xFdb794692724153d1488CcdBE0C56c252596735F,
+                symbol: "LDO",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.LUSD,
+                addr: 0xc40F949F8a4e094D1b49a23ea9241D289B7b2819,
+                symbol: "LUSD",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.sUSD,
+                addr: 0x8c6f28f2F1A3C87F0f938b96d27520d9751ec8d9,
+                symbol: "sUSD",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.MIM,
+                addr: 0xB153FB3d196A8eB25522705560ac152eeEc57901,
+                symbol: "MIM",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.BAL,
+                addr: 0xFE8B128bA8C78aabC59d4c64cEE7fF28e9379921,
+                symbol: "BAL",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.RPL,
+                addr: 0xC81D1F0EB955B0c020E5d5b264E1FF72c14d1401,
+                symbol: "RPL",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.rETH,
+                addr: 0x9Bcef72be871e61ED4fBbc7630889beE758eb81D,
+                symbol: "rETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.AURA,
+                addr: 0x1509706a6c66CA549ff0cB464de88231DDBe213B,
+                symbol: "AURA",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.wstETH,
+                addr: 0x1F32b1c2345538c0c6f582fCB022739c4A194Ebb,
+                symbol: "wstETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens._3Crv,
+                addr: 0x1337BedC9D22ecbe766dF105c9623922A27963EC,
+                symbol: "3Crv",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.wstETHCRV,
+                addr: 0xEfDE221f306152971D8e9f181bFe998447975810,
+                symbol: "wstETHCRV",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.yvDAI,
+                addr: 0x65343F414FFD6c97b0f6add33d16F6845Ac22BAc,
+                symbol: "yvDAI",
+                tokenType: TokenType.YEARN_ON_NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.yvUSDC,
+                addr: 0xaD17A225074191d5c8a37B50FdA1AE278a2EE6A2,
+                symbol: "yvUSDC",
+                tokenType: TokenType.YEARN_ON_NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.yvWETH,
+                addr: 0x5B977577Eb8a480f63e11FC615D6753adB8652Ae,
+                symbol: "yvWETH",
+                tokenType: TokenType.YEARN_ON_NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.yvWBTC,
+                addr: 0x7Edf16076e56FA4c111055fbA1fF5556b8757cFB,
+                symbol: "yvWBTC",
+                tokenType: TokenType.YEARN_ON_NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.yvUSDT,
+                addr: 0xFaee21D0f0Af88EE72BB6d68E54a90E6EC2616de,
+                symbol: "yvUSDT",
+                tokenType: TokenType.YEARN_ON_NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.yvOP,
+                addr: 0x7D2382b1f8Af621229d33464340541Db362B4907,
+                symbol: "yvOP",
+                tokenType: TokenType.YEARN_ON_NORMAL_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.BPT_rETH_ETH,
+                addr: 0x4Fd63966879300caFafBB35D157dC5229278Ed23,
+                symbol: "BPT_rETH_ETH",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.BPT_WSTETH_ETH,
+                addr: 0x7B50775383d3D6f0215A8F290f2C9e2eEBBEceb2,
+                symbol: "BPT_WSTETH_ETH",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.BPT_ROAD,
+                addr: 0x39965c9dAb5448482Cf7e002F583c812Ceb53046,
+                symbol: "BPT_ROAD",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.ECLP_wstETH_WETH,
+                addr: 0x7Ca75bdEa9dEde97F8B13C6641B768650CB83782,
+                symbol: "ECLP_wstETH_WETH",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.auraBPT_rETH_ETH,
+                addr: 0x094C6846Fb2801b4753182ADFac336AAE8030A46,
+                symbol: "auraBPT_rETH_ETH",
+                tokenType: TokenType.AURA_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.auraBPT_WSTETH_ETH,
+                addr: 0x4c7E79c921144eBf7eBdbf0D3156bf192cDBe5f5,
+                symbol: "auraBPT_WSTETH_ETH",
+                tokenType: TokenType.AURA_LP_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.auraBPT_rETH_ETH_vault,
+                addr: 0x61ac9315a1Ae71633E95Fb35601B59180eC8d61d,
+                symbol: "auraBPT_rETH_ETH_vault",
+                tokenType: TokenType.AURA_STAKED_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.auraBPT_WSTETH_ETH_vault,
+                addr: 0xe110b862E4D076596707892c0C5163BC183eb161,
+                symbol: "auraBPT_WSTETH_ETH_vault",
+                tokenType: TokenType.AURA_STAKED_TOKEN
             })
         );
     }

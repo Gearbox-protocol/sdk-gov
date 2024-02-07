@@ -40,13 +40,16 @@ export type CurvePoolContract =
   | "CURVE_CRVUSD_USDT_POOL"
   | "CURVE_CRVUSD_FRAX_POOL"
   | "CURVE_TRI_CRV_POOL"
-  | "CURVE_RETH_ETH_POOL";
+  | "CURVE_RETH_ETH_POOL"
+  | "CURVE_ETH_WSTETH_GATEWAY";
 
 export type YearnVaultContract =
   | "YEARN_DAI_VAULT"
   | "YEARN_USDC_VAULT"
   | "YEARN_WETH_VAULT"
   | "YEARN_WBTC_VAULT"
+  | "YEARN_USDT_VAULT"
+  | "YEARN_OP_VAULT"
   | "YEARN_CURVE_FRAX_VAULT"
   | "YEARN_CURVE_STETH_VAULT";
 
@@ -66,9 +69,15 @@ export type ConvexPoolContract =
   | "CONVEX_CVXETH_POOL"
   | "CONVEX_3CRYPTO_POOL"
   | "CONVEX_LDOETH_POOL"
+  | "CONVEX_CRVUSD_USDC_POOL"
+  | "CONVEX_CRVUSD_USDT_POOL"
+  | "CONVEX_CRVUSD_FRAX_POOL"
   | "CONVEX_TRI_CRV_POOL";
 
-export type AuraPoolContract = "AURA_B_RETH_STABLE_POOL";
+export type AuraPoolContract =
+  | "AURA_B_RETH_STABLE_POOL"
+  | "AURA_BPT_RETH_ETH_POOL"
+  | "AURA_BPT_WSTETH_ETH_POOL";
 
 export type AaveV2TokenWrapperContract =
   | "AAVE_V2_DAI_TOKEN_WRAPPER"
@@ -101,7 +110,8 @@ export type SupportedContract =
   | "AAVE_V2_LENDING_POOL"
   | AaveV2TokenWrapperContract
   | CompoundV2PoolContract
-  | ERC4626VaultContract;
+  | ERC4626VaultContract
+  | "VELODROME_V2_ROUTER";
 
 export const contractsByNetwork: Record<
   NetworkType,
@@ -112,6 +122,7 @@ export const contractsByNetwork: Record<
     UNISWAP_V3_ROUTER: "0xE592427A0AEce92De3Edee1F18E0157C05861564",
     SUSHISWAP_ROUTER: "0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F",
     FRAXSWAP_ROUTER: "0xC14d550632db8592D1243Edc8B95b0Ad06703867",
+    VELODROME_V2_ROUTER: NOT_DEPLOYED,
 
     // CURVE
     CURVE_3CRV_POOL: "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7", // SEPARATE TOKEN
@@ -128,6 +139,7 @@ export const contractsByNetwork: Record<
     CURVE_CVXETH_POOL: "0xB576491F1E6e5E62f1d8F26062Ee822B40B0E0d4",
     CURVE_3CRYPTO_POOL: tokenDataByNetwork.Mainnet.crvUSDTWBTCWETH,
     CURVE_LDOETH_POOL: "0x9409280DC1e6D33AB7A8C6EC03e5763FB61772B5",
+    CURVE_ETH_WSTETH_GATEWAY: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: "0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2",
 
@@ -143,6 +155,8 @@ export const contractsByNetwork: Record<
     YEARN_USDC_VAULT: tokenDataByNetwork.Mainnet.yvUSDC,
     YEARN_WETH_VAULT: tokenDataByNetwork.Mainnet.yvWETH,
     YEARN_WBTC_VAULT: tokenDataByNetwork.Mainnet.yvWBTC,
+    YEARN_USDT_VAULT: tokenDataByNetwork.Mainnet.yvUSDT,
+    YEARN_OP_VAULT: tokenDataByNetwork.Mainnet.yvOP,
     YEARN_CURVE_FRAX_VAULT: tokenDataByNetwork.Mainnet.yvCurve_FRAX,
     YEARN_CURVE_STETH_VAULT: tokenDataByNetwork.Mainnet.yvCurve_stETH,
 
@@ -165,10 +179,17 @@ export const contractsByNetwork: Record<
     CONVEX_CVXETH_POOL: "0xb1Fb0BA0676A1fFA83882c7F4805408bA232C1fA",
     CONVEX_3CRYPTO_POOL: "0xb05262D4aaAA38D0Af4AaB244D446ebDb5afd4A7",
     CONVEX_LDOETH_POOL: "0x8CA990E954611E5E3d2cc51C013fCC372c8c1D38",
+    CONVEX_CRVUSD_USDC_POOL: "0x44D8FaB7CD8b7877D5F79974c2F501aF6E65AbBA",
+    CONVEX_CRVUSD_USDT_POOL: "0xD1DdB0a0815fD28932fBb194C84003683AF8a824",
+    CONVEX_CRVUSD_FRAX_POOL: "0x3CfB4B26dc96B124D15A6f360503d028cF2a3c00",
     CONVEX_TRI_CRV_POOL: "0xF956a46DbA1A0a567168db8655bc18E9050C7738",
 
+    // AURA
     AURA_BOOSTER: "0xA57b8d98dAE62B26Ec3bcC4a365338157060B234",
     AURA_B_RETH_STABLE_POOL: tokenDataByNetwork.Mainnet.auraB_rETH_STABLE_vault,
+    AURA_BPT_RETH_ETH_POOL: tokenDataByNetwork.Mainnet.auraBPT_rETH_ETH_vault,
+    AURA_BPT_WSTETH_ETH_POOL:
+      tokenDataByNetwork.Mainnet.auraBPT_WSTETH_ETH_vault,
 
     // LIDO
     LIDO_STETH_GATEWAY: "0x6f4b4aB5142787c05b7aB9A9692A0f46b997C29D",
@@ -211,6 +232,7 @@ export const contractsByNetwork: Record<
     UNISWAP_V3_ROUTER: NOT_DEPLOYED,
     SUSHISWAP_ROUTER: NOT_DEPLOYED,
     FRAXSWAP_ROUTER: NOT_DEPLOYED,
+    VELODROME_V2_ROUTER: NOT_DEPLOYED,
 
     // CURVE
     CURVE_3CRV_POOL: NOT_DEPLOYED,
@@ -227,6 +249,7 @@ export const contractsByNetwork: Record<
     CURVE_CVXETH_POOL: NOT_DEPLOYED,
     CURVE_3CRYPTO_POOL: NOT_DEPLOYED,
     CURVE_LDOETH_POOL: NOT_DEPLOYED,
+    CURVE_ETH_WSTETH_GATEWAY: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -242,6 +265,8 @@ export const contractsByNetwork: Record<
     YEARN_USDC_VAULT: tokenDataByNetwork.Arbitrum.yvUSDC,
     YEARN_WETH_VAULT: tokenDataByNetwork.Arbitrum.yvWETH,
     YEARN_WBTC_VAULT: tokenDataByNetwork.Arbitrum.yvWBTC,
+    YEARN_USDT_VAULT: tokenDataByNetwork.Arbitrum.yvUSDT,
+    YEARN_OP_VAULT: tokenDataByNetwork.Arbitrum.yvOP,
     YEARN_CURVE_FRAX_VAULT: tokenDataByNetwork.Arbitrum.yvCurve_FRAX,
     YEARN_CURVE_STETH_VAULT: tokenDataByNetwork.Arbitrum.yvCurve_stETH,
 
@@ -264,10 +289,17 @@ export const contractsByNetwork: Record<
     CONVEX_CVXETH_POOL: NOT_DEPLOYED,
     CONVEX_3CRYPTO_POOL: NOT_DEPLOYED,
     CONVEX_LDOETH_POOL: NOT_DEPLOYED,
+    CONVEX_CRVUSD_USDC_POOL: NOT_DEPLOYED,
+    CONVEX_CRVUSD_USDT_POOL: NOT_DEPLOYED,
+    CONVEX_CRVUSD_FRAX_POOL: NOT_DEPLOYED,
     CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
 
     AURA_BOOSTER: NOT_DEPLOYED,
-    AURA_B_RETH_STABLE_POOL: NOT_DEPLOYED,
+    AURA_B_RETH_STABLE_POOL:
+      tokenDataByNetwork.Arbitrum.auraB_rETH_STABLE_vault,
+    AURA_BPT_RETH_ETH_POOL: tokenDataByNetwork.Arbitrum.auraBPT_rETH_ETH_vault,
+    AURA_BPT_WSTETH_ETH_POOL:
+      tokenDataByNetwork.Arbitrum.auraBPT_WSTETH_ETH_vault,
 
     // LIDO
     LIDO_STETH_GATEWAY: NOT_DEPLOYED,
@@ -275,6 +307,116 @@ export const contractsByNetwork: Record<
 
     // BALANCER
     BALANCER_VAULT: NOT_DEPLOYED,
+
+    // GEARBOX
+    UNIVERSAL_ADAPTER: "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC",
+
+    // AAVE
+    AAVE_V2_LENDING_POOL: NOT_DEPLOYED,
+
+    AAVE_V2_DAI_TOKEN_WRAPPER: tokenDataByNetwork.Arbitrum.waDAI,
+    AAVE_V2_USDC_TOKEN_WRAPPER: tokenDataByNetwork.Arbitrum.waUSDC,
+    AAVE_V2_USDT_TOKEN_WRAPPER: tokenDataByNetwork.Arbitrum.waUSDT,
+    AAVE_V2_WETH_TOKEN_WRAPPER: tokenDataByNetwork.Arbitrum.waWETH,
+
+    COMPOUND_V2_DAI_POOL: tokenDataByNetwork.Arbitrum.cDAI,
+    COMPOUND_V2_USDC_POOL: tokenDataByNetwork.Arbitrum.cUSDC,
+    COMPOUND_V2_USDT_POOL: tokenDataByNetwork.Arbitrum.cUSDT,
+    COMPOUND_V2_LINK_POOL: tokenDataByNetwork.Arbitrum.cLINK,
+    COMPOUND_V2_ETH_GATEWAY: NOT_DEPLOYED,
+
+    FLUX_USDC_POOL: tokenDataByNetwork.Arbitrum.fUSDC,
+  },
+  //
+  //
+  //
+  //
+  //  OPTIMISM
+  //
+  //
+  //
+  //
+  Optimism: {
+    UNISWAP_V2_ROUTER: NOT_DEPLOYED,
+    UNISWAP_V3_ROUTER: "0xE592427A0AEce92De3Edee1F18E0157C05861564", // UNVERIFIED!
+    SUSHISWAP_ROUTER: NOT_DEPLOYED,
+    FRAXSWAP_ROUTER: "0xB9A55F455e46e8D717eEA5E47D2c449416A0437F", // UNVERIFIED!
+    VELODROME_V2_ROUTER: "0xa062aE8A9c5e11aaA026fc2670B0D65cCc8B2858",
+
+    // CURVE
+    CURVE_3CRV_POOL: "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
+    CURVE_FRAX_USDC_POOL: NOT_DEPLOYED,
+    CURVE_STETH_GATEWAY: NOT_DEPLOYED,
+    CURVE_FRAX_POOL: tokenDataByNetwork.Arbitrum.FRAX3CRV,
+    CURVE_LUSD_POOL: tokenDataByNetwork.Arbitrum.LUSD3CRV,
+    CURVE_SUSD_POOL: NOT_DEPLOYED,
+    CURVE_SUSD_DEPOSIT: NOT_DEPLOYED,
+    CURVE_GUSD_POOL: NOT_DEPLOYED,
+    CURVE_MIM_POOL: tokenDataByNetwork.Arbitrum.MIM_3LP3CRV,
+    CURVE_OHMFRAXBP_POOL: NOT_DEPLOYED,
+    CURVE_CRVETH_POOL: NOT_DEPLOYED,
+    CURVE_CVXETH_POOL: NOT_DEPLOYED,
+    CURVE_3CRYPTO_POOL: NOT_DEPLOYED,
+    CURVE_LDOETH_POOL: NOT_DEPLOYED,
+    CURVE_ETH_WSTETH_GATEWAY: NOT_DEPLOYED,
+
+    CURVE_GEAR_POOL: NOT_DEPLOYED,
+
+    CURVE_CRVUSD_USDC_POOL: tokenDataByNetwork.Optimism.crvUSDUSDC,
+    CURVE_CRVUSD_USDT_POOL: tokenDataByNetwork.Optimism.crvUSDUSDT,
+    CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Optimism.crvUSDFRAX,
+    CURVE_TRI_CRV_POOL: tokenDataByNetwork.Optimism.crvUSDETHCRV,
+
+    CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
+
+    // YEARN
+    YEARN_DAI_VAULT: tokenDataByNetwork.Optimism.yvDAI,
+    YEARN_USDC_VAULT: tokenDataByNetwork.Optimism.yvUSDC,
+    YEARN_WETH_VAULT: tokenDataByNetwork.Optimism.yvWETH,
+    YEARN_WBTC_VAULT: tokenDataByNetwork.Optimism.yvWBTC,
+    YEARN_USDT_VAULT: tokenDataByNetwork.Optimism.yvUSDT,
+    YEARN_OP_VAULT: tokenDataByNetwork.Optimism.yvOP,
+    YEARN_CURVE_FRAX_VAULT: tokenDataByNetwork.Optimism.yvCurve_FRAX,
+    YEARN_CURVE_STETH_VAULT: tokenDataByNetwork.Optimism.yvCurve_stETH,
+
+    /// ERC4626
+    MAKER_DSR_VAULT: tokenDataByNetwork.Optimism.sDAI,
+    YIELD_ETH_VAULT: tokenDataByNetwork.Optimism.YieldETH,
+
+    // CONVEX
+    CONVEX_BOOSTER: NOT_DEPLOYED,
+    CONVEX_3CRV_POOL: NOT_DEPLOYED,
+    CONVEX_FRAX_USDC_POOL: NOT_DEPLOYED,
+    CONVEX_STECRV_POOL: NOT_DEPLOYED,
+    CONVEX_SUSD_POOL: NOT_DEPLOYED,
+    CONVEX_FRAX3CRV_POOL: NOT_DEPLOYED,
+    CONVEX_LUSD3CRV_POOL: NOT_DEPLOYED,
+    CONVEX_GUSD_POOL: NOT_DEPLOYED,
+    CONVEX_OHMFRAXBP_POOL: NOT_DEPLOYED,
+    CONVEX_MIM3CRV_POOL: NOT_DEPLOYED,
+    CONVEX_CRVETH_POOL: NOT_DEPLOYED,
+    CONVEX_CVXETH_POOL: NOT_DEPLOYED,
+    CONVEX_3CRYPTO_POOL: NOT_DEPLOYED,
+    CONVEX_LDOETH_POOL: NOT_DEPLOYED,
+    CONVEX_CRVUSD_USDC_POOL: NOT_DEPLOYED,
+    CONVEX_CRVUSD_USDT_POOL: NOT_DEPLOYED,
+    CONVEX_CRVUSD_FRAX_POOL: NOT_DEPLOYED,
+    CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
+
+    // AURA
+    AURA_BOOSTER: "0x98Ef32edd24e2c92525E59afc4475C1242a30184",
+    AURA_B_RETH_STABLE_POOL:
+      tokenDataByNetwork.Optimism.auraB_rETH_STABLE_vault,
+    AURA_BPT_RETH_ETH_POOL: tokenDataByNetwork.Optimism.auraBPT_rETH_ETH_vault,
+    AURA_BPT_WSTETH_ETH_POOL:
+      tokenDataByNetwork.Optimism.auraBPT_WSTETH_ETH_vault,
+
+    // LIDO
+    LIDO_STETH_GATEWAY: NOT_DEPLOYED,
+    LIDO_WSTETH: NOT_DEPLOYED,
+
+    // BALANCER
+    BALANCER_VAULT: "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
 
     // GEARBOX
     UNIVERSAL_ADAPTER: "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC",
@@ -308,6 +450,11 @@ type UniswapV2Params = {
   type: AdapterInterface.UNISWAP_V2_ROUTER;
 } & BaseContractParams;
 
+type VelodromeV2Params = {
+  protocol: Protocols.Velodrome;
+  type: AdapterInterface.VELODROME_V2_ROUTER;
+} & BaseContractParams;
+
 type UniswapV3Params = {
   protocol: Protocols.Uniswap;
   type: AdapterInterface.UNISWAP_V3_ROUTER;
@@ -334,8 +481,8 @@ export type CurveSteCRVPoolParams = {
   version: number;
 
   pool: Record<NetworkType, string>;
-  tokens: ["WETH", "STETH"];
-  lpToken: "steCRV";
+  tokens: ["WETH", "STETH"] | ["WETH", "wstETH"];
+  lpToken: "steCRV" | "wstETHCRV";
 } & BaseContractParams;
 
 export type CurveGEARPoolParams = {
@@ -441,6 +588,7 @@ export type CompoundV2Params = {
 export type ContractParams =
   | UniswapV2Params
   | UniswapV3Params
+  | VelodromeV2Params
   | CurveParams
   | CurveSteCRVPoolParams
   | CurveGEARPoolParams
@@ -483,6 +631,11 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.UNISWAP_V2_ROUTER,
   },
 
+  VELODROME_V2_ROUTER: {
+    name: "Velodrome V2",
+    protocol: Protocols.Velodrome,
+    type: AdapterInterface.VELODROME_V2_ROUTER,
+  },
   CURVE_3CRV_POOL: {
     name: "Curve 3Pool",
     protocol: Protocols.Curve,
@@ -507,9 +660,23 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     pool: {
       Mainnet: "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
       Arbitrum: NOT_DEPLOYED, // CURVE_STECRV_POOL
+      Optimism: NOT_DEPLOYED,
     },
     tokens: ["WETH", "STETH"],
     lpToken: "steCRV",
+  },
+  CURVE_ETH_WSTETH_GATEWAY: {
+    name: "Curve wstETH Gateway",
+    protocol: Protocols.Curve,
+    type: AdapterInterface.CURVE_V1_STECRV_POOL,
+    version: 10,
+    pool: {
+      Mainnet: NOT_DEPLOYED,
+      Arbitrum: NOT_DEPLOYED,
+      Optimism: "0xb90b9b1f91a01ea22a182cd84c1e22222e39b415",
+    },
+    tokens: ["WETH", "STETH"],
+    lpToken: "wstETHCRV",
   },
   CURVE_GEAR_POOL: {
     name: "Curve GEAR",
@@ -519,6 +686,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     pool: {
       Mainnet: "0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2",
       Arbitrum: NOT_DEPLOYED,
+      Optimism: NOT_DEPLOYED,
     },
     tokens: ["GEAR", "WETH"],
     lpToken: "GEAR",
@@ -622,25 +790,25 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
   CURVE_CRVUSD_USDC_POOL: {
     name: "Curve crvUSDUSDC",
     protocol: Protocols.Curve,
-    version: 20,
+    version: 10,
     type: AdapterInterface.CURVE_V1_2ASSETS,
     lpToken: "crvUSDUSDC",
     tokens: ["crvUSD", "USDC"],
   },
 
   CURVE_CRVUSD_USDT_POOL: {
-    name: "Curve crvUSDUSDC",
+    name: "Curve crvUSDUSDT",
     protocol: Protocols.Curve,
-    version: 20,
+    version: 10,
     type: AdapterInterface.CURVE_V1_2ASSETS,
     lpToken: "crvUSDUSDT",
     tokens: ["crvUSD", "USDT"],
   },
 
   CURVE_CRVUSD_FRAX_POOL: {
-    name: "Curve crvUSDUSDC",
+    name: "Curve crvUSDFRAX",
     protocol: Protocols.Curve,
-    version: 20,
+    version: 10,
     type: AdapterInterface.CURVE_V1_2ASSETS,
     lpToken: "crvUSDFRAX",
     tokens: ["crvUSD", "FRAX"],
@@ -687,6 +855,18 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     protocol: Protocols.Yearn,
     type: AdapterInterface.YEARN_V2,
     shareToken: "yvWBTC",
+  },
+  YEARN_USDT_VAULT: {
+    name: "Yearn USDT",
+    protocol: Protocols.Yearn,
+    type: AdapterInterface.YEARN_V2,
+    shareToken: "yvUSDT",
+  },
+  YEARN_OP_VAULT: {
+    name: "Yearn OP",
+    protocol: Protocols.Yearn,
+    type: AdapterInterface.YEARN_V2,
+    shareToken: "yvOP",
   },
   YEARN_CURVE_FRAX_VAULT: {
     name: "Yearn Curve FRAX",
@@ -750,6 +930,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
         poolAddress: {
           Mainnet: "0x81fCe3E10D12Da6c7266a1A169c4C96813435263",
           Arbitrum: NOT_DEPLOYED, // CONVEX_SUSD_POOL_EXTRA_SNX
+          Optimism: NOT_DEPLOYED,
         },
       },
     ],
@@ -765,6 +946,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
         poolAddress: {
           Mainnet: "0x008aEa5036b819B4FEAEd10b2190FBb3954981E8",
           Arbitrum: NOT_DEPLOYED, // CONVEX_STECRV_POOL_EXTRA_LDO
+          Optimism: NOT_DEPLOYED,
         },
       },
     ],
@@ -780,6 +962,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
         poolAddress: {
           Mainnet: "0xcDEC6714eB482f28f4889A0c122868450CDBF0b0",
           Arbitrum: NOT_DEPLOYED, // CONVEX_FRAX3CRV_POOL_EXTRA_FXS
+          Optimism: NOT_DEPLOYED,
         },
       },
     ],
@@ -795,6 +978,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
         poolAddress: {
           Mainnet: "0x55d59b791f06dc519B176791c4E037E8Cf2f6361",
           Arbitrum: NOT_DEPLOYED, // CONVEX_LUSD3CRV_POOL_EXTRA_LQTY
+          Optimism: NOT_DEPLOYED,
         },
       },
     ],
@@ -810,6 +994,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
         poolAddress: {
           Mainnet: "0x69a92f1656cd2e193797546cFe2EaF32EACcf6f7",
           Arbitrum: NOT_DEPLOYED,
+          Optimism: NOT_DEPLOYED,
         },
       },
     ],
@@ -833,6 +1018,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
         poolAddress: {
           Mainnet: "0xE1eCBB4181378E2346EAC90Eb5606c01Aa08f052",
           Arbitrum: NOT_DEPLOYED,
+          Optimism: NOT_DEPLOYED,
         },
       },
     ],
@@ -848,6 +1034,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
         poolAddress: {
           Mainnet: "0x834B9147Fd23bF131644aBC6e557Daf99C5cDa15",
           Arbitrum: NOT_DEPLOYED,
+          Optimism: NOT_DEPLOYED,
         },
       },
     ],
@@ -870,6 +1057,55 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
         poolAddress: {
           Mainnet: "0x95e6092449a0f3946A5a0f308Ead4adcff244E2B",
           Arbitrum: NOT_DEPLOYED,
+          Optimism: NOT_DEPLOYED,
+        },
+      },
+    ],
+  },
+  CONVEX_CRVUSD_USDC_POOL: {
+    name: "Convex crvUSDUSDC",
+    protocol: Protocols.Convex,
+    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
+    stakedToken: "stkcvxcrvUSDUSDC",
+    extraRewards: [
+      {
+        rewardToken: "CVX",
+        poolAddress: {
+          Mainnet: "0xac183F7cd62d5b04Fa40362EB67249A80339541A",
+          Arbitrum: NOT_DEPLOYED,
+          Optimism: NOT_DEPLOYED,
+        },
+      },
+    ],
+  },
+  CONVEX_CRVUSD_USDT_POOL: {
+    name: "Convex crvUSDUSDT",
+    protocol: Protocols.Convex,
+    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
+    stakedToken: "stkcvxcrvUSDUSDT",
+    extraRewards: [
+      {
+        rewardToken: "CVX",
+        poolAddress: {
+          Mainnet: "0xD490178B568b07c6DDbDfBBfaF9043772209Ec01",
+          Arbitrum: NOT_DEPLOYED,
+          Optimism: NOT_DEPLOYED,
+        },
+      },
+    ],
+  },
+  CONVEX_CRVUSD_FRAX_POOL: {
+    name: "Convex crvUSDFRAX",
+    protocol: Protocols.Convex,
+    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
+    stakedToken: "stkcvxcrvUSDFRAX",
+    extraRewards: [
+      {
+        rewardToken: "CVX",
+        poolAddress: {
+          Mainnet: "0x749cFfCb53e008841d7387ba37f9284BDeCEe0A9",
+          Arbitrum: NOT_DEPLOYED,
+          Optimism: NOT_DEPLOYED,
         },
       },
     ],
@@ -885,6 +1121,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
         poolAddress: {
           Mainnet: "0x01eC96F1eEBF470E3fEAEEfB843fbC63424e668d",
           Arbitrum: NOT_DEPLOYED,
+          Optimism: NOT_DEPLOYED,
         },
       },
     ],
@@ -901,7 +1138,66 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     protocol: Protocols.Aura,
     type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
     stakedToken: "auraB_rETH_STABLE_vault",
-    extraRewards: [],
+    extraRewards: [
+      {
+        rewardToken: "AURA",
+        poolAddress: {
+          Mainnet: "0xf66a72886749c96b18526E8E124cC2e18b7c72D2",
+          Arbitrum: NOT_DEPLOYED,
+          Optimism: NOT_DEPLOYED,
+        },
+      },
+    ],
+  },
+
+  AURA_BPT_RETH_ETH_POOL: {
+    name: "BeethovenX rETH-ETH Pool Aura Deposit",
+    protocol: Protocols.Aura,
+    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
+    stakedToken: "auraBPT_rETH_ETH_vault",
+    extraRewards: [
+      {
+        rewardToken: "OP",
+        poolAddress: {
+          Mainnet: NOT_DEPLOYED,
+          Arbitrum: NOT_DEPLOYED,
+          Optimism: "0x0A22Ae9D9D149C14f6c15A235e715bB6C1Cfa739",
+        },
+      },
+      {
+        rewardToken: "AURA",
+        poolAddress: {
+          Mainnet: NOT_DEPLOYED,
+          Arbitrum: NOT_DEPLOYED,
+          Optimism: "0x81673Cdd00c2839440f31575cCFa5B6ca4a87B2B",
+        },
+      },
+    ],
+  },
+
+  AURA_BPT_WSTETH_ETH_POOL: {
+    name: "BeethovenX wstETH-ETH Pool Aura Deposit",
+    protocol: Protocols.Aura,
+    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
+    stakedToken: "auraBPT_WSTETH_ETH_vault",
+    extraRewards: [
+      {
+        rewardToken: "OP",
+        poolAddress: {
+          Mainnet: NOT_DEPLOYED,
+          Arbitrum: NOT_DEPLOYED,
+          Optimism: "0x903d716fe68e7e091eCC43AA93c0F8cfD7e7BC0a",
+        },
+      },
+      {
+        rewardToken: "AURA",
+        poolAddress: {
+          Mainnet: NOT_DEPLOYED,
+          Arbitrum: NOT_DEPLOYED,
+          Optimism: "0xb0709c230C06BE6e2A84b2Ba877094EB9a4fA014",
+        },
+      },
+    ],
   },
 
   LIDO_STETH_GATEWAY: {
@@ -911,6 +1207,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     oracle: {
       Mainnet: "0x442af784A788A5bd6F42A01Ebe9F287a871243fb",
       Arbitrum: NOT_DEPLOYED, // LIDO_ORACLE
+      Optimism: NOT_DEPLOYED,
     },
     lpToken: "steCRV",
   },
@@ -934,6 +1231,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     queries: {
       Mainnet: "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5",
       Arbitrum: "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5",
+      Optimism: "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5",
     },
   },
   AAVE_V2_LENDING_POOL: {

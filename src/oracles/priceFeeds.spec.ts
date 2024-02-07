@@ -50,23 +50,31 @@ class PriceFeedsSuite {
   ): KeyedCall<AggregatorV3InterfaceInterface>[] {
     const calls: KeyedCall<AggregatorV3InterfaceInterface>[] = [];
     for (const [symb, data] of Object.entries(priceFeedsByToken)) {
-      calls.push(...this.getCallsForToken(c, symb as SupportedToken, data));
+      const dataForNetwork = "AllNetworks" in data ? data.AllNetworks : data[c];
+      if (dataForNetwork) {
+        calls.push(
+          ...this.getCallsForToken(symb as SupportedToken, dataForNetwork.Main),
+        );
+
+        if (dataForNetwork.Reserve) {
+          calls.push(
+            ...this.getCallsForToken(
+              symb as SupportedToken,
+              dataForNetwork.Reserve,
+            ),
+          );
+        }
+      }
     }
     return calls;
   }
 
   private getCallsForToken(
-    network: NetworkType,
     token: SupportedToken,
     data: PriceFeedData,
   ): KeyedCall<AggregatorV3InterfaceInterface>[] {
     const calls: KeyedCall<AggregatorV3InterfaceInterface>[] = [];
     switch (data.type) {
-      case PriceFeedType.NETWORK_DEPENDENT:
-        calls.push(
-          ...this.getCallsForToken(network, token, data.feeds[network]),
-        );
-        break;
       case PriceFeedType.CHAINLINK_ORACLE:
         if (data.address.startsWith("0x")) {
           calls.push({

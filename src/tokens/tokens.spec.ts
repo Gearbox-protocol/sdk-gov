@@ -49,6 +49,18 @@ const EXCEPTIONS_IN_SYMBOLS: Record<NetworkType, Record<string, string>> = {
     [tokenDataByNetwork.Arbitrum.aUSDT]: "aArbUSDT",
     [tokenDataByNetwork.Arbitrum.aWETH]: "aArbWETH",
   },
+  Optimism: {
+    [tokenDataByNetwork.Optimism["3Crv"]]: "3CRV",
+    [tokenDataByNetwork.Optimism["BPT_ROAD"]]: "BPT-ROAD",
+    [tokenDataByNetwork.Optimism["BPT_rETH_ETH"]]: "BPT-rETH-ETH",
+    [tokenDataByNetwork.Optimism["auraBPT_rETH_ETH"]]: "auraBPT-rETH-ETH",
+    [tokenDataByNetwork.Optimism["auraBPT_rETH_ETH_vault"]]:
+      "auraBPT-rETH-ETH-vault",
+    [tokenDataByNetwork.Optimism["BPT_WSTETH_ETH"]]: "BPT-WSTETH-ETH",
+    [tokenDataByNetwork.Optimism["auraBPT_WSTETH_ETH"]]: "auraBPT-WSTETH-ETH",
+    [tokenDataByNetwork.Optimism["auraBPT_WSTETH_ETH_vault"]]:
+      "auraBPT-WSTETH-ETH-vault",
+  },
 };
 
 class TokenSuite {

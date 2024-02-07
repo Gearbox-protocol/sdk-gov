@@ -9,6 +9,7 @@ import {
   BalancerVaultConfig,
   UniV2Config,
   UniV3Config,
+  VelodromeV2Config,
 } from "./adapters";
 import { bnToContractPercentage, bnToContractString } from "./convert";
 import { IConfigurator, Message, ValidationResult } from "./iConfigurator";
@@ -25,6 +26,11 @@ export interface CreditManagerV3State {
   expiredAt: number;
   minDebt: bigint;
   maxDebt: bigint;
+  feeInterest: number;
+  feeLiquidation: number;
+  liquidationPremium: number;
+  feeLiquidationExpired: number;
+  liquidationPremiumExpired: number;
   collateralTokens: Array<CollateralTokenValue>;
   adapters: Array<AdapterConfig>;
   poolLimit: bigint;
@@ -47,6 +53,11 @@ export class CreditManagerV3Configurator implements IConfigurator {
       expiredAt: config.expirationDate ?? 0,
       minDebt: config.minDebt,
       maxDebt: config.maxDebt,
+      feeInterest: config.feeInterest,
+      feeLiquidation: config.feeLiquidation,
+      liquidationPremium: config.liquidationPremium,
+      feeLiquidationExpired: config.feeLiquidationExpired,
+      liquidationPremiumExpired: config.liquidationPremiumExpired,
       poolLimit: config.poolLimit,
       collateralTokens: config.collateralTokens.map(t => ({
         token: t.token,
@@ -86,6 +97,11 @@ export class CreditManagerV3Configurator implements IConfigurator {
 degenNft: ${this.state.degenNft.toString()};
 minDebt: ${formatBN(this.state.minDebt, decimals[this.underlying])})};
 maxDebt: ${formatBN(this.state.maxDebt, decimals[this.underlying])})};
+feeInterest: ${this.state.feeInterest};
+feeLiquidation: ${this.state.feeLiquidation};
+liquidationPremium: ${this.state.liquidationPremium};
+feeLiquidationExpired: ${this.state.feeLiquidationExpired};
+liquidationPremiumExpired: ${this.state.liquidationPremiumExpired};
 collateralTokens: 
 ${collateralTokens};
 adapters: 
@@ -118,6 +134,11 @@ CreditManagerV3DeployParams storage cp = _creditManagers.push();
 
 cp.minDebt = ${bnToContractString(this.state.minDebt)};
 cp.maxDebt = ${bnToContractString(this.state.maxDebt)};
+cp.feeInterest = ${this.state.feeInterest};
+cp.feeLiquidation = ${this.state.feeLiquidation};
+cp.liquidationPremium = ${this.state.liquidationPremium};
+cp.feeLiquidationExpired = ${this.state.feeLiquidationExpired};
+cp.liquidationPremiumExpired = ${this.state.liquidationPremiumExpired};
 cp.whitelisted = ${this.state.degenNft};
 cp.expirable = ${this.state.expirable};
 cp.skipInit = false;
@@ -201,6 +222,22 @@ ${contracts}
         return `${contractLine}
         UniswapV3Pair[] storage uv3p = cp.uniswapV3Pairs;
         ${pairs}`;
+      }
+      case "VELODROME_V2_ROUTER": {
+        const pools = ((a as VelodromeV2Config).allowed || [])
+          .map(
+            pool => `vv2p.push(VelodromeV2Pool({
+            token0: Tokens.${safeEnum(pool.token0)},
+            token1: Tokens.${safeEnum(pool.token1)},
+            stable: ${pool.stable},
+            factory: ${pool.factory}
+          }));`,
+          )
+          .join("\n");
+
+        return `${contractLine}
+          VelodromeV2Pool[] storage vv2p = cp.velodromeV2Pools;
+          ${pools}`;
       }
       default:
         return contractLine;

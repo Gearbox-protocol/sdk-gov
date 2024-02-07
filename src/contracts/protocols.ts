@@ -14,4 +14,5 @@ export enum Protocols {
   MakerDSR,
   Sommelier,
   Fraxswap,
+  Velodrome,
 }

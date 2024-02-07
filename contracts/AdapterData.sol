@@ -41,7 +41,7 @@ struct ConvexBasePoolAdapter {
 contract AdapterData {
     SimpleAdapter[] simpleAdapters;
     CurveAdapter[] curveAdapters;
-    CurveStETHAdapter curveStEthAdapter;
+    CurveStETHAdapter[] curveStEthAdapters;
     CurveWrapper[] curveWrappers;
     ConvexBasePoolAdapter[] convexBasePoolAdapters;
 
@@ -59,6 +59,9 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.FRAXSWAP_ROUTER, adapterType: AdapterType.UNISWAP_V2_ROUTER})
         );
         simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.VELODROME_V2_ROUTER, adapterType: AdapterType.VELODROME_V2_ROUTER})
+        );
+        simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.YEARN_DAI_VAULT, adapterType: AdapterType.YEARN_V2})
         );
         simpleAdapters.push(
@@ -69,6 +72,12 @@ contract AdapterData {
         );
         simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.YEARN_WBTC_VAULT, adapterType: AdapterType.YEARN_V2})
+        );
+        simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.YEARN_USDT_VAULT, adapterType: AdapterType.YEARN_V2})
+        );
+        simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.YEARN_OP_VAULT, adapterType: AdapterType.YEARN_V2})
         );
         simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.YEARN_CURVE_FRAX_VAULT, adapterType: AdapterType.YEARN_V2})
@@ -288,11 +297,20 @@ contract AdapterData {
                 basePool: Contracts.NO_CONTRACT
             })
         );
-        curveStEthAdapter = CurveStETHAdapter({
-            curveETHGateway: Contracts.CURVE_STETH_GATEWAY,
-            adapterType: AdapterType.CURVE_V1_STECRV_POOL,
-            lpToken: Tokens.steCRV
-        });
+        curveStEthAdapters.push(
+            CurveStETHAdapter({
+                curveETHGateway: Contracts.CURVE_STETH_GATEWAY,
+                adapterType: AdapterType.CURVE_V1_STECRV_POOL,
+                lpToken: Tokens.steCRV
+            })
+        );
+        curveStEthAdapters.push(
+            CurveStETHAdapter({
+                curveETHGateway: Contracts.CURVE_ETH_WSTETH_GATEWAY,
+                adapterType: AdapterType.CURVE_V1_STECRV_POOL,
+                lpToken: Tokens.wstETHCRV
+            })
+        );
         curveWrappers.push(
             CurveWrapper({
                 targetContract: Contracts.CURVE_SUSD_DEPOSIT,
@@ -394,6 +412,27 @@ contract AdapterData {
         );
         convexBasePoolAdapters.push(
             ConvexBasePoolAdapter({
+                targetContract: Contracts.CONVEX_CRVUSD_USDC_POOL,
+                adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
+                stakedToken: Tokens.stkcvxcrvUSDUSDC
+            })
+        );
+        convexBasePoolAdapters.push(
+            ConvexBasePoolAdapter({
+                targetContract: Contracts.CONVEX_CRVUSD_USDT_POOL,
+                adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
+                stakedToken: Tokens.stkcvxcrvUSDUSDT
+            })
+        );
+        convexBasePoolAdapters.push(
+            ConvexBasePoolAdapter({
+                targetContract: Contracts.CONVEX_CRVUSD_FRAX_POOL,
+                adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
+                stakedToken: Tokens.stkcvxcrvUSDFRAX
+            })
+        );
+        convexBasePoolAdapters.push(
+            ConvexBasePoolAdapter({
                 targetContract: Contracts.CONVEX_TRI_CRV_POOL,
                 adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
                 stakedToken: Tokens.stkcvxcrvUSDETHCRV
@@ -404,6 +443,20 @@ contract AdapterData {
                 targetContract: Contracts.AURA_B_RETH_STABLE_POOL,
                 adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
                 stakedToken: Tokens.auraB_rETH_STABLE_vault
+            })
+        );
+        convexBasePoolAdapters.push(
+            ConvexBasePoolAdapter({
+                targetContract: Contracts.AURA_BPT_RETH_ETH_POOL,
+                adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
+                stakedToken: Tokens.auraBPT_rETH_ETH_vault
+            })
+        );
+        convexBasePoolAdapters.push(
+            ConvexBasePoolAdapter({
+                targetContract: Contracts.AURA_BPT_WSTETH_ETH_POOL,
+                adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
+                stakedToken: Tokens.auraBPT_WSTETH_ETH_vault
             })
         );
     }

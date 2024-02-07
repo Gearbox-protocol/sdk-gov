@@ -75,7 +75,9 @@ class BindingsGenerator {
             return `tokenDataByNetwork[${chainId}].push(TokenData({ id: ${this.tokensEnum(
               t,
             )}, addr: ${addr}, symbol: "${t}", tokenType: TokenType.${
-              TokenType[supportedTokens[t].type]
+              "AllNetworks" in supportedTokens[t].type
+                ? TokenType[supportedTokens[t].type["AllNetworks"] as TokenType]
+                : TokenType[supportedTokens[t].type[chain] as TokenType]
             } }));`;
           } else return "";
         })
@@ -106,11 +108,16 @@ class BindingsGenerator {
 
       for (const chain of supportedChains) {
         const chainId = CHAINS[chain];
-        const priceFeedData = this.getPriceFeedData(
-          token,
-          pf.type === PriceFeedType.NETWORK_DEPENDENT ? pf.feeds[chain] : pf,
-          chainId,
-        );
+
+        const pfData =
+          "AllNetworks" in pf ? pf["AllNetworks"]?.Main : pf[chain]?.Main;
+
+        if (!pfData) {
+          console.warn(`No price feed data for ${token} on ${chain}`);
+          continue;
+        }
+
+        const priceFeedData = this.getPriceFeedData(token, pfData, chainId);
         if (priceFeedData) {
           data += priceFeedData;
         } else {
@@ -388,7 +395,7 @@ class BindingsGenerator {
       return `crvUSDPriceFeedsByNetwork[${chainId}].push(CrvUsdPriceFeedData({ token: ${this.tokensEnum(
         token,
       )}, 
-      pool: Contracts.${priceFeedData.pool},
+      pool: Contracts.${(lpTokens[token as LPTokens] as CurveLPTokenData).pool},
       underlying: ${this.tokensEnum(
         priceFeedData.underlying as SupportedToken,
       )}}));`;
@@ -502,7 +509,8 @@ class BindingsGenerator {
           contractParam.type === AdapterInterface.COMPOUND_V2_CERC20 ||
           contractParam.type === AdapterInterface.COMPOUND_V2_CETHER ||
           contractParam.type === AdapterInterface.ERC4626_VAULT ||
-          contractParam.type === AdapterInterface.BALANCER_VAULT,
+          contractParam.type === AdapterInterface.BALANCER_VAULT ||
+          contractParam.type === AdapterInterface.VELODROME_V2_ROUTER,
       )
       .map(
         ([contract, contractParam]) =>
@@ -528,8 +536,11 @@ class BindingsGenerator {
           let basePool: SupportedContract | "NO_CONTRACT" = "NO_CONTRACT";
           for (let coin of contractParam.tokens) {
             const coinParams = supportedTokens[coin];
-            if (coinParams.type === TokenType.CURVE_LP_TOKEN) {
-              basePool = coinParams.pool;
+            if (
+              (coinParams.type["AllNetworks"] as TokenType) ===
+              TokenType.CURVE_LP_TOKEN
+            ) {
+              basePool = (coinParams as CurveLPTokenData).pool;
             }
           }
           return `curveAdapters.push(CurveAdapter({targetContract:  Contracts.${contract},
@@ -551,10 +562,10 @@ class BindingsGenerator {
       )
       .map(([contract, contractParam]) => {
         if (contractParam.type === AdapterInterface.CURVE_V1_STECRV_POOL) {
-          return `curveStEthAdapter = CurveStETHAdapter({curveETHGateway:  Contracts.${contract},
+          return `curveStEthAdapters.push(CurveStETHAdapter({curveETHGateway:  Contracts.${contract},
         adapterType: AdapterType.${
           AdapterInterface[contractParam.type]
-        }, lpToken: ${this.tokensEnum(contractParam.lpToken)}});`;
+        }, lpToken: ${this.tokensEnum(contractParam.lpToken)}}));`;
         }
         return "";
       })
