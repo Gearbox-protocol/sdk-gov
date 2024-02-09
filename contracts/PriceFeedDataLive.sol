@@ -656,6 +656,11 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: Tokens.AURA}));
         zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: Tokens.AURA}));
 
+        // ------------------------ SWISE ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.SWISE}));
+        zeroPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: Tokens.SWISE}));
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: Tokens.SWISE}));
+
         // ------------------------ yvDAI ------------------------
         yearnPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.yvDAI}));
         yearnPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: Tokens.yvDAI}));
@@ -1903,6 +1908,50 @@ contract PriceFeedDataLive {
         );
         theSamePriceFeedsByNetwork[10].push(
             TheSamePriceFeedData({token: Tokens.auraB_rETH_STABLE_vault, tokenHasSamePriceFeed: Tokens.B_rETH_STABLE})
+        );
+
+        // ------------------------ auraweETH_rETH ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.auraweETH_rETH, tokenHasSamePriceFeed: Tokens.weETH_rETH})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.auraweETH_rETH, tokenHasSamePriceFeed: Tokens.weETH_rETH})
+        );
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({token: Tokens.auraweETH_rETH, tokenHasSamePriceFeed: Tokens.weETH_rETH})
+        );
+
+        // ------------------------ auraweETH_rETH_vault ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.auraweETH_rETH_vault, tokenHasSamePriceFeed: Tokens.weETH_rETH})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.auraweETH_rETH_vault, tokenHasSamePriceFeed: Tokens.weETH_rETH})
+        );
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({token: Tokens.auraweETH_rETH_vault, tokenHasSamePriceFeed: Tokens.weETH_rETH})
+        );
+
+        // ------------------------ auraosETH_wETH_BPT ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.auraosETH_wETH_BPT, tokenHasSamePriceFeed: Tokens.osETH_wETH_BPT})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.auraosETH_wETH_BPT, tokenHasSamePriceFeed: Tokens.osETH_wETH_BPT})
+        );
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({token: Tokens.auraosETH_wETH_BPT, tokenHasSamePriceFeed: Tokens.osETH_wETH_BPT})
+        );
+
+        // ------------------------ auraosETH_wETH_BPT_vault ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.auraosETH_wETH_BPT_vault, tokenHasSamePriceFeed: Tokens.osETH_wETH_BPT})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.auraosETH_wETH_BPT_vault, tokenHasSamePriceFeed: Tokens.osETH_wETH_BPT})
+        );
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({token: Tokens.auraosETH_wETH_BPT_vault, tokenHasSamePriceFeed: Tokens.osETH_wETH_BPT})
         );
 
         // ------------------------ auraBPT_rETH_ETH ------------------------

@@ -400,6 +400,20 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.AURA_WEETH_RETH_POOL,
+                addr: 0x07A319A023859BbD49CC9C38ee891c3EA9283Cc5,
+                name: "AURA_WEETH_RETH_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.AURA_OSETH_WETH_POOL,
+                addr: 0x5F032f15B4e910252EDaDdB899f7201E89C8cD6b,
+                name: "AURA_OSETH_WETH_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.AURA_B_RETH_STABLE_POOL,
                 addr: 0xDd1fE5AD401D4777cE89959b7fa587e569Bf125D,
                 name: "AURA_B_RETH_STABLE_POOL"
