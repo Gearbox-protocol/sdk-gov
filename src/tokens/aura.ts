@@ -11,12 +11,16 @@ import { TokenNetwork, TokenType } from "./tokenType";
 export type AuraLPToken =
   | "auraB_rETH_STABLE"
   | "auraBPT_rETH_ETH"
-  | "auraBPT_WSTETH_ETH";
+  | "auraBPT_WSTETH_ETH"
+  | "auraweETH_rETH"
+  | "auraosETH_wETH_BPT";
 
 export type AuraStakedToken =
   | "auraB_rETH_STABLE_vault"
   | "auraBPT_rETH_ETH_vault"
-  | "auraBPT_WSTETH_ETH_vault";
+  | "auraBPT_WSTETH_ETH_vault"
+  | "auraweETH_rETH_vault"
+  | "auraosETH_wETH_BPT_vault";
 
 type BaseAuraToken = {
   pool: AuraPoolContract;
@@ -59,6 +63,54 @@ export const auraLpTokens: Record<AuraLPToken, AuraLPTokenData> = {
         type: TradeType.AuraStake,
         contract: "AURA_B_RETH_STABLE_POOL",
         tokenOut: "auraB_rETH_STABLE_vault",
+      },
+    ],
+  },
+  auraosETH_wETH_BPT: {
+    name: "Balancer osETH-WETH Stable Pool Aura Deposit",
+
+    symbol: "auraosETH_wETH_BPT",
+    type: {
+      AllNetworks: TokenType.AURA_LP_TOKEN,
+    },
+    pool: "AURA_OSETH_WETH_POOL",
+    pid: 182,
+    underlying: "osETH_wETH_BPT",
+    stakedToken: "auraosETH_wETH_BPT_vault",
+    lpActions: [
+      {
+        type: TradeType.AuraWithdrawLP,
+        contract: "AURA_BOOSTER",
+        tokenOut: "osETH_wETH_BPT",
+      },
+      {
+        type: TradeType.AuraStake,
+        contract: "AURA_B_RETH_STABLE_POOL",
+        tokenOut: "auraosETH_wETH_BPT_vault",
+      },
+    ],
+  },
+  auraweETH_rETH: {
+    name: "Balancer weETH-rETH Stable Pool Aura Deposit",
+
+    symbol: "auraweETH_rETH",
+    type: {
+      AllNetworks: TokenType.AURA_LP_TOKEN,
+    },
+    pool: "AURA_WEETH_RETH_POOL",
+    pid: 179,
+    underlying: "weETH_rETH",
+    stakedToken: "auraweETH_rETH_vault",
+    lpActions: [
+      {
+        type: TradeType.AuraWithdrawLP,
+        contract: "AURA_BOOSTER",
+        tokenOut: "weETH_rETH",
+      },
+      {
+        type: TradeType.AuraStake,
+        contract: "AURA_B_RETH_STABLE_POOL",
+        tokenOut: "auraweETH_rETH_vault",
       },
     ],
   },
@@ -124,6 +176,32 @@ export const auraStakedTokens: Record<AuraStakedToken, AuraStakedTokenData> = {
     pid: 149,
     underlying: "B_rETH_STABLE",
     lpToken: "auraB_rETH_STABLE",
+    lpActions: [],
+  },
+  auraosETH_wETH_BPT_vault: {
+    name: "Balancer osETH-WETH Stable Pool Aura Deposit Vault",
+
+    symbol: "auraosETH_wETH_BPT_vault",
+    type: {
+      AllNetworks: TokenType.AURA_STAKED_TOKEN,
+    },
+    pool: "AURA_OSETH_WETH_POOL",
+    pid: 182,
+    underlying: "osETH_wETH_BPT",
+    lpToken: "auraosETH_wETH_BPT",
+    lpActions: [],
+  },
+  auraweETH_rETH_vault: {
+    name: "Balancer weETH-rETH Stable Pool Aura Deposit Vault",
+
+    symbol: "auraweETH_rETH_vault",
+    type: {
+      AllNetworks: TokenType.AURA_STAKED_TOKEN,
+    },
+    pool: "AURA_WEETH_RETH_POOL",
+    pid: 182,
+    underlying: "weETH_rETH",
+    lpToken: "auraweETH_rETH",
     lpActions: [],
   },
   auraBPT_rETH_ETH_vault: {

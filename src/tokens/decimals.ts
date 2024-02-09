@@ -37,6 +37,7 @@ export const decimals: Record<SupportedToken, number> = {
   RPL: 18,
   APE: 18,
   AURA: 18,
+  SWISE: 18,
   WLD: 18,
   OP: 18,
   osETH: 18,
@@ -133,6 +134,10 @@ export const decimals: Record<SupportedToken, number> = {
 
   auraB_rETH_STABLE: 18,
   auraB_rETH_STABLE_vault: 18,
+  auraweETH_rETH: 18,
+  auraweETH_rETH_vault: 18,
+  auraosETH_wETH_BPT: 18,
+  auraosETH_wETH_BPT_vault: 18,
   auraBPT_rETH_ETH: 18,
   auraBPT_rETH_ETH_vault: 18,
   auraBPT_WSTETH_ETH: 18,

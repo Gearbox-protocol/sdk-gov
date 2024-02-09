@@ -337,6 +337,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.SWISE,
+                addr: 0x48C3399719B582dD63eB5AADf12A40B4C3f52FA2,
+                symbol: "SWISE",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.wstETH,
                 addr: 0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0,
                 symbol: "wstETH",
@@ -979,12 +987,44 @@ contract TokensDataLive {
                 tokenType: TokenType.AURA_LP_TOKEN
             })
         );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.auraosETH_wETH_BPT,
+                addr: 0x7d7a8889F4277234335F86f18df3b7c0AC5F6aed,
+                symbol: "auraosETH_wETH_BPT",
+                tokenType: TokenType.AURA_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.auraweETH_rETH,
+                addr: 0xb2912397566Dafc9cDee555a38e980661858a61a,
+                symbol: "auraweETH_rETH",
+                tokenType: TokenType.AURA_LP_TOKEN
+            })
+        );
 
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.auraB_rETH_STABLE_vault,
                 addr: 0xDd1fE5AD401D4777cE89959b7fa587e569Bf125D,
                 symbol: "auraB_rETH_STABLE_vault",
+                tokenType: TokenType.AURA_STAKED_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.auraosETH_wETH_BPT_vault,
+                addr: 0x5F032f15B4e910252EDaDdB899f7201E89C8cD6b,
+                symbol: "auraosETH_wETH_BPT_vault",
+                tokenType: TokenType.AURA_STAKED_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.auraweETH_rETH_vault,
+                addr: 0x07A319A023859BbD49CC9C38ee891c3EA9283Cc5,
+                symbol: "auraweETH_rETH_vault",
                 tokenType: TokenType.AURA_STAKED_TOKEN
             })
         );

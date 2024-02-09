@@ -76,6 +76,8 @@ export type ConvexPoolContract =
 
 export type AuraPoolContract =
   | "AURA_B_RETH_STABLE_POOL"
+  | "AURA_WEETH_RETH_POOL"
+  | "AURA_OSETH_WETH_POOL"
   | "AURA_BPT_RETH_ETH_POOL"
   | "AURA_BPT_WSTETH_ETH_POOL";
 
@@ -186,6 +188,8 @@ export const contractsByNetwork: Record<
 
     // AURA
     AURA_BOOSTER: "0xA57b8d98dAE62B26Ec3bcC4a365338157060B234",
+    AURA_WEETH_RETH_POOL: tokenDataByNetwork.Mainnet.auraweETH_rETH_vault,
+    AURA_OSETH_WETH_POOL: tokenDataByNetwork.Mainnet.auraosETH_wETH_BPT_vault,
     AURA_B_RETH_STABLE_POOL: tokenDataByNetwork.Mainnet.auraB_rETH_STABLE_vault,
     AURA_BPT_RETH_ETH_POOL: tokenDataByNetwork.Mainnet.auraBPT_rETH_ETH_vault,
     AURA_BPT_WSTETH_ETH_POOL:
@@ -295,6 +299,8 @@ export const contractsByNetwork: Record<
     CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
 
     AURA_BOOSTER: NOT_DEPLOYED,
+    AURA_WEETH_RETH_POOL: tokenDataByNetwork.Arbitrum.auraweETH_rETH_vault,
+    AURA_OSETH_WETH_POOL: tokenDataByNetwork.Arbitrum.auraosETH_wETH_BPT_vault,
     AURA_B_RETH_STABLE_POOL:
       tokenDataByNetwork.Arbitrum.auraB_rETH_STABLE_vault,
     AURA_BPT_RETH_ETH_POOL: tokenDataByNetwork.Arbitrum.auraBPT_rETH_ETH_vault,
@@ -405,6 +411,8 @@ export const contractsByNetwork: Record<
 
     // AURA
     AURA_BOOSTER: "0x98Ef32edd24e2c92525E59afc4475C1242a30184",
+    AURA_WEETH_RETH_POOL: tokenDataByNetwork.Optimism.auraweETH_rETH_vault,
+    AURA_OSETH_WETH_POOL: tokenDataByNetwork.Optimism.auraosETH_wETH_BPT_vault,
     AURA_B_RETH_STABLE_POOL:
       tokenDataByNetwork.Optimism.auraB_rETH_STABLE_vault,
     AURA_BPT_RETH_ETH_POOL: tokenDataByNetwork.Optimism.auraBPT_rETH_ETH_vault,
@@ -1143,6 +1151,48 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
         rewardToken: "AURA",
         poolAddress: {
           Mainnet: "0xf66a72886749c96b18526E8E124cC2e18b7c72D2",
+          Arbitrum: NOT_DEPLOYED,
+          Optimism: NOT_DEPLOYED,
+        },
+      },
+    ],
+  },
+
+  AURA_WEETH_RETH_POOL: {
+    name: "Balancer weETH-rETH Stable Pool Aura Deposit",
+    protocol: Protocols.Aura,
+    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
+    stakedToken: "auraweETH_rETH_vault",
+    extraRewards: [
+      {
+        rewardToken: "AURA",
+        poolAddress: {
+          Mainnet: "0x25d22C5191C67D63AAB70a37FAe06e1c1E1a830F",
+          Arbitrum: NOT_DEPLOYED,
+          Optimism: NOT_DEPLOYED,
+        },
+      },
+    ],
+  },
+
+  AURA_OSETH_WETH_POOL: {
+    name: "Balancer osETH-WETH Stable Pool Aura Deposit",
+    protocol: Protocols.Aura,
+    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
+    stakedToken: "auraosETH_wETH_BPT_vault",
+    extraRewards: [
+      {
+        rewardToken: "AURA",
+        poolAddress: {
+          Mainnet: "0x62e6D8dAe7089C8F2f2a5C328c710aa1788742fb",
+          Arbitrum: NOT_DEPLOYED,
+          Optimism: NOT_DEPLOYED,
+        },
+      },
+      {
+        rewardToken: "SWISE",
+        poolAddress: {
+          Mainnet: "0xC5E75ccd4d40e2Fb280f008f8AFB5EF3415EFA72",
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
         },

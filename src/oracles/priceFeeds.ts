@@ -26,6 +26,11 @@ export const REDSTONE_SIGNERS = {
   signersThreshold: 5,
 };
 
+export const REDSTONE_DEMO_SIGNERS = {
+  signers: ["0x0C39486f770B26F5527BBBf942726537986Cd7eb"],
+  signersThreshold: 1,
+};
+
 export function getPriceFeedsByToken(
   token: SupportedToken,
   network: NetworkType,
@@ -785,6 +790,13 @@ export const priceFeedsByToken: Record<
         baseToUsdPriceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "rETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
     Arbitrum: {
       Main: {
@@ -832,19 +844,16 @@ export const priceFeedsByToken: Record<
   },
 
   AURA: {
-    Mainnet: {
+    AllNetworks: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
-    Arbitrum: {
-      Main: {
-        type: PriceFeedType.ZERO_ORACLE,
-        trusted: false,
-      },
-    },
-    Optimism: {
+  },
+
+  SWISE: {
+    AllNetworks: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
@@ -1986,6 +1995,42 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.THE_SAME_AS,
         token: "B_rETH_STABLE",
+        trusted: false,
+      },
+    },
+  },
+  auraweETH_rETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "weETH_rETH",
+        trusted: false,
+      },
+    },
+  },
+  auraweETH_rETH_vault: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "weETH_rETH",
+        trusted: false,
+      },
+    },
+  },
+  auraosETH_wETH_BPT: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "osETH_wETH_BPT",
+        trusted: false,
+      },
+    },
+  },
+  auraosETH_wETH_BPT_vault: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "osETH_wETH_BPT",
         trusted: false,
       },
     },

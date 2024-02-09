@@ -447,6 +447,20 @@ contract AdapterData {
         );
         convexBasePoolAdapters.push(
             ConvexBasePoolAdapter({
+                targetContract: Contracts.AURA_WEETH_RETH_POOL,
+                adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
+                stakedToken: Tokens.auraweETH_rETH_vault
+            })
+        );
+        convexBasePoolAdapters.push(
+            ConvexBasePoolAdapter({
+                targetContract: Contracts.AURA_OSETH_WETH_POOL,
+                adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
+                stakedToken: Tokens.auraosETH_wETH_BPT_vault
+            })
+        );
+        convexBasePoolAdapters.push(
+            ConvexBasePoolAdapter({
                 targetContract: Contracts.AURA_BPT_RETH_ETH_POOL,
                 adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
                 stakedToken: Tokens.auraBPT_rETH_ETH_vault
