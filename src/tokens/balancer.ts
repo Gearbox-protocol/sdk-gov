@@ -12,6 +12,8 @@ export type BalancerLPToken =
   | "B_rETH_STABLE"
   | "weETH_rETH"
   | "osETH_wETH_BPT"
+  | "B_80BAL_20WETH"
+  | "50WETH_50AURA"
   | "BPT_rETH_ETH"
   | "BPT_WSTETH_ETH"
   | "BPT_ROAD"
@@ -25,6 +27,26 @@ export type BalancerLpTokenData = {
 } & TokenBase;
 
 export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
+  "50WETH_50AURA": {
+    name: "Balancer 50WETH-50AURA",
+    symbol: "50WETH_50AURA",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["WETH", "AURA"],
+    poolId:
+      "0xcfca23ca9ca720b6e98e3eb9b6aa0ffc4a5c08b9000200000000000000000274",
+  },
+  B_80BAL_20WETH: {
+    name: "Balancer 80BAL-20WETH",
+    symbol: "B_80BAL_20WETH",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["BAL", "WETH"],
+    poolId:
+      "0x5c6ee304399dbdb9c8ef030ab642b10820db8f56000200000000000000000014",
+  },
   "50OHM_50DAI": {
     name: "Balancer 50OHM_50DAI",
     symbol: "50OHM_50DAI",

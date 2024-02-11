@@ -843,6 +843,15 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  ezETH: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+
   AURA: {
     AllNetworks: {
       Main: {
@@ -1470,6 +1479,23 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
         assets: ["OHM", "WETH"],
+        trusted: false,
+      },
+    },
+  },
+  B_80BAL_20WETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
+        assets: ["BAL", "WETH"],
+        trusted: false,
+      },
+    },
+  },
+  "50WETH_50AURA": {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },

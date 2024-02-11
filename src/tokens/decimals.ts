@@ -42,6 +42,7 @@ export const decimals: Record<SupportedToken, number> = {
   OP: 18,
   osETH: 18,
   weETH: 18,
+  ezETH: 18,
   "3Crv": 18,
   crvFRAX: 18,
   OHMFRAXBP: 18,
@@ -131,6 +132,8 @@ export const decimals: Record<SupportedToken, number> = {
   B_rETH_STABLE: 18,
   weETH_rETH: 18,
   osETH_wETH_BPT: 18,
+  B_80BAL_20WETH: 18,
+  "50WETH_50AURA": 18,
 
   auraB_rETH_STABLE: 18,
   auraB_rETH_STABLE_vault: 18,
