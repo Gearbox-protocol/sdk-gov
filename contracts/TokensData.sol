@@ -345,6 +345,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.ezETH,
+                addr: 0xbf5495Efe5DB9ce00f80364C8B423567e58d2110,
+                symbol: "ezETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.wstETH,
                 addr: 0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0,
                 symbol: "wstETH",
@@ -823,6 +831,22 @@ contract TokensDataLive {
                 addr: 0xB4AdA607B9d6b2c9Ee07A275e9616B84AC560139,
                 symbol: "yvCurve_FRAX",
                 tokenType: TokenType.YEARN_ON_CURVE_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens._50WETH_50AURA,
+                addr: 0xCfCA23cA9CA720B6E98E3Eb9B6aa0fFC4a5C08B9,
+                symbol: "50WETH_50AURA",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.B_80BAL_20WETH,
+                addr: 0x5c6Ee304399DBdB9C8Ef030aB642B10820DB8F56,
+                symbol: "B_80BAL_20WETH",
+                tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
         tokenDataByNetwork[1].push(

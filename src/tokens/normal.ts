@@ -47,6 +47,7 @@ export type NormalToken =
   | "osETH"
   | "weETH"
   | "SWISE"
+  | "ezETH"
 
   // REDSTONE
   | "SHIB"
@@ -336,6 +337,11 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   SWISE: {
     name: "StakeWise",
     symbol: "SWISE",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  ezETH: {
+    name: "Renzo Restaked ETH",
+    symbol: "ezETH",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };

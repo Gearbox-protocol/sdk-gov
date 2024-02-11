@@ -651,6 +651,9 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ ezETH ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.ezETH}));
+
         // ------------------------ AURA ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.AURA}));
         zeroPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: Tokens.AURA}));
@@ -1542,6 +1545,22 @@ contract PriceFeedDataLive {
         balancerWeightedLPPriceFeedsByNetwork[10].push(
             BalancerLPPriceFeedData({lpToken: Tokens._50OHM_50WETH, assets: TokensLib.arrayOf(Tokens.OHM, Tokens.WETH)})
         );
+
+        // ------------------------ B_80BAL_20WETH ------------------------
+        balancerWeightedLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({lpToken: Tokens.B_80BAL_20WETH, assets: TokensLib.arrayOf(Tokens.BAL, Tokens.WETH)})
+        );
+        balancerWeightedLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({lpToken: Tokens.B_80BAL_20WETH, assets: TokensLib.arrayOf(Tokens.BAL, Tokens.WETH)})
+        );
+        balancerWeightedLPPriceFeedsByNetwork[10].push(
+            BalancerLPPriceFeedData({lpToken: Tokens.B_80BAL_20WETH, assets: TokensLib.arrayOf(Tokens.BAL, Tokens.WETH)})
+        );
+
+        // ------------------------ 50WETH_50AURA ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens._50WETH_50AURA}));
+        zeroPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: Tokens._50WETH_50AURA}));
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: Tokens._50WETH_50AURA}));
 
         // ------------------------ OHM_wstETH ------------------------
         balancerWeightedLPPriceFeedsByNetwork[1].push(
