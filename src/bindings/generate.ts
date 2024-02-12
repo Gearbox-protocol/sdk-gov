@@ -113,13 +113,38 @@ class BindingsGenerator {
           "AllNetworks" in pf ? pf["AllNetworks"]?.Main : pf[chain]?.Main;
 
         if (!pfData) {
-          console.warn(`No price feed data for ${token} on ${chain}`);
+          console.warn(`No Main price feed data for ${token} on ${chain}`);
           continue;
         }
 
-        const priceFeedData = this.getPriceFeedData(token, pfData, chainId);
+        const priceFeedData = this.getPriceFeedData(
+          token,
+          pfData,
+          chainId,
+          false,
+        );
         if (priceFeedData) {
           data += priceFeedData;
+        } else {
+          console.warn(`No price feed data for ${token}`);
+        }
+
+        const pfDataReserve =
+          "AllNetworks" in pf ? pf["AllNetworks"]?.Reserve : pf[chain]?.Reserve;
+
+        if (!pfDataReserve) {
+          console.warn(`No Reserve price feed data for ${token} on ${chain}`);
+          continue;
+        }
+
+        const priceFeedDataReserve = this.getPriceFeedData(
+          token,
+          pfDataReserve,
+          chainId,
+          true,
+        );
+        if (priceFeedData) {
+          data += priceFeedDataReserve;
         } else {
           console.warn(`No price feed data for ${token}`);
         }
@@ -134,11 +159,13 @@ class BindingsGenerator {
     token: string,
     priceFeedData: PriceFeedData,
     chainId: number,
+    reserve: boolean,
   ): string | undefined {
     let result = this.generateChainlinkPriceFeedData(
       token,
       priceFeedData,
       chainId,
+      reserve,
     );
     if (result) return result;
 
@@ -148,19 +175,40 @@ class BindingsGenerator {
       chainId,
       "zeroPriceFeedsByNetwork",
       PriceFeedType.ZERO_ORACLE,
+      reserve,
     );
     if (result) return result;
 
-    result = this.generateCurvePriceFeedData(token, priceFeedData, chainId);
+    result = this.generateCurvePriceFeedData(
+      token,
+      priceFeedData,
+      chainId,
+      reserve,
+    );
     if (result) return result;
 
-    result = this.generateTheSamePriceFeedData(token, priceFeedData, chainId);
+    result = this.generateTheSamePriceFeedData(
+      token,
+      priceFeedData,
+      chainId,
+      reserve,
+    );
     if (result) return result;
 
-    result = this.generateBoundedPriceFeedData(token, priceFeedData, chainId);
+    result = this.generateBoundedPriceFeedData(
+      token,
+      priceFeedData,
+      chainId,
+      reserve,
+    );
     if (result) return result;
 
-    result = this.generateCompositePriceFeedData(token, priceFeedData, chainId);
+    result = this.generateCompositePriceFeedData(
+      token,
+      priceFeedData,
+      chainId,
+      reserve,
+    );
     if (result) return result;
 
     result = this.generateSingeTokenPriceFeedData(
@@ -169,6 +217,7 @@ class BindingsGenerator {
       chainId,
       "yearnPriceFeedsByNetwork",
       PriceFeedType.YEARN_ORACLE,
+      reserve,
     );
     if (result) return result;
 
@@ -178,6 +227,7 @@ class BindingsGenerator {
       chainId,
       "wstethPriceFeedByNetwork",
       PriceFeedType.WSTETH_ORACLE,
+      reserve,
     );
     if (result) return result;
 
@@ -187,6 +237,7 @@ class BindingsGenerator {
       chainId,
       "wrappedAaveV2PriceFeedsByNetwork",
       PriceFeedType.WRAPPED_AAVE_V2_ORACLE,
+      reserve,
     );
     if (result) return result;
 
@@ -196,6 +247,7 @@ class BindingsGenerator {
       chainId,
       "compoundV2PriceFeedsByNetwork",
       PriceFeedType.COMPOUND_V2_ORACLE,
+      reserve,
     );
     if (result) return result;
 
@@ -205,10 +257,16 @@ class BindingsGenerator {
       chainId,
       "erc4626PriceFeedsByNetwork",
       PriceFeedType.ERC4626_VAULT_ORACLE,
+      reserve,
     );
     if (result) return result;
 
-    result = this.generateCrvUSDPriceFeedData(token, priceFeedData, chainId);
+    result = this.generateCrvUSDPriceFeedData(
+      token,
+      priceFeedData,
+      chainId,
+      reserve,
+    );
     if (result) return result;
 
     result = this.generateBalancerLPPriceFeedData(
@@ -217,6 +275,7 @@ class BindingsGenerator {
       chainId,
       "balancerStableLPPriceFeedsByNetwork",
       PriceFeedType.BALANCER_STABLE_LP_ORACLE,
+      reserve,
     );
     if (result) return result;
 
@@ -226,11 +285,17 @@ class BindingsGenerator {
       chainId,
       "balancerWeightedLPPriceFeedsByNetwork",
       PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
+      reserve,
     );
 
     if (result) return result;
 
-    result = this.generateRedStoneFeedData(token, priceFeedData, chainId);
+    result = this.generateRedStoneFeedData(
+      token,
+      priceFeedData,
+      chainId,
+      reserve,
+    );
     if (result) return result;
 
     return undefined;
@@ -240,6 +305,7 @@ class BindingsGenerator {
     token: string,
     priceFeedData: PriceFeedData,
     chainId: number,
+    reserve: boolean,
   ): string | undefined {
     if (priceFeedData.type === PriceFeedType.CHAINLINK_ORACLE) {
       const address: string = priceFeedData.address;
@@ -248,7 +314,13 @@ class BindingsGenerator {
         ? `chainlinkPriceFeedsByNetwork[${chainId}].push(ChainlinkPriceFeedData({
     token: ${this.tokensEnum(token)},
     priceFeed: ${address},
-    stalenessPeriod: ${priceFeedData.stalenessPeriod || HOUR_24}
+    stalenessPeriod: ${priceFeedData.stalenessPeriod || HOUR_24},
+    trusted: ${
+      !reserve
+        ? (priceFeedData as PriceFeedData & { trusted: boolean }).trusted
+        : false
+    },
+    reserve: ${reserve}
   }));`
         : undefined;
     }
@@ -260,6 +332,7 @@ class BindingsGenerator {
     token: string,
     priceFeedData: PriceFeedData,
     chainId: number,
+    reserve: boolean,
   ): string | undefined {
     if (
       priceFeedData.type === PriceFeedType.CURVE_2LP_ORACLE ||
@@ -281,7 +354,13 @@ class BindingsGenerator {
         assets: TokensLib.arrayOf(${assets}),
         pool: Contracts.${
           (lpTokens[token as LPTokens] as CurveLPTokenData).pool
-        }
+        },
+        trusted: ${
+          !reserve
+            ? (priceFeedData as PriceFeedData & { trusted: boolean }).trusted
+            : false
+        },
+        reserve: ${reserve}
       }));`;
     } else return undefined;
   }
@@ -290,12 +369,19 @@ class BindingsGenerator {
     token: string,
     priceFeedData: PriceFeedData,
     chainId: number,
+    reserve: boolean,
   ): string | undefined {
     if (priceFeedData.type === PriceFeedType.THE_SAME_AS) {
       const symbol = priceFeedData.token;
       return `theSamePriceFeedsByNetwork[${chainId}].push(TheSamePriceFeedData({
     token: ${this.tokensEnum(token)},
-    tokenHasSamePriceFeed: ${this.tokensEnum(symbol as SupportedToken)}
+    tokenHasSamePriceFeed: ${this.tokensEnum(symbol as SupportedToken)},
+    trusted: ${
+      !reserve
+        ? (priceFeedData as PriceFeedData & { trusted: boolean }).trusted
+        : false
+    },
+    reserve: ${reserve}
   }));`;
     } else return undefined;
   }
@@ -304,6 +390,7 @@ class BindingsGenerator {
     token: string,
     priceFeedData: PriceFeedData,
     chainId: number,
+    reserve: boolean,
   ): string | undefined {
     if (priceFeedData.type === PriceFeedType.BOUNDED_ORACLE) {
       const targetPriceFeed: string | undefined = priceFeedData.priceFeed;
@@ -313,7 +400,13 @@ class BindingsGenerator {
   token: ${this.tokensEnum(token)},
   priceFeed: ${targetPriceFeed},
   stalenessPeriod: ${priceFeedData.stalenessPeriod || HOUR_24},
-  upperBound: ${priceFeedData.upperBound}
+  upperBound: ${priceFeedData.upperBound},
+  trusted: ${
+    !reserve
+      ? (priceFeedData as PriceFeedData & { trusted: boolean }).trusted
+      : false
+  },
+  reserve: ${reserve}
 }));`
         : undefined;
     } else return undefined;
@@ -323,6 +416,7 @@ class BindingsGenerator {
     token: string,
     priceFeedData: PriceFeedData,
     chainId: number,
+    reserve: boolean,
   ): string | undefined {
     if (
       priceFeedData.type === PriceFeedType.COMPOSITE_ORACLE &&
@@ -339,7 +433,13 @@ class BindingsGenerator {
           priceFeedData.targetStalenessPeriod || HOUR_24
         },
         baseToUSDFeed: ${baseToUSDFeed},
-        baseStalenessPeriod: ${priceFeedData.baseStalenessPeriod || HOUR_24}
+        baseStalenessPeriod: ${priceFeedData.baseStalenessPeriod || HOUR_24},
+        trusted: ${
+          !reserve
+            ? (priceFeedData as PriceFeedData & { trusted: boolean }).trusted
+            : false
+        },
+        reserve: ${reserve}
       }));`;
     } else return undefined;
   }
@@ -350,11 +450,19 @@ class BindingsGenerator {
     chainId: number,
     varName: string,
     oracleType: PriceFeedType,
+    reserve: boolean,
   ): string | undefined {
     if (priceFeedData.type === oracleType) {
       const structure = `SingeTokenPriceFeedData({ token: ${this.tokensEnum(
         token,
-      )} })`;
+      )},
+      trusted: ${
+        !reserve
+          ? (priceFeedData as PriceFeedData & { trusted: boolean }).trusted
+          : false
+      },
+      reserve: ${reserve}
+     })`;
 
       return oracleType === PriceFeedType.WSTETH_ORACLE
         ? `${varName}[${chainId}] = ${structure};`
@@ -369,6 +477,7 @@ class BindingsGenerator {
     chainId: number,
     varName: string,
     oracleType: PriceFeedType,
+    reserve: boolean,
   ): string | undefined {
     if (priceFeedData.type === oracleType) {
       if (
@@ -380,7 +489,14 @@ class BindingsGenerator {
           token,
         )}, underlying: ${this.tokensEnum(
           priceFeedData.underlying as SupportedToken,
-        )}}));`;
+        )},
+        trusted: ${
+          !reserve
+            ? (priceFeedData as PriceFeedData & { trusted: boolean }).trusted
+            : false
+        },
+        reserve: ${reserve}
+      }));`;
       }
     }
     return undefined;
@@ -390,6 +506,7 @@ class BindingsGenerator {
     token: string,
     priceFeedData: PriceFeedData,
     chainId: number,
+    reserve: boolean,
   ): string | undefined {
     if (priceFeedData.type === PriceFeedType.CURVE_USD_ORACLE) {
       return `crvUSDPriceFeedsByNetwork[${chainId}].push(CrvUsdPriceFeedData({ token: ${this.tokensEnum(
@@ -398,7 +515,14 @@ class BindingsGenerator {
       pool: Contracts.${(lpTokens[token as LPTokens] as CurveLPTokenData).pool},
       underlying: ${this.tokensEnum(
         priceFeedData.underlying as SupportedToken,
-      )}}));`;
+      )},
+      trusted: ${
+        !reserve
+          ? (priceFeedData as PriceFeedData & { trusted: boolean }).trusted
+          : false
+      },
+      reserve: ${reserve}
+    }));`;
     }
     return undefined;
   }
@@ -409,6 +533,7 @@ class BindingsGenerator {
     chainId: number,
     varName: string,
     oracleType: PriceFeedType,
+    reserve: boolean,
   ): string | undefined {
     if (priceFeedData.type === oracleType) {
       if (
@@ -419,7 +544,14 @@ class BindingsGenerator {
           token,
         )}, assets: TokensLib.arrayOf(${priceFeedData.assets
           .map(t => this.tokensEnum(t))
-          .join(",")})}));`;
+          .join(",")}),
+          trusted: ${
+            !reserve
+              ? (priceFeedData as PriceFeedData & { trusted: boolean }).trusted
+              : false
+          },
+          reserve: ${reserve}
+        }));`;
       }
     }
     return undefined;
@@ -429,6 +561,7 @@ class BindingsGenerator {
     token: string,
     priceFeedData: PriceFeedData,
     chainId: number,
+    reserve: boolean,
   ): string | undefined {
     if (priceFeedData.type === PriceFeedType.REDSTONE_ORACLE) {
       const signers = [];
@@ -445,7 +578,15 @@ class BindingsGenerator {
             dataServiceId: "${priceFeedData.dataServiceId}", 
             dataFeedId: "${priceFeedData.dataId}", signers: [${signers.join(
               ",",
-            )}], signersThreshold: ${priceFeedData.signersThreshold} }));`;
+            )}], signersThreshold: ${priceFeedData.signersThreshold},
+            trusted: ${
+              !reserve
+                ? (priceFeedData as PriceFeedData & { trusted: boolean })
+                    .trusted
+                : false
+            },
+            reserve: ${reserve}
+          }));`;
     }
     return undefined;
   }

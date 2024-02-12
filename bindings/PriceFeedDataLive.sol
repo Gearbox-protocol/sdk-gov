@@ -12,27 +12,37 @@ struct ChainlinkPriceFeedData {
     Tokens token;
     address priceFeed;
     uint32 stalenessPeriod;
+    bool reserve;
+    bool trusted;
 }
 
 struct CurvePriceFeedData {
     Tokens lpToken;
     Tokens[] assets;
     Contracts pool;
+    bool reserve;
+    bool trusted;
 }
 
 struct CrvUsdPriceFeedData {
     Tokens token;
     Tokens underlying;
     Contracts pool;
+    bool reserve;
+    bool trusted;
 }
 
 struct TheSamePriceFeedData {
     Tokens token;
     Tokens tokenHasSamePriceFeed;
+    bool reserve;
+    bool trusted;
 }
 
 struct SingeTokenPriceFeedData {
     Tokens token;
+    bool reserve;
+    bool trusted;
 }
 
 struct CompositePriceFeedData {
@@ -41,6 +51,8 @@ struct CompositePriceFeedData {
     uint32 targetStalenessPeriod;
     address baseToUSDFeed;
     uint32 baseStalenessPeriod;
+    bool reserve;
+    bool trusted;
 }
 
 struct BoundedPriceFeedData {
@@ -48,16 +60,22 @@ struct BoundedPriceFeedData {
     address priceFeed;
     uint32 stalenessPeriod;
     uint256 upperBound;
+    bool reserve;
+    bool trusted;
 }
 
 struct GenericLPPriceFeedData {
     Tokens lpToken;
     Tokens underlying;
+    bool reserve;
+    bool trusted;
 }
 
 struct BalancerLPPriceFeedData {
     Tokens lpToken;
     Tokens[] assets;
+    bool reserve;
+    bool trusted;
 }
 
 struct RedStonePriceFeedData {
@@ -66,6 +84,8 @@ struct RedStonePriceFeedData {
     bytes32 dataFeedId;
     address[10] signers;
     uint8 signersThreshold;
+    bool reserve;
+    bool trusted;
 }
 
 contract PriceFeedDataLive {
