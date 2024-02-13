@@ -475,7 +475,7 @@ export const priceFeedsByToken: Record<
       Reserve: {
         type: PriceFeedType.REDSTONE_ORACLE,
         dataServiceId: "redstone-primary-prod",
-        dataId: "STETH",
+        dataId: "stETH",
         stalenessPeriod: FOUR_MINUTES,
         ...REDSTONE_SIGNERS,
       },
