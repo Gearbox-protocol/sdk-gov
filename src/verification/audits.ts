@@ -112,6 +112,12 @@ export const auditReports: Record<string, Report> = {
     reportLink:
       "https://github.com/Gearbox-protocol/security/blob/main/audits/2023%20Dec%20-%20ChainSecurity_Gearbox_Protocol_Gearbox_V3_Oracles_audit.pdf",
   },
+  "2024_Feb_ChainSecurity_CoreV3": {
+    auditor: Auditor.ChainSecurity,
+    revision: "2024 February",
+    reportLink:
+      "https://github.com/Gearbox-protocol/security/blob/main/audits/2024%20Feb%20-%20ChainSecurity_Gearbox_Core_V3.pdf",
+  },
 };
 
 export const audits: Audits = {
@@ -125,6 +131,11 @@ export const audits: Audits = {
       type: "commit",
       commit: "e16559ae82f0f24c3dc29693c444f40d676ebff9",
       report: auditReports["2023_Dec_ChainSecurity_CoreV3"],
+    },
+    {
+      type: "commit",
+      commit: "27d05440deddb1af3f0505c5fc14721d637353f0",
+      report: auditReports["2024_Feb_ChainSecurity_CoreV3"],
     },
   ],
   "core-v2": [
