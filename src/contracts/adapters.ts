@@ -22,4 +22,5 @@ export enum AdapterInterface {
   COMPOUND_V2_CETHER,
   ERC4626_VAULT,
   VELODROME_V2_ROUTER,
+  CURVE_STABLE_NG,
 }

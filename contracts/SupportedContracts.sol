@@ -201,6 +201,7 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "CURVE_RETH_ETH_POOL"
             })
         );
+
         contractDataByNetwork[1].push(
             ContractData({
                 id: Contracts.YEARN_DAI_VAULT,
@@ -495,30 +496,74 @@ contract SupportedContracts is Test, ISupportedContracts {
 
         contractDataByNetwork[42161].push(
             ContractData({
-                id: Contracts.CURVE_CRVUSD_USDC_POOL,
-                addr: 0x4DEcE678ceceb27446b35C672dC7d61F30bAD69E,
-                name: "CURVE_CRVUSD_USDC_POOL"
-            })
-        );
-        contractDataByNetwork[42161].push(
-            ContractData({
-                id: Contracts.CURVE_CRVUSD_USDT_POOL,
-                addr: 0x390f3595bCa2Df7d23783dFd126427CCeb997BF4,
-                name: "CURVE_CRVUSD_USDT_POOL"
-            })
-        );
-        contractDataByNetwork[42161].push(
-            ContractData({
                 id: Contracts.CURVE_CRVUSD_FRAX_POOL,
-                addr: 0x0CD6f267b2086bea681E922E19D40512511BE538,
+                addr: 0x2FE7AE43591E534C256A1594D326e5779E302Ff4,
                 name: "CURVE_CRVUSD_FRAX_POOL"
             })
         );
+
         contractDataByNetwork[42161].push(
             ContractData({
-                id: Contracts.CURVE_TRI_CRV_POOL,
-                addr: 0x4eBdF703948ddCEA3B11f675B4D1Fba9d2414A14,
-                name: "CURVE_TRI_CRV_POOL"
+                id: Contracts.CURVE_2CRV_POOL_ARB,
+                addr: 0x7f90122BF0700F9E7e1F688fe926940E8839F353,
+                name: "CURVE_2CRV_POOL_ARB"
+            })
+        );
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.CURVE_TRICRYPTO_CRVUSD_POOL_ARB,
+                addr: 0x82670f35306253222F8a165869B28c64739ac62e,
+                name: "CURVE_TRICRYPTO_CRVUSD_POOL_ARB"
+            })
+        );
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.CURVE_CRVUSD_USDC_POOL_ARB,
+                addr: 0xec090cf6DD891D2d014beA6edAda6e05E025D93d,
+                name: "CURVE_CRVUSD_USDC_POOL_ARB"
+            })
+        );
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.CURVE_CRVUSD_USDT_POOL_ARB,
+                addr: 0x73aF1150F265419Ef8a5DB41908B700C32D49135,
+                name: "CURVE_CRVUSD_USDT_POOL_ARB"
+            })
+        );
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.CURVE_CRVUSD_USDC_E_POOL_ARB,
+                addr: 0x3aDf984c937FA6846E5a24E0A68521Bdaf767cE1,
+                name: "CURVE_CRVUSD_USDC_E_POOL_ARB"
+            })
+        );
+
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.AURA_RETH_WETH_POOL_ARB,
+                addr: 0x129A44AC6ff0f965C907579F96F2eD682E52c84A,
+                name: "AURA_RETH_WETH_POOL_ARB"
+            })
+        );
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.AURA_WSTETH_WETH_POOL_ARB,
+                addr: 0xa7BdaD177D474f946f3cDEB4bcea9d24Cf017471,
+                name: "AURA_WSTETH_WETH_POOL_ARB"
+            })
+        );
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.AURA_WSTETH_RETH_CBETH_POOL_ARB,
+                addr: 0x8cA64Bd82AbFE138E195ce5Cb7268CA285D42245,
+                name: "AURA_WSTETH_RETH_CBETH_POOL_ARB"
+            })
+        );
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.AURA_WSTETH_RETH_SFRXETH_POOL_ARB,
+                addr: 0xa427B131059A503b5fC9C7e1a130585ca3b32e3d,
+                name: "AURA_WSTETH_RETH_SFRXETH_POOL_ARB"
             })
         );
 
@@ -560,11 +605,12 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "VELODROME_V2_ROUTER"
             })
         );
+
         contractDataByNetwork[10].push(
             ContractData({
-                id: Contracts.CURVE_3CRV_POOL,
+                id: Contracts.CURVE_3CRV_POOL_OP,
                 addr: 0x1337BedC9D22ecbe766dF105c9623922A27963EC,
-                name: "CURVE_3CRV_POOL"
+                name: "CURVE_3CRV_POOL_OP"
             })
         );
 
