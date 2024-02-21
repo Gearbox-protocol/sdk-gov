@@ -14,6 +14,7 @@ export type NormalToken =
   | "UNI"
   | "USDT"
   | "USDC"
+  | "USDC_e"
   | "DAI"
   | "WETH"
   | "WBTC"
@@ -48,6 +49,11 @@ export type NormalToken =
   | "weETH"
   | "SWISE"
   | "ezETH"
+  | "rsETH"
+  | "PENDLE"
+  | "frxETH"
+  | "cbETH"
+  | "rswETH"
 
   // REDSTONE
   | "SHIB"
@@ -133,6 +139,13 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
 
   USDC: {
     name: "USDC",
+
+    symbol: "USDC",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+
+  USDC_e: {
+    name: "USDC (Bridged)",
 
     symbol: "USDC",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
@@ -342,6 +355,31 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   ezETH: {
     name: "Renzo Restaked ETH",
     symbol: "ezETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  rsETH: {
+    name: "Kelp Restaked ETH",
+    symbol: "rsETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  frxETH: {
+    name: "Frax ETH",
+    symbol: "frxETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  PENDLE: {
+    name: "Pendle",
+    symbol: "PENDLE",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  cbETH: {
+    name: "Coinbase ETH",
+    symbol: "cbETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  rswETH: {
+    name: "Restaked Swell ETH",
+    symbol: "rswETH",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };

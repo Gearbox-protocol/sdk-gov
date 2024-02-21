@@ -13,14 +13,22 @@ export type AuraLPToken =
   | "auraBPT_rETH_ETH"
   | "auraBPT_WSTETH_ETH"
   | "auraweETH_rETH"
-  | "auraosETH_wETH_BPT";
+  | "auraosETH_wETH_BPT"
+  | "aurawstETH_WETH_BPT"
+  | "aurawstETH_rETH_sfrxETH"
+  | "aurawstETH_rETH_cbETH"
+  | "aurarETH_WETH_BPT";
 
 export type AuraStakedToken =
   | "auraB_rETH_STABLE_vault"
   | "auraBPT_rETH_ETH_vault"
   | "auraBPT_WSTETH_ETH_vault"
   | "auraweETH_rETH_vault"
-  | "auraosETH_wETH_BPT_vault";
+  | "auraosETH_wETH_BPT_vault"
+  | "aurawstETH_WETH_BPT_vault"
+  | "aurawstETH_rETH_sfrxETH_vault"
+  | "aurawstETH_rETH_cbETH_vault"
+  | "aurarETH_WETH_BPT_vault";
 
 type BaseAuraToken = {
   pool: AuraPoolContract;
@@ -162,6 +170,58 @@ export const auraLpTokens: Record<AuraLPToken, AuraLPTokenData> = {
       },
     ],
   },
+  aurawstETH_WETH_BPT: {
+    name: "Balancer (Arbitrum) wstETH-WETH Aura Deposit",
+
+    symbol: "aurawstETH_WETH_BPT",
+    type: {
+      AllNetworks: TokenType.AURA_LP_TOKEN,
+    },
+    pool: "AURA_WSTETH_WETH_POOL_ARB",
+    pid: 29,
+    underlying: "wstETH_WETH_BPT",
+    stakedToken: "aurawstETH_WETH_BPT_vault",
+    lpActions: [],
+  },
+  aurawstETH_rETH_sfrxETH: {
+    name: "Balancer (Arbitrum) wstETH-rETH-sfrxETH Aura Deposit",
+
+    symbol: "aurawstETH_rETH_sfrxETH",
+    type: {
+      AllNetworks: TokenType.AURA_LP_TOKEN,
+    },
+    pool: "AURA_WSTETH_RETH_SFRXETH_POOL_ARB",
+    pid: 33,
+    underlying: "wstETH_rETH_sfrxETH",
+    stakedToken: "aurawstETH_rETH_sfrxETH_vault",
+    lpActions: [],
+  },
+  aurawstETH_rETH_cbETH: {
+    name: "Balancer (Arbitrum) wstETH-rETH-sfrxETH Aura Deposit",
+
+    symbol: "aurawstETH_rETH_sfrxETH",
+    type: {
+      AllNetworks: TokenType.AURA_LP_TOKEN,
+    },
+    pool: "AURA_WSTETH_RETH_CBETH_POOL_ARB",
+    pid: 23,
+    underlying: "wstETH_rETH_sfrxETH",
+    stakedToken: "aurawstETH_rETH_sfrxETH_vault",
+    lpActions: [],
+  },
+  aurarETH_WETH_BPT: {
+    name: "Balancer (Arbitrum) rETH-WETH Aura Deposit",
+
+    symbol: "aurarETH_WETH_BPT",
+    type: {
+      AllNetworks: TokenType.AURA_LP_TOKEN,
+    },
+    pool: "AURA_RETH_WETH_POOL_ARB",
+    pid: 31,
+    underlying: "rETH_WETH_BPT",
+    stakedToken: "aurarETH_WETH_BPT_vault",
+    lpActions: [],
+  },
 };
 
 export const auraStakedTokens: Record<AuraStakedToken, AuraStakedTokenData> = {
@@ -228,6 +288,58 @@ export const auraStakedTokens: Record<AuraStakedToken, AuraStakedTokenData> = {
     pid: 0,
     underlying: "BPT_WSTETH_ETH",
     lpToken: "auraBPT_WSTETH_ETH",
+    lpActions: [],
+  },
+  aurawstETH_WETH_BPT_vault: {
+    name: "Balancer (Arbitrum) wstETH-WETH Aura Vault",
+
+    symbol: "aurawstETH_WETH_BPT_vault",
+    type: {
+      AllNetworks: TokenType.AURA_STAKED_TOKEN,
+    },
+    pool: "AURA_WSTETH_WETH_POOL_ARB",
+    pid: 29,
+    underlying: "wstETH_WETH_BPT",
+    lpToken: "aurawstETH_WETH_BPT",
+    lpActions: [],
+  },
+  aurawstETH_rETH_sfrxETH_vault: {
+    name: "Balancer (Arbitrum) wstETH-rETH-sfrxETH Aura Vault",
+
+    symbol: "aurawstETH_rETH_sfrxETH_vault",
+    type: {
+      AllNetworks: TokenType.AURA_STAKED_TOKEN,
+    },
+    pool: "AURA_WSTETH_RETH_SFRXETH_POOL_ARB",
+    pid: 33,
+    underlying: "wstETH_rETH_sfrxETH",
+    lpToken: "aurawstETH_rETH_sfrxETH",
+    lpActions: [],
+  },
+  aurawstETH_rETH_cbETH_vault: {
+    name: "Balancer (Arbitrum) wstETH-rETH-sfrxETH Aura Vault",
+
+    symbol: "aurawstETH_rETH_sfrxETH_vault",
+    type: {
+      AllNetworks: TokenType.AURA_STAKED_TOKEN,
+    },
+    pool: "AURA_WSTETH_RETH_CBETH_POOL_ARB",
+    pid: 23,
+    underlying: "wstETH_rETH_sfrxETH",
+    lpToken: "aurawstETH_rETH_sfrxETH",
+    lpActions: [],
+  },
+  aurarETH_WETH_BPT_vault: {
+    name: "Balancer (Arbitrum) rETH-WETH Aura Vault",
+
+    symbol: "aurarETH_WETH_BPT_vault",
+    type: {
+      AllNetworks: TokenType.AURA_STAKED_TOKEN,
+    },
+    pool: "AURA_RETH_WETH_POOL_ARB",
+    pid: 31,
+    underlying: "rETH_WETH_BPT",
+    lpToken: "aurarETH_WETH_BPT",
     lpActions: [],
   },
 };

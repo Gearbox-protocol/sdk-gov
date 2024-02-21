@@ -3,7 +3,7 @@ import { PartialRecord } from "../utils/types";
 import type { TokenBase } from "./token";
 import { TokenNetwork, TokenType } from "./tokenType";
 
-export type WrappedToken = "wstETH";
+export type WrappedToken = "wstETH" | "sfrxETH";
 
 export type WrappedTokenData = {
   symbol: WrappedToken;
@@ -18,6 +18,16 @@ export const wrappedTokens: Record<WrappedToken, WrappedTokenData> = {
     name: "wstETH",
 
     symbol: "wstETH",
+    type: {
+      Mainnet: TokenType.WRAPPED_TOKEN,
+      Arbitrum: TokenType.NORMAL_TOKEN,
+      Optimism: TokenType.NORMAL_TOKEN,
+    },
+  },
+  sfrxETH: {
+    name: "sfrxETH",
+
+    symbol: "sfrxETH",
     type: {
       Mainnet: TokenType.WRAPPED_TOKEN,
       Arbitrum: TokenType.NORMAL_TOKEN,

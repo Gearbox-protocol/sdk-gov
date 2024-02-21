@@ -29,6 +29,12 @@ export type CurveLPToken =
   | "crvUSDETHCRV"
   | "rETH_f"
   | "wstETHCRV"
+  | "2CRV"
+  | "3c-crvUSD"
+  | "crvUSDC"
+  | "crvUSDT"
+  | "crvUSDC_e"
+  | "3CRV"
   | CurveMetaTokens;
 
 export type CurveLPTokenData = {
@@ -206,8 +212,56 @@ export const curveTokens: Record<
     name: "Curve wstETHCRV",
     symbol: "wstETHCRV",
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
-    pool: "CURVE_ETH_WSTETH_GATEWAY",
+    pool: "CURVE_ETH_WSTETH_GATEWAY_OP",
     tokenOut: ["WETH", "wstETH"],
+  },
+
+  "2CRV": {
+    name: "Curve 2CRV",
+    symbol: "2CRV",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_2CRV_POOL_ARB",
+    tokenOut: ["USDC_e", "USDT"],
+  },
+
+  "3c-crvUSD": {
+    name: "Curve TriCrypto crvUSD",
+    symbol: "3c-crvUSD",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_TRICRYPTO_CRVUSD_POOL_ARB",
+    tokenOut: ["crvUSD", "WBTC", "WETH"],
+  },
+
+  crvUSDC: {
+    name: "Curve crvUSD/USDC LP (Arbitrum)",
+    symbol: "crvUSDC",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_CRVUSD_USDC_POOL_ARB",
+    tokenOut: ["crvUSD", "USDC"],
+  },
+
+  crvUSDT: {
+    name: "Curve crvUSD/USDT LP (Arbitrum)",
+    symbol: "crvUSDT",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_CRVUSD_USDT_POOL_ARB",
+    tokenOut: ["crvUSD", "USDT"],
+  },
+
+  crvUSDC_e: {
+    name: "Curve crvUSD/USDC_e LP (Arbitrum)",
+    symbol: "crvUSDC_e",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_CRVUSD_USDC_E_POOL_ARB",
+    tokenOut: ["crvUSD", "USDC_e"],
+  },
+
+  "3CRV": {
+    name: "Curve 3Crv",
+    symbol: "3Crv",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_3CRV_POOL_OP",
+    tokenOut: ["DAI", "USDC_e", "USDT"],
   },
   ...curveMetaTokens,
 };

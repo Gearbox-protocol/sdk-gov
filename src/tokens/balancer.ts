@@ -14,10 +14,18 @@ export type BalancerLPToken =
   | "osETH_wETH_BPT"
   | "B_80BAL_20WETH"
   | "50WETH_50AURA"
+  | "ezETH_WETH_BPT"
+  | "weETH_ezETH_rswETH"
+  // Optimism
   | "BPT_rETH_ETH"
   | "BPT_WSTETH_ETH"
   | "BPT_ROAD"
-  | "ECLP_wstETH_WETH";
+  | "ECLP_wstETH_WETH"
+  // Arbitrum
+  | "wstETH_WETH_BPT"
+  | "wstETH_rETH_sfrxETH"
+  | "wstETH_rETH_cbETH"
+  | "rETH_WETH_BPT";
 
 export type BalancerLpTokenData = {
   symbol: BalancerLPToken;
@@ -121,6 +129,28 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
       "0xdacf5fa19b1f720111609043ac67a9818262850c000000000000000000000635",
   },
 
+  ezETH_WETH_BPT: {
+    name: "Balancer ezETH/WETH Stable pool",
+    symbol: "ezETH_WETH_BPT",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["ezETH", "WETH"],
+    poolId:
+      "0x596192bb6e41802428ac943d2f1476c1af25cc0e000000000000000000000659",
+  },
+
+  weETH_ezETH_rswETH: {
+    name: "Balancer ezETH/weETH/rswETH",
+    symbol: "weETH_ezETH_rswETH",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["ezETH", "weETH", "rswETH"],
+    poolId:
+      "0x848a5564158d84b8a8fb68ab5d004fae11619a5400000000000000000000066a",
+  },
+
   BPT_rETH_ETH: {
     name: "BeethovenX rETH-ETH Pool",
     symbol: "BPT_rETH_ETH",
@@ -163,6 +193,50 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     underlying: ["wstETH", "WETH"],
     poolId:
       "0x7ca75bdea9dede97f8b13c6641b768650cb837820002000000000000000000d5",
+  },
+
+  wstETH_WETH_BPT: {
+    name: "Balancer wstETH/WETH Pool (Arbitrum)",
+    symbol: "wstETH_WETH_BPT",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["wstETH", "WETH"],
+    poolId:
+      "0x9791d590788598535278552eecd4b211bfc790cb000000000000000000000498",
+  },
+
+  wstETH_rETH_sfrxETH: {
+    name: "Balancer wstETH/rETH/sfrxETH Pool (Arbitrum)",
+    symbol: "wstETH_rETH_sfrxETH",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["wstETH", "rETH", "sfrxETH"],
+    poolId:
+      "0x0c8972437a38b389ec83d1e666b69b8a4fcf8bfd00000000000000000000049e",
+  },
+
+  wstETH_rETH_cbETH: {
+    name: "Balancer wstETH/rETH/cbETH Pool (Arbitrum)",
+    symbol: "wstETH_rETH_cbETH",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["cbETH", "wstETH", "rETH"],
+    poolId:
+      "0x4a2f6ae7f3e5d715689530873ec35593dc28951b000000000000000000000481",
+  },
+
+  rETH_WETH_BPT: {
+    name: "Balancer rETH/WETH Pool (Arbitrum)",
+    symbol: "rETH_WETH_BPT",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["WETH", "rETH"],
+    poolId:
+      "0xade4a71bb62bec25154cfc7e6ff49a513b491e81000000000000000000000497",
   },
 };
 
