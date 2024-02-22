@@ -532,8 +532,8 @@ export const priceFeedsByToken: Record<
     Arbitrum: {
       Main: {
         type: PriceFeedType.COMPOSITE_ORACLE,
-        targetToBasePriceFeed: NOT_DEPLOYED,
-        baseToUsdPriceFeed: NOT_DEPLOYED,
+        targetToBasePriceFeed: "0xb523AE262D20A936BC152e6023996e46FDC2A95D",
+        baseToUsdPriceFeed: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
         trusted: false,
       },
     },
@@ -1210,7 +1210,7 @@ export const priceFeedsByToken: Record<
     Arbitrum: {
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        address: "0x0a32255dd4BB6177C994bAAc73E0606fDD568f66",
         trusted: false,
       },
     },
@@ -1835,6 +1835,14 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
         assets: ["rETH", "WETH"],
         trusted: false,
+      },
+    },
+  },
+  "33AURA_33ARB_33BAL": {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: true,
       },
     },
   },

@@ -493,6 +493,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "FLUX_USDC_POOL"
             })
         );
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.UNISWAP_V3_ROUTER,
+                addr: 0xE592427A0AEce92De3Edee1F18E0157C05861564,
+                name: "UNISWAP_V3_ROUTER"
+            })
+        );
 
         contractDataByNetwork[42161].push(
             ContractData({
@@ -540,6 +547,14 @@ contract SupportedContracts is Test, ISupportedContracts {
 
         contractDataByNetwork[42161].push(
             ContractData({
+                id: Contracts.AURA_BOOSTER,
+                addr: 0x98Ef32edd24e2c92525E59afc4475C1242a30184,
+                name: "AURA_BOOSTER"
+            })
+        );
+
+        contractDataByNetwork[42161].push(
+            ContractData({
                 id: Contracts.AURA_RETH_WETH_POOL_ARB,
                 addr: 0x129A44AC6ff0f965C907579F96F2eD682E52c84A,
                 name: "AURA_RETH_WETH_POOL_ARB"
@@ -574,7 +589,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "LIDO_WSTETH"
             })
         );
-
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.BALANCER_VAULT,
+                addr: 0xBA12222222228d8Ba445958a75a0704d566BF2C8,
+                name: "BALANCER_VAULT"
+            })
+        );
         contractDataByNetwork[42161].push(
             ContractData({
                 id: Contracts.UNIVERSAL_ADAPTER,

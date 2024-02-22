@@ -153,6 +153,7 @@ export const decimals: Record<SupportedToken, number> = {
   rETH_WETH_BPT: 18,
   ezETH_WETH_BPT: 18,
   weETH_ezETH_rswETH: 18,
+  "33AURA_33ARB_33BAL": 18,
 
   auraB_rETH_STABLE: 18,
   auraB_rETH_STABLE_vault: 18,
