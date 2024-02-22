@@ -145,6 +145,7 @@ enum Tokens {
     wstETH_rETH_sfrxETH,
     wstETH_rETH_cbETH,
     rETH_WETH_BPT,
+    _33AURA_33ARB_33BAL,
     aDAI,
     aUSDC,
     aUSDT,

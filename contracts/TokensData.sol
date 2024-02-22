@@ -1588,15 +1588,6 @@ contract TokensDataLive {
 
         tokenDataByNetwork[42161].push(
             TokenData({
-                id: Tokens._50OHM_50WETH,
-                addr: 0x89dc7e71e362faF88D92288fE2311D25c6a1B5E0,
-                symbol: "50OHM_50WETH",
-                tokenType: TokenType.BALANCER_LP_TOKEN
-            })
-        );
-
-        tokenDataByNetwork[42161].push(
-            TokenData({
                 id: Tokens.wstETH_WETH_BPT,
                 addr: 0x9791d590788598535278552EEcD4b211bFc790CB,
                 symbol: "wstETH_WETH_BPT",
@@ -1624,6 +1615,14 @@ contract TokensDataLive {
                 id: Tokens.rETH_WETH_BPT,
                 addr: 0xadE4A71BB62bEc25154CFc7e6ff49A513B491E81,
                 symbol: "rETH_WETH_BPT",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[42161].push(
+            TokenData({
+                id: Tokens._33AURA_33ARB_33BAL,
+                addr: 0xbcaA6c053cab3Dd73a2E898d89A4f84a180ae1CA,
+                symbol: "33AURA_33ARB_33BAL",
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );

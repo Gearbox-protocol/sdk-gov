@@ -25,7 +25,8 @@ export type BalancerLPToken =
   | "wstETH_WETH_BPT"
   | "wstETH_rETH_sfrxETH"
   | "wstETH_rETH_cbETH"
-  | "rETH_WETH_BPT";
+  | "rETH_WETH_BPT"
+  | "33AURA_33ARB_33BAL";
 
 export type BalancerLpTokenData = {
   symbol: BalancerLPToken;
@@ -237,6 +238,17 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     underlying: ["WETH", "rETH"],
     poolId:
       "0xade4a71bb62bec25154cfc7e6ff49a513b491e81000000000000000000000497",
+  },
+
+  "33AURA_33ARB_33BAL": {
+    name: "Balancer AURA/ARB/BAL Pool (Arbitrum)",
+    symbol: "33AURA_33ARB_33BAL",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["BAL", "AURA", "ARB"],
+    poolId:
+      "0xbcaa6c053cab3dd73a2e898d89a4f84a180ae1ca000100000000000000000458",
   },
 };
 

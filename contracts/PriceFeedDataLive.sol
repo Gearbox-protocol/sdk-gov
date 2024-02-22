@@ -745,6 +745,17 @@ contract PriceFeedDataLive {
 
         // ------------------------ wstETH ------------------------
         wstethPriceFeedByNetwork[1] = SingeTokenPriceFeedData({token: Tokens.wstETH, trusted: false, reserve: false});
+        compositePriceFeedsByNetwork[42161].push(
+            CompositePriceFeedData({
+                token: Tokens.wstETH,
+                targetToBaseFeed: 0xb523AE262D20A936BC152e6023996e46FDC2A95D,
+                targetStalenessPeriod: 86400,
+                baseToUSDFeed: 0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612,
+                baseStalenessPeriod: 86400,
+                trusted: false,
+                reserve: false
+            })
+        );
         compositePriceFeedsByNetwork[10].push(
             CompositePriceFeedData({
                 token: Tokens.wstETH,
@@ -1721,6 +1732,15 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: Tokens.crvUSD,
                 priceFeed: 0xEEf0C605546958c1f899b6fB336C20671f9cD49F,
+                stalenessPeriod: 86400,
+                trusted: false,
+                reserve: false
+            })
+        );
+        chainlinkPriceFeedsByNetwork[42161].push(
+            ChainlinkPriceFeedData({
+                token: Tokens.crvUSD,
+                priceFeed: 0x0a32255dd4BB6177C994bAAc73E0606fDD568f66,
                 stalenessPeriod: 86400,
                 trusted: false,
                 reserve: false
@@ -3413,6 +3433,17 @@ contract PriceFeedDataLive {
                 trusted: false,
                 reserve: false
             })
+        );
+
+        // ------------------------ 33AURA_33ARB_33BAL ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: Tokens._33AURA_33ARB_33BAL, trusted: true, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: Tokens._33AURA_33ARB_33BAL, trusted: true, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: Tokens._33AURA_33ARB_33BAL, trusted: true, reserve: false})
         );
 
         // ------------------------ dDAI ------------------------
