@@ -855,11 +855,16 @@ export const priceFeedsByToken: Record<
   osETH: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.REDSTONE_ORACLE,
-        dataServiceId: "redstone-primary-prod",
-        dataId: "osETH",
-        stalenessPeriod: FOUR_MINUTES,
-        ...REDSTONE_SIGNERS,
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "osETH/ETH",
+          ...REDSTONE_SIGNERS,
+        },
+        targetStalenessPeriod: FOUR_MINUTES,
+        baseToUsdPriceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+        baseStalenessPeriod: HOUR_1_BUFFERED,
         trusted: false,
       },
     },
@@ -868,11 +873,16 @@ export const priceFeedsByToken: Record<
   weETH: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.REDSTONE_ORACLE,
-        dataServiceId: "redstone-primary-prod",
-        dataId: "weETH",
-        stalenessPeriod: FOUR_MINUTES,
-        ...REDSTONE_SIGNERS,
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "weETH/ETH",
+          ...REDSTONE_SIGNERS,
+        },
+        targetStalenessPeriod: FOUR_MINUTES,
+        baseToUsdPriceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+        baseStalenessPeriod: HOUR_1_BUFFERED,
         trusted: false,
       },
     },
@@ -881,11 +891,16 @@ export const priceFeedsByToken: Record<
   ezETH: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.REDSTONE_ORACLE,
-        dataServiceId: "redstone-primary-prod",
-        dataId: "ezETH",
-        stalenessPeriod: FOUR_MINUTES,
-        ...REDSTONE_SIGNERS,
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "ezETH/ETH",
+          ...REDSTONE_SIGNERS,
+        },
+        targetStalenessPeriod: FOUR_MINUTES,
+        baseToUsdPriceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+        baseStalenessPeriod: HOUR_1_BUFFERED,
         trusted: false,
       },
     },

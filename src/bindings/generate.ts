@@ -10,9 +10,11 @@ import { CHAINS, supportedChains } from "../core/chains";
 import { NOT_DEPLOYED } from "../core/constants";
 import { priceFeedsByToken } from "../oracles/priceFeeds";
 import {
+  CompositeOracleData,
   HOUR_24,
   PriceFeedData,
   PriceFeedType,
+  RedstoneOracleData,
 } from "../oracles/pricefeedType";
 import { CurveLPTokenData } from "../tokens/curveLP";
 import {
@@ -423,24 +425,74 @@ class BindingsGenerator {
       priceFeedData.targetToBasePriceFeed !== NOT_DEPLOYED &&
       priceFeedData.baseToUsdPriceFeed !== NOT_DEPLOYED
     ) {
-      const targetToBaseFeed = priceFeedData.targetToBasePriceFeed;
-      const baseToUSDFeed = priceFeedData.baseToUsdPriceFeed;
+      let targetToBaseFeed: string | undefined;
+      let targetToBaseRedstoneData: RedstoneOracleData | undefined;
+      let isTargetRedstone: boolean;
+      let signers = [];
+      if (typeof priceFeedData.targetToBasePriceFeed === "string") {
+        targetToBaseFeed = priceFeedData.targetToBasePriceFeed;
+        isTargetRedstone = false;
+      } else {
+        targetToBaseRedstoneData = priceFeedData.targetToBasePriceFeed;
+        for (let i = 0; i < 10; i++) {
+          signers.push(
+            i < targetToBaseRedstoneData.signers.length
+              ? targetToBaseRedstoneData.signers[i]
+              : "address(0)",
+          );
+        }
+        isTargetRedstone = true;
+      }
+      let baseToUSDFeed: string | undefined;
+      let baseToUSDCompositeData: CompositeOracleData | undefined;
+      let isBaseComposite: boolean;
+      if (typeof priceFeedData.baseToUsdPriceFeed === "string") {
+        baseToUSDFeed = priceFeedData.baseToUsdPriceFeed;
+        isBaseComposite = false;
+      } else {
+        baseToUSDCompositeData = priceFeedData.baseToUsdPriceFeed;
+        isBaseComposite = true;
+      }
 
-      return `compositePriceFeedsByNetwork[${chainId}].push(CompositePriceFeedData({
-        token: ${this.tokensEnum(token)},
-        targetToBaseFeed: ${targetToBaseFeed},
-        targetStalenessPeriod: ${
-          priceFeedData.targetStalenessPeriod || HOUR_24
-        },
-        baseToUSDFeed: ${baseToUSDFeed},
-        baseStalenessPeriod: ${priceFeedData.baseStalenessPeriod || HOUR_24},
-        trusted: ${
-          !reserve
-            ? (priceFeedData as PriceFeedData & { trusted: boolean }).trusted
-            : false
-        },
-        reserve: ${reserve}
-      }));`;
+      return `
+      {
+      CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[${chainId}].push();
+      cpf.token = ${this.tokensEnum(token)};
+      cpf.isTargetRedstone = ${isTargetRedstone};
+      ${targetToBaseFeed ? `cpf.targetToBaseFeed = ${targetToBaseFeed};` : ""}
+      ${
+        targetToBaseRedstoneData
+          ? `cpf.redstoneTargetToBaseData = RedStonePriceFeedDataShort({
+        dataServiceId: "${targetToBaseRedstoneData.dataServiceId}",
+        dataFeedId: "${targetToBaseRedstoneData.dataId}",
+        signers: [${signers.join(",")}],
+        signersThreshold: ${targetToBaseRedstoneData.signersThreshold}
+      });`
+          : ""
+      }
+      cpf.targetStalenessPeriod = ${
+        priceFeedData.targetStalenessPeriod || HOUR_24
+      };
+      cpf.isBaseComposite = ${isBaseComposite};
+      ${baseToUSDFeed ? `cpf.baseToUSDFeed = ${baseToUSDFeed};` : ""}
+      ${
+        baseToUSDCompositeData
+          ? `cpf.compositeBaseToUSDData = CompositePriceFeedDataShort({
+        targetToBaseFeed: ${baseToUSDCompositeData.targetToBasePriceFeed},
+        targetStalenessPeriod: ${baseToUSDCompositeData.targetStalenessPeriod},
+        baseToUSDFeed: ${baseToUSDCompositeData.baseToUsdPriceFeed},
+        baseStalenessPeriod: ${baseToUSDCompositeData.baseStalenessPeriod}
+      });`
+          : ""
+      }
+      cpf.baseStalenessPeriod = ${priceFeedData.baseStalenessPeriod || HOUR_24};
+      cpf.trusted = ${
+        !reserve
+          ? (priceFeedData as PriceFeedData & { trusted: boolean }).trusted
+          : false
+      };
+      cpf.reserve = ${reserve};
+      }`;
     } else return undefined;
   }
 

@@ -45,12 +45,33 @@ struct SingeTokenPriceFeedData {
     bool trusted;
 }
 
-struct CompositePriceFeedData {
-    Tokens token;
+struct RedStonePriceFeedDataShort {
+    string dataServiceId;
+    bytes32 dataFeedId;
+    address[10] signers;
+    uint8 signersThreshold;
+}
+
+struct CompositePriceFeedDataShort {
     address targetToBaseFeed;
     uint32 targetStalenessPeriod;
     address baseToUSDFeed;
     uint32 baseStalenessPeriod;
+}
+
+struct CompositePriceFeedData {
+    Tokens token;
+    // Target data
+    bool isTargetRedstone;
+    RedStonePriceFeedDataShort redstoneTargetToBaseData;
+    address targetToBaseFeed;
+    uint32 targetStalenessPeriod;
+    // Base data
+    bool isBaseComposite;
+    CompositePriceFeedDataShort compositeBaseToUSDData;
+    address baseToUSDFeed;
+    uint32 baseStalenessPeriod;
+    // Misc
     bool reserve;
     bool trusted;
 }
