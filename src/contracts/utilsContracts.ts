@@ -9,13 +9,13 @@ export const ADDRESS_PROVIDER: Record<NetworkType, string> = {
 
 export const TIMELOCK: Record<NetworkType, string> = {
   Mainnet: "0xa133C9A92Fb8dDB962Af1cbae58b2723A0bdf23b",
-  Arbitrum: NOT_DEPLOYED,
+  Arbitrum: "0x148DD932eCe1155c11006F5650c6Ff428f8D374A",
   Optimism: NOT_DEPLOYED,
 };
 
 export const GOVERNOR: Record<NetworkType, string> = {
   Mainnet: "0x29B97F37B3E0C704bCFD785F5b7bBa2A0B7df2c7",
-  Arbitrum: NOT_DEPLOYED,
+  Arbitrum: "0xF0C89a0eDCD68B4176A26B3bf7574498DD3E6d09",
   Optimism: NOT_DEPLOYED,
 };
 
@@ -33,7 +33,7 @@ export const DEGEN_NFT: Record<NetworkType, string> = {
 
 export const CREATE2FACTORY: Record<NetworkType, string> = {
   Mainnet: "0x45d146CAA25aa565Cfc7434926633f4F1C97c873",
-  Arbitrum: NOT_DEPLOYED,
+  Arbitrum: "0x95345A4d55DAf6864924fC8861b311B9BC860E5f",
   Optimism: NOT_DEPLOYED,
 };
 
