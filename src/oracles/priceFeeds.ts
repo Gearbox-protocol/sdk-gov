@@ -224,6 +224,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x86E53CF1B870786351Da77A57575e79CB55812CB",
+        stalenessPeriod: HOUR_1_BUFFERED,
         trusted: false,
       },
     },
@@ -328,6 +329,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3",
+        stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: true,
       },
     },
@@ -360,6 +362,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3",
+        stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: true,
       },
     },
@@ -430,6 +433,8 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: "0x0017abAc5b6f291F9164e35B1234CA1D697f9CF4",
         baseToUsdPriceFeed: "0x6ce185860a4963106506C203335A2910413708e9",
+        baseStalenessPeriod: HOUR_24_BUFFERED_L2,
+        targetStalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: true,
       },
     },
@@ -464,6 +469,7 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
         trusted: true,
+        stalenessPeriod: HOUR_24_BUFFERED_L2,
       },
     },
     Optimism: {
@@ -534,6 +540,8 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: "0xb523AE262D20A936BC152e6023996e46FDC2A95D",
         baseToUsdPriceFeed: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
+        targetStalenessPeriod: HOUR_24_BUFFERED_L2,
+        baseStalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
       },
     },
@@ -749,6 +757,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xDB98056FecFff59D032aB628337A4887110df3dB",
+        stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
       },
     },
@@ -767,6 +776,7 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xb2A824043730FE05F3DA2efaFa1CBbe83fa548D6",
         trusted: false,
+        stalenessPeriod: HOUR_24_BUFFERED_L2,
       },
     },
   },
@@ -982,7 +992,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x66853E19d73c0F9301fe099c324A1E9726953433",
-        stalenessPeriod: HOUR_24_BUFFERED,
+        stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
       },
     },
