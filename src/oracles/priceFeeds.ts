@@ -328,7 +328,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3",
-        trusted: false,
+        trusted: true,
       },
     },
     Optimism: {
@@ -360,7 +360,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3",
-        trusted: false,
+        trusted: true,
       },
     },
     Optimism: {
@@ -430,7 +430,7 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: "0x0017abAc5b6f291F9164e35B1234CA1D697f9CF4",
         baseToUsdPriceFeed: "0x6ce185860a4963106506C203335A2910413708e9",
-        trusted: false,
+        trusted: true,
       },
     },
     Optimism: {
@@ -463,7 +463,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
-        trusted: false,
+        trusted: true,
       },
     },
     Optimism: {
