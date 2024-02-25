@@ -39,18 +39,18 @@ export const CREATE2FACTORY: Record<NetworkType, string> = {
 
 export const MULTISIG: Record<NetworkType, string> = {
   Mainnet: "0xA7D5DDc1b8557914F158076b228AA91eF613f1D5",
-  Arbitrum: NOT_DEPLOYED,
+  Arbitrum: "0x57Fd8B1a9213624157786Fff4a7bc532Ce717773",
   Optimism: "0x8bA8cd6D00919ceCc19D9B4A2c8669a524883C4c",
 };
 
 export const VETO_ADMIN: Record<NetworkType, string> = {
   Mainnet: "0xbb803559B4D58b75E12dd74641AB955e8B0Df40E",
-  Arbitrum: NOT_DEPLOYED,
+  Arbitrum: "0x746fb3AcAfF6Bfe246206EC2E51F587d2E57abb6",
   Optimism: "0x9744f76dc5239Eb4DC2CE8D5538e1BA89C8FA90f",
 };
 
 export const TREASURY: Record<NetworkType, string> = {
   Mainnet: "0x7b065fcb0760df0cea8cfd144e08554f3cea73d1",
-  Arbitrum: NOT_DEPLOYED,
+  Arbitrum: "0x2c31eFFE426765E68A43163A96DD13DF70B53C14",
   Optimism: "0x1ACc5BC353f23B901801f3Ba48e1E51a14263808",
 };
