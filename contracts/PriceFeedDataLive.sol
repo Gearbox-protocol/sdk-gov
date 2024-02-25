@@ -487,7 +487,7 @@ contract PriceFeedDataLive {
                 token: Tokens.USDC,
                 priceFeed: 0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3,
                 stalenessPeriod: 86400,
-                trusted: false,
+                trusted: true,
                 reserve: false
             })
         );
@@ -538,7 +538,7 @@ contract PriceFeedDataLive {
                 token: Tokens.USDC_e,
                 priceFeed: 0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3,
                 stalenessPeriod: 86400,
-                trusted: false,
+                trusted: true,
                 reserve: false
             })
         );
@@ -652,7 +652,7 @@ contract PriceFeedDataLive {
             cpf.baseToUSDFeed = 0x6ce185860a4963106506C203335A2910413708e9;
 
             cpf.baseStalenessPeriod = 86400;
-            cpf.trusted = false;
+            cpf.trusted = true;
             cpf.reserve = false;
         }
         chainlinkPriceFeedsByNetwork[10].push(
@@ -702,7 +702,7 @@ contract PriceFeedDataLive {
                 token: Tokens.WETH,
                 priceFeed: 0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612,
                 stalenessPeriod: 86400,
-                trusted: false,
+                trusted: true,
                 reserve: false
             })
         );
@@ -1173,11 +1173,15 @@ contract PriceFeedDataLive {
         }
 
         // ------------------------ osETH ------------------------
-        redStonePriceFeedsByNetwork[1].push(
-            RedStonePriceFeedData({
-                token: Tokens.osETH,
+
+        {
+            CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[1].push();
+            cpf.token = Tokens.osETH;
+            cpf.isTargetRedstone = true;
+
+            cpf.redstoneTargetToBaseData = RedStonePriceFeedDataShort({
                 dataServiceId: "redstone-primary-prod",
-                dataFeedId: "osETH",
+                dataFeedId: "osETH/ETH",
                 signers: [
                     0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
                     0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
@@ -1190,11 +1194,16 @@ contract PriceFeedDataLive {
                     address(0),
                     address(0)
                 ],
-                signersThreshold: 5,
-                trusted: false,
-                reserve: false
-            })
-        );
+                signersThreshold: 5
+            });
+            cpf.targetStalenessPeriod = 240;
+            cpf.isBaseComposite = false;
+            cpf.baseToUSDFeed = 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419;
+
+            cpf.baseStalenessPeriod = 4500;
+            cpf.trusted = false;
+            cpf.reserve = false;
+        }
 
         // ------------------------ weETH ------------------------
 
@@ -1230,11 +1239,15 @@ contract PriceFeedDataLive {
         }
 
         // ------------------------ ezETH ------------------------
-        redStonePriceFeedsByNetwork[1].push(
-            RedStonePriceFeedData({
-                token: Tokens.ezETH,
+
+        {
+            CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[1].push();
+            cpf.token = Tokens.ezETH;
+            cpf.isTargetRedstone = true;
+
+            cpf.redstoneTargetToBaseData = RedStonePriceFeedDataShort({
                 dataServiceId: "redstone-primary-prod",
-                dataFeedId: "ezETH",
+                dataFeedId: "ezETH/ETH",
                 signers: [
                     0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
                     0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
@@ -1247,11 +1260,16 @@ contract PriceFeedDataLive {
                     address(0),
                     address(0)
                 ],
-                signersThreshold: 5,
-                trusted: false,
-                reserve: false
-            })
-        );
+                signersThreshold: 5
+            });
+            cpf.targetStalenessPeriod = 240;
+            cpf.isBaseComposite = false;
+            cpf.baseToUSDFeed = 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419;
+
+            cpf.baseStalenessPeriod = 4500;
+            cpf.trusted = false;
+            cpf.reserve = false;
+        }
 
         // ------------------------ rswETH ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.rswETH, trusted: true, reserve: false}));
