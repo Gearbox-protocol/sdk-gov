@@ -479,6 +479,7 @@ export const priceFeedsByToken: Record<
         address: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
         stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: true,
+        stalenessPeriod: HOUR_24_BUFFERED_L2,
       },
     },
     Optimism: {
@@ -791,6 +792,7 @@ export const priceFeedsByToken: Record<
         address: "0xb2A824043730FE05F3DA2efaFa1CBbe83fa548D6",
         stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
+        stalenessPeriod: HOUR_24_BUFFERED_L2,
       },
     },
   },
