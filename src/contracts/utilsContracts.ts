@@ -3,7 +3,7 @@ import { NOT_DEPLOYED } from "../core/constants";
 
 export const ADDRESS_PROVIDER: Record<NetworkType, string> = {
   Mainnet: "0x9ea7b04Da02a5373317D745c1571c84aaD03321D",
-  Arbitrum: NOT_DEPLOYED,
+  Arbitrum: "0x7d04eCdb892Ae074f03B5D0aBA03796F90F3F2af",
   Optimism: NOT_DEPLOYED,
 };
 
