@@ -1725,6 +1725,14 @@ contract TokensDataLive {
             })
         );
 
+        tokenDataByNetwork[42161].push(
+            TokenData({
+                id: Tokens.GEAR,
+                addr: 0x2F26337576127efabEEc1f62BE79dB1bcA9148A4,
+                symbol: "GEAR",
+                tokenType: TokenType.GEAR_TOKEN
+            })
+        );
         tokenDataByNetwork[10].push(
             TokenData({
                 id: Tokens.AAVE,
