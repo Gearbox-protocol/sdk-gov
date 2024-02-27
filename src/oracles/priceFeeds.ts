@@ -5,8 +5,8 @@ import { PartialRecord } from "../utils/types";
 import {
   FOUR_MINUTES,
   HOUR_1_BUFFERED,
-  HOUR_24_BUFFERED,
   HOUR_1_BUFFERED_L2,
+  HOUR_24_BUFFERED,
   HOUR_24_BUFFERED_L2,
   MINUTES_20_BUFFERED_L2,
   PriceFeedEntry,
