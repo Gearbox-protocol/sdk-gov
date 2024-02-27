@@ -584,13 +584,6 @@ contract SupportedContracts is Test, ISupportedContracts {
 
         contractDataByNetwork[42161].push(
             ContractData({
-                id: Contracts.LIDO_WSTETH,
-                addr: 0x5979D7b546E38E414F7E9822514be443A4800529,
-                name: "LIDO_WSTETH"
-            })
-        );
-        contractDataByNetwork[42161].push(
-            ContractData({
                 id: Contracts.BALANCER_VAULT,
                 addr: 0xBA12222222228d8Ba445958a75a0704d566BF2C8,
                 name: "BALANCER_VAULT"

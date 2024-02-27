@@ -147,7 +147,7 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   USDC_e: {
     name: "USDC (Bridged)",
 
-    symbol: "USDC",
+    symbol: "USDC_e",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 
