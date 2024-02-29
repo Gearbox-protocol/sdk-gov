@@ -655,6 +655,19 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  /// WARNING: THIS IS CURRENTLY SET TO USDC PRICE FEED FOR TESTING PURPOSES
+  ///          DO NOT USE IN PROD!!!
+  USDe: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+        stalenessPeriod: HOUR_24_BUFFERED,
+        trusted: true,
+      },
+    },
+  },
+
   FXS: {
     Mainnet: {
       Main: {
@@ -1170,6 +1183,16 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CURVE_4LP_ORACLE,
         assets: ["MIM", "DAI", "USDC", "USDT"],
+        trusted: false,
+      },
+    },
+  },
+
+  USDeUSDC: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["USDe", "USDC"],
         trusted: false,
       },
     },

@@ -148,7 +148,7 @@ ${creditManagers}`;
         PoolQuotaLimit,
         IPoolV3DeployConfig,
         CollateralTokenHuman,
-        UniswapV2Pair,
+        GenericSwapPair,
         UniswapV3Pair,
         BalancerPool,
         VelodromeV2Pool

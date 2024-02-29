@@ -36,7 +36,7 @@ export const erc4626Tokens: Record<
   },
 
   YieldETH: {
-    name: "Yearn yvUSDC",
+    name: "Sommelier ETH Vault",
     symbol: "YieldETH",
     type: { AllNetworks: TokenType.ERC4626_VAULT_TOKEN },
     underlying: "WETH",

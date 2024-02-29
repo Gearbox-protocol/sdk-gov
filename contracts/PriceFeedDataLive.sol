@@ -887,6 +887,17 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ USDe ------------------------
+        chainlinkPriceFeedsByNetwork[1].push(
+            ChainlinkPriceFeedData({
+                token: Tokens.USDe,
+                priceFeed: 0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6,
+                stalenessPeriod: 87300,
+                trusted: true,
+                reserve: false
+            })
+        );
+
         // ------------------------ FXS ------------------------
         chainlinkPriceFeedsByNetwork[1].push(
             ChainlinkPriceFeedData({
@@ -1577,6 +1588,35 @@ contract PriceFeedDataLive {
                 lpToken: Tokens.MIM_3LP3CRV,
                 assets: TokensLib.arrayOf(Tokens.MIM, Tokens.DAI, Tokens.USDC, Tokens.USDT),
                 pool: Contracts.CURVE_MIM_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ USDeUSDC ------------------------
+        curvePriceFeedsByNetwork[1].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.USDeUSDC,
+                assets: TokensLib.arrayOf(Tokens.USDe, Tokens.USDC),
+                pool: Contracts.CURVE_USDE_USDC_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[42161].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.USDeUSDC,
+                assets: TokensLib.arrayOf(Tokens.USDe, Tokens.USDC),
+                pool: Contracts.CURVE_USDE_USDC_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[10].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.USDeUSDC,
+                assets: TokensLib.arrayOf(Tokens.USDe, Tokens.USDC),
+                pool: Contracts.CURVE_USDE_USDC_POOL,
                 trusted: false,
                 reserve: false
             })

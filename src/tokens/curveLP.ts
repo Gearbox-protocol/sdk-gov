@@ -15,6 +15,7 @@ export type CurveMetaTokens =
   | "OHMFRAXBP";
 
 export type CurveLPToken =
+  | CurveMetaTokens
   | "3Crv"
   | "steCRV"
   | "crvPlain3andSUSD"
@@ -28,14 +29,18 @@ export type CurveLPToken =
   | "crvUSDFRAX"
   | "crvUSDETHCRV"
   | "rETH_f"
-  | "wstETHCRV"
+  | "USDeUSDC"
+
+  /// Arbitrum
   | "2CRV"
   | "3c-crvUSD"
   | "crvUSDC"
   | "crvUSDT"
   | "crvUSDC_e"
+
+  // Optimism
   | "3CRV"
-  | CurveMetaTokens;
+  | "wstETHCRV";
 
 export type CurveLPTokenData = {
   symbol: CurveLPToken;
@@ -206,6 +211,14 @@ export const curveTokens: Record<
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
     pool: "CURVE_RETH_ETH_POOL",
     tokenOut: ["rETH", "WETH"],
+  },
+
+  USDeUSDC: {
+    name: "Curve USDe-USDC Pool",
+    symbol: "USDeUSDC",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_USDE_USDC_POOL",
+    tokenOut: ["USDe", "USDC"],
   },
 
   wstETHCRV: {
