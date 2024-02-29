@@ -655,14 +655,10 @@ export const priceFeedsByToken: Record<
     },
   },
 
-  /// WARNING: THIS IS CURRENTLY SET TO USDC PRICE FEED FOR TESTING PURPOSES
-  ///          DO NOT USE IN PROD!!!
   USDe: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
-        stalenessPeriod: HOUR_24_BUFFERED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: true,
       },
     },
