@@ -96,7 +96,10 @@ class PriceFeedsSuite {
         }
         break;
       case PriceFeedType.COMPOSITE_ORACLE:
-        if (data.baseToUsdPriceFeed.startsWith("0x")) {
+        if (
+          typeof data.baseToUsdPriceFeed === "string" &&
+          data.baseToUsdPriceFeed.startsWith("0x")
+        ) {
           calls.push({
             address: data.baseToUsdPriceFeed,
             interface: iFeed,
@@ -104,7 +107,10 @@ class PriceFeedsSuite {
             key: `${token}.baseToUsdPriceFeed`,
           });
         }
-        if (data.targetToBasePriceFeed.startsWith("0x")) {
+        if (
+          typeof data.targetToBasePriceFeed === "string" &&
+          data.targetToBasePriceFeed.startsWith("0x")
+        ) {
           calls.push({
             address: data.targetToBasePriceFeed,
             interface: iFeed,
