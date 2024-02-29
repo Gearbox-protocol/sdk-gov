@@ -7,7 +7,7 @@ import { safeEnum } from "../utils/safeEnum";
 import {
   AdapterConfig,
   BalancerVaultConfig,
-  UniV2Config,
+  GenericSwapConfig,
   UniV3Config,
   VelodromeV2Config,
 } from "./adapters";
@@ -192,10 +192,11 @@ ${contracts}
 
       case "UNISWAP_V2_ROUTER":
       case "SUSHISWAP_ROUTER":
-      case "FRAXSWAP_ROUTER": {
-        const pairs = ((a as UniV2Config).allowed || [])
+      case "FRAXSWAP_ROUTER":
+      case "CAMELOT_V3_ROUTER": {
+        const pairs = ((a as GenericSwapConfig).allowed || [])
           .map(
-            pair => `uv2p.push(UniswapV2Pair({
+            pair => `gsp.push(GenericSwapPair({
           router: Contracts.${a.contract},
           token0: Tokens.${safeEnum(pair.token0)},
           token1: Tokens.${safeEnum(pair.token1)}
@@ -204,7 +205,7 @@ ${contracts}
           .join("\n");
 
         return `${contractLine}{
-        UniswapV2Pair[] storage uv2p = cp.uniswapV2Pairs;
+        GenericSwapPair[] storage gsp = cp.genericSwapPairs;
         ${pairs}}`;
       }
 
@@ -239,6 +240,7 @@ ${contracts}
           VelodromeV2Pool[] storage vv2p = cp.velodromeV2Pools;
           ${pools}`;
       }
+
       default:
         return contractLine;
     }

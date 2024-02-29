@@ -54,6 +54,7 @@ export type NormalToken =
   | "frxETH"
   | "cbETH"
   | "rswETH"
+  | "USDe"
 
   // REDSTONE
   | "SHIB"
@@ -380,6 +381,11 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   rswETH: {
     name: "Restaked Swell ETH",
     symbol: "rswETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  USDe: {
+    name: "Ethena USDe",
+    symbol: "USDe",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };

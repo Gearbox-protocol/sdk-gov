@@ -10,7 +10,7 @@ enum BalanceStatus {
 export type AdapterDeployConfig =
   | DefaultAdapterConfig
   | UniV3Config
-  | UniV2Config
+  | GenericSwapConfig
   | BalancerVaultConfig
   | VelodromeV2Config;
 
@@ -28,12 +28,16 @@ export interface BalancerVaultConfig {
   allowed: Array<BalancerPoolConfig>;
 }
 
-export interface UniV2Config {
-  contract: "UNISWAP_V2_ROUTER" | "SUSHISWAP_ROUTER" | "FRAXSWAP_ROUTER";
-  allowed: Array<UniswapV2Pair>;
+export interface GenericSwapConfig {
+  contract:
+    | "UNISWAP_V2_ROUTER"
+    | "SUSHISWAP_ROUTER"
+    | "FRAXSWAP_ROUTER"
+    | "CAMELOT_V3_ROUTER";
+  allowed: Array<GenericSwapPair>;
 }
 
-export interface UniswapV2Pair {
+export interface GenericSwapPair {
   token0: SupportedToken;
   token1: SupportedToken;
 }
@@ -43,7 +47,7 @@ export interface UniV3Config {
   allowed: Array<UniswapV3Pair>;
 }
 
-export interface UniswapV3Pair extends UniswapV2Pair {
+export interface UniswapV3Pair extends GenericSwapPair {
   fee: 100 | 500 | 3_000 | 10000;
 }
 
@@ -62,6 +66,6 @@ export interface VelodromeV2Config {
 export type AdapterConfig =
   | DefaultAdapterConfig
   | UniV3Config
-  | UniV2Config
+  | GenericSwapConfig
   | BalancerVaultConfig
   | VelodromeV2Config;

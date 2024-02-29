@@ -655,6 +655,15 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  USDe: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: true,
+      },
+    },
+  },
+
   FXS: {
     Mainnet: {
       Main: {
@@ -1185,6 +1194,16 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CURVE_4LP_ORACLE,
         assets: ["MIM", "DAI", "USDC", "USDT"],
+        trusted: false,
+      },
+    },
+  },
+
+  USDeUSDC: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["USDe", "USDC"],
         trusted: false,
       },
     },

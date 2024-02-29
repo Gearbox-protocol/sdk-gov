@@ -703,7 +703,8 @@ class BindingsGenerator {
           contractParam.type === AdapterInterface.COMPOUND_V2_CETHER ||
           contractParam.type === AdapterInterface.ERC4626_VAULT ||
           contractParam.type === AdapterInterface.BALANCER_VAULT ||
-          contractParam.type === AdapterInterface.VELODROME_V2_ROUTER,
+          contractParam.type === AdapterInterface.VELODROME_V2_ROUTER ||
+          contractParam.type === AdapterInterface.CAMELOT_V3_ROUTER,
       )
       .map(
         ([contract, contractParam]) =>
@@ -717,13 +718,15 @@ class BindingsGenerator {
         ([, contractParam]) =>
           contractParam.type === AdapterInterface.CURVE_V1_2ASSETS ||
           contractParam.type === AdapterInterface.CURVE_V1_3ASSETS ||
-          contractParam.type === AdapterInterface.CURVE_V1_4ASSETS,
+          contractParam.type === AdapterInterface.CURVE_V1_4ASSETS ||
+          contractParam.type === AdapterInterface.CURVE_STABLE_NG,
       )
       .map(([contract, contractParam]) => {
         if (
           contractParam.type === AdapterInterface.CURVE_V1_2ASSETS ||
           contractParam.type === AdapterInterface.CURVE_V1_3ASSETS ||
-          contractParam.type === AdapterInterface.CURVE_V1_4ASSETS
+          contractParam.type === AdapterInterface.CURVE_V1_4ASSETS ||
+          contractParam.type === AdapterInterface.CURVE_STABLE_NG
         ) {
           if (contractParam.lpToken === "GEAR") return "";
           let basePool: SupportedContract | "NO_CONTRACT" = "NO_CONTRACT";

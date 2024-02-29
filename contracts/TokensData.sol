@@ -394,6 +394,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.USDe,
+                addr: 0x4c9EDD5852cd905f086C759E8383e09bff1E68B3,
+                symbol: "USDe",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.wstETH,
                 addr: 0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0,
                 symbol: "wstETH",
@@ -509,6 +517,14 @@ contract TokensDataLive {
                 id: Tokens.rETH_f,
                 addr: 0x6c38cE8984a890F5e46e6dF6117C26b3F1EcfC9C,
                 symbol: "rETH_f",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.USDeUSDC,
+                addr: 0x02950460E2b9529D0E00284A5fA2d7bDF3fA4d72,
+                symbol: "USDeUSDC",
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
         );

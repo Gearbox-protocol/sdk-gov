@@ -161,6 +161,13 @@ contract SupportedContracts is Test, ISupportedContracts {
 
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_USDE_USDC_POOL,
+                addr: 0x02950460E2b9529D0E00284A5fA2d7bDF3fA4d72,
+                name: "CURVE_USDE_USDC_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_GEAR_POOL,
                 addr: 0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2,
                 name: "CURVE_GEAR_POOL"
@@ -498,6 +505,14 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.UNISWAP_V3_ROUTER,
                 addr: 0xE592427A0AEce92De3Edee1F18E0157C05861564,
                 name: "UNISWAP_V3_ROUTER"
+            })
+        );
+
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.CAMELOT_V3_ROUTER,
+                addr: 0x1F721E2E82F6676FCE4eA07A5958cF098D339e18,
+                name: "CAMELOT_V3_ROUTER"
             })
         );
 
