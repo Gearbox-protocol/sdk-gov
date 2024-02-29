@@ -561,7 +561,7 @@ export const tokenDataByNetwork: Record<
     sdWBTCV3: NOT_DEPLOYED,
     sdWETHV3: NOT_DEPLOYED,
 
-    GEAR: NOT_DEPLOYED,
+    GEAR: "0x2F26337576127efabEEc1f62BE79dB1bcA9148A4",
 
     // AAVE
     aUSDC: "0x724dc807b04555b71ed48a6896b6F41593b8C637",

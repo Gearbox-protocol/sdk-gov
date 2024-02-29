@@ -258,7 +258,7 @@ export const curveTokens: Record<
 
   "3CRV": {
     name: "Curve 3Crv",
-    symbol: "3Crv",
+    symbol: "3CRV",
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
     pool: "CURVE_3CRV_POOL_OP",
     tokenOut: ["DAI", "USDC_e", "USDT"],

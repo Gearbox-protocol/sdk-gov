@@ -12,8 +12,8 @@ export const toBigInt = (v: BigNumberish): bigint => {
   return BigInt(value);
 };
 
-export const percentFmt = (v: number): string =>
-  `${(v / 100).toFixed(2)}% [ ${v} ]`;
+export const percentFmt = (v: number | bigint | BigNumberish): string =>
+  `${(Number(v) / 100).toFixed(2)}% [ ${v} ]`;
 
 export function formatBN(
   num: BigNumberish | undefined,
@@ -111,4 +111,8 @@ export function fmtContract(address: string): string {
   return contractsByAddress[address.toLocaleLowerCase()]
     ? `[${contractsByAddress[address.toLowerCase()]}]`
     : address;
+}
+
+export function numberWithCommas(x: number | bigint): string {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
