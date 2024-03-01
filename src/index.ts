@@ -1,4 +1,15 @@
+import { testUsdcConfigMainnet } from "./config/configs/test_usdcConfigMainnet";
+
 export * from "./config/adapters";
+export { testUsdcConfigMainnet } from "./config/configs/test_usdcConfigMainnet";
+export { testWethConfigArbitrum } from "./config/configs/test_wethConfigArbitrum";
+export { usdcConfigArbitrum } from "./config/configs/usdcConfigArbitrum";
+export { usdcConfigMainnet } from "./config/configs/usdcConfigMainnet";
+export { usdcConfigOptimism } from "./config/configs/usdcConfigOptimism";
+export { wbtcConfigMainnet } from "./config/configs/wbtcConfigMainnet";
+export { wethConfigArbitrum } from "./config/configs/wethConfigArbitrum";
+export { wethConfigMainnet } from "./config/configs/wethConfigMainnet";
+export { wethConfigOptimism } from "./config/configs/wethConfigOptimism";
 export * from "./config/poolV3Core";
 export * from "./config/poolV3DeployConfig";
 export { AdapterInterface } from "./contracts/adapters";

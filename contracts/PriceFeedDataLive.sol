@@ -888,15 +888,7 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ USDe ------------------------
-        chainlinkPriceFeedsByNetwork[1].push(
-            ChainlinkPriceFeedData({
-                token: Tokens.USDe,
-                priceFeed: 0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6,
-                stalenessPeriod: 87300,
-                trusted: true,
-                reserve: false
-            })
-        );
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.USDe, trusted: true, reserve: false}));
 
         // ------------------------ FXS ------------------------
         chainlinkPriceFeedsByNetwork[1].push(
