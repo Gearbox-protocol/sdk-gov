@@ -71,6 +71,22 @@ export interface PriceFeedEntry {
 
 export type PriceFeedNetwork = NetworkType | "AllNetworks";
 
+export interface RedstoneOracleData {
+  type: PriceFeedType.REDSTONE_ORACLE;
+  dataServiceId: string;
+  dataId: string;
+  signers: Array<string>;
+  signersThreshold: number;
+}
+
+export interface CompositeOracleData {
+  type: PriceFeedType.COMPOSITE_ORACLE;
+  targetToBasePriceFeed: string | RedstoneOracleData;
+  targetStalenessPeriod?: number;
+  baseToUsdPriceFeed: string | CompositeOracleData;
+  baseStalenessPeriod?: number;
+}
+
 export type PriceFeedData =
   | {
       type: PriceFeedType.CHAINLINK_ORACLE;
@@ -106,13 +122,7 @@ export type PriceFeedData =
       type: PriceFeedType.WSTETH_ORACLE;
       token: SupportedToken;
     }
-  | {
-      type: PriceFeedType.COMPOSITE_ORACLE;
-      targetToBasePriceFeed: string;
-      targetStalenessPeriod?: number;
-      baseToUsdPriceFeed: string;
-      baseStalenessPeriod?: number;
-    }
+  | CompositeOracleData
   | {
       type: PriceFeedType.CURVE_CRYPTO_ORACLE;
       assets: Array<SupportedToken>;
@@ -141,14 +151,7 @@ export type PriceFeedData =
       type: PriceFeedType.ERC4626_VAULT_ORACLE;
       underlying: NormalToken;
     }
-  | {
-      type: PriceFeedType.REDSTONE_ORACLE;
-      dataServiceId: string;
-      dataId: string;
-      signers: Array<string>;
-      signersThreshold: number;
-      stalenessPeriod: number;
-    }
+  | (RedstoneOracleData & { stalenessPeriod: number })
   | {
       type: PriceFeedType.NETWORK_DEPENDENT;
       feeds: Record<
