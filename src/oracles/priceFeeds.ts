@@ -6,6 +6,7 @@ import {
   FOUR_MINUTES,
   HOUR_1_BUFFERED,
   HOUR_1_BUFFERED_L2,
+  HOUR_12_BUFFERED,
   HOUR_24_BUFFERED,
   HOUR_24_BUFFERED_L2,
   MINUTES_20_BUFFERED_L2,
@@ -658,7 +659,9 @@ export const priceFeedsByToken: Record<
   USDe: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.ZERO_ORACLE,
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0xbC5FBcf58CeAEa19D523aBc76515b9AEFb5cfd58",
+        stalenessPeriod: HOUR_24_BUFFERED,
         trusted: true,
       },
     },
@@ -891,13 +894,8 @@ export const priceFeedsByToken: Record<
     Mainnet: {
       Main: {
         type: PriceFeedType.COMPOSITE_ORACLE,
-        targetToBasePriceFeed: {
-          type: PriceFeedType.REDSTONE_ORACLE,
-          dataServiceId: "redstone-primary-prod",
-          dataId: "osETH/ETH",
-          ...REDSTONE_SIGNERS,
-        },
-        targetStalenessPeriod: FOUR_MINUTES,
+        targetToBasePriceFeed: "0x66ac817f997Efd114EDFcccdce99F3268557B32C",
+        targetStalenessPeriod: HOUR_24_BUFFERED,
         baseToUsdPriceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
         baseStalenessPeriod: HOUR_1_BUFFERED,
         trusted: false,
@@ -909,13 +907,8 @@ export const priceFeedsByToken: Record<
     Mainnet: {
       Main: {
         type: PriceFeedType.COMPOSITE_ORACLE,
-        targetToBasePriceFeed: {
-          type: PriceFeedType.REDSTONE_ORACLE,
-          dataServiceId: "redstone-primary-prod",
-          dataId: "weETH/ETH",
-          ...REDSTONE_SIGNERS,
-        },
-        targetStalenessPeriod: FOUR_MINUTES,
+        targetToBasePriceFeed: "0x8751F736E94F6CD167e8C5B97E245680FbD9CC36",
+        targetStalenessPeriod: HOUR_24_BUFFERED,
         baseToUsdPriceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
         baseStalenessPeriod: HOUR_1_BUFFERED,
         trusted: false,
@@ -927,13 +920,8 @@ export const priceFeedsByToken: Record<
     Mainnet: {
       Main: {
         type: PriceFeedType.COMPOSITE_ORACLE,
-        targetToBasePriceFeed: {
-          type: PriceFeedType.REDSTONE_ORACLE,
-          dataServiceId: "redstone-primary-prod",
-          dataId: "ezETH/ETH",
-          ...REDSTONE_SIGNERS,
-        },
-        targetStalenessPeriod: FOUR_MINUTES,
+        targetToBasePriceFeed: "0xF4a3e183F59D2599ee3DF213ff78b1B3b1923696",
+        targetStalenessPeriod: HOUR_12_BUFFERED,
         baseToUsdPriceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
         baseStalenessPeriod: HOUR_1_BUFFERED,
         trusted: false,
@@ -953,7 +941,11 @@ export const priceFeedsByToken: Record<
   rsETH: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.ZERO_ORACLE,
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: "0xA736eAe8805dDeFFba40cAB8c99bCB309dEaBd9B",
+        targetStalenessPeriod: HOUR_24_BUFFERED,
+        baseToUsdPriceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+        baseStalenessPeriod: HOUR_1_BUFFERED,
         trusted: false,
       },
     },
@@ -1204,6 +1196,26 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CURVE_2LP_ORACLE,
         assets: ["USDe", "USDC"],
+        trusted: false,
+      },
+    },
+  },
+
+  FRAXUSDe: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["FRAX", "USDe"],
+        trusted: false,
+      },
+    },
+  },
+
+  USDecrvUSD: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["USDe", "crvUSD"],
         trusted: false,
       },
     },
@@ -2322,6 +2334,15 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.ERC4626_VAULT_ORACLE,
         underlying: "DAI",
+        trusted: false,
+      },
+    },
+  },
+  sUSDe: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "USDe",
         trusted: false,
       },
     },

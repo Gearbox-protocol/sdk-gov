@@ -30,6 +30,8 @@ export type CurveLPToken =
   | "crvUSDETHCRV"
   | "rETH_f"
   | "USDeUSDC"
+  | "FRAXUSDe"
+  | "USDecrvUSD"
 
   /// Arbitrum
   | "2CRV"
@@ -219,6 +221,22 @@ export const curveTokens: Record<
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
     pool: "CURVE_USDE_USDC_POOL",
     tokenOut: ["USDe", "USDC"],
+  },
+
+  FRAXUSDe: {
+    name: "Curve FRAX-USDe Pool",
+    symbol: "FRAXUSDe",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_FRAX_USDE_POOL",
+    tokenOut: ["FRAX", "USDe"],
+  },
+
+  USDecrvUSD: {
+    name: "Curve USDe-crvUSD Pool",
+    symbol: "USDecrvUSD",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_USDE_CRVUSD_POOL",
+    tokenOut: ["USDe", "crvUSD"],
   },
 
   wstETHCRV: {

@@ -528,6 +528,22 @@ contract TokensDataLive {
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
         );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.FRAXUSDe,
+                addr: 0x5dc1BF6f1e983C0b21EfB003c105133736fA0743,
+                symbol: "FRAXUSDe",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.USDecrvUSD,
+                addr: 0xF55B0f6F2Da5ffDDb104b58a60F2862745960442,
+                symbol: "USDecrvUSD",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
 
         tokenDataByNetwork[1].push(
             TokenData({
@@ -1081,6 +1097,14 @@ contract TokensDataLive {
                 id: Tokens.YieldETH,
                 addr: 0xb5b29320d2Dde5BA5BAFA1EbcD270052070483ec,
                 symbol: "YieldETH",
+                tokenType: TokenType.ERC4626_VAULT_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.sUSDe,
+                addr: 0x9D39A5DE30e57443BfF2A8307A4256c8797A3497,
+                symbol: "sUSDe",
                 tokenType: TokenType.ERC4626_VAULT_TOKEN
             })
         );

@@ -168,6 +168,20 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_FRAX_USDE_POOL,
+                addr: 0x5dc1BF6f1e983C0b21EfB003c105133736fA0743,
+                name: "CURVE_FRAX_USDE_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_USDE_CRVUSD_POOL,
+                addr: 0xF55B0f6F2Da5ffDDb104b58a60F2862745960442,
+                name: "CURVE_USDE_CRVUSD_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_GEAR_POOL,
                 addr: 0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2,
                 name: "CURVE_GEAR_POOL"
@@ -271,6 +285,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.YIELD_ETH_VAULT,
                 addr: 0xb5b29320d2Dde5BA5BAFA1EbcD270052070483ec,
                 name: "YIELD_ETH_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.STAKED_USDE_VAULT,
+                addr: 0x9D39A5DE30e57443BfF2A8307A4256c8797A3497,
+                name: "STAKED_USDE_VAULT"
             })
         );
         contractDataByNetwork[1].push(

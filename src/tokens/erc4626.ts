@@ -6,7 +6,7 @@ import { NormalToken } from "./normal";
 import type { TokenBase } from "./token";
 import { TokenNetwork, TokenType } from "./tokenType";
 
-export type ERC4626LPToken = "sDAI" | "YieldETH";
+export type ERC4626LPToken = "sDAI" | "YieldETH" | "sUSDe";
 
 export type ERC4626VaultTokenData = {
   symbol: ERC4626LPToken;
@@ -41,6 +41,14 @@ export const erc4626Tokens: Record<
     type: { AllNetworks: TokenType.ERC4626_VAULT_TOKEN },
     underlying: "WETH",
     vault: "YIELD_ETH_VAULT",
+  },
+
+  sUSDe: {
+    name: "Staked USDe",
+    symbol: "sUSDe",
+    type: { AllNetworks: TokenType.ERC4626_VAULT_TOKEN },
+    underlying: "USDe",
+    vault: "STAKED_USDE_VAULT",
   },
 };
 

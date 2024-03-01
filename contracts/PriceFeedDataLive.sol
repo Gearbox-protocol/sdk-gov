@@ -933,7 +933,7 @@ contract PriceFeedDataLive {
         chainlinkPriceFeedsByNetwork[1].push(
             ChainlinkPriceFeedData({
                 token: Tokens.USDe,
-                priceFeed: 0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6,
+                priceFeed: 0xbC5FBcf58CeAEa19D523aBc76515b9AEFb5cfd58,
                 stalenessPeriod: 87300,
                 trusted: true,
                 reserve: false
@@ -1188,26 +1188,10 @@ contract PriceFeedDataLive {
         {
             CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[1].push();
             cpf.token = Tokens.osETH;
-            cpf.isTargetRedstone = true;
+            cpf.isTargetRedstone = false;
+            cpf.targetToBaseFeed = 0x66ac817f997Efd114EDFcccdce99F3268557B32C;
 
-            cpf.redstoneTargetToBaseData = RedStonePriceFeedDataShort({
-                dataServiceId: "redstone-primary-prod",
-                dataFeedId: "osETH/ETH",
-                signers: [
-                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
-                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
-                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
-                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
-                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0)
-                ],
-                signersThreshold: 5
-            });
-            cpf.targetStalenessPeriod = 240;
+            cpf.targetStalenessPeriod = 87300;
             cpf.isBaseComposite = false;
             cpf.baseToUSDFeed = 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419;
 
@@ -1221,26 +1205,10 @@ contract PriceFeedDataLive {
         {
             CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[1].push();
             cpf.token = Tokens.weETH;
-            cpf.isTargetRedstone = true;
+            cpf.isTargetRedstone = false;
+            cpf.targetToBaseFeed = 0x8751F736E94F6CD167e8C5B97E245680FbD9CC36;
 
-            cpf.redstoneTargetToBaseData = RedStonePriceFeedDataShort({
-                dataServiceId: "redstone-primary-prod",
-                dataFeedId: "weETH/ETH",
-                signers: [
-                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
-                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
-                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
-                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
-                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0)
-                ],
-                signersThreshold: 5
-            });
-            cpf.targetStalenessPeriod = 240;
+            cpf.targetStalenessPeriod = 87300;
             cpf.isBaseComposite = false;
             cpf.baseToUSDFeed = 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419;
 
@@ -1254,26 +1222,10 @@ contract PriceFeedDataLive {
         {
             CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[1].push();
             cpf.token = Tokens.ezETH;
-            cpf.isTargetRedstone = true;
+            cpf.isTargetRedstone = false;
+            cpf.targetToBaseFeed = 0xF4a3e183F59D2599ee3DF213ff78b1B3b1923696;
 
-            cpf.redstoneTargetToBaseData = RedStonePriceFeedDataShort({
-                dataServiceId: "redstone-primary-prod",
-                dataFeedId: "ezETH/ETH",
-                signers: [
-                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
-                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
-                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
-                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
-                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0)
-                ],
-                signersThreshold: 5
-            });
-            cpf.targetStalenessPeriod = 240;
+            cpf.targetStalenessPeriod = 44100;
             cpf.isBaseComposite = false;
             cpf.baseToUSDFeed = 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419;
 
@@ -1290,7 +1242,21 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: Tokens.rswETH, trusted: true, reserve: false}));
 
         // ------------------------ rsETH ------------------------
-        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.rsETH, trusted: false, reserve: false}));
+
+        {
+            CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[1].push();
+            cpf.token = Tokens.rsETH;
+            cpf.isTargetRedstone = false;
+            cpf.targetToBaseFeed = 0xA736eAe8805dDeFFba40cAB8c99bCB309dEaBd9B;
+
+            cpf.targetStalenessPeriod = 87300;
+            cpf.isBaseComposite = false;
+            cpf.baseToUSDFeed = 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419;
+
+            cpf.baseStalenessPeriod = 4500;
+            cpf.trusted = false;
+            cpf.reserve = false;
+        }
 
         // ------------------------ frxETH ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.frxETH, trusted: false, reserve: false}));
@@ -1717,6 +1683,64 @@ contract PriceFeedDataLive {
                 lpToken: Tokens.USDeUSDC,
                 assets: TokensLib.arrayOf(Tokens.USDe, Tokens.USDC),
                 pool: Contracts.CURVE_USDE_USDC_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ FRAXUSDe ------------------------
+        curvePriceFeedsByNetwork[1].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.FRAXUSDe,
+                assets: TokensLib.arrayOf(Tokens.FRAX, Tokens.USDe),
+                pool: Contracts.CURVE_FRAX_USDE_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[42161].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.FRAXUSDe,
+                assets: TokensLib.arrayOf(Tokens.FRAX, Tokens.USDe),
+                pool: Contracts.CURVE_FRAX_USDE_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[10].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.FRAXUSDe,
+                assets: TokensLib.arrayOf(Tokens.FRAX, Tokens.USDe),
+                pool: Contracts.CURVE_FRAX_USDE_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ USDecrvUSD ------------------------
+        curvePriceFeedsByNetwork[1].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.USDecrvUSD,
+                assets: TokensLib.arrayOf(Tokens.USDe, Tokens.crvUSD),
+                pool: Contracts.CURVE_USDE_CRVUSD_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[42161].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.USDecrvUSD,
+                assets: TokensLib.arrayOf(Tokens.USDe, Tokens.crvUSD),
+                pool: Contracts.CURVE_USDE_CRVUSD_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[10].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.USDecrvUSD,
+                assets: TokensLib.arrayOf(Tokens.USDe, Tokens.crvUSD),
+                pool: Contracts.CURVE_USDE_CRVUSD_POOL,
                 trusted: false,
                 reserve: false
             })
@@ -3902,6 +3926,17 @@ contract PriceFeedDataLive {
         );
         erc4626PriceFeedsByNetwork[10].push(
             GenericLPPriceFeedData({lpToken: Tokens.sDAI, underlying: Tokens.DAI, trusted: false, reserve: false})
+        );
+
+        // ------------------------ sUSDe ------------------------
+        erc4626PriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: Tokens.sUSDe, underlying: Tokens.USDe, trusted: false, reserve: false})
+        );
+        erc4626PriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: Tokens.sUSDe, underlying: Tokens.USDe, trusted: false, reserve: false})
+        );
+        erc4626PriceFeedsByNetwork[10].push(
+            GenericLPPriceFeedData({lpToken: Tokens.sUSDe, underlying: Tokens.USDe, trusted: false, reserve: false})
         );
 
         // ------------------------ YieldETH ------------------------
