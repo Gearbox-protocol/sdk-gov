@@ -900,6 +900,10 @@ export const priceFeedsByToken: Record<
         baseStalenessPeriod: HOUR_1_BUFFERED,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "WETH",
+      },
     },
   },
 
@@ -913,6 +917,10 @@ export const priceFeedsByToken: Record<
         baseStalenessPeriod: HOUR_1_BUFFERED,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "WETH",
+      },
     },
   },
 
@@ -925,6 +933,10 @@ export const priceFeedsByToken: Record<
         baseToUsdPriceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
         baseStalenessPeriod: HOUR_1_BUFFERED,
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "WETH",
       },
     },
   },
