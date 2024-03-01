@@ -61,7 +61,7 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
   liquidationPremium: 400,
   feeLiquidationExpired: 100,
   liquidationPremiumExpired: 200,
-  poolLimit: (BigInt(3e6) * POOL_DECIMALS) / POOL_DIVIDER,
+  poolLimit: (BigInt(30e6) * POOL_DECIMALS) / POOL_DIVIDER,
   collateralTokens: [
     {
       token: "WETH",
@@ -84,12 +84,25 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
       lt: 9000,
     },
     {
+      token: "FRAX",
+      lt: 9000,
+    },
+    {
+      token: "crvUSD",
+      lt: 9000,
+    },
+    {
       token: "yvWETH",
       lt: 8700,
     },
     {
       token: "yvWBTC",
       lt: 8700,
+    },
+    // POINTS FARMING
+    {
+      token: "USDe",
+      lt: 9000,
     },
     // FARMS
     {
@@ -108,6 +121,11 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     { token: "3Crv", lt: 0 },
     { token: "crvUSDTWBTCWETH", lt: 0 },
     { token: "steCRV", lt: 0 },
+    { token: "USDeUSDC", lt: 0 },
+    { token: "FRAXUSDe", lt: 0 },
+    { token: "USDecrvUSD", lt: 0 },
+    { token: "crvFRAX", lt: 0 },
+    { token: "crvUSDUSDC", lt: 0 },
   ],
   adapters: [
     tier1UniV2Config,
@@ -116,6 +134,11 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     { contract: "CURVE_3CRV_POOL" },
     { contract: "CURVE_3CRYPTO_POOL" },
     { contract: "CURVE_STETH_GATEWAY" },
+    { contract: "CURVE_USDE_USDC_POOL" },
+    { contract: "CURVE_FRAX_USDE_POOL" },
+    { contract: "CURVE_USDE_CRVUSD_POOL" },
+    { contract: "CURVE_FRAX_USDC_POOL" },
+    { contract: "CURVE_CRVUSD_USDC_POOL" },
     { contract: "YEARN_WETH_VAULT" },
     { contract: "YEARN_WBTC_VAULT" },
     { contract: "YEARN_USDC_VAULT" },
@@ -500,6 +523,12 @@ export const usdcConfigMainnet: PoolV3DeployConfig = {
       quotaIncreaseFee: 1,
       limit: (BigInt(30e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
+    crvUSD: {
+      minRate: 4,
+      maxRate: 1200,
+      quotaIncreaseFee: 1,
+      limit: (BigInt(30e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
     USDT: {
       minRate: 4,
       maxRate: 1200,
@@ -610,6 +639,14 @@ export const usdcConfigMainnet: PoolV3DeployConfig = {
       maxRate: 350,
       quotaIncreaseFee: 0,
       limit: (BigInt(20.4e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+
+    // POINTS FARMING
+    USDe: {
+      minRate: 5,
+      maxRate: 3000,
+      quotaIncreaseFee: 0,
+      limit: (BigInt(30e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
   },
   creditManagers: [

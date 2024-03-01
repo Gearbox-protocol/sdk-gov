@@ -48,7 +48,9 @@ export type CurvePoolContract =
   | "CURVE_CRVUSD_USDT_POOL_ARB"
   | "CURVE_CRVUSD_USDC_E_POOL_ARB"
   | "CURVE_3CRV_POOL_OP"
-  | "CURVE_USDE_USDC_POOL";
+  | "CURVE_USDE_USDC_POOL"
+  | "CURVE_FRAX_USDE_POOL"
+  | "CURVE_USDE_CRVUSD_POOL";
 
 export type YearnVaultContract =
   | "YEARN_DAI_VAULT"
@@ -60,7 +62,10 @@ export type YearnVaultContract =
   | "YEARN_CURVE_FRAX_VAULT"
   | "YEARN_CURVE_STETH_VAULT";
 
-export type ERC4626VaultContract = "MAKER_DSR_VAULT" | "YIELD_ETH_VAULT";
+export type ERC4626VaultContract =
+  | "MAKER_DSR_VAULT"
+  | "YIELD_ETH_VAULT"
+  | "STAKED_USDE_VAULT";
 
 export type ConvexPoolContract =
   | "CONVEX_3CRV_POOL"
@@ -156,6 +161,8 @@ export const contractsByNetwork: Record<
     CURVE_LDOETH_POOL: "0x9409280DC1e6D33AB7A8C6EC03e5763FB61772B5",
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
     CURVE_USDE_USDC_POOL: tokenDataByNetwork.Mainnet.USDeUSDC,
+    CURVE_FRAX_USDE_POOL: tokenDataByNetwork.Mainnet.FRAXUSDe,
+    CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Mainnet.USDecrvUSD,
 
     CURVE_GEAR_POOL: "0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2",
 
@@ -186,6 +193,7 @@ export const contractsByNetwork: Record<
     // ERC4626
     MAKER_DSR_VAULT: tokenDataByNetwork.Mainnet.sDAI,
     YIELD_ETH_VAULT: tokenDataByNetwork.Mainnet.YieldETH,
+    STAKED_USDE_VAULT: tokenDataByNetwork.Mainnet.sUSDe,
 
     // CONVEX
     CONVEX_BOOSTER: "0xF403C135812408BFbE8713b5A23a04b3D48AAE31",
@@ -283,6 +291,8 @@ export const contractsByNetwork: Record<
     CURVE_3CRYPTO_POOL: NOT_DEPLOYED,
     CURVE_LDOETH_POOL: NOT_DEPLOYED,
     CURVE_USDE_USDC_POOL: tokenDataByNetwork.Arbitrum.USDeUSDC,
+    CURVE_FRAX_USDE_POOL: tokenDataByNetwork.Arbitrum.FRAXUSDe,
+    CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Arbitrum.USDecrvUSD,
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -314,6 +324,7 @@ export const contractsByNetwork: Record<
     /// ERC4626
     MAKER_DSR_VAULT: tokenDataByNetwork.Arbitrum.sDAI,
     YIELD_ETH_VAULT: tokenDataByNetwork.Arbitrum.YieldETH,
+    STAKED_USDE_VAULT: tokenDataByNetwork.Arbitrum.sUSDe,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -412,6 +423,8 @@ export const contractsByNetwork: Record<
     CURVE_3CRYPTO_POOL: NOT_DEPLOYED,
     CURVE_LDOETH_POOL: NOT_DEPLOYED,
     CURVE_USDE_USDC_POOL: tokenDataByNetwork.Optimism.USDeUSDC,
+    CURVE_FRAX_USDE_POOL: tokenDataByNetwork.Optimism.FRAXUSDe,
+    CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Optimism.USDecrvUSD,
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -442,6 +455,7 @@ export const contractsByNetwork: Record<
     /// ERC4626
     MAKER_DSR_VAULT: tokenDataByNetwork.Optimism.sDAI,
     YIELD_ETH_VAULT: tokenDataByNetwork.Optimism.YieldETH,
+    STAKED_USDE_VAULT: tokenDataByNetwork.Optimism.sUSDe,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -580,7 +594,7 @@ export type YearnParams = {
 } & BaseContractParams;
 
 export type ERC4626Params = {
-  protocol: Protocols.MakerDSR | Protocols.Sommelier;
+  protocol: Protocols.MakerDSR | Protocols.Sommelier | Protocols.Ethena;
   type: AdapterInterface.ERC4626_VAULT;
   underlying: NormalToken;
 } & BaseContractParams;
@@ -921,9 +935,27 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Curve USDeUSDC",
     protocol: Protocols.Curve,
     version: 20,
-    type: AdapterInterface.CURVE_STABLE_NG,
+    type: AdapterInterface.CURVE_V1_2ASSETS, // NOTE: This is actually stable NG, however the old adapter is used in swap only mode before audits
     lpToken: "USDeUSDC",
     tokens: ["USDe", "USDC"],
+  },
+
+  CURVE_FRAX_USDE_POOL: {
+    name: "Curve FRAXUSDe",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_V1_2ASSETS, // NOTE: This is actually stable NG, however the old adapter is used in swap only mode before audits
+    lpToken: "FRAXUSDe",
+    tokens: ["FRAX", "USDe"],
+  },
+
+  CURVE_USDE_CRVUSD_POOL: {
+    name: "Curve USDecrvUSD",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_V1_2ASSETS, // NOTE: This is actually stable NG, however the old adapter is used in swap only mode before audits
+    lpToken: "USDecrvUSD",
+    tokens: ["USDe", "crvUSD"],
   },
 
   CURVE_2CRV_POOL_ARB: {
@@ -1039,6 +1071,12 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     protocol: Protocols.Sommelier,
     type: AdapterInterface.ERC4626_VAULT,
     underlying: "WETH",
+  },
+  STAKED_USDE_VAULT: {
+    name: "Ethena Staked USDe Vault",
+    protocol: Protocols.Ethena,
+    type: AdapterInterface.ERC4626_VAULT,
+    underlying: "USDe",
   },
   CONVEX_BOOSTER: {
     name: "Convex BOOSTER",
