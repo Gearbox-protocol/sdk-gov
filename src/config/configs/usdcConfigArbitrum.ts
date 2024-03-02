@@ -129,7 +129,7 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
 
 export const usdcConfigArbitrum: PoolV3DeployConfig = {
   id: "arbitrum-usdc-v3",
-  symbol: "dUSDC_EV3",
+  symbol: "dUSDCV3",
   name: "Main USDC.e v3",
   network: "Arbitrum",
   underlying: "USDC_e",
