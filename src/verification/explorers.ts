@@ -1,7 +1,7 @@
 import { NetworkType } from "../core/chains";
 
 export const explorerUrl: Record<NetworkType, string> = {
-  Mainnet: "https://etherscan.io/api",
-  Arbitrum: "https://arbiscan.io/api",
-  Optimism: "https://optimistic.etherscan.io/api",
+  Mainnet: "https://api.etherscan.io/api",
+  Arbitrum: "https://api.arbiscan.io/api",
+  Optimism: "https://api.optimistic.etherscan.io/api",
 };
