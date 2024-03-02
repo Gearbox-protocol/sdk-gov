@@ -2052,23 +2052,6 @@ export const priceFeedsByToken: Record<
     },
   },
 
-  dUSDC_EV3: {
-    Mainnet: {
-      Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
-        trusted: false,
-      },
-    },
-    Arbitrum: {
-      Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
-        trusted: false,
-      },
-    },
-  },
-
   dWBTCV3: {
     Mainnet: {
       Main: {
@@ -2104,23 +2087,6 @@ export const priceFeedsByToken: Record<
   },
 
   sdUSDCV3: {
-    Mainnet: {
-      Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
-        trusted: false,
-      },
-    },
-    Arbitrum: {
-      Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
-        trusted: false,
-      },
-    },
-  },
-
-  sdUSDC_EV3: {
     Mainnet: {
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
