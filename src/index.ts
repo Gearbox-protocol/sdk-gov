@@ -28,6 +28,7 @@ export * from "./utils/formatter";
 export * from "./utils/mappers";
 export * from "./utils/multicall";
 export * from "./utils/safeEnum";
+export * from "./utils/sleep";
 export * from "./utils/types";
 export * from "./verification/audits";
 export * from "./verification/explorers";
