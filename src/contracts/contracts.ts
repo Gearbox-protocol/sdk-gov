@@ -9,6 +9,7 @@ import { AaveV2LPToken } from "../tokens/aave";
 import { AuraStakedToken } from "../tokens/aura";
 import { ConvexStakedPhantomToken } from "../tokens/convex";
 import type { CurveLPToken } from "../tokens/curveLP";
+import { ERC4626LPToken } from "../tokens/erc4626";
 import { NormalToken } from "../tokens/normal";
 import { tokenDataByNetwork } from "../tokens/token";
 import type { YearnLPToken } from "../tokens/yearn";
@@ -50,7 +51,9 @@ export type CurvePoolContract =
   | "CURVE_3CRV_POOL_OP"
   | "CURVE_USDE_USDC_POOL"
   | "CURVE_FRAX_USDE_POOL"
-  | "CURVE_USDE_CRVUSD_POOL";
+  | "CURVE_USDE_CRVUSD_POOL"
+  | "CURVE_USDE_DAI_POOL"
+  | "CURVE_SDAI_SUSDE_POOL";
 
 export type YearnVaultContract =
   | "YEARN_DAI_VAULT"
@@ -163,6 +166,8 @@ export const contractsByNetwork: Record<
     CURVE_USDE_USDC_POOL: tokenDataByNetwork.Mainnet.USDeUSDC,
     CURVE_FRAX_USDE_POOL: tokenDataByNetwork.Mainnet.FRAXUSDe,
     CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Mainnet.USDecrvUSD,
+    CURVE_USDE_DAI_POOL: tokenDataByNetwork.Mainnet.USDeDAI,
+    CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Mainnet.MtEthena,
 
     CURVE_GEAR_POOL: "0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2",
 
@@ -293,6 +298,8 @@ export const contractsByNetwork: Record<
     CURVE_USDE_USDC_POOL: tokenDataByNetwork.Arbitrum.USDeUSDC,
     CURVE_FRAX_USDE_POOL: tokenDataByNetwork.Arbitrum.FRAXUSDe,
     CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Arbitrum.USDecrvUSD,
+    CURVE_USDE_DAI_POOL: tokenDataByNetwork.Arbitrum.USDeDAI,
+    CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Arbitrum.MtEthena,
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -425,6 +432,8 @@ export const contractsByNetwork: Record<
     CURVE_USDE_USDC_POOL: tokenDataByNetwork.Optimism.USDeUSDC,
     CURVE_FRAX_USDE_POOL: tokenDataByNetwork.Optimism.FRAXUSDe,
     CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Optimism.USDecrvUSD,
+    CURVE_USDE_DAI_POOL: tokenDataByNetwork.Optimism.USDeDAI,
+    CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Optimism.MtEthena,
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -562,7 +571,7 @@ export type CurveParams = {
     | AdapterInterface.CURVE_STABLE_NG;
   version: number;
   lpToken: CurveLPToken;
-  tokens: Array<NormalToken | CurveLPToken>;
+  tokens: Array<NormalToken | CurveLPToken | ERC4626LPToken>;
   underlyings?: Array<NormalToken>;
   wrapper?: CurvePoolContract;
 } & BaseContractParams;
@@ -956,6 +965,24 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.CURVE_V1_2ASSETS, // NOTE: This is actually stable NG, however the old adapter is used in swap only mode before audits
     lpToken: "USDecrvUSD",
     tokens: ["USDe", "crvUSD"],
+  },
+
+  CURVE_USDE_DAI_POOL: {
+    name: "Curve USDeDAI",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_V1_2ASSETS, // NOTE: This is actually stable NG, however the old adapter is used in swap only mode before audits
+    lpToken: "USDeDAI",
+    tokens: ["USDe", "DAI"],
+  },
+
+  CURVE_SDAI_SUSDE_POOL: {
+    name: "Curve MtEthena",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_V1_2ASSETS, // NOTE: This is actually stable NG, however the old adapter is used in swap only mode before audits
+    lpToken: "MtEthena",
+    tokens: ["sDAI", "sUSDe"],
   },
 
   CURVE_2CRV_POOL_ARB: {

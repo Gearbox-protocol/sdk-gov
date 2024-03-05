@@ -1201,6 +1201,25 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  USDeDAI: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["USDe", "DAI"],
+        trusted: false,
+      },
+    },
+  },
+
+  MtEthena: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: true,
+      },
+    },
+  },
+
   FRAXUSDe: {
     AllNetworks: {
       Main: {

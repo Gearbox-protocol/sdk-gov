@@ -2,6 +2,7 @@ import { BigNumber } from "ethers";
 
 import type { CurvePoolContract } from "../contracts/contracts";
 import { PartialRecord } from "../utils/types";
+import { ERC4626LPToken } from "./erc4626";
 import { NormalToken } from "./normal";
 import type { SupportedToken, TokenBase } from "./token";
 import { TokenNetwork, TokenType } from "./tokenType";
@@ -32,6 +33,8 @@ export type CurveLPToken =
   | "USDeUSDC"
   | "FRAXUSDe"
   | "USDecrvUSD"
+  | "USDeDAI"
+  | "MtEthena"
 
   /// Arbitrum
   | "2CRV"
@@ -47,7 +50,7 @@ export type CurveLPToken =
 export type CurveLPTokenData = {
   symbol: CurveLPToken;
   type: PartialRecord<TokenNetwork, TokenType.CURVE_LP_TOKEN>;
-  tokenOut: Array<CurveLPToken | WrappedToken | NormalToken>;
+  tokenOut: Array<CurveLPToken | WrappedToken | ERC4626LPToken | NormalToken>;
   pool: CurvePoolContract;
   wrapper?: CurvePoolContract;
 } & TokenBase;
@@ -55,7 +58,7 @@ export type CurveLPTokenData = {
 export type MetaCurveLPTokenData = {
   symbol: CurveLPToken;
   type: PartialRecord<TokenNetwork, TokenType.CURVE_LP_TOKEN>;
-  tokenOut: Array<CurveLPToken | WrappedToken | NormalToken>;
+  tokenOut: Array<CurveLPToken | WrappedToken | ERC4626LPToken | NormalToken>;
   pool: CurvePoolContract;
   wrapper?: CurvePoolContract;
 } & TokenBase;
@@ -237,6 +240,22 @@ export const curveTokens: Record<
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
     pool: "CURVE_USDE_CRVUSD_POOL",
     tokenOut: ["USDe", "crvUSD"],
+  },
+
+  USDeDAI: {
+    name: "Curve USDe-DAI pool",
+    symbol: "USDeDAI",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_USDE_DAI_POOL",
+    tokenOut: ["USDe", "crvUSD"],
+  },
+
+  MtEthena: {
+    name: "Curve sDAI-sUSDe Pool",
+    symbol: "MtEthena",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_SDAI_SUSDE_POOL",
+    tokenOut: ["sDAI", "sUSDe"],
   },
 
   wstETHCRV: {
