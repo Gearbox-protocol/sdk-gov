@@ -173,6 +173,7 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     { contract: "YEARN_USDC_VAULT" },
     { contract: "YEARN_DAI_VAULT" },
     { contract: "MAKER_DSR_VAULT" },
+    { contract: "STAKED_USDE_VAULT" },
   ],
 };
 
