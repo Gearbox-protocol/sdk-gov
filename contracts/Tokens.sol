@@ -76,6 +76,8 @@ enum Tokens {
     USDeUSDC,
     FRAXUSDe,
     USDecrvUSD,
+    USDeDAI,
+    MtEthena,
     wstETHCRV,
     _2CRV,
     _3c_crvUSD,

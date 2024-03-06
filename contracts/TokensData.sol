@@ -544,6 +544,22 @@ contract TokensDataLive {
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
         );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.USDeDAI,
+                addr: 0xF36a4BA50C603204c3FC6d2dA8b78A7b69CBC67d,
+                symbol: "USDeDAI",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.MtEthena,
+                addr: 0x167478921b907422F8E88B43C4Af2B8BEa278d3A,
+                symbol: "MtEthena",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
 
         tokenDataByNetwork[1].push(
             TokenData({

@@ -1688,6 +1688,46 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ USDeDAI ------------------------
+        curvePriceFeedsByNetwork[1].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.USDeDAI,
+                assets: TokensLib.arrayOf(Tokens.USDe, Tokens.DAI),
+                pool: Contracts.CURVE_USDE_DAI_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[42161].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.USDeDAI,
+                assets: TokensLib.arrayOf(Tokens.USDe, Tokens.DAI),
+                pool: Contracts.CURVE_USDE_DAI_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[10].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.USDeDAI,
+                assets: TokensLib.arrayOf(Tokens.USDe, Tokens.DAI),
+                pool: Contracts.CURVE_USDE_DAI_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ MtEthena ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: Tokens.MtEthena, trusted: true, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: Tokens.MtEthena, trusted: true, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: Tokens.MtEthena, trusted: true, reserve: false})
+        );
+
         // ------------------------ FRAXUSDe ------------------------
         curvePriceFeedsByNetwork[1].push(
             CurvePriceFeedData({

@@ -182,6 +182,20 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_USDE_DAI_POOL,
+                addr: 0xF36a4BA50C603204c3FC6d2dA8b78A7b69CBC67d,
+                name: "CURVE_USDE_DAI_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_SDAI_SUSDE_POOL,
+                addr: 0x167478921b907422F8E88B43C4Af2B8BEa278d3A,
+                name: "CURVE_SDAI_SUSDE_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_GEAR_POOL,
                 addr: 0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2,
                 name: "CURVE_GEAR_POOL"

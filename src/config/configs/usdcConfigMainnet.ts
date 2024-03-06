@@ -1,4 +1,8 @@
-import { GenericSwapConfig, UniV3Config } from "../adapters";
+import {
+  BalancerVaultConfig,
+  GenericSwapConfig,
+  UniV3Config,
+} from "../adapters";
 import {
   CreditManagerV3DeployConfig,
   PoolV3DeployConfig,
@@ -37,6 +41,7 @@ const tier1UniV3Config: UniV3Config = {
     { token0: "DAI", token1: "WETH", fee: 500 },
     { token0: "WBTC", token1: "USDT", fee: 3000 },
     { token0: "USDC", token1: "WETH", fee: 10000 },
+    { token0: "USDe", token1: "USDT", fee: 100 },
   ],
 };
 
@@ -47,6 +52,16 @@ const tier1SushiswapConfig: GenericSwapConfig = {
     { token0: "WETH", token1: "USDT" },
     { token0: "USDC", token1: "WETH" },
     { token0: "DAI", token1: "WETH" },
+  ],
+};
+
+const tier1BalancerConfig: BalancerVaultConfig = {
+  contract: "BALANCER_VAULT",
+  allowed: [
+    {
+      pool: "ezETH_WETH_BPT",
+      status: 2,
+    },
   ],
 };
 
@@ -72,10 +87,6 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
       lt: 9000,
     },
     {
-      token: "STETH",
-      lt: 9000,
-    },
-    {
       token: "DAI",
       lt: 9000,
     },
@@ -91,6 +102,15 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
       token: "crvUSD",
       lt: 9000,
     },
+    // BOOSTED
+    {
+      token: "STETH",
+      lt: 9000,
+    },
+    {
+      token: "ezETH",
+      lt: 9000,
+    },
     {
       token: "yvWETH",
       lt: 8700,
@@ -102,6 +122,10 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     // POINTS FARMING
     {
       token: "USDe",
+      lt: 9000,
+    },
+    {
+      token: "sUSDe",
       lt: 9000,
     },
     // FARMS
@@ -126,15 +150,20 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     { token: "USDecrvUSD", lt: 0 },
     { token: "crvFRAX", lt: 0 },
     { token: "crvUSDUSDC", lt: 0 },
+    { token: "USDeDAI", lt: 0 },
+    { token: "MtEthena", lt: 0 },
   ],
   adapters: [
     tier1UniV2Config,
     tier1UniV3Config,
     tier1SushiswapConfig,
+    tier1BalancerConfig,
     { contract: "CURVE_3CRV_POOL" },
     { contract: "CURVE_3CRYPTO_POOL" },
     { contract: "CURVE_STETH_GATEWAY" },
     { contract: "CURVE_USDE_USDC_POOL" },
+    { contract: "CURVE_USDE_DAI_POOL" },
+    { contract: "CURVE_SDAI_SUSDE_POOL" },
     { contract: "CURVE_FRAX_USDE_POOL" },
     { contract: "CURVE_USDE_CRVUSD_POOL" },
     { contract: "CURVE_FRAX_USDC_POOL" },
@@ -144,6 +173,7 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     { contract: "YEARN_USDC_VAULT" },
     { contract: "YEARN_DAI_VAULT" },
     { contract: "MAKER_DSR_VAULT" },
+    { contract: "STAKED_USDE_VAULT" },
   ],
 };
 
@@ -505,12 +535,6 @@ export const usdcConfigMainnet: PoolV3DeployConfig = {
       quotaIncreaseFee: 1,
       limit: (BigInt(30e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
-    STETH: {
-      minRate: 4,
-      maxRate: 1200,
-      quotaIncreaseFee: 1,
-      limit: (BigInt(30e6) * POOL_DECIMALS) / POOL_DIVIDER,
-    },
     DAI: {
       minRate: 4,
       maxRate: 1200,
@@ -583,18 +607,6 @@ export const usdcConfigMainnet: PoolV3DeployConfig = {
       quotaIncreaseFee: 1,
       limit: (BigInt(5e5) * POOL_DECIMALS) / POOL_DIVIDER,
     },
-    yvWETH: {
-      minRate: 1,
-      maxRate: 1500,
-      quotaIncreaseFee: 1,
-      limit: (BigInt(30e6) * POOL_DECIMALS) / POOL_DIVIDER,
-    },
-    yvWBTC: {
-      minRate: 1,
-      maxRate: 1500,
-      quotaIncreaseFee: 1,
-      limit: (BigInt(1e6) * POOL_DECIMALS) / POOL_DIVIDER,
-    },
 
     // FARMS
 
@@ -641,12 +653,44 @@ export const usdcConfigMainnet: PoolV3DeployConfig = {
       limit: (BigInt(20.4e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
 
+    // BOOSTED
+    yvWETH: {
+      minRate: 1,
+      maxRate: 1500,
+      quotaIncreaseFee: 1,
+      limit: (BigInt(30e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    yvWBTC: {
+      minRate: 1,
+      maxRate: 1500,
+      quotaIncreaseFee: 1,
+      limit: (BigInt(1e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    STETH: {
+      minRate: 4,
+      maxRate: 1200,
+      quotaIncreaseFee: 1,
+      limit: (BigInt(30e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    ezETH: {
+      minRate: 5,
+      maxRate: 3000,
+      quotaIncreaseFee: 0,
+      limit: (BigInt(3e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+
     // POINTS FARMING
     USDe: {
       minRate: 5,
       maxRate: 3000,
       quotaIncreaseFee: 0,
-      limit: (BigInt(30e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: (BigInt(3e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    sUSDe: {
+      minRate: 5,
+      maxRate: 3000,
+      quotaIncreaseFee: 0,
+      limit: (BigInt(3e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
   },
   creditManagers: [
