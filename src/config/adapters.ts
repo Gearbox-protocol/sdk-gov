@@ -2,7 +2,7 @@ import { SupportedContract } from "../contracts/contracts";
 import { BalancerLPToken } from "../tokens/balancer";
 import { SupportedToken } from "../tokens/token";
 
-enum BalancerPoolStatus {
+export enum BalancerPoolStatus {
   NOT_ALLOWED = 0,
   ALLOWED = 1,
   SWAP_ONLY = 2,
