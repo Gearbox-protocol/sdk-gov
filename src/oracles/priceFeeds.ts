@@ -662,7 +662,7 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xbC5FBcf58CeAEa19D523aBc76515b9AEFb5cfd58",
         stalenessPeriod: HOUR_24_BUFFERED,
-        trusted: true,
+        trusted: false,
       },
     },
   },
