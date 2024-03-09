@@ -83,7 +83,7 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     // LST
     {
       token: "ezETH",
-      lt: 9600,
+      lt: 9000,
     },
   ],
   adapters: [tier1UniV3Config, tier1BalancerConfig],
