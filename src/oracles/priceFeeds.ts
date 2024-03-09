@@ -940,6 +940,21 @@ export const priceFeedsByToken: Record<
         token: "WETH",
       },
     },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "ezETH/ETH",
+          ...REDSTONE_SIGNERS,
+        },
+        targetStalenessPeriod: FOUR_MINUTES,
+        baseToUsdPriceFeed: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
+        baseStalenessPeriod: HOUR_24_BUFFERED_L2,
+        trusted: false,
+      },
+    },
   },
 
   rswETH: {
