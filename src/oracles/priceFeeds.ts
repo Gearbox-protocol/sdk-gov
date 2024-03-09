@@ -954,6 +954,10 @@ export const priceFeedsByToken: Record<
         baseStalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "WETH",
+      },
     },
   },
 
