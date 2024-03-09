@@ -80,6 +80,11 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
       token: "cbETH",
       lt: 9600,
     },
+    // LST
+    {
+      token: "ezETH",
+      lt: 9600,
+    },
   ],
   adapters: [tier1UniV3Config, tier1BalancerConfig],
 };
@@ -208,6 +213,12 @@ export const wethConfigArbitrum: PoolV3DeployConfig = {
       maxRate: 350,
       quotaIncreaseFee: 0,
       limit: BigInt(2500) * POOL_DECIMALS,
+    },
+    ezETH: {
+      minRate: 5,
+      maxRate: 3000,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0) * POOL_DECIMALS,
     },
   },
   creditManagers: [tier1CreditManager, tier2CreditManager],

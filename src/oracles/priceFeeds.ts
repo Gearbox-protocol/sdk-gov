@@ -927,6 +927,16 @@ export const priceFeedsByToken: Record<
         trusted: false,
       },
     },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "ezETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+        trusted: false,
+      },
+    },
   },
 
   rswETH: {
