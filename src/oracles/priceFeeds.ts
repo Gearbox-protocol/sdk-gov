@@ -7,6 +7,7 @@ import {
   HOUR_1_BUFFERED,
   HOUR_1_BUFFERED_L2,
   HOUR_12_BUFFERED,
+  HOUR_24,
   HOUR_24_BUFFERED,
   HOUR_24_BUFFERED_L2,
   MINUTES_20_BUFFERED_L2,
@@ -662,7 +663,7 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xbC5FBcf58CeAEa19D523aBc76515b9AEFb5cfd58",
         stalenessPeriod: HOUR_24_BUFFERED,
-        trusted: true,
+        trusted: false,
       },
     },
   },
@@ -900,6 +901,10 @@ export const priceFeedsByToken: Record<
         baseStalenessPeriod: HOUR_1_BUFFERED,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "WETH",
+      },
     },
   },
 
@@ -913,6 +918,10 @@ export const priceFeedsByToken: Record<
         baseStalenessPeriod: HOUR_1_BUFFERED,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "WETH",
+      },
     },
   },
 
@@ -925,6 +934,10 @@ export const priceFeedsByToken: Record<
         baseToUsdPriceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
         baseStalenessPeriod: HOUR_1_BUFFERED,
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "WETH",
       },
     },
     Arbitrum: {
@@ -1310,6 +1323,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xEEf0C605546958c1f899b6fB336C20671f9cD49F",
+        stalenessPeriod: HOUR_24,
         trusted: false,
       },
     },

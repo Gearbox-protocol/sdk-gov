@@ -1,6 +1,3 @@
-import { interfaces } from "mocha";
-
-import { CurvePoolContract } from "../contracts/contracts";
 import { NetworkType } from "../core/chains";
 import { AaveV2LPToken } from "../tokens/aave";
 import { NormalToken } from "../tokens/normal";

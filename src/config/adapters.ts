@@ -2,7 +2,8 @@ import { SupportedContract } from "../contracts/contracts";
 import { BalancerLPToken } from "../tokens/balancer";
 import { SupportedToken } from "../tokens/token";
 
-enum BalanceStatus {
+export enum BalancerPoolStatus {
+  NOT_ALLOWED = 0,
   ALLOWED = 1,
   SWAP_ONLY = 2,
 }
@@ -20,7 +21,7 @@ export interface DefaultAdapterConfig {
 
 export interface BalancerPoolConfig {
   pool: BalancerLPToken;
-  status: BalanceStatus;
+  status: BalancerPoolStatus;
 }
 
 export interface BalancerVaultConfig {

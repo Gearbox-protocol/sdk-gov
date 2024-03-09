@@ -1,5 +1,6 @@
 import axios from "axios";
 
+import { sleep } from "../utils/sleep";
 import { audits, BranchLink, CommitLink, Repo } from "./audits";
 
 export type EtherscanSourceCodeResp =
@@ -62,9 +63,6 @@ interface VerifiedResponse {
   data?: EtherscanContract[];
   verified: boolean;
 }
-
-// eslint-disable-next-line no-promise-executor-return
-const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export class GithubChecker {
   protected readonly _audits = audits;
@@ -174,7 +172,7 @@ export class GithubChecker {
 
         try {
           githubSource = await this.getGithubSource(githubRawUrl);
-          await sleep(1000);
+          await sleep(1_000);
         } catch (e) {
           console.error(`get github source error: ${e}`);
           continue;
