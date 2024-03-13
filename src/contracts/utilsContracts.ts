@@ -20,6 +20,12 @@ export const GOVERNOR: Record<NetworkType, Address> = {
   Optimism: NOT_DEPLOYED,
 };
 
+export const BATCH_CHAIN: Record<NetworkType, Address> = {
+  Mainnet: NOT_DEPLOYED,
+  Arbitrum: NOT_DEPLOYED,
+  Optimism: NOT_DEPLOYED,
+};
+
 export const BLACKLIST_HELPER: Record<NetworkType, string> = {
   Mainnet: "0xFfbF344741654a1B9Ab1286Cf05A42f275F67839",
   Arbitrum: NOT_DEPLOYED,
