@@ -21,8 +21,8 @@ export const GOVERNOR: Record<NetworkType, Address> = {
 };
 
 export const BATCH_CHAIN: Record<NetworkType, Address> = {
-  Mainnet: NOT_DEPLOYED,
-  Arbitrum: NOT_DEPLOYED,
+  Mainnet: "0xB900bDEf6eAc8C5D97F8e876aBC39573Cf6626b2",
+  Arbitrum: "0xAEbaa1015D0bc250F5b38aac9b8f65E0668cE3c2",
   Optimism: NOT_DEPLOYED,
 };
 
