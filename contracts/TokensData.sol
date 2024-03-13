@@ -1544,6 +1544,14 @@ contract TokensDataLive {
 
         tokenDataByNetwork[42161].push(
             TokenData({
+                id: Tokens.ezETH,
+                addr: 0x2416092f143378750bb29b79eD961ab195CcEea5,
+                symbol: "ezETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[42161].push(
+            TokenData({
                 id: Tokens.rsETH,
                 addr: 0x4186BFC76E2E237523CBC30FD220FE055156b41F,
                 symbol: "rsETH",
