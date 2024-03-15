@@ -41,6 +41,7 @@ export const decimals: Record<SupportedToken, number> = {
   SWISE: 18,
   WLD: 18,
   OP: 18,
+  GHO: 18,
   osETH: 18,
   weETH: 18,
   ezETH: 18,
@@ -69,6 +70,7 @@ export const decimals: Record<SupportedToken, number> = {
   USDecrvUSD: 18,
   USDeDAI: 18,
   MtEthena: 18,
+  GHOUSDe: 18,
   wstETHCRV: 18,
   crvUSD: 18,
   crvUSDUSDC: 18,
@@ -160,6 +162,7 @@ export const decimals: Record<SupportedToken, number> = {
   ezETH_WETH_BPT: 18,
   weETH_ezETH_rswETH: 18,
   "33AURA_33ARB_33BAL": 18,
+  GHO_USDT_USDC: 18,
 
   auraB_rETH_STABLE: 18,
   auraB_rETH_STABLE_vault: 18,

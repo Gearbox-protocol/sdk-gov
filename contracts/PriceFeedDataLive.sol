@@ -935,7 +935,7 @@ contract PriceFeedDataLive {
                 token: Tokens.USDe,
                 priceFeed: 0xbC5FBcf58CeAEa19D523aBc76515b9AEFb5cfd58,
                 stalenessPeriod: 87300,
-                trusted: true,
+                trusted: false,
                 reserve: false
             })
         );
@@ -1199,6 +1199,14 @@ contract PriceFeedDataLive {
             cpf.trusted = false;
             cpf.reserve = false;
         }
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: Tokens.osETH,
+                tokenHasSamePriceFeed: Tokens.WETH,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ weETH ------------------------
 
@@ -1216,6 +1224,14 @@ contract PriceFeedDataLive {
             cpf.trusted = false;
             cpf.reserve = false;
         }
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: Tokens.weETH,
+                tokenHasSamePriceFeed: Tokens.WETH,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ ezETH ------------------------
 
@@ -1233,6 +1249,14 @@ contract PriceFeedDataLive {
             cpf.trusted = false;
             cpf.reserve = false;
         }
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: Tokens.ezETH,
+                tokenHasSamePriceFeed: Tokens.WETH,
+                trusted: false,
+                reserve: true
+            })
+        );
         {
             CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[42161].push();
             cpf.token = Tokens.ezETH;
@@ -1263,6 +1287,14 @@ contract PriceFeedDataLive {
             cpf.trusted = false;
             cpf.reserve = false;
         }
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({
+                token: Tokens.ezETH,
+                tokenHasSamePriceFeed: Tokens.WETH,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ rswETH ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.rswETH, trusted: true, reserve: false}));
@@ -1377,7 +1409,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: Tokens.PENDLE,
                 priceFeed: 0x58F23F80bF389DB1af9e3aA8c59679806749A8a4,
-                stalenessPeriod: 87300,
+                stalenessPeriod: 86520,
                 trusted: false,
                 reserve: false
             })
@@ -1396,6 +1428,101 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: Tokens.SWISE, trusted: false, reserve: false})
         );
         zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: Tokens.SWISE, trusted: false, reserve: false}));
+
+        // ------------------------ GHO ------------------------
+        chainlinkPriceFeedsByNetwork[1].push(
+            ChainlinkPriceFeedData({
+                token: Tokens.GHO,
+                priceFeed: 0x3f12643D3f6f874d39C2a4c9f2Cd6f2DbAC877FC,
+                stalenessPeriod: 87300,
+                trusted: false,
+                reserve: false
+            })
+        );
+        redStonePriceFeedsByNetwork[1].push(
+            RedStonePriceFeedData({
+                token: Tokens.GHO,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "GHO",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
+        chainlinkPriceFeedsByNetwork[42161].push(
+            ChainlinkPriceFeedData({
+                token: Tokens.GHO,
+                priceFeed: 0x3f12643D3f6f874d39C2a4c9f2Cd6f2DbAC877FC,
+                stalenessPeriod: 87300,
+                trusted: false,
+                reserve: false
+            })
+        );
+        redStonePriceFeedsByNetwork[42161].push(
+            RedStonePriceFeedData({
+                token: Tokens.GHO,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "GHO",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
+        chainlinkPriceFeedsByNetwork[10].push(
+            ChainlinkPriceFeedData({
+                token: Tokens.GHO,
+                priceFeed: 0x3f12643D3f6f874d39C2a4c9f2Cd6f2DbAC877FC,
+                stalenessPeriod: 87300,
+                trusted: false,
+                reserve: false
+            })
+        );
+        redStonePriceFeedsByNetwork[10].push(
+            RedStonePriceFeedData({
+                token: Tokens.GHO,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "GHO",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ yvDAI ------------------------
         yearnPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.yvDAI, trusted: false, reserve: false}));
@@ -1756,6 +1883,35 @@ contract PriceFeedDataLive {
         );
         zeroPriceFeedsByNetwork[10].push(
             SingeTokenPriceFeedData({token: Tokens.MtEthena, trusted: true, reserve: false})
+        );
+
+        // ------------------------ GHOUSDe ------------------------
+        curvePriceFeedsByNetwork[1].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.GHOUSDe,
+                assets: TokensLib.arrayOf(Tokens.GHO, Tokens.USDe),
+                pool: Contracts.CURVE_GHO_USDE_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[42161].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.GHOUSDe,
+                assets: TokensLib.arrayOf(Tokens.GHO, Tokens.USDe),
+                pool: Contracts.CURVE_GHO_USDE_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[10].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.GHOUSDe,
+                assets: TokensLib.arrayOf(Tokens.GHO, Tokens.USDe),
+                pool: Contracts.CURVE_GHO_USDE_POOL,
+                trusted: false,
+                reserve: false
+            })
         );
 
         // ------------------------ FRAXUSDe ------------------------
@@ -3678,6 +3834,17 @@ contract PriceFeedDataLive {
         );
         zeroPriceFeedsByNetwork[10].push(
             SingeTokenPriceFeedData({token: Tokens._33AURA_33ARB_33BAL, trusted: true, reserve: false})
+        );
+
+        // ------------------------ GHO_USDT_USDC ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: Tokens.GHO_USDT_USDC, trusted: true, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: Tokens.GHO_USDT_USDC, trusted: true, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: Tokens.GHO_USDT_USDC, trusted: true, reserve: false})
         );
 
         // ------------------------ dDAI ------------------------

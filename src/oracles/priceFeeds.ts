@@ -1064,7 +1064,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x58F23F80bF389DB1af9e3aA8c59679806749A8a4",
-        stalenessPeriod: HOUR_24_BUFFERED,
+        stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
       },
     },
@@ -1084,6 +1084,24 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
+      },
+    },
+  },
+
+  GHO: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x3f12643D3f6f874d39C2a4c9f2Cd6f2DbAC877FC",
+        stalenessPeriod: HOUR_24_BUFFERED,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "GHO",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -1248,6 +1266,16 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
         trusted: true,
+      },
+    },
+  },
+
+  GHOUSDe: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["GHO", "USDe"],
+        trusted: false,
       },
     },
   },
@@ -1964,6 +1992,15 @@ export const priceFeedsByToken: Record<
     },
   },
   "33AURA_33ARB_33BAL": {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: true,
+      },
+    },
+  },
+
+  GHO_USDT_USDC: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
