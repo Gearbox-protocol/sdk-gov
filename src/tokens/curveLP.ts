@@ -2,6 +2,7 @@ import { BigNumber } from "ethers";
 
 import type { CurvePoolContract } from "../contracts/contracts";
 import { PartialRecord } from "../utils/types";
+import { ERC4626LPToken } from "./erc4626";
 import { NormalToken } from "./normal";
 import type { SupportedToken, TokenBase } from "./token";
 import { TokenNetwork, TokenType } from "./tokenType";
@@ -15,6 +16,7 @@ export type CurveMetaTokens =
   | "OHMFRAXBP";
 
 export type CurveLPToken =
+  | CurveMetaTokens
   | "3Crv"
   | "steCRV"
   | "crvPlain3andSUSD"
@@ -28,19 +30,28 @@ export type CurveLPToken =
   | "crvUSDFRAX"
   | "crvUSDETHCRV"
   | "rETH_f"
-  | "wstETHCRV"
+  | "USDeUSDC"
+  | "FRAXUSDe"
+  | "USDecrvUSD"
+  | "USDeDAI"
+  | "MtEthena"
+  | "GHOUSDe"
+
+  /// Arbitrum
   | "2CRV"
   | "3c-crvUSD"
   | "crvUSDC"
   | "crvUSDT"
   | "crvUSDC_e"
+
+  // Optimism
   | "3CRV"
-  | CurveMetaTokens;
+  | "wstETHCRV";
 
 export type CurveLPTokenData = {
   symbol: CurveLPToken;
   type: PartialRecord<TokenNetwork, TokenType.CURVE_LP_TOKEN>;
-  tokenOut: Array<CurveLPToken | WrappedToken | NormalToken>;
+  tokenOut: Array<CurveLPToken | WrappedToken | ERC4626LPToken | NormalToken>;
   pool: CurvePoolContract;
   wrapper?: CurvePoolContract;
 } & TokenBase;
@@ -48,7 +59,7 @@ export type CurveLPTokenData = {
 export type MetaCurveLPTokenData = {
   symbol: CurveLPToken;
   type: PartialRecord<TokenNetwork, TokenType.CURVE_LP_TOKEN>;
-  tokenOut: Array<CurveLPToken | WrappedToken | NormalToken>;
+  tokenOut: Array<CurveLPToken | WrappedToken | ERC4626LPToken | NormalToken>;
   pool: CurvePoolContract;
   wrapper?: CurvePoolContract;
 } & TokenBase;
@@ -208,6 +219,54 @@ export const curveTokens: Record<
     tokenOut: ["rETH", "WETH"],
   },
 
+  USDeUSDC: {
+    name: "Curve USDe-USDC Pool",
+    symbol: "USDeUSDC",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_USDE_USDC_POOL",
+    tokenOut: ["USDe", "USDC"],
+  },
+
+  FRAXUSDe: {
+    name: "Curve FRAX-USDe Pool",
+    symbol: "FRAXUSDe",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_FRAX_USDE_POOL",
+    tokenOut: ["FRAX", "USDe"],
+  },
+
+  USDecrvUSD: {
+    name: "Curve USDe-crvUSD Pool",
+    symbol: "USDecrvUSD",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_USDE_CRVUSD_POOL",
+    tokenOut: ["USDe", "crvUSD"],
+  },
+
+  USDeDAI: {
+    name: "Curve USDe-DAI pool",
+    symbol: "USDeDAI",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_USDE_DAI_POOL",
+    tokenOut: ["USDe", "crvUSD"],
+  },
+
+  MtEthena: {
+    name: "Curve sDAI-sUSDe Pool",
+    symbol: "MtEthena",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_SDAI_SUSDE_POOL",
+    tokenOut: ["sDAI", "sUSDe"],
+  },
+
+  GHOUSDe: {
+    name: "Curve GHO-USDe Pool",
+    symbol: "GHOUSDe",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_GHO_USDE_POOL",
+    tokenOut: ["GHO", "USDe"],
+  },
+
   wstETHCRV: {
     name: "Curve wstETHCRV",
     symbol: "wstETHCRV",
@@ -258,7 +317,7 @@ export const curveTokens: Record<
 
   "3CRV": {
     name: "Curve 3Crv",
-    symbol: "3Crv",
+    symbol: "3CRV",
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
     pool: "CURVE_3CRV_POOL_OP",
     tokenOut: ["DAI", "USDC_e", "USDT"],

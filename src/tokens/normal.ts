@@ -54,6 +54,8 @@ export type NormalToken =
   | "frxETH"
   | "cbETH"
   | "rswETH"
+  | "USDe"
+  | "GHO"
 
   // REDSTONE
   | "SHIB"
@@ -147,7 +149,7 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   USDC_e: {
     name: "USDC (Bridged)",
 
-    symbol: "USDC",
+    symbol: "USDC_e",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 
@@ -380,6 +382,16 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   rswETH: {
     name: "Restaked Swell ETH",
     symbol: "rswETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  USDe: {
+    name: "Ethena USDe",
+    symbol: "USDe",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  GHO: {
+    name: "Gho Token",
+    symbol: "GHO",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };

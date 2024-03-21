@@ -1,6 +1,3 @@
-import { interfaces } from "mocha";
-
-import { CurvePoolContract } from "../contracts/contracts";
 import { NetworkType } from "../core/chains";
 import { AaveV2LPToken } from "../tokens/aave";
 import { NormalToken } from "../tokens/normal";
@@ -55,11 +52,13 @@ export const FOUR_MINUTES = 4 * 60;
 const ANSWER_UPDATE_DELAY = 15 * 60;
 
 export const HOUR_24_BUFFERED = 24 * HOUR_1 + ANSWER_UPDATE_DELAY;
+export const HOUR_12_BUFFERED = 12 * HOUR_1 + ANSWER_UPDATE_DELAY;
 export const HOUR_1_BUFFERED = HOUR_1 + ANSWER_UPDATE_DELAY;
 
 const L2_ANSWER_UPDATE_DELAY = 2 * 60;
 
 export const MINUTES_20_BUFFERED_L2 = 20 * 60 + L2_ANSWER_UPDATE_DELAY;
+export const HOUR_1_BUFFERED_L2 = HOUR_1 + L2_ANSWER_UPDATE_DELAY;
 export const HOUR_24_BUFFERED_L2 = 24 * HOUR_1 + L2_ANSWER_UPDATE_DELAY;
 
 // TODO: implement in the future
@@ -69,6 +68,22 @@ export interface PriceFeedEntry {
 }
 
 export type PriceFeedNetwork = NetworkType | "AllNetworks";
+
+export interface RedstoneOracleData {
+  type: PriceFeedType.REDSTONE_ORACLE;
+  dataServiceId: string;
+  dataId: string;
+  signers: Array<string>;
+  signersThreshold: number;
+}
+
+export interface CompositeOracleData {
+  type: PriceFeedType.COMPOSITE_ORACLE;
+  targetToBasePriceFeed: string | RedstoneOracleData;
+  targetStalenessPeriod?: number;
+  baseToUsdPriceFeed: string | CompositeOracleData;
+  baseStalenessPeriod?: number;
+}
 
 export type PriceFeedData =
   | {
@@ -105,13 +120,7 @@ export type PriceFeedData =
       type: PriceFeedType.WSTETH_ORACLE;
       token: SupportedToken;
     }
-  | {
-      type: PriceFeedType.COMPOSITE_ORACLE;
-      targetToBasePriceFeed: string;
-      targetStalenessPeriod?: number;
-      baseToUsdPriceFeed: string;
-      baseStalenessPeriod?: number;
-    }
+  | CompositeOracleData
   | {
       type: PriceFeedType.CURVE_CRYPTO_ORACLE;
       assets: Array<SupportedToken>;
@@ -140,14 +149,7 @@ export type PriceFeedData =
       type: PriceFeedType.ERC4626_VAULT_ORACLE;
       underlying: NormalToken;
     }
-  | {
-      type: PriceFeedType.REDSTONE_ORACLE;
-      dataServiceId: string;
-      dataId: string;
-      signers: Array<string>;
-      signersThreshold: number;
-      stalenessPeriod: number;
-    }
+  | (RedstoneOracleData & { stalenessPeriod: number })
   | {
       type: PriceFeedType.NETWORK_DEPENDENT;
       feeds: Record<

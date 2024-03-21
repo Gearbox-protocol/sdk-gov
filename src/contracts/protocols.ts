@@ -15,4 +15,6 @@ export enum Protocols {
   Sommelier,
   Fraxswap,
   Velodrome,
+  Camelot,
+  Ethena,
 }

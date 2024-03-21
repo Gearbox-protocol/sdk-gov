@@ -23,4 +23,5 @@ export enum AdapterInterface {
   ERC4626_VAULT,
   VELODROME_V2_ROUTER,
   CURVE_STABLE_NG,
+  CAMELOT_V3_ROUTER,
 }
