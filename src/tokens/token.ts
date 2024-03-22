@@ -1073,6 +1073,9 @@ export const tokenDataByNetwork: Record<
     sDAI: NOT_DEPLOYED,
     YieldETH: NOT_DEPLOYED,
     sUSDe: NOT_DEPLOYED,
+    GHO: NOT_DEPLOYED,
+    GHOUSDe: NOT_DEPLOYED,
+    GHO_USDT_USDC: NOT_DEPLOYED,
   },
 };
 

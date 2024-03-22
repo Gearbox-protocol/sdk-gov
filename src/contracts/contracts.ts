@@ -667,6 +667,7 @@ export const contractsByNetwork: Record<
     COMPOUND_V2_ETH_GATEWAY: NOT_DEPLOYED,
 
     FLUX_USDC_POOL: tokenDataByNetwork.Optimism.fUSDC,
+    CURVE_GHO_USDE_POOL: NOT_DEPLOYED,
   },
 };
 
