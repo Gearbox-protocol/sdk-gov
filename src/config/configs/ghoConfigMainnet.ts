@@ -119,15 +119,15 @@ export const ghoConfigMainnet: PoolV3DeployConfig = {
     // POINTS FARMING
     USDe: {
       minRate: 5,
-      maxRate: 3000,
+      maxRate: 5000,
       quotaIncreaseFee: 0,
       limit: BigInt(3e6) * POOL_DECIMALS,
     },
     sUSDe: {
       minRate: 5,
-      maxRate: 3000,
+      maxRate: 5000,
       quotaIncreaseFee: 0,
-      limit: BigInt(3e6) * POOL_DECIMALS,
+      limit: BigInt(0),
     },
   },
   creditManagers: [tier1CreditManager],
