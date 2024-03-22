@@ -55,6 +55,7 @@ export type NormalToken =
   | "cbETH"
   | "rswETH"
   | "USDe"
+  | "GHO"
 
   // REDSTONE
   | "SHIB"
@@ -386,6 +387,11 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   USDe: {
     name: "Ethena USDe",
     symbol: "USDe",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  GHO: {
+    name: "Gho Token",
+    symbol: "GHO",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };

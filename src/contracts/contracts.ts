@@ -53,7 +53,8 @@ export type CurvePoolContract =
   | "CURVE_FRAX_USDE_POOL"
   | "CURVE_USDE_CRVUSD_POOL"
   | "CURVE_USDE_DAI_POOL"
-  | "CURVE_SDAI_SUSDE_POOL";
+  | "CURVE_SDAI_SUSDE_POOL"
+  | "CURVE_GHO_USDE_POOL";
 
 export type YearnVaultContract =
   | "YEARN_DAI_VAULT"
@@ -168,6 +169,7 @@ export const contractsByNetwork: Record<
     CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Mainnet.USDecrvUSD,
     CURVE_USDE_DAI_POOL: tokenDataByNetwork.Mainnet.USDeDAI,
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Mainnet.MtEthena,
+    CURVE_GHO_USDE_POOL: tokenDataByNetwork.Mainnet.GHOUSDe,
 
     CURVE_GEAR_POOL: "0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2",
 
@@ -300,6 +302,7 @@ export const contractsByNetwork: Record<
     CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Arbitrum.USDecrvUSD,
     CURVE_USDE_DAI_POOL: tokenDataByNetwork.Arbitrum.USDeDAI,
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Arbitrum.MtEthena,
+    CURVE_GHO_USDE_POOL: tokenDataByNetwork.Arbitrum.GHOUSDe,
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -434,6 +437,7 @@ export const contractsByNetwork: Record<
     CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Optimism.USDecrvUSD,
     CURVE_USDE_DAI_POOL: tokenDataByNetwork.Optimism.USDeDAI,
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Optimism.MtEthena,
+    CURVE_GHO_USDE_POOL: tokenDataByNetwork.Optimism.GHOUSDe,
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -1120,6 +1124,15 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.CURVE_V1_2ASSETS, // NOTE: This is actually stable NG, however the old adapter is used in swap only mode before audits
     lpToken: "MtEthena",
     tokens: ["sDAI", "sUSDe"],
+  },
+
+  CURVE_GHO_USDE_POOL: {
+    name: "Curve GHOUSDe",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_V1_2ASSETS, // NOTE: This is actually stable NG, however the old adapter is used in swap only mode before audits
+    lpToken: "GHOUSDe",
+    tokens: ["GHO", "USDe"],
   },
 
   CURVE_2CRV_POOL_ARB: {

@@ -1,4 +1,3 @@
-import { NetworkType } from "../core/chains";
 import { PartialRecord } from "../utils/types";
 import type { TokenBase } from "./token";
 import { TokenNetwork, TokenType } from "./tokenType";
@@ -35,3 +34,6 @@ export const wrappedTokens: Record<WrappedToken, WrappedTokenData> = {
     },
   },
 };
+
+export const isWrappedToken = (t: unknown): t is WrappedToken =>
+  typeof t === "string" && !!wrappedTokens[t as WrappedToken];

@@ -402,6 +402,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.GHO,
+                addr: 0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f,
+                symbol: "GHO",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.wstETH,
                 addr: 0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0,
                 symbol: "wstETH",
@@ -557,6 +565,14 @@ contract TokensDataLive {
                 id: Tokens.MtEthena,
                 addr: 0x167478921b907422F8E88B43C4Af2B8BEa278d3A,
                 symbol: "MtEthena",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.GHOUSDe,
+                addr: 0x670a72e6D22b0956C0D2573288F82DCc5d6E3a61,
+                symbol: "GHOUSDe",
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
         );
@@ -1015,6 +1031,14 @@ contract TokensDataLive {
                 id: Tokens.weETH_ezETH_rswETH,
                 addr: 0x848a5564158d84b8A8fb68ab5D004Fae11619A54,
                 symbol: "weETH_ezETH_rswETH",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.GHO_USDT_USDC,
+                addr: 0x8353157092ED8Be69a9DF8F95af097bbF33Cb2aF,
+                symbol: "GHO_USDT_USDC",
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
@@ -1789,6 +1813,40 @@ contract TokensDataLive {
             })
         );
 
+        tokenDataByNetwork[42161].push(
+            TokenData({
+                id: Tokens.dUSDCV3,
+                addr: 0xa76c604145D7394DEc36C49Af494C144Ff327861,
+                symbol: "dUSDCV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[42161].push(
+            TokenData({
+                id: Tokens.dWETHV3,
+                addr: 0x04419d3509f13054f60d253E0c79491d9E683399,
+                symbol: "dWETHV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[42161].push(
+            TokenData({
+                id: Tokens.sdUSDCV3,
+                addr: 0x608F9e2E8933Ce6b39A8CddBc34a1e3E8D21cE75,
+                symbol: "sdUSDCV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[42161].push(
+            TokenData({
+                id: Tokens.sdWETHV3,
+                addr: 0x6773fF780Dd38175247795545Ee37adD6ab6139a,
+                symbol: "sdWETHV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: Tokens.GEAR,
