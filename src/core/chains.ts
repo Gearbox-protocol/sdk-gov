@@ -5,10 +5,10 @@ import { tokenDataByNetwork } from "../tokens/token";
 export const MAINNET_NETWORK = 1;
 export const GOERLI_NETWORK = 5;
 export const OPTIMISM_NETWORK = 10;
-export const POLYGON_NETWORK = 137;
 export const LOCAL_NETWORK = 1337;
 export const HARDHAT_NETWORK = 31337;
 export const ARBITRUM_NETWORK = 42161;
+export const BASE_NETWORK = 8453;
 
 export const CHAINS = {
   Mainnet: MAINNET_NETWORK,
@@ -16,10 +16,15 @@ export const CHAINS = {
   Local: LOCAL_NETWORK,
   Hardhat: HARDHAT_NETWORK,
   Optimism: OPTIMISM_NETWORK,
-  Polygon: POLYGON_NETWORK,
+  Base: BASE_NETWORK,
 } as const;
 
-export const supportedChains = ["Mainnet", "Arbitrum", "Optimism"] as const;
+export const supportedChains = [
+  "Mainnet",
+  "Arbitrum",
+  "Optimism",
+  "Base",
+] as const;
 export type NetworkType = (typeof supportedChains)[number]; // "Polygon";
 
 const SUPPORTED_CHAINS: Record<number, NetworkType> = {
@@ -27,7 +32,7 @@ const SUPPORTED_CHAINS: Record<number, NetworkType> = {
   [CHAINS.Arbitrum]: "Arbitrum",
   [CHAINS.Local]: "Mainnet",
   [CHAINS.Optimism]: "Optimism",
-  // [CHAINS.Polygon]: "Polygon",
+  // [CHAINS.Base]: "Polygon",
 };
 
 export const getNetworkType = (

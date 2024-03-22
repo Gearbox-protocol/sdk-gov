@@ -6,6 +6,7 @@ export const connectors: Record<NetworkType, Array<SupportedToken>> = {
   Mainnet: ["WETH", "DAI", "USDC", "FRAX", "rETH", "ezETH"],
   Arbitrum: ["WETH", "DAI", "USDC", "USDT", "rETH"],
   Optimism: ["WETH", "USDC", "USDT"],
+  Base: ["WETH", "USDC", "USDT"],
 };
 
 export function getConnectors(networkType: NetworkType) {
