@@ -3,7 +3,7 @@ import { NOT_DEPLOYED } from "../core/constants";
 import { SupportedToken, tokenDataByNetwork } from "./token";
 
 export const connectors: Record<NetworkType, Array<SupportedToken>> = {
-  Mainnet: ["WETH", "DAI", "USDC", "FRAX", "rETH", "ezETH"],
+  Mainnet: ["WETH", "DAI", "USDC", "FRAX", "rETH", "ezETH", "GHO"],
   Arbitrum: ["WETH", "DAI", "USDC", "USDT", "rETH"],
   Optimism: ["WETH", "USDC", "USDT"],
   Base: ["WETH", "USDC", "USDT"],
