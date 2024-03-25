@@ -766,6 +766,64 @@ contract SupportedContracts is Test, ISupportedContracts {
             })
         );
 
+        contractDataByNetwork[8453].push(
+            ContractData({
+                id: Contracts.YEARN_DAI_VAULT,
+                addr: 0x65343F414FFD6c97b0f6add33d16F6845Ac22BAc,
+                name: "YEARN_DAI_VAULT"
+            })
+        );
+        contractDataByNetwork[8453].push(
+            ContractData({
+                id: Contracts.YEARN_USDC_VAULT,
+                addr: 0xaD17A225074191d5c8a37B50FdA1AE278a2EE6A2,
+                name: "YEARN_USDC_VAULT"
+            })
+        );
+        contractDataByNetwork[8453].push(
+            ContractData({
+                id: Contracts.YEARN_WETH_VAULT,
+                addr: 0x5B977577Eb8a480f63e11FC615D6753adB8652Ae,
+                name: "YEARN_WETH_VAULT"
+            })
+        );
+        contractDataByNetwork[8453].push(
+            ContractData({
+                id: Contracts.YEARN_WBTC_VAULT,
+                addr: 0x7Edf16076e56FA4c111055fbA1fF5556b8757cFB,
+                name: "YEARN_WBTC_VAULT"
+            })
+        );
+        contractDataByNetwork[8453].push(
+            ContractData({
+                id: Contracts.YEARN_USDT_VAULT,
+                addr: 0xFaee21D0f0Af88EE72BB6d68E54a90E6EC2616de,
+                name: "YEARN_USDT_VAULT"
+            })
+        );
+        contractDataByNetwork[8453].push(
+            ContractData({
+                id: Contracts.YEARN_OP_VAULT,
+                addr: 0x7D2382b1f8Af621229d33464340541Db362B4907,
+                name: "YEARN_OP_VAULT"
+            })
+        );
+
+        contractDataByNetwork[8453].push(
+            ContractData({
+                id: Contracts.AURA_BPT_RETH_ETH_POOL,
+                addr: 0x61ac9315a1Ae71633E95Fb35601B59180eC8d61d,
+                name: "AURA_BPT_RETH_ETH_POOL"
+            })
+        );
+        contractDataByNetwork[8453].push(
+            ContractData({
+                id: Contracts.AURA_BPT_WSTETH_ETH_POOL,
+                addr: 0xe110b862E4D076596707892c0C5163BC183eb161,
+                name: "AURA_BPT_WSTETH_ETH_POOL"
+            })
+        );
+
         ContractData[] storage cd = contractDataByNetwork[_chainId];
 
         uint256 len = cd.length;

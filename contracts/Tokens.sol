@@ -199,9 +199,15 @@ enum Tokens {
     dUSDCV3,
     dWBTCV3,
     dWETHV3,
+    dUSDTV3,
+    dGHOV3,
+    dDAIV3,
     sdUSDCV3,
     sdWBTCV3,
     sdWETHV3,
+    sdUSDTV3,
+    sdGHOV3,
+    sdDAIV3,
     GEAR
 }
 
