@@ -2230,6 +2230,15 @@ contract TokensDataLive {
                 tokenType: TokenType.AURA_STAKED_TOKEN
             })
         );
+
+        tokenDataByNetwork[8453].push(
+            TokenData({
+                id: Tokens.USDC,
+                addr: 0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA,
+                symbol: "USDC",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
     }
 
     function getTokenData(uint256 chainId) external view returns (TokenData[] memory) {

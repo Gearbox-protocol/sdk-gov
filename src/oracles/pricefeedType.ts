@@ -79,10 +79,8 @@ export interface RedstoneOracleData {
 
 export interface CompositeOracleData {
   type: PriceFeedType.COMPOSITE_ORACLE;
-  targetToBasePriceFeed: string | RedstoneOracleData;
-  targetStalenessPeriod?: number;
-  baseToUsdPriceFeed: string | CompositeOracleData;
-  baseStalenessPeriod?: number;
+  targetToBasePriceFeed: PriceFeedData;
+  baseToUsdPriceFeed: PriceFeedData;
 }
 
 export type PriceFeedData =
@@ -112,8 +110,7 @@ export type PriceFeedData =
     }
   | {
       type: PriceFeedType.BOUNDED_ORACLE;
-      priceFeed: string;
-      stalenessPeriod?: number;
+      priceFeed: PriceFeedData;
       upperBound: bigint;
     }
   | {
