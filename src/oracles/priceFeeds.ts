@@ -29,6 +29,17 @@ export const REDSTONE_SIGNERS = {
   signersThreshold: 5,
 };
 
+export const REDSTONE_ARBITRUM_SIGNERS = {
+  signers: [
+    "0x345Efd26098e173F811e3B9Af1B0e0a11872B38b",
+    "0xbD0c5ccd85D5831B10E3e49527B8Cd67e2EFAf39",
+    "0x2F3E8EC88C01593d10ca9461c807660fF2D8DB28",
+    "0xb7f154bB5491565D215F4EB1c3fe3e84960627aF",
+    "0xE6b0De8F4B31F137d3c59b5a0A71e66e7D504Ef9",
+  ],
+  signersThreshold: 5,
+};
+
 export const REDSTONE_DEMO_SIGNERS = {
   signers: ["0x0C39486f770B26F5527BBBf942726537986Cd7eb"],
   signersThreshold: 1,
@@ -72,6 +83,13 @@ export const priceFeedsByToken: Record<
         address: "0x547a514d5e3769680Ce22B2361c10Ea13619e8a9",
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "AAVE",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
     Arbitrum: {
       Main: {
@@ -79,6 +97,13 @@ export const priceFeedsByToken: Record<
         address: "0xaD1d5344AaDE45F43E596773Bcc4c423EAbdD034",
         stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "AAVE",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -124,6 +149,13 @@ export const priceFeedsByToken: Record<
         stalenessPeriod: HOUR_1_BUFFERED_L2,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "CRV",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
   },
 
@@ -150,6 +182,13 @@ export const priceFeedsByToken: Record<
         stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "DAI",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
     Optimism: {
       Main: {
@@ -157,6 +196,13 @@ export const priceFeedsByToken: Record<
         address: "0x8dBa75e83DA73cc766A7e5a0ee71F656BAb470d6",
         trusted: false,
         stalenessPeriod: HOUR_24_BUFFERED_L2,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "DAI",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -235,6 +281,13 @@ export const priceFeedsByToken: Record<
         stalenessPeriod: HOUR_1_BUFFERED_L2,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "LINK",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
     Optimism: {
       Main: {
@@ -242,6 +295,13 @@ export const priceFeedsByToken: Record<
         address: "0xCc232dcFAAE6354cE191Bd574108c1aD03f86450",
         trusted: false,
         stalenessPeriod: MINUTES_20_BUFFERED_L2,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "LINK",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -316,6 +376,13 @@ export const priceFeedsByToken: Record<
         stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "UNI",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
   },
 
@@ -342,6 +409,13 @@ export const priceFeedsByToken: Record<
         stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: true,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "USDC",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
     Optimism: {
       Main: {
@@ -349,6 +423,13 @@ export const priceFeedsByToken: Record<
         address: "0x16a9FA2FDa030272Ce99B29CF780dFA30361E0f3",
         trusted: false,
         stalenessPeriod: HOUR_24_BUFFERED_L2,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "USDC",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -375,6 +456,13 @@ export const priceFeedsByToken: Record<
         stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: true,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "USDC",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
     Optimism: {
       Main: {
@@ -382,6 +470,13 @@ export const priceFeedsByToken: Record<
         address: "0x16a9FA2FDa030272Ce99B29CF780dFA30361E0f3",
         trusted: false,
         stalenessPeriod: HOUR_24_BUFFERED_L2,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "USDC",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -409,6 +504,13 @@ export const priceFeedsByToken: Record<
         stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "USDT",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
     Optimism: {
       Main: {
@@ -416,6 +518,13 @@ export const priceFeedsByToken: Record<
         address: "0xECef79E109e997bCA29c1c0897ec9d7b03647F5E",
         trusted: false,
         stalenessPeriod: HOUR_24_BUFFERED_L2,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "USDT",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -434,7 +543,7 @@ export const priceFeedsByToken: Record<
       Reserve: {
         type: PriceFeedType.REDSTONE_ORACLE,
         dataServiceId: "redstone-primary-prod",
-        dataId: "BTC",
+        dataId: "WBTC",
         stalenessPeriod: FOUR_MINUTES,
         ...REDSTONE_SIGNERS,
       },
@@ -448,6 +557,13 @@ export const priceFeedsByToken: Record<
         baseStalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: true,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "WBTC",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
     Optimism: {
       Main: {
@@ -455,6 +571,13 @@ export const priceFeedsByToken: Record<
         address: "0x718A5788b89454aAE3A028AE9c111A29Be6c2a6F",
         trusted: false,
         stalenessPeriod: MINUTES_20_BUFFERED_L2,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "WBTC",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -482,6 +605,13 @@ export const priceFeedsByToken: Record<
         stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: true,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "ETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
     Optimism: {
       Main: {
@@ -489,6 +619,13 @@ export const priceFeedsByToken: Record<
         address: "0x13e3Ee699D1909E989722E753853AE30b17e08c5",
         trusted: true,
         stalenessPeriod: MINUTES_20_BUFFERED_L2,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "ETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -556,6 +693,13 @@ export const priceFeedsByToken: Record<
         baseStalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "wstETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
     Optimism: {
       Main: {
@@ -565,6 +709,13 @@ export const priceFeedsByToken: Record<
         targetStalenessPeriod: HOUR_24_BUFFERED_L2,
         baseStalenessPeriod: MINUTES_20_BUFFERED_L2,
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "wstETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -628,6 +779,13 @@ export const priceFeedsByToken: Record<
         upperBound: (BigInt(1e8) * 11n) / 10n,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "LUSD",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
     Arbitrum: {
       Main: {
@@ -635,6 +793,13 @@ export const priceFeedsByToken: Record<
         priceFeed: "0x0411D28c94d85A36bC72Cb0f875dfA8371D8fFfF",
         upperBound: (BigInt(1e8) * 11n) / 10n,
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "LUSD",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -690,6 +855,13 @@ export const priceFeedsByToken: Record<
         address: "0x36a121448D74Fa81450c992A1a44B9b7377CD3a5",
         stalenessPeriod: HOUR_1_BUFFERED_L2,
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "FXS",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -787,6 +959,13 @@ export const priceFeedsByToken: Record<
         stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-arbitrum-prod",
+        dataId: "GMX",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_ARBITRUM_SIGNERS,
+      },
     },
   },
 
@@ -804,6 +983,13 @@ export const priceFeedsByToken: Record<
         address: "0xb2A824043730FE05F3DA2efaFa1CBbe83fa548D6",
         stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "ARB",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -842,6 +1028,13 @@ export const priceFeedsByToken: Record<
         address: "0xdF2917806E30300537aEB49A7663062F4d1F2b5F",
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-arbitrum-prod",
+        dataId: "BAL",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_ARBITRUM_SIGNERS,
+      },
     },
     Arbitrum: {
       Main: {
@@ -849,6 +1042,13 @@ export const priceFeedsByToken: Record<
         address: "0xBE5eA816870D11239c543F84b71439511D70B94f",
         stalenessPeriod: HOUR_1_BUFFERED_L2,
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-arbitrum-prod",
+        dataId: "BAL",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_ARBITRUM_SIGNERS,
       },
     },
   },
@@ -878,6 +1078,13 @@ export const priceFeedsByToken: Record<
         baseStalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "rETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
     Optimism: {
       Main: {
@@ -887,6 +1094,13 @@ export const priceFeedsByToken: Record<
         targetStalenessPeriod: HOUR_24_BUFFERED_L2,
         baseStalenessPeriod: MINUTES_20_BUFFERED_L2,
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "rETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -980,6 +1194,10 @@ export const priceFeedsByToken: Record<
         baseStalenessPeriod: HOUR_1_BUFFERED,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "WETH",
+      },
     },
   },
 
@@ -1011,8 +1229,17 @@ export const priceFeedsByToken: Record<
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "frxETH",
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: "0x98E5a52fB741347199C08a7a3fcF017364284431",
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.COMPOSITE_ORACLE,
+          targetToBasePriceFeed: "0x5C3e80763862CB777Aa07BDDBcCE0123104e1c34",
+          baseToUsdPriceFeed: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
+          targetStalenessPeriod: HOUR_24_BUFFERED_L2,
+          baseStalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
+        targetStalenessPeriod: HOUR_24_BUFFERED_L2,
+        baseStalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
       },
     },
@@ -1089,7 +1316,7 @@ export const priceFeedsByToken: Record<
   },
 
   GHO: {
-    AllNetworks: {
+    Mainnet: {
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x3f12643D3f6f874d39C2a4c9f2Cd6f2DbAC877FC",
