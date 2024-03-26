@@ -1272,6 +1272,30 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.dUSDTV3,
+                addr: 0x1DC0F3359a254f876B37906cFC1000A35Ce2d717,
+                symbol: "dUSDTV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.dGHOV3,
+                addr: 0x4d56c9cBa373AD39dF69Eb18F076b7348000AE09,
+                symbol: "dGHOV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.dDAIV3,
+                addr: 0xe7146F53dBcae9D6Fa3555FE502648deb0B2F823,
+                symbol: "dDAIV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.sdUSDCV3,
                 addr: 0x9ef444a6d7F4A5adcd68FD5329aA5240C90E14d2,
                 symbol: "sdUSDCV3",
@@ -1291,6 +1315,30 @@ contract TokensDataLive {
                 id: Tokens.sdWETHV3,
                 addr: 0x0418fEB7d0B25C411EB77cD654305d29FcbFf685,
                 symbol: "sdWETHV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.sdUSDTV3,
+                addr: 0x7ed08b843bE2329567f64576143eA3c16aFE8873,
+                symbol: "sdUSDTV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.sdGHOV3,
+                addr: 0xE2037090f896A858E3168B978668F22026AC52e7,
+                symbol: "sdGHOV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.sdDAIV3,
+                addr: 0xC853E4DA38d9Bd1d01675355b8c8f3BBC1451973,
+                symbol: "sdDAIV3",
                 tokenType: TokenType.DIESEL_LP_TOKEN
             })
         );
@@ -1830,6 +1878,7 @@ contract TokensDataLive {
                 tokenType: TokenType.DIESEL_LP_TOKEN
             })
         );
+
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: Tokens.sdUSDCV3,
@@ -1847,6 +1896,7 @@ contract TokensDataLive {
                 tokenType: TokenType.DIESEL_LP_TOKEN
             })
         );
+
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: Tokens.GEAR,
@@ -2234,7 +2284,7 @@ contract TokensDataLive {
         tokenDataByNetwork[8453].push(
             TokenData({
                 id: Tokens.USDC,
-                addr: 0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA,
+                addr: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913,
                 symbol: "USDC",
                 tokenType: TokenType.NORMAL_TOKEN
             })

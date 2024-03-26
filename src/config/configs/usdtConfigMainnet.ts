@@ -11,7 +11,7 @@ import {
 const POOL_DECIMALS = BigInt(1e6);
 
 const tier1CreditManager: CreditManagerV3DeployConfig = {
-  name: "USDT Tier 1",
+  name: "Universal USDT Tier 1",
   degenNft: false,
   expirationDate: undefined,
   minDebt: BigInt(2e4) * POOL_DECIMALS,
@@ -64,7 +64,7 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
 export const usdtConfigMainnet: PoolV3DeployConfig = {
   id: "mainnet-usdt-v3",
   symbol: "dUSDTV3",
-  name: "USDT v3",
+  name: "Universal USDT v3",
   network: "Mainnet",
   underlying: "USDT",
   accountAmount: BigInt(100_000) * POOL_DECIMALS,
@@ -106,15 +106,15 @@ export const usdtConfigMainnet: PoolV3DeployConfig = {
     // POINTS FARMING
     USDe: {
       minRate: 5,
-      maxRate: 3000,
+      maxRate: 5000,
       quotaIncreaseFee: 0,
-      limit: BigInt(3e6) * POOL_DECIMALS,
+      limit: BigInt(5e6) * POOL_DECIMALS,
     },
     sUSDe: {
       minRate: 5,
-      maxRate: 3000,
+      maxRate: 5000,
       quotaIncreaseFee: 0,
-      limit: BigInt(3e6) * POOL_DECIMALS,
+      limit: BigInt(0),
     },
   },
   creditManagers: [tier1CreditManager],

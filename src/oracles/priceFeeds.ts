@@ -2346,6 +2346,104 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  dUSDTV3: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: NOT_DEPLOYED,
+        trusted: false,
+      },
+    },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: NOT_DEPLOYED,
+        trusted: false,
+      },
+    },
+  },
+  dGHOV3: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: NOT_DEPLOYED,
+        trusted: false,
+      },
+    },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: NOT_DEPLOYED,
+        trusted: false,
+      },
+    },
+  },
+  dDAIV3: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: NOT_DEPLOYED,
+        trusted: false,
+      },
+    },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: NOT_DEPLOYED,
+        trusted: false,
+      },
+    },
+  },
+
+  sdUSDTV3: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: NOT_DEPLOYED,
+        trusted: false,
+      },
+    },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: NOT_DEPLOYED,
+        trusted: false,
+      },
+    },
+  },
+  sdGHOV3: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: NOT_DEPLOYED,
+        trusted: false,
+      },
+    },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: NOT_DEPLOYED,
+        trusted: false,
+      },
+    },
+  },
+  sdDAIV3: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: NOT_DEPLOYED,
+        trusted: false,
+      },
+    },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: NOT_DEPLOYED,
+        trusted: false,
+      },
+    },
+  },
+
   GEAR: {
     Mainnet: {
       Main: {
