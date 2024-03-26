@@ -146,6 +146,12 @@ contract AdapterData {
             })
         );
         simpleAdapters.push(
+            SimpleAdapter({
+                targetContract: Contracts.AAVE_V3_LENDING_POOL,
+                adapterType: AdapterType.AAVE_V3_LENDING_POOL
+            })
+        );
+        simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.COMPOUND_V2_DAI_POOL, adapterType: AdapterType.COMPOUND_V2_CERC20})
         );
         simpleAdapters.push(

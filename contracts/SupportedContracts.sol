@@ -505,6 +505,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "AAVE_V2_LENDING_POOL"
             })
         );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.AAVE_V3_LENDING_POOL,
+                addr: 0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2,
+                name: "AAVE_V3_LENDING_POOL"
+            })
+        );
 
         contractDataByNetwork[1].push(
             ContractData({
@@ -654,6 +661,14 @@ contract SupportedContracts is Test, ISupportedContracts {
             })
         );
 
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.AAVE_V3_LENDING_POOL,
+                addr: 0x794a61358D6845594F94dc1DB02A252b5b4814aD,
+                name: "AAVE_V3_LENDING_POOL"
+            })
+        );
+
         contractDataByNetwork[10].push(
             ContractData({
                 id: Contracts.UNISWAP_V3_ROUTER,
@@ -766,6 +781,14 @@ contract SupportedContracts is Test, ISupportedContracts {
             })
         );
 
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.AAVE_V3_LENDING_POOL,
+                addr: 0x794a61358D6845594F94dc1DB02A252b5b4814aD,
+                name: "AAVE_V3_LENDING_POOL"
+            })
+        );
+
         contractDataByNetwork[8453].push(
             ContractData({
                 id: Contracts.YEARN_DAI_VAULT,
@@ -821,6 +844,14 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.AURA_BPT_WSTETH_ETH_POOL,
                 addr: 0xe110b862E4D076596707892c0C5163BC183eb161,
                 name: "AURA_BPT_WSTETH_ETH_POOL"
+            })
+        );
+
+        contractDataByNetwork[8453].push(
+            ContractData({
+                id: Contracts.AAVE_V3_LENDING_POOL,
+                addr: 0xA238Dd80C259a72e81d7e4664a9801593F98d1c5,
+                name: "AAVE_V3_LENDING_POOL"
             })
         );
 

@@ -11,7 +11,7 @@ import { ConvexStakedPhantomToken } from "../tokens/convex";
 import type { CurveLPToken } from "../tokens/curveLP";
 import { ERC4626LPToken } from "../tokens/erc4626";
 import { NormalToken } from "../tokens/normal";
-import { tokenDataByNetwork } from "../tokens/token";
+import { SupportedToken, tokenDataByNetwork } from "../tokens/token";
 import type { YearnLPToken } from "../tokens/yearn";
 import { TypedObjectUtils } from "../utils/mappers";
 import { AdapterInterface } from "./adapters";
@@ -134,7 +134,8 @@ export type SupportedContract =
   | CompoundV2PoolContract
   | ERC4626VaultContract
   | "VELODROME_V2_ROUTER"
-  | "CAMELOT_V3_ROUTER";
+  | "CAMELOT_V3_ROUTER"
+  | "AAVE_V3_LENDING_POOL";
 
 export const contractsByNetwork: Record<
   NetworkType,
@@ -250,6 +251,7 @@ export const contractsByNetwork: Record<
 
     // AAVE
     AAVE_V2_LENDING_POOL: "0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9",
+    AAVE_V3_LENDING_POOL: "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2",
 
     AAVE_V2_DAI_TOKEN_WRAPPER: tokenDataByNetwork.Mainnet.waDAI,
     AAVE_V2_USDC_TOKEN_WRAPPER: tokenDataByNetwork.Mainnet.waUSDC,
@@ -385,6 +387,7 @@ export const contractsByNetwork: Record<
 
     // AAVE
     AAVE_V2_LENDING_POOL: NOT_DEPLOYED,
+    AAVE_V3_LENDING_POOL: "0x794a61358D6845594F94dc1DB02A252b5b4814aD",
 
     AAVE_V2_DAI_TOKEN_WRAPPER: tokenDataByNetwork.Arbitrum.waDAI,
     AAVE_V2_USDC_TOKEN_WRAPPER: tokenDataByNetwork.Arbitrum.waUSDC,
@@ -520,6 +523,7 @@ export const contractsByNetwork: Record<
 
     // AAVE
     AAVE_V2_LENDING_POOL: NOT_DEPLOYED,
+    AAVE_V3_LENDING_POOL: "0x794a61358D6845594F94dc1DB02A252b5b4814aD",
 
     AAVE_V2_DAI_TOKEN_WRAPPER: tokenDataByNetwork.Optimism.waDAI,
     AAVE_V2_USDC_TOKEN_WRAPPER: tokenDataByNetwork.Optimism.waUSDC,
@@ -654,6 +658,7 @@ export const contractsByNetwork: Record<
 
     // AAVE
     AAVE_V2_LENDING_POOL: NOT_DEPLOYED,
+    AAVE_V3_LENDING_POOL: "0xA238Dd80C259a72e81d7e4664a9801593F98d1c5",
 
     AAVE_V2_DAI_TOKEN_WRAPPER: tokenDataByNetwork.Optimism.waDAI,
     AAVE_V2_USDC_TOKEN_WRAPPER: tokenDataByNetwork.Optimism.waUSDC,
@@ -752,6 +757,11 @@ type ConvexParams = {
   type: AdapterInterface.CONVEX_V1_BOOSTER;
 } & BaseContractParams;
 
+type ConvexL2Params = {
+  protocol: Protocols.Convex;
+  type: AdapterInterface.CONVEX_L2_BOOSTER;
+} & BaseContractParams;
+
 interface ConvexExtraPoolParams {
   rewardToken: NormalToken;
   poolAddress: Record<NetworkType, string>;
@@ -762,6 +772,12 @@ export type ConvexPoolParams = {
   type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL;
   stakedToken: ConvexStakedPhantomToken;
   extraRewards: Array<ConvexExtraPoolParams>;
+} & BaseContractParams;
+
+export type ConvexL2PoolParams = {
+  protocol: Protocols.Convex;
+  type: AdapterInterface.CONVEX_L2_REWARD_POOL;
+  rewards: Array<SupportedToken>;
 } & BaseContractParams;
 
 // AURA
@@ -811,6 +827,11 @@ export type AaveV2Params = {
   type: AdapterInterface.AAVE_V2_LENDING_POOL;
 } & BaseContractParams;
 
+export type AaveV3Params = {
+  protocol: Protocols.AaveV3;
+  type: AdapterInterface.AAVE_V3_LENDING_POOL;
+} & BaseContractParams;
+
 export type WrapperAaveV2Params = {
   protocol: Protocols.AaveV2;
   type: AdapterInterface.AAVE_V2_WRAPPED_ATOKEN;
@@ -836,11 +857,14 @@ export type ContractParams =
   | YearnParams
   | ConvexParams
   | ConvexPoolParams
+  | ConvexL2Params
+  | ConvexL2PoolParams
   | LidoParams
   | LidoWsthETHParams
   | UniversalParams
   | BalancerParams
   | AaveV2Params
+  | AaveV3Params
   | WrapperAaveV2Params
   | CompoundV2Params
   | AuraParams
@@ -1795,7 +1819,11 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.AAVE_V2_WRAPPED_ATOKEN,
     underlying: "aWETH",
   },
-
+  AAVE_V3_LENDING_POOL: {
+    name: "Aave V3 Lending Pool",
+    protocol: Protocols.AaveV3,
+    type: AdapterInterface.AAVE_V3_LENDING_POOL,
+  },
   COMPOUND_V2_DAI_POOL: {
     name: "Compound V2 DAI",
     protocol: Protocols.CompoundV2,
