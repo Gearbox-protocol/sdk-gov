@@ -17,4 +17,5 @@ export enum Protocols {
   Velodrome,
   Camelot,
   Ethena,
+  AaveV3,
 }

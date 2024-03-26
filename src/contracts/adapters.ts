@@ -26,4 +26,5 @@ export enum AdapterInterface {
   CAMELOT_V3_ROUTER,
   CONVEX_L2_BOOSTER,
   CONVEX_L2_REWARD_POOL,
+  AAVE_V3_LENDING_POOL,
 }
