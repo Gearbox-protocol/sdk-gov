@@ -1273,7 +1273,7 @@ contract TokensDataLive {
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.dUSDTV3,
-                addr: 0x1DC0F3359a254f876B37906cFC1000A35Ce2d717,
+                addr: 0x05A811275fE9b4DE503B3311F51edF6A856D936e,
                 symbol: "dUSDTV3",
                 tokenType: TokenType.DIESEL_LP_TOKEN
             })
@@ -1321,7 +1321,7 @@ contract TokensDataLive {
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.sdUSDTV3,
-                addr: 0x7ed08b843bE2329567f64576143eA3c16aFE8873,
+                addr: 0x16adAb68bDEcE3089D4f1626Bb5AEDD0d02471aD,
                 symbol: "sdUSDTV3",
                 tokenType: TokenType.DIESEL_LP_TOKEN
             })

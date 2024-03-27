@@ -489,18 +489,21 @@ class BindingsGenerator {
             PriceFeedType.CHAINLINK_ORACLE
         ) {
           baseToUSDFeedStr = `cpf.compositeBaseToUSDData = CompositePriceFeedDataShort({
-        targetToBaseFeed: ${baseToUSDCompositeData.targetToBasePriceFeed.type},
-        targetStalenessPeriod: ${
-          baseToUSDCompositeData.targetToBasePriceFeed.stalenessPeriod
+        targetToBaseFeed: ${
+          baseToUSDCompositeData.targetToBasePriceFeed.address
         },
-        baseToUSDFeed: ${baseToUSDCompositeData.baseToUsdPriceFeed},
+        targetStalenessPeriod: ${
+          baseToUSDCompositeData.targetToBasePriceFeed.stalenessPeriod ||
+          HOUR_24
+        },
+        baseToUSDFeed: ${baseToUSDCompositeData.baseToUsdPriceFeed.address},
         baseStalenessPeriod: ${
-          baseToUSDCompositeData.baseToUsdPriceFeed.stalenessPeriod
+          baseToUSDCompositeData.baseToUsdPriceFeed.stalenessPeriod || HOUR_24
         }
       });
       cpf.baseStalenessPeriod = ${
         baseToUSDCompositeData.baseToUsdPriceFeed.stalenessPeriod || HOUR_24
-      }`;
+      };`;
           isBaseComposite = true;
         } else throw new Error("Unsupported baseToUsdPriceFeed type");
       } else throw new Error("Unsupported baseToUsdPriceFeed type");
