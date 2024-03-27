@@ -1343,16 +1343,24 @@ export const priceFeedsByToken: Record<
     Arbitrum: {
       Main: {
         type: PriceFeedType.COMPOSITE_ORACLE,
-        targetToBasePriceFeed: "0x98E5a52fB741347199C08a7a3fcF017364284431",
+        targetToBasePriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x98E5a52fB741347199C08a7a3fcF017364284431",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
         baseToUsdPriceFeed: {
           type: PriceFeedType.COMPOSITE_ORACLE,
-          targetToBasePriceFeed: "0x5C3e80763862CB777Aa07BDDBcCE0123104e1c34",
-          baseToUsdPriceFeed: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
-          targetStalenessPeriod: HOUR_24_BUFFERED_L2,
-          baseStalenessPeriod: HOUR_24_BUFFERED_L2,
+          targetToBasePriceFeed: {
+            type: PriceFeedType.CHAINLINK_ORACLE,
+            address: "0x5C3e80763862CB777Aa07BDDBcCE0123104e1c34",
+            stalenessPeriod: HOUR_24_BUFFERED_L2,
+          },
+          baseToUsdPriceFeed: {
+            type: PriceFeedType.CHAINLINK_ORACLE,
+            address: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
+            stalenessPeriod: HOUR_24_BUFFERED_L2,
+          },
         },
-        targetStalenessPeriod: HOUR_24_BUFFERED_L2,
-        baseStalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
       },
     },
