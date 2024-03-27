@@ -18,18 +18,23 @@ import {
 
 export const GAS_PRICE_FEED = "0x169e633a2d1e6c10dd91238ba11c4a708dfef37c";
 
-export const REDSTONE_SIGNERS = {
+export interface RedstoneSingers {
+  signers: Array<Address>;
+  signersThreshold: number;
+}
+
+export const REDSTONE_SIGNERS: RedstoneSingers = {
   signers: [
     "0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774",
     "0xdEB22f54738d54976C4c0fe5ce6d408E40d88499",
     "0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202",
     "0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE",
     "0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de",
-  ] as Array<Address>,
+  ],
   signersThreshold: 5,
 };
 
-export const REDSTONE_ARBITRUM_SIGNERS = {
+export const REDSTONE_ARBITRUM_SIGNERS: RedstoneSingers = {
   signers: [
     "0x345Efd26098e173F811e3B9Af1B0e0a11872B38b",
     "0xbD0c5ccd85D5831B10E3e49527B8Cd67e2EFAf39",
@@ -40,7 +45,7 @@ export const REDSTONE_ARBITRUM_SIGNERS = {
   signersThreshold: 5,
 };
 
-export const REDSTONE_DEMO_SIGNERS = {
+export const REDSTONE_DEMO_SIGNERS: RedstoneSingers = {
   signers: ["0x0C39486f770B26F5527BBBf942726537986Cd7eb"],
   signersThreshold: 1,
 };
