@@ -79,7 +79,7 @@ export const ROUTER_CREATE2FACTORY: Record<NetworkType, Address> = {
   Base: NOT_DEPLOYED,
 };
 
-export const emergencyLiquidators = [
+export const emergencyLiquidators: Array<Address> = [
   "0x7BD9c8161836b1F402233E80F55E3CaE0Fde4d87",
   "0x16040e932b5Ac7A3aB23b88a2f230B4185727b0d",
 ];
