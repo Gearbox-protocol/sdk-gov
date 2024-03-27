@@ -86,9 +86,9 @@ class PriceFeedsSuite {
         }
         break;
       case PriceFeedType.BOUNDED_ORACLE:
-        if (data.priceFeed.startsWith("0x")) {
+        if (data.priceFeed.type === PriceFeedType.CHAINLINK_ORACLE) {
           calls.push({
-            address: data.priceFeed,
+            address: data.priceFeed.address,
             interface: iFeed,
             method: "latestRoundData()",
             key: token,
@@ -96,23 +96,19 @@ class PriceFeedsSuite {
         }
         break;
       case PriceFeedType.COMPOSITE_ORACLE:
-        if (
-          typeof data.baseToUsdPriceFeed === "string" &&
-          data.baseToUsdPriceFeed.startsWith("0x")
-        ) {
+        if (data.baseToUsdPriceFeed.type === PriceFeedType.CHAINLINK_ORACLE) {
           calls.push({
-            address: data.baseToUsdPriceFeed,
+            address: data.baseToUsdPriceFeed.address,
             interface: iFeed,
             method: "latestRoundData()",
             key: `${token}.baseToUsdPriceFeed`,
           });
         }
         if (
-          typeof data.targetToBasePriceFeed === "string" &&
-          data.targetToBasePriceFeed.startsWith("0x")
+          data.targetToBasePriceFeed.type === PriceFeedType.CHAINLINK_ORACLE
         ) {
           calls.push({
-            address: data.targetToBasePriceFeed,
+            address: data.targetToBasePriceFeed.address,
             interface: iFeed,
             method: "latestRoundData()",
             key: `${token}.targetToBasePriceFeed`,

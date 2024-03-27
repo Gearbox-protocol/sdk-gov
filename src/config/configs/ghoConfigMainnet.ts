@@ -95,6 +95,12 @@ export const ghoConfigMainnet: PoolV3DeployConfig = {
   ratesAndLimits: {
     // TRADEABLE TOKENS
 
+    USDC: {
+      minRate: 4,
+      maxRate: 1200,
+      quotaIncreaseFee: 1,
+      limit: BigInt(30e6) * POOL_DECIMALS,
+    },
     DAI: {
       minRate: 4,
       maxRate: 1200,

@@ -61,6 +61,7 @@ const EXCEPTIONS_IN_SYMBOLS: Record<NetworkType, Record<string, string>> = {
     [tokenDataByNetwork.Optimism["auraBPT_WSTETH_ETH_vault"]]:
       "auraBPT-WSTETH-ETH-vault",
   },
+  Base: {},
 };
 
 class TokenSuite {

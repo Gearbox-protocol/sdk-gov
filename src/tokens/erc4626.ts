@@ -1,5 +1,4 @@
 import type { ERC4626VaultContract } from "../contracts/contracts";
-import { TradeAction, TradeType } from "../pathfinder/tradeTypes";
 import { PartialRecord } from "../utils/types";
 import type { CurveLPToken } from "./curveLP";
 import { NormalToken } from "./normal";

@@ -395,13 +395,15 @@ class BindingsGenerator {
     reserve: boolean,
   ): string | undefined {
     if (priceFeedData.type === PriceFeedType.BOUNDED_ORACLE) {
-      const targetPriceFeed: string | undefined = priceFeedData.priceFeed;
+      if (priceFeedData.priceFeed.type === PriceFeedType.CHAINLINK_ORACLE) {
+        const targetPriceFeed: string | undefined =
+          priceFeedData.priceFeed.address;
 
-      return targetPriceFeed !== NOT_DEPLOYED
-        ? `boundedPriceFeedsByNetwork[${chainId}].push(BoundedPriceFeedData({
+        return targetPriceFeed !== NOT_DEPLOYED
+          ? `boundedPriceFeedsByNetwork[${chainId}].push(BoundedPriceFeedData({
   token: ${this.tokensEnum(token)},
   priceFeed: ${targetPriceFeed},
-  stalenessPeriod: ${priceFeedData.stalenessPeriod || HOUR_24},
+  stalenessPeriod: ${priceFeedData.priceFeed.stalenessPeriod || HOUR_24},
   upperBound: ${priceFeedData.upperBound},
   trusted: ${
     !reserve
@@ -410,7 +412,11 @@ class BindingsGenerator {
   },
   reserve: ${reserve}
 }));`
-        : undefined;
+          : undefined;
+      } else
+        throw new Error(
+          "Bounded price feed generation supports Chainlink only",
+        );
     } else return undefined;
   }
 
@@ -420,20 +426,25 @@ class BindingsGenerator {
     chainId: number,
     reserve: boolean,
   ): string | undefined {
-    if (
-      priceFeedData.type === PriceFeedType.COMPOSITE_ORACLE &&
-      priceFeedData.targetToBasePriceFeed !== NOT_DEPLOYED &&
-      priceFeedData.baseToUsdPriceFeed !== NOT_DEPLOYED
-    ) {
-      let targetToBaseFeed: string | undefined;
-      let targetToBaseRedstoneData: RedstoneOracleData | undefined;
+    if (priceFeedData.type === PriceFeedType.COMPOSITE_ORACLE) {
+      let targetToBaseFeedStr: string;
       let isTargetRedstone: boolean;
       let signers = [];
-      if (typeof priceFeedData.targetToBasePriceFeed === "string") {
-        targetToBaseFeed = priceFeedData.targetToBasePriceFeed;
+      if (
+        priceFeedData.targetToBasePriceFeed.type ===
+        PriceFeedType.CHAINLINK_ORACLE
+      ) {
+        targetToBaseFeedStr = `cpf.targetToBaseFeed = ${priceFeedData.targetToBasePriceFeed.address};`;
+
+        const targetToBaseFeed = priceFeedData.targetToBasePriceFeed.address;
+        if (targetToBaseFeed === NOT_DEPLOYED) return undefined;
+
         isTargetRedstone = false;
-      } else {
-        targetToBaseRedstoneData = priceFeedData.targetToBasePriceFeed;
+      } else if (
+        priceFeedData.targetToBasePriceFeed.type ===
+        PriceFeedType.REDSTONE_ORACLE
+      ) {
+        const targetToBaseRedstoneData = priceFeedData.targetToBasePriceFeed;
         for (let i = 0; i < 10; i++) {
           signers.push(
             i < targetToBaseRedstoneData.signers.length
@@ -441,51 +452,71 @@ class BindingsGenerator {
               : "address(0)",
           );
         }
+
+        targetToBaseFeedStr = `cpf.redstoneTargetToBaseData = RedStonePriceFeedDataShort({
+          dataServiceId: "${targetToBaseRedstoneData.dataServiceId}",
+          dataFeedId: "${targetToBaseRedstoneData.dataId}",
+          signers: [${signers.join(",")}],
+          signersThreshold: ${targetToBaseRedstoneData.signersThreshold}
+        });`;
+
         isTargetRedstone = true;
-      }
-      let baseToUSDFeed: string | undefined;
-      let baseToUSDCompositeData: CompositeOracleData | undefined;
+      } else throw new Error("Unsupported targetToBasePriceFeed type");
+
+      let baseToUSDFeedStr: string;
+
       let isBaseComposite: boolean;
-      if (typeof priceFeedData.baseToUsdPriceFeed === "string") {
-        baseToUSDFeed = priceFeedData.baseToUsdPriceFeed;
+      if (
+        priceFeedData.baseToUsdPriceFeed.type === PriceFeedType.CHAINLINK_ORACLE
+      ) {
+        const baseToUSDFeed = priceFeedData.baseToUsdPriceFeed.address;
+        if (baseToUSDFeed === NOT_DEPLOYED) return undefined;
+
+        baseToUSDFeedStr = `cpf.baseToUSDFeed = ${baseToUSDFeed};
+        cpf.baseStalenessPeriod = ${
+          priceFeedData.baseToUsdPriceFeed.stalenessPeriod || HOUR_24
+        };`;
         isBaseComposite = false;
-      } else {
-        baseToUSDCompositeData = priceFeedData.baseToUsdPriceFeed;
-        isBaseComposite = true;
-      }
+      } else if (
+        priceFeedData.baseToUsdPriceFeed.type === PriceFeedType.COMPOSITE_ORACLE
+      ) {
+        const baseToUSDCompositeData = priceFeedData.baseToUsdPriceFeed;
+
+        if (
+          baseToUSDCompositeData.targetToBasePriceFeed.type ===
+            PriceFeedType.CHAINLINK_ORACLE &&
+          baseToUSDCompositeData.baseToUsdPriceFeed.type ===
+            PriceFeedType.CHAINLINK_ORACLE
+        ) {
+          baseToUSDFeedStr = `cpf.compositeBaseToUSDData = CompositePriceFeedDataShort({
+        targetToBaseFeed: ${baseToUSDCompositeData.targetToBasePriceFeed.type},
+        targetStalenessPeriod: ${
+          baseToUSDCompositeData.targetToBasePriceFeed.stalenessPeriod
+        },
+        baseToUSDFeed: ${baseToUSDCompositeData.baseToUsdPriceFeed},
+        baseStalenessPeriod: ${
+          baseToUSDCompositeData.baseToUsdPriceFeed.stalenessPeriod
+        }
+      });
+      cpf.baseStalenessPeriod = ${
+        baseToUSDCompositeData.baseToUsdPriceFeed.stalenessPeriod || HOUR_24
+      }`;
+          isBaseComposite = true;
+        } else throw new Error("Unsupported baseToUsdPriceFeed type");
+      } else throw new Error("Unsupported baseToUsdPriceFeed type");
 
       return `
       {
       CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[${chainId}].push();
       cpf.token = ${this.tokensEnum(token)};
       cpf.isTargetRedstone = ${isTargetRedstone};
-      ${targetToBaseFeed ? `cpf.targetToBaseFeed = ${targetToBaseFeed};` : ""}
-      ${
-        targetToBaseRedstoneData
-          ? `cpf.redstoneTargetToBaseData = RedStonePriceFeedDataShort({
-        dataServiceId: "${targetToBaseRedstoneData.dataServiceId}",
-        dataFeedId: "${targetToBaseRedstoneData.dataId}",
-        signers: [${signers.join(",")}],
-        signersThreshold: ${targetToBaseRedstoneData.signersThreshold}
-      });`
-          : ""
-      }
+      ${targetToBaseFeedStr}
       cpf.targetStalenessPeriod = ${
-        priceFeedData.targetStalenessPeriod || HOUR_24
+        priceFeedData.targetToBasePriceFeed.stalenessPeriod || HOUR_24
       };
       cpf.isBaseComposite = ${isBaseComposite};
-      ${baseToUSDFeed ? `cpf.baseToUSDFeed = ${baseToUSDFeed};` : ""}
-      ${
-        baseToUSDCompositeData
-          ? `cpf.compositeBaseToUSDData = CompositePriceFeedDataShort({
-        targetToBaseFeed: ${baseToUSDCompositeData.targetToBasePriceFeed},
-        targetStalenessPeriod: ${baseToUSDCompositeData.targetStalenessPeriod},
-        baseToUSDFeed: ${baseToUSDCompositeData.baseToUsdPriceFeed},
-        baseStalenessPeriod: ${baseToUSDCompositeData.baseStalenessPeriod}
-      });`
-          : ""
-      }
-      cpf.baseStalenessPeriod = ${priceFeedData.baseStalenessPeriod || HOUR_24};
+      ${baseToUSDFeedStr}
+      
       cpf.trusted = ${
         !reserve
           ? (priceFeedData as PriceFeedData & { trusted: boolean }).trusted
@@ -704,7 +735,10 @@ class BindingsGenerator {
           contractParam.type === AdapterInterface.ERC4626_VAULT ||
           contractParam.type === AdapterInterface.BALANCER_VAULT ||
           contractParam.type === AdapterInterface.VELODROME_V2_ROUTER ||
-          contractParam.type === AdapterInterface.CAMELOT_V3_ROUTER,
+          contractParam.type === AdapterInterface.CAMELOT_V3_ROUTER ||
+          contractParam.type === AdapterInterface.CONVEX_L2_BOOSTER ||
+          contractParam.type === AdapterInterface.CONVEX_L2_REWARD_POOL ||
+          contractParam.type === AdapterInterface.AAVE_V3_LENDING_POOL,
       )
       .map(
         ([contract, contractParam]) =>

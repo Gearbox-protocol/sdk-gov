@@ -11,7 +11,7 @@ import { ConvexStakedPhantomToken } from "../tokens/convex";
 import type { CurveLPToken } from "../tokens/curveLP";
 import { ERC4626LPToken } from "../tokens/erc4626";
 import { NormalToken } from "../tokens/normal";
-import { tokenDataByNetwork } from "../tokens/token";
+import { SupportedToken, tokenDataByNetwork } from "../tokens/token";
 import type { YearnLPToken } from "../tokens/yearn";
 import { TypedObjectUtils } from "../utils/mappers";
 import { AdapterInterface } from "./adapters";
@@ -134,7 +134,8 @@ export type SupportedContract =
   | CompoundV2PoolContract
   | ERC4626VaultContract
   | "VELODROME_V2_ROUTER"
-  | "CAMELOT_V3_ROUTER";
+  | "CAMELOT_V3_ROUTER"
+  | "AAVE_V3_LENDING_POOL";
 
 export const contractsByNetwork: Record<
   NetworkType,
@@ -250,6 +251,7 @@ export const contractsByNetwork: Record<
 
     // AAVE
     AAVE_V2_LENDING_POOL: "0x7d2768dE32b0b80b7a3454c06BdAc94A69DDc7A9",
+    AAVE_V3_LENDING_POOL: "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2",
 
     AAVE_V2_DAI_TOKEN_WRAPPER: tokenDataByNetwork.Mainnet.waDAI,
     AAVE_V2_USDC_TOKEN_WRAPPER: tokenDataByNetwork.Mainnet.waUSDC,
@@ -385,6 +387,7 @@ export const contractsByNetwork: Record<
 
     // AAVE
     AAVE_V2_LENDING_POOL: NOT_DEPLOYED,
+    AAVE_V3_LENDING_POOL: "0x794a61358D6845594F94dc1DB02A252b5b4814aD",
 
     AAVE_V2_DAI_TOKEN_WRAPPER: tokenDataByNetwork.Arbitrum.waDAI,
     AAVE_V2_USDC_TOKEN_WRAPPER: tokenDataByNetwork.Arbitrum.waUSDC,
@@ -520,6 +523,7 @@ export const contractsByNetwork: Record<
 
     // AAVE
     AAVE_V2_LENDING_POOL: NOT_DEPLOYED,
+    AAVE_V3_LENDING_POOL: "0x794a61358D6845594F94dc1DB02A252b5b4814aD",
 
     AAVE_V2_DAI_TOKEN_WRAPPER: tokenDataByNetwork.Optimism.waDAI,
     AAVE_V2_USDC_TOKEN_WRAPPER: tokenDataByNetwork.Optimism.waUSDC,
@@ -533,6 +537,142 @@ export const contractsByNetwork: Record<
     COMPOUND_V2_ETH_GATEWAY: NOT_DEPLOYED,
 
     FLUX_USDC_POOL: tokenDataByNetwork.Optimism.fUSDC,
+  },
+  //
+  //
+  //
+  //
+  //  BASE
+  //
+  //
+  //
+  //
+  Base: {
+    UNISWAP_V2_ROUTER: NOT_DEPLOYED,
+    UNISWAP_V3_ROUTER: NOT_DEPLOYED,
+    SUSHISWAP_ROUTER: NOT_DEPLOYED,
+    FRAXSWAP_ROUTER: NOT_DEPLOYED,
+    VELODROME_V2_ROUTER: NOT_DEPLOYED,
+    CAMELOT_V3_ROUTER: NOT_DEPLOYED,
+
+    // CURVE
+    CURVE_3CRV_POOL_OP: NOT_DEPLOYED,
+    CURVE_3CRV_POOL: NOT_DEPLOYED,
+    CURVE_FRAX_USDC_POOL: NOT_DEPLOYED,
+    CURVE_STETH_GATEWAY: NOT_DEPLOYED,
+    CURVE_FRAX_POOL: tokenDataByNetwork.Optimism.FRAX3CRV,
+    CURVE_LUSD_POOL: tokenDataByNetwork.Optimism.LUSD3CRV,
+    CURVE_SUSD_POOL: NOT_DEPLOYED,
+    CURVE_SUSD_DEPOSIT: NOT_DEPLOYED,
+    CURVE_GUSD_POOL: NOT_DEPLOYED,
+    CURVE_MIM_POOL: tokenDataByNetwork.Optimism.MIM_3LP3CRV,
+    CURVE_OHMFRAXBP_POOL: NOT_DEPLOYED,
+    CURVE_CRVETH_POOL: NOT_DEPLOYED,
+    CURVE_CVXETH_POOL: NOT_DEPLOYED,
+    CURVE_3CRYPTO_POOL: NOT_DEPLOYED,
+    CURVE_LDOETH_POOL: NOT_DEPLOYED,
+    CURVE_USDE_USDC_POOL: tokenDataByNetwork.Optimism.USDeUSDC,
+    CURVE_FRAX_USDE_POOL: tokenDataByNetwork.Optimism.FRAXUSDe,
+    CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Optimism.USDecrvUSD,
+    CURVE_USDE_DAI_POOL: tokenDataByNetwork.Optimism.USDeDAI,
+    CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Optimism.MtEthena,
+    CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
+
+    CURVE_GEAR_POOL: NOT_DEPLOYED,
+
+    CURVE_CRVUSD_USDC_POOL: tokenDataByNetwork.Optimism.crvUSDUSDC,
+    CURVE_CRVUSD_USDT_POOL: tokenDataByNetwork.Optimism.crvUSDUSDT,
+    CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Optimism.crvUSDFRAX,
+    CURVE_TRI_CRV_POOL: tokenDataByNetwork.Optimism.crvUSDETHCRV,
+
+    CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
+
+    CURVE_2CRV_POOL_ARB: tokenDataByNetwork.Optimism["2CRV"],
+    CURVE_TRICRYPTO_CRVUSD_POOL_ARB: tokenDataByNetwork.Optimism["3c-crvUSD"],
+    CURVE_CRVUSD_USDC_POOL_ARB: tokenDataByNetwork.Optimism.crvUSDC,
+    CURVE_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Optimism.crvUSDT,
+    CURVE_CRVUSD_USDC_E_POOL_ARB: tokenDataByNetwork.Optimism.crvUSDC_e,
+
+    // YEARN
+    YEARN_DAI_VAULT: tokenDataByNetwork.Optimism.yvDAI,
+    YEARN_USDC_VAULT: tokenDataByNetwork.Optimism.yvUSDC,
+    YEARN_WETH_VAULT: tokenDataByNetwork.Optimism.yvWETH,
+    YEARN_WBTC_VAULT: tokenDataByNetwork.Optimism.yvWBTC,
+    YEARN_USDT_VAULT: tokenDataByNetwork.Optimism.yvUSDT,
+    YEARN_OP_VAULT: tokenDataByNetwork.Optimism.yvOP,
+    YEARN_CURVE_FRAX_VAULT: tokenDataByNetwork.Optimism.yvCurve_FRAX,
+    YEARN_CURVE_STETH_VAULT: tokenDataByNetwork.Optimism.yvCurve_stETH,
+
+    /// ERC4626
+    MAKER_DSR_VAULT: tokenDataByNetwork.Optimism.sDAI,
+    YIELD_ETH_VAULT: tokenDataByNetwork.Optimism.YieldETH,
+    STAKED_USDE_VAULT: tokenDataByNetwork.Optimism.sUSDe,
+
+    // CONVEX
+    CONVEX_BOOSTER: NOT_DEPLOYED,
+    CONVEX_3CRV_POOL: NOT_DEPLOYED,
+    CONVEX_FRAX_USDC_POOL: NOT_DEPLOYED,
+    CONVEX_STECRV_POOL: NOT_DEPLOYED,
+    CONVEX_SUSD_POOL: NOT_DEPLOYED,
+    CONVEX_FRAX3CRV_POOL: NOT_DEPLOYED,
+    CONVEX_LUSD3CRV_POOL: NOT_DEPLOYED,
+    CONVEX_GUSD_POOL: NOT_DEPLOYED,
+    CONVEX_OHMFRAXBP_POOL: NOT_DEPLOYED,
+    CONVEX_MIM3CRV_POOL: NOT_DEPLOYED,
+    CONVEX_CRVETH_POOL: NOT_DEPLOYED,
+    CONVEX_CVXETH_POOL: NOT_DEPLOYED,
+    CONVEX_3CRYPTO_POOL: NOT_DEPLOYED,
+    CONVEX_LDOETH_POOL: NOT_DEPLOYED,
+    CONVEX_CRVUSD_USDC_POOL: NOT_DEPLOYED,
+    CONVEX_CRVUSD_USDT_POOL: NOT_DEPLOYED,
+    CONVEX_CRVUSD_FRAX_POOL: NOT_DEPLOYED,
+    CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
+
+    // AURA
+    AURA_BOOSTER: NOT_DEPLOYED,
+    AURA_WEETH_RETH_POOL: tokenDataByNetwork.Optimism.auraweETH_rETH_vault,
+    AURA_OSETH_WETH_POOL: tokenDataByNetwork.Optimism.auraosETH_wETH_BPT_vault,
+    AURA_B_RETH_STABLE_POOL:
+      tokenDataByNetwork.Optimism.auraB_rETH_STABLE_vault,
+    AURA_BPT_RETH_ETH_POOL: tokenDataByNetwork.Optimism.auraBPT_rETH_ETH_vault,
+    AURA_BPT_WSTETH_ETH_POOL:
+      tokenDataByNetwork.Optimism.auraBPT_WSTETH_ETH_vault,
+    AURA_RETH_WETH_POOL_ARB:
+      tokenDataByNetwork.Optimism.aurarETH_WETH_BPT_vault,
+    AURA_WSTETH_WETH_POOL_ARB:
+      tokenDataByNetwork.Optimism.aurawstETH_WETH_BPT_vault,
+    AURA_WSTETH_RETH_CBETH_POOL_ARB:
+      tokenDataByNetwork.Optimism.aurawstETH_rETH_cbETH_vault,
+    AURA_WSTETH_RETH_SFRXETH_POOL_ARB:
+      tokenDataByNetwork.Optimism.aurawstETH_rETH_sfrxETH_vault,
+
+    // LIDO
+    LIDO_STETH_GATEWAY: NOT_DEPLOYED,
+    LIDO_WSTETH: NOT_DEPLOYED,
+
+    // BALANCER
+    BALANCER_VAULT: NOT_DEPLOYED,
+
+    // GEARBOX
+    UNIVERSAL_ADAPTER: NOT_DEPLOYED,
+
+    // AAVE
+    AAVE_V2_LENDING_POOL: NOT_DEPLOYED,
+    AAVE_V3_LENDING_POOL: "0xA238Dd80C259a72e81d7e4664a9801593F98d1c5",
+
+    AAVE_V2_DAI_TOKEN_WRAPPER: tokenDataByNetwork.Optimism.waDAI,
+    AAVE_V2_USDC_TOKEN_WRAPPER: tokenDataByNetwork.Optimism.waUSDC,
+    AAVE_V2_USDT_TOKEN_WRAPPER: tokenDataByNetwork.Optimism.waUSDT,
+    AAVE_V2_WETH_TOKEN_WRAPPER: tokenDataByNetwork.Optimism.waWETH,
+
+    COMPOUND_V2_DAI_POOL: tokenDataByNetwork.Optimism.cDAI,
+    COMPOUND_V2_USDC_POOL: tokenDataByNetwork.Optimism.cUSDC,
+    COMPOUND_V2_USDT_POOL: tokenDataByNetwork.Optimism.cUSDT,
+    COMPOUND_V2_LINK_POOL: tokenDataByNetwork.Optimism.cLINK,
+    COMPOUND_V2_ETH_GATEWAY: NOT_DEPLOYED,
+
+    FLUX_USDC_POOL: tokenDataByNetwork.Optimism.fUSDC,
+    CURVE_GHO_USDE_POOL: NOT_DEPLOYED,
   },
 };
 
@@ -617,6 +757,11 @@ type ConvexParams = {
   type: AdapterInterface.CONVEX_V1_BOOSTER;
 } & BaseContractParams;
 
+type ConvexL2Params = {
+  protocol: Protocols.Convex;
+  type: AdapterInterface.CONVEX_L2_BOOSTER;
+} & BaseContractParams;
+
 interface ConvexExtraPoolParams {
   rewardToken: NormalToken;
   poolAddress: Record<NetworkType, string>;
@@ -627,6 +772,12 @@ export type ConvexPoolParams = {
   type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL;
   stakedToken: ConvexStakedPhantomToken;
   extraRewards: Array<ConvexExtraPoolParams>;
+} & BaseContractParams;
+
+export type ConvexL2PoolParams = {
+  protocol: Protocols.Convex;
+  type: AdapterInterface.CONVEX_L2_REWARD_POOL;
+  rewards: Array<SupportedToken>;
 } & BaseContractParams;
 
 // AURA
@@ -676,6 +827,11 @@ export type AaveV2Params = {
   type: AdapterInterface.AAVE_V2_LENDING_POOL;
 } & BaseContractParams;
 
+export type AaveV3Params = {
+  protocol: Protocols.AaveV3;
+  type: AdapterInterface.AAVE_V3_LENDING_POOL;
+} & BaseContractParams;
+
 export type WrapperAaveV2Params = {
   protocol: Protocols.AaveV2;
   type: AdapterInterface.AAVE_V2_WRAPPED_ATOKEN;
@@ -701,11 +857,14 @@ export type ContractParams =
   | YearnParams
   | ConvexParams
   | ConvexPoolParams
+  | ConvexL2Params
+  | ConvexL2PoolParams
   | LidoParams
   | LidoWsthETHParams
   | UniversalParams
   | BalancerParams
   | AaveV2Params
+  | AaveV3Params
   | WrapperAaveV2Params
   | CompoundV2Params
   | AuraParams
@@ -773,6 +932,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       Mainnet: "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
       Arbitrum: NOT_DEPLOYED, // CURVE_STECRV_POOL
       Optimism: NOT_DEPLOYED,
+      Base: NOT_DEPLOYED,
     },
     tokens: ["WETH", "STETH"],
     lpToken: "steCRV",
@@ -786,6 +946,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       Mainnet: NOT_DEPLOYED,
       Arbitrum: NOT_DEPLOYED,
       Optimism: "0xb90b9b1f91a01ea22a182cd84c1e22222e39b415",
+      Base: NOT_DEPLOYED,
     },
     tokens: ["WETH", "STETH"],
     lpToken: "wstETHCRV",
@@ -799,6 +960,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       Mainnet: "0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2",
       Arbitrum: NOT_DEPLOYED,
       Optimism: NOT_DEPLOYED,
+      Base: NOT_DEPLOYED,
     },
     tokens: ["GEAR", "WETH"],
     lpToken: "GEAR",
@@ -1157,6 +1319,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: "0x81fCe3E10D12Da6c7266a1A169c4C96813435263",
           Arbitrum: NOT_DEPLOYED, // CONVEX_SUSD_POOL_EXTRA_SNX
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1173,6 +1336,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: "0x008aEa5036b819B4FEAEd10b2190FBb3954981E8",
           Arbitrum: NOT_DEPLOYED, // CONVEX_STECRV_POOL_EXTRA_LDO
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1189,6 +1353,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: "0xcDEC6714eB482f28f4889A0c122868450CDBF0b0",
           Arbitrum: NOT_DEPLOYED, // CONVEX_FRAX3CRV_POOL_EXTRA_FXS
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1205,6 +1370,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: "0x55d59b791f06dc519B176791c4E037E8Cf2f6361",
           Arbitrum: NOT_DEPLOYED, // CONVEX_LUSD3CRV_POOL_EXTRA_LQTY
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1221,6 +1387,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: "0x69a92f1656cd2e193797546cFe2EaF32EACcf6f7",
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1245,6 +1412,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: "0xE1eCBB4181378E2346EAC90Eb5606c01Aa08f052",
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1261,6 +1429,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: "0x834B9147Fd23bF131644aBC6e557Daf99C5cDa15",
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1284,6 +1453,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: "0x95e6092449a0f3946A5a0f308Ead4adcff244E2B",
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1300,6 +1470,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: "0xac183F7cd62d5b04Fa40362EB67249A80339541A",
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1316,6 +1487,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: "0xD490178B568b07c6DDbDfBBfaF9043772209Ec01",
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1332,6 +1504,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: "0x749cFfCb53e008841d7387ba37f9284BDeCEe0A9",
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1348,6 +1521,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: "0x01eC96F1eEBF470E3fEAEEfB843fbC63424e668d",
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1371,6 +1545,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: "0xf66a72886749c96b18526E8E124cC2e18b7c72D2",
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1388,6 +1563,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: "0x25d22C5191C67D63AAB70a37FAe06e1c1E1a830F",
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1405,6 +1581,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: "0x62e6D8dAe7089C8F2f2a5C328c710aa1788742fb",
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
       {
@@ -1413,6 +1590,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: "0xC5E75ccd4d40e2Fb280f008f8AFB5EF3415EFA72",
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1430,6 +1608,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: NOT_DEPLOYED,
           Arbitrum: NOT_DEPLOYED,
           Optimism: "0x0A22Ae9D9D149C14f6c15A235e715bB6C1Cfa739",
+          Base: NOT_DEPLOYED,
         },
       },
       {
@@ -1438,6 +1617,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: NOT_DEPLOYED,
           Arbitrum: NOT_DEPLOYED,
           Optimism: "0x81673Cdd00c2839440f31575cCFa5B6ca4a87B2B",
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1455,6 +1635,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: NOT_DEPLOYED,
           Arbitrum: NOT_DEPLOYED,
           Optimism: "0x903d716fe68e7e091eCC43AA93c0F8cfD7e7BC0a",
+          Base: NOT_DEPLOYED,
         },
       },
       {
@@ -1463,6 +1644,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: NOT_DEPLOYED,
           Arbitrum: NOT_DEPLOYED,
           Optimism: "0xb0709c230C06BE6e2A84b2Ba877094EB9a4fA014",
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1479,6 +1661,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: NOT_DEPLOYED,
           Arbitrum: "0xC0353d05D3F2b6e14E36c5d3B4bF8d179890A001",
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
       {
@@ -1487,6 +1670,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: NOT_DEPLOYED,
           Arbitrum: "0x3a0beff39E243453960aD1198Fc3aAabdBDDe56C",
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1503,6 +1687,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: NOT_DEPLOYED,
           Arbitrum: "0x5901ce1c3Bf6C97fC49ED0fF08A88a57ea6E4Ca4",
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
       {
@@ -1511,6 +1696,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: NOT_DEPLOYED,
           Arbitrum: "0x4601Ec46A285714e6F2A9466DA7f2BcB33646391",
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1527,6 +1713,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: NOT_DEPLOYED,
           Arbitrum: "0xf0dcb30811228bED2b87b2753fabAfe80A9D0fb9",
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
       {
@@ -1535,6 +1722,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: NOT_DEPLOYED,
           Arbitrum: "0xE42D389058D820177b83E2863FEb13733d6Dd5f2",
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1551,6 +1739,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: NOT_DEPLOYED,
           Arbitrum: "0xeA270927C226454452DDF80e24a02087D0D7089F",
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
       {
@@ -1559,6 +1748,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Mainnet: NOT_DEPLOYED,
           Arbitrum: "0xB05Dc0b460Ca3ed5174b33A7dA2104388764F62D",
           Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
         },
       },
     ],
@@ -1572,6 +1762,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       Mainnet: "0x442af784A788A5bd6F42A01Ebe9F287a871243fb",
       Arbitrum: NOT_DEPLOYED, // LIDO_ORACLE
       Optimism: NOT_DEPLOYED,
+      Base: NOT_DEPLOYED,
     },
     lpToken: "steCRV",
   },
@@ -1596,6 +1787,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       Mainnet: "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5",
       Arbitrum: "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5",
       Optimism: "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5",
+      Base: NOT_DEPLOYED,
     },
   },
   AAVE_V2_LENDING_POOL: {
@@ -1627,7 +1819,11 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.AAVE_V2_WRAPPED_ATOKEN,
     underlying: "aWETH",
   },
-
+  AAVE_V3_LENDING_POOL: {
+    name: "Aave V3 Lending Pool",
+    protocol: Protocols.AaveV3,
+    type: AdapterInterface.AAVE_V3_LENDING_POOL,
+  },
   COMPOUND_V2_DAI_POOL: {
     name: "Compound V2 DAI",
     protocol: Protocols.CompoundV2,

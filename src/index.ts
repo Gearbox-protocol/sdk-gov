@@ -1,5 +1,4 @@
-import { testUsdcConfigMainnet } from "./config/configs/test_usdcConfigMainnet";
-
+export * from "./bots/permissions";
 export * from "./config/adapters";
 export * from "./config/configs";
 export * from "./config/poolV3Core";
