@@ -14,6 +14,7 @@ import { NormalToken } from "../tokens/normal";
 import { SupportedToken, tokenDataByNetwork } from "../tokens/token";
 import type { YearnLPToken } from "../tokens/yearn";
 import { TypedObjectUtils } from "../utils/mappers";
+import { Address } from "../utils/types";
 import { AdapterInterface } from "./adapters";
 import { Protocols } from "./protocols";
 
@@ -139,7 +140,7 @@ export type SupportedContract =
 
 export const contractsByNetwork: Record<
   NetworkType,
-  Record<SupportedContract, string>
+  Record<SupportedContract, Address>
 > = {
   Mainnet: {
     UNISWAP_V2_ROUTER: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",

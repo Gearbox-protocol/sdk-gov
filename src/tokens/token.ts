@@ -1,6 +1,7 @@
 import { NetworkType } from "../core/chains";
 import { NOT_DEPLOYED } from "../core/constants";
 import { TypedObjectUtils } from "../utils/mappers";
+import { Address } from "../utils/types";
 import {
   AaveV2LPToken,
   AaveV2PoolTokenData,
@@ -139,7 +140,7 @@ export const supportedTokens: Record<SupportedToken, TokenDataI> = {
 
 export const tokenDataByNetwork: Record<
   NetworkType,
-  Record<SupportedToken, string>
+  Record<SupportedToken, Address>
 > = {
   //
   // MAINNET NETWORK
