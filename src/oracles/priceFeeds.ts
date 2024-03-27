@@ -1,7 +1,7 @@
 import { NetworkType } from "../core/chains";
 import { NOT_DEPLOYED } from "../core/constants";
 import { SupportedToken } from "../tokens/token";
-import { PartialRecord } from "../utils/types";
+import { Address, PartialRecord } from "../utils/types";
 import {
   FOUR_MINUTES,
   HOUR_1_BUFFERED,
@@ -25,7 +25,7 @@ export const REDSTONE_SIGNERS = {
     "0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202",
     "0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE",
     "0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de",
-  ],
+  ] as Array<Address>,
   signersThreshold: 5,
 };
 

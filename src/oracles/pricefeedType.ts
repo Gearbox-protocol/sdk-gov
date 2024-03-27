@@ -2,6 +2,7 @@ import { NetworkType } from "../core/chains";
 import { AaveV2LPToken } from "../tokens/aave";
 import { NormalToken } from "../tokens/normal";
 import { SupportedToken } from "../tokens/token";
+import { Address } from "../utils/types";
 
 export interface PriceFeed {
   token: string;
@@ -73,7 +74,7 @@ export interface RedstoneOracleData {
   type: PriceFeedType.REDSTONE_ORACLE;
   dataServiceId: string;
   dataId: string;
-  signers: Array<string>;
+  signers: Array<Address>;
   signersThreshold: number;
 }
 
@@ -86,7 +87,7 @@ export interface CompositeOracleData {
 export type PriceFeedData =
   | {
       type: PriceFeedType.CHAINLINK_ORACLE;
-      address: string;
+      address: Address;
       stalenessPeriod?: number;
     }
   | {
