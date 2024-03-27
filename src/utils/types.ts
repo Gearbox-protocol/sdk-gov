@@ -1,4 +1,4 @@
-export type Address = string;
+export type Address = `0x${string}`;
 
 export type PartialRecord<K extends keyof any, T> = {
   [P in K]?: T;
