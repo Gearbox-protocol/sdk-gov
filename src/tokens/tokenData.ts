@@ -1,5 +1,6 @@
 import { NetworkType } from "../core/chains";
 import { NOT_DEPLOYED } from "../core/constants";
+import { Address } from "../utils/types";
 import { SupportedToken, tokenDataByNetwork } from "./token";
 
 export const connectors: Record<NetworkType, Array<SupportedToken>> = {
@@ -17,6 +18,6 @@ export function getConnectors(networkType: NetworkType) {
       throw new Error(`connector token ${e} not found`);
     }
 
-    return result.toLowerCase();
+    return result.toLowerCase() as Address;
   });
 }
