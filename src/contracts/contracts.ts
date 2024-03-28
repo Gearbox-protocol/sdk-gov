@@ -677,8 +677,10 @@ export const contractsByNetwork: Record<
   },
 };
 
-export const UNISWAP_V3_QUOTER = "0xb27308f9F90D607463bb33eA1BeBb41C27CE5AB6";
-export const CAMELOT_V3_QUOTER = "0x0Fc73040b26E9bC8514fA028D998E73A254Fa76E";
+export const UNISWAP_V3_QUOTER: Address =
+  "0xb27308f9F90D607463bb33eA1BeBb41C27CE5AB6";
+export const CAMELOT_V3_QUOTER: Address =
+  "0x0Fc73040b26E9bC8514fA028D998E73A254Fa76E";
 
 export interface BaseContractParams {
   name: string;
@@ -697,13 +699,13 @@ type VelodromeV2Params = {
 type UniswapV3Params = {
   protocol: Protocols.Uniswap;
   type: AdapterInterface.UNISWAP_V3_ROUTER;
-  quoter: string;
+  quoter: Address;
 } & BaseContractParams;
 
 type CamelotV3Params = {
   protocol: Protocols.Camelot;
   type: AdapterInterface.CAMELOT_V3_ROUTER;
-  quoter: string;
+  quoter: Address;
 } & BaseContractParams;
 
 export type CurveParams = {
@@ -726,7 +728,7 @@ export type CurveSteCRVPoolParams = {
   type: AdapterInterface.CURVE_V1_STECRV_POOL;
   version: number;
 
-  pool: Record<NetworkType, string>;
+  pool: Record<NetworkType, Address>;
   tokens: ["WETH", "STETH"] | ["WETH", "wstETH"];
   lpToken: "steCRV" | "wstETHCRV";
 } & BaseContractParams;
@@ -736,7 +738,7 @@ export type CurveGEARPoolParams = {
   type: AdapterInterface.CURVE_V1_2ASSETS;
   version: number;
 
-  pool: Record<NetworkType, string>;
+  pool: Record<NetworkType, Address>;
   tokens: ["GEAR", "WETH"];
   lpToken: "GEAR";
 } & BaseContractParams;
@@ -765,7 +767,7 @@ type ConvexL2Params = {
 
 interface ConvexExtraPoolParams {
   rewardToken: NormalToken;
-  poolAddress: Record<NetworkType, string>;
+  poolAddress: Record<NetworkType, Address>;
 }
 
 export type ConvexPoolParams = {
@@ -797,13 +799,13 @@ type AuraParams = {
 
 interface AuraExtraPoolParams {
   rewardToken: NormalToken;
-  poolAddress: Record<NetworkType, string>;
+  poolAddress: Record<NetworkType, Address>;
 }
 
 export type LidoParams = {
   protocol: Protocols.Lido;
   type: AdapterInterface.LIDO_V1;
-  oracle: Record<NetworkType, string>;
+  oracle: Record<NetworkType, Address>;
   lpToken: "steCRV";
 } & BaseContractParams;
 
@@ -820,7 +822,7 @@ export type UniversalParams = {
 export type BalancerParams = {
   protocol: Protocols.Balancer;
   type: AdapterInterface.BALANCER_VAULT;
-  queries: Record<NetworkType, string>;
+  queries: Record<NetworkType, Address>;
 } & BaseContractParams;
 
 export type AaveV2Params = {

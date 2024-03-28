@@ -30,7 +30,7 @@ export const BATCH_CHAIN: Record<NetworkType, Address> = {
   Base: NOT_DEPLOYED,
 };
 
-export const BLACKLIST_HELPER: Record<NetworkType, string> = {
+export const BLACKLIST_HELPER: Record<NetworkType, Address> = {
   Mainnet: "0xFfbF344741654a1B9Ab1286Cf05A42f275F67839",
   Arbitrum: NOT_DEPLOYED,
   Optimism: NOT_DEPLOYED,
