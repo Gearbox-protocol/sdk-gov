@@ -15,6 +15,14 @@ export const toBigInt = (v: BigNumberish): bigint => {
 export const percentFmt = (v: number | bigint | BigNumberish): string =>
   `${(Number(v) / 100).toFixed(2)}% [ ${v} ]`;
 
+export function formatBNvalue(
+  num: BigNumberish | undefined,
+  decimals: number,
+  precision?: number,
+): string {
+  return `${formatBN(num, decimals, precision)} [ ${num} ]`;
+}
+
 export function formatBN(
   num: BigNumberish | undefined,
   decimals: number,
