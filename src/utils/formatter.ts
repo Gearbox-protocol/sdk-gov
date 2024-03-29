@@ -1,4 +1,8 @@
 import { BigNumberish } from "ethers";
+import {
+  HumanizeDuration,
+  HumanizeDurationLanguage,
+} from "humanize-duration-ts";
 
 import { contractsByAddress } from "../contracts/contracts";
 import { TREASURY } from "../contracts/utilsContracts";
@@ -123,4 +127,11 @@ export function fmtContract(address: string): string {
 
 export function numberWithCommas(x: number | bigint): string {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+export function formatDuration(duration: number): string {
+  const langService = new HumanizeDurationLanguage();
+  const humanizer = new HumanizeDuration(langService);
+
+  return `${humanizer.humanize(duration)} [ ${duration.toString()}]`;
 }
