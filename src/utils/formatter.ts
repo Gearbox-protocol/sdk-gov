@@ -133,5 +133,5 @@ export function formatDuration(duration: number): string {
   const langService = new HumanizeDurationLanguage();
   const humanizer = new HumanizeDuration(langService);
 
-  return `${humanizer.humanize(duration)} [ ${duration.toString()}]`;
+  return `${humanizer.humanize(duration * 1_000)} [ ${duration.toString()}]`;
 }
