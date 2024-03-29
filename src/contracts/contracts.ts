@@ -42,23 +42,24 @@ export type CurvePoolContract =
   | "CURVE_CRVUSD_FRAX_POOL"
   | "CURVE_TRI_CRV_POOL"
   | "CURVE_RETH_ETH_POOL"
-  | "CURVE_ETH_WSTETH_GATEWAY_OP"
+  | "CURVE_USDE_USDC_POOL"
+  | "CURVE_FRAX_USDE_POOL"
+  | "CURVE_USDE_CRVUSD_POOL"
+  | "CURVE_USDE_DAI_POOL"
+  | "CURVE_SDAI_SUSDE_POOL"
+  | "CURVE_GHO_USDE_POOL"
   | "CURVE_2CRV_POOL_ARB"
   | "CURVE_TRICRYPTO_CRVUSD_POOL_ARB"
   | "CURVE_CRVUSD_USDC_POOL_ARB"
   | "CURVE_CRVUSD_USDT_POOL_ARB"
   | "CURVE_CRVUSD_USDC_E_POOL_ARB"
   | "CURVE_3CRV_POOL_OP"
-  | "CURVE_USDE_USDC_POOL"
-  | "CURVE_FRAX_USDE_POOL"
-  | "CURVE_USDE_CRVUSD_POOL"
-  | "CURVE_USDE_DAI_POOL"
-  | "CURVE_SDAI_SUSDE_POOL"
-  | "CURVE_GHO_USDE_POOL";
+  | "CURVE_ETH_WSTETH_GATEWAY_OP";
 
 export type YearnVaultContract =
   | "YEARN_DAI_VAULT"
   | "YEARN_USDC_VAULT"
+  | "YEARN_USDC_E_VAULT"
   | "YEARN_WETH_VAULT"
   | "YEARN_WBTC_VAULT"
   | "YEARN_USDT_VAULT"
@@ -191,6 +192,7 @@ export const contractsByNetwork: Record<
     // YEARN
     YEARN_DAI_VAULT: tokenDataByNetwork.Mainnet.yvDAI,
     YEARN_USDC_VAULT: tokenDataByNetwork.Mainnet.yvUSDC,
+    YEARN_USDC_E_VAULT: tokenDataByNetwork.Mainnet.yvUSDC_e,
     YEARN_WETH_VAULT: tokenDataByNetwork.Mainnet.yvWETH,
     YEARN_WBTC_VAULT: tokenDataByNetwork.Mainnet.yvWBTC,
     YEARN_USDT_VAULT: tokenDataByNetwork.Mainnet.yvUSDT,
@@ -326,6 +328,7 @@ export const contractsByNetwork: Record<
     // YEARN
     YEARN_DAI_VAULT: tokenDataByNetwork.Arbitrum.yvDAI,
     YEARN_USDC_VAULT: tokenDataByNetwork.Arbitrum.yvUSDC,
+    YEARN_USDC_E_VAULT: tokenDataByNetwork.Arbitrum.yvUSDC_e,
     YEARN_WETH_VAULT: tokenDataByNetwork.Arbitrum.yvWETH,
     YEARN_WBTC_VAULT: tokenDataByNetwork.Arbitrum.yvWBTC,
     YEARN_USDT_VAULT: tokenDataByNetwork.Arbitrum.yvUSDT,
@@ -461,6 +464,7 @@ export const contractsByNetwork: Record<
     // YEARN
     YEARN_DAI_VAULT: tokenDataByNetwork.Optimism.yvDAI,
     YEARN_USDC_VAULT: tokenDataByNetwork.Optimism.yvUSDC,
+    YEARN_USDC_E_VAULT: tokenDataByNetwork.Optimism.yvUSDC_e,
     YEARN_WETH_VAULT: tokenDataByNetwork.Optimism.yvWETH,
     YEARN_WBTC_VAULT: tokenDataByNetwork.Optimism.yvWBTC,
     YEARN_USDT_VAULT: tokenDataByNetwork.Optimism.yvUSDT,
@@ -596,6 +600,7 @@ export const contractsByNetwork: Record<
     // YEARN
     YEARN_DAI_VAULT: tokenDataByNetwork.Optimism.yvDAI,
     YEARN_USDC_VAULT: tokenDataByNetwork.Optimism.yvUSDC,
+    YEARN_USDC_E_VAULT: tokenDataByNetwork.Optimism.yvUSDC_e,
     YEARN_WETH_VAULT: tokenDataByNetwork.Optimism.yvWETH,
     YEARN_WBTC_VAULT: tokenDataByNetwork.Optimism.yvWBTC,
     YEARN_USDT_VAULT: tokenDataByNetwork.Optimism.yvUSDT,
@@ -1225,6 +1230,12 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     protocol: Protocols.Yearn,
     type: AdapterInterface.YEARN_V2,
     shareToken: "yvUSDC",
+  },
+  YEARN_USDC_E_VAULT: {
+    name: "Yearn USDC.e",
+    protocol: Protocols.Yearn,
+    type: AdapterInterface.YEARN_V2,
+    shareToken: "yvUSDC_e",
   },
   YEARN_WETH_VAULT: {
     name: "Yearn WETH",

@@ -1491,6 +1491,15 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  yvUSDC_e: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.YEARN_ORACLE,
+        token: "USDC_e",
+        trusted: false,
+      },
+    },
+  },
   yvUSDT: {
     AllNetworks: {
       Main: {
