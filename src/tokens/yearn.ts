@@ -8,6 +8,7 @@ import { TokenNetwork, TokenType } from "./tokenType";
 export type YearnLPToken =
   | "yvDAI"
   | "yvUSDC"
+  | "yvUSDC_e"
   | "yvWETH"
   | "yvWBTC"
   | "yvUSDT"
@@ -57,6 +58,14 @@ export const yearnTokens: Record<
     type: { AllNetworks: TokenType.YEARN_ON_NORMAL_TOKEN },
     underlying: "USDC",
     vault: "YEARN_USDC_VAULT",
+  },
+
+  yvUSDC_e: {
+    name: "Yearn yvUSDC.e",
+    symbol: "yvUSDC_e",
+    type: { AllNetworks: TokenType.YEARN_ON_NORMAL_TOKEN },
+    underlying: "USDC_e",
+    vault: "YEARN_USDC_E_VAULT",
   },
 
   yvWETH: {

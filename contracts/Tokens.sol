@@ -128,6 +128,7 @@ enum Tokens {
     stkcvxcrvUSDETHCRV,
     yvDAI,
     yvUSDC,
+    yvUSDC_e,
     yvWETH,
     yvWBTC,
     yvUSDT,

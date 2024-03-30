@@ -905,6 +905,7 @@ contract TokensDataLive {
                 tokenType: TokenType.YEARN_ON_NORMAL_TOKEN
             })
         );
+
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.yvWETH,
@@ -2173,11 +2174,12 @@ contract TokensDataLive {
                 tokenType: TokenType.YEARN_ON_NORMAL_TOKEN
             })
         );
+
         tokenDataByNetwork[10].push(
             TokenData({
-                id: Tokens.yvUSDC,
+                id: Tokens.yvUSDC_e,
                 addr: 0xaD17A225074191d5c8a37B50FdA1AE278a2EE6A2,
-                symbol: "yvUSDC",
+                symbol: "yvUSDC_e",
                 tokenType: TokenType.YEARN_ON_NORMAL_TOKEN
             })
         );

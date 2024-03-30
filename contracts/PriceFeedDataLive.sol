@@ -2134,6 +2134,20 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: Tokens.yvUSDC, trusted: false, reserve: false})
         );
 
+        // ------------------------ yvUSDC_e ------------------------
+        yearnPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: Tokens.yvUSDC_e, trusted: false, reserve: false})
+        );
+        yearnPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: Tokens.yvUSDC_e, trusted: false, reserve: false})
+        );
+        yearnPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: Tokens.yvUSDC_e, trusted: false, reserve: false})
+        );
+        yearnPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: Tokens.yvUSDC_e, trusted: false, reserve: false})
+        );
+
         // ------------------------ yvUSDT ------------------------
         yearnPriceFeedsByNetwork[1].push(
             SingeTokenPriceFeedData({token: Tokens.yvUSDT, trusted: false, reserve: false})
