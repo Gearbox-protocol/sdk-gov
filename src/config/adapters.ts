@@ -1,6 +1,7 @@
 import { SupportedContract } from "../contracts/contracts";
 import { BalancerLPToken } from "../tokens/balancer";
 import { SupportedToken } from "../tokens/token";
+import { Address } from "../utils/types";
 
 export enum BalancerPoolStatus {
   NOT_ALLOWED = 0,
@@ -56,7 +57,7 @@ export interface VelodromeV2Pool {
   token0: SupportedToken;
   token1: SupportedToken;
   stable: boolean;
-  factory: string;
+  factory: Address;
 }
 
 export interface VelodromeV2Config {
