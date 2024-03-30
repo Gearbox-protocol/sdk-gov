@@ -1,4 +1,8 @@
 import { BigNumberish } from "ethers";
+import {
+  HumanizeDuration,
+  HumanizeDurationLanguage,
+} from "humanize-duration-ts";
 
 import { contractsByAddress } from "../contracts/contracts";
 import { TREASURY } from "../contracts/utilsContracts";
@@ -14,6 +18,14 @@ export const toBigInt = (v: BigNumberish): bigint => {
 
 export const percentFmt = (v: number | bigint | BigNumberish): string =>
   `${(Number(v) / 100).toFixed(2)}% [ ${v} ]`;
+
+export function formatBNvalue(
+  num: BigNumberish | undefined,
+  decimals: number,
+  precision?: number,
+): string {
+  return `${formatBN(num, decimals, precision)} [ ${num} ]`;
+}
 
 export function formatBN(
   num: BigNumberish | undefined,
@@ -115,4 +127,11 @@ export function fmtContract(address: string): string {
 
 export function numberWithCommas(x: number | bigint): string {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+export function formatDuration(duration: number): string {
+  const langService = new HumanizeDurationLanguage();
+  const humanizer = new HumanizeDuration(langService);
+
+  return `${humanizer.humanize(duration * 1_000)} [ ${duration.toString()}]`;
 }

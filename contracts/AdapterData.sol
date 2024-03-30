@@ -71,6 +71,9 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.YEARN_USDC_VAULT, adapterType: AdapterType.YEARN_V2})
         );
         simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.YEARN_USDC_E_VAULT, adapterType: AdapterType.YEARN_V2})
+        );
+        simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.YEARN_WETH_VAULT, adapterType: AdapterType.YEARN_V2})
         );
         simpleAdapters.push(

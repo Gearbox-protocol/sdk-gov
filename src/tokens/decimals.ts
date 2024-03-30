@@ -119,6 +119,7 @@ export const decimals: Record<SupportedToken, number> = {
   stkcvxcrvUSDETHCRV: 18,
   yvDAI: 18,
   yvUSDC: 6,
+  yvUSDC_e: 6,
   yvUSDT: 6,
   yvOP: 18,
   yvWETH: 18,

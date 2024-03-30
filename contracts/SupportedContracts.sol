@@ -258,6 +258,7 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "YEARN_USDC_VAULT"
             })
         );
+
         contractDataByNetwork[1].push(
             ContractData({
                 id: Contracts.YEARN_WETH_VAULT,
@@ -707,11 +708,12 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "YEARN_DAI_VAULT"
             })
         );
+
         contractDataByNetwork[10].push(
             ContractData({
-                id: Contracts.YEARN_USDC_VAULT,
+                id: Contracts.YEARN_USDC_E_VAULT,
                 addr: 0xaD17A225074191d5c8a37B50FdA1AE278a2EE6A2,
-                name: "YEARN_USDC_VAULT"
+                name: "YEARN_USDC_E_VAULT"
             })
         );
         contractDataByNetwork[10].push(
@@ -796,11 +798,12 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "YEARN_DAI_VAULT"
             })
         );
+
         contractDataByNetwork[8453].push(
             ContractData({
-                id: Contracts.YEARN_USDC_VAULT,
+                id: Contracts.YEARN_USDC_E_VAULT,
                 addr: 0xaD17A225074191d5c8a37B50FdA1AE278a2EE6A2,
-                name: "YEARN_USDC_VAULT"
+                name: "YEARN_USDC_E_VAULT"
             })
         );
         contractDataByNetwork[8453].push(
