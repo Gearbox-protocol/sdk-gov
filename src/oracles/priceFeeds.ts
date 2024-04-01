@@ -68,6 +68,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xc929ad75B72593967DE83E7F7Cda0493458261D9",
+        stalenessPeriod: HOUR_24_BUFFERED,
         trusted: false,
       },
     },
@@ -86,6 +87,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x547a514d5e3769680Ce22B2361c10Ea13619e8a9",
+        stalenessPeriod: HOUR_24_BUFFERED,
         trusted: false,
       },
       Reserve: {
@@ -118,6 +120,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xdbd020CAeF83eFd542f4De03e3cF0C28A4428bd5",
+        stalenessPeriod: HOUR_24_BUFFERED,
         trusted: false,
       },
     },
@@ -217,13 +220,13 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xD2A593BF7594aCE1faD597adb697b5645d5edDB2",
+        stalenessPeriod: HOUR_24,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -232,15 +235,13 @@ export const priceFeedsByToken: Record<
   FEI: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED, // OUTDATED: "0x31e0a88fecB6eC0a411DBe0e9E76391498296EE9",
+        type: PriceFeedType.ZERO_ORACLE, // OUTDATED: "0x31e0a88fecB6eC0a411DBe0e9E76391498296EE9",
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -251,13 +252,13 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xa89f5d2365ce98B3cD68012b6f503ab1416245Fc",
+        stalenessPeriod: HOUR_24_BUFFERED,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -316,6 +317,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xDC3EA94CD0AC27d9A86C180091e7f78C683d3699",
+        stalenessPeriod: HOUR_24_BUFFERED,
         trusted: false,
       },
     },
@@ -342,6 +344,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x4e1C6B168DCFD7758bC2Ab9d2865f1895813D236",
+        stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
       },
     },
@@ -652,6 +655,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xA027702dbb89fbd58938e4324ac03B58d812b0E1",
+        stalenessPeriod: HOUR_24_BUFFERED,
         trusted: false,
       },
     },
@@ -692,8 +696,7 @@ export const priceFeedsByToken: Record<
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -866,8 +869,7 @@ export const priceFeedsByToken: Record<
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -979,13 +981,13 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x7A364e8770418566e3eb2001A96116E6138Eb32F",
+        stalenessPeriod: HOUR_24_BUFFERED,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -996,6 +998,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x8c110B94C5f1d347fAcF5E1E938AB2db60E3c9a8",
+        stalenessPeriod: HOUR_24_BUFFERED,
         trusted: false,
       },
     },
@@ -1012,8 +1015,7 @@ export const priceFeedsByToken: Record<
   GMX: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -1037,8 +1039,7 @@ export const priceFeedsByToken: Record<
   ARB: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -1071,8 +1072,7 @@ export const priceFeedsByToken: Record<
   RDNT: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -1091,6 +1091,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xdF2917806E30300537aEB49A7663062F4d1F2b5F",
+        stalenessPeriod: HOUR_24,
         trusted: false,
       },
       Reserve: {
@@ -2394,15 +2395,13 @@ export const priceFeedsByToken: Record<
   dDAI: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2411,15 +2410,13 @@ export const priceFeedsByToken: Record<
   dUSDC: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2428,15 +2425,13 @@ export const priceFeedsByToken: Record<
   dWBTC: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2445,15 +2440,13 @@ export const priceFeedsByToken: Record<
   dWETH: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2462,15 +2455,13 @@ export const priceFeedsByToken: Record<
   dwstETH: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2479,15 +2470,13 @@ export const priceFeedsByToken: Record<
   dFRAX: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2496,15 +2485,13 @@ export const priceFeedsByToken: Record<
   dUSDCV3: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2513,15 +2500,13 @@ export const priceFeedsByToken: Record<
   dWBTCV3: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2530,15 +2515,13 @@ export const priceFeedsByToken: Record<
   dWETHV3: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2547,15 +2530,13 @@ export const priceFeedsByToken: Record<
   sdUSDCV3: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2564,15 +2545,13 @@ export const priceFeedsByToken: Record<
   sdWBTCV3: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2581,15 +2560,13 @@ export const priceFeedsByToken: Record<
   sdWETHV3: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2598,15 +2575,13 @@ export const priceFeedsByToken: Record<
   dUSDTV3: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2614,15 +2589,13 @@ export const priceFeedsByToken: Record<
   dGHOV3: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2630,15 +2603,13 @@ export const priceFeedsByToken: Record<
   dDAIV3: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2647,15 +2618,13 @@ export const priceFeedsByToken: Record<
   sdUSDTV3: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2663,15 +2632,13 @@ export const priceFeedsByToken: Record<
   sdGHOV3: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2679,15 +2646,13 @@ export const priceFeedsByToken: Record<
   sdDAIV3: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2696,15 +2661,13 @@ export const priceFeedsByToken: Record<
   GEAR: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
     Arbitrum: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: NOT_DEPLOYED,
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2866,6 +2829,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x4E155eD98aFE9034b7A5962f6C84c86d869daA9d",
+        stalenessPeriod: HOUR_24_BUFFERED,
         trusted: false,
       },
     },

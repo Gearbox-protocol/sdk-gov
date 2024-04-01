@@ -88,7 +88,7 @@ export type PriceFeedData =
   | {
       type: PriceFeedType.CHAINLINK_ORACLE;
       address: Address;
-      stalenessPeriod?: number;
+      stalenessPeriod: number;
     }
   | {
       type: PriceFeedType.YEARN_ORACLE;
