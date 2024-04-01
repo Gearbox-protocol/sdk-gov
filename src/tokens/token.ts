@@ -839,7 +839,7 @@ export const tokenDataByNetwork: Record<
     sdGHOV3: NOT_DEPLOYED,
     sdDAIV3: NOT_DEPLOYED,
 
-    GEAR: NOT_DEPLOYED,
+    GEAR: "0x39E6C2E1757ae4354087266E2C3EA9aC4257C1eb",
 
     // AAVE
     aUSDC: NOT_DEPLOYED,

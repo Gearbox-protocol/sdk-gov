@@ -12,21 +12,21 @@ export const ADDRESS_PROVIDER: Record<NetworkType, Address> = {
 export const TIMELOCK: Record<NetworkType, Address> = {
   Mainnet: "0xa133C9A92Fb8dDB962Af1cbae58b2723A0bdf23b",
   Arbitrum: "0x148DD932eCe1155c11006F5650c6Ff428f8D374A",
-  Optimism: NOT_DEPLOYED,
+  Optimism: "0x148DD932eCe1155c11006F5650c6Ff428f8D374A",
   Base: NOT_DEPLOYED,
 };
 
 export const GOVERNOR: Record<NetworkType, Address> = {
   Mainnet: "0x29B97F37B3E0C704bCFD785F5b7bBa2A0B7df2c7",
   Arbitrum: "0xF0C89a0eDCD68B4176A26B3bf7574498DD3E6d09",
-  Optimism: NOT_DEPLOYED,
+  Optimism: "0xF0C89a0eDCD68B4176A26B3bf7574498DD3E6d09",
   Base: NOT_DEPLOYED,
 };
 
 export const BATCH_CHAIN: Record<NetworkType, Address> = {
   Mainnet: "0xB900bDEf6eAc8C5D97F8e876aBC39573Cf6626b2",
   Arbitrum: "0xAEbaa1015D0bc250F5b38aac9b8f65E0668cE3c2",
-  Optimism: NOT_DEPLOYED,
+  Optimism: "0xAEbaa1015D0bc250F5b38aac9b8f65E0668cE3c2",
   Base: NOT_DEPLOYED,
 };
 
@@ -40,7 +40,7 @@ export const BLACKLIST_HELPER: Record<NetworkType, string> = {
 export const CREATE2FACTORY: Record<NetworkType, Address> = {
   Mainnet: "0x45d146CAA25aa565Cfc7434926633f4F1C97c873",
   Arbitrum: "0xad1231A64eE68D6BF721a1E8e177776cc49bAA2C",
-  Optimism: NOT_DEPLOYED,
+  Optimism: "0xad1231A64eE68D6BF721a1E8e177776cc49bAA2C",
   Base: NOT_DEPLOYED,
 };
 
@@ -75,7 +75,7 @@ export const ROUTER_MULTISIG_ADDRESS: Record<NetworkType, Address> = {
 export const ROUTER_CREATE2FACTORY: Record<NetworkType, Address> = {
   Mainnet: "0xA287577Fb7Cf49246e569EA268FE919F1cD6d9E2",
   Arbitrum: "0x95345A4d55DAf6864924fC8861b311B9BC860E5f",
-  Optimism: NOT_DEPLOYED,
+  Optimism: "0x95345A4d55DAf6864924fC8861b311B9BC860E5f",
   Base: NOT_DEPLOYED,
 };
 
