@@ -17,6 +17,7 @@ export type BalancerLPToken =
   | "ezETH_WETH_BPT"
   | "weETH_ezETH_rswETH"
   | "GHO_USDT_USDC"
+  | "rsETH_WETH"
   // Optimism
   | "BPT_rETH_ETH"
   | "BPT_WSTETH_ETH"
@@ -162,6 +163,16 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     underlying: ["GHO", "USDC", "USDT"],
     poolId:
       "0x8353157092ed8be69a9df8f95af097bbf33cb2af0000000000000000000005d9",
+  },
+  rsETH_WETH: {
+    name: "Balancer rsETH/WETH Stable",
+    symbol: "rsETH_WETH",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["rsETH", "WETH"],
+    poolId:
+      "0x58aadfb1afac0ad7fca1148f3cde6aedf5236b6d00000000000000000000067f",
   },
 
   BPT_rETH_ETH: {
