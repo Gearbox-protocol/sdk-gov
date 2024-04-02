@@ -4872,6 +4872,40 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: Tokens.weETH_ezETH_rswETH, trusted: false, reserve: false})
         );
 
+        // ------------------------ rsETH_WETH ------------------------
+        balancerStableLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({
+                lpToken: Tokens.rsETH_WETH,
+                assets: TokensLib.arrayOf(Tokens.rsETH, Tokens.WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({
+                lpToken: Tokens.rsETH_WETH,
+                assets: TokensLib.arrayOf(Tokens.rsETH, Tokens.WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[10].push(
+            BalancerLPPriceFeedData({
+                lpToken: Tokens.rsETH_WETH,
+                assets: TokensLib.arrayOf(Tokens.rsETH, Tokens.WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[8453].push(
+            BalancerLPPriceFeedData({
+                lpToken: Tokens.rsETH_WETH,
+                assets: TokensLib.arrayOf(Tokens.rsETH, Tokens.WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+
         // ------------------------ BPT_rETH_ETH ------------------------
         balancerStableLPPriceFeedsByNetwork[1].push(
             BalancerLPPriceFeedData({

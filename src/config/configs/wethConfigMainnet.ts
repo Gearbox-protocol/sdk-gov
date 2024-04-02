@@ -494,6 +494,10 @@ const restakingBalancerConfig: BalancerVaultConfig = {
       pool: "weETH_ezETH_rswETH",
       status: 2,
     },
+    {
+      pool: "rsETH_WETH",
+      status: 2,
+    },
   ],
 };
 
@@ -517,6 +521,10 @@ const restakingCreditManager: CreditManagerV3DeployConfig = {
     },
     {
       token: "ezETH",
+      lt: 9150,
+    },
+    {
+      token: "rsETH",
       lt: 9150,
     },
     // Compatibility
@@ -591,53 +599,53 @@ export const wethConfigMainnet: PoolV3DeployConfig = {
       minRate: 80,
       maxRate: 2400,
       quotaIncreaseFee: 1,
-      limit: (BigInt(3e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(135) * POOL_DECIMALS,
     },
     UNI: {
       minRate: 80,
       maxRate: 2400,
       quotaIncreaseFee: 1,
-      limit: (BigInt(5e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(135) * POOL_DECIMALS,
     },
     LINK: {
       minRate: 80,
       maxRate: 2400,
       quotaIncreaseFee: 1,
-      limit: (BigInt(5e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(135) * POOL_DECIMALS,
     },
     LDO: {
       minRate: 80,
       maxRate: 2400,
       quotaIncreaseFee: 1,
-      limit: (BigInt(2.5e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(135) * POOL_DECIMALS,
     },
     CRV: {
       minRate: 240,
       maxRate: 4000,
       quotaIncreaseFee: 1,
-      limit: (BigInt(2.5e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(55) * POOL_DECIMALS,
     },
     CVX: {
       minRate: 240,
       maxRate: 4000,
       quotaIncreaseFee: 1,
-      limit: (BigInt(2.5e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(55) * POOL_DECIMALS,
     },
     FXS: {
       minRate: 240,
       maxRate: 4000,
       quotaIncreaseFee: 1,
-      limit: (BigInt(2e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(0) * POOL_DECIMALS,
     },
     APE: {
       minRate: 240,
       maxRate: 4000,
       quotaIncreaseFee: 1,
-      limit: (BigInt(5e5) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(0) * POOL_DECIMALS,
     },
     yvUSDC: {
       minRate: 1,
-      maxRate: 1500,
+      maxRate: 2700,
       quotaIncreaseFee: 1,
       limit: (BigInt(30e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
@@ -649,7 +657,7 @@ export const wethConfigMainnet: PoolV3DeployConfig = {
     },
     sDAI: {
       minRate: 1,
-      maxRate: 1500,
+      maxRate: 2700,
       quotaIncreaseFee: 1,
       limit: (BigInt(30e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
@@ -683,32 +691,38 @@ export const wethConfigMainnet: PoolV3DeployConfig = {
       minRate: 100,
       maxRate: 700,
       quotaIncreaseFee: 0,
-      limit: (BigInt(15.5e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(0) * POOL_DECIMALS,
     },
     stkcvxcrvUSDETHCRV: {
       minRate: 100,
       maxRate: 1470,
       quotaIncreaseFee: 0,
-      limit: (BigInt(5.4e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(0) * POOL_DECIMALS,
     },
     auraB_rETH_STABLE_vault: {
       minRate: 100,
       maxRate: 550,
       quotaIncreaseFee: 0,
-      limit: (BigInt(20e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(0) * POOL_DECIMALS,
     },
     // LRT
     weETH: {
       minRate: 5,
       maxRate: 3000,
       quotaIncreaseFee: 0,
-      limit: BigInt(15000) * POOL_DECIMALS,
+      limit: BigInt(20000) * POOL_DECIMALS,
     },
     ezETH: {
       minRate: 5,
       maxRate: 3000,
       quotaIncreaseFee: 0,
-      limit: BigInt(15000) * POOL_DECIMALS,
+      limit: BigInt(30000) * POOL_DECIMALS,
+    },
+    rsETH: {
+      minRate: 5,
+      maxRate: 3000,
+      quotaIncreaseFee: 0,
+      limit: BigInt(2000) * POOL_DECIMALS,
     },
   },
   creditManagers: [
