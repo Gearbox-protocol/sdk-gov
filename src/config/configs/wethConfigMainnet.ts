@@ -525,7 +525,7 @@ const restakingCreditManager: CreditManagerV3DeployConfig = {
     },
     {
       token: "rsETH",
-      lt: 9150,
+      lt: 9000,
     },
     // Compatibility
     {
