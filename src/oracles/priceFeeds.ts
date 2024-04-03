@@ -2302,6 +2302,15 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  rsETH_WETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
+        assets: ["rsETH", "WETH"],
+        trusted: false,
+      },
+    },
+  },
   BPT_rETH_ETH: {
     AllNetworks: {
       Main: {

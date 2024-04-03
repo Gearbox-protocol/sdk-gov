@@ -1043,6 +1043,14 @@ contract TokensDataLive {
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.rsETH_WETH,
+                addr: 0x58AAdFB1Afac0ad7fca1148f3cdE6aEDF5236B6D,
+                symbol: "rsETH_WETH",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
 
         tokenDataByNetwork[1].push(
             TokenData({
