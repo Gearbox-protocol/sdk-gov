@@ -350,6 +350,13 @@ export const priceFeedsByToken: Record<
         trusted: false,
         stalenessPeriod: MINUTES_20_BUFFERED_L2,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "OP",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
   },
 
