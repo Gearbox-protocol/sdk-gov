@@ -1,6 +1,9 @@
 import { CallOverrides, ethers, Signer } from "ethers";
 
-export const MULTICALL_ADDRESS = "0xcA11bde05977b3631167028862bE2a173976CA11";
+import { Address } from "./types";
+
+export const MULTICALL_ADDRESS: Address =
+  "0xcA11bde05977b3631167028862bE2a173976CA11";
 
 const _abi = [
   {
