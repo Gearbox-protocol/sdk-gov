@@ -500,10 +500,7 @@ class BindingsGenerator {
         baseStalenessPeriod: ${
           baseToUSDCompositeData.baseToUsdPriceFeed.stalenessPeriod || HOUR_24
         }
-      });
-      cpf.baseStalenessPeriod = ${
-        baseToUSDCompositeData.baseToUsdPriceFeed.stalenessPeriod || HOUR_24
-      };`;
+      });`;
           isBaseComposite = true;
         } else throw new Error("Unsupported baseToUsdPriceFeed type");
       } else throw new Error("Unsupported baseToUsdPriceFeed type");

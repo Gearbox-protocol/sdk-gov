@@ -1773,6 +1773,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[42161].push(
             TokenData({
+                id: Tokens.ezETH_wstETH,
+                addr: 0xB61371Ab661B1ACec81C699854D2f911070C059E,
+                symbol: "ezETH_wstETH",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[42161].push(
+            TokenData({
                 id: Tokens.aDAI,
                 addr: 0x82E64f49Ed5EC1bC6e43DAD4FC8Af9bb3A2312EE,
                 symbol: "aDAI",
