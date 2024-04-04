@@ -1,4 +1,8 @@
-import { BalancerVaultConfig, UniV3Config } from "../adapters";
+import {
+  BalancerVaultConfig,
+  GenericSwapConfig,
+  UniV3Config,
+} from "../adapters";
 import {
   CreditManagerV3DeployConfig,
   PoolV3DeployConfig,
@@ -35,7 +39,16 @@ const tier1BalancerConfig: BalancerVaultConfig = {
       pool: "wstETH_rETH_cbETH",
       status: 2,
     },
+    {
+      pool: "ezETH_wstETH",
+      status: 2,
+    },
   ],
+};
+
+const tier1CamelotV3Config: GenericSwapConfig = {
+  contract: "CAMELOT_V3_ROUTER",
+  allowed: [{ token0: "ezETH", token1: "WETH" }],
 };
 
 const tier1CreditManager: CreditManagerV3DeployConfig = {
@@ -86,7 +99,7 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
       lt: 9000,
     },
   ],
-  adapters: [tier1UniV3Config, tier1BalancerConfig],
+  adapters: [tier1UniV3Config, tier1BalancerConfig, tier1CamelotV3Config],
 };
 
 const tier2UniV3Config: UniV3Config = {
@@ -218,7 +231,7 @@ export const wethConfigArbitrum: PoolV3DeployConfig = {
       minRate: 5,
       maxRate: 3000,
       quotaIncreaseFee: 0,
-      limit: BigInt(0) * POOL_DECIMALS,
+      limit: BigInt(500) * POOL_DECIMALS,
     },
   },
   creditManagers: [tier1CreditManager, tier2CreditManager],

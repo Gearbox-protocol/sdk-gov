@@ -28,7 +28,8 @@ export type BalancerLPToken =
   | "wstETH_rETH_sfrxETH"
   | "wstETH_rETH_cbETH"
   | "rETH_WETH_BPT"
-  | "33AURA_33ARB_33BAL";
+  | "33AURA_33ARB_33BAL"
+  | "ezETH_wstETH";
 
 export type BalancerLpTokenData = {
   symbol: BalancerLPToken;
@@ -272,6 +273,16 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     underlying: ["BAL", "AURA", "ARB"],
     poolId:
       "0xbcaa6c053cab3dd73a2e898d89a4f84a180ae1ca000100000000000000000458",
+  },
+  ezETH_wstETH: {
+    name: "Balancer ezETH/wstETH (Arbitrum)",
+    symbol: "ezETH_wstETH",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["ezETH", "wstETH"],
+    poolId:
+      "0xb61371ab661b1acec81c699854d2f911070c059e000000000000000000000516",
   },
 };
 

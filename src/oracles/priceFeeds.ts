@@ -1221,7 +1221,7 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x8751F736E94F6CD167e8C5B97E245680FbD9CC36",
+          address: "0x5c9C449BbC9a6075A2c061dF312a35fd1E05fF22",
           stalenessPeriod: HOUR_24_BUFFERED,
         },
         baseToUsdPriceFeed: {
@@ -1232,8 +1232,46 @@ export const priceFeedsByToken: Record<
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "WETH",
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x8751F736E94F6CD167e8C5B97E245680FbD9CC36",
+          stalenessPeriod: HOUR_24_BUFFERED,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+      },
+    },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0xE141425bc1594b8039De6390db1cDaf4397EA22b",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0xA736eAe8805dDeFFba40cAB8c99bCB309dEaBd9B",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
       },
     },
   },
@@ -1241,6 +1279,20 @@ export const priceFeedsByToken: Record<
   ezETH: {
     Mainnet: {
       Main: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x636A000262F6aA9e1F094ABF0aD8f645C44f641C",
+          stalenessPeriod: HOUR_24_BUFFERED,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+        trusted: false,
+      },
+      Reserve: {
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
@@ -1252,15 +1304,24 @@ export const priceFeedsByToken: Record<
           address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
           stalenessPeriod: HOUR_1_BUFFERED,
         },
-        trusted: false,
-      },
-      Reserve: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "WETH",
       },
     },
     Arbitrum: {
       Main: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x11E1836bFF2ce9d6A5bec9cA79dc998210f3886d",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
+        trusted: false,
+      },
+      Reserve: {
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: {
           type: PriceFeedType.REDSTONE_ORACLE,
@@ -1274,11 +1335,6 @@ export const priceFeedsByToken: Record<
           address: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
           stalenessPeriod: HOUR_24_BUFFERED_L2,
         },
-        trusted: false,
-      },
-      Reserve: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "WETH",
       },
     },
   },
@@ -1298,7 +1354,7 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0xA736eAe8805dDeFFba40cAB8c99bCB309dEaBd9B",
+          address: "0x03c68933f7a3F76875C0bc670a58e69294cDFD01",
           stalenessPeriod: HOUR_24_BUFFERED,
         },
         baseToUsdPriceFeed: {
@@ -1309,8 +1365,48 @@ export const priceFeedsByToken: Record<
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "WETH",
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0xA736eAe8805dDeFFba40cAB8c99bCB309dEaBd9B",
+          stalenessPeriod: HOUR_24_BUFFERED,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+      },
+    },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0xb0EA543f9F8d4B818550365d13F66Da747e1476A",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "rsETH/ETH",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
       },
     },
   },
@@ -2384,6 +2480,14 @@ export const priceFeedsByToken: Record<
     },
   },
   "33AURA_33ARB_33BAL": {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: true,
+      },
+    },
+  },
+  ezETH_wstETH: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
