@@ -68,6 +68,6 @@ export interface GaugeState extends BaseContractState {
 export interface PoolFactoryState {
   pool: PoolState;
   poolQuotaKeeper: PoolQuotaKeeperState;
-  linearModel?: LinearModelState;
+  linearModel: LinearModelState;
   gauge: GaugeState;
 }
