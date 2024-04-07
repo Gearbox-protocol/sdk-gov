@@ -197,9 +197,9 @@ export const wethConfigOptimism: PoolV3DeployConfig = {
     U1: 7000,
     U2: 9000,
     Rbase: 0,
-    Rslope1: 100,
-    Rslope2: 125,
-    Rslope3: 10000,
+    Rslope1: 200,
+    Rslope2: 250,
+    Rslope3: 6000,
     isBorrowingMoreU2Forbidden: true,
   },
   ratesAndLimits: {

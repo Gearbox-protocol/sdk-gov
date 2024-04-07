@@ -5,7 +5,7 @@ import { NOT_DEPLOYED } from "../core/constants";
 export const ADDRESS_PROVIDER: Record<NetworkType, Address> = {
   Mainnet: "0x9ea7b04Da02a5373317D745c1571c84aaD03321D",
   Arbitrum: "0x7d04eCdb892Ae074f03B5D0aBA03796F90F3F2af",
-  Optimism: NOT_DEPLOYED,
+  Optimism: "0x3761ca4BFAcFCFFc1B8034e69F19116dD6756726",
   Base: NOT_DEPLOYED,
 };
 
@@ -26,7 +26,7 @@ export const GOVERNOR: Record<NetworkType, Address> = {
 export const BATCH_CHAIN: Record<NetworkType, Address> = {
   Mainnet: "0xB900bDEf6eAc8C5D97F8e876aBC39573Cf6626b2",
   Arbitrum: "0xAEbaa1015D0bc250F5b38aac9b8f65E0668cE3c2",
-  Optimism: "0xAEbaa1015D0bc250F5b38aac9b8f65E0668cE3c2",
+  Optimism: "0x5CfB7F186dEA745381ccb1D532e43223B5a6AD10",
   Base: NOT_DEPLOYED,
 };
 

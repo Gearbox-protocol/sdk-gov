@@ -17,7 +17,7 @@ export const toBigInt = (v: BigNumberish): bigint => {
 };
 
 export const percentFmt = (v: number | bigint | BigNumberish): string =>
-  `${(Number(v) / 100).toFixed(2)}% [ ${v} ]`;
+  `${(Number(v) / 100).toFixed(2)}% [${v}]`;
 
 export function formatBNvalue(
   num: BigNumberish | undefined,
@@ -133,5 +133,5 @@ export function formatDuration(duration: number): string {
   const langService = new HumanizeDurationLanguage();
   const humanizer = new HumanizeDuration(langService);
 
-  return `${humanizer.humanize(duration * 1_000)} [ ${duration.toString()}]`;
+  return `${humanizer.humanize(duration * 1_000)} [${duration.toString()}]`;
 }
