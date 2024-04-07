@@ -42,14 +42,14 @@ export interface GearStakingV3State extends BaseContractState {
   migrator: Address;
 }
 
-export type ContractRegisterState = BaseContractState;
+export type ContractsRegisterState = BaseContractState;
 export type BotListState = BaseContractState;
 export type AccountFactoryState = BaseContractState;
 
 export interface CoreState {
   addressProviderV3: AddressProviderV3State;
   acl: ACLState;
-  contractsRegister: ContractRegisterState;
+  contractsRegister: ContractsRegisterState;
   botList: BotListState;
   accountFactory: AccountFactoryState;
   controllerTimelockV3: ControllerTimelockV3State;
