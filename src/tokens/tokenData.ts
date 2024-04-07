@@ -4,7 +4,7 @@ import { SupportedToken, tokenDataByNetwork } from "./token";
 
 export const connectors: Record<NetworkType, Array<SupportedToken>> = {
   Mainnet: ["WETH", "DAI", "USDC", "FRAX", "rETH", "ezETH", "GHO"],
-  Arbitrum: ["WETH", "DAI", "USDC", "USDT", "rETH"],
+  Arbitrum: ["WETH", "DAI", "USDC", "USDT", "rETH", "wstETH"],
   Optimism: ["WETH", "USDC", "USDT"],
   Base: ["WETH", "USDC", "USDT"],
 };
