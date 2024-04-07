@@ -42,12 +42,12 @@ export interface PoolQuotaKeeperState extends BaseContractState {
 }
 
 export interface LinearModelState extends BaseContractState {
-  U_1: number;
-  U_2: number;
-  R_base: number;
-  R_slope1: number;
-  R_slope2: number;
-  R_slope3: number;
+  U1: number;
+  U2: number;
+  Rbase: number;
+  Rslope1: number;
+  Rslope2: number;
+  Rslope3: number;
   isBorrowingMoreU2Forbidden: boolean;
 }
 
