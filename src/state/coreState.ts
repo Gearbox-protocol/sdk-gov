@@ -51,7 +51,7 @@ export interface CoreState {
   acl: ACLState;
   contractsRegister: ContractRegisterState;
   botList: BotListState;
-  accountFactoryV3: AccountFactoryState;
+  accountFactory: AccountFactoryState;
   controllerTimelockV3: ControllerTimelockV3State;
   degenNFT2: DegenNFT2State;
   gearStakingV3: GearStakingV3State;
