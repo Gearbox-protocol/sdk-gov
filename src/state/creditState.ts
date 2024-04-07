@@ -15,7 +15,6 @@ export interface CreditFacadeState extends BaseContractState {
   currentCumulativeLoss: bigint;
   maxCumulativeLoss: bigint;
   forbiddenTokenMask: bigint;
-  emergencyLiquidators: Array<Address>;
   isPaused: boolean;
 }
 
@@ -37,14 +36,15 @@ export interface CreditManagerState extends BaseContractState {
   feeLiquidationExpired: number;
   liquidationDiscountExpired: number;
   quotedTokensMask: bigint;
-
   contractsToAdapters: Record<Address, Address>;
   creditAccounts: Array<Address>;
 
   name: string;
 }
 
-export type CreditConfiguratorState = BaseContractState;
+export interface CreditConfiguratorState extends BaseContractState {
+  emergencyLiquidators: Array<Address>;
+}
 
 export interface CreditFactoryState {
   creditFacade: CreditFacadeState;
