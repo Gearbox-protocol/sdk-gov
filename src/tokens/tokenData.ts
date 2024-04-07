@@ -1,11 +1,12 @@
 import { NetworkType } from "../core/chains";
 import { NOT_DEPLOYED } from "../core/constants";
+import { Address } from "../utils/types";
 import { SupportedToken, tokenDataByNetwork } from "./token";
 
 export const connectors: Record<NetworkType, Array<SupportedToken>> = {
   Mainnet: ["WETH", "DAI", "USDC", "FRAX", "rETH", "ezETH", "GHO"],
-  Arbitrum: ["WETH", "DAI", "USDC", "USDT", "rETH", "wstETH"],
-  Optimism: ["WETH", "USDC", "USDT"],
+  Arbitrum: ["WETH", "DAI", "USDC", "USDT", "rETH", "USDC_e", "wstETH"],
+  Optimism: ["WETH", "USDC", "USDT", "USDC_e"],
   Base: ["WETH", "USDC", "USDT"],
 };
 
@@ -17,6 +18,6 @@ export function getConnectors(networkType: NetworkType) {
       throw new Error(`connector token ${e} not found`);
     }
 
-    return result.toLowerCase();
+    return result.toLowerCase() as Address;
   });
 }
