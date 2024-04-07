@@ -833,11 +833,11 @@ export const tokenDataByNetwork: Record<
 
     dUSDCV3: "0x5520daa93a187f4ec67344e6d2c4fc9b080b6a35",
     dWBTCV3: NOT_DEPLOYED,
-    dWETHV3: "0x6b0c5a7efd43c1d0cf114518b11865d0f4aaacbb",
+    dWETHV3: "0x42db77b3103c71059f4b997d6441cfb299fd0d94",
 
     sdUSDCV3: "0x73302b63ad4a16c498f26db89cb27f37a72e4e04",
     sdWBTCV3: NOT_DEPLOYED,
-    sdWETHV3: "0xc1fec69a416fedb2fd7ed59641b8a7fed75d775a",
+    sdWETHV3: "0x704c4c9f0d29257e5b0e526b20b48effc8f758b2",
 
     dUSDTV3: NOT_DEPLOYED,
     dGHOV3: NOT_DEPLOYED,
