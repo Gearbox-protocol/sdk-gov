@@ -1,6 +1,7 @@
 import { Address } from "../utils/types";
 import { CoreState } from "./coreState";
 import { CreditFactoryState } from "./creditState";
+import { PeripheryState } from "./peripheryState";
 import { PoolFactoryState } from "./poolState";
 import { PriceOracleState } from "./priceFactoryState";
 
@@ -12,6 +13,7 @@ export interface BaseContractState {
 export interface GearboxState {
   block: number;
   core: CoreState;
+  periphery: PeripheryState;
   priceOracle: PriceOracleState;
   poolState: Array<PoolFactoryState>;
   creditState: Array<CreditFactoryState>;
