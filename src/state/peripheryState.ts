@@ -14,13 +14,13 @@ export interface ZapperInfo {
   tokenOut: Address;
 }
 
-export interface ZapperState extends BaseContractState {
+export interface ZapperRegisterState extends BaseContractState {
   zappers: Record<Address, ZapperInfo>;
 }
 
 export interface PeripheryState {
   dataCompressorV3: DataCompressorV3State;
-  degenDistributor: DegenDistributorState;
+  degenDistributor?: DegenDistributorState;
   multiPause: MultiPauseState;
-  zapper: ZapperState;
+  zapperRegister: ZapperRegisterState;
 }
