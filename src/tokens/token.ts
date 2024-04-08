@@ -28,6 +28,8 @@ import {
   compoundV2Tokens,
 } from "./compound";
 import {
+  ConvexL2StakedToken,
+  ConvexL2StakedTokenData,
   ConvexLPToken,
   ConvexLPTokenData,
   ConvexPhantomTokenData,
@@ -71,6 +73,7 @@ export type LPTokens =
   | CurveLPToken
   | ConvexLPToken
   | ConvexStakedPhantomToken
+  | ConvexL2StakedToken
   | BalancerLPToken
   | AaveV2LPToken
   | WrappedAaveV2LPToken
@@ -100,6 +103,7 @@ export type LPTokenDataI =
   | YearnVaultOfMetaCurveLPTokenData
   | ConvexLPTokenData
   | ConvexPhantomTokenData
+  | ConvexL2StakedTokenData
   | BalancerLpTokenData
   | AaveV2PoolTokenData
   | WrappedAaveV2PoolTokenData
@@ -275,6 +279,8 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDFRAX: "0x7376AD488AB2bd8dF7665d619A4148f0E5094813",
     stkcvxcrvUSDETHCRV: "0x0Bf1626d4925F8A872801968be11c052862AC2D3",
 
+    cvxcrvUSDT: NOT_DEPLOYED,
+
     // YEARN TOKENS
     yvDAI: "0xdA816459F1AB5631232FE5e97a05BBBb94970c95",
     yvUSDC: "0xa354F35829Ae975e850e23e9615b11Da1B3dC4DE",
@@ -416,7 +422,7 @@ export const tokenDataByNetwork: Record<
     /// UPDATE
     STETH: NOT_DEPLOYED,
     wstETH: "0x5979D7b546E38E414F7E9822514be443A4800529",
-    CVX: "0xb952A807345991BD529FDded05009F5e80Fe8F45",
+    CVX: "0xaAFcFD42c9954C6689ef1901e03db742520829c5",
     FRAX: "0x17FC002b466eEc40DaE837Fc4bE5c67993ddBd6F",
     FXS: "0x9d2F299715D94d8A7E6F5eaa8E654E8c74a988A7",
     LDO: "0x13Ad51ed4F1B7e9Dc168d8a00cB3f4dDD85EfA60",
@@ -530,6 +536,8 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDUSDT: NOT_DEPLOYED,
     stkcvxcrvUSDFRAX: NOT_DEPLOYED,
     stkcvxcrvUSDETHCRV: NOT_DEPLOYED,
+
+    cvxcrvUSDT: "0xf74d4C9b0F49fb70D8Ff6706ddF39e3a16D61E67",
 
     // BALANCER TOKENS
     "50OHM_50DAI": NOT_DEPLOYED,
@@ -774,6 +782,8 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDUSDT: NOT_DEPLOYED,
     stkcvxcrvUSDFRAX: NOT_DEPLOYED,
     stkcvxcrvUSDETHCRV: NOT_DEPLOYED,
+
+    cvxcrvUSDT: NOT_DEPLOYED,
 
     // BALANCER TOKENS
     "50OHM_50DAI": NOT_DEPLOYED,
@@ -1021,6 +1031,8 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDUSDT: NOT_DEPLOYED,
     stkcvxcrvUSDFRAX: NOT_DEPLOYED,
     stkcvxcrvUSDETHCRV: NOT_DEPLOYED,
+
+    cvxcrvUSDT: NOT_DEPLOYED,
 
     // BALANCER TOKENS
     "50OHM_50DAI": NOT_DEPLOYED,

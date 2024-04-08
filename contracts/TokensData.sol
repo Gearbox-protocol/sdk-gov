@@ -889,6 +889,7 @@ contract TokensDataLive {
                 tokenType: TokenType.CONVEX_STAKED_TOKEN
             })
         );
+
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.yvDAI,
@@ -1468,7 +1469,7 @@ contract TokensDataLive {
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: Tokens.CVX,
-                addr: 0xb952A807345991BD529FDded05009F5e80Fe8F45,
+                addr: 0xaAFcFD42c9954C6689ef1901e03db742520829c5,
                 symbol: "CVX",
                 tokenType: TokenType.NORMAL_TOKEN
             })
@@ -1728,6 +1729,15 @@ contract TokensDataLive {
                 addr: 0x3aDf984c937FA6846E5a24E0A68521Bdaf767cE1,
                 symbol: "crvUSDC_e",
                 tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[42161].push(
+            TokenData({
+                id: Tokens.cvxcrvUSDT,
+                addr: 0xf74d4C9b0F49fb70D8Ff6706ddF39e3a16D61E67,
+                symbol: "cvxcrvUSDT",
+                tokenType: TokenType.CONVEX_L2_STAKED_TOKEN
             })
         );
 

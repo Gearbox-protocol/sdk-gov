@@ -442,6 +442,7 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "CONVEX_TRI_CRV_POOL"
             })
         );
+
         contractDataByNetwork[1].push(
             ContractData({
                 id: Contracts.AURA_BOOSTER,
@@ -610,6 +611,20 @@ contract SupportedContracts is Test, ISupportedContracts {
             })
         );
 
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.CONVEX_BOOSTER_ARB,
+                addr: 0xF403C135812408BFbE8713b5A23a04b3D48AAE31,
+                name: "CONVEX_BOOSTER_ARB"
+            })
+        );
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.CONVEX_CRVUSD_USDT_POOL_ARB,
+                addr: 0xf74d4C9b0F49fb70D8Ff6706ddF39e3a16D61E67,
+                name: "CONVEX_CRVUSD_USDT_POOL_ARB"
+            })
+        );
         contractDataByNetwork[42161].push(
             ContractData({
                 id: Contracts.AURA_BOOSTER,
@@ -788,65 +803,6 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.AAVE_V3_LENDING_POOL,
                 addr: 0x794a61358D6845594F94dc1DB02A252b5b4814aD,
                 name: "AAVE_V3_LENDING_POOL"
-            })
-        );
-
-        contractDataByNetwork[8453].push(
-            ContractData({
-                id: Contracts.YEARN_DAI_VAULT,
-                addr: 0x65343F414FFD6c97b0f6add33d16F6845Ac22BAc,
-                name: "YEARN_DAI_VAULT"
-            })
-        );
-
-        contractDataByNetwork[8453].push(
-            ContractData({
-                id: Contracts.YEARN_USDC_E_VAULT,
-                addr: 0xaD17A225074191d5c8a37B50FdA1AE278a2EE6A2,
-                name: "YEARN_USDC_E_VAULT"
-            })
-        );
-        contractDataByNetwork[8453].push(
-            ContractData({
-                id: Contracts.YEARN_WETH_VAULT,
-                addr: 0x5B977577Eb8a480f63e11FC615D6753adB8652Ae,
-                name: "YEARN_WETH_VAULT"
-            })
-        );
-        contractDataByNetwork[8453].push(
-            ContractData({
-                id: Contracts.YEARN_WBTC_VAULT,
-                addr: 0x7Edf16076e56FA4c111055fbA1fF5556b8757cFB,
-                name: "YEARN_WBTC_VAULT"
-            })
-        );
-        contractDataByNetwork[8453].push(
-            ContractData({
-                id: Contracts.YEARN_USDT_VAULT,
-                addr: 0xFaee21D0f0Af88EE72BB6d68E54a90E6EC2616de,
-                name: "YEARN_USDT_VAULT"
-            })
-        );
-        contractDataByNetwork[8453].push(
-            ContractData({
-                id: Contracts.YEARN_OP_VAULT,
-                addr: 0x7D2382b1f8Af621229d33464340541Db362B4907,
-                name: "YEARN_OP_VAULT"
-            })
-        );
-
-        contractDataByNetwork[8453].push(
-            ContractData({
-                id: Contracts.AURA_BPT_RETH_ETH_POOL,
-                addr: 0x61ac9315a1Ae71633E95Fb35601B59180eC8d61d,
-                name: "AURA_BPT_RETH_ETH_POOL"
-            })
-        );
-        contractDataByNetwork[8453].push(
-            ContractData({
-                id: Contracts.AURA_BPT_WSTETH_ETH_POOL,
-                addr: 0xe110b862E4D076596707892c0C5163BC183eb161,
-                name: "AURA_BPT_WSTETH_ETH_POOL"
             })
         );
 

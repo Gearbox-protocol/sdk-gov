@@ -2302,6 +2302,16 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  cvxcrvUSDT: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "crvUSDT",
+        trusted: false,
+      },
+    },
+  },
+
   "50OHM_50DAI": {
     AllNetworks: {
       Main: {
