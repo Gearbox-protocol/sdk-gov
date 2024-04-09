@@ -126,6 +126,7 @@ enum Tokens {
     stkcvxcrvUSDUSDT,
     stkcvxcrvUSDFRAX,
     stkcvxcrvUSDETHCRV,
+    cvxcrvUSDT,
     yvDAI,
     yvUSDC,
     yvUSDC_e,
@@ -231,5 +232,6 @@ enum TokenType {
     ERC4626_VAULT_TOKEN,
     WRAPPED_TOKEN,
     AURA_LP_TOKEN,
-    AURA_STAKED_TOKEN
+    AURA_STAKED_TOKEN,
+    CONVEX_L2_STAKED_TOKEN
 }

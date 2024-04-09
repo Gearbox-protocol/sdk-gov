@@ -1,5 +1,6 @@
 export { daiConfigMainnet } from "./daiConfigMainnet";
 export { ghoConfigMainnet } from "./ghoConfigMainnet";
+export { testUsdcConfigArbitrum } from "./test_usdcConfigArbitrum";
 export { testUsdcConfigMainnet } from "./test_usdcConfigMainnet";
 export { testWethConfigArbitrum } from "./test_wethConfigArbitrum";
 export { usdcConfigArbitrum } from "./usdcConfigArbitrum";

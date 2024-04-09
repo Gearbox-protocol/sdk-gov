@@ -18,6 +18,7 @@ export enum TokenType {
   WRAPPED_TOKEN,
   AURA_LP_TOKEN,
   AURA_STAKED_TOKEN,
+  CONVEX_L2_STAKED_TOKEN,
 }
 
 export type TokenNetwork = NetworkType | "AllNetworks";
