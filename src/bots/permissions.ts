@@ -21,3 +21,16 @@ export enum BotPermissions {
 
   ALLS = ALL_CREDIT_FACADE_CALLS | EXTERNAL_CALLS,
 }
+
+export function botPermissionsToString(value: bigint): string {
+  let result = "";
+  for (let i = 0; i < 16; i++) {
+    if ((value & (1n << BigInt(i))) !== 0n) {
+      if (result.length > 0) {
+        result += " | ";
+      }
+      result += BotPermissions[1 << i];
+    }
+  }
+  return result;
+}
