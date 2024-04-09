@@ -4667,6 +4667,40 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ cvxcrvUSDT ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: Tokens.cvxcrvUSDT,
+                tokenHasSamePriceFeed: Tokens.crvUSDT,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({
+                token: Tokens.cvxcrvUSDT,
+                tokenHasSamePriceFeed: Tokens.crvUSDT,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({
+                token: Tokens.cvxcrvUSDT,
+                tokenHasSamePriceFeed: Tokens.crvUSDT,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: Tokens.cvxcrvUSDT,
+                tokenHasSamePriceFeed: Tokens.crvUSDT,
+                trusted: false,
+                reserve: false
+            })
+        );
+
         // ------------------------ 50OHM_50DAI ------------------------
         balancerWeightedLPPriceFeedsByNetwork[1].push(
             BalancerLPPriceFeedData({

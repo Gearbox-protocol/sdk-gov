@@ -1,3 +1,5 @@
+import { record } from "zod";
+
 import type {
   ConvexPoolContract,
   SupportedContract,
@@ -45,6 +47,8 @@ export type ConvexStakedPhantomToken =
   | "stkcvxcrvUSDFRAX"
   | "stkcvxcrvUSDETHCRV";
 
+export type ConvexL2StakedToken = "cvxcrvUSDT";
+
 type BaseConvexToken = {
   pool: ConvexPoolContract;
   pid: number;
@@ -61,6 +65,11 @@ export type ConvexPhantomTokenData = {
   symbol: ConvexStakedPhantomToken;
   type: PartialRecord<TokenNetwork, TokenType.CONVEX_STAKED_TOKEN>;
   lpToken: ConvexLPToken;
+} & BaseConvexToken;
+
+export type ConvexL2StakedTokenData = {
+  symbol: ConvexL2StakedToken;
+  type: PartialRecord<TokenNetwork, TokenType.CONVEX_L2_STAKED_TOKEN>;
 } & BaseConvexToken;
 
 export const convexLpTokens: Record<ConvexLPToken, ConvexLPTokenData> = {
@@ -501,19 +510,38 @@ export const convexStakedPhantomTokens: Record<
   },
 };
 
+export const convexL2StakedTokens: Record<
+  ConvexL2StakedToken,
+  ConvexL2StakedTokenData
+> = {
+  cvxcrvUSDT: {
+    name: "Convex crvUSDT vault (Arbitrum)",
+    symbol: "cvxcrvUSDT",
+    type: {
+      AllNetworks: TokenType.CONVEX_L2_STAKED_TOKEN,
+    },
+    pool: "CONVEX_CRVUSD_USDT_POOL_ARB",
+    pid: 18,
+    underlying: "crvUSDT",
+  },
+};
+
 export const convexTokens: Record<
-  ConvexLPToken | ConvexStakedPhantomToken,
-  ConvexLPTokenData | ConvexPhantomTokenData
+  ConvexLPToken | ConvexStakedPhantomToken | ConvexL2StakedToken,
+  ConvexLPTokenData | ConvexPhantomTokenData | ConvexL2StakedTokenData
 > = {
   ...convexLpTokens,
   ...convexStakedPhantomTokens,
+  ...convexL2StakedTokens,
 };
 
 export const isConvexToken = (
   t: unknown,
-): t is ConvexLPToken | ConvexStakedPhantomToken =>
+): t is ConvexLPToken | ConvexStakedPhantomToken | ConvexL2StakedToken =>
   typeof t === "string" &&
-  !!convexTokens[t as ConvexLPToken | ConvexStakedPhantomToken];
+  !!convexTokens[
+    t as ConvexLPToken | ConvexStakedPhantomToken | ConvexL2StakedToken
+  ];
 
 export const isConvexLPToken = (t: unknown): t is ConvexLPToken =>
   typeof t === "string" && !!convexLpTokens[t as ConvexLPToken];
@@ -523,6 +551,9 @@ export const isConvexStakedPhantomToken = (
 ): t is ConvexStakedPhantomToken =>
   typeof t === "string" &&
   !!convexStakedPhantomTokens[t as ConvexStakedPhantomToken];
+
+export const isConvexL2StakedToken = (t: unknown): t is ConvexL2StakedToken =>
+  typeof t === "string" && !!convexL2StakedTokens[t as ConvexL2StakedToken];
 
 export const convexPoolByPid = Object.values(convexLpTokens).reduce<
   Record<number, SupportedContract>

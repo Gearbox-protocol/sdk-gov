@@ -104,6 +104,15 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.CONVEX_BOOSTER, adapterType: AdapterType.CONVEX_V1_BOOSTER})
         );
         simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.CONVEX_BOOSTER_ARB, adapterType: AdapterType.CONVEX_L2_BOOSTER})
+        );
+        simpleAdapters.push(
+            SimpleAdapter({
+                targetContract: Contracts.CONVEX_CRVUSD_USDT_POOL_ARB,
+                adapterType: AdapterType.CONVEX_L2_REWARD_POOL
+            })
+        );
+        simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.AURA_BOOSTER, adapterType: AdapterType.CONVEX_V1_BOOSTER})
         );
         simpleAdapters.push(
@@ -363,7 +372,7 @@ contract AdapterData {
         curveAdapters.push(
             CurveAdapter({
                 targetContract: Contracts.CURVE_2CRV_POOL_ARB,
-                adapterType: AdapterType.CURVE_STABLE_NG,
+                adapterType: AdapterType.CURVE_V1_2ASSETS,
                 lpToken: Tokens._2CRV,
                 basePool: Contracts.NO_CONTRACT
             })
