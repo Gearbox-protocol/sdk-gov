@@ -15,7 +15,8 @@ export interface ZapperInfo {
 }
 
 export interface ZapperRegisterState extends BaseContractState {
-  zappers: Record<Address, ZapperInfo>;
+  // mapping pool -> ZapperInfo[]
+  zappers: Record<Address, Array<ZapperInfo>>;
 }
 
 export interface PeripheryState {
