@@ -2,7 +2,7 @@ import type {
   AuraPoolContract,
   SupportedContract,
 } from "../contracts/contracts";
-import { TradeAction, TradeType } from "../pathfinder/tradeTypes";
+import { TradeAction, TradeType } from "../router/tradeTypes";
 import { PartialRecord } from "../utils/types";
 import { BalancerLPToken } from "./balancer";
 import type { SupportedToken, TokenBase } from "./token";

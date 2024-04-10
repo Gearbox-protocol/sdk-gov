@@ -4,6 +4,7 @@ import { CreditFactoryState } from "./creditState";
 import { PeripheryState } from "./peripheryState";
 import { PoolFactoryState } from "./poolState";
 import { PriceOracleState } from "./priceFactoryState";
+import { RouterState } from "./routerState";
 
 export interface BaseContractState {
   address: Address;
@@ -17,5 +18,6 @@ export interface GearboxState {
   priceOracle: PriceOracleState;
   poolState: Array<PoolFactoryState>;
   creditState: Array<CreditFactoryState>;
+  routerState?: RouterState;
   contractLabels: Record<Address, string>;
 }
