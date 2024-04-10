@@ -17,4 +17,5 @@ export interface GearboxState {
   priceOracle: PriceOracleState;
   poolState: Array<PoolFactoryState>;
   creditState: Array<CreditFactoryState>;
+  contractLabels: Record<Address, string>;
 }
