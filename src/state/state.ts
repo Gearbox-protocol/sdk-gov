@@ -13,6 +13,7 @@ export interface BaseContractState {
 
 export interface GearboxState {
   block: number;
+  timestamp: number;
   core: CoreState;
   periphery: PeripheryState;
   priceOracle: PriceOracleState;
