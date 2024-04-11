@@ -2,7 +2,6 @@ import { Address } from "../utils/types";
 import { BaseContractState } from "./state";
 
 export interface CreditManagerDebtParams {
-  creditManager: Address;
   borrowed: bigint;
   limit: bigint;
   availableToBorrow: bigint;
@@ -17,7 +16,7 @@ export interface PoolState extends BaseContractState {
   expectedLiquidity: bigint;
   totalBorrowed: bigint;
   totalDebtLimit: bigint;
-  creditManagerDebtParams: Array<CreditManagerDebtParams>;
+  creditManagerDebtParams: Record<Address, CreditManagerDebtParams>;
   totalAssets: bigint;
   totalSupply: bigint;
   supplyRate: bigint;
