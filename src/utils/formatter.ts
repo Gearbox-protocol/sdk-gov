@@ -16,15 +16,18 @@ export const toBigInt = (v: BigNumberish): bigint => {
   return BigInt(value);
 };
 
-export const percentFmt = (v: number | bigint | BigNumberish): string =>
-  `${(Number(v) / 100).toFixed(2)}% [${v}]`;
+export const percentFmt = (
+  v: number | bigint | BigNumberish,
+  raw = true,
+): string => (`${(Number(v) / 100).toFixed(2)}%` + raw ? ` [${v}]` : "");
 
 export function formatBNvalue(
   num: BigNumberish | undefined,
   decimals: number,
   precision?: number,
+  raw = true,
 ): string {
-  return `${formatBN(num, decimals, precision)} [ ${num} ]`;
+  return `${formatBN(num, decimals, precision)}` + raw ? ` [ ${num} ]` : "";
 }
 
 export function formatBN(
@@ -129,9 +132,11 @@ export function numberWithCommas(x: number | bigint): string {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-export function formatDuration(duration: number): string {
+export function formatDuration(duration: number, raw = true): string {
   const langService = new HumanizeDurationLanguage();
   const humanizer = new HumanizeDuration(langService);
 
-  return `${humanizer.humanize(duration * 1_000)} [${duration.toString()}]`;
+  return `${humanizer.humanize(duration * 1_000)}` + raw
+    ? `[${duration.toString()}]`
+    : "";
 }
