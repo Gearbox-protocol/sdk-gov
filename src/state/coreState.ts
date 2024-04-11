@@ -14,18 +14,18 @@ export interface ACLState extends BaseContractState {
 export interface PolicyStruct {
   enabled: boolean;
   admin: Address;
-  delay: bigint;
+  delay: number;
   flags: bigint;
   exactValue: bigint;
   minValue: bigint;
   maxValue: bigint;
   referencePoint: bigint;
-  referencePointUpdatePeriod: bigint;
-  referencePointTimestampLU: bigint;
-  minPctChangeDown: bigint;
-  minPctChangeUp: bigint;
-  maxPctChangeDown: bigint;
-  maxPctChangeUp: bigint;
+  referencePointUpdatePeriod: number;
+  referencePointTimestampLU: number;
+  minPctChangeDown: number;
+  minPctChangeUp: number;
+  maxPctChangeDown: number;
+  maxPctChangeUp: number;
   minChange: bigint;
   maxChange: bigint;
 }
