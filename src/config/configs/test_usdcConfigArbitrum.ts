@@ -9,7 +9,11 @@ const POOL_DIVIDER = BigInt(1);
 
 const levUniV3Config: UniV3Config = {
   contract: "UNISWAP_V3_ROUTER",
-  allowed: [{ token0: "WETH", token1: "ARB", fee: 3000 }],
+  allowed: [
+    { token0: "WETH", token1: "USDC_e", fee: 500 },
+    { token0: "WETH", token1: "ARB", fee: 3000 },
+    { token0: "ARB", token1: "USDC_e", fee: 500 },
+  ],
 };
 
 const levCreditManager: CreditManagerV3DeployConfig = {
