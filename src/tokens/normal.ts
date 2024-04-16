@@ -56,6 +56,8 @@ export type NormalToken =
   | "rswETH"
   | "USDe"
   | "GHO"
+  | "pufETH"
+  | "wstETH"
 
   // REDSTONE
   | "SHIB"
@@ -392,6 +394,16 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   GHO: {
     name: "Gho Token",
     symbol: "GHO",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  pufETH: {
+    name: "Puffer Restaked ETH",
+    symbol: "pufETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  wstETH: {
+    name: "Wrapped stETH",
+    symbol: "wstETH",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };
