@@ -45,7 +45,7 @@ export interface GenericSwapPair {
 }
 
 export interface UniV3Config {
-  contract: "UNISWAP_V3_ROUTER";
+  contract: "UNISWAP_V3_ROUTER" | "PANCAKESWAP_V3_ROUTER";
   allowed: Array<UniswapV3Pair>;
 }
 

@@ -470,9 +470,16 @@ const farmCreditManager: CreditManagerV3DeployConfig = {
 const restakingUniswapV3Config: UniV3Config = {
   contract: "UNISWAP_V3_ROUTER",
   allowed: [
+    { token0: "pufETH", token1: "WETH", fee: 3000 },
+    { token0: "weETH", token1: "WETH", fee: 500 },
     { token0: "rETH", token1: "WETH", fee: 500 },
     { token0: "rETH", token1: "WETH", fee: 100 },
   ],
+};
+
+const restakingPancakeswapV3Config: UniV3Config = {
+  contract: "PANCAKESWAP_V3_ROUTER",
+  allowed: [{ token0: "rswETH", token1: "WETH", fee: 500 }],
 };
 
 const restakingBalancerConfig: BalancerVaultConfig = {
@@ -527,7 +534,23 @@ const restakingCreditManager: CreditManagerV3DeployConfig = {
       token: "rsETH",
       lt: 9000,
     },
+    {
+      token: "pufETH",
+      lt: 9000,
+    },
+    {
+      token: "rswETH",
+      lt: 9000,
+    },
     // Compatibility
+    {
+      token: "STETH",
+      lt: 0,
+    },
+    {
+      token: "wstETH",
+      lt: 0,
+    },
     {
       token: "rETH",
       lt: 0,
@@ -536,11 +559,23 @@ const restakingCreditManager: CreditManagerV3DeployConfig = {
       token: "rETH_f",
       lt: 0,
     },
+    {
+      token: "steCRV",
+      lt: 0,
+    },
+    {
+      token: "pufETHwstE",
+      lt: 0,
+    },
   ],
   adapters: [
     restakingUniswapV3Config,
+    restakingPancakeswapV3Config,
     restakingBalancerConfig,
     { contract: "CURVE_RETH_ETH_POOL" },
+    { contract: "CURVE_PUFETH_WSTETH_POOL" },
+    { contract: "CURVE_STETH_GATEWAY" },
+    { contract: "LIDO_WSTETH" },
   ],
 };
 
@@ -716,13 +751,25 @@ export const wethConfigMainnet: PoolV3DeployConfig = {
       minRate: 5,
       maxRate: 3000,
       quotaIncreaseFee: 0,
-      limit: BigInt(30000) * POOL_DECIMALS,
+      limit: BigInt(40000) * POOL_DECIMALS,
     },
     rsETH: {
       minRate: 5,
       maxRate: 3000,
       quotaIncreaseFee: 0,
-      limit: BigInt(2000) * POOL_DECIMALS,
+      limit: BigInt(10000) * POOL_DECIMALS,
+    },
+    pufETH: {
+      minRate: 5,
+      maxRate: 3000,
+      quotaIncreaseFee: 0,
+      limit: BigInt(10000) * POOL_DECIMALS,
+    },
+    rswETH: {
+      minRate: 5,
+      maxRate: 3000,
+      quotaIncreaseFee: 0,
+      limit: BigInt(10000) * POOL_DECIMALS,
     },
   },
   creditManagers: [

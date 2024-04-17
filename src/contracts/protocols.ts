@@ -18,4 +18,5 @@ export enum Protocols {
   Camelot,
   Ethena,
   AaveV3,
+  Pancakeswap,
 }
