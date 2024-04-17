@@ -1158,9 +1158,15 @@ export const tokenSymbolByAddress = TypedObjectUtils.entries(
   {},
 );
 
-export function getTokenSymbol(address: Address): string {
-  if (address.toLowerCase() === ETH_ADDRESS.toLowerCase()) return "ETH";
+export function getTokenSymbol(address: Address): SupportedToken | undefined {
   return tokenSymbolByAddress[address.toLowerCase()];
+}
+
+export function getTokenSymbolOrETH(
+  address: Address,
+): SupportedToken | "ETH" | undefined {
+  if (address.toLowerCase() === ETH_ADDRESS.toLowerCase()) return "ETH";
+  return getTokenSymbol(address);
 }
 
 export const isSupportedToken = (t: unknown): t is SupportedToken =>
