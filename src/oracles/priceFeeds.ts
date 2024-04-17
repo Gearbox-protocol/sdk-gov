@@ -251,10 +251,8 @@ export const priceFeedsByToken: Record<
   GUSD: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: "0xa89f5d2365ce98B3cD68012b6f503ab1416245Fc",
-        stalenessPeriod: HOUR_24_BUFFERED,
-        trusted: false,
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: true,
       },
     },
     Arbitrum: {
@@ -1347,14 +1345,42 @@ export const priceFeedsByToken: Record<
   },
 
   rswETH: {
-    AllNetworks: {
+    Mainnet: {
       Main: {
-        type: PriceFeedType.ZERO_ORACLE,
-        trusted: true,
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x3A236F67Fce401D87D7215695235e201966576E4",
+          stalenessPeriod: HOUR_24_BUFFERED,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+        trusted: false,
       },
     },
   },
 
+  pufETH: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x76A495b0bFfb53ef3F0E94ef0763e03cE410835C",
+          stalenessPeriod: HOUR_24_BUFFERED,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+        trusted: false,
+      },
+    },
+  },
   rsETH: {
     Mainnet: {
       Main: {
@@ -1710,9 +1736,8 @@ export const priceFeedsByToken: Record<
   gusd3CRV: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.CURVE_4LP_ORACLE,
-        assets: ["GUSD", "DAI", "USDC", "USDT"],
-        trusted: false,
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: true,
       },
     },
   },
@@ -1906,6 +1931,15 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CURVE_CRYPTO_ORACLE,
         assets: ["rETH", "WETH"],
+        trusted: false,
+      },
+    },
+  },
+
+  pufETHwstE: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },

@@ -36,6 +36,7 @@ export type CurveLPToken =
   | "USDeDAI"
   | "MtEthena"
   | "GHOUSDe"
+  | "pufETHwstE"
 
   /// Arbitrum
   | "2CRV"
@@ -265,6 +266,14 @@ export const curveTokens: Record<
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
     pool: "CURVE_GHO_USDE_POOL",
     tokenOut: ["GHO", "USDe"],
+  },
+
+  pufETHwstE: {
+    name: "Curve pufETH/wstETH Pool",
+    symbol: "pufETHwstE",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_PUFETH_WSTETH_POOL",
+    tokenOut: ["pufETH", "wstETH"],
   },
 
   wstETHCRV: {
