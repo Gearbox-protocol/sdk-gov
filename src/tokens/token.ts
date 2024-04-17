@@ -142,6 +142,8 @@ export const supportedTokens: Record<SupportedToken, TokenDataI> = {
   ...gearTokens,
 };
 
+export const ETH_ADDRESS = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
+
 export const tokenDataByNetwork: Record<
   NetworkType,
   Record<SupportedToken, Address>
@@ -1147,6 +1149,11 @@ export const tokenSymbolByAddress = TypedObjectUtils.entries(
   }),
   {},
 );
+
+export function getTokenSymbol(address: Address): string {
+  if (address.toLowerCase() === ETH_ADDRESS.toLowerCase()) return "ETH";
+  return tokenSymbolByAddress[address.toLowerCase()];
+}
 
 export const isSupportedToken = (t: unknown): t is SupportedToken =>
   typeof t === "string" && !!supportedTokens[t as SupportedToken];
