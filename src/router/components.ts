@@ -13,6 +13,7 @@ export enum RouterProtocols {
   Velodrome,
   Camelot,
   sUSDe,
+  wstETH,
 }
 
 export enum RouterComponent {
