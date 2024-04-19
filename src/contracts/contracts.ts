@@ -714,23 +714,23 @@ export interface BaseContractParams {
   name: string;
 }
 
-type UniswapV2Params = {
+export type UniswapV2Params = {
   protocol: Protocols.Uniswap | Protocols.Sushiswap | Protocols.Fraxswap;
   type: AdapterInterface.UNISWAP_V2_ROUTER;
 } & BaseContractParams;
 
-type VelodromeV2Params = {
+export type VelodromeV2Params = {
   protocol: Protocols.Velodrome;
   type: AdapterInterface.VELODROME_V2_ROUTER;
 } & BaseContractParams;
 
-type UniswapV3Params = {
+export type UniswapV3Params = {
   protocol: Protocols.Uniswap | Protocols.Pancakeswap;
   type: AdapterInterface.UNISWAP_V3_ROUTER;
   quoter: Address;
 } & BaseContractParams;
 
-type CamelotV3Params = {
+export type CamelotV3Params = {
   protocol: Protocols.Camelot;
   type: AdapterInterface.CAMELOT_V3_ROUTER;
   quoter: Address;
@@ -783,17 +783,17 @@ export type ERC4626Params = {
   underlying: NormalToken;
 } & BaseContractParams;
 
-type ConvexParams = {
+export type ConvexParams = {
   protocol: Protocols.Convex;
   type: AdapterInterface.CONVEX_V1_BOOSTER;
 } & BaseContractParams;
 
-type ConvexL2Params = {
+export type ConvexL2Params = {
   protocol: Protocols.Convex;
   type: AdapterInterface.CONVEX_L2_BOOSTER;
 } & BaseContractParams;
 
-interface ConvexExtraPoolParams {
+export interface ConvexExtraPoolParams {
   rewardToken: NormalToken;
   poolAddress: Record<NetworkType, Address>;
 }
@@ -821,12 +821,12 @@ export type AuraPoolParams = {
   extraRewards: Array<AuraExtraPoolParams>;
 } & BaseContractParams;
 
-type AuraParams = {
+export type AuraParams = {
   protocol: Protocols.Aura;
   type: AdapterInterface.CONVEX_V1_BOOSTER;
 } & BaseContractParams;
 
-interface AuraExtraPoolParams {
+export interface AuraExtraPoolParams {
   rewardToken: NormalToken;
   poolAddress: Record<NetworkType, Address>;
 }
