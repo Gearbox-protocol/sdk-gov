@@ -142,6 +142,8 @@ export const supportedTokens: Record<SupportedToken, TokenDataI> = {
   ...gearTokens,
 };
 
+export const ETH_ADDRESS = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
+
 export const tokenDataByNetwork: Record<
   NetworkType,
   Record<SupportedToken, Address>
@@ -204,6 +206,7 @@ export const tokenDataByNetwork: Record<
     rswETH: "0xFAe103DC9cf190eD75350761e95403b7b8aFa6c0",
     USDe: "0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
     GHO: "0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f",
+    pufETH: "0xD9A442856C234a39a81a089C06451EBAa4306a72",
 
     // CURVE LP TOKENS
     "3Crv": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
@@ -234,6 +237,7 @@ export const tokenDataByNetwork: Record<
     rETH_f: "0x6c38cE8984a890F5e46e6dF6117C26b3F1EcfC9C",
     MtEthena: "0x167478921b907422F8E88B43C4Af2B8BEa278d3A",
     GHOUSDe: "0x670a72e6D22b0956C0D2573288F82DCc5d6E3a61",
+    pufETHwstE: "0xEEda34A377dD0ca676b9511EE1324974fA8d980D",
     wstETHCRV: NOT_DEPLOYED,
     "2CRV": NOT_DEPLOYED,
     "3c-crvUSD": NOT_DEPLOYED,
@@ -448,6 +452,7 @@ export const tokenDataByNetwork: Record<
     rswETH: NOT_DEPLOYED,
     USDe: NOT_DEPLOYED,
     GHO: NOT_DEPLOYED,
+    pufETH: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -486,6 +491,7 @@ export const tokenDataByNetwork: Record<
     USDeDAI: NOT_DEPLOYED,
     MtEthena: NOT_DEPLOYED,
     GHOUSDe: NOT_DEPLOYED,
+    pufETHwstE: NOT_DEPLOYED,
 
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
@@ -693,6 +699,7 @@ export const tokenDataByNetwork: Record<
     rswETH: NOT_DEPLOYED,
     USDe: NOT_DEPLOYED,
     GHO: NOT_DEPLOYED,
+    pufETH: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -730,6 +737,7 @@ export const tokenDataByNetwork: Record<
     USDeDAI: NOT_DEPLOYED,
     MtEthena: NOT_DEPLOYED,
     GHOUSDe: NOT_DEPLOYED,
+    pufETHwstE: NOT_DEPLOYED,
 
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
@@ -841,13 +849,13 @@ export const tokenDataByNetwork: Record<
     dwstETH: NOT_DEPLOYED,
     dFRAX: NOT_DEPLOYED,
 
-    dUSDCV3: "0x5520daa93a187f4ec67344e6d2c4fc9b080b6a35",
+    dUSDCV3: "0x5520dAa93A187f4Ec67344e6D2C4FC9B080B6A35",
     dWBTCV3: NOT_DEPLOYED,
-    dWETHV3: "0x42db77b3103c71059f4b997d6441cfb299fd0d94",
+    dWETHV3: "0x42dB77B3103c71059F4b997d6441cFB299FD0d94",
 
-    sdUSDCV3: "0x73302b63ad4a16c498f26db89cb27f37a72e4e04",
+    sdUSDCV3: "0x73302b63Ad4a16C498f26dB89cb27F37a72E4E04",
     sdWBTCV3: NOT_DEPLOYED,
-    sdWETHV3: "0x704c4c9f0d29257e5b0e526b20b48effc8f758b2",
+    sdWETHV3: "0x704c4C9F0d29257E5b0E526b20b48EfFC8f758b2",
 
     dUSDTV3: NOT_DEPLOYED,
     dGHOV3: NOT_DEPLOYED,
@@ -945,6 +953,7 @@ export const tokenDataByNetwork: Record<
     cbETH: NOT_DEPLOYED,
     rswETH: NOT_DEPLOYED,
     USDe: NOT_DEPLOYED,
+    pufETH: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -981,6 +990,7 @@ export const tokenDataByNetwork: Record<
     LDOETH: NOT_DEPLOYED,
     USDeDAI: NOT_DEPLOYED,
     MtEthena: NOT_DEPLOYED,
+    pufETHwstE: NOT_DEPLOYED,
 
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
@@ -1147,6 +1157,17 @@ export const tokenSymbolByAddress = TypedObjectUtils.entries(
   }),
   {},
 );
+
+export function getTokenSymbol(address: Address): SupportedToken | undefined {
+  return tokenSymbolByAddress[address.toLowerCase()];
+}
+
+export function getTokenSymbolOrETH(
+  address: Address,
+): SupportedToken | "ETH" | undefined {
+  if (address.toLowerCase() === ETH_ADDRESS.toLowerCase()) return "ETH";
+  return getTokenSymbol(address);
+}
 
 export const isSupportedToken = (t: unknown): t is SupportedToken =>
   typeof t === "string" && !!supportedTokens[t as SupportedToken];

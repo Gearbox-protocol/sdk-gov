@@ -47,6 +47,13 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.PANCAKESWAP_V3_ROUTER,
+                addr: 0x1b81D678ffb9C0263b24A97847620C99d213eB14,
+                name: "PANCAKESWAP_V3_ROUTER"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.SUSHISWAP_ROUTER,
                 addr: 0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F,
                 name: "SUSHISWAP_ROUTER"
@@ -199,6 +206,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.CURVE_GHO_USDE_POOL,
                 addr: 0x670a72e6D22b0956C0D2573288F82DCc5d6E3a61,
                 name: "CURVE_GHO_USDE_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_PUFETH_WSTETH_POOL,
+                addr: 0xEEda34A377dD0ca676b9511EE1324974fA8d980D,
+                name: "CURVE_PUFETH_WSTETH_POOL"
             })
         );
         contractDataByNetwork[1].push(
@@ -558,6 +572,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "UNISWAP_V3_ROUTER"
             })
         );
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.PANCAKESWAP_V3_ROUTER,
+                addr: 0x1b81D678ffb9C0263b24A97847620C99d213eB14,
+                name: "PANCAKESWAP_V3_ROUTER"
+            })
+        );
 
         contractDataByNetwork[42161].push(
             ContractData({
@@ -803,6 +824,14 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.AAVE_V3_LENDING_POOL,
                 addr: 0x794a61358D6845594F94dc1DB02A252b5b4814aD,
                 name: "AAVE_V3_LENDING_POOL"
+            })
+        );
+
+        contractDataByNetwork[8453].push(
+            ContractData({
+                id: Contracts.PANCAKESWAP_V3_ROUTER,
+                addr: 0x1b81D678ffb9C0263b24A97847620C99d213eB14,
+                name: "PANCAKESWAP_V3_ROUTER"
             })
         );
 

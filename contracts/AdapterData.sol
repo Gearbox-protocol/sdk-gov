@@ -53,6 +53,9 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.UNISWAP_V3_ROUTER, adapterType: AdapterType.UNISWAP_V3_ROUTER})
         );
         simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.PANCAKESWAP_V3_ROUTER, adapterType: AdapterType.UNISWAP_V3_ROUTER})
+        );
+        simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.SUSHISWAP_ROUTER, adapterType: AdapterType.UNISWAP_V2_ROUTER})
         );
         simpleAdapters.push(
@@ -366,6 +369,14 @@ contract AdapterData {
                 targetContract: Contracts.CURVE_GHO_USDE_POOL,
                 adapterType: AdapterType.CURVE_V1_2ASSETS,
                 lpToken: Tokens.GHOUSDe,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
+                targetContract: Contracts.CURVE_PUFETH_WSTETH_POOL,
+                adapterType: AdapterType.CURVE_STABLE_NG,
+                lpToken: Tokens.pufETHwstE,
                 basePool: Contracts.NO_CONTRACT
             })
         );

@@ -49,6 +49,7 @@ export type CurvePoolContract =
   | "CURVE_USDE_DAI_POOL"
   | "CURVE_SDAI_SUSDE_POOL"
   | "CURVE_GHO_USDE_POOL"
+  | "CURVE_PUFETH_WSTETH_POOL"
   | "CURVE_2CRV_POOL_ARB"
   | "CURVE_TRICRYPTO_CRVUSD_POOL_ARB"
   | "CURVE_CRVUSD_USDC_POOL_ARB"
@@ -121,6 +122,7 @@ export type CompoundV2PoolContract =
 export type SupportedContract =
   | UniswapV2Contract
   | "UNISWAP_V3_ROUTER"
+  | "PANCAKESWAP_V3_ROUTER"
   | CurvePoolContract
   | "CURVE_GEAR_POOL"
   | YearnVaultContract
@@ -148,6 +150,7 @@ export const contractsByNetwork: Record<
   Mainnet: {
     UNISWAP_V2_ROUTER: "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
     UNISWAP_V3_ROUTER: "0xE592427A0AEce92De3Edee1F18E0157C05861564",
+    PANCAKESWAP_V3_ROUTER: "0x1b81D678ffb9C0263b24A97847620C99d213eB14",
     SUSHISWAP_ROUTER: "0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F",
     FRAXSWAP_ROUTER: "0xC14d550632db8592D1243Edc8B95b0Ad06703867",
     VELODROME_V2_ROUTER: NOT_DEPLOYED,
@@ -175,6 +178,7 @@ export const contractsByNetwork: Record<
     CURVE_USDE_DAI_POOL: tokenDataByNetwork.Mainnet.USDeDAI,
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Mainnet.MtEthena,
     CURVE_GHO_USDE_POOL: tokenDataByNetwork.Mainnet.GHOUSDe,
+    CURVE_PUFETH_WSTETH_POOL: tokenDataByNetwork.Mainnet.pufETHwstE,
 
     CURVE_GEAR_POOL: "0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2",
 
@@ -287,6 +291,7 @@ export const contractsByNetwork: Record<
   Arbitrum: {
     UNISWAP_V2_ROUTER: NOT_DEPLOYED,
     UNISWAP_V3_ROUTER: "0xE592427A0AEce92De3Edee1F18E0157C05861564",
+    PANCAKESWAP_V3_ROUTER: "0x1b81D678ffb9C0263b24A97847620C99d213eB14",
     SUSHISWAP_ROUTER: NOT_DEPLOYED,
     FRAXSWAP_ROUTER: NOT_DEPLOYED,
     VELODROME_V2_ROUTER: NOT_DEPLOYED,
@@ -313,6 +318,7 @@ export const contractsByNetwork: Record<
     CURVE_USDE_DAI_POOL: tokenDataByNetwork.Arbitrum.USDeDAI,
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Arbitrum.MtEthena,
     CURVE_GHO_USDE_POOL: tokenDataByNetwork.Arbitrum.GHOUSDe,
+    CURVE_PUFETH_WSTETH_POOL: tokenDataByNetwork.Arbitrum.pufETHwstE,
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -426,6 +432,7 @@ export const contractsByNetwork: Record<
   Optimism: {
     UNISWAP_V2_ROUTER: NOT_DEPLOYED,
     UNISWAP_V3_ROUTER: "0xE592427A0AEce92De3Edee1F18E0157C05861564", // UNVERIFIED!
+    PANCAKESWAP_V3_ROUTER: NOT_DEPLOYED,
     SUSHISWAP_ROUTER: NOT_DEPLOYED,
     FRAXSWAP_ROUTER: "0xB9A55F455e46e8D717eEA5E47D2c449416A0437F", // UNVERIFIED!
     VELODROME_V2_ROUTER: "0xa062aE8A9c5e11aaA026fc2670B0D65cCc8B2858",
@@ -453,6 +460,7 @@ export const contractsByNetwork: Record<
     CURVE_USDE_DAI_POOL: tokenDataByNetwork.Optimism.USDeDAI,
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Optimism.MtEthena,
     CURVE_GHO_USDE_POOL: tokenDataByNetwork.Optimism.GHOUSDe,
+    CURVE_PUFETH_WSTETH_POOL: tokenDataByNetwork.Optimism.pufETHwstE,
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -566,6 +574,7 @@ export const contractsByNetwork: Record<
   Base: {
     UNISWAP_V2_ROUTER: NOT_DEPLOYED,
     UNISWAP_V3_ROUTER: NOT_DEPLOYED,
+    PANCAKESWAP_V3_ROUTER: "0x1b81D678ffb9C0263b24A97847620C99d213eB14",
     SUSHISWAP_ROUTER: NOT_DEPLOYED,
     FRAXSWAP_ROUTER: NOT_DEPLOYED,
     VELODROME_V2_ROUTER: NOT_DEPLOYED,
@@ -592,6 +601,7 @@ export const contractsByNetwork: Record<
     CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Base.USDecrvUSD,
     CURVE_USDE_DAI_POOL: tokenDataByNetwork.Base.USDeDAI,
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Base.MtEthena,
+    CURVE_PUFETH_WSTETH_POOL: tokenDataByNetwork.Base.pufETHwstE,
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -697,28 +707,30 @@ export const UNISWAP_V3_QUOTER: Address =
   "0xb27308f9F90D607463bb33eA1BeBb41C27CE5AB6";
 export const CAMELOT_V3_QUOTER: Address =
   "0x0Fc73040b26E9bC8514fA028D998E73A254Fa76E";
+export const PANCAKESWAP_V3_QUOTER: Address =
+  "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997";
 
 export interface BaseContractParams {
   name: string;
 }
 
-type UniswapV2Params = {
+export type UniswapV2Params = {
   protocol: Protocols.Uniswap | Protocols.Sushiswap | Protocols.Fraxswap;
   type: AdapterInterface.UNISWAP_V2_ROUTER;
 } & BaseContractParams;
 
-type VelodromeV2Params = {
+export type VelodromeV2Params = {
   protocol: Protocols.Velodrome;
   type: AdapterInterface.VELODROME_V2_ROUTER;
 } & BaseContractParams;
 
-type UniswapV3Params = {
-  protocol: Protocols.Uniswap;
+export type UniswapV3Params = {
+  protocol: Protocols.Uniswap | Protocols.Pancakeswap;
   type: AdapterInterface.UNISWAP_V3_ROUTER;
   quoter: Address;
 } & BaseContractParams;
 
-type CamelotV3Params = {
+export type CamelotV3Params = {
   protocol: Protocols.Camelot;
   type: AdapterInterface.CAMELOT_V3_ROUTER;
   quoter: Address;
@@ -771,17 +783,17 @@ export type ERC4626Params = {
   underlying: NormalToken;
 } & BaseContractParams;
 
-type ConvexParams = {
+export type ConvexParams = {
   protocol: Protocols.Convex;
   type: AdapterInterface.CONVEX_V1_BOOSTER;
 } & BaseContractParams;
 
-type ConvexL2Params = {
+export type ConvexL2Params = {
   protocol: Protocols.Convex;
   type: AdapterInterface.CONVEX_L2_BOOSTER;
 } & BaseContractParams;
 
-interface ConvexExtraPoolParams {
+export interface ConvexExtraPoolParams {
   rewardToken: NormalToken;
   poolAddress: Record<NetworkType, Address>;
 }
@@ -809,12 +821,12 @@ export type AuraPoolParams = {
   extraRewards: Array<AuraExtraPoolParams>;
 } & BaseContractParams;
 
-type AuraParams = {
+export type AuraParams = {
   protocol: Protocols.Aura;
   type: AdapterInterface.CONVEX_V1_BOOSTER;
 } & BaseContractParams;
 
-interface AuraExtraPoolParams {
+export interface AuraExtraPoolParams {
   rewardToken: NormalToken;
   poolAddress: Record<NetworkType, Address>;
 }
@@ -901,6 +913,12 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Uniswap V3",
     protocol: Protocols.Uniswap,
     quoter: UNISWAP_V3_QUOTER,
+    type: AdapterInterface.UNISWAP_V3_ROUTER,
+  },
+  PANCAKESWAP_V3_ROUTER: {
+    name: "Pancakeswap V3",
+    protocol: Protocols.Pancakeswap,
+    quoter: PANCAKESWAP_V3_QUOTER,
     type: AdapterInterface.UNISWAP_V3_ROUTER,
   },
 
@@ -1178,6 +1196,15 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.CURVE_V1_2ASSETS, // NOTE: This is actually stable NG, however the old adapter is used in swap only mode before audits
     lpToken: "GHOUSDe",
     tokens: ["GHO", "USDe"],
+  },
+
+  CURVE_PUFETH_WSTETH_POOL: {
+    name: "Curve pufETH/wstETH",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "pufETHwstE",
+    tokens: ["pufETH", "wstETH"],
   },
 
   CURVE_2CRV_POOL_ARB: {

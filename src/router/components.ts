@@ -13,6 +13,7 @@ export enum RouterProtocols {
   Velodrome,
   Camelot,
   sUSDe,
+  wstETH,
 }
 
 export enum RouterComponent {
@@ -50,4 +51,5 @@ export enum RouterComponent {
   RC_CAMELOT_V3_SWAPPER = 31,
   RC_OVERRIDE_AGGREGATOR = 32,
   RC_SUSDE_OVERRIDER = 33,
+  RC_WSTETH_SWAPPER = 34,
 }

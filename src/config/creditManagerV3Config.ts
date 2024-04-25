@@ -209,10 +209,12 @@ ${contracts}
         ${pairs}}`;
       }
 
-      case "UNISWAP_V3_ROUTER": {
+      case "UNISWAP_V3_ROUTER":
+      case "PANCAKESWAP_V3_ROUTER": {
         const pairs = ((a as UniV3Config).allowed || [])
           .map(
             pair => `uv3p.push(UniswapV3Pair({
+          router: Contracts.${a.contract},
           token0: Tokens.${safeEnum(pair.token0)},
           token1: Tokens.${safeEnum(pair.token1)},
           fee: ${pair.fee}
@@ -220,9 +222,9 @@ ${contracts}
           )
           .join("\n");
 
-        return `${contractLine}
+        return `${contractLine}{
         UniswapV3Pair[] storage uv3p = cp.uniswapV3Pairs;
-        ${pairs}`;
+        ${pairs}}`;
       }
       case "VELODROME_V2_ROUTER": {
         const pools = ((a as VelodromeV2Config).allowed || [])
