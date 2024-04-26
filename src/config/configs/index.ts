@@ -1,3 +1,4 @@
+export { crvusdConfigMainnet } from "./crvusdConfigMainnet";
 export { daiConfigMainnet } from "./daiConfigMainnet";
 export { ghoConfigMainnet } from "./ghoConfigMainnet";
 export { testUsdcConfigArbitrum } from "./test_usdcConfigArbitrum";
@@ -6,6 +7,7 @@ export { testWethConfigArbitrum } from "./test_wethConfigArbitrum";
 export { usdcConfigArbitrum } from "./usdcConfigArbitrum";
 export { usdcConfigMainnet } from "./usdcConfigMainnet";
 export { usdcConfigOptimism } from "./usdcConfigOptimism";
+export { usdceConfigArbitrum } from "./usdceConfigArbitrum";
 export { usdtConfigMainnet } from "./usdtConfigMainnet";
 export { wbtcConfigMainnet } from "./wbtcConfigMainnet";
 export { wethConfigArbitrum } from "./wethConfigArbitrum";
