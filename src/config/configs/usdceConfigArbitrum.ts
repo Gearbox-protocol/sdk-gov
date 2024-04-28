@@ -10,14 +10,13 @@ const POOL_DIVIDER = BigInt(1);
 const tier1UniV3Config: UniV3Config = {
   contract: "UNISWAP_V3_ROUTER",
   allowed: [
-    { token0: "WETH", token1: "USDC", fee: 500 },
+    { token0: "WETH", token1: "USDC_e", fee: 500 },
     { token0: "WETH", token1: "WBTC", fee: 500 },
     { token0: "WETH", token1: "ARB", fee: 500 },
     { token0: "WETH", token1: "ARB", fee: 3000 },
     { token0: "wstETH", token1: "WETH", fee: 100 },
-    { token0: "ARB", token1: "USDC", fee: 500 },
+    { token0: "ARB", token1: "USDC_e", fee: 500 },
     { token0: "WBTC", token1: "WETH", fee: 3000 },
-    { token0: "WBTC", token1: "USDC", fee: 500 },
   ],
 };
 
@@ -44,7 +43,7 @@ const tier1BalancerConfig: BalancerVaultConfig = {
 };
 
 const tier1CreditManager: CreditManagerV3DeployConfig = {
-  name: "Trade USDC Tier 1 Arbitrum",
+  name: "Trade USDC.e Tier 1 Arbitrum",
   degenNft: false,
   expirationDate: undefined,
   minDebt: (BigInt(1e3) * POOL_DECIMALS) / POOL_DIVIDER,
@@ -88,7 +87,7 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
 const tier2UniV3Config: UniV3Config = {
   contract: "UNISWAP_V3_ROUTER",
   allowed: [
-    { token0: "WETH", token1: "USDC", fee: 500 },
+    { token0: "WETH", token1: "USDC_e", fee: 500 },
     { token0: "PENDLE", token1: "WETH", fee: 3000 },
     { token0: "GMX", token1: "WETH", fee: 3000 },
     { token0: "LINK", token1: "WETH", fee: 3000 },
@@ -96,7 +95,7 @@ const tier2UniV3Config: UniV3Config = {
 };
 
 const tier2CreditManager: CreditManagerV3DeployConfig = {
-  name: "Trade USDC Tier 2 Arbitrum",
+  name: "Trade USDC.e Tier 2 Arbitrum",
   degenNft: false,
   expirationDate: undefined,
   minDebt: (BigInt(1e3) * POOL_DECIMALS) / POOL_DIVIDER,
@@ -128,12 +127,12 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
   adapters: [tier2UniV3Config],
 };
 
-export const usdcConfigArbitrum: PoolV3DeployConfig = {
-  id: "arbitrum-usdc-v3",
+export const usdceConfigArbitrum: PoolV3DeployConfig = {
+  id: "arbitrum-usdce-v3",
   symbol: "dUSDCV3",
-  name: "Main USDC v3",
+  name: "Main USDC.e v3",
   network: "Arbitrum",
-  underlying: "USDC",
+  underlying: "USDC_e",
   accountAmount: BigInt(10_000) * POOL_DECIMALS,
   withdrawalFee: 0,
   totalDebtLimit: BigInt(100_000_000) * POOL_DECIMALS,

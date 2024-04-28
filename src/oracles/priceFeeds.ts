@@ -1219,20 +1219,21 @@ export const priceFeedsByToken: Record<
       },
     },
   },
-
   weETH: {
     Mainnet: {
       Main: {
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: {
-          type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x5c9C449BbC9a6075A2c061dF312a35fd1E05fF22",
-          stalenessPeriod: HOUR_24_BUFFERED,
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "weETH_FUNDAMENTAL",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
         },
         baseToUsdPriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
           address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
-          stalenessPeriod: HOUR_1_BUFFERED,
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
         },
         trusted: false,
       },
@@ -1240,7 +1241,7 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x8751F736E94F6CD167e8C5B97E245680FbD9CC36",
+          address: "0x5c9C449BbC9a6075A2c061dF312a35fd1E05fF22",
           stalenessPeriod: HOUR_24_BUFFERED,
         },
         baseToUsdPriceFeed: {
