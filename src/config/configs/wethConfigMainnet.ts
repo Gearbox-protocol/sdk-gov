@@ -528,7 +528,7 @@ const restakingCreditManager: CreditManagerV3DeployConfig = {
     },
     {
       token: "ezETH",
-      lt: 9150,
+      lt: 8700,
     },
     {
       token: "rsETH",
@@ -536,11 +536,11 @@ const restakingCreditManager: CreditManagerV3DeployConfig = {
     },
     {
       token: "pufETH",
-      lt: 9000,
+      lt: 8700,
     },
     {
       token: "rswETH",
-      lt: 9000,
+      lt: 8700,
     },
     // Compatibility
     {
