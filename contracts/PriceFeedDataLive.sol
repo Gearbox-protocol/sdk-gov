@@ -2028,6 +2028,15 @@ contract PriceFeedDataLive {
             cpf.trusted = false;
             cpf.reserve = false;
         }
+        chainlinkPriceFeedsByNetwork[1].push(
+            ChainlinkPriceFeedData({
+                token: Tokens.rswETH,
+                priceFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
+                stalenessPeriod: 4500,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ pufETH ------------------------
 
@@ -2044,6 +2053,15 @@ contract PriceFeedDataLive {
             cpf.trusted = false;
             cpf.reserve = false;
         }
+        chainlinkPriceFeedsByNetwork[1].push(
+            ChainlinkPriceFeedData({
+                token: Tokens.pufETH,
+                priceFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
+                stalenessPeriod: 4500,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ rsETH ------------------------
 
