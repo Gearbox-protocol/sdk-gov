@@ -1361,6 +1361,11 @@ export const priceFeedsByToken: Record<
         },
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+        stalenessPeriod: HOUR_1_BUFFERED,
+      },
     },
   },
 
@@ -1379,6 +1384,11 @@ export const priceFeedsByToken: Record<
           stalenessPeriod: HOUR_1_BUFFERED,
         },
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+        stalenessPeriod: HOUR_1_BUFFERED,
       },
     },
   },
