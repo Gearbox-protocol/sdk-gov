@@ -1146,21 +1146,42 @@ export const tokenDataByNetwork: Record<
 
 export type TickerToken = "weETH/ETH";
 
-export const tickerTokensByNetwork: Record<
+export interface TickerInfo {
+  symbol: TickerToken;
+  dataId: string;
+  address: Address;
+  priceFeed: Address;
+}
+
+export const tickerInfoTokensByNetwork: Record<
   NetworkType,
-  PartialRecord<SupportedToken, [TickerToken, string, Address]>
+  PartialRecord<SupportedToken, TickerInfo>
 > = {
   Mainnet: {
-    weETH: [
-      "weETH/ETH",
-      "weETH_FUNDAMENTAL",
-      "0x8C23b9E4CB9884e807294c4b4C33820333cC613c",
-    ],
+    weETH: {
+      symbol: "weETH/ETH",
+      dataId: "weETH_FUNDAMENTAL",
+      address: "0x8C23b9E4CB9884e807294c4b4C33820333cC613c",
+      priceFeed: "0x6F13996411743d22566176482B6b677Ec4eb6cE6",
+    },
   },
   Arbitrum: {},
   Optimism: {},
   Base: {},
 };
+
+export const tickerTokensByNetwork: Record<
+  NetworkType,
+  PartialRecord<TickerToken, Address>
+> = Object.fromEntries(
+  Object.entries(tickerInfoTokensByNetwork).map(([network, data]) => {
+    if (Object.values(data).length === 0) return [network, {}];
+    const addrs = Object.fromEntries(
+      Object.values(data).map(d => [d.symbol, d.address]),
+    ) as PartialRecord<TickerToken, Address>;
+    return [network, addrs];
+  }),
+) as Record<NetworkType, PartialRecord<TickerToken, Address>>;
 
 export const tokenSymbolByAddress = TypedObjectUtils.entries(
   tokenDataByNetwork,
@@ -1176,8 +1197,24 @@ export const tokenSymbolByAddress = TypedObjectUtils.entries(
   {},
 );
 
+export const tickerSymbolByAddress = Object.fromEntries(
+  TypedObjectUtils.entries(tickerTokensByNetwork).map(([symbol, addr]) => [
+    addr,
+    symbol,
+  ]),
+);
+
 export function getTokenSymbol(address: Address): SupportedToken | undefined {
   return tokenSymbolByAddress[address.toLowerCase()];
+}
+
+export function getTokenSymbolOrTicker(
+  address: Address,
+): SupportedToken | TickerToken | undefined {
+  return (
+    tokenSymbolByAddress[address.toLowerCase()] ||
+    tickerSymbolByAddress[address.toLowerCase()]
+  );
 }
 
 export function getTokenSymbolOrETH(
