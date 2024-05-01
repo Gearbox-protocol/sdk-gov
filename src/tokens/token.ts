@@ -1197,12 +1197,14 @@ export const tokenSymbolByAddress = TypedObjectUtils.entries(
   {},
 );
 
-export const tickerSymbolByAddress = Object.fromEntries(
-  TypedObjectUtils.entries(tickerTokensByNetwork).map(([symbol, addr]) => [
-    addr,
-    symbol,
-  ]),
-);
+export const tickerSymbolByAddress: Record<Address, TickerToken> =
+  Object.fromEntries(
+    Object.values(tickerTokensByNetwork).map(en =>
+      Object.entries(en)
+        .map(([symbol, addr]) => [addr.toLowerCase() as Address, symbol])
+        .flat(),
+    ),
+  );
 
 export function getTokenSymbol(address: Address): SupportedToken | undefined {
   return tokenSymbolByAddress[address.toLowerCase()];
@@ -1213,7 +1215,7 @@ export function getTokenSymbolOrTicker(
 ): SupportedToken | TickerToken | undefined {
   return (
     tokenSymbolByAddress[address.toLowerCase()] ||
-    tickerSymbolByAddress[address.toLowerCase()]
+    tickerSymbolByAddress[address.toLowerCase() as Address]
   );
 }
 
