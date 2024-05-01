@@ -1,7 +1,7 @@
 import { NetworkType } from "../core/chains";
 import { NOT_DEPLOYED } from "../core/constants";
 import { TypedObjectUtils } from "../utils/mappers";
-import { Address } from "../utils/types";
+import { Address, PartialRecord } from "../utils/types";
 import {
   AaveV2LPToken,
   AaveV2PoolTokenData,
@@ -1142,6 +1142,24 @@ export const tokenDataByNetwork: Record<
     GHOUSDe: NOT_DEPLOYED,
     GHO_USDT_USDC: NOT_DEPLOYED,
   },
+};
+
+export type TickerToken = "weETH/ETH";
+
+export const tickerTokensByNetwork: Record<
+  NetworkType,
+  PartialRecord<SupportedToken, [TickerToken, string, Address]>
+> = {
+  Mainnet: {
+    weETH: [
+      "weETH/ETH",
+      "weETH_FUNDAMENTAL",
+      "0x8C23b9E4CB9884e807294c4b4C33820333cC613c",
+    ],
+  },
+  Arbitrum: {},
+  Optimism: {},
+  Base: {},
 };
 
 export const tokenSymbolByAddress = TypedObjectUtils.entries(
