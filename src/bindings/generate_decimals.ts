@@ -1,4 +1,4 @@
-import { Contract, getDefaultProvider } from "ethers";
+import { ethers } from "ethers";
 import * as fs from "fs";
 
 import {
@@ -9,12 +9,12 @@ import {
 import { erc20Interface } from "../tokens/tokens.spec";
 
 async function generateTokens() {
-  const deployer = await getDefaultProvider();
+  const deployer = await ethers.providers.getDefaultProvider();
 
   const tokenList: Array<string> = [];
   for (let token of Object.keys(supportedTokens)) {
     const address = tokenDataByNetwork.Mainnet[token as SupportedToken];
-    const decimals = await new Contract(
+    const decimals = await new ethers.Contract(
       address,
       erc20Interface,
       deployer,
