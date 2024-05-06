@@ -1,11 +1,19 @@
 /* eslint-disable max-nested-callbacks */
-import { ethers } from "ethers";
+import {
+  Contract,
+  getAddress,
+  getBytes,
+  Interface,
+  JsonRpcProvider,
+  Network,
+  toUtf8String,
+} from "ethers";
 
 import { CHAINS, NetworkType, supportedChains } from "../core/chains";
 import { KeyedCall, safeMulticall } from "../utils/multicall";
 import { SupportedToken, tokenDataByNetwork } from "./token";
 
-export const erc20Interface = new ethers.utils.Interface([
+export const erc20Interface = new Interface([
   "function symbol() view returns (string memory)",
   "function decimals() view returns (uint8)",
 ]);
@@ -13,14 +21,10 @@ export const erc20Interface = new ethers.utils.Interface([
 // Some contracts return something other than string for symbol
 const NON_ERC20_SYMBOLS = {
   [tokenDataByNetwork.Mainnet.MKR]: {
-    interface: new ethers.utils.Interface([
-      "function symbol() view returns (bytes32)",
-    ]),
+    interface: new Interface(["function symbol() view returns (bytes32)"]),
     // convert bytes32 to string
     stringifySymbol: (result: string): string =>
-      ethers.utils
-        .toUtf8String(ethers.utils.arrayify(result))
-        .replaceAll(String.fromCharCode(0), ""), // trim tail of zeroes
+      toUtf8String(getBytes(result)).replaceAll(String.fromCharCode(0), ""), // trim tail of zeroes
   },
 };
 
@@ -65,9 +69,9 @@ const EXCEPTIONS_IN_SYMBOLS: Record<NetworkType, Record<string, string>> = {
 };
 
 class TokenSuite {
-  private readonly provider: ethers.providers.StaticJsonRpcProvider;
+  private readonly provider: JsonRpcProvider;
   public readonly network: NetworkType;
-  public readonly calls: KeyedCall<ethers.utils.Interface, SupportedToken>[];
+  public readonly calls: KeyedCall<Interface, SupportedToken>[];
   public readonly responses: Record<string, SymbolResponse> = {};
 
   constructor(network: NetworkType) {
@@ -76,19 +80,15 @@ class TokenSuite {
     if (!url) {
       throw new Error(`${network} provder not found in env`);
     }
-    this.provider = new ethers.providers.StaticJsonRpcProvider(
-      url,
-      CHAINS[network],
-    );
+    this.provider = new JsonRpcProvider(url, CHAINS[network], {
+      staticNetwork: new Network(network, CHAINS[network]),
+    });
     // Omit NOT DEPLOYED
     const entries = Object.entries(tokenDataByNetwork[network]).filter(
       ([_, addr]) => addr?.startsWith("0x"),
     ) as Array<[SupportedToken, string]>;
     this.calls = entries.map(
-      ([symbol, address]): KeyedCall<
-        ethers.utils.Interface,
-        SupportedToken
-      > => ({
+      ([symbol, address]): KeyedCall<Interface, SupportedToken> => ({
         address,
         interface: NON_ERC20_SYMBOLS[address]?.interface ?? erc20Interface,
         method: "symbol()",
@@ -102,11 +102,7 @@ class TokenSuite {
     if (this.network === "Arbitrum") {
       // if (true) {
       for (const call of this.calls) {
-        const c = new ethers.Contract(
-          call.address,
-          erc20Interface,
-          this.provider,
-        );
+        const c = new Contract(call.address, erc20Interface, this.provider);
         try {
           const s = await c.symbol();
           this.responses[call.key] = {
@@ -165,7 +161,7 @@ class TokenSuite {
     const sdkAddress = tokenDataByNetwork[this.network][sdkSymbol];
     let err: Error | undefined;
     try {
-      const addr = ethers.utils.getAddress(sdkAddress);
+      const addr = getAddress(sdkAddress);
       if (addr !== sdkAddress) {
         err = new Error(
           `sdk address for token ${sdkSymbol} is not checksummed: expected ${addr}, got ${sdkAddress}`,
