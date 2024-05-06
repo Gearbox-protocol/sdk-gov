@@ -36,7 +36,7 @@
     "@types/yaml": "^1.9.7",
     "add": "^2.0.6",
     "deep-object-diff": "^1.1.9",
-    "ethers": "6.12.1",
+    "ethers": "5.6.9",
     "humanize-duration-ts": "^2.1.1",
     "yaml": "^2.3.2",
     "yarn": "^1.22.19",
