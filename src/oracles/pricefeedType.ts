@@ -29,6 +29,7 @@ export enum PriceFeedType {
   ERC4626_VAULT_ORACLE,
   NETWORK_DEPENDENT,
   CURVE_USD_ORACLE,
+  PYTH_ORACLE,
 }
 
 export const lpPriceFeedTypes: Array<PriceFeedType> = [
@@ -76,6 +77,12 @@ export interface RedstoneOracleData {
   dataId: string;
   signers: Array<Address>;
   signersThreshold: number;
+}
+
+export interface PythOracleData {
+  type: PriceFeedType.PYTH_ORACLE;
+  priceFeedId: string;
+  ticker: string;
 }
 
 export interface CompositeOracleData {
@@ -148,6 +155,7 @@ export type PriceFeedData =
       underlying: NormalToken;
     }
   | (RedstoneOracleData & { stalenessPeriod: number })
+  | (PythOracleData & { stalenessPeriod: number })
   | {
       type: PriceFeedType.NETWORK_DEPENDENT;
       feeds: Record<
