@@ -1,4 +1,11 @@
-import { Contract, Interface, Overrides, Provider, Signer } from "ethers";
+import {
+  Contract,
+  Interface,
+  Overrides,
+  Provider,
+  Signer,
+  Result,
+} from "ethers";
 
 import { Address } from "./types";
 
@@ -95,7 +102,7 @@ const _abi = [
 
 export const multicallInterface = new Interface(_abi);
 
-interface Result {
+interface MulticallResult {
   success: boolean;
   returnData: string;
 }
@@ -130,16 +137,21 @@ export async function multicall<R extends Array<any>>(
   const { returnData } = await multiCallContract.aggregate.staticCall(
     calls.map(c => ({
       target: c.address,
-      callData: c.interface.encodeFunctionData(c.method as string, c.params),
+      callData: c.interface.encodeFunctionData(c.method, c.params),
     })),
     overrides || {},
   );
 
-  return (returnData as Array<string>)
-    .map((d, num) =>
-      calls[num].interface.decodeFunctionResult(calls[num].method as string, d),
-    )
-    .map(unwrapArray) as R;
+  const result = (returnData as Array<string>).map((d, num) => {
+    const r = calls[num].interface.decodeFunctionResult(
+      calls[num].method,
+      d,
+    ) as Result;
+
+    return unwrapArray(r);
+  }) as R;
+
+  return result;
 }
 
 /**
@@ -167,22 +179,22 @@ export async function safeMulticall<V = any, T extends MCall<any> = MCall<any>>(
     false,
     calls.map(c => ({
       target: c.address,
-      callData: c.interface.encodeFunctionData(c.method as string, c.params),
+      callData: c.interface.encodeFunctionData(c.method, c.params),
     })),
     overrides ?? {},
   );
 
-  return (resp as Array<Result>).map((d, num) => {
+  return (resp as Array<MulticallResult>).map((d, num) => {
     let value: V | undefined;
     let error: Error | undefined;
     if (d.success) {
       try {
-        value = unwrapArray(
-          calls[num].interface.decodeFunctionResult(
-            calls[num].method as string,
-            d.returnData,
-          ),
-        );
+        const r = calls[num].interface.decodeFunctionResult(
+          calls[num].method,
+          d.returnData,
+        ) as Result;
+
+        value = unwrapArray(r);
       } catch (e) {
         if (e instanceof Error) {
           error = e;
@@ -232,19 +244,21 @@ export class MultiCallContract<T extends Interface> {
     const { returnData } = await this._multiCall.aggregate.staticCall(
       data.map(c => ({
         target: this._address,
-        callData: this._interface.encodeFunctionData(
-          c.method as string,
-          c.params,
-        ),
+        callData: this._interface.encodeFunctionData(c.method, c.params),
       })),
       overrides || {},
     );
 
-    return (returnData as Array<string>)
-      .map((d, num) =>
-        this._interface.decodeFunctionResult(data[num].method as string, d),
-      )
-      .map(r => r[0]) as R;
+    const result = (returnData as Array<string>).map((d, num) => {
+      const r = this._interface.decodeFunctionResult(
+        data[num].method,
+        d,
+      ) as Result;
+
+      const fullR = r.toObject()["result"];
+      return fullR;
+    }) as R;
+    return result;
   }
 
   get address(): string {
