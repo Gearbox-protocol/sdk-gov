@@ -51,6 +51,13 @@ export const REDSTONE_DEMO_SIGNERS: RedstoneSingers = {
   signersThreshold: 1,
 };
 
+export const pythByNetwork: Record<NetworkType, Address> = {
+  Mainnet: "0x4305FB66699C3B2702D4d05CF36551390A4c69C6",
+  Arbitrum: "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
+  Optimism: "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
+  Base: "0x8250f4aF4B972684F7b336503E2D6dFeDeB1487a",
+};
+
 export function getPriceFeedsByToken(
   token: SupportedToken,
   network: NetworkType,
@@ -1361,6 +1368,11 @@ export const priceFeedsByToken: Record<
         },
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+        stalenessPeriod: HOUR_1_BUFFERED,
+      },
     },
   },
 
@@ -1379,6 +1391,11 @@ export const priceFeedsByToken: Record<
           stalenessPeriod: HOUR_1_BUFFERED,
         },
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+        stalenessPeriod: HOUR_1_BUFFERED,
       },
     },
   },

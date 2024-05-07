@@ -109,6 +109,15 @@ struct RedStonePriceFeedData {
     bool trusted;
 }
 
+struct PythPriceFeedData {
+    Tokens token;
+    bytes32 priceFeedId;
+    bytes32 ticker;
+    address pyth;
+    bool reserve;
+    bool trusted;
+}
+
 contract PriceFeedDataLive {
     mapping(uint256 => ChainlinkPriceFeedData[]) chainlinkPriceFeedsByNetwork;
     mapping(uint256 => SingeTokenPriceFeedData[]) zeroPriceFeedsByNetwork;
@@ -124,6 +133,7 @@ contract PriceFeedDataLive {
     mapping(uint256 => GenericLPPriceFeedData[]) erc4626PriceFeedsByNetwork;
     mapping(uint256 => CrvUsdPriceFeedData[]) crvUSDPriceFeedsByNetwork;
     mapping(uint256 => RedStonePriceFeedData[]) redStonePriceFeedsByNetwork;
+    mapping(uint256 => PythPriceFeedData[]) pythPriceFeedsByNetwork;
     mapping(address => string) redstoneServiceIdByPriceFeed;
     mapping(uint256 => BalancerLPPriceFeedData[]) balancerStableLPPriceFeedsByNetwork;
     mapping(uint256 => BalancerLPPriceFeedData[]) balancerWeightedLPPriceFeedsByNetwork;

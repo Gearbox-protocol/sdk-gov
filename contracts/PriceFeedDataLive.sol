@@ -109,6 +109,15 @@ struct RedStonePriceFeedData {
     bool trusted;
 }
 
+struct PythPriceFeedData {
+    Tokens token;
+    bytes32 priceFeedId;
+    bytes32 ticker;
+    address pyth;
+    bool reserve;
+    bool trusted;
+}
+
 contract PriceFeedDataLive {
     mapping(uint256 => ChainlinkPriceFeedData[]) chainlinkPriceFeedsByNetwork;
     mapping(uint256 => SingeTokenPriceFeedData[]) zeroPriceFeedsByNetwork;
@@ -124,6 +133,7 @@ contract PriceFeedDataLive {
     mapping(uint256 => GenericLPPriceFeedData[]) erc4626PriceFeedsByNetwork;
     mapping(uint256 => CrvUsdPriceFeedData[]) crvUSDPriceFeedsByNetwork;
     mapping(uint256 => RedStonePriceFeedData[]) redStonePriceFeedsByNetwork;
+    mapping(uint256 => PythPriceFeedData[]) pythPriceFeedsByNetwork;
     mapping(address => string) redstoneServiceIdByPriceFeed;
     mapping(uint256 => BalancerLPPriceFeedData[]) balancerStableLPPriceFeedsByNetwork;
     mapping(uint256 => BalancerLPPriceFeedData[]) balancerWeightedLPPriceFeedsByNetwork;
@@ -1527,6 +1537,16 @@ contract PriceFeedDataLive {
             cpf.trusted = false;
             cpf.reserve = false;
         }
+        pythPriceFeedsByNetwork[1].push(
+            PythPriceFeedData({
+                token: Tokens.LDO,
+                priceFeedId: 0xc63e2a7f37a04e5e614c07238bedb25dcc38927fba8fe890597a593c0b2fa4ad,
+                ticker: "LDO/USD",
+                pyth: 0x4305FB66699C3B2702D4d05CF36551390A4c69C6,
+                trusted: false,
+                reserve: true
+            })
+        );
         zeroPriceFeedsByNetwork[42161].push(
             SingeTokenPriceFeedData({token: Tokens.LDO, trusted: false, reserve: false})
         );
@@ -2028,6 +2048,15 @@ contract PriceFeedDataLive {
             cpf.trusted = false;
             cpf.reserve = false;
         }
+        chainlinkPriceFeedsByNetwork[1].push(
+            ChainlinkPriceFeedData({
+                token: Tokens.rswETH,
+                priceFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
+                stalenessPeriod: 4500,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ pufETH ------------------------
 
@@ -2044,6 +2073,15 @@ contract PriceFeedDataLive {
             cpf.trusted = false;
             cpf.reserve = false;
         }
+        chainlinkPriceFeedsByNetwork[1].push(
+            ChainlinkPriceFeedData({
+                token: Tokens.pufETH,
+                priceFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
+                stalenessPeriod: 4500,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ rsETH ------------------------
 
