@@ -1,4 +1,4 @@
-import { Contract, Provider } from "ethers";
+import { Contract, JsonRpcSigner, Provider, Signer } from "ethers";
 
 import { tokenDataByNetwork } from "../tokens/token";
 

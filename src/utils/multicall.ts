@@ -3,8 +3,8 @@ import {
   Interface,
   Overrides,
   Provider,
-  Signer,
   Result,
+  Signer,
 } from "ethers";
 
 import { Address } from "./types";
