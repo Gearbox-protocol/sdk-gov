@@ -1,4 +1,4 @@
-import { ethers } from "ethers";
+import { Contract, JsonRpcSigner, Provider, Signer } from "ethers";
 
 import { tokenDataByNetwork } from "../tokens/token";
 
@@ -55,7 +55,7 @@ export const isSupportedNetwork = (
 ): chainId is number => chainId !== undefined && !!SUPPORTED_CHAINS[chainId];
 
 export const detectNetwork = async (
-  provider: ethers.providers.Provider,
+  provider: Provider,
 ): Promise<NetworkType> => {
   const usdcABI = ["function symbol() view returns (string)"];
 
@@ -63,23 +63,11 @@ export const detectNetwork = async (
   const arbitrumUSDC = tokenDataByNetwork.Arbitrum["USDC"];
   const optimismUSDC = tokenDataByNetwork.Optimism["USDC"];
 
-  const mainnetUSDCContract = new ethers.Contract(
-    mainnetUSDC,
-    usdcABI,
-    provider,
-  );
+  const mainnetUSDCContract = new Contract(mainnetUSDC, usdcABI, provider);
 
-  const arbitrumUSDCContract = new ethers.Contract(
-    arbitrumUSDC,
-    usdcABI,
-    provider,
-  );
+  const arbitrumUSDCContract = new Contract(arbitrumUSDC, usdcABI, provider);
 
-  const optimismUSDCContract = new ethers.Contract(
-    optimismUSDC,
-    usdcABI,
-    provider,
-  );
+  const optimismUSDCContract = new Contract(optimismUSDC, usdcABI, provider);
 
   try {
     await mainnetUSDCContract.symbol();
