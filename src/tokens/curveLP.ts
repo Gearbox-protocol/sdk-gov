@@ -1,5 +1,3 @@
-import { BigNumber } from "ethers";
-
 import type { CurvePoolContract } from "../contracts/contracts";
 import { PartialRecord } from "../utils/types";
 import { ERC4626LPToken } from "./erc4626";
@@ -67,11 +65,11 @@ export type MetaCurveLPTokenData = {
 
 export const Curve3CrvUnderlyingTokenIndex: PartialRecord<
   SupportedToken,
-  BigNumber
+  bigint
 > = {
-  DAI: BigNumber.from(0),
-  USDC: BigNumber.from(1),
-  USDT: BigNumber.from(2),
+  DAI: 0n,
+  USDC: 1n,
+  USDT: 2n,
 };
 
 export const curveMetaTokens: Record<CurveMetaTokens, MetaCurveLPTokenData> = {
