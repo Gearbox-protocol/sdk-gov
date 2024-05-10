@@ -1235,11 +1235,14 @@ export const tokenSymbolByAddress = TypedObjectUtils.entries(
 
 export const tickerSymbolByAddress: Record<Address, TickerToken> =
   Object.fromEntries(
-    Object.values(tickerTokensByNetwork).map(en =>
-      Object.entries(en)
-        .map(([symbol, addr]) => [addr.toLowerCase() as Address, symbol])
-        .flat(),
-    ),
+    Object.values(tickerTokensByNetwork)
+      .map(en =>
+        Object.entries(en).map(([symbol, addr]) => [
+          addr.toLowerCase() as Address,
+          symbol,
+        ]),
+      )
+      .flat(),
   );
 
 export function getTokenSymbol(address: Address): SupportedToken | undefined {
