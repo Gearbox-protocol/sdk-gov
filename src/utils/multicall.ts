@@ -100,8 +100,7 @@ const _abi = [
   },
 ];
 
-// this is getter function so that sdk-gov can still be used with ethers-5
-export const multicallInterface = () => new Interface(_abi);
+export const multicallInterface = new Interface(_abi);
 
 interface MulticallResult {
   success: boolean;
@@ -131,7 +130,7 @@ export async function multicall<R extends Array<any>>(
 ): Promise<R> {
   const multiCallContract = new Contract(
     MULTICALL_ADDRESS,
-    multicallInterface(),
+    multicallInterface,
     p,
   );
 
@@ -172,7 +171,7 @@ export async function safeMulticall<V = any, T extends MCall<any> = MCall<any>>(
   }
   const multiCallContract = new Contract(
     MULTICALL_ADDRESS,
-    multicallInterface(),
+    multicallInterface,
     p,
   );
 
@@ -233,7 +232,7 @@ export class MultiCallContract<T extends Interface> {
 
     this._multiCall = new Contract(
       MULTICALL_ADDRESS,
-      multicallInterface(),
+      multicallInterface,
       provider,
     );
   }
