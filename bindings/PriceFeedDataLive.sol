@@ -112,7 +112,7 @@ struct RedStonePriceFeedData {
 struct PythPriceFeedData {
     Tokens token;
     bytes32 priceFeedId;
-    bytes32 ticker;
+    string ticker;
     address pyth;
     bool reserve;
     bool trusted;
