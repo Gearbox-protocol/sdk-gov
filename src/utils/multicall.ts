@@ -1,11 +1,4 @@
-import {
-  Contract,
-  Interface,
-  Overrides,
-  Provider,
-  Result,
-  Signer,
-} from "ethers";
+import { CallOverrides, ethers, Signer } from "ethers";
 
 import { Address } from "./types";
 
@@ -100,58 +93,54 @@ const _abi = [
   },
 ];
 
-export const multicallInterface = new Interface(_abi);
+export const multicallInterface = new ethers.utils.Interface(_abi);
 
-interface MulticallResult {
+interface Result {
   success: boolean;
   returnData: string;
 }
 
-export interface CallData<T extends Interface> {
-  method: Parameters<T["getFunctionName"]>[0];
+export interface CallData<T extends ethers.utils.Interface> {
+  method: keyof T["functions"];
   params?: any;
 }
 
-export interface MCall<T extends Interface> {
+export interface MCall<T extends ethers.utils.Interface> {
   address: string;
   interface: T;
-  method: Parameters<T["getFunctionName"]>[0];
+  method: keyof T["functions"];
   params?: any;
 }
 
-export interface KeyedCall<T extends Interface, K = string> extends MCall<T> {
+export interface KeyedCall<T extends ethers.utils.Interface, K = string>
+  extends MCall<T> {
   key: K;
 }
 
 export async function multicall<R extends Array<any>>(
   calls: Array<MCall<any>>,
-  p: Signer | Provider,
-  overrides?: Overrides,
+  p: Signer | ethers.providers.Provider,
+  overrides?: CallOverrides,
 ): Promise<R> {
-  const multiCallContract = new Contract(
+  const multiCallContract = new ethers.Contract(
     MULTICALL_ADDRESS,
     multicallInterface,
     p,
   );
 
-  const { returnData } = await multiCallContract.aggregate.staticCall(
+  const { returnData } = await multiCallContract.callStatic.aggregate(
     calls.map(c => ({
       target: c.address,
-      callData: c.interface.encodeFunctionData(c.method, c.params),
+      callData: c.interface.encodeFunctionData(c.method as string, c.params),
     })),
     overrides || {},
   );
 
-  const result = (returnData as Array<string>).map((d, num) => {
-    const r = calls[num].interface.decodeFunctionResult(
-      calls[num].method,
-      d,
-    ) as Result;
-
-    return unwrapArray(r);
-  }) as R;
-
-  return result;
+  return (returnData as Array<string>)
+    .map((d, num) =>
+      calls[num].interface.decodeFunctionResult(calls[num].method as string, d),
+    )
+    .map(unwrapArray) as R;
 }
 
 /**
@@ -163,38 +152,38 @@ export async function multicall<R extends Array<any>>(
  */
 export async function safeMulticall<V = any, T extends MCall<any> = MCall<any>>(
   calls: T[],
-  p: Signer | Provider,
-  overrides?: Overrides,
+  p: Signer | ethers.providers.Provider,
+  overrides?: CallOverrides,
 ): Promise<Array<{ error?: Error; value?: V }>> {
   if (!calls.length) {
     return [];
   }
-  const multiCallContract = new Contract(
+  const multiCallContract = new ethers.Contract(
     MULTICALL_ADDRESS,
     multicallInterface,
     p,
   );
 
-  const resp = await multiCallContract.tryAggregate.staticCall(
+  const resp = await multiCallContract.callStatic.tryAggregate(
     false,
     calls.map(c => ({
       target: c.address,
-      callData: c.interface.encodeFunctionData(c.method, c.params),
+      callData: c.interface.encodeFunctionData(c.method as string, c.params),
     })),
     overrides ?? {},
   );
 
-  return (resp as Array<MulticallResult>).map((d, num) => {
+  return (resp as Array<Result>).map((d, num) => {
     let value: V | undefined;
     let error: Error | undefined;
     if (d.success) {
       try {
-        const r = calls[num].interface.decodeFunctionResult(
-          calls[num].method,
-          d.returnData,
-        ) as Result;
-
-        value = unwrapArray(r);
+        value = unwrapArray(
+          calls[num].interface.decodeFunctionResult(
+            calls[num].method as string,
+            d.returnData,
+          ),
+        );
       } catch (e) {
         if (e instanceof Error) {
           error = e;
@@ -219,18 +208,22 @@ function unwrapArray<V>(data: unknown): V {
   return data as V;
 }
 
-export class MultiCallContract<T extends Interface> {
+export class MultiCallContract<T extends ethers.utils.Interface> {
   private readonly _address: string;
 
   private readonly _interface: T;
 
-  protected _multiCall: Contract;
+  protected _multiCall: ethers.Contract;
 
-  constructor(address: string, intrerface: T, provider: Provider | Signer) {
+  constructor(
+    address: string,
+    intrerface: T,
+    provider: ethers.providers.Provider | Signer,
+  ) {
     this._address = address;
     this._interface = intrerface;
 
-    this._multiCall = new Contract(
+    this._multiCall = new ethers.Contract(
       MULTICALL_ADDRESS,
       multicallInterface,
       provider,
@@ -239,26 +232,24 @@ export class MultiCallContract<T extends Interface> {
 
   async call<R extends Array<any>>(
     data: Array<CallData<T>>,
-    overrides?: Overrides,
+    overrides?: CallOverrides,
   ): Promise<R> {
-    const { returnData } = await this._multiCall.aggregate.staticCall(
+    const { returnData } = await this._multiCall.callStatic.aggregate(
       data.map(c => ({
         target: this._address,
-        callData: this._interface.encodeFunctionData(c.method, c.params),
+        callData: this._interface.encodeFunctionData(
+          c.method as string,
+          c.params,
+        ),
       })),
       overrides || {},
     );
 
-    const result = (returnData as Array<string>).map((d, num) => {
-      const r = this._interface.decodeFunctionResult(
-        data[num].method,
-        d,
-      ) as Result;
-
-      const fullR = r.toObject()["result"];
-      return fullR;
-    }) as R;
-    return result;
+    return (returnData as Array<string>)
+      .map((d, num) =>
+        this._interface.decodeFunctionResult(data[num].method as string, d),
+      )
+      .map(r => r[0]) as R;
   }
 
   get address(): string {

@@ -1,5 +1,6 @@
 import { expect } from "chai";
-import { Interface, JsonRpcProvider, Network } from "ethers";
+import { BigNumber, ethers } from "ethers";
+import { Interface } from "ethers/lib/utils";
 
 import { CHAINS, NetworkType } from "../core/chains";
 import { SupportedToken } from "../tokens/token";
@@ -9,7 +10,7 @@ import { PriceFeedData, PriceFeedType } from "./pricefeedType";
 
 type PricesDict = Record<
   string,
-  { error?: Error | undefined; value?: { answer: bigint } | undefined }
+  { error?: Error | undefined; value?: { answer: BigNumber } | undefined }
 >;
 
 const iFeed = new Interface([
@@ -33,14 +34,12 @@ class PriceFeedsSuite {
       if (!url) {
         throw new Error(`Provider for ${c} not found in env`);
       }
-      return new JsonRpcProvider(url, CHAINS[c], {
-        staticNetwork: new Network(c, CHAINS[c]),
-      });
+      return new ethers.providers.StaticJsonRpcProvider(url, CHAINS[c]);
     });
 
     const resps = await Promise.all(
       this.networkTypes.map((_, i) =>
-        safeMulticall<{ answer: bigint }>(this.calls[i], providers[i]),
+        safeMulticall<{ answer: BigNumber }>(this.calls[i], providers[i]),
       ),
     );
     return resps.map((_, i) => this.buildDict(this.calls[i], resps[i]));
@@ -166,16 +165,12 @@ describe("Price feeds", () => {
             // some tokens do not exist on mainnet
             return;
           }
-          const deviation =
-            chainPrice !== undefined
-              ? Math.abs(
-                  Number(
-                    ((chainPrice - mainPrice) * BigInt(PERCENTAGE_FACTOR)) /
-                      mainPrice,
-                  ),
-                )
-              : undefined;
-
+          const deviation = chainPrice
+            ?.sub(mainPrice)
+            .mul(PERCENTAGE_FACTOR)
+            .div(mainPrice)
+            .abs()
+            .toNumber();
           // console.log(
           //   call.key,
           //   deviation,

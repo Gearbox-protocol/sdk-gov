@@ -6,9 +6,9 @@ import {
   contractsByNetwork,
   SupportedContract,
 } from "../contracts/contracts";
-import { CHAINS, supportedChains } from "../core/chains";
+import { CHAINS, getNetworkType, supportedChains } from "../core/chains";
 import { NOT_DEPLOYED } from "../core/constants";
-import { priceFeedsByToken } from "../oracles/priceFeeds";
+import { priceFeedsByToken, pythByNetwork } from "../oracles/priceFeeds";
 import {
   CompositeOracleData,
   HOUR_24,
@@ -298,6 +298,9 @@ class BindingsGenerator {
       chainId,
       reserve,
     );
+    if (result) return result;
+
+    result = this.generatePythFeedData(token, priceFeedData, chainId, reserve);
     if (result) return result;
 
     return undefined;
@@ -662,6 +665,30 @@ class BindingsGenerator {
             dataFeedId: "${priceFeedData.dataId}", signers: [${signers.join(
               ",",
             )}], signersThreshold: ${priceFeedData.signersThreshold},
+            trusted: ${
+              !reserve
+                ? (priceFeedData as PriceFeedData & { trusted: boolean })
+                    .trusted
+                : false
+            },
+            reserve: ${reserve}
+          }));`;
+    }
+    return undefined;
+  }
+
+  protected generatePythFeedData(
+    token: string,
+    priceFeedData: PriceFeedData,
+    chainId: number,
+    reserve: boolean,
+  ): string | undefined {
+    if (priceFeedData.type === PriceFeedType.PYTH_ORACLE) {
+      return `pythPriceFeedsByNetwork[${chainId}].push(PythPriceFeedData({ 
+            token: ${this.tokensEnum(token)},
+            priceFeedId: ${priceFeedData.priceFeedId}, 
+            ticker: "${priceFeedData.ticker}",
+            pyth: ${pythByNetwork[getNetworkType(chainId)]},
             trusted: ${
               !reserve
                 ? (priceFeedData as PriceFeedData & { trusted: boolean })

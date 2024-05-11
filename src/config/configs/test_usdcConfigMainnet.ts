@@ -1,3 +1,4 @@
+import { UniV3Config } from "../adapters";
 import {
   CreditManagerV3DeployConfig,
   PoolV3DeployConfig,
@@ -5,6 +6,14 @@ import {
 
 const POOL_DECIMALS = BigInt(1e6);
 const POOL_DIVIDER = BigInt(1);
+
+const levUniV3Config: UniV3Config = {
+  contract: "UNISWAP_V3_ROUTER",
+  allowed: [
+    { token0: "USDC", token1: "WETH", fee: 500 },
+    { token0: "LDO", token1: "WETH", fee: 3000 },
+  ],
+};
 
 const levCreditManager: CreditManagerV3DeployConfig = {
   name: "Test Credit Manager",
@@ -23,6 +32,14 @@ const levCreditManager: CreditManagerV3DeployConfig = {
       token: "USDe",
       lt: 9000,
     },
+    {
+      token: "WETH",
+      lt: 9000,
+    },
+    {
+      token: "LDO",
+      lt: 8250,
+    },
     // Compatibility
     {
       token: "USDeUSDC",
@@ -30,6 +47,7 @@ const levCreditManager: CreditManagerV3DeployConfig = {
     },
   ],
   adapters: [
+    levUniV3Config,
     {
       contract: "CURVE_USDE_USDC_POOL",
     },
@@ -56,6 +74,18 @@ export const testUsdcConfigMainnet: PoolV3DeployConfig = {
   },
   ratesAndLimits: {
     USDe: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 1,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    WETH: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 1,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    LDO: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 1,

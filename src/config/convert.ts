@@ -17,8 +17,8 @@ export function bnToContractString(value: bigint): string {
         remainder >= 100
           ? `_${remainder}`
           : remainder >= 10
-          ? `_0${remainder}`
-          : `_00${remainder}`;
+            ? `_0${remainder}`
+            : `_00${remainder}`;
     }
 
     result = `${remainderStr}${result}`;

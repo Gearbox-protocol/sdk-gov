@@ -5,6 +5,7 @@ on:
     branches:
       - "main"
       - "next"
+      - "1.x"
 
 env:
   HUSKY: 0

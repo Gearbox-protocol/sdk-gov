@@ -51,6 +51,13 @@ export const REDSTONE_DEMO_SIGNERS: RedstoneSingers = {
   signersThreshold: 1,
 };
 
+export const pythByNetwork: Record<NetworkType, Address> = {
+  Mainnet: "0x4305FB66699C3B2702D4d05CF36551390A4c69C6",
+  Arbitrum: "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
+  Optimism: "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
+  Base: "0x8250f4aF4B972684F7b336503E2D6dFeDeB1487a",
+};
+
 export function getPriceFeedsByToken(
   token: SupportedToken,
   network: NetworkType,
@@ -1287,9 +1294,11 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: {
-          type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x636A000262F6aA9e1F094ABF0aD8f645C44f641C",
-          stalenessPeriod: HOUR_24_BUFFERED,
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "ezETH_FUNDAMENTAL",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
         },
         baseToUsdPriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
@@ -1302,8 +1311,8 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0xF4a3e183F59D2599ee3DF213ff78b1B3b1923696",
-          stalenessPeriod: HOUR_12_BUFFERED,
+          address: "0x636A000262F6aA9e1F094ABF0aD8f645C44f641C",
+          stalenessPeriod: HOUR_24_BUFFERED,
         },
         baseToUsdPriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
@@ -1316,9 +1325,11 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: {
-          type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x11E1836bFF2ce9d6A5bec9cA79dc998210f3886d",
-          stalenessPeriod: HOUR_24_BUFFERED_L2,
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "ezETH_FUNDAMENTAL",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
         },
         baseToUsdPriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
@@ -1330,11 +1341,9 @@ export const priceFeedsByToken: Record<
       Reserve: {
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: {
-          type: PriceFeedType.REDSTONE_ORACLE,
-          dataServiceId: "redstone-primary-prod",
-          dataId: "ezETH/ETH",
-          ...REDSTONE_SIGNERS,
-          stalenessPeriod: FOUR_MINUTES,
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x11E1836bFF2ce9d6A5bec9cA79dc998210f3886d",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
         },
         baseToUsdPriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
@@ -1350,46 +1359,11 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: {
-          type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x3A236F67Fce401D87D7215695235e201966576E4",
-          stalenessPeriod: HOUR_24_BUFFERED,
-        },
-        baseToUsdPriceFeed: {
-          type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
-          stalenessPeriod: HOUR_1_BUFFERED,
-        },
-        trusted: false,
-      },
-    },
-  },
-
-  pufETH: {
-    Mainnet: {
-      Main: {
-        type: PriceFeedType.COMPOSITE_ORACLE,
-        targetToBasePriceFeed: {
-          type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x76A495b0bFfb53ef3F0E94ef0763e03cE410835C",
-          stalenessPeriod: HOUR_24_BUFFERED,
-        },
-        baseToUsdPriceFeed: {
-          type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
-          stalenessPeriod: HOUR_1_BUFFERED,
-        },
-        trusted: false,
-      },
-    },
-  },
-  rsETH: {
-    Mainnet: {
-      Main: {
-        type: PriceFeedType.COMPOSITE_ORACLE,
-        targetToBasePriceFeed: {
-          type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x03c68933f7a3F76875C0bc670a58e69294cDFD01",
-          stalenessPeriod: HOUR_24_BUFFERED,
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "rswETH_FUNDAMENTAL",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
         },
         baseToUsdPriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
@@ -1402,7 +1376,74 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0xA736eAe8805dDeFFba40cAB8c99bCB309dEaBd9B",
+          address: "0x3A236F67Fce401D87D7215695235e201966576E4",
+          stalenessPeriod: HOUR_24_BUFFERED,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+      },
+    },
+  },
+
+  pufETH: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "pufETH_FUNDAMENTAL",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x76A495b0bFfb53ef3F0E94ef0763e03cE410835C",
+          stalenessPeriod: HOUR_24_BUFFERED,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+      },
+    },
+  },
+  rsETH: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "rsETH_FUNDAMENTAL",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x03c68933f7a3F76875C0bc670a58e69294cDFD01",
           stalenessPeriod: HOUR_24_BUFFERED,
         },
         baseToUsdPriceFeed: {
