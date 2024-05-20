@@ -14,6 +14,7 @@ export const connectors: Record<NetworkType, Array<SupportedToken>> = {
     "GHO",
     "weETH",
     "wstETH",
+    "STETH",
   ],
   Arbitrum: ["WETH", "DAI", "USDC", "USDT", "rETH", "USDC_e", "wstETH"],
   Optimism: ["WETH", "USDC", "USDT", "USDC_e"],
