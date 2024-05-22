@@ -1,12 +1,10 @@
 import { NetworkType } from "../core/chains";
-import { NOT_DEPLOYED } from "../core/constants";
 import { SupportedToken } from "../tokens/token";
 import { Address, PartialRecord } from "../utils/types";
 import {
   FOUR_MINUTES,
   HOUR_1_BUFFERED,
   HOUR_1_BUFFERED_L2,
-  HOUR_12_BUFFERED,
   HOUR_24,
   HOUR_24_BUFFERED,
   HOUR_24_BUFFERED_L2,
