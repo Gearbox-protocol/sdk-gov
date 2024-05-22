@@ -1426,11 +1426,24 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        chainlinkPriceFeedsByNetwork[1].push(
-            ChainlinkPriceFeedData({
+        redStonePriceFeedsByNetwork[1].push(
+            RedStonePriceFeedData({
                 token: Tokens.USDe,
-                priceFeed: 0xbC5FBcf58CeAEa19D523aBc76515b9AEFb5cfd58,
-                stalenessPeriod: 87300,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "USDe",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
                 reserve: true
             })
