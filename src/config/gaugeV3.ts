@@ -1,7 +1,7 @@
 import { NOT_DEPLOYED } from "../core/constants";
 import { SupportedToken } from "../tokens/token";
+import { formatNumberToString_ } from "../utils/formatter";
 import { safeEnum } from "../utils/safeEnum";
-import { bnToContractPercentage } from "./convert";
 import { IConfigurator, ValidationResult } from "./iConfigurator";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 
@@ -52,9 +52,9 @@ export class GaugeV3Configurator implements IConfigurator {
         ([token, params]) =>
           `_gaugeRates.push(GaugeRate({token: Tokens.${safeEnum(
             token,
-          )}, minRate: ${bnToContractPercentage(
+          )}, minRate: ${formatNumberToString_(
             params.minRate,
-          )}, maxRate: ${bnToContractPercentage(params.maxRate)}}));`,
+          )}, maxRate: ${formatNumberToString_(params.maxRate)}}));`,
       )
       .join("\n");
   }

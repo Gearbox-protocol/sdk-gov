@@ -141,3 +141,9 @@ export function formatDuration(duration: number, raw = true): string {
     (raw ? `[${duration.toString()}]` : "")
   );
 }
+
+export function formatNumberToString_(value: bigint | number): string {
+  return value
+    .toLocaleString("en-US", { minimumIntegerDigits: 1, useGrouping: true })
+    .replaceAll(",", "_");
+}

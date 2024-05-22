@@ -9,7 +9,6 @@ import {
 } from "../poolV3DeployConfig";
 
 const POOL_DECIMALS = BigInt(1e18);
-const POOL_DIVIDER = BigInt(2000);
 
 const VELODROME_V2_DEFAULT_FACTORY =
   "0xF1046053aa5682b4F9a81b5481394DA16BE5FF5a";

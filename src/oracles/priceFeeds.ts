@@ -455,21 +455,6 @@ export const priceFeedsByToken: Record<
     },
   },
   USDC_e: {
-    Mainnet: {
-      Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
-        stalenessPeriod: HOUR_24_BUFFERED,
-        trusted: true,
-      },
-      Reserve: {
-        type: PriceFeedType.REDSTONE_ORACLE,
-        dataServiceId: "redstone-primary-prod",
-        dataId: "USDC",
-        stalenessPeriod: FOUR_MINUTES,
-        ...REDSTONE_SIGNERS,
-      },
-    },
     Arbitrum: {
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
@@ -892,9 +877,16 @@ export const priceFeedsByToken: Record<
     Mainnet: {
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
-        address: "0xbC5FBcf58CeAEa19D523aBc76515b9AEFb5cfd58",
+        address: "0xa569d910839Ae8865Da8F8e70FfFb0cBA869F961",
         stalenessPeriod: HOUR_24_BUFFERED,
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "USDe",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -947,6 +939,13 @@ export const priceFeedsByToken: Record<
         },
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "LDO",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
     Arbitrum: {
       Main: {
@@ -954,7 +953,6 @@ export const priceFeedsByToken: Record<
         trusted: false,
       },
     },
-    // ADD ETH-> DAI Oracle!
   },
   LQTY: {
     AllNetworks: {
@@ -1221,8 +1219,11 @@ export const priceFeedsByToken: Record<
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "WETH",
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "osETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -1723,6 +1724,13 @@ export const priceFeedsByToken: Record<
         assets: ["DAI", "USDC", "USDT"],
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "3Crv",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
   },
 
@@ -1732,6 +1740,13 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.CURVE_2LP_ORACLE,
         assets: ["FRAX", "USDC"],
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "crvFRAX",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -1910,6 +1925,13 @@ export const priceFeedsByToken: Record<
         address: "0xEEf0C605546958c1f899b6fB336C20671f9cD49F",
         stalenessPeriod: HOUR_24,
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "crvUSD",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
     Arbitrum: {
@@ -3057,6 +3079,13 @@ export const priceFeedsByToken: Record<
         stalenessPeriod: HOUR_24_BUFFERED,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "APE",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
     Arbitrum: {
       Main: {
@@ -3075,6 +3104,13 @@ export const priceFeedsByToken: Record<
         underlying: "DAI",
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "sDAI",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
   },
   sUSDe: {
@@ -3083,6 +3119,11 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.ERC4626_VAULT_ORACLE,
         underlying: "USDe",
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0xb99D174ED06c83588Af997c8859F93E83dD4733f",
+        stalenessPeriod: HOUR_24_BUFFERED,
       },
     },
   },
