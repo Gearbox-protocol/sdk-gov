@@ -1,6 +1,6 @@
 import { NOT_DEPLOYED } from "../core/constants";
 import { SupportedToken } from "../tokens/token";
-import { bnToContractString } from "./convert";
+import { formatNumberToString_ } from "../utils/formatter";
 import { IConfigurator, ValidationResult } from "./iConfigurator";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 
@@ -51,16 +51,16 @@ string public constant name = "${this.state.name}";
 
 PoolV3DeployParams _poolParams = PoolV3DeployParams({withdrawalFee: ${
       this.state.withdrawalFee
-    }, totalDebtLimit: ${bnToContractString(this.state.totalDebtLimit)}});
+    }, totalDebtLimit: ${formatNumberToString_(this.state.totalDebtLimit)}});
 `;
   }
 
   toString(): string {
     return `Withdrawal Fee: ${this.state.withdrawalFee},
-TotalDebtLimit: ${bnToContractString(this.state.totalDebtLimit)}
+TotalDebtLimit: ${formatNumberToString_(this.state.totalDebtLimit)}
 CreditManagersAllowance:
 ${Object.entries(this.state.creditManagersAllowance)
-  .map(([cm, allowance]) => `[${cm}]: ${bnToContractString(allowance)}`)
+  .map(([cm, allowance]) => `[${cm}]: ${formatNumberToString_(allowance)}`)
   .join("\n")}`;
   }
 }

@@ -1,5 +1,5 @@
 import { CHAINS, NetworkType, safeEnum, SupportedToken } from "..";
-import { bnToContractString } from "./convert";
+import { formatNumberToString_ } from "../utils/formatter";
 import { CreditManagerV3Configurator } from "./creditManagerV3Config";
 import { GaugeV3Configurator } from "./gaugeV3";
 import { IConfigurator, ValidationResult } from "./iConfigurator";
@@ -161,7 +161,7 @@ ${creditManagers}`;
         uint256 public constant chainId = ${CHAINS[this.network]};
         Tokens public constant underlying = Tokens.${safeEnum(this.underlying)};
         bool public constant supportsQuotas = ${this.supportsQuotas};
-        uint256 public constant getAccountAmount = ${bnToContractString(
+        uint256 public constant getAccountAmount = ${formatNumberToString_(
           this.accountAmount,
         )};
     

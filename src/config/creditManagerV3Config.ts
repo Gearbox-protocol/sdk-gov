@@ -2,7 +2,7 @@ import { NOT_DEPLOYED } from "../core/constants";
 import { BalancerLpTokenData } from "../tokens/balancer";
 import { decimals } from "../tokens/decimals";
 import { SupportedToken, supportedTokens } from "../tokens/token";
-import { formatBN } from "../utils/formatter";
+import { formatBN, formatNumberToString_ } from "../utils/formatter";
 import { safeEnum } from "../utils/safeEnum";
 import {
   AdapterConfig,
@@ -11,7 +11,6 @@ import {
   UniV3Config,
   VelodromeV2Config,
 } from "./adapters";
-import { bnToContractPercentage, bnToContractString } from "./convert";
 import { IConfigurator, Message, ValidationResult } from "./iConfigurator";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 
@@ -118,7 +117,7 @@ ${adapters};`;
               ct => `
     cts.push(CollateralTokenHuman({token: Tokens.${safeEnum(
       ct.token,
-    )}, lt: ${bnToContractPercentage(ct.lt)}}));`,
+    )}, lt: ${formatNumberToString_(ct.lt)}}));`,
             )
             .join("\n");
 
@@ -132,8 +131,8 @@ ${adapters};`;
 /// CREDIT_MANAGER_${this.index}
 CreditManagerV3DeployParams storage cp = _creditManagers.push();
 
-cp.minDebt = ${bnToContractString(this.state.minDebt)};
-cp.maxDebt = ${bnToContractString(this.state.maxDebt)};
+cp.minDebt = ${formatNumberToString_(this.state.minDebt)};
+cp.maxDebt = ${formatNumberToString_(this.state.maxDebt)};
 cp.feeInterest = ${this.state.feeInterest};
 cp.feeLiquidation = ${this.state.feeLiquidation};
 cp.liquidationPremium = ${this.state.liquidationPremium};
@@ -142,7 +141,7 @@ cp.liquidationPremiumExpired = ${this.state.liquidationPremiumExpired};
 cp.whitelisted = ${this.state.degenNft};
 cp.expirable = ${this.state.expirable};
 cp.skipInit = false;
-cp.poolLimit = ${bnToContractString(this.state.poolLimit)};
+cp.poolLimit = ${formatNumberToString_(this.state.poolLimit)};
 
 ${collateralTokens}
 ${contracts}

@@ -1,5 +1,5 @@
 import { NOT_DEPLOYED, PERCENTAGE_FACTOR } from "../core/constants";
-import { bnToContractPercentage } from "./convert";
+import { formatNumberToString_ } from "../utils/formatter";
 import { IConfigurator, Message, ValidationResult } from "./iConfigurator";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 
@@ -67,12 +67,12 @@ export class LinearIRM implements IConfigurator {
 
   deployConfig(): string {
     return `LinearIRMV3DeployParams _irm = LinearIRMV3DeployParams({
-  U_1: ${bnToContractPercentage(this.params.U1)},
-  U_2: ${bnToContractPercentage(this.params.U2)},
-  R_base: ${bnToContractPercentage(this.params.Rbase)},
-  R_slope1: ${bnToContractPercentage(this.params.Rslope1)},
-  R_slope2: ${bnToContractPercentage(this.params.Rslope2)},
-  R_slope3: ${bnToContractPercentage(this.params.Rslope3)},
+  U_1: ${formatNumberToString_(this.params.U1)},
+  U_2: ${formatNumberToString_(this.params.U2)},
+  R_base: ${formatNumberToString_(this.params.Rbase)},
+  R_slope1: ${formatNumberToString_(this.params.Rslope1)},
+  R_slope2: ${formatNumberToString_(this.params.Rslope2)},
+  R_slope3: ${formatNumberToString_(this.params.Rslope3)},
   _isBorrowingMoreU2Forbidden: ${this.params.isBorrowingMoreU2Forbidden}
   });
     `;
