@@ -10,12 +10,13 @@ export interface BranchLink {
 }
 
 export const repos = [
-  "core-v3",
+  "bots-v3",
+  "contracts-v2",
   "core-v2",
+  "core-v3",
+  "governance",
   "integrations-v2",
   "integrations-v3",
-  "governance",
-  "contracts-v2",
   "oracles-v3",
 ] as const;
 
@@ -31,12 +32,17 @@ export enum Auditor {
   Consensys = "Consensys Diligence",
   SigmaPrime = "Sigma Prime",
   Decurity = "Decurity",
+  Pessimistic = "Pessimistic",
 }
 
 export interface Report {
   auditor: Auditor;
   revision: string;
   reportLink: string;
+  /**
+   * Some are just reports, not "hard" audits
+   */
+  isNotSecurityAudit?: boolean;
 }
 
 export const auditReports: Record<string, Report> = {
@@ -124,9 +130,23 @@ export const auditReports: Record<string, Report> = {
     reportLink:
       "https://github.com/Gearbox-protocol/security/blob/main/audits/2024%20Mar%20-%20ChainSecurity_Gearbox_Core_V3.pdf",
   },
+  "2024_May_Pessimistic": {
+    auditor: Auditor.Pessimistic,
+    revision: "2024 May",
+    reportLink:
+      "https://github.com/Gearbox-protocol/security/blob/main/reports/2024%20May%20-%20Pessimistic_Gearbox_Security_Scan.pdf",
+    isNotSecurityAudit: true,
+  },
 };
 
 export const audits: Audits = {
+  "bots-v3": [
+    {
+      type: "commit",
+      commit: "dc7fe47f5b0c05d24f8349ed41bdd72f4989bf40",
+      report: auditReports["2024_May_Pessimistic"],
+    },
+  ],
   "core-v3": [
     {
       type: "commit",
@@ -152,6 +172,11 @@ export const audits: Audits = {
       type: "commit",
       commit: "b2628d77f17fecf71feb77ebb038d5350f26fca7",
       report: auditReports["2024_Mar_ChainSecurity_CoreV3"],
+    },
+    {
+      type: "commit",
+      commit: "b2628d77f17fecf71feb77ebb038d5350f26fca7",
+      report: auditReports["2024_May_Pessimistic"],
     },
   ],
   "core-v2": [
@@ -199,6 +224,11 @@ export const audits: Audits = {
       commit: "302c635e67c0017f5f7d91d9c4c56199c624c4f6",
       report: auditReports["2023_Dec_ChainSecurity_IntegrationsV3"],
     },
+    {
+      type: "commit",
+      commit: "8f1ae29e14fa9c918b87e9ed9a2a6e93f3654dbe",
+      report: auditReports["2024_May_Pessimistic"],
+    },
   ],
   governance: [
     {
@@ -224,6 +254,11 @@ export const audits: Audits = {
       type: "commit",
       commit: "c6e4bd0a42331daeec599f3d8a688fab79f9879a",
       report: auditReports["2023_Dec_ChainSecurity_OraclesV3"],
+    },
+    {
+      type: "commit",
+      commit: "c6e4bd0a42331daeec599f3d8a688fab79f9879a",
+      report: auditReports["2024_May_Pessimistic"],
     },
   ],
 };
