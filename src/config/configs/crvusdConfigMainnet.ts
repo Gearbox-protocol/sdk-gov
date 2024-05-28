@@ -52,6 +52,9 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     // COMPATIBILITY
     { token: "3Crv", lt: 0 },
     { token: "crvUSDUSDC", lt: 0 },
+    { token: "crvUSDUSDT", lt: 0 },
+    { token: "USDeUSDC", lt: 0 },
+    { token: "USDeDAI", lt: 0 },
     { token: "USDecrvUSD", lt: 0 },
     { token: "MtEthena", lt: 0 },
   ],
