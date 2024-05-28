@@ -61,6 +61,7 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     { contract: "CURVE_CRVUSD_USDT_POOL" },
     { contract: "CURVE_USDE_CRVUSD_POOL" },
     { contract: "CURVE_USDE_USDC_POOL" },
+    { contract: "CURVE_USDE_DAI_POOL" },
     { contract: "CURVE_SDAI_SUSDE_POOL" },
     { contract: "MAKER_DSR_VAULT" },
     { contract: "STAKED_USDE_VAULT" },
