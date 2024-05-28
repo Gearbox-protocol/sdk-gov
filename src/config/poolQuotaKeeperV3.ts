@@ -1,9 +1,8 @@
 import { NOT_DEPLOYED } from "../core/constants";
 import { decimals } from "../tokens/decimals";
 import { SupportedToken } from "../tokens/token";
-import { formatBN } from "../utils/formatter";
+import { formatBN, formatNumberToString_ } from "../utils/formatter";
 import { safeEnum } from "../utils/safeEnum";
-import { bnToContractPercentage, bnToContractString } from "./convert";
 import { IConfigurator, ValidationResult } from "./iConfigurator";
 import { PoolV3DeployConfig } from "./poolV3DeployConfig";
 
@@ -68,9 +67,9 @@ export class PoolQuotaKeeperV3Configurator implements IConfigurator {
         ([token, params]) =>
           `_quotaLimits.push(PoolQuotaLimit({token: Tokens.${safeEnum(
             token,
-          )}, quotaIncreaseFee: ${bnToContractPercentage(
+          )}, quotaIncreaseFee: ${formatNumberToString_(
             params.quotaIncreaseFee,
-          )}, limit: ${bnToContractString(params.limit)}}));`,
+          )}, limit: ${formatNumberToString_(params.limit)}}));`,
       )
       .join("\n");
   }
