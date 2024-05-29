@@ -1448,6 +1448,37 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
+        chainlinkPriceFeedsByNetwork[42161].push(
+            ChainlinkPriceFeedData({
+                token: Tokens.USDe,
+                priceFeed: 0x88AC7Bca36567525A866138F03a6F6844868E0Bc,
+                stalenessPeriod: 86520,
+                trusted: false,
+                reserve: false
+            })
+        );
+        redStonePriceFeedsByNetwork[42161].push(
+            RedStonePriceFeedData({
+                token: Tokens.USDe,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "USDe",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ FXS ------------------------
         chainlinkPriceFeedsByNetwork[1].push(
@@ -3769,6 +3800,44 @@ contract PriceFeedDataLive {
                 lpToken: Tokens.crvUSDC_e,
                 assets: TokensLib.arrayOf(Tokens.crvUSD, Tokens.USDC_e),
                 pool: Contracts.CURVE_CRVUSD_USDC_E_POOL_ARB,
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ USDEUSDC ------------------------
+        curvePriceFeedsByNetwork[1].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.USDEUSDC,
+                assets: TokensLib.arrayOf(Tokens.USDC, Tokens.USDe),
+                pool: Contracts.CURVE_USDE_USDC_POOL_ARB,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[42161].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.USDEUSDC,
+                assets: TokensLib.arrayOf(Tokens.USDC, Tokens.USDe),
+                pool: Contracts.CURVE_USDE_USDC_POOL_ARB,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[10].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.USDEUSDC,
+                assets: TokensLib.arrayOf(Tokens.USDC, Tokens.USDe),
+                pool: Contracts.CURVE_USDE_USDC_POOL_ARB,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.USDEUSDC,
+                assets: TokensLib.arrayOf(Tokens.USDC, Tokens.USDe),
+                pool: Contracts.CURVE_USDE_USDC_POOL_ARB,
                 trusted: false,
                 reserve: false
             })

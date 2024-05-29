@@ -887,6 +887,21 @@ export const priceFeedsByToken: Record<
         ...REDSTONE_SIGNERS,
       },
     },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x88AC7Bca36567525A866138F03a6F6844868E0Bc",
+        stalenessPeriod: HOUR_24_BUFFERED_L2,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "USDe",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
+    },
   },
 
   FXS: {
@@ -2042,6 +2057,16 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CURVE_2LP_ORACLE,
         assets: ["crvUSD", "USDC_e"],
+        trusted: false,
+      },
+    },
+  },
+
+  USDEUSDC: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["USDC", "USDe"],
         trusted: false,
       },
     },

@@ -42,6 +42,7 @@ export type CurveLPToken =
   | "crvUSDC"
   | "crvUSDT"
   | "crvUSDC_e"
+  | "USDEUSDC"
 
   // Optimism
   | "3CRV"
@@ -320,6 +321,14 @@ export const curveTokens: Record<
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
     pool: "CURVE_CRVUSD_USDC_E_POOL_ARB",
     tokenOut: ["crvUSD", "USDC_e"],
+  },
+
+  USDEUSDC: {
+    name: "Curve USDe/USDC LP (Arbitrum)",
+    symbol: "USDEUSDC",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_USDE_USDC_POOL_ARB",
+    tokenOut: ["USDC", "USDe"],
   },
 
   "3CRV": {

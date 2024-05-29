@@ -244,6 +244,7 @@ export const tokenDataByNetwork: Record<
     crvUSDC: NOT_DEPLOYED,
     crvUSDC_e: NOT_DEPLOYED,
     crvUSDT: NOT_DEPLOYED,
+    USDEUSDC: NOT_DEPLOYED,
     "3CRV": NOT_DEPLOYED,
 
     // CONVEX LP TOKENS
@@ -450,7 +451,7 @@ export const tokenDataByNetwork: Record<
     sfrxETH: "0x95aB45875cFFdba1E5f451B950bC2E42c0053f39",
     cbETH: "0x1DEBd73E752bEaF79865Fd6446b0c970EaE7732f",
     rswETH: NOT_DEPLOYED,
-    USDe: NOT_DEPLOYED,
+    USDe: "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34",
     GHO: NOT_DEPLOYED,
     pufETH: NOT_DEPLOYED,
 
@@ -500,6 +501,7 @@ export const tokenDataByNetwork: Record<
     crvUSDC: "0xec090cf6DD891D2d014beA6edAda6e05E025D93d",
     crvUSDT: "0x73aF1150F265419Ef8a5DB41908B700C32D49135",
     crvUSDC_e: "0x3aDf984c937FA6846E5a24E0A68521Bdaf767cE1",
+    USDEUSDC: "0x1c34204FCFE5314Dcf53BE2671C02c35DB58B4e3",
 
     rETH_f: NOT_DEPLOYED,
     "3CRV": NOT_DEPLOYED,
@@ -749,6 +751,7 @@ export const tokenDataByNetwork: Record<
     crvUSDC: NOT_DEPLOYED,
     crvUSDC_e: NOT_DEPLOYED,
     crvUSDT: NOT_DEPLOYED,
+    USDEUSDC: NOT_DEPLOYED,
 
     rETH_f: NOT_DEPLOYED,
 
@@ -1002,6 +1005,7 @@ export const tokenDataByNetwork: Record<
     crvUSDC: NOT_DEPLOYED,
     crvUSDC_e: NOT_DEPLOYED,
     crvUSDT: NOT_DEPLOYED,
+    USDEUSDC: NOT_DEPLOYED,
 
     rETH_f: NOT_DEPLOYED,
 
