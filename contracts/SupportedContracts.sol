@@ -631,6 +631,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "CURVE_CRVUSD_USDC_E_POOL_ARB"
             })
         );
+        contractDataByNetwork[42161].push(
+            ContractData({
+                id: Contracts.CURVE_USDE_USDC_POOL_ARB,
+                addr: 0x1c34204FCFE5314Dcf53BE2671C02c35DB58B4e3,
+                name: "CURVE_USDE_USDC_POOL_ARB"
+            })
+        );
 
         contractDataByNetwork[42161].push(
             ContractData({

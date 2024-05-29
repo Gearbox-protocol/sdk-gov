@@ -422,6 +422,14 @@ contract AdapterData {
         );
         curveAdapters.push(
             CurveAdapter({
+                targetContract: Contracts.CURVE_USDE_USDC_POOL_ARB,
+                adapterType: AdapterType.CURVE_STABLE_NG,
+                lpToken: Tokens.USDEUSDC,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
                 targetContract: Contracts.CURVE_3CRV_POOL_OP,
                 adapterType: AdapterType.CURVE_V1_3ASSETS,
                 lpToken: Tokens._3CRV,

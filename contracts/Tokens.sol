@@ -88,6 +88,7 @@ enum Tokens {
     crvUSDC,
     crvUSDT,
     crvUSDC_e,
+    USDEUSDC,
     _3CRV,
     FRAX3CRV,
     LUSD3CRV,

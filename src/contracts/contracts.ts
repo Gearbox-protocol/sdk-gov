@@ -55,6 +55,7 @@ export type CurvePoolContract =
   | "CURVE_CRVUSD_USDC_POOL_ARB"
   | "CURVE_CRVUSD_USDT_POOL_ARB"
   | "CURVE_CRVUSD_USDC_E_POOL_ARB"
+  | "CURVE_USDE_USDC_POOL_ARB"
   | "CURVE_3CRV_POOL_OP"
   | "CURVE_ETH_WSTETH_GATEWAY_OP";
 
@@ -195,6 +196,7 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_USDC_POOL_ARB: tokenDataByNetwork.Mainnet.crvUSDC,
     CURVE_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Mainnet.crvUSDT,
     CURVE_CRVUSD_USDC_E_POOL_ARB: tokenDataByNetwork.Mainnet.crvUSDC_e,
+    CURVE_USDE_USDC_POOL_ARB: tokenDataByNetwork.Mainnet.USDEUSDC,
 
     // YEARN
     YEARN_DAI_VAULT: tokenDataByNetwork.Mainnet.yvDAI,
@@ -336,6 +338,7 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_USDC_POOL_ARB: tokenDataByNetwork.Arbitrum.crvUSDC,
     CURVE_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Arbitrum.crvUSDT,
     CURVE_CRVUSD_USDC_E_POOL_ARB: tokenDataByNetwork.Arbitrum.crvUSDC_e,
+    CURVE_USDE_USDC_POOL_ARB: tokenDataByNetwork.Arbitrum.USDEUSDC,
 
     // YEARN
     YEARN_DAI_VAULT: tokenDataByNetwork.Arbitrum.yvDAI,
@@ -477,6 +480,7 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_USDC_POOL_ARB: tokenDataByNetwork.Optimism.crvUSDC,
     CURVE_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Optimism.crvUSDT,
     CURVE_CRVUSD_USDC_E_POOL_ARB: tokenDataByNetwork.Optimism.crvUSDC_e,
+    CURVE_USDE_USDC_POOL_ARB: tokenDataByNetwork.Optimism.USDEUSDC,
 
     // YEARN
     YEARN_DAI_VAULT: tokenDataByNetwork.Optimism.yvDAI,
@@ -618,6 +622,7 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_USDC_POOL_ARB: tokenDataByNetwork.Base.crvUSDC,
     CURVE_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Base.crvUSDT,
     CURVE_CRVUSD_USDC_E_POOL_ARB: tokenDataByNetwork.Base.crvUSDC_e,
+    CURVE_USDE_USDC_POOL_ARB: tokenDataByNetwork.Base.USDEUSDC,
 
     // YEARN
     YEARN_DAI_VAULT: tokenDataByNetwork.Base.yvDAI,
@@ -1250,6 +1255,15 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.CURVE_STABLE_NG,
     lpToken: "crvUSDT",
     tokens: ["crvUSD", "USDT"],
+  },
+
+  CURVE_USDE_USDC_POOL_ARB: {
+    name: "Curve USDe/USDC Pool (Arbitrum)",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "USDEUSDC",
+    tokens: ["USDC", "USDe"],
   },
 
   CURVE_3CRV_POOL_OP: {

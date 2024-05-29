@@ -1,4 +1,8 @@
-import { BalancerVaultConfig, UniV3Config } from "../adapters";
+import {
+  BalancerVaultConfig,
+  GenericSwapConfig,
+  UniV3Config,
+} from "../adapters";
 import {
   CreditManagerV3DeployConfig,
   PoolV3DeployConfig,
@@ -12,13 +16,16 @@ const tier1UniV3Config: UniV3Config = {
   allowed: [
     { token0: "WETH", token1: "USDC", fee: 500 },
     { token0: "WETH", token1: "WBTC", fee: 500 },
-    { token0: "WETH", token1: "ARB", fee: 500 },
-    { token0: "WETH", token1: "ARB", fee: 3000 },
     { token0: "wstETH", token1: "WETH", fee: 100 },
-    { token0: "ARB", token1: "USDC", fee: 500 },
     { token0: "WBTC", token1: "WETH", fee: 3000 },
     { token0: "WBTC", token1: "USDC", fee: 500 },
+    { token0: "wstETH", token1: "USDC", fee: 500 },
   ],
+};
+
+const tier1CamelotV3Config: GenericSwapConfig = {
+  contract: "CAMELOT_V3_ROUTER",
+  allowed: [{ token0: "USDe", token1: "USDC" }],
 };
 
 const tier1BalancerConfig: BalancerVaultConfig = {
@@ -47,42 +54,53 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
   name: "Trade USDC Tier 1 Arbitrum",
   degenNft: false,
   expirationDate: undefined,
-  minDebt: (BigInt(1e3) * POOL_DECIMALS) / POOL_DIVIDER,
+  minDebt: (BigInt(2e4) * POOL_DECIMALS) / POOL_DIVIDER,
   maxDebt: (BigInt(4e5) * POOL_DECIMALS) / POOL_DIVIDER,
   feeInterest: 2500,
   feeLiquidation: 50,
-  liquidationPremium: 100,
+  liquidationPremium: 400,
   feeLiquidationExpired: 50,
-  liquidationPremiumExpired: 100,
+  liquidationPremiumExpired: 400,
   poolLimit: (BigInt(4e6) * POOL_DECIMALS) / POOL_DIVIDER,
   collateralTokens: [
     {
+      token: "USDe",
+      lt: 9000,
+    },
+    {
       token: "WETH",
-      lt: 9400,
+      lt: 8700,
     },
     {
       token: "WBTC",
-      lt: 9400,
+      lt: 8700,
     },
-    {
-      token: "ARB",
-      lt: 9000,
-    },
+
     // BOOSTED
     {
       token: "wstETH",
-      lt: 9400,
+      lt: 8700,
     },
     {
       token: "rETH",
-      lt: 9400,
+      lt: 8700,
     },
     {
       token: "cbETH",
-      lt: 9400,
+      lt: 8700,
+    },
+    // Compatibility
+    {
+      token: "USDEUSDC",
+      lt: 0,
     },
   ],
-  adapters: [tier1UniV3Config, tier1BalancerConfig],
+  adapters: [
+    tier1UniV3Config,
+    tier1BalancerConfig,
+    tier1CamelotV3Config,
+    { contract: "CURVE_USDE_USDC_POOL_ARB" },
+  ],
 };
 
 const tier2UniV3Config: UniV3Config = {
@@ -92,7 +110,15 @@ const tier2UniV3Config: UniV3Config = {
     { token0: "PENDLE", token1: "WETH", fee: 3000 },
     { token0: "GMX", token1: "WETH", fee: 3000 },
     { token0: "LINK", token1: "WETH", fee: 3000 },
+    { token0: "WETH", token1: "ARB", fee: 500 },
+    { token0: "WETH", token1: "ARB", fee: 3000 },
+    { token0: "ARB", token1: "USDC", fee: 500 },
   ],
+};
+
+const tier2CamelotV3Config: GenericSwapConfig = {
+  contract: "CAMELOT_V3_ROUTER",
+  allowed: [{ token0: "USDe", token1: "USDC" }],
 };
 
 const tier2CreditManager: CreditManagerV3DeployConfig = {
@@ -100,32 +126,41 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
   degenNft: false,
   expirationDate: undefined,
   minDebt: (BigInt(1e3) * POOL_DECIMALS) / POOL_DIVIDER,
-  maxDebt: (BigInt(1e5) * POOL_DECIMALS) / POOL_DIVIDER,
+  maxDebt: (BigInt(2e4) * POOL_DECIMALS) / POOL_DIVIDER,
   feeInterest: 2500,
   feeLiquidation: 100,
-  liquidationPremium: 200,
+  liquidationPremium: 500,
   feeLiquidationExpired: 100,
-  liquidationPremiumExpired: 200,
+  liquidationPremiumExpired: 500,
   poolLimit: (BigInt(2e6) * POOL_DECIMALS) / POOL_DIVIDER,
   collateralTokens: [
     {
-      token: "WETH",
-      lt: 9400,
-    },
-    {
-      token: "GMX",
-      lt: 8350,
-    },
-    {
-      token: "LINK",
+      token: "USDe",
       lt: 9000,
     },
     {
-      token: "PENDLE",
+      token: "WETH",
+      lt: 8700,
+    },
+    {
+      token: "ARB",
       lt: 8000,
     },
+    {
+      token: "PENDLE",
+      lt: 7500,
+    },
+    // Compatibility
+    {
+      token: "USDEUSDC",
+      lt: 0,
+    },
   ],
-  adapters: [tier2UniV3Config],
+  adapters: [
+    tier2UniV3Config,
+    tier2CamelotV3Config,
+    { contract: "CURVE_USDE_USDC_POOL_ARB" },
+  ],
 };
 
 export const usdcConfigArbitrum: PoolV3DeployConfig = {
@@ -134,7 +169,7 @@ export const usdcConfigArbitrum: PoolV3DeployConfig = {
   name: "Main USDC v3",
   network: "Arbitrum",
   underlying: "USDC",
-  accountAmount: BigInt(10_000) * POOL_DECIMALS,
+  accountAmount: BigInt(20_000) * POOL_DECIMALS,
   withdrawalFee: 0,
   totalDebtLimit: BigInt(100_000_000) * POOL_DECIMALS,
   irm: {
@@ -152,7 +187,7 @@ export const usdcConfigArbitrum: PoolV3DeployConfig = {
       minRate: 4,
       maxRate: 1200,
       quotaIncreaseFee: 1,
-      limit: (BigInt(4.5e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: (BigInt(2.5e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
     WETH: {
       minRate: 4,
@@ -164,19 +199,7 @@ export const usdcConfigArbitrum: PoolV3DeployConfig = {
       minRate: 80,
       maxRate: 2400,
       quotaIncreaseFee: 5,
-      limit: (BigInt(3e6) * POOL_DECIMALS) / POOL_DIVIDER,
-    },
-    GMX: {
-      minRate: 80,
-      maxRate: 2400,
-      quotaIncreaseFee: 5,
-      limit: (BigInt(5e5) * POOL_DECIMALS) / POOL_DIVIDER,
-    },
-    LINK: {
-      minRate: 80,
-      maxRate: 2400,
-      quotaIncreaseFee: 5,
-      limit: (BigInt(5e5) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: (BigInt(1.5e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
     PENDLE: {
       minRate: 80,
@@ -189,19 +212,26 @@ export const usdcConfigArbitrum: PoolV3DeployConfig = {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 1,
-      limit: (BigInt(7e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: (BigInt(5.5e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
     rETH: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 1,
-      limit: (BigInt(7e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: (BigInt(3e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
     cbETH: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 1,
-      limit: (BigInt(7e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: (BigInt(2e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    // POINTS FARMING
+    USDe: {
+      minRate: 4,
+      maxRate: 1200,
+      quotaIncreaseFee: 0,
+      limit: (BigInt(5e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
   },
   creditManagers: [tier1CreditManager, tier2CreditManager],
