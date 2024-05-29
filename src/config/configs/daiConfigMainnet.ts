@@ -1,9 +1,4 @@
 import {
-  BalancerVaultConfig,
-  GenericSwapConfig,
-  UniV3Config,
-} from "../adapters";
-import {
   CreditManagerV3DeployConfig,
   PoolV3DeployConfig,
 } from "../poolV3DeployConfig";
