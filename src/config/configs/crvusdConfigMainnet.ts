@@ -15,13 +15,13 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
   degenNft: false,
   expirationDate: undefined,
   minDebt: BigInt(2e4) * POOL_DECIMALS,
-  maxDebt: BigInt(1e6) * POOL_DECIMALS,
+  maxDebt: BigInt(5e5) * POOL_DECIMALS,
   feeInterest: 2500,
   feeLiquidation: 150,
   liquidationPremium: 400,
   feeLiquidationExpired: 100,
   liquidationPremiumExpired: 200,
-  poolLimit: BigInt(10e6) * POOL_DECIMALS,
+  poolLimit: BigInt(20e6) * POOL_DECIMALS,
   collateralTokens: [
     {
       token: "USDC",
