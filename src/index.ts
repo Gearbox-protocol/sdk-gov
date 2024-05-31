@@ -21,6 +21,7 @@ export * from "./state/poolState";
 export * from "./state/priceFactoryState";
 export * from "./state/routerState";
 export * from "./state/state";
+export * from "./tokens/aura";
 export * from "./tokens/balancer";
 export * from "./tokens/convex";
 export * from "./tokens/curveLP";
