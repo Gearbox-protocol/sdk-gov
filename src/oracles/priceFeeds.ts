@@ -2779,6 +2779,21 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  dcrvUSDV3: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+
   sdUSDCV3: {
     Mainnet: {
       Main: {
@@ -2896,6 +2911,21 @@ export const priceFeedsByToken: Record<
     },
   },
   sdDAIV3: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+
+  sdcrvUSDV3: {
     Mainnet: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
