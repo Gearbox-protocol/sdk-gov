@@ -217,4 +217,6 @@ export const decimals: Record<SupportedToken, number> = {
   YieldETH: 18,
   rETH: 18,
   rETH_f: 18,
+  dcrvUSDV3: 18,
+  sdcrvUSDV3: 18,
 };

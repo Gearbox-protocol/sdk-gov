@@ -16,7 +16,8 @@ export type DieselTokenWithStkTypes =
   | "dWETHV3"
   | "dUSDTV3"
   | "dGHOV3"
-  | "dDAIV3";
+  | "dDAIV3"
+  | "dcrvUSDV3";
 
 export type DieselTokenTypes = DieselSimpleTokenTypes | DieselTokenWithStkTypes;
 
@@ -26,7 +27,8 @@ export type DieselStakedTokenTypes =
   | "sdWETHV3"
   | "sdUSDTV3"
   | "sdGHOV3"
-  | "sdDAIV3";
+  | "sdDAIV3"
+  | "sdcrvUSDV3";
 
 export type GearboxToken = "GEAR";
 
@@ -136,6 +138,12 @@ const dieselWithStkTokens: Record<
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     stakedToken: "sdDAIV3",
   },
+  dcrvUSDV3: {
+    name: "dcrvUSDV3",
+    symbol: "dcrvUSDV3",
+    type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
+    stakedToken: "sdcrvUSDV3",
+  },
 };
 
 const dieselTokens = { ...dieselSimpleTokens, ...dieselWithStkTokens };
@@ -180,6 +188,12 @@ const dieselStakedTokens: Record<
     symbol: "sdDAIV3",
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     underlying: "dDAIV3",
+  },
+  sdcrvUSDV3: {
+    name: "sdcrvUSDV3",
+    symbol: "sdcrvUSDV3",
+    type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
+    underlying: "dcrvUSDV3",
   },
 };
 
