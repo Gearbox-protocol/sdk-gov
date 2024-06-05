@@ -228,8 +228,8 @@ export const usdcConfigArbitrum: PoolV3DeployConfig = {
     },
     // POINTS FARMING
     USDe: {
-      minRate: 4,
-      maxRate: 1200,
+      minRate: 50,
+      maxRate: 5000,
       quotaIncreaseFee: 0,
       limit: (BigInt(5e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
