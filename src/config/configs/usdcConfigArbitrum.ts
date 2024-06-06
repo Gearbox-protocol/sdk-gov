@@ -36,15 +36,11 @@ const tier1BalancerConfig: BalancerVaultConfig = {
       status: 2,
     },
     {
-      pool: "rETH_WETH_BPT",
+      pool: "rETH_wETH_BPT",
       status: 2,
     },
     {
-      pool: "wstETH_rETH_sfrxETH",
-      status: 2,
-    },
-    {
-      pool: "wstETH_rETH_cbETH",
+      pool: "cbETH_rETH_wstETH",
       status: 2,
     },
   ],
@@ -58,9 +54,9 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
   maxDebt: (BigInt(4e5) * POOL_DECIMALS) / POOL_DIVIDER,
   feeInterest: 2500,
   feeLiquidation: 50,
-  liquidationPremium: 400,
+  liquidationPremium: 500,
   feeLiquidationExpired: 50,
-  liquidationPremiumExpired: 400,
+  liquidationPremiumExpired: 500,
   poolLimit: (BigInt(4e6) * POOL_DECIMALS) / POOL_DIVIDER,
   collateralTokens: [
     {
@@ -107,12 +103,33 @@ const tier2UniV3Config: UniV3Config = {
   contract: "UNISWAP_V3_ROUTER",
   allowed: [
     { token0: "WETH", token1: "USDC", fee: 500 },
+    { token0: "WETH", token1: "WBTC", fee: 500 },
+    { token0: "wstETH", token1: "WETH", fee: 100 },
+    { token0: "WBTC", token1: "WETH", fee: 3000 },
+    { token0: "WBTC", token1: "USDC", fee: 500 },
+    { token0: "wstETH", token1: "USDC", fee: 500 },
     { token0: "PENDLE", token1: "WETH", fee: 3000 },
-    { token0: "GMX", token1: "WETH", fee: 3000 },
-    { token0: "LINK", token1: "WETH", fee: 3000 },
     { token0: "WETH", token1: "ARB", fee: 500 },
     { token0: "WETH", token1: "ARB", fee: 3000 },
     { token0: "ARB", token1: "USDC", fee: 500 },
+  ],
+};
+
+const tier2BalancerConfig: BalancerVaultConfig = {
+  contract: "BALANCER_VAULT",
+  allowed: [
+    {
+      pool: "wstETH_WETH_BPT",
+      status: 2,
+    },
+    {
+      pool: "rETH_wETH_BPT",
+      status: 2,
+    },
+    {
+      pool: "cbETH_rETH_wstETH",
+      status: 2,
+    },
   ],
 };
 
@@ -128,9 +145,9 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
   minDebt: (BigInt(1e3) * POOL_DECIMALS) / POOL_DIVIDER,
   maxDebt: (BigInt(2e4) * POOL_DECIMALS) / POOL_DIVIDER,
   feeInterest: 2500,
-  feeLiquidation: 100,
+  feeLiquidation: 50,
   liquidationPremium: 500,
-  feeLiquidationExpired: 100,
+  feeLiquidationExpired: 50,
   liquidationPremiumExpired: 500,
   poolLimit: (BigInt(2e6) * POOL_DECIMALS) / POOL_DIVIDER,
   collateralTokens: [
@@ -143,14 +160,31 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
       lt: 8700,
     },
     {
+      token: "WBTC",
+      lt: 8700,
+    },
+    {
       token: "ARB",
       lt: 8000,
     },
     {
       token: "PENDLE",
-      lt: 7500,
+      lt: 7000,
     },
-    // Compatibility
+    /// BOOSTED
+    {
+      token: "wstETH",
+      lt: 8700,
+    },
+    {
+      token: "rETH",
+      lt: 8700,
+    },
+    {
+      token: "cbETH",
+      lt: 8700,
+    },
+    /// Compatibility
     {
       token: "USDEUSDC",
       lt: 0,
@@ -158,6 +192,7 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
   ],
   adapters: [
     tier2UniV3Config,
+    tier2BalancerConfig,
     tier2CamelotV3Config,
     { contract: "CURVE_USDE_USDC_POOL_ARB" },
   ],

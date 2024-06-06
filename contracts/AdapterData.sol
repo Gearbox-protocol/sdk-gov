@@ -628,16 +628,16 @@ contract AdapterData {
         );
         convexBasePoolAdapters.push(
             ConvexBasePoolAdapter({
-                targetContract: Contracts.AURA_WSTETH_RETH_CBETH_POOL_ARB,
+                targetContract: Contracts.AURA_CBETH_RETH_WSTETH_POOL_ARB,
                 adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
-                stakedToken: Tokens.aurawstETH_rETH_cbETH_vault
+                stakedToken: Tokens.auracbETH_rETH_wstETH_vault
             })
         );
         convexBasePoolAdapters.push(
             ConvexBasePoolAdapter({
                 targetContract: Contracts.AURA_RETH_WETH_POOL_ARB,
                 adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
-                stakedToken: Tokens.aurarETH_WETH_BPT_vault
+                stakedToken: Tokens.aurarETH_wETH_BPT_vault
             })
         );
     }

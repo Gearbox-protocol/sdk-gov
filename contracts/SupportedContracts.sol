@@ -677,9 +677,9 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[42161].push(
             ContractData({
-                id: Contracts.AURA_WSTETH_RETH_CBETH_POOL_ARB,
+                id: Contracts.AURA_CBETH_RETH_WSTETH_POOL_ARB,
                 addr: 0x8cA64Bd82AbFE138E195ce5Cb7268CA285D42245,
-                name: "AURA_WSTETH_RETH_CBETH_POOL_ARB"
+                name: "AURA_CBETH_RETH_WSTETH_POOL_ARB"
             })
         );
         contractDataByNetwork[42161].push(

@@ -32,11 +32,11 @@ const tier1BalancerConfig: BalancerVaultConfig = {
       status: 2,
     },
     {
-      pool: "rETH_WETH_BPT",
+      pool: "rETH_wETH_BPT",
       status: 2,
     },
     {
-      pool: "wstETH_rETH_cbETH",
+      pool: "cbETH_rETH_wstETH",
       status: 2,
     },
     {
@@ -164,7 +164,7 @@ export const wethConfigArbitrum: PoolV3DeployConfig = {
       minRate: 4,
       maxRate: 1200,
       quotaIncreaseFee: 1,
-      limit: BigInt(1500) * POOL_DECIMALS,
+      limit: BigInt(2000) * POOL_DECIMALS,
     },
     USDC: {
       minRate: 4,
@@ -182,7 +182,7 @@ export const wethConfigArbitrum: PoolV3DeployConfig = {
       minRate: 4,
       maxRate: 2400,
       quotaIncreaseFee: 5,
-      limit: BigInt(1300) * POOL_DECIMALS,
+      limit: BigInt(450) * POOL_DECIMALS,
     },
     PENDLE: {
       minRate: 80,
@@ -194,38 +194,38 @@ export const wethConfigArbitrum: PoolV3DeployConfig = {
       minRate: 80,
       maxRate: 2400,
       quotaIncreaseFee: 5,
-      limit: BigInt(150) * POOL_DECIMALS,
+      limit: BigInt(0) * POOL_DECIMALS,
     },
     LINK: {
       minRate: 80,
       maxRate: 2400,
       quotaIncreaseFee: 5,
-      limit: BigInt(150) * POOL_DECIMALS,
+      limit: BigInt(0) * POOL_DECIMALS,
     },
     // FARMS
     wstETH: {
       minRate: 1,
       maxRate: 350,
       quotaIncreaseFee: 0,
-      limit: BigInt(3500) * POOL_DECIMALS,
+      limit: BigInt(2000) * POOL_DECIMALS,
     },
     rETH: {
       minRate: 1,
       maxRate: 350,
       quotaIncreaseFee: 0,
-      limit: BigInt(3500) * POOL_DECIMALS,
+      limit: BigInt(1000) * POOL_DECIMALS,
     },
     cbETH: {
       minRate: 1,
       maxRate: 350,
       quotaIncreaseFee: 0,
-      limit: BigInt(2500) * POOL_DECIMALS,
+      limit: BigInt(500) * POOL_DECIMALS,
     },
     sfrxETH: {
       minRate: 1,
       maxRate: 350,
       quotaIncreaseFee: 0,
-      limit: BigInt(2500) * POOL_DECIMALS,
+      limit: BigInt(0) * POOL_DECIMALS,
     },
     ezETH: {
       minRate: 5,

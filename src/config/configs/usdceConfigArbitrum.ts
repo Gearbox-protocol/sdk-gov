@@ -28,7 +28,7 @@ const tier1BalancerConfig: BalancerVaultConfig = {
       status: 2,
     },
     {
-      pool: "rETH_WETH_BPT",
+      pool: "rETH_wETH_BPT",
       status: 2,
     },
     {
@@ -36,7 +36,7 @@ const tier1BalancerConfig: BalancerVaultConfig = {
       status: 2,
     },
     {
-      pool: "wstETH_rETH_cbETH",
+      pool: "cbETH_rETH_wstETH",
       status: 2,
     },
   ],

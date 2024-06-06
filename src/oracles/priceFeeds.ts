@@ -2599,6 +2599,15 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  cbETH_rETH_wstETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
+        assets: ["cbETH", "wstETH", "rETH"],
+        trusted: false,
+      },
+    },
+  },
   wstETH_rETH_sfrxETH: {
     AllNetworks: {
       Main: {
@@ -2609,6 +2618,15 @@ export const priceFeedsByToken: Record<
     },
   },
   rETH_WETH_BPT: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
+        assets: ["rETH", "WETH"],
+        trusted: false,
+      },
+    },
+  },
+  rETH_wETH_BPT: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
@@ -3205,20 +3223,20 @@ export const priceFeedsByToken: Record<
       },
     },
   },
-  aurarETH_WETH_BPT: {
+  aurarETH_wETH_BPT: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.THE_SAME_AS,
-        token: "rETH_WETH_BPT",
+        token: "rETH_wETH_BPT",
         trusted: false,
       },
     },
   },
-  aurawstETH_rETH_cbETH: {
+  auracbETH_rETH_wstETH: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH_rETH_cbETH",
+        token: "cbETH_rETH_wstETH",
         trusted: false,
       },
     },
@@ -3286,20 +3304,20 @@ export const priceFeedsByToken: Record<
       },
     },
   },
-  aurarETH_WETH_BPT_vault: {
+  aurarETH_wETH_BPT_vault: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.THE_SAME_AS,
-        token: "rETH_WETH_BPT",
+        token: "rETH_wETH_BPT",
         trusted: false,
       },
     },
   },
-  aurawstETH_rETH_cbETH_vault: {
+  auracbETH_rETH_wstETH_vault: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH_rETH_cbETH",
+        token: "cbETH_rETH_wstETH",
         trusted: false,
       },
     },
