@@ -210,19 +210,19 @@ export const usdcConfigArbitrum: PoolV3DeployConfig = {
     // BOOSTED
     wstETH: {
       minRate: 4,
-      maxRate: 1500,
+      maxRate: 1200,
       quotaIncreaseFee: 1,
       limit: (BigInt(5.5e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
     rETH: {
       minRate: 4,
-      maxRate: 1500,
+      maxRate: 1200,
       quotaIncreaseFee: 1,
       limit: (BigInt(3e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
     cbETH: {
       minRate: 4,
-      maxRate: 1500,
+      maxRate: 1200,
       quotaIncreaseFee: 1,
       limit: (BigInt(2e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
