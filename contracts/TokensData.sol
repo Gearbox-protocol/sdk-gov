@@ -1800,9 +1800,25 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[42161].push(
             TokenData({
+                id: Tokens.cbETH_rETH_wstETH,
+                addr: 0x2d6CeD12420a9AF5a83765a8c48Be2aFcD1A8FEb,
+                symbol: "cbETH_rETH_wstETH",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[42161].push(
+            TokenData({
                 id: Tokens.rETH_WETH_BPT,
                 addr: 0xadE4A71BB62bEc25154CFc7e6ff49A513B491E81,
                 symbol: "rETH_WETH_BPT",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[42161].push(
+            TokenData({
+                id: Tokens.rETH_wETH_BPT,
+                addr: 0xd0EC47c54cA5e20aaAe4616c25C825c7f48D4069,
+                symbol: "rETH_wETH_BPT",
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
@@ -1873,17 +1889,17 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[42161].push(
             TokenData({
-                id: Tokens.aurawstETH_rETH_cbETH,
+                id: Tokens.auracbETH_rETH_wstETH,
                 addr: 0x7A1b7f30a98d4C8BDB66AaDc6E13Be4AcdD4DE2C,
-                symbol: "aurawstETH_rETH_cbETH",
+                symbol: "auracbETH_rETH_wstETH",
                 tokenType: TokenType.AURA_LP_TOKEN
             })
         );
         tokenDataByNetwork[42161].push(
             TokenData({
-                id: Tokens.aurarETH_WETH_BPT,
+                id: Tokens.aurarETH_wETH_BPT,
                 addr: 0xE23B5EC0100d446E4086D03e3546D6ef6F6Bcf1c,
-                symbol: "aurarETH_WETH_BPT",
+                symbol: "aurarETH_wETH_BPT",
                 tokenType: TokenType.AURA_LP_TOKEN
             })
         );
@@ -1906,17 +1922,17 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[42161].push(
             TokenData({
-                id: Tokens.aurawstETH_rETH_cbETH_vault,
+                id: Tokens.auracbETH_rETH_wstETH_vault,
                 addr: 0x8cA64Bd82AbFE138E195ce5Cb7268CA285D42245,
-                symbol: "aurawstETH_rETH_cbETH_vault",
+                symbol: "auracbETH_rETH_wstETH_vault",
                 tokenType: TokenType.AURA_STAKED_TOKEN
             })
         );
         tokenDataByNetwork[42161].push(
             TokenData({
-                id: Tokens.aurarETH_WETH_BPT_vault,
+                id: Tokens.aurarETH_wETH_BPT_vault,
                 addr: 0x129A44AC6ff0f965C907579F96F2eD682E52c84A,
-                symbol: "aurarETH_WETH_BPT_vault",
+                symbol: "aurarETH_wETH_BPT_vault",
                 tokenType: TokenType.AURA_STAKED_TOKEN
             })
         );

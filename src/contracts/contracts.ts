@@ -103,7 +103,7 @@ export type AuraPoolContract =
   | "AURA_BPT_WSTETH_ETH_POOL"
   | "AURA_WSTETH_WETH_POOL_ARB"
   | "AURA_WSTETH_RETH_SFRXETH_POOL_ARB"
-  | "AURA_WSTETH_RETH_CBETH_POOL_ARB"
+  | "AURA_CBETH_RETH_WSTETH_POOL_ARB"
   | "AURA_RETH_WETH_POOL_ARB";
 
 export type AaveV2TokenWrapperContract =
@@ -245,11 +245,11 @@ export const contractsByNetwork: Record<
     AURA_BPT_RETH_ETH_POOL: tokenDataByNetwork.Mainnet.auraBPT_rETH_ETH_vault,
     AURA_BPT_WSTETH_ETH_POOL:
       tokenDataByNetwork.Mainnet.auraBPT_WSTETH_ETH_vault,
-    AURA_RETH_WETH_POOL_ARB: tokenDataByNetwork.Mainnet.aurarETH_WETH_BPT_vault,
+    AURA_RETH_WETH_POOL_ARB: tokenDataByNetwork.Mainnet.aurarETH_wETH_BPT_vault,
     AURA_WSTETH_WETH_POOL_ARB:
       tokenDataByNetwork.Mainnet.aurawstETH_WETH_BPT_vault,
-    AURA_WSTETH_RETH_CBETH_POOL_ARB:
-      tokenDataByNetwork.Mainnet.aurawstETH_rETH_cbETH_vault,
+    AURA_CBETH_RETH_WSTETH_POOL_ARB:
+      tokenDataByNetwork.Mainnet.auracbETH_rETH_wstETH_vault,
     AURA_WSTETH_RETH_SFRXETH_POOL_ARB:
       tokenDataByNetwork.Mainnet.aurawstETH_rETH_sfrxETH_vault,
 
@@ -388,11 +388,11 @@ export const contractsByNetwork: Record<
     AURA_BPT_WSTETH_ETH_POOL:
       tokenDataByNetwork.Arbitrum.auraBPT_WSTETH_ETH_vault,
     AURA_RETH_WETH_POOL_ARB:
-      tokenDataByNetwork.Arbitrum.aurarETH_WETH_BPT_vault,
+      tokenDataByNetwork.Arbitrum.aurarETH_wETH_BPT_vault,
     AURA_WSTETH_WETH_POOL_ARB:
       tokenDataByNetwork.Arbitrum.aurawstETH_WETH_BPT_vault,
-    AURA_WSTETH_RETH_CBETH_POOL_ARB:
-      tokenDataByNetwork.Arbitrum.aurawstETH_rETH_cbETH_vault,
+    AURA_CBETH_RETH_WSTETH_POOL_ARB:
+      tokenDataByNetwork.Arbitrum.auracbETH_rETH_wstETH_vault,
     AURA_WSTETH_RETH_SFRXETH_POOL_ARB:
       tokenDataByNetwork.Arbitrum.aurawstETH_rETH_sfrxETH_vault,
 
@@ -531,11 +531,11 @@ export const contractsByNetwork: Record<
     AURA_BPT_WSTETH_ETH_POOL:
       tokenDataByNetwork.Optimism.auraBPT_WSTETH_ETH_vault,
     AURA_RETH_WETH_POOL_ARB:
-      tokenDataByNetwork.Optimism.aurarETH_WETH_BPT_vault,
+      tokenDataByNetwork.Optimism.aurarETH_wETH_BPT_vault,
     AURA_WSTETH_WETH_POOL_ARB:
       tokenDataByNetwork.Optimism.aurawstETH_WETH_BPT_vault,
-    AURA_WSTETH_RETH_CBETH_POOL_ARB:
-      tokenDataByNetwork.Optimism.aurawstETH_rETH_cbETH_vault,
+    AURA_CBETH_RETH_WSTETH_POOL_ARB:
+      tokenDataByNetwork.Optimism.auracbETH_rETH_wstETH_vault,
     AURA_WSTETH_RETH_SFRXETH_POOL_ARB:
       tokenDataByNetwork.Optimism.aurawstETH_rETH_sfrxETH_vault,
 
@@ -670,11 +670,11 @@ export const contractsByNetwork: Record<
     AURA_B_RETH_STABLE_POOL: tokenDataByNetwork.Base.auraB_rETH_STABLE_vault,
     AURA_BPT_RETH_ETH_POOL: tokenDataByNetwork.Base.auraBPT_rETH_ETH_vault,
     AURA_BPT_WSTETH_ETH_POOL: tokenDataByNetwork.Base.auraBPT_WSTETH_ETH_vault,
-    AURA_RETH_WETH_POOL_ARB: tokenDataByNetwork.Base.aurarETH_WETH_BPT_vault,
+    AURA_RETH_WETH_POOL_ARB: tokenDataByNetwork.Base.aurarETH_wETH_BPT_vault,
     AURA_WSTETH_WETH_POOL_ARB:
       tokenDataByNetwork.Base.aurawstETH_WETH_BPT_vault,
-    AURA_WSTETH_RETH_CBETH_POOL_ARB:
-      tokenDataByNetwork.Base.aurawstETH_rETH_cbETH_vault,
+    AURA_CBETH_RETH_WSTETH_POOL_ARB:
+      tokenDataByNetwork.Base.auracbETH_rETH_wstETH_vault,
     AURA_WSTETH_RETH_SFRXETH_POOL_ARB:
       tokenDataByNetwork.Base.aurawstETH_rETH_sfrxETH_vault,
 
@@ -1782,11 +1782,11 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       },
     ],
   },
-  AURA_WSTETH_RETH_CBETH_POOL_ARB: {
+  AURA_CBETH_RETH_WSTETH_POOL_ARB: {
     name: "Balancer (Arbitrum) wstETH-rETH-cbETH Aura Vault",
     protocol: Protocols.Aura,
     type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
-    stakedToken: "aurawstETH_rETH_cbETH_vault",
+    stakedToken: "auracbETH_rETH_wstETH_vault",
     extraRewards: [
       {
         rewardToken: "ARB",
@@ -1812,7 +1812,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Balancer (Arbitrum) rETH-WETH Aura Vault",
     protocol: Protocols.Aura,
     type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
-    stakedToken: "aurarETH_WETH_BPT_vault",
+    stakedToken: "aurarETH_wETH_BPT_vault",
     extraRewards: [
       {
         rewardToken: "AURA",
