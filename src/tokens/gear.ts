@@ -17,7 +17,8 @@ export type DieselTokenWithStkTypes =
   | "dUSDTV3"
   | "dGHOV3"
   | "dDAIV3"
-  | "dcrvUSDV3";
+  | "dcrvUSDV3"
+  | "dUSDC_eV3";
 
 export type DieselTokenTypes = DieselSimpleTokenTypes | DieselTokenWithStkTypes;
 
@@ -25,10 +26,13 @@ export type DieselStakedTokenTypes =
   | "sdUSDCV3"
   | "sdWBTCV3"
   | "sdWETHV3"
+  | "sdWETHV3_BROKEN"
   | "sdUSDTV3"
   | "sdGHOV3"
   | "sdDAIV3"
-  | "sdcrvUSDV3";
+  | "sdcrvUSDV3"
+  | "sdUSDC_eV3_BROKEN"
+  | "sdUSDC_eV3";
 
 export type GearboxToken = "GEAR";
 
@@ -41,6 +45,7 @@ export type DieselWithStkTokenV3Data = {
   symbol: DieselTokenWithStkTypes;
   type: PartialRecord<TokenNetwork, TokenType.DIESEL_LP_TOKEN>;
   stakedToken: DieselStakedTokenTypes;
+  stakedToken_BROKEN?: Array<DieselStakedTokenTypes>;
 } & TokenBase;
 
 export type DieselStakedTokenData = {
@@ -107,6 +112,13 @@ const dieselWithStkTokens: Record<
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     stakedToken: "sdUSDCV3",
   },
+  dUSDC_eV3: {
+    name: "dUSDC.eV3",
+    symbol: "dUSDC_eV3",
+    type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
+    stakedToken: "sdUSDC_eV3",
+    stakedToken_BROKEN: ["sdUSDC_eV3_BROKEN"],
+  },
   dWBTCV3: {
     name: "dWBTCV3",
     symbol: "dWBTCV3",
@@ -118,6 +130,7 @@ const dieselWithStkTokens: Record<
     symbol: "dWETHV3",
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     stakedToken: "sdWETHV3",
+    stakedToken_BROKEN: ["sdWETHV3_BROKEN"],
   },
 
   dUSDTV3: {
@@ -158,6 +171,18 @@ const dieselStakedTokens: Record<
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     underlying: "dUSDCV3",
   },
+  sdUSDC_eV3: {
+    name: "sdUSDC.eV3",
+    symbol: "sdUSDC_eV3",
+    type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
+    underlying: "dUSDC_eV3",
+  },
+  sdUSDC_eV3_BROKEN: {
+    name: "sdUSDC_eV3_BROKEN",
+    symbol: "sdUSDC_eV3_BROKEN",
+    type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
+    underlying: "dUSDC_eV3",
+  },
   sdWBTCV3: {
     name: "sdWBTCV3",
     symbol: "sdWBTCV3",
@@ -167,6 +192,12 @@ const dieselStakedTokens: Record<
   sdWETHV3: {
     name: "sdWETHV3",
     symbol: "sdWETHV3",
+    type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
+    underlying: "dWETHV3",
+  },
+  sdWETHV3_BROKEN: {
+    name: "sdWETHV3_BROKEN",
+    symbol: "sdWETHV3_BROKEN",
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     underlying: "dWETHV3",
   },

@@ -2766,6 +2766,20 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  dUSDC_eV3: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
 
   dWBTCV3: {
     Mainnet: {
@@ -2826,6 +2840,34 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  sdUSDC_eV3_BROKEN: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  sdUSDC_eV3: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
 
   sdWBTCV3: {
     Mainnet: {
@@ -2843,6 +2885,20 @@ export const priceFeedsByToken: Record<
   },
 
   sdWETHV3: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+    Arbitrum: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  sdWETHV3_BROKEN: {
     Mainnet: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,

@@ -144,6 +144,7 @@ export const decimals: Record<SupportedToken, number> = {
   sdUSDCV3: 6,
   sdWBTCV3: 8,
   sdWETHV3: 18,
+  sdWETHV3_BROKEN: 18,
 
   dUSDTV3: 6,
   dGHOV3: 18,
@@ -151,6 +152,13 @@ export const decimals: Record<SupportedToken, number> = {
   sdUSDTV3: 6,
   sdGHOV3: 18,
   sdDAIV3: 18,
+
+  dcrvUSDV3: 18,
+  sdcrvUSDV3: 18,
+
+  dUSDC_eV3: 6,
+  sdUSDC_eV3_BROKEN: 6,
+  sdUSDC_eV3: 6,
 
   GEAR: 18,
 
@@ -219,6 +227,4 @@ export const decimals: Record<SupportedToken, number> = {
   YieldETH: 18,
   rETH: 18,
   rETH_f: 18,
-  dcrvUSDV3: 18,
-  sdcrvUSDV3: 18,
 };
