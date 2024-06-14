@@ -50,6 +50,7 @@ export type CurvePoolContract =
   | "CURVE_SDAI_SUSDE_POOL"
   | "CURVE_GHO_USDE_POOL"
   | "CURVE_PUFETH_WSTETH_POOL"
+  | "CURVE_GHO_CRVUSD_POOL"
   | "CURVE_2CRV_POOL_ARB"
   | "CURVE_TRICRYPTO_CRVUSD_POOL_ARB"
   | "CURVE_CRVUSD_USDC_POOL_ARB"
@@ -93,6 +94,7 @@ export type ConvexPoolContract =
   | "CONVEX_CRVUSD_USDT_POOL"
   | "CONVEX_CRVUSD_FRAX_POOL"
   | "CONVEX_TRI_CRV_POOL"
+  | "CONVEX_GHO_CRVUSD_POOL"
   | "CONVEX_CRVUSD_USDT_POOL_ARB";
 
 export type AuraPoolContract =
@@ -142,7 +144,8 @@ export type SupportedContract =
   | ERC4626VaultContract
   | "VELODROME_V2_ROUTER"
   | "CAMELOT_V3_ROUTER"
-  | "AAVE_V3_LENDING_POOL";
+  | "AAVE_V3_LENDING_POOL"
+  | "ZIRCUIT_POOL";
 
 export const contractsByNetwork: Record<
   NetworkType,
@@ -180,6 +183,7 @@ export const contractsByNetwork: Record<
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Mainnet.MtEthena,
     CURVE_GHO_USDE_POOL: tokenDataByNetwork.Mainnet.GHOUSDe,
     CURVE_PUFETH_WSTETH_POOL: tokenDataByNetwork.Mainnet.pufETHwstE,
+    CURVE_GHO_CRVUSD_POOL: tokenDataByNetwork.Mainnet.GHOcrvUSD,
 
     CURVE_GEAR_POOL: "0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2",
 
@@ -233,6 +237,7 @@ export const contractsByNetwork: Record<
     CONVEX_CRVUSD_USDT_POOL: "0xD1DdB0a0815fD28932fBb194C84003683AF8a824",
     CONVEX_CRVUSD_FRAX_POOL: "0x3CfB4B26dc96B124D15A6f360503d028cF2a3c00",
     CONVEX_TRI_CRV_POOL: "0xF956a46DbA1A0a567168db8655bc18E9050C7738",
+    CONVEX_GHO_CRVUSD_POOL: "0x5eC758f79b96AE74e7F1Ba9583009aFB3fc8eACB",
 
     CONVEX_BOOSTER_ARB: NOT_DEPLOYED,
     CONVEX_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Mainnet.cvxcrvUSDT,
@@ -279,6 +284,8 @@ export const contractsByNetwork: Record<
     COMPOUND_V2_ETH_GATEWAY: NOT_DEPLOYED,
 
     FLUX_USDC_POOL: tokenDataByNetwork.Mainnet.fUSDC,
+
+    ZIRCUIT_POOL: "0xF047ab4c75cebf0eB9ed34Ae2c186f3611aEAfa6",
   },
 
   //
@@ -321,6 +328,7 @@ export const contractsByNetwork: Record<
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Arbitrum.MtEthena,
     CURVE_GHO_USDE_POOL: tokenDataByNetwork.Arbitrum.GHOUSDe,
     CURVE_PUFETH_WSTETH_POOL: tokenDataByNetwork.Arbitrum.pufETHwstE,
+    CURVE_GHO_CRVUSD_POOL: tokenDataByNetwork.Arbitrum.GHOcrvUSD,
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -375,6 +383,7 @@ export const contractsByNetwork: Record<
     CONVEX_CRVUSD_USDT_POOL: NOT_DEPLOYED,
     CONVEX_CRVUSD_FRAX_POOL: NOT_DEPLOYED,
     CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
+    CONVEX_GHO_CRVUSD_POOL: NOT_DEPLOYED,
 
     CONVEX_BOOSTER_ARB: "0xF403C135812408BFbE8713b5A23a04b3D48AAE31",
     CONVEX_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Arbitrum.cvxcrvUSDT,
@@ -422,6 +431,7 @@ export const contractsByNetwork: Record<
     COMPOUND_V2_ETH_GATEWAY: NOT_DEPLOYED,
 
     FLUX_USDC_POOL: tokenDataByNetwork.Arbitrum.fUSDC,
+    ZIRCUIT_POOL: NOT_DEPLOYED,
   },
   //
   //
@@ -464,6 +474,7 @@ export const contractsByNetwork: Record<
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Optimism.MtEthena,
     CURVE_GHO_USDE_POOL: tokenDataByNetwork.Optimism.GHOUSDe,
     CURVE_PUFETH_WSTETH_POOL: tokenDataByNetwork.Optimism.pufETHwstE,
+    CURVE_GHO_CRVUSD_POOL: tokenDataByNetwork.Optimism.GHOcrvUSD,
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -517,6 +528,7 @@ export const contractsByNetwork: Record<
     CONVEX_CRVUSD_USDT_POOL: NOT_DEPLOYED,
     CONVEX_CRVUSD_FRAX_POOL: NOT_DEPLOYED,
     CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
+    CONVEX_GHO_CRVUSD_POOL: NOT_DEPLOYED,
 
     CONVEX_BOOSTER_ARB: NOT_DEPLOYED,
     CONVEX_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Optimism.cvxcrvUSDT,
@@ -565,6 +577,7 @@ export const contractsByNetwork: Record<
     COMPOUND_V2_ETH_GATEWAY: NOT_DEPLOYED,
 
     FLUX_USDC_POOL: tokenDataByNetwork.Optimism.fUSDC,
+    ZIRCUIT_POOL: NOT_DEPLOYED,
   },
   //
   //
@@ -606,6 +619,7 @@ export const contractsByNetwork: Record<
     CURVE_USDE_DAI_POOL: tokenDataByNetwork.Base.USDeDAI,
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Base.MtEthena,
     CURVE_PUFETH_WSTETH_POOL: tokenDataByNetwork.Base.pufETHwstE,
+    CURVE_GHO_CRVUSD_POOL: tokenDataByNetwork.Base.GHOcrvUSD,
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -659,6 +673,7 @@ export const contractsByNetwork: Record<
     CONVEX_CRVUSD_USDT_POOL: NOT_DEPLOYED,
     CONVEX_CRVUSD_FRAX_POOL: NOT_DEPLOYED,
     CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
+    CONVEX_GHO_CRVUSD_POOL: NOT_DEPLOYED,
 
     CONVEX_BOOSTER_ARB: NOT_DEPLOYED,
     CONVEX_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Base.cvxcrvUSDT,
@@ -705,6 +720,7 @@ export const contractsByNetwork: Record<
 
     FLUX_USDC_POOL: tokenDataByNetwork.Base.fUSDC,
     CURVE_GHO_USDE_POOL: NOT_DEPLOYED,
+    ZIRCUIT_POOL: NOT_DEPLOYED,
   },
 };
 
@@ -883,6 +899,11 @@ export type CompoundV2Params = {
   underlying: NormalToken;
 } & BaseContractParams;
 
+export type ZircuitParams = {
+  protocol: Protocols.Zircuit;
+  type: AdapterInterface.ZIRCUIT_POOL;
+} & BaseContractParams;
+
 export type ContractParams =
   | UniswapV2Params
   | UniswapV3Params
@@ -906,7 +927,8 @@ export type ContractParams =
   | CompoundV2Params
   | AuraParams
   | AuraPoolParams
-  | ERC4626Params;
+  | ERC4626Params
+  | ZircuitParams;
 
 export const contractParams: Record<SupportedContract, ContractParams> = {
   UNISWAP_V2_ROUTER: {
@@ -1210,6 +1232,15 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.CURVE_STABLE_NG,
     lpToken: "pufETHwstE",
     tokens: ["pufETH", "wstETH"],
+  },
+
+  CURVE_GHO_CRVUSD_POOL: {
+    name: "Curve GHO/crvUSD Pool",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "GHOcrvUSD",
+    tokens: ["GHO", "crvUSD"],
   },
 
   CURVE_2CRV_POOL_ARB: {
@@ -1593,6 +1624,23 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       },
     ],
   },
+  CONVEX_GHO_CRVUSD_POOL: {
+    name: "Convex GHOcrvUSD",
+    protocol: Protocols.Convex,
+    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
+    stakedToken: "stkcvxGHOcrvUSD",
+    extraRewards: [
+      {
+        rewardToken: "CVX",
+        poolAddress: {
+          Mainnet: "0xE7cC925739E41E2A03A53770F5E9Ed43afe13993",
+          Arbitrum: NOT_DEPLOYED,
+          Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
+        },
+      },
+    ],
+  },
 
   CONVEX_BOOSTER_ARB: {
     name: "Convex Booster (Arbitrum)",
@@ -1940,6 +1988,11 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     protocol: Protocols.Flux,
     type: AdapterInterface.COMPOUND_V2_CERC20,
     underlying: "USDC",
+  },
+  ZIRCUIT_POOL: {
+    name: "Zircuit staking pool",
+    protocol: Protocols.Zircuit,
+    type: AdapterInterface.ZIRCUIT_POOL,
   },
 };
 

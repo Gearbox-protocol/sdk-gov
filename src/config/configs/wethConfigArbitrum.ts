@@ -105,9 +105,36 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
 const tier2UniV3Config: UniV3Config = {
   contract: "UNISWAP_V3_ROUTER",
   allowed: [
+    { token0: "WETH", token1: "USDC_e", fee: 500 },
+    { token0: "WETH", token1: "USDC", fee: 500 },
+    { token0: "WETH", token1: "WBTC", fee: 500 },
+    { token0: "WETH", token1: "ARB", fee: 500 },
+    { token0: "WETH", token1: "ARB", fee: 3000 },
+    { token0: "wstETH", token1: "WETH", fee: 100 },
+    { token0: "ARB", token1: "USDC_e", fee: 500 },
+    { token0: "ARB", token1: "USDC", fee: 500 },
+    { token0: "WBTC", token1: "WETH", fee: 3000 },
     { token0: "PENDLE", token1: "WETH", fee: 3000 },
     { token0: "GMX", token1: "WETH", fee: 3000 },
     { token0: "LINK", token1: "WETH", fee: 3000 },
+  ],
+};
+
+const tier2BalancerConfig: BalancerVaultConfig = {
+  contract: "BALANCER_VAULT",
+  allowed: [
+    {
+      pool: "wstETH_WETH_BPT",
+      status: 2,
+    },
+    {
+      pool: "rETH_wETH_BPT",
+      status: 2,
+    },
+    {
+      pool: "cbETH_rETH_wstETH",
+      status: 2,
+    },
   ],
 };
 
@@ -125,6 +152,35 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
   poolLimit: BigInt(500) * POOL_DECIMALS,
   collateralTokens: [
     {
+      token: "USDC_e",
+      lt: 9400,
+    },
+    {
+      token: "USDC",
+      lt: 9400,
+    },
+    {
+      token: "WBTC",
+      lt: 9400,
+    },
+    {
+      token: "ARB",
+      lt: 9000,
+    },
+    // FARMS
+    {
+      token: "wstETH",
+      lt: 9600,
+    },
+    {
+      token: "rETH",
+      lt: 9600,
+    },
+    {
+      token: "cbETH",
+      lt: 9600,
+    },
+    {
       token: "PENDLE",
       lt: 8000,
     },
@@ -137,7 +193,7 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
       lt: 9000,
     },
   ],
-  adapters: [tier2UniV3Config],
+  adapters: [tier2UniV3Config, tier2BalancerConfig],
 };
 
 export const wethConfigArbitrum: PoolV3DeployConfig = {
@@ -231,7 +287,7 @@ export const wethConfigArbitrum: PoolV3DeployConfig = {
       minRate: 5,
       maxRate: 3000,
       quotaIncreaseFee: 0,
-      limit: BigInt(500) * POOL_DECIMALS,
+      limit: BigInt(0) * POOL_DECIMALS,
     },
   },
   creditManagers: [tier1CreditManager, tier2CreditManager],

@@ -2022,6 +2022,16 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  GHOcrvUSD: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["GHO", "crvUSD"],
+        trusted: false,
+      },
+    },
+  },
+
   "2CRV": {
     AllNetworks: {
       Main: {
@@ -2273,6 +2283,16 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  cvxGHOcrvUSD: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "GHOcrvUSD",
+        trusted: false,
+      },
+    },
+  },
+
   // CVX tokens
   stkcvx3Crv: {
     AllNetworks: {
@@ -2430,6 +2450,17 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+
+  stkcvxGHOcrvUSD: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "GHOcrvUSD",
+        trusted: false,
+      },
+    },
+  },
+
   cvxcrvUSDT: {
     AllNetworks: {
       Main: {
@@ -3366,6 +3397,15 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.THE_SAME_AS,
         token: "wstETH_WETH_BPT",
+        trusted: false,
+      },
+    },
+  },
+  zpufETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "pufETH",
         trusted: false,
       },
     },

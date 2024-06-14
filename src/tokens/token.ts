@@ -68,6 +68,11 @@ import {
   YearnVaultOfMetaCurveLPTokenData,
   YearnVaultTokenData,
 } from "./yearn";
+import {
+  ZircuitPhantomTokenData,
+  ZircuitStakedPhantomToken,
+  zircuitStakedPhantomTokens,
+} from "./zircuit";
 
 export type LPTokens =
   | YearnLPToken
@@ -81,7 +86,8 @@ export type LPTokens =
   | CompoundV2LPToken
   | ERC4626LPToken
   | AuraLPToken
-  | AuraStakedToken;
+  | AuraStakedToken
+  | ZircuitStakedPhantomToken;
 
 export type SupportedToken =
   | NormalToken
@@ -112,7 +118,8 @@ export type LPTokenDataI =
   | ERC4626VaultTokenData
   | ERC4626VaultOfCurveLPTokenData
   | AuraLPTokenData
-  | AuraStakedTokenData;
+  | AuraStakedTokenData
+  | ZircuitPhantomTokenData;
 
 export type TokenDataI =
   | NormalTokenData
@@ -133,6 +140,7 @@ export const lpTokens: Record<LPTokens, LPTokenDataI> = {
   ...erc4626Tokens,
   ...auraLpTokens,
   ...auraStakedTokens,
+  ...zircuitStakedPhantomTokens,
 };
 
 export const supportedTokens: Record<SupportedToken, TokenDataI> = {
@@ -238,6 +246,7 @@ export const tokenDataByNetwork: Record<
     MtEthena: "0x167478921b907422F8E88B43C4Af2B8BEa278d3A",
     GHOUSDe: "0x670a72e6D22b0956C0D2573288F82DCc5d6E3a61",
     pufETHwstE: "0xEEda34A377dD0ca676b9511EE1324974fA8d980D",
+    GHOcrvUSD: "0x635EF0056A597D13863B73825CcA297236578595",
     wstETHCRV: NOT_DEPLOYED,
     "2CRV": NOT_DEPLOYED,
     "3c-crvUSD": NOT_DEPLOYED,
@@ -265,6 +274,7 @@ export const tokenDataByNetwork: Record<
     cvxcrvUSDUSDT: "0x939e4C11E391a28CD81248163f3a2e595f12CE5E",
     cvxcrvUSDFRAX: "0x01CcDe1dFb6c84e1Cc13a6Bf777aa2160ABd11BA",
     cvxcrvUSDETHCRV: "0xa11a2c04D62b4A2324Fc857Fa14762Ad94751b4F",
+    cvxGHOcrvUSD: "0x53f4474c06c699307514bd55FB1607005F46a889",
 
     // CONVEX PHANTOM TOKEN ADDRESSES
     stkcvx3Crv: "0xbAc7a431146aeAf3F57A16b9954f332Fd292F270",
@@ -284,6 +294,7 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDUSDT: "0x5C5e5117E26374870c80a5FA04c3f75a821440D6",
     stkcvxcrvUSDFRAX: "0x7376AD488AB2bd8dF7665d619A4148f0E5094813",
     stkcvxcrvUSDETHCRV: "0x0Bf1626d4925F8A872801968be11c052862AC2D3",
+    stkcvxGHOcrvUSD: "0xa19Da509625f0e36050eA2906E991A99B29D3221",
 
     cvxcrvUSDT: NOT_DEPLOYED,
 
@@ -396,6 +407,9 @@ export const tokenDataByNetwork: Record<
     cUSDT: "0xf650C3d88D12dB855b8bf7D11Be6C55A4e07dCC9",
     cETH: "0x4Ddc2D193948926D02f9B1fE9e1daa0718270ED5",
     cLINK: "0xFAce851a4921ce59e912d19329929CE6da6EB0c7",
+
+    // ZIRCUIT
+    zpufETH: "0x6c3f1FFBFD445354fD97EFbf42e0B1216dD2383e",
   },
 
   ///
@@ -498,6 +512,7 @@ export const tokenDataByNetwork: Record<
     MtEthena: NOT_DEPLOYED,
     GHOUSDe: NOT_DEPLOYED,
     pufETHwstE: NOT_DEPLOYED,
+    GHOcrvUSD: NOT_DEPLOYED,
 
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
@@ -529,6 +544,7 @@ export const tokenDataByNetwork: Record<
     cvxcrvUSDUSDT: NOT_DEPLOYED,
     cvxcrvUSDFRAX: NOT_DEPLOYED,
     cvxcrvUSDETHCRV: NOT_DEPLOYED,
+    cvxGHOcrvUSD: NOT_DEPLOYED,
 
     crvUSD: "0x498Bf2B1e120FeD3ad3D42EA2165E9b73f99C1e5",
 
@@ -550,6 +566,7 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDUSDT: NOT_DEPLOYED,
     stkcvxcrvUSDFRAX: NOT_DEPLOYED,
     stkcvxcrvUSDETHCRV: NOT_DEPLOYED,
+    stkcvxGHOcrvUSD: NOT_DEPLOYED,
 
     cvxcrvUSDT: "0xf74d4C9b0F49fb70D8Ff6706ddF39e3a16D61E67",
 
@@ -650,6 +667,9 @@ export const tokenDataByNetwork: Record<
     sDAI: NOT_DEPLOYED,
     YieldETH: NOT_DEPLOYED,
     sUSDe: NOT_DEPLOYED,
+
+    // ZIRCUIT
+    zpufETH: NOT_DEPLOYED,
   },
   ///
   ///
@@ -750,6 +770,7 @@ export const tokenDataByNetwork: Record<
     MtEthena: NOT_DEPLOYED,
     GHOUSDe: NOT_DEPLOYED,
     pufETHwstE: NOT_DEPLOYED,
+    GHOcrvUSD: NOT_DEPLOYED,
 
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
@@ -783,6 +804,7 @@ export const tokenDataByNetwork: Record<
     cvxcrvUSDUSDT: NOT_DEPLOYED,
     cvxcrvUSDFRAX: NOT_DEPLOYED,
     cvxcrvUSDETHCRV: NOT_DEPLOYED,
+    cvxGHOcrvUSD: NOT_DEPLOYED,
 
     crvUSD: NOT_DEPLOYED,
 
@@ -804,6 +826,7 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDUSDT: NOT_DEPLOYED,
     stkcvxcrvUSDFRAX: NOT_DEPLOYED,
     stkcvxcrvUSDETHCRV: NOT_DEPLOYED,
+    stkcvxGHOcrvUSD: NOT_DEPLOYED,
 
     cvxcrvUSDT: NOT_DEPLOYED,
 
@@ -906,6 +929,9 @@ export const tokenDataByNetwork: Record<
     sDAI: NOT_DEPLOYED,
     YieldETH: NOT_DEPLOYED,
     sUSDe: NOT_DEPLOYED,
+
+    // ZIRCUIT
+    zpufETH: NOT_DEPLOYED,
   },
   //
   //
@@ -1009,6 +1035,7 @@ export const tokenDataByNetwork: Record<
     USDeDAI: NOT_DEPLOYED,
     MtEthena: NOT_DEPLOYED,
     pufETHwstE: NOT_DEPLOYED,
+    GHOcrvUSD: NOT_DEPLOYED,
 
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
@@ -1042,6 +1069,7 @@ export const tokenDataByNetwork: Record<
     cvxcrvUSDUSDT: NOT_DEPLOYED,
     cvxcrvUSDFRAX: NOT_DEPLOYED,
     cvxcrvUSDETHCRV: NOT_DEPLOYED,
+    cvxGHOcrvUSD: NOT_DEPLOYED,
 
     crvUSD: NOT_DEPLOYED,
 
@@ -1063,6 +1091,7 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDUSDT: NOT_DEPLOYED,
     stkcvxcrvUSDFRAX: NOT_DEPLOYED,
     stkcvxcrvUSDETHCRV: NOT_DEPLOYED,
+    stkcvxGHOcrvUSD: NOT_DEPLOYED,
 
     cvxcrvUSDT: NOT_DEPLOYED,
 
@@ -1165,6 +1194,8 @@ export const tokenDataByNetwork: Record<
     GHO: NOT_DEPLOYED,
     GHOUSDe: NOT_DEPLOYED,
     GHO_USDT_USDC: NOT_DEPLOYED,
+
+    zpufETH: NOT_DEPLOYED,
   },
 };
 

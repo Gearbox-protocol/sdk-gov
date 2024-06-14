@@ -27,4 +27,5 @@ export enum AdapterInterface {
   CONVEX_L2_BOOSTER,
   CONVEX_L2_REWARD_POOL,
   AAVE_V3_LENDING_POOL,
+  ZIRCUIT_POOL,
 }

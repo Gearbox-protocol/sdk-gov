@@ -592,6 +592,14 @@ contract TokensDataLive {
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
         );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.GHOcrvUSD,
+                addr: 0x635EF0056A597D13863B73825CcA297236578595,
+                symbol: "GHOcrvUSD",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
 
         tokenDataByNetwork[1].push(
             TokenData({
@@ -771,6 +779,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.cvxGHOcrvUSD,
+                addr: 0x53f4474c06c699307514bd55FB1607005F46a889,
+                symbol: "cvxGHOcrvUSD",
+                tokenType: TokenType.CONVEX_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.stkcvx3Crv,
                 addr: 0xbAc7a431146aeAf3F57A16b9954f332Fd292F270,
                 symbol: "stkcvx3Crv",
@@ -902,6 +918,14 @@ contract TokensDataLive {
                 id: Tokens.stkcvxcrvUSDETHCRV,
                 addr: 0x0Bf1626d4925F8A872801968be11c052862AC2D3,
                 symbol: "stkcvxcrvUSDETHCRV",
+                tokenType: TokenType.CONVEX_STAKED_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.stkcvxGHOcrvUSD,
+                addr: 0xa19Da509625f0e36050eA2906E991A99B29D3221,
+                symbol: "stkcvxGHOcrvUSD",
                 tokenType: TokenType.CONVEX_STAKED_TOKEN
             })
         );
@@ -1224,6 +1248,14 @@ contract TokensDataLive {
             })
         );
 
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.zpufETH,
+                addr: 0x6c3f1FFBFD445354fD97EFbf42e0B1216dD2383e,
+                symbol: "zpufETH",
+                tokenType: TokenType.ZIRCUIT_STAKED_TOKEN
+            })
+        );
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.dDAI,
