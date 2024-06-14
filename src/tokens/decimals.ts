@@ -73,6 +73,7 @@ export const decimals: Record<SupportedToken, number> = {
   MtEthena: 18,
   GHOUSDe: 18,
   pufETHwstE: 18,
+  GHOcrvUSD: 18,
   wstETHCRV: 18,
   crvUSD: 18,
   crvUSDUSDC: 18,
@@ -103,6 +104,7 @@ export const decimals: Record<SupportedToken, number> = {
   cvxcrvUSDUSDT: 18,
   cvxcrvUSDFRAX: 18,
   cvxcrvUSDETHCRV: 18,
+  cvxGHOcrvUSD: 18,
   stkcvx3Crv: 18,
   stkcvxcrvFRAX: 18,
   stkcvxsteCRV: 18,
@@ -120,6 +122,7 @@ export const decimals: Record<SupportedToken, number> = {
   stkcvxcrvUSDUSDT: 18,
   stkcvxcrvUSDFRAX: 18,
   stkcvxcrvUSDETHCRV: 18,
+  stkcvxGHOcrvUSD: 18,
   cvxcrvUSDT: 18,
   yvDAI: 18,
   yvUSDC: 6,
@@ -198,6 +201,8 @@ export const decimals: Record<SupportedToken, number> = {
   aurawstETH_rETH_sfrxETH_vault: 18,
   aurawstETH_WETH_BPT: 18,
   aurawstETH_WETH_BPT_vault: 18,
+
+  zpufETH: 18,
 
   aDAI: 18,
   aUSDC: 6,

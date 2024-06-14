@@ -37,20 +37,59 @@ const levCreditManager: CreditManagerV3DeployConfig = {
       lt: 9000,
     },
     {
+      token: "pufETH",
+      lt: 9000,
+    },
+    {
+      token: "zpufETH",
+      lt: 9000,
+    },
+    {
       token: "LDO",
       lt: 8250,
+    },
+    {
+      token: "GHO",
+      lt: 9000,
+    },
+    {
+      token: "crvUSD",
+      lt: 9000,
+    },
+    {
+      token: "stkcvxGHOcrvUSD",
+      lt: 9000,
     },
     // Compatibility
     {
       token: "USDeUSDC",
       lt: 0,
     },
+    {
+      token: "GHOcrvUSD",
+      lt: 0,
+    },
+    {
+      token: "cvxGHOcrvUSD",
+      lt: 0,
+    },
+    // Rewards
+    {
+      token: "CRV",
+      lt: 0,
+    },
+    {
+      token: "CVX",
+      lt: 0,
+    },
   ],
   adapters: [
     levUniV3Config,
-    {
-      contract: "CURVE_USDE_USDC_POOL",
-    },
+    { contract: "CURVE_USDE_USDC_POOL" },
+    { contract: "CURVE_GHO_CRVUSD_POOL" },
+    { contract: "ZIRCUIT_POOL" },
+    { contract: "CONVEX_BOOSTER" },
+    { contract: "CONVEX_GHO_CRVUSD_POOL" },
   ],
 };
 
@@ -85,11 +124,71 @@ export const testUsdcConfigMainnet: PoolV3DeployConfig = {
       quotaIncreaseFee: 1,
       limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
+    pufETH: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 1,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    zpufETH: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 1,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
     LDO: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 1,
       limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    USDeUSDC: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0),
+    },
+    GHO: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    crvUSD: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    GHOcrvUSD: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: (BigInt(0) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    cvxGHOcrvUSD: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: (BigInt(0) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    stkcvxGHOcrvUSD: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    CRV: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: (BigInt(0) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    CVX: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: (BigInt(0) * POOL_DECIMALS) / POOL_DIVIDER,
     },
   },
   creditManagers: [levCreditManager],

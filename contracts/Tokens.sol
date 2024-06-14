@@ -82,6 +82,7 @@ enum Tokens {
     MtEthena,
     GHOUSDe,
     pufETHwstE,
+    GHOcrvUSD,
     wstETHCRV,
     _2CRV,
     _3c_crvUSD,
@@ -112,6 +113,7 @@ enum Tokens {
     cvxcrvUSDUSDT,
     cvxcrvUSDFRAX,
     cvxcrvUSDETHCRV,
+    cvxGHOcrvUSD,
     stkcvx3Crv,
     stkcvxcrvFRAX,
     stkcvxsteCRV,
@@ -129,6 +131,7 @@ enum Tokens {
     stkcvxcrvUSDUSDT,
     stkcvxcrvUSDFRAX,
     stkcvxcrvUSDETHCRV,
+    stkcvxGHOcrvUSD,
     cvxcrvUSDT,
     yvDAI,
     yvUSDC,
@@ -199,6 +202,7 @@ enum Tokens {
     aurawstETH_rETH_sfrxETH_vault,
     auracbETH_rETH_wstETH_vault,
     aurarETH_wETH_BPT_vault,
+    zpufETH,
     dDAI,
     dUSDC,
     dWBTC,
@@ -238,5 +242,12 @@ enum TokenType {
     WRAPPED_TOKEN,
     AURA_LP_TOKEN,
     AURA_STAKED_TOKEN,
-    CONVEX_L2_STAKED_TOKEN
+    CONVEX_L2_STAKED_TOKEN,
+    ZIRCUIT_STAKED_TOKEN
+}
+
+enum PhantomTokenType {
+    NO_TOKEN,
+    CONVEX_PHANTOM_TOKEN,
+    ZIRCUIT_PHANTOM_TOKEN
 }

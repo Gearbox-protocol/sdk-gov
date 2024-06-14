@@ -24,7 +24,7 @@ import {
   supportedTokens,
   tokenDataByNetwork,
 } from "../tokens/token";
-import { TokenType } from "../tokens/tokenType";
+import { PhantomTokenType, TokenType } from "../tokens/tokenType";
 import { safeEnum } from "../utils/safeEnum";
 
 class BindingsGenerator {
@@ -44,6 +44,13 @@ class BindingsGenerator {
       .join(",\n");
 
     data += `enum TokenType {${tokenTypeEnum}}`;
+
+    const phantomTokenTypeEnum = Object.values(PhantomTokenType)
+      .filter(v => isNaN(Number(v)))
+      .map(t => safeEnum(t as string))
+      .join(",\n");
+
+    data += `enum PhantomTokenType {${phantomTokenTypeEnum}}`;
 
     this.makeBindings("Tokens.sol", data);
   }
@@ -765,7 +772,8 @@ class BindingsGenerator {
           contractParam.type === AdapterInterface.CAMELOT_V3_ROUTER ||
           contractParam.type === AdapterInterface.CONVEX_L2_BOOSTER ||
           contractParam.type === AdapterInterface.CONVEX_L2_REWARD_POOL ||
-          contractParam.type === AdapterInterface.AAVE_V3_LENDING_POOL,
+          contractParam.type === AdapterInterface.AAVE_V3_LENDING_POOL ||
+          contractParam.type === AdapterInterface.ZIRCUIT_POOL,
       )
       .map(
         ([contract, contractParam]) =>
