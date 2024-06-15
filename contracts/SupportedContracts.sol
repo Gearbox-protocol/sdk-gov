@@ -217,6 +217,13 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_GHO_CRVUSD_POOL,
+                addr: 0x635EF0056A597D13863B73825CcA297236578595,
+                name: "CURVE_GHO_CRVUSD_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_GEAR_POOL,
                 addr: 0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2,
                 name: "CURVE_GEAR_POOL"
@@ -456,6 +463,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "CONVEX_TRI_CRV_POOL"
             })
         );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CONVEX_GHO_CRVUSD_POOL,
+                addr: 0x5eC758f79b96AE74e7F1Ba9583009aFB3fc8eACB,
+                name: "CONVEX_GHO_CRVUSD_POOL"
+            })
+        );
 
         contractDataByNetwork[1].push(
             ContractData({
@@ -563,6 +577,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.FLUX_USDC_POOL,
                 addr: 0x465a5a630482f3abD6d3b84B39B29b07214d19e5,
                 name: "FLUX_USDC_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.ZIRCUIT_POOL,
+                addr: 0xF047ab4c75cebf0eB9ed34Ae2c186f3611aEAfa6,
+                name: "ZIRCUIT_POOL"
             })
         );
         contractDataByNetwork[42161].push(

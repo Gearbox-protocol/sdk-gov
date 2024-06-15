@@ -19,4 +19,5 @@ export enum Protocols {
   Ethena,
   AaveV3,
   Pancakeswap,
+  Zircuit,
 }
