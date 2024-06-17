@@ -26,12 +26,12 @@ export type DieselStakedTokenTypes =
   | "sdUSDCV3"
   | "sdWBTCV3"
   | "sdWETHV3"
-  | "sdWETHV3_BROKEN"
+  | "sdWETHV3_OLD"
   | "sdUSDTV3"
   | "sdGHOV3"
   | "sdDAIV3"
   | "sdcrvUSDV3"
-  | "sdUSDC_eV3_BROKEN"
+  | "sdUSDC_eV3_OLD"
   | "sdUSDC_eV3";
 
 export type GearboxToken = "GEAR";
@@ -45,7 +45,7 @@ export type DieselWithStkTokenV3Data = {
   symbol: DieselTokenWithStkTypes;
   type: PartialRecord<TokenNetwork, TokenType.DIESEL_LP_TOKEN>;
   stakedToken: DieselStakedTokenTypes;
-  stakedToken_BROKEN?: Array<DieselStakedTokenTypes>;
+  stakedToken_OLD?: Array<DieselStakedTokenTypes>;
 } & TokenBase;
 
 export type DieselStakedTokenData = {
@@ -117,7 +117,7 @@ const dieselWithStkTokens: Record<
     symbol: "dUSDC_eV3",
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     stakedToken: "sdUSDC_eV3",
-    stakedToken_BROKEN: ["sdUSDC_eV3_BROKEN"],
+    stakedToken_OLD: ["sdUSDC_eV3_OLD"],
   },
   dWBTCV3: {
     name: "dWBTCV3",
@@ -130,7 +130,7 @@ const dieselWithStkTokens: Record<
     symbol: "dWETHV3",
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     stakedToken: "sdWETHV3",
-    stakedToken_BROKEN: ["sdWETHV3_BROKEN"],
+    stakedToken_OLD: ["sdWETHV3_OLD"],
   },
 
   dUSDTV3: {
@@ -177,9 +177,9 @@ const dieselStakedTokens: Record<
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     underlying: "dUSDC_eV3",
   },
-  sdUSDC_eV3_BROKEN: {
-    name: "sdUSDC_eV3_BROKEN",
-    symbol: "sdUSDC_eV3_BROKEN",
+  sdUSDC_eV3_OLD: {
+    name: "sdUSDC_eV3_OLD",
+    symbol: "sdUSDC_eV3_OLD",
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     underlying: "dUSDC_eV3",
   },
@@ -195,9 +195,9 @@ const dieselStakedTokens: Record<
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     underlying: "dWETHV3",
   },
-  sdWETHV3_BROKEN: {
-    name: "sdWETHV3_BROKEN",
-    symbol: "sdWETHV3_BROKEN",
+  sdWETHV3_OLD: {
+    name: "sdWETHV3_OLD",
+    symbol: "sdWETHV3_OLD",
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     underlying: "dWETHV3",
   },

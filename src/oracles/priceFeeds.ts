@@ -2871,7 +2871,7 @@ export const priceFeedsByToken: Record<
       },
     },
   },
-  sdUSDC_eV3_BROKEN: {
+  sdUSDC_eV3_OLD: {
     Mainnet: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
@@ -2929,7 +2929,7 @@ export const priceFeedsByToken: Record<
       },
     },
   },
-  sdWETHV3_BROKEN: {
+  sdWETHV3_OLD: {
     Mainnet: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
