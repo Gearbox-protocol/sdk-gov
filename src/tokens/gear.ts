@@ -44,7 +44,7 @@ export type DieselWithStkTokenV3Data = {
   symbol: DieselTokenWithStkTypes;
   type: PartialRecord<TokenNetwork, TokenType.DIESEL_LP_TOKEN>;
   stakedToken: DieselStakedTokenTypes;
-  stakedToken_OLD?: Array<DieselStakedTokenTypes>;
+  stakedToken_OLD?: DieselStakedTokenTypes;
 } & TokenBase;
 
 export type DieselStakedTokenData = {
@@ -128,7 +128,7 @@ const dieselWithStkTokens: Record<
     symbol: "dWETHV3",
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     stakedToken: "sdWETHV3",
-    stakedToken_OLD: ["sdWETHV3_OLD"],
+    stakedToken_OLD: "sdWETHV3_OLD",
   },
 
   dUSDTV3: {
