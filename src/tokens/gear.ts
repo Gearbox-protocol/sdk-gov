@@ -178,7 +178,7 @@ const dieselStakedTokens: Record<
     underlying: "dUSDC_eV3",
   },
   sdUSDC_eV3_OLD: {
-    name: "sdUSDC_eV3_OLD",
+    name: "sdUSDC.eV3 Old",
     symbol: "sdUSDC_eV3_OLD",
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     underlying: "dUSDC_eV3",
@@ -196,7 +196,7 @@ const dieselStakedTokens: Record<
     underlying: "dWETHV3",
   },
   sdWETHV3_OLD: {
-    name: "sdWETHV3_OLD",
+    name: "sdWETHV3 Old",
     symbol: "sdWETHV3_OLD",
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     underlying: "dWETHV3",
