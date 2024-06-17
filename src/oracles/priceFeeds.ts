@@ -2871,20 +2871,6 @@ export const priceFeedsByToken: Record<
       },
     },
   },
-  sdUSDC_eV3_OLD: {
-    Mainnet: {
-      Main: {
-        type: PriceFeedType.ZERO_ORACLE,
-        trusted: false,
-      },
-    },
-    Arbitrum: {
-      Main: {
-        type: PriceFeedType.ZERO_ORACLE,
-        trusted: false,
-      },
-    },
-  },
   sdUSDC_eV3: {
     Mainnet: {
       Main: {

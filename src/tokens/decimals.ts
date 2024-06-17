@@ -160,7 +160,6 @@ export const decimals: Record<SupportedToken, number> = {
   sdcrvUSDV3: 18,
 
   dUSDC_eV3: 6,
-  sdUSDC_eV3_OLD: 6,
   sdUSDC_eV3: 6,
 
   GEAR: 18,

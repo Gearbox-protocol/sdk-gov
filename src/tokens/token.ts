@@ -385,7 +385,6 @@ export const tokenDataByNetwork: Record<
 
     dUSDC_eV3: NOT_DEPLOYED,
     sdUSDC_eV3: NOT_DEPLOYED,
-    sdUSDC_eV3_OLD: NOT_DEPLOYED,
 
     GEAR: "0xBa3335588D9403515223F109EdC4eB7269a9Ab5D",
 
@@ -653,8 +652,7 @@ export const tokenDataByNetwork: Record<
     sdcrvUSDV3: NOT_DEPLOYED,
 
     dUSDC_eV3: "0xa76c604145D7394DEc36C49Af494C144Ff327861",
-    sdUSDC_eV3: NOT_DEPLOYED,
-    sdUSDC_eV3_OLD: "0x608F9e2E8933Ce6b39A8CddBc34a1e3E8D21cE75",
+    sdUSDC_eV3: "0x608F9e2E8933Ce6b39A8CddBc34a1e3E8D21cE75",
 
     GEAR: "0x2F26337576127efabEEc1f62BE79dB1bcA9148A4",
 
@@ -921,7 +919,6 @@ export const tokenDataByNetwork: Record<
 
     dUSDC_eV3: NOT_DEPLOYED,
     sdUSDC_eV3: NOT_DEPLOYED,
-    sdUSDC_eV3_OLD: NOT_DEPLOYED,
 
     GEAR: "0x39E6C2E1757ae4354087266E2C3EA9aC4257C1eb",
 
@@ -1188,7 +1185,6 @@ export const tokenDataByNetwork: Record<
 
     dUSDC_eV3: NOT_DEPLOYED,
     sdUSDC_eV3: NOT_DEPLOYED,
-    sdUSDC_eV3_OLD: NOT_DEPLOYED,
 
     GEAR: NOT_DEPLOYED,
 
