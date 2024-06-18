@@ -308,11 +308,12 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ DAI ------------------------
-        chainlinkPriceFeedsByNetwork[1].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[1].push(
+            BoundedPriceFeedData({
                 token: Tokens.DAI,
                 priceFeed: 0xAed0c38402a5d19df6E4c03F4E2DceD6e29c1ee9,
                 stalenessPeriod: 4500,
+                upperBound: 104000000,
                 trusted: true,
                 reserve: false
             })
@@ -339,11 +340,12 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
-        chainlinkPriceFeedsByNetwork[42161].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[42161].push(
+            BoundedPriceFeedData({
                 token: Tokens.DAI,
                 priceFeed: 0xc5C8E77B397E531B8EC06BFb0048328B30E9eCfB,
                 stalenessPeriod: 86520,
+                upperBound: 104000000,
                 trusted: false,
                 reserve: false
             })
@@ -370,11 +372,12 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
-        chainlinkPriceFeedsByNetwork[10].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[10].push(
+            BoundedPriceFeedData({
                 token: Tokens.DAI,
                 priceFeed: 0x8dBa75e83DA73cc766A7e5a0ee71F656BAb470d6,
                 stalenessPeriod: 86520,
+                upperBound: 104000000,
                 trusted: false,
                 reserve: false
             })
@@ -661,11 +664,12 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ USDC ------------------------
-        chainlinkPriceFeedsByNetwork[1].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[1].push(
+            BoundedPriceFeedData({
                 token: Tokens.USDC,
                 priceFeed: 0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6,
                 stalenessPeriod: 87300,
+                upperBound: 104000000,
                 trusted: true,
                 reserve: false
             })
@@ -692,11 +696,12 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
-        chainlinkPriceFeedsByNetwork[42161].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[42161].push(
+            BoundedPriceFeedData({
                 token: Tokens.USDC,
                 priceFeed: 0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3,
                 stalenessPeriod: 86520,
+                upperBound: 104000000,
                 trusted: true,
                 reserve: false
             })
@@ -723,12 +728,13 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
-        chainlinkPriceFeedsByNetwork[10].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[10].push(
+            BoundedPriceFeedData({
                 token: Tokens.USDC,
                 priceFeed: 0x16a9FA2FDa030272Ce99B29CF780dFA30361E0f3,
                 stalenessPeriod: 86520,
-                trusted: false,
+                upperBound: 104000000,
+                trusted: true,
                 reserve: false
             })
         );
@@ -756,11 +762,12 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ USDC_e ------------------------
-        chainlinkPriceFeedsByNetwork[42161].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[42161].push(
+            BoundedPriceFeedData({
                 token: Tokens.USDC_e,
                 priceFeed: 0x50834F3163758fcC1Df9973b6e91f0F0F0434aD3,
                 stalenessPeriod: 86520,
+                upperBound: 104000000,
                 trusted: true,
                 reserve: false
             })
@@ -787,12 +794,13 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
-        chainlinkPriceFeedsByNetwork[10].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[10].push(
+            BoundedPriceFeedData({
                 token: Tokens.USDC_e,
                 priceFeed: 0x16a9FA2FDa030272Ce99B29CF780dFA30361E0f3,
                 stalenessPeriod: 86520,
-                trusted: false,
+                upperBound: 104000000,
+                trusted: true,
                 reserve: false
             })
         );
@@ -820,11 +828,12 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ USDT ------------------------
-        chainlinkPriceFeedsByNetwork[1].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[1].push(
+            BoundedPriceFeedData({
                 token: Tokens.USDT,
                 priceFeed: 0x3E7d1eAB13ad0104d2750B8863b489D65364e32D,
                 stalenessPeriod: 87300,
+                upperBound: 104000000,
                 trusted: false,
                 reserve: false
             })
@@ -851,11 +860,12 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
-        chainlinkPriceFeedsByNetwork[42161].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[42161].push(
+            BoundedPriceFeedData({
                 token: Tokens.USDT,
                 priceFeed: 0x3f3f5dF88dC9F13eac63DF89EC16ef6e7E25DdE7,
                 stalenessPeriod: 86520,
+                upperBound: 104000000,
                 trusted: false,
                 reserve: false
             })
@@ -882,11 +892,12 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
-        chainlinkPriceFeedsByNetwork[10].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[10].push(
+            BoundedPriceFeedData({
                 token: Tokens.USDT,
                 priceFeed: 0xECef79E109e997bCA29c1c0897ec9d7b03647F5E,
                 stalenessPeriod: 86520,
+                upperBound: 104000000,
                 trusted: false,
                 reserve: false
             })
@@ -1417,11 +1428,12 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ USDe ------------------------
-        chainlinkPriceFeedsByNetwork[1].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[1].push(
+            BoundedPriceFeedData({
                 token: Tokens.USDe,
                 priceFeed: 0xa569d910839Ae8865Da8F8e70FfFb0cBA869F961,
                 stalenessPeriod: 87300,
+                upperBound: 104000000,
                 trusted: false,
                 reserve: false
             })
@@ -1448,11 +1460,12 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
-        chainlinkPriceFeedsByNetwork[42161].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[42161].push(
+            BoundedPriceFeedData({
                 token: Tokens.USDe,
                 priceFeed: 0x88AC7Bca36567525A866138F03a6F6844868E0Bc,
                 stalenessPeriod: 86520,
+                upperBound: 104000000,
                 trusted: false,
                 reserve: false
             })
@@ -1613,11 +1626,12 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ MIM ------------------------
-        chainlinkPriceFeedsByNetwork[1].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[1].push(
+            BoundedPriceFeedData({
                 token: Tokens.MIM,
                 priceFeed: 0x7A364e8770418566e3eb2001A96116E6138Eb32F,
                 stalenessPeriod: 87300,
+                upperBound: 104000000,
                 trusted: false,
                 reserve: false
             })
@@ -2395,11 +2409,12 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ GHO ------------------------
-        chainlinkPriceFeedsByNetwork[1].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[1].push(
+            BoundedPriceFeedData({
                 token: Tokens.GHO,
                 priceFeed: 0x3f12643D3f6f874d39C2a4c9f2Cd6f2DbAC877FC,
                 stalenessPeriod: 87300,
+                upperBound: 104000000,
                 trusted: false,
                 reserve: false
             })
@@ -3370,11 +3385,12 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ crvUSD ------------------------
-        chainlinkPriceFeedsByNetwork[1].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[1].push(
+            BoundedPriceFeedData({
                 token: Tokens.crvUSD,
                 priceFeed: 0xEEf0C605546958c1f899b6fB336C20671f9cD49F,
-                stalenessPeriod: 86400,
+                stalenessPeriod: 87300,
+                upperBound: 104000000,
                 trusted: false,
                 reserve: false
             })
@@ -3401,13 +3417,36 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
-        chainlinkPriceFeedsByNetwork[42161].push(
-            ChainlinkPriceFeedData({
+        boundedPriceFeedsByNetwork[42161].push(
+            BoundedPriceFeedData({
                 token: Tokens.crvUSD,
                 priceFeed: 0x0a32255dd4BB6177C994bAAc73E0606fDD568f66,
                 stalenessPeriod: 86520,
+                upperBound: 104000000,
                 trusted: false,
                 reserve: false
+            })
+        );
+        redStonePriceFeedsByNetwork[42161].push(
+            RedStonePriceFeedData({
+                token: Tokens.crvUSD,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "crvUSD",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
             })
         );
 
