@@ -137,6 +137,7 @@ contract PriceFeedDataLive {
     mapping(address => string) redstoneServiceIdByPriceFeed;
     mapping(uint256 => BalancerLPPriceFeedData[]) balancerStableLPPriceFeedsByNetwork;
     mapping(uint256 => BalancerLPPriceFeedData[]) balancerWeightedLPPriceFeedsByNetwork;
+    mapping(uint256 => GenericLPPriceFeedData[]) mellowLRTPriceFeedsByNetwork; 
 
     constructor() {
         // $GENERATE_HERE$

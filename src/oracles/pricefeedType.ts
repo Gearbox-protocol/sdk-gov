@@ -30,6 +30,7 @@ export enum PriceFeedType {
   NETWORK_DEPENDENT,
   CURVE_USD_ORACLE,
   PYTH_ORACLE,
+  MELLOW_LRT_ORACLE,
 }
 
 export const lpPriceFeedTypes: Array<PriceFeedType> = [
@@ -45,6 +46,7 @@ export const lpPriceFeedTypes: Array<PriceFeedType> = [
   PriceFeedType.CURVE_CRYPTO_ORACLE,
   PriceFeedType.ERC4626_VAULT_ORACLE,
   PriceFeedType.CURVE_USD_ORACLE,
+  PriceFeedType.MELLOW_LRT_ORACLE,
 ];
 
 export const HOUR_1 = 60 * 60;
@@ -169,4 +171,8 @@ export type PriceFeedData =
   | {
       type: PriceFeedType.CURVE_USD_ORACLE;
       underlying: NormalToken;
+    }
+  | {
+      type: PriceFeedType.MELLOW_LRT_ORACLE;
+      underlying: SupportedToken;
     };

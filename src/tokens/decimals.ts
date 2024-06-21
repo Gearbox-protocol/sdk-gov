@@ -211,6 +211,11 @@ export const decimals: Record<SupportedToken, number> = {
 
   zpufETH: 18,
 
+  steakLRT: 18,
+  Re7LRT: 18,
+  amphrETH: 18,
+  rstETH: 18,
+
   aDAI: 18,
   aUSDC: 6,
   aUSDT: 6,

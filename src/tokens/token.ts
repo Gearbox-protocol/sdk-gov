@@ -414,6 +414,12 @@ export const tokenDataByNetwork: Record<
 
     // ZIRCUIT
     zpufETH: "0x6c3f1FFBFD445354fD97EFbf42e0B1216dD2383e",
+
+    // MELLOW LRT
+    steakLRT: "0xBEEF69Ac7870777598A04B2bd4771c71212E6aBc",
+    Re7LRT: "0x84631c0d0081FDe56DeB72F6DE77abBbF6A9f93a",
+    amphrETH: "0x5fD13359Ba15A84B76f7F87568309040176167cd",
+    rstETH: "0x7a4EffD87C2f3C55CA251080b1343b605f327E3a",
   },
 
   ///
@@ -680,6 +686,12 @@ export const tokenDataByNetwork: Record<
 
     // ZIRCUIT
     zpufETH: NOT_DEPLOYED,
+
+    // MELLOW LRT
+    steakLRT: NOT_DEPLOYED,
+    Re7LRT: NOT_DEPLOYED,
+    amphrETH: NOT_DEPLOYED,
+    rstETH: NOT_DEPLOYED,
   },
   ///
   ///
@@ -946,6 +958,12 @@ export const tokenDataByNetwork: Record<
 
     // ZIRCUIT
     zpufETH: NOT_DEPLOYED,
+
+    // MELLOW LRT
+    steakLRT: NOT_DEPLOYED,
+    Re7LRT: NOT_DEPLOYED,
+    amphrETH: NOT_DEPLOYED,
+    rstETH: NOT_DEPLOYED,
   },
   //
   //
@@ -1214,6 +1232,12 @@ export const tokenDataByNetwork: Record<
     GHO_USDT_USDC: NOT_DEPLOYED,
 
     zpufETH: NOT_DEPLOYED,
+
+    // MELLOW LRT
+    steakLRT: NOT_DEPLOYED,
+    Re7LRT: NOT_DEPLOYED,
+    amphrETH: NOT_DEPLOYED,
+    rstETH: NOT_DEPLOYED,
   },
 };
 
