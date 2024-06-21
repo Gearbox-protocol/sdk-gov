@@ -310,6 +310,16 @@ class BindingsGenerator {
     result = this.generatePythFeedData(token, priceFeedData, chainId, reserve);
     if (result) return result;
 
+    result = this.generateGenericLPPriceFeedData(
+      token,
+      priceFeedData,
+      chainId,
+      "mellowLRTPriceFeedsByNetwork",
+      PriceFeedType.MELLOW_LRT_ORACLE,
+      reserve,
+    );
+    if (result) return result;
+
     return undefined;
   }
 
@@ -576,7 +586,8 @@ class BindingsGenerator {
       if (
         priceFeedData.type === PriceFeedType.WRAPPED_AAVE_V2_ORACLE ||
         priceFeedData.type === PriceFeedType.COMPOUND_V2_ORACLE ||
-        priceFeedData.type === PriceFeedType.ERC4626_VAULT_ORACLE
+        priceFeedData.type === PriceFeedType.ERC4626_VAULT_ORACLE ||
+        priceFeedData.type === PriceFeedType.MELLOW_LRT_ORACLE
       ) {
         return `${varName}[${chainId}].push(GenericLPPriceFeedData({ lpToken: ${this.tokensEnum(
           token,

@@ -58,6 +58,11 @@ export type NormalToken =
   | "GHO"
   | "pufETH"
   | "wstETH"
+  // Mellow LRTs
+  | "steakLRT"
+  | "Re7LRT"
+  | "amphrETH"
+  | "rstETH"
 
   // REDSTONE
   | "SHIB"
@@ -404,6 +409,26 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   wstETH: {
     name: "Wrapped stETH",
     symbol: "wstETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  steakLRT: {
+    name: "Steakhouse Mellow LRT",
+    symbol: "steakLRT",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  Re7LRT: {
+    name: "Re7 Mellow LRT",
+    symbol: "Re7LRT",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  amphrETH: {
+    name: "Mev Capital Mellow LRT",
+    symbol: "amphrETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  rstETH: {
+    name: "P2P Mellow LRT",
+    symbol: "rstETH",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };

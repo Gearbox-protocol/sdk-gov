@@ -3455,4 +3455,41 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  // MELLOW
+  steakLRT: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.MELLOW_LRT_ORACLE,
+        underlying: "WETH",
+        trusted: false,
+      },
+    },
+  },
+  Re7LRT: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.MELLOW_LRT_ORACLE,
+        underlying: "WETH",
+        trusted: false,
+      },
+    },
+  },
+  amphrETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.MELLOW_LRT_ORACLE,
+        underlying: "WETH",
+        trusted: false,
+      },
+    },
+  },
+  rstETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.MELLOW_LRT_ORACLE,
+        underlying: "WETH",
+        trusted: false,
+      },
+    },
+  },
 };

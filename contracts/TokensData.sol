@@ -426,6 +426,38 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.steakLRT,
+                addr: 0xBEEF69Ac7870777598A04B2bd4771c71212E6aBc,
+                symbol: "steakLRT",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.Re7LRT,
+                addr: 0x84631c0d0081FDe56DeB72F6DE77abBbF6A9f93a,
+                symbol: "Re7LRT",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.amphrETH,
+                addr: 0x5fD13359Ba15A84B76f7F87568309040176167cd,
+                symbol: "amphrETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.rstETH,
+                addr: 0x7a4EffD87C2f3C55CA251080b1343b605f327E3a,
+                symbol: "rstETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.sfrxETH,
                 addr: 0xac3E018457B222d93114458476f3E3416Abbe38F,
                 symbol: "sfrxETH",
@@ -1730,6 +1762,7 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
+
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: Tokens.sfrxETH,
@@ -2246,6 +2279,7 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
+
         tokenDataByNetwork[10].push(
             TokenData({
                 id: Tokens.sfrxETH,

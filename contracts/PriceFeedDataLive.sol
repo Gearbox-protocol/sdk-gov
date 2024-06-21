@@ -137,6 +137,7 @@ contract PriceFeedDataLive {
     mapping(address => string) redstoneServiceIdByPriceFeed;
     mapping(uint256 => BalancerLPPriceFeedData[]) balancerStableLPPriceFeedsByNetwork;
     mapping(uint256 => BalancerLPPriceFeedData[]) balancerWeightedLPPriceFeedsByNetwork;
+    mapping(uint256 => GenericLPPriceFeedData[]) mellowLRTPriceFeedsByNetwork;
 
     constructor() {
         // ------------------------ 1INCH ------------------------
@@ -800,7 +801,7 @@ contract PriceFeedDataLive {
                 priceFeed: 0x16a9FA2FDa030272Ce99B29CF780dFA30361E0f3,
                 stalenessPeriod: 86520,
                 upperBound: 104000000,
-                trusted: true,
+                trusted: false,
                 reserve: false
             })
         );
@@ -7298,6 +7299,62 @@ contract PriceFeedDataLive {
                 trusted: false,
                 reserve: false
             })
+        );
+
+        // ------------------------ steakLRT ------------------------
+        mellowLRTPriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: Tokens.steakLRT, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+        mellowLRTPriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: Tokens.steakLRT, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+        mellowLRTPriceFeedsByNetwork[10].push(
+            GenericLPPriceFeedData({lpToken: Tokens.steakLRT, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+        mellowLRTPriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: Tokens.steakLRT, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+
+        // ------------------------ Re7LRT ------------------------
+        mellowLRTPriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: Tokens.Re7LRT, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+        mellowLRTPriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: Tokens.Re7LRT, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+        mellowLRTPriceFeedsByNetwork[10].push(
+            GenericLPPriceFeedData({lpToken: Tokens.Re7LRT, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+        mellowLRTPriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: Tokens.Re7LRT, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+
+        // ------------------------ amphrETH ------------------------
+        mellowLRTPriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: Tokens.amphrETH, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+        mellowLRTPriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: Tokens.amphrETH, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+        mellowLRTPriceFeedsByNetwork[10].push(
+            GenericLPPriceFeedData({lpToken: Tokens.amphrETH, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+        mellowLRTPriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: Tokens.amphrETH, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+
+        // ------------------------ rstETH ------------------------
+        mellowLRTPriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: Tokens.rstETH, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+        mellowLRTPriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: Tokens.rstETH, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+        mellowLRTPriceFeedsByNetwork[10].push(
+            GenericLPPriceFeedData({lpToken: Tokens.rstETH, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+        mellowLRTPriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: Tokens.rstETH, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
     }
 
