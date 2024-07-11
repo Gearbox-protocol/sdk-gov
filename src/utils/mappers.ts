@@ -1,6 +1,9 @@
 type SupportedValue = string | number;
 
 export class TypedObjectUtils {
+  static keys = <K extends SupportedValue, T>(o: Record<K, T>): Array<K> =>
+    Object.keys(o) as Array<K>;
+
   static entries = <K extends SupportedValue, T>(
     o: Record<K, T>,
   ): Array<[K, T]> => Object.entries(o) as Array<[K, T]>;
