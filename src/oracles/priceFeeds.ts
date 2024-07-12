@@ -1445,7 +1445,7 @@ export const priceFeedsByToken: Record<
           address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
           stalenessPeriod: HOUR_1_BUFFERED,
         },
-        trusted: false
+        trusted: false,
       },
       Reserve: {
         type: PriceFeedType.COMPOSITE_ORACLE,
@@ -1896,7 +1896,7 @@ export const priceFeedsByToken: Record<
       },
       Reserve: {
         type: PriceFeedType.CURVE_2LP_ORACLE,
-        assets: ["USDe", "USDC"]
+        assets: ["USDe", "USDC"],
       },
     },
   },
@@ -2177,7 +2177,7 @@ export const priceFeedsByToken: Record<
       },
       Reserve: {
         type: PriceFeedType.CURVE_2LP_ORACLE,
-        assets: ["USDC", "USDe"]
+        assets: ["USDC", "USDe"],
       },
     },
   },
