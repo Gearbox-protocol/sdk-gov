@@ -731,8 +731,8 @@ export const CAMELOT_V3_QUOTER: Address =
 export const PANCAKESWAP_V3_QUOTER: Address =
   "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997";
 
-  
-  const VELODROME_V2_DEFAULT_FACTORY: Address =
+
+export const VELODROME_V2_DEFAULT_FACTORY: Address =
     "0xF1046053aa5682b4F9a81b5481394DA16BE5FF5a";
 
 export interface BaseContractParams {
