@@ -1422,6 +1422,38 @@ export const priceFeedsByToken: Record<
         },
       },
     },
+    Optimism: {
+      Main: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0xFAD40C0e2BeF93c6a822015863045CAAeAAde4d3",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x13e3Ee699D1909E989722E753853AE30b17e08c5",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
+        trusted: false,
+      },
+
+      Reserve: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "ezETH_FUNDAMENTAL",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x13e3Ee699D1909E989722E753853AE30b17e08c5",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
+      },
+    },
   },
 
   rswETH: {
