@@ -1443,7 +1443,7 @@ export const priceFeedsByToken: Record<
         targetToBasePriceFeed: {
           type: PriceFeedType.REDSTONE_ORACLE,
           dataServiceId: "redstone-primary-prod",
-          dataId: "ezETH_FUNDAMENTAL",
+          dataId: "ezETH/ETH",
           ...REDSTONE_SIGNERS,
           stalenessPeriod: FOUR_MINUTES,
         },
