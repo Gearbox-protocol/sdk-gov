@@ -827,9 +827,13 @@ export const priceFeedsByToken: Record<
   FRAX: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: "0xB9E1E3A9feFf48998E45Fa90847ed4D467E8BcfD",
-        stalenessPeriod: HOUR_1_BUFFERED,
+        type: PriceFeedType.BOUNDED_ORACLE,
+        priceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0xB9E1E3A9feFf48998E45Fa90847ed4D467E8BcfD",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+        upperBound: (BigInt(1e8) * 104n) / 100n,
         trusted: false,
       },
       Reserve: {
