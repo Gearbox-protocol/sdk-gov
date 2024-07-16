@@ -744,7 +744,7 @@ export const tokenDataByNetwork: Record<
     rETH: "0x9Bcef72be871e61ED4fBbc7630889beE758eb81D",
     osETH: NOT_DEPLOYED,
     weETH: NOT_DEPLOYED,
-    ezETH: NOT_DEPLOYED,
+    ezETH: "0x2416092f143378750bb29b79eD961ab195CcEea5",
     rsETH: NOT_DEPLOYED,
     PENDLE: "0xBC7B1Ff1c6989f006a1185318eD4E7b5796e66E1",
     frxETH: "0x6806411765Af15Bddd26f8f544A34cC40cb9838B",
@@ -1299,7 +1299,14 @@ export const tickerInfoTokensByNetwork: Record<
       priceFeed: "0xcB44ADd611f75F03191f8f1A2e2AF7a0113eadd1",
     },
   },
-  Optimism: {},
+  Optimism: {
+    ezETH: {
+      symbol: "ezETH/ETH",
+      dataId: "ezETH_FUNDAMENTAL",
+      address: "0x658f8e60c57ad62a9299ef6c7b1da9a0d1d1e681",
+      priceFeed: "0xF23C91b1E3B7FD9174c82F7Fb2BD270C3CfcC3CE",
+    },
+  },
   Base: {},
 };
 
