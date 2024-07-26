@@ -1,6 +1,7 @@
 import {
   BalancerVaultConfig,
   UniV3Config,
+  VeloCLConfig,
   VelodromeV2Config,
 } from "../adapters";
 import {
@@ -75,6 +76,17 @@ const tier1VelodromeConfig: VelodromeV2Config = {
   ],
 };
 
+const tier1VelodromeCLConfig: VeloCLConfig = {
+  contract: "VELODROME_CL_ROUTER",
+  allowed: [
+    {
+      token0: "ezETH",
+      token1: "wstETH",
+      tickSpacing: 1,
+    },
+  ],
+};
+
 const tier1CreditManager: CreditManagerV3DeployConfig = {
   name: "WETH Tier 1 Optimism",
   degenNft: false,
@@ -114,12 +126,17 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
       token: "rETH",
       lt: 9400,
     },
+    {
+      token: "ezETH",
+      lt: 9400,
+    },
     { token: "yvWETH", lt: 9400 },
   ],
   adapters: [
     tier1UniV3Config,
     tier1BalancerConfig,
     tier1VelodromeConfig,
+    tier1VelodromeCLConfig,
     { contract: "YEARN_USDC_E_VAULT" },
     { contract: "YEARN_WETH_VAULT" },
   ],
@@ -256,6 +273,12 @@ export const wethConfigOptimism: PoolV3DeployConfig = {
       limit: BigInt(1000) * POOL_DECIMALS,
     },
     rETH: {
+      minRate: 4,
+      maxRate: 500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(500) * POOL_DECIMALS,
+    },
+    ezETH: {
       minRate: 4,
       maxRate: 500,
       quotaIncreaseFee: 0,

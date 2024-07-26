@@ -214,17 +214,22 @@ enum Tokens {
     dwstETH,
     dFRAX,
     dUSDCV3,
+    dUSDC_eV3,
     dWBTCV3,
     dWETHV3,
     dUSDTV3,
     dGHOV3,
     dDAIV3,
+    dcrvUSDV3,
     sdUSDCV3,
+    sdUSDC_eV3,
     sdWBTCV3,
     sdWETHV3,
+    sdWETHV3_OLD,
     sdUSDTV3,
     sdGHOV3,
     sdDAIV3,
+    sdcrvUSDV3,
     GEAR
 }
 
