@@ -8,7 +8,10 @@ import {
   AdapterConfig,
   BalancerVaultConfig,
   GenericSwapConfig,
+  UniswapV3Pair,
   UniV3Config,
+  VeloCLConfig,
+  VelodromeCLPool,
   VelodromeV2Config,
 } from "./adapters";
 import { IConfigurator, Message, ValidationResult } from "./iConfigurator";
@@ -209,14 +212,19 @@ ${contracts}
       }
 
       case "UNISWAP_V3_ROUTER":
-      case "PANCAKESWAP_V3_ROUTER": {
-        const pairs = ((a as UniV3Config).allowed || [])
+      case "PANCAKESWAP_V3_ROUTER":
+      case "VELODROME_CL_ROUTER": {
+        const pairs = ((a as UniV3Config | VeloCLConfig).allowed || [])
           .map(
             pair => `uv3p.push(UniswapV3Pair({
           router: Contracts.${a.contract},
           token0: Tokens.${safeEnum(pair.token0)},
           token1: Tokens.${safeEnum(pair.token1)},
-          fee: ${pair.fee}
+          fee: ${
+            a.contract === "VELODROME_CL_ROUTER"
+              ? (pair as VelodromeCLPool).tickSpacing
+              : (pair as UniswapV3Pair).fee
+          }
         }));`,
           )
           .join("\n");

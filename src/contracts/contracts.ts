@@ -143,6 +143,7 @@ export type SupportedContract =
   | CompoundV2PoolContract
   | ERC4626VaultContract
   | "VELODROME_V2_ROUTER"
+  | "VELODROME_CL_ROUTER"
   | "CAMELOT_V3_ROUTER"
   | "AAVE_V3_LENDING_POOL"
   | "ZIRCUIT_POOL";
@@ -158,6 +159,7 @@ export const contractsByNetwork: Record<
     SUSHISWAP_ROUTER: "0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F",
     FRAXSWAP_ROUTER: "0xC14d550632db8592D1243Edc8B95b0Ad06703867",
     VELODROME_V2_ROUTER: NOT_DEPLOYED,
+    VELODROME_CL_ROUTER: NOT_DEPLOYED,
     CAMELOT_V3_ROUTER: NOT_DEPLOYED,
 
     // CURVE
@@ -304,6 +306,7 @@ export const contractsByNetwork: Record<
     SUSHISWAP_ROUTER: NOT_DEPLOYED,
     FRAXSWAP_ROUTER: NOT_DEPLOYED,
     VELODROME_V2_ROUTER: NOT_DEPLOYED,
+    VELODROME_CL_ROUTER: NOT_DEPLOYED,
     CAMELOT_V3_ROUTER: "0x1F721E2E82F6676FCE4eA07A5958cF098D339e18",
 
     // CURVE
@@ -449,6 +452,7 @@ export const contractsByNetwork: Record<
     SUSHISWAP_ROUTER: NOT_DEPLOYED,
     FRAXSWAP_ROUTER: "0xB9A55F455e46e8D717eEA5E47D2c449416A0437F", // UNVERIFIED!
     VELODROME_V2_ROUTER: "0xa062aE8A9c5e11aaA026fc2670B0D65cCc8B2858",
+    VELODROME_CL_ROUTER: "0x4B9B4E099A38BA3e63Ae1B11B2842CD9FA3A8d88",
     CAMELOT_V3_ROUTER: NOT_DEPLOYED,
 
     // CURVE
@@ -595,6 +599,7 @@ export const contractsByNetwork: Record<
     SUSHISWAP_ROUTER: NOT_DEPLOYED,
     FRAXSWAP_ROUTER: NOT_DEPLOYED,
     VELODROME_V2_ROUTER: NOT_DEPLOYED,
+    VELODROME_CL_ROUTER: NOT_DEPLOYED,
     CAMELOT_V3_ROUTER: NOT_DEPLOYED,
 
     // CURVE
@@ -730,6 +735,8 @@ export const CAMELOT_V3_QUOTER: Address =
   "0x0Fc73040b26E9bC8514fA028D998E73A254Fa76E";
 export const PANCAKESWAP_V3_QUOTER: Address =
   "0xB048Bbc1Ee6b733FFfCFb9e9CeF7375518e25997";
+export const VELODROME_CL_QUOTER: Address =
+  "0x89D8218ed5fF1e46d8dcd33fb0bbeE3be1621466";
 
 export const VELODROME_V2_DEFAULT_FACTORY: Address =
   "0xF1046053aa5682b4F9a81b5481394DA16BE5FF5a";
@@ -749,7 +756,7 @@ export type VelodromeV2Params = {
 } & BaseContractParams;
 
 export type UniswapV3Params = {
-  protocol: Protocols.Uniswap | Protocols.Pancakeswap;
+  protocol: Protocols.Uniswap | Protocols.Pancakeswap | Protocols.Velodrome;
   type: AdapterInterface.UNISWAP_V3_ROUTER;
   quoter: Address;
 } & BaseContractParams;
@@ -968,6 +975,12 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Velodrome V2",
     protocol: Protocols.Velodrome,
     type: AdapterInterface.VELODROME_V2_ROUTER,
+  },
+  VELODROME_CL_ROUTER: {
+    name: "Velodrome CL Router",
+    protocol: Protocols.Velodrome,
+    quoter: VELODROME_CL_QUOTER,
+    type: AdapterInterface.UNISWAP_V3_ROUTER,
   },
   CAMELOT_V3_ROUTER: {
     name: "Camelot V3",

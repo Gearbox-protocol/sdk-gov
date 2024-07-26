@@ -49,8 +49,17 @@ export interface UniV3Config {
   allowed: Array<UniswapV3Pair>;
 }
 
+export interface VeloCLConfig {
+  contract: "VELODROME_CL_ROUTER";
+  allowed: Array<VelodromeCLPool>;
+}
+
 export interface UniswapV3Pair extends GenericSwapPair {
   fee: 100 | 500 | 3_000 | 10000;
+}
+
+export interface VelodromeCLPool extends GenericSwapPair {
+  tickSpacing: 1 | 50 | 100 | 200 | 2000;
 }
 
 export interface VelodromeV2Pool {

@@ -756,6 +756,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "VELODROME_V2_ROUTER"
             })
         );
+        contractDataByNetwork[10].push(
+            ContractData({
+                id: Contracts.VELODROME_CL_ROUTER,
+                addr: 0x4B9B4E099A38BA3e63Ae1B11B2842CD9FA3A8d88,
+                name: "VELODROME_CL_ROUTER"
+            })
+        );
 
         contractDataByNetwork[10].push(
             ContractData({
