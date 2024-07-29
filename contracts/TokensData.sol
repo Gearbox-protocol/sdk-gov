@@ -1922,6 +1922,7 @@ contract TokensDataLive {
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
+
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: Tokens.aDAI,
@@ -2444,6 +2445,15 @@ contract TokensDataLive {
 
         tokenDataByNetwork[10].push(
             TokenData({
+                id: Tokens.bpt_ethtri,
+                addr: 0x5F8893506Ddc4C271837187d14A9C87964a074Dc,
+                symbol: "bpt_ethtri",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[10].push(
+            TokenData({
                 id: Tokens.auraBPT_rETH_ETH,
                 addr: 0x094C6846Fb2801b4753182ADFac336AAE8030A46,
                 symbol: "auraBPT_rETH_ETH",
@@ -2479,8 +2489,16 @@ contract TokensDataLive {
         tokenDataByNetwork[10].push(
             TokenData({
                 id: Tokens.dUSDCV3,
-                addr: 0x5520dAa93A187f4Ec67344e6D2C4FC9B080B6A35,
+                addr: 0xa210BB193Ca352Fa81fBd0e81Cb800580b0762eE,
                 symbol: "dUSDCV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[10].push(
+            TokenData({
+                id: Tokens.dUSDC_eV3,
+                addr: 0x5520dAa93A187f4Ec67344e6D2C4FC9B080B6A35,
+                symbol: "dUSDC_eV3",
                 tokenType: TokenType.DIESEL_LP_TOKEN
             })
         );

@@ -741,6 +741,9 @@ export const VELODROME_CL_QUOTER: Address =
 export const VELODROME_V2_DEFAULT_FACTORY: Address =
   "0xF1046053aa5682b4F9a81b5481394DA16BE5FF5a";
 
+export const VELODROME_V2_CL_FACTORY: Address =
+  "0xCc0bDDB707055e04e497aB22a59c2aF4391cd12F";
+
 export interface BaseContractParams {
   name: string;
 }

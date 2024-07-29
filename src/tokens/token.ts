@@ -335,6 +335,7 @@ export const tokenDataByNetwork: Record<
     rETH_wETH_BPT: NOT_DEPLOYED,
     "33AURA_33ARB_33BAL": NOT_DEPLOYED,
     ezETH_wstETH: NOT_DEPLOYED,
+    bpt_ethtri: NOT_DEPLOYED,
 
     // AURA
     auraB_rETH_STABLE: "0x9497df26e5bD669Cb925eC68E730492b9300c482",
@@ -606,6 +607,7 @@ export const tokenDataByNetwork: Record<
     rETH_wETH_BPT: "0xd0EC47c54cA5e20aaAe4616c25C825c7f48D4069",
     "33AURA_33ARB_33BAL": "0xbcaA6c053cab3Dd73a2E898d89A4f84a180ae1CA",
     ezETH_wstETH: "0xB61371Ab661B1ACec81C699854D2f911070C059E",
+    bpt_ethtri: NOT_DEPLOYED,
 
     // AURA
 
@@ -879,6 +881,7 @@ export const tokenDataByNetwork: Record<
     BPT_WSTETH_ETH: "0x7B50775383d3D6f0215A8F290f2C9e2eEBBEceb2",
     BPT_ROAD: "0x39965c9dAb5448482Cf7e002F583c812Ceb53046",
     ECLP_wstETH_WETH: "0x7Ca75bdEa9dEde97F8B13C6641B768650CB83782",
+    bpt_ethtri: "0x5F8893506Ddc4C271837187d14A9C87964a074Dc",
 
     // AURA
     auraB_rETH_STABLE: NOT_DEPLOYED,
@@ -909,7 +912,7 @@ export const tokenDataByNetwork: Record<
     dwstETH: NOT_DEPLOYED,
     dFRAX: NOT_DEPLOYED,
 
-    dUSDCV3: "0x5520dAa93A187f4Ec67344e6D2C4FC9B080B6A35",
+    dUSDCV3: "0xa210BB193Ca352Fa81fBd0e81Cb800580b0762eE",
     dWBTCV3: NOT_DEPLOYED,
     dWETHV3: "0x42dB77B3103c71059F4b997d6441cFB299FD0d94",
 
@@ -929,7 +932,7 @@ export const tokenDataByNetwork: Record<
     dcrvUSDV3: NOT_DEPLOYED,
     sdcrvUSDV3: NOT_DEPLOYED,
 
-    dUSDC_eV3: NOT_DEPLOYED,
+    dUSDC_eV3: "0x5520dAa93A187f4Ec67344e6D2C4FC9B080B6A35",
     sdUSDC_eV3: NOT_DEPLOYED,
 
     GEAR: "0x39E6C2E1757ae4354087266E2C3EA9aC4257C1eb",
@@ -1153,6 +1156,7 @@ export const tokenDataByNetwork: Record<
     BPT_WSTETH_ETH: NOT_DEPLOYED,
     BPT_ROAD: NOT_DEPLOYED,
     ECLP_wstETH_WETH: NOT_DEPLOYED,
+    bpt_ethtri: NOT_DEPLOYED,
 
     // AURA
     auraB_rETH_STABLE: NOT_DEPLOYED,
@@ -1297,6 +1301,12 @@ export const tickerInfoTokensByNetwork: Record<
       dataId: "ezETH_FUNDAMENTAL",
       address: "0x07299E4E806e4253727084c0493fFDf6fB2dBa3D",
       priceFeed: "0xcB44ADd611f75F03191f8f1A2e2AF7a0113eadd1",
+    },
+    rsETH: {
+      symbol: "rsETH/ETH",
+      dataId: "rsETH_FUNDAMENTAL",
+      address: "0x15094B05e679c9B7fDde6FB8e6BDa930ff1D6a62",
+      priceFeed: "0x354A63F07A5c1605920794aFFF09963b6DF897a9",
     },
   },
   Optimism: {
