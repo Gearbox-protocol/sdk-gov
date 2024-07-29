@@ -2,7 +2,7 @@ import { VELODROME_V2_DEFAULT_FACTORY } from "../../contracts/contracts";
 import {
   BalancerVaultConfig,
   UniV3Config,
-  VeloCLConfig,
+  VelodromeCLConfig,
   VelodromeV2Config,
 } from "../adapters";
 import {
@@ -69,7 +69,7 @@ const tier1VelodromeConfig: VelodromeV2Config = {
   ],
 };
 
-const tier1VelodromeCLConfig: VeloCLConfig = {
+const tier1VelodromeCLConfig: VelodromeCLConfig = {
   contract: "VELODROME_CL_ROUTER",
   allowed: [
     {
@@ -186,7 +186,7 @@ const tier2VelodromeConfig: VelodromeV2Config = {
     },
   ],
 };
-const tier2VelodromeCLConfig: VeloCLConfig = {
+const tier2VelodromeCLConfig: VelodromeCLConfig = {
   contract: "VELODROME_CL_ROUTER",
   allowed: [
     {

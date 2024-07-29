@@ -49,7 +49,7 @@ export interface UniV3Config {
   allowed: Array<UniswapV3Pair>;
 }
 
-export interface VeloCLConfig {
+export interface VelodromeCLConfig {
   contract: "VELODROME_CL_ROUTER";
   allowed: Array<VelodromeCLPool>;
 }
@@ -79,4 +79,5 @@ export type AdapterConfig =
   | UniV3Config
   | GenericSwapConfig
   | BalancerVaultConfig
-  | VelodromeV2Config;
+  | VelodromeV2Config
+  | VelodromeCLConfig;
