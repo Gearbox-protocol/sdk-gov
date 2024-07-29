@@ -1,7 +1,4 @@
-import {
-  VELODROME_V2_CL_FACTORY,
-  VELODROME_V2_DEFAULT_FACTORY,
-} from "../../contracts/contracts";
+import { VELODROME_V2_DEFAULT_FACTORY } from "../../contracts/contracts";
 import {
   BalancerVaultConfig,
   UniV3Config,
