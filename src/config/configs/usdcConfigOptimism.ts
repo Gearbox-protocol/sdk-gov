@@ -5,6 +5,7 @@ import {
 import {
   BalancerVaultConfig,
   UniV3Config,
+  VeloCLConfig,
   VelodromeV2Config,
 } from "../adapters";
 import {
@@ -54,19 +55,7 @@ const tier1VelodromeConfig: VelodromeV2Config = {
       token0: "USDC",
       token1: "USDC_e",
       stable: true,
-      factory: VELODROME_V2_CL_FACTORY,
-    },
-    {
-      token0: "USDC",
-      token1: "USDC_e",
-      stable: true,
       factory: VELODROME_V2_DEFAULT_FACTORY,
-    },
-    {
-      token0: "USDC",
-      token1: "WETH",
-      stable: false,
-      factory: VELODROME_V2_CL_FACTORY,
     },
     {
       token0: "wstETH",
@@ -75,22 +64,36 @@ const tier1VelodromeConfig: VelodromeV2Config = {
       factory: VELODROME_V2_DEFAULT_FACTORY,
     },
     {
-      token0: "USDC",
-      token1: "USDT",
-      stable: true,
-      factory: VELODROME_V2_CL_FACTORY,
-    },
-    {
-      token0: "USDC",
-      token1: "DAI",
-      stable: true,
-      factory: VELODROME_V2_CL_FACTORY,
-    },
-    {
       token0: "USDC_e",
       token1: "DAI",
       stable: true,
       factory: VELODROME_V2_DEFAULT_FACTORY,
+    },
+  ],
+};
+
+const tier1VelodromeCLConfig: VeloCLConfig = {
+  contract: "VELODROME_CL_ROUTER",
+  allowed: [
+    {
+      token0: "USDC",
+      token1: "USDC_e",
+      tickSpacing: 1,
+    },
+    {
+      token0: "USDC",
+      token1: "WETH",
+      tickSpacing: 100,
+    },
+    {
+      token0: "USDC",
+      token1: "USDT",
+      tickSpacing: 1,
+    },
+    {
+      token0: "USDC",
+      token1: "DAI",
+      tickSpacing: 1,
     },
   ],
 };
@@ -141,6 +144,7 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     tier1UniV3Config,
     tier1BalancerConfig,
     tier1VelodromeConfig,
+    tier1VelodromeCLConfig,
     { contract: "CURVE_3CRV_POOL_OP" },
     { contract: "CURVE_ETH_WSTETH_GATEWAY_OP" },
   ],
@@ -169,19 +173,7 @@ const tier2VelodromeConfig: VelodromeV2Config = {
       token0: "USDC",
       token1: "USDC_e",
       stable: true,
-      factory: VELODROME_V2_CL_FACTORY,
-    },
-    {
-      token0: "USDC",
-      token1: "USDC_e",
-      stable: true,
       factory: VELODROME_V2_DEFAULT_FACTORY,
-    },
-    {
-      token0: "USDC",
-      token1: "WETH",
-      stable: false,
-      factory: VELODROME_V2_CL_FACTORY,
     },
     {
       token0: "wstETH",
@@ -190,34 +182,45 @@ const tier2VelodromeConfig: VelodromeV2Config = {
       factory: VELODROME_V2_DEFAULT_FACTORY,
     },
     {
-      token0: "WETH",
-      token1: "OP",
-      stable: false,
-      factory: VELODROME_V2_CL_FACTORY,
-    },
-    {
-      token0: "USDC",
-      token1: "OP",
-      stable: false,
-      factory: VELODROME_V2_CL_FACTORY,
-    },
-    {
-      token0: "USDC",
-      token1: "USDT",
-      stable: true,
-      factory: VELODROME_V2_CL_FACTORY,
-    },
-    {
-      token0: "USDC",
-      token1: "DAI",
-      stable: true,
-      factory: VELODROME_V2_CL_FACTORY,
-    },
-    {
       token0: "USDC_e",
       token1: "DAI",
       stable: true,
       factory: VELODROME_V2_DEFAULT_FACTORY,
+    },
+  ],
+};
+const tier2VelodromeCLConfig: VeloCLConfig = {
+  contract: "VELODROME_CL_ROUTER",
+  allowed: [
+    {
+      token0: "USDC",
+      token1: "USDC_e",
+      tickSpacing: 1,
+    },
+    {
+      token0: "USDC",
+      token1: "WETH",
+      tickSpacing: 100,
+    },
+    {
+      token0: "WETH",
+      token1: "OP",
+      tickSpacing: 200,
+    },
+    {
+      token0: "USDC",
+      token1: "OP",
+      tickSpacing: 200,
+    },
+    {
+      token0: "USDC",
+      token1: "USDT",
+      tickSpacing: 1,
+    },
+    {
+      token0: "USDC",
+      token1: "DAI",
+      tickSpacing: 1,
     },
   ],
 };
@@ -290,6 +293,7 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
     tier2UniV3Config,
     tier2BalancerConfig,
     tier2VelodromeConfig,
+    tier2VelodromeCLConfig,
     { contract: "CURVE_3CRV_POOL_OP" },
     { contract: "CURVE_ETH_WSTETH_GATEWAY_OP" },
   ],
