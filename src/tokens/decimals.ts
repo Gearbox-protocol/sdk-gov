@@ -189,6 +189,7 @@ export const decimals: Record<SupportedToken, number> = {
   ezETH_wstETH: 18,
   GHO_USDT_USDC: 18,
   rsETH_WETH: 18,
+  bpt_ethtri: 18,
 
   auraB_rETH_STABLE: 18,
   auraB_rETH_STABLE_vault: 18,

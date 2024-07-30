@@ -23,6 +23,7 @@ export type BalancerLPToken =
   | "BPT_WSTETH_ETH"
   | "BPT_ROAD"
   | "ECLP_wstETH_WETH"
+  | "bpt_ethtri"
   // Arbitrum
   | "wstETH_WETH_BPT"
   | "wstETH_rETH_sfrxETH"
@@ -306,6 +307,16 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     underlying: ["ezETH", "wstETH"],
     poolId:
       "0xb61371ab661b1acec81c699854d2f911070c059e000000000000000000000516",
+  },
+  bpt_ethtri: {
+    name: "Ethereum Triplets",
+    symbol: "bpt_ethtri",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["wstETH", "sfrxETH", "rETH"],
+    poolId:
+      "0x5f8893506ddc4c271837187d14a9c87964a074dc000000000000000000000106",
   },
 };
 

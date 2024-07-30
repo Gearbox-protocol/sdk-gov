@@ -5994,6 +5994,40 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ bpt_ethtri ------------------------
+        balancerStableLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({
+                lpToken: Tokens.bpt_ethtri,
+                assets: TokensLib.arrayOf(Tokens.wstETH, Tokens.sfrxETH, Tokens.rETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({
+                lpToken: Tokens.bpt_ethtri,
+                assets: TokensLib.arrayOf(Tokens.wstETH, Tokens.sfrxETH, Tokens.rETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[10].push(
+            BalancerLPPriceFeedData({
+                lpToken: Tokens.bpt_ethtri,
+                assets: TokensLib.arrayOf(Tokens.wstETH, Tokens.sfrxETH, Tokens.rETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[8453].push(
+            BalancerLPPriceFeedData({
+                lpToken: Tokens.bpt_ethtri,
+                assets: TokensLib.arrayOf(Tokens.wstETH, Tokens.sfrxETH, Tokens.rETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+
         // ------------------------ 33AURA_33ARB_33BAL ------------------------
         zeroPriceFeedsByNetwork[1].push(
             SingeTokenPriceFeedData({token: Tokens._33AURA_33ARB_33BAL, trusted: true, reserve: false})

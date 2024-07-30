@@ -2777,6 +2777,16 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  bpt_ethtri: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
+        assets: ["wstETH", "sfrxETH", "rETH"],
+        trusted: false,
+      },
+    },
+  },
+
   "33AURA_33ARB_33BAL": {
     AllNetworks: {
       Main: {

@@ -10,7 +10,7 @@ import {
   GenericSwapConfig,
   UniswapV3Pair,
   UniV3Config,
-  VeloCLConfig,
+  VelodromeCLConfig,
   VelodromeCLPool,
   VelodromeV2Config,
 } from "./adapters";
@@ -214,7 +214,7 @@ ${contracts}
       case "UNISWAP_V3_ROUTER":
       case "PANCAKESWAP_V3_ROUTER":
       case "VELODROME_CL_ROUTER": {
-        const pairs = ((a as UniV3Config | VeloCLConfig).allowed || [])
+        const pairs = ((a as UniV3Config | VelodromeCLConfig).allowed || [])
           .map(
             pair => `uv3p.push(UniswapV3Pair({
           router: Contracts.${a.contract},
