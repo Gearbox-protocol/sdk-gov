@@ -766,6 +766,14 @@ contract SupportedContracts is Test, ISupportedContracts {
 
         contractDataByNetwork[10].push(
             ContractData({
+                id: Contracts.CURVE_ETH_WSTETH_GATEWAY_OP,
+                addr: 0xF12057505cd8e3256d3654C0dC32BEB0c531eb77,
+                name: "CURVE_ETH_WSTETH_GATEWAY_OP"
+            })
+        );
+
+        contractDataByNetwork[10].push(
+            ContractData({
                 id: Contracts.CURVE_3CRV_POOL_OP,
                 addr: 0x1337BedC9D22ecbe766dF105c9623922A27963EC,
                 name: "CURVE_3CRV_POOL_OP"

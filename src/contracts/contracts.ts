@@ -479,7 +479,7 @@ export const contractsByNetwork: Record<
     CURVE_GHO_USDE_POOL: tokenDataByNetwork.Optimism.GHOUSDe,
     CURVE_PUFETH_WSTETH_POOL: tokenDataByNetwork.Optimism.pufETHwstE,
     CURVE_GHO_CRVUSD_POOL: tokenDataByNetwork.Optimism.GHOcrvUSD,
-    CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
+    CURVE_ETH_WSTETH_GATEWAY_OP: "0xF12057505cd8e3256d3654C0dC32BEB0c531eb77",
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -1032,7 +1032,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       Optimism: "0xb90b9b1f91a01ea22a182cd84c1e22222e39b415",
       Base: NOT_DEPLOYED,
     },
-    tokens: ["WETH", "STETH"],
+    tokens: ["WETH", "wstETH"],
     lpToken: "wstETHCRV",
   },
   CURVE_GEAR_POOL: {
