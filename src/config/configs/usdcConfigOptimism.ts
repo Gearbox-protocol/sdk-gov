@@ -103,22 +103,22 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
   maxDebt: (BigInt(4e5) * POOL_DECIMALS) / POOL_DIVIDER,
   feeInterest: 2500,
   feeLiquidation: 50,
-  liquidationPremium: 100,
+  liquidationPremium: 500,
   feeLiquidationExpired: 50,
-  liquidationPremiumExpired: 100,
+  liquidationPremiumExpired: 500,
   poolLimit: (BigInt(4e6) * POOL_DECIMALS) / POOL_DIVIDER,
   collateralTokens: [
     {
       token: "USDC_e",
-      lt: 9600,
+      lt: 9400,
     },
     {
       token: "DAI",
-      lt: 9600,
+      lt: 9400,
     },
     {
       token: "USDT",
-      lt: 9600,
+      lt: 9400,
     },
     {
       token: "WETH",
@@ -255,15 +255,15 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
   collateralTokens: [
     {
       token: "USDC_e",
-      lt: 9600,
+      lt: 9400,
     },
     {
       token: "DAI",
-      lt: 9600,
+      lt: 9400,
     },
     {
       token: "USDT",
-      lt: 9600,
+      lt: 9400,
     },
     {
       token: "WETH",
