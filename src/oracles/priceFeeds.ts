@@ -1648,6 +1648,12 @@ export const priceFeedsByToken: Record<
         trusted: false,
       },
     },
+    Optimism: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
   },
 
   cbETH: {
