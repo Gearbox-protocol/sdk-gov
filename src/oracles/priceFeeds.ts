@@ -2104,8 +2104,7 @@ export const priceFeedsByToken: Record<
   wstETHCRV: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.CURVE_2LP_ORACLE,
-        assets: ["WETH", "wstETH"],
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
