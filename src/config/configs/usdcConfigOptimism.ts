@@ -136,6 +136,8 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
       token: "wstETH",
       lt: 8700,
     },
+    { token: "3CRV", lt: 0 },
+    { token: "wstETHCRV", lt: 0 },
   ],
   adapters: [
     tier1UniV3Config,
@@ -285,6 +287,8 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
       token: "OP",
       lt: 8000,
     },
+    { token: "3CRV", lt: 0 },
+    { token: "wstETHCRV", lt: 0 },
   ],
   adapters: [
     tier2UniV3Config,
