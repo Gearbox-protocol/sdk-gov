@@ -2696,6 +2696,14 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  trenSTETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
   weETH_ezETH_rswETH: {
     AllNetworks: {
       Main: {

@@ -5681,6 +5681,20 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: Tokens.ezETH_WETH_BPT, trusted: false, reserve: false})
         );
 
+        // ------------------------ trenSTETH ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: Tokens.trenSTETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: Tokens.trenSTETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: Tokens.trenSTETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: Tokens.trenSTETH, trusted: false, reserve: false})
+        );
+
         // ------------------------ weETH_ezETH_rswETH ------------------------
         zeroPriceFeedsByNetwork[1].push(
             SingeTokenPriceFeedData({token: Tokens.weETH_ezETH_rswETH, trusted: false, reserve: false})

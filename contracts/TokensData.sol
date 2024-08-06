@@ -1126,6 +1126,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.trenSTETH,
+                addr: 0x4216d5900a6109bba48418b5e2AB6cc4e61Cf477,
+                symbol: "trenSTETH",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.weETH_ezETH_rswETH,
                 addr: 0x848a5564158d84b8A8fb68ab5D004Fae11619A54,
                 symbol: "weETH_ezETH_rswETH",
@@ -2512,14 +2520,6 @@ contract TokensDataLive {
 
         tokenDataByNetwork[10].push(
             TokenData({
-                id: Tokens.dUSDCV3,
-                addr: 0xa210BB193Ca352Fa81fBd0e81Cb800580b0762eE,
-                symbol: "dUSDCV3",
-                tokenType: TokenType.DIESEL_LP_TOKEN
-            })
-        );
-        tokenDataByNetwork[10].push(
-            TokenData({
                 id: Tokens.dUSDC_eV3,
                 addr: 0x5520dAa93A187f4Ec67344e6D2C4FC9B080B6A35,
                 symbol: "dUSDC_eV3",
@@ -2538,9 +2538,9 @@ contract TokensDataLive {
 
         tokenDataByNetwork[10].push(
             TokenData({
-                id: Tokens.sdUSDCV3,
+                id: Tokens.sdUSDC_eV3,
                 addr: 0x73302b63Ad4a16C498f26dB89cb27F37a72E4E04,
-                symbol: "sdUSDCV3",
+                symbol: "sdUSDC_eV3",
                 tokenType: TokenType.DIESEL_LP_TOKEN
             })
         );

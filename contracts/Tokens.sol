@@ -159,6 +159,7 @@ enum Tokens {
     weETH_rETH,
     osETH_wETH_BPT,
     ezETH_WETH_BPT,
+    trenSTETH,
     weETH_ezETH_rswETH,
     GHO_USDT_USDC,
     rsETH_WETH,
