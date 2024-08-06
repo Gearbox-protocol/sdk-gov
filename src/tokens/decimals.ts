@@ -75,6 +75,8 @@ export const decimals: Record<SupportedToken, number> = {
   pufETHwstE: 18,
   GHOcrvUSD: 18,
   wstETHCRV: 18,
+  ezETHWETH: 18,
+  ezpzETH: 18,
   crvUSD: 18,
   crvUSDUSDC: 18,
   crvUSDUSDT: 18,
@@ -216,6 +218,7 @@ export const decimals: Record<SupportedToken, number> = {
   Re7LRT: 18,
   amphrETH: 18,
   rstETH: 18,
+  pzETH: 18,
 
   aDAI: 18,
   aUSDC: 6,

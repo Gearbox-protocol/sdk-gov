@@ -255,6 +255,8 @@ export const tokenDataByNetwork: Record<
     crvUSDT: NOT_DEPLOYED,
     USDEUSDC: NOT_DEPLOYED,
     "3CRV": NOT_DEPLOYED,
+    ezETHWETH: "0x85dE3ADd465a219EE25E04d22c39aB027cF5C12E",
+    ezpzETH: "0x8c65CeC3847ad99BdC02621bDBC89F2acE56934B",
 
     // CONVEX LP TOKENS
     cvx3Crv: "0x30D9410ED1D5DA1F6C8391af5338C93ab8d4035C",
@@ -421,6 +423,7 @@ export const tokenDataByNetwork: Record<
     Re7LRT: "0x84631c0d0081FDe56DeB72F6DE77abBbF6A9f93a",
     amphrETH: "0x5fD13359Ba15A84B76f7F87568309040176167cd",
     rstETH: "0x7a4EffD87C2f3C55CA251080b1343b605f327E3a",
+    pzETH: "0x8c9532a60E0E7C6BbD2B2c1303F63aCE1c3E9811",
   },
 
   ///
@@ -556,6 +559,8 @@ export const tokenDataByNetwork: Record<
     cvxcrvUSDFRAX: NOT_DEPLOYED,
     cvxcrvUSDETHCRV: NOT_DEPLOYED,
     cvxGHOcrvUSD: NOT_DEPLOYED,
+    ezETHWETH: NOT_DEPLOYED,
+    ezpzETH: NOT_DEPLOYED,
 
     crvUSD: "0x498Bf2B1e120FeD3ad3D42EA2165E9b73f99C1e5",
 
@@ -694,6 +699,7 @@ export const tokenDataByNetwork: Record<
     Re7LRT: NOT_DEPLOYED,
     amphrETH: NOT_DEPLOYED,
     rstETH: NOT_DEPLOYED,
+    pzETH: NOT_DEPLOYED,
   },
   ///
   ///
@@ -795,6 +801,8 @@ export const tokenDataByNetwork: Record<
     GHOUSDe: NOT_DEPLOYED,
     pufETHwstE: NOT_DEPLOYED,
     GHOcrvUSD: NOT_DEPLOYED,
+    ezETHWETH: NOT_DEPLOYED,
+    ezpzETH: NOT_DEPLOYED,
 
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
@@ -967,6 +975,7 @@ export const tokenDataByNetwork: Record<
     Re7LRT: NOT_DEPLOYED,
     amphrETH: NOT_DEPLOYED,
     rstETH: NOT_DEPLOYED,
+    pzETH: NOT_DEPLOYED,
   },
   //
   //
@@ -1071,6 +1080,8 @@ export const tokenDataByNetwork: Record<
     MtEthena: NOT_DEPLOYED,
     pufETHwstE: NOT_DEPLOYED,
     GHOcrvUSD: NOT_DEPLOYED,
+    ezETHWETH: NOT_DEPLOYED,
+    ezpzETH: NOT_DEPLOYED,
 
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
@@ -1242,6 +1253,7 @@ export const tokenDataByNetwork: Record<
     Re7LRT: NOT_DEPLOYED,
     amphrETH: NOT_DEPLOYED,
     rstETH: NOT_DEPLOYED,
+    pzETH: NOT_DEPLOYED,
   },
 };
 
