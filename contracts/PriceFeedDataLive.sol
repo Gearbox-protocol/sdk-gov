@@ -3944,79 +3944,31 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ ezETHWETH ------------------------
-        curvePriceFeedsByNetwork[1].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.ezETHWETH,
-                assets: TokensLib.arrayOf(Tokens.ezETH, Tokens.WETH),
-                pool: Contracts.CURVE_EZETH_ETH_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: Tokens.ezETHWETH, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[42161].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.ezETHWETH,
-                assets: TokensLib.arrayOf(Tokens.ezETH, Tokens.WETH),
-                pool: Contracts.CURVE_EZETH_ETH_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: Tokens.ezETHWETH, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[10].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.ezETHWETH,
-                assets: TokensLib.arrayOf(Tokens.ezETH, Tokens.WETH),
-                pool: Contracts.CURVE_EZETH_ETH_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: Tokens.ezETHWETH, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[8453].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.ezETHWETH,
-                assets: TokensLib.arrayOf(Tokens.ezETH, Tokens.WETH),
-                pool: Contracts.CURVE_EZETH_ETH_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: Tokens.ezETHWETH, trusted: false, reserve: false})
         );
 
         // ------------------------ ezpzETH ------------------------
-        curvePriceFeedsByNetwork[1].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.ezpzETH,
-                assets: TokensLib.arrayOf(Tokens.ezETH, Tokens.pzETH),
-                pool: Contracts.CURVE_EZPZ_ETH_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: Tokens.ezpzETH, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[42161].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.ezpzETH,
-                assets: TokensLib.arrayOf(Tokens.ezETH, Tokens.pzETH),
-                pool: Contracts.CURVE_EZPZ_ETH_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: Tokens.ezpzETH, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[10].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.ezpzETH,
-                assets: TokensLib.arrayOf(Tokens.ezETH, Tokens.pzETH),
-                pool: Contracts.CURVE_EZPZ_ETH_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: Tokens.ezpzETH, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[8453].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.ezpzETH,
-                assets: TokensLib.arrayOf(Tokens.ezETH, Tokens.pzETH),
-                pool: Contracts.CURVE_EZPZ_ETH_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: Tokens.ezpzETH, trusted: false, reserve: false})
         );
 
         // ------------------------ 3CRV ------------------------
