@@ -2210,7 +2210,7 @@ export const priceFeedsByToken: Record<
   ezpzETH: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.CURVE_2LP_ORACLE,
+        type: PriceFeedType.CURVE_CRYPTO_ORACLE,
         assets: ["ezETH", "pzETH"],
         trusted: false,
       },
