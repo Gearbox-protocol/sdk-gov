@@ -51,6 +51,8 @@ export type CurvePoolContract =
   | "CURVE_GHO_USDE_POOL"
   | "CURVE_PUFETH_WSTETH_POOL"
   | "CURVE_GHO_CRVUSD_POOL"
+  | "CURVE_EZETH_ETH_POOL"
+  | "CURVE_EZPZ_ETH_POOL"
   | "CURVE_2CRV_POOL_ARB"
   | "CURVE_TRICRYPTO_CRVUSD_POOL_ARB"
   | "CURVE_CRVUSD_USDC_POOL_ARB"
@@ -186,6 +188,8 @@ export const contractsByNetwork: Record<
     CURVE_GHO_USDE_POOL: tokenDataByNetwork.Mainnet.GHOUSDe,
     CURVE_PUFETH_WSTETH_POOL: tokenDataByNetwork.Mainnet.pufETHwstE,
     CURVE_GHO_CRVUSD_POOL: tokenDataByNetwork.Mainnet.GHOcrvUSD,
+    CURVE_EZETH_ETH_POOL: tokenDataByNetwork.Mainnet.ezETHWETH,
+    CURVE_EZPZ_ETH_POOL: tokenDataByNetwork.Mainnet.ezpzETH,
 
     CURVE_GEAR_POOL: "0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2",
 
@@ -333,6 +337,8 @@ export const contractsByNetwork: Record<
     CURVE_PUFETH_WSTETH_POOL: tokenDataByNetwork.Arbitrum.pufETHwstE,
     CURVE_GHO_CRVUSD_POOL: tokenDataByNetwork.Arbitrum.GHOcrvUSD,
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
+    CURVE_EZETH_ETH_POOL: NOT_DEPLOYED,
+    CURVE_EZPZ_ETH_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -480,6 +486,8 @@ export const contractsByNetwork: Record<
     CURVE_PUFETH_WSTETH_POOL: tokenDataByNetwork.Optimism.pufETHwstE,
     CURVE_GHO_CRVUSD_POOL: tokenDataByNetwork.Optimism.GHOcrvUSD,
     CURVE_ETH_WSTETH_GATEWAY_OP: "0xF12057505cd8e3256d3654C0dC32BEB0c531eb77",
+    CURVE_EZETH_ETH_POOL: NOT_DEPLOYED,
+    CURVE_EZPZ_ETH_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -626,6 +634,8 @@ export const contractsByNetwork: Record<
     CURVE_PUFETH_WSTETH_POOL: tokenDataByNetwork.Base.pufETHwstE,
     CURVE_GHO_CRVUSD_POOL: tokenDataByNetwork.Base.GHOcrvUSD,
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
+    CURVE_EZETH_ETH_POOL: NOT_DEPLOYED,
+    CURVE_EZPZ_ETH_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -1260,6 +1270,23 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.CURVE_STABLE_NG,
     lpToken: "GHOcrvUSD",
     tokens: ["GHO", "crvUSD"],
+  },
+
+  CURVE_EZETH_ETH_POOL: {
+    name: "Curve ezETH/WETH Pool",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "ezETHWETH",
+    tokens: ["ezETH", "WETH"],
+  },
+  CURVE_EZPZ_ETH_POOL: {
+    name: "Curve ezpz ETH Pool",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_V1_2ASSETS,
+    lpToken: "ezpzETH",
+    tokens: ["ezETH", "pzETH"],
   },
 
   CURVE_2CRV_POOL_ARB: {

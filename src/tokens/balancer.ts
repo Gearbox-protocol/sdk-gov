@@ -18,6 +18,7 @@ export type BalancerLPToken =
   | "weETH_ezETH_rswETH"
   | "GHO_USDT_USDC"
   | "rsETH_WETH"
+  | "trenSTETH"
   // Optimism
   | "BPT_rETH_ETH"
   | "BPT_WSTETH_ETH"
@@ -145,6 +146,16 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     underlying: ["ezETH", "WETH"],
     poolId:
       "0x596192bb6e41802428ac943d2f1476c1af25cc0e000000000000000000000659",
+  },
+  trenSTETH: {
+    name: "Balancer Total Rewards Enhanced stETH",
+    symbol: "trenSTETH",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["amphrETH", "rstETH", "wstETH", "Re7LRT", "steakLRT"],
+    poolId:
+      "0x4216d5900a6109bba48418b5e2ab6cc4e61cf4770000000000000000000006a1",
   },
 
   weETH_ezETH_rswETH: {

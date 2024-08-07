@@ -63,6 +63,7 @@ export type NormalToken =
   | "Re7LRT"
   | "amphrETH"
   | "rstETH"
+  | "pzETH"
 
   // REDSTONE
   | "SHIB"
@@ -429,6 +430,11 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   rstETH: {
     name: "P2P Mellow LRT",
     symbol: "rstETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  pzETH: {
+    name: "Renzo Mellow LST",
+    symbol: "pzETH",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };

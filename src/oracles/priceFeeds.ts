@@ -2198,6 +2198,25 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  ezETHWETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+
+  ezpzETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_CRYPTO_ORACLE,
+        assets: ["ezETH", "pzETH"],
+        trusted: false,
+      },
+    },
+  },
+
   "3CRV": {
     AllNetworks: {
       Main: {
@@ -2669,6 +2688,14 @@ export const priceFeedsByToken: Record<
     },
   },
   ezETH_WETH_BPT: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  trenSTETH: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
@@ -3607,6 +3634,15 @@ export const priceFeedsByToken: Record<
     },
   },
   rstETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.MELLOW_LRT_ORACLE,
+        underlying: "WETH",
+        trusted: false,
+      },
+    },
+  },
+  pzETH: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.MELLOW_LRT_ORACLE,

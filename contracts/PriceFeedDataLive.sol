@@ -2369,6 +2369,9 @@ contract PriceFeedDataLive {
             cpf.trusted = false;
             cpf.reserve = false;
         }
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: Tokens.sfrxETH, trusted: false, reserve: false})
+        );
 
         // ------------------------ cbETH ------------------------
 
@@ -3609,41 +3612,17 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ wstETHCRV ------------------------
-        curvePriceFeedsByNetwork[1].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.wstETHCRV,
-                assets: TokensLib.arrayOf(Tokens.WETH, Tokens.wstETH),
-                pool: Contracts.CURVE_ETH_WSTETH_GATEWAY_OP,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: Tokens.wstETHCRV, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[42161].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.wstETHCRV,
-                assets: TokensLib.arrayOf(Tokens.WETH, Tokens.wstETH),
-                pool: Contracts.CURVE_ETH_WSTETH_GATEWAY_OP,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: Tokens.wstETHCRV, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[10].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.wstETHCRV,
-                assets: TokensLib.arrayOf(Tokens.WETH, Tokens.wstETH),
-                pool: Contracts.CURVE_ETH_WSTETH_GATEWAY_OP,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: Tokens.wstETHCRV, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[8453].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.wstETHCRV,
-                assets: TokensLib.arrayOf(Tokens.WETH, Tokens.wstETH),
-                pool: Contracts.CURVE_ETH_WSTETH_GATEWAY_OP,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: Tokens.wstETHCRV, trusted: false, reserve: false})
         );
 
         // ------------------------ crvUSDETHCRV ------------------------
@@ -3959,6 +3938,82 @@ contract PriceFeedDataLive {
                 lpToken: Tokens.USDEUSDC,
                 assets: TokensLib.arrayOf(Tokens.USDC, Tokens.USDe),
                 pool: Contracts.CURVE_USDE_USDC_POOL_ARB,
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ ezETHWETH ------------------------
+        curvePriceFeedsByNetwork[1].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.ezETHWETH,
+                assets: TokensLib.arrayOf(Tokens.ezETH, Tokens.WETH),
+                pool: Contracts.CURVE_EZETH_ETH_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[42161].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.ezETHWETH,
+                assets: TokensLib.arrayOf(Tokens.ezETH, Tokens.WETH),
+                pool: Contracts.CURVE_EZETH_ETH_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[10].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.ezETHWETH,
+                assets: TokensLib.arrayOf(Tokens.ezETH, Tokens.WETH),
+                pool: Contracts.CURVE_EZETH_ETH_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.ezETHWETH,
+                assets: TokensLib.arrayOf(Tokens.ezETH, Tokens.WETH),
+                pool: Contracts.CURVE_EZETH_ETH_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ ezpzETH ------------------------
+        curvePriceFeedsByNetwork[1].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.ezpzETH,
+                assets: TokensLib.arrayOf(Tokens.ezETH, Tokens.pzETH),
+                pool: Contracts.CURVE_EZPZ_ETH_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[42161].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.ezpzETH,
+                assets: TokensLib.arrayOf(Tokens.ezETH, Tokens.pzETH),
+                pool: Contracts.CURVE_EZPZ_ETH_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[10].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.ezpzETH,
+                assets: TokensLib.arrayOf(Tokens.ezETH, Tokens.pzETH),
+                pool: Contracts.CURVE_EZPZ_ETH_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.ezpzETH,
+                assets: TokensLib.arrayOf(Tokens.ezETH, Tokens.pzETH),
+                pool: Contracts.CURVE_EZPZ_ETH_POOL,
                 trusted: false,
                 reserve: false
             })
@@ -5624,6 +5679,20 @@ contract PriceFeedDataLive {
         );
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: Tokens.ezETH_WETH_BPT, trusted: false, reserve: false})
+        );
+
+        // ------------------------ trenSTETH ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: Tokens.trenSTETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: Tokens.trenSTETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: Tokens.trenSTETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: Tokens.trenSTETH, trusted: false, reserve: false})
         );
 
         // ------------------------ weETH_ezETH_rswETH ------------------------
@@ -7472,6 +7541,20 @@ contract PriceFeedDataLive {
         );
         mellowLRTPriceFeedsByNetwork[8453].push(
             GenericLPPriceFeedData({lpToken: Tokens.rstETH, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+
+        // ------------------------ pzETH ------------------------
+        mellowLRTPriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: Tokens.pzETH, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+        mellowLRTPriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: Tokens.pzETH, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+        mellowLRTPriceFeedsByNetwork[10].push(
+            GenericLPPriceFeedData({lpToken: Tokens.pzETH, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+        mellowLRTPriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: Tokens.pzETH, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
     }
 

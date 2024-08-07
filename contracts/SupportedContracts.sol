@@ -224,6 +224,20 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_EZETH_ETH_POOL,
+                addr: 0x85dE3ADd465a219EE25E04d22c39aB027cF5C12E,
+                name: "CURVE_EZETH_ETH_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_EZPZ_ETH_POOL,
+                addr: 0x8c65CeC3847ad99BdC02621bDBC89F2acE56934B,
+                name: "CURVE_EZPZ_ETH_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_GEAR_POOL,
                 addr: 0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2,
                 name: "CURVE_GEAR_POOL"

@@ -255,6 +255,8 @@ export const tokenDataByNetwork: Record<
     crvUSDT: NOT_DEPLOYED,
     USDEUSDC: NOT_DEPLOYED,
     "3CRV": NOT_DEPLOYED,
+    ezETHWETH: "0x85dE3ADd465a219EE25E04d22c39aB027cF5C12E",
+    ezpzETH: "0x8c65CeC3847ad99BdC02621bDBC89F2acE56934B",
 
     // CONVEX LP TOKENS
     cvx3Crv: "0x30D9410ED1D5DA1F6C8391af5338C93ab8d4035C",
@@ -320,6 +322,7 @@ export const tokenDataByNetwork: Record<
     B_80BAL_20WETH: "0x5c6Ee304399DBdB9C8Ef030aB642B10820DB8F56",
     "50WETH_50AURA": "0xCfCA23cA9CA720B6E98E3Eb9B6aa0fFC4a5C08B9",
     ezETH_WETH_BPT: "0x596192bB6e41802428Ac943D2f1476C1Af25CC0E",
+    trenSTETH: "0x4216d5900a6109bba48418b5e2AB6cc4e61Cf477",
     weETH_ezETH_rswETH: "0x848a5564158d84b8A8fb68ab5D004Fae11619A54",
     GHO_USDT_USDC: "0x8353157092ED8Be69a9DF8F95af097bbF33Cb2aF",
     rsETH_WETH: "0x58AAdFB1Afac0ad7fca1148f3cdE6aEDF5236B6D",
@@ -421,6 +424,7 @@ export const tokenDataByNetwork: Record<
     Re7LRT: "0x84631c0d0081FDe56DeB72F6DE77abBbF6A9f93a",
     amphrETH: "0x5fD13359Ba15A84B76f7F87568309040176167cd",
     rstETH: "0x7a4EffD87C2f3C55CA251080b1343b605f327E3a",
+    pzETH: "0x8c9532a60E0E7C6BbD2B2c1303F63aCE1c3E9811",
   },
 
   ///
@@ -556,6 +560,8 @@ export const tokenDataByNetwork: Record<
     cvxcrvUSDFRAX: NOT_DEPLOYED,
     cvxcrvUSDETHCRV: NOT_DEPLOYED,
     cvxGHOcrvUSD: NOT_DEPLOYED,
+    ezETHWETH: NOT_DEPLOYED,
+    ezpzETH: NOT_DEPLOYED,
 
     crvUSD: "0x498Bf2B1e120FeD3ad3D42EA2165E9b73f99C1e5",
 
@@ -596,6 +602,7 @@ export const tokenDataByNetwork: Record<
     weETH_rETH: NOT_DEPLOYED,
     osETH_wETH_BPT: NOT_DEPLOYED,
     ezETH_WETH_BPT: NOT_DEPLOYED,
+    trenSTETH: NOT_DEPLOYED,
     weETH_ezETH_rswETH: NOT_DEPLOYED,
     GHO_USDT_USDC: NOT_DEPLOYED,
     rsETH_WETH: NOT_DEPLOYED,
@@ -694,6 +701,7 @@ export const tokenDataByNetwork: Record<
     Re7LRT: NOT_DEPLOYED,
     amphrETH: NOT_DEPLOYED,
     rstETH: NOT_DEPLOYED,
+    pzETH: NOT_DEPLOYED,
   },
   ///
   ///
@@ -795,6 +803,8 @@ export const tokenDataByNetwork: Record<
     GHOUSDe: NOT_DEPLOYED,
     pufETHwstE: NOT_DEPLOYED,
     GHOcrvUSD: NOT_DEPLOYED,
+    ezETHWETH: NOT_DEPLOYED,
+    ezpzETH: NOT_DEPLOYED,
 
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
@@ -871,6 +881,7 @@ export const tokenDataByNetwork: Record<
     rETH_WETH_BPT: NOT_DEPLOYED,
     rETH_wETH_BPT: NOT_DEPLOYED,
     ezETH_WETH_BPT: NOT_DEPLOYED,
+    trenSTETH: NOT_DEPLOYED,
     weETH_ezETH_rswETH: NOT_DEPLOYED,
     "33AURA_33ARB_33BAL": NOT_DEPLOYED,
     ezETH_wstETH: NOT_DEPLOYED,
@@ -967,6 +978,7 @@ export const tokenDataByNetwork: Record<
     Re7LRT: NOT_DEPLOYED,
     amphrETH: NOT_DEPLOYED,
     rstETH: NOT_DEPLOYED,
+    pzETH: NOT_DEPLOYED,
   },
   //
   //
@@ -1071,6 +1083,8 @@ export const tokenDataByNetwork: Record<
     MtEthena: NOT_DEPLOYED,
     pufETHwstE: NOT_DEPLOYED,
     GHOcrvUSD: NOT_DEPLOYED,
+    ezETHWETH: NOT_DEPLOYED,
+    ezpzETH: NOT_DEPLOYED,
 
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
@@ -1147,6 +1161,7 @@ export const tokenDataByNetwork: Record<
     rETH_WETH_BPT: NOT_DEPLOYED,
     rETH_wETH_BPT: NOT_DEPLOYED,
     ezETH_WETH_BPT: NOT_DEPLOYED,
+    trenSTETH: NOT_DEPLOYED,
     weETH_ezETH_rswETH: NOT_DEPLOYED,
     rsETH_WETH: NOT_DEPLOYED,
     "33AURA_33ARB_33BAL": NOT_DEPLOYED,
@@ -1242,6 +1257,7 @@ export const tokenDataByNetwork: Record<
     Re7LRT: NOT_DEPLOYED,
     amphrETH: NOT_DEPLOYED,
     rstETH: NOT_DEPLOYED,
+    pzETH: NOT_DEPLOYED,
   },
 };
 
