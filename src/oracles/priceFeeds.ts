@@ -2201,8 +2201,7 @@ export const priceFeedsByToken: Record<
   ezETHWETH: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.CURVE_2LP_ORACLE,
-        assets: ["ezETH", "WETH"],
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
