@@ -3,6 +3,7 @@ import { SupportedToken } from "../tokens/token";
 import { Address, PartialRecord } from "../utils/types";
 import {
   FOUR_MINUTES,
+  HOUR_1,
   HOUR_1_BUFFERED,
   HOUR_1_BUFFERED_L2,
   HOUR_24,
@@ -3646,6 +3647,17 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.MELLOW_LRT_ORACLE,
         underlying: "WETH",
+        trusted: false,
+      },
+    },
+  },
+  PT_rsETH_26SEP2024: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "rsETH",
+        market: "0x6b4740722e46048874d84306B2877600ABCea3Ae",
+        twapWindow: HOUR_1,
         trusted: false,
       },
     },

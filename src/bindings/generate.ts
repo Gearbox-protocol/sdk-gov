@@ -320,6 +320,14 @@ class BindingsGenerator {
     );
     if (result) return result;
 
+    result = this.generatePendlePriceFeedData(
+      token,
+      priceFeedData,
+      chainId,
+      reserve,
+    );
+    if (result) return result;
+
     return undefined;
   }
 
@@ -715,6 +723,32 @@ class BindingsGenerator {
             },
             reserve: ${reserve}
           }));`;
+    }
+    return undefined;
+  }
+
+  protected generatePendlePriceFeedData(
+    token: string,
+    priceFeedData: PriceFeedData,
+    chainId: number,
+    reserve: boolean,
+  ): string | undefined {
+    if (priceFeedData.type === PriceFeedType.PENDLE_PT_TWAP_ORACLE) {
+      return `pendlePriceFeedsByNetwork[${chainId}].push(PendlePriceFeedData({ token: ${this.tokensEnum(
+        token,
+      )}, 
+      underlying: ${this.tokensEnum(
+        priceFeedData.underlying as SupportedToken,
+      )},
+      market: ${priceFeedData.market},
+      twapWindow: ${priceFeedData.twapWindow},
+      trusted: ${
+        !reserve
+          ? (priceFeedData as PriceFeedData & { trusted: boolean }).trusted
+          : false
+      },
+      reserve: ${reserve}
+    }));`;
     }
     return undefined;
   }
