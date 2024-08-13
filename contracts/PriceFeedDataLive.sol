@@ -118,6 +118,15 @@ struct PythPriceFeedData {
     bool trusted;
 }
 
+struct PendlePriceFeedData {
+    Tokens token;
+    Tokens underlying;
+    address market;
+    uint32 twapWindow;
+    bool reserve;
+    bool trusted;
+}
+
 contract PriceFeedDataLive {
     mapping(uint256 => ChainlinkPriceFeedData[]) chainlinkPriceFeedsByNetwork;
     mapping(uint256 => SingeTokenPriceFeedData[]) zeroPriceFeedsByNetwork;
@@ -138,6 +147,7 @@ contract PriceFeedDataLive {
     mapping(uint256 => BalancerLPPriceFeedData[]) balancerStableLPPriceFeedsByNetwork;
     mapping(uint256 => BalancerLPPriceFeedData[]) balancerWeightedLPPriceFeedsByNetwork;
     mapping(uint256 => GenericLPPriceFeedData[]) mellowLRTPriceFeedsByNetwork;
+    mapping(uint256 => PendlePriceFeedData[]) pendlePriceFeedsByNetwork;
 
     constructor() {
         // ------------------------ 1INCH ------------------------
@@ -7507,6 +7517,18 @@ contract PriceFeedDataLive {
         );
         mellowLRTPriceFeedsByNetwork[8453].push(
             GenericLPPriceFeedData({lpToken: Tokens.pzETH, underlying: Tokens.WETH, trusted: false, reserve: false})
+        );
+
+        // ------------------------ PT_rsETH_26SEP2024 ------------------------
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: Tokens.PT_rsETH_26SEP2024,
+                underlying: Tokens.rsETH,
+                market: 0x6b4740722e46048874d84306B2877600ABCea3Ae,
+                twapWindow: 3600,
+                trusted: false,
+                reserve: false
+            })
         );
     }
 

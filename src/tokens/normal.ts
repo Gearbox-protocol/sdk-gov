@@ -64,6 +64,8 @@ export type NormalToken =
   | "amphrETH"
   | "rstETH"
   | "pzETH"
+  // Pendle
+  | "PT_rsETH_26SEP2024"
 
   // REDSTONE
   | "SHIB"
@@ -435,6 +437,11 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   pzETH: {
     name: "Renzo Mellow LST",
     symbol: "pzETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  PT_rsETH_26SEP2024: {
+    name: "Pendle PT rsETH 26 Sep 2024 expiry",
+    symbol: "PT_rsETH_26SEP2024",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };

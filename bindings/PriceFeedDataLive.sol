@@ -118,6 +118,15 @@ struct PythPriceFeedData {
     bool trusted;
 }
 
+struct PendlePriceFeedData {
+    Tokens token;
+    Tokens underlying;
+    address market;
+    uint32 twapWindow;
+    bool reserve;
+    bool trusted;
+}
+
 contract PriceFeedDataLive {
     mapping(uint256 => ChainlinkPriceFeedData[]) chainlinkPriceFeedsByNetwork;
     mapping(uint256 => SingeTokenPriceFeedData[]) zeroPriceFeedsByNetwork;
@@ -138,6 +147,7 @@ contract PriceFeedDataLive {
     mapping(uint256 => BalancerLPPriceFeedData[]) balancerStableLPPriceFeedsByNetwork;
     mapping(uint256 => BalancerLPPriceFeedData[]) balancerWeightedLPPriceFeedsByNetwork;
     mapping(uint256 => GenericLPPriceFeedData[]) mellowLRTPriceFeedsByNetwork; 
+    mapping(uint256 => PendlePriceFeedData[]) pendlePriceFeedsByNetwork;
 
     constructor() {
         // $GENERATE_HERE$

@@ -31,6 +31,7 @@ export enum PriceFeedType {
   CURVE_USD_ORACLE,
   PYTH_ORACLE,
   MELLOW_LRT_ORACLE,
+  PENDLE_PT_TWAP_ORACLE,
 }
 
 export const lpPriceFeedTypes: Array<PriceFeedType> = [
@@ -175,4 +176,10 @@ export type PriceFeedData =
   | {
       type: PriceFeedType.MELLOW_LRT_ORACLE;
       underlying: SupportedToken;
+    }
+  | {
+      type: PriceFeedType.PENDLE_PT_TWAP_ORACLE;
+      market: Address;
+      underlying: SupportedToken;
+      twapWindow: number;
     };

@@ -66,6 +66,7 @@ enum Tokens {
     amphrETH,
     rstETH,
     pzETH,
+    PT_rsETH_26SEP2024,
     sfrxETH,
     _3Crv,
     crvFRAX,

@@ -466,6 +466,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.PT_rsETH_26SEP2024,
+                addr: 0x7bAf258049cc8B9A78097723dc19a8b103D4098F,
+                symbol: "PT_rsETH_26SEP2024",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.sfrxETH,
                 addr: 0xac3E018457B222d93114458476f3E3416Abbe38F,
                 symbol: "sfrxETH",

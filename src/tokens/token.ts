@@ -361,6 +361,9 @@ export const tokenDataByNetwork: Record<
     auracbETH_rETH_wstETH_vault: NOT_DEPLOYED,
     aurarETH_wETH_BPT_vault: NOT_DEPLOYED,
 
+    // PENDLE
+    PT_rsETH_26SEP2024: "0x7bAf258049cc8B9A78097723dc19a8b103D4098F",
+
     // GEARBOX
     dDAI: "0x6CFaF95457d7688022FC53e7AbE052ef8DFBbdBA",
     dUSDC: "0xc411dB5f5Eb3f7d552F9B8454B2D74097ccdE6E3",
@@ -638,6 +641,9 @@ export const tokenDataByNetwork: Record<
     auracbETH_rETH_wstETH_vault: "0x8cA64Bd82AbFE138E195ce5Cb7268CA285D42245",
     aurarETH_wETH_BPT_vault: "0x129A44AC6ff0f965C907579F96F2eD682E52c84A",
 
+    // PENDLE
+    PT_rsETH_26SEP2024: NOT_DEPLOYED,
+
     // GEARBOX
     dDAI: NOT_DEPLOYED,
     dUSDC: NOT_DEPLOYED,
@@ -914,6 +920,9 @@ export const tokenDataByNetwork: Record<
     auracbETH_rETH_wstETH_vault: NOT_DEPLOYED,
     aurawstETH_rETH_sfrxETH_vault: NOT_DEPLOYED,
     aurawstETH_WETH_BPT_vault: NOT_DEPLOYED,
+
+    // PENDLE
+    PT_rsETH_26SEP2024: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -1193,6 +1202,9 @@ export const tokenDataByNetwork: Record<
     auracbETH_rETH_wstETH_vault: NOT_DEPLOYED,
     aurawstETH_rETH_sfrxETH_vault: NOT_DEPLOYED,
     aurawstETH_WETH_BPT_vault: NOT_DEPLOYED,
+
+    // PENDLE
+    PT_rsETH_26SEP2024: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
