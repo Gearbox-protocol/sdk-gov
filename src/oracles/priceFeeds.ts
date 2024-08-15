@@ -714,18 +714,9 @@ export const priceFeedsByToken: Record<
   STETH: {
     Mainnet: {
       Main: {
-        type: PriceFeedType.COMPOSITE_ORACLE,
-        targetToBasePriceFeed: {
-          type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
-          stalenessPeriod: HOUR_24_BUFFERED,
-        },
-        baseToUsdPriceFeed: {
-          type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
-          stalenessPeriod: HOUR_1_BUFFERED,
-        },
-        trusted: false,
+        type: PriceFeedType.THE_SAME_AS,
+        token: "WETH",
+        trusted: true,
       },
       Reserve: {
         type: PriceFeedType.REDSTONE_ORACLE,
@@ -756,7 +747,7 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0xb523AE262D20A936BC152e6023996e46FDC2A95D",
+          address: "0xB1552C5e96B312d0Bf8b554186F846C40614a540",
           stalenessPeriod: HOUR_24_BUFFERED_L2,
         },
         baseToUsdPriceFeed: {
@@ -776,10 +767,10 @@ export const priceFeedsByToken: Record<
     },
     Optimism: {
       Main: {
-        type: PriceFeedType.COMPOSITE_ORACLE, // wstETH/ETH x ETH/USD
+        type: PriceFeedType.COMPOSITE_ORACLE, // wstETH/stETH x ETH/USD
         targetToBasePriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x524299Ab0987a7c4B3c8022a35669DdcdC715a10",
+          address: "0xe59EBa0D492cA53C6f46015EEa00517F2707dc77",
           stalenessPeriod: HOUR_24_BUFFERED_L2,
         },
         baseToUsdPriceFeed: {

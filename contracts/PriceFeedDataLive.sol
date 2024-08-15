@@ -1156,20 +1156,14 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ STETH ------------------------
-
-        {
-            CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[1].push();
-            cpf.token = Tokens.STETH;
-            cpf.isTargetRedstone = false;
-            cpf.targetToBaseFeed = 0x86392dC19c0b719886221c78AB11eb8Cf5c52812;
-            cpf.targetStalenessPeriod = 87300;
-            cpf.isBaseComposite = false;
-            cpf.baseToUSDFeed = 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419;
-            cpf.baseStalenessPeriod = 4500;
-
-            cpf.trusted = false;
-            cpf.reserve = false;
-        }
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: Tokens.STETH,
+                tokenHasSamePriceFeed: Tokens.WETH,
+                trusted: true,
+                reserve: false
+            })
+        );
         redStonePriceFeedsByNetwork[1].push(
             RedStonePriceFeedData({
                 token: Tokens.STETH,
@@ -1202,7 +1196,7 @@ contract PriceFeedDataLive {
             CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[42161].push();
             cpf.token = Tokens.wstETH;
             cpf.isTargetRedstone = false;
-            cpf.targetToBaseFeed = 0xb523AE262D20A936BC152e6023996e46FDC2A95D;
+            cpf.targetToBaseFeed = 0xB1552C5e96B312d0Bf8b554186F846C40614a540;
             cpf.targetStalenessPeriod = 86520;
             cpf.isBaseComposite = false;
             cpf.baseToUSDFeed = 0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612;
@@ -1237,7 +1231,7 @@ contract PriceFeedDataLive {
             CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[10].push();
             cpf.token = Tokens.wstETH;
             cpf.isTargetRedstone = false;
-            cpf.targetToBaseFeed = 0x524299Ab0987a7c4B3c8022a35669DdcdC715a10;
+            cpf.targetToBaseFeed = 0xe59EBa0D492cA53C6f46015EEa00517F2707dc77;
             cpf.targetStalenessPeriod = 86520;
             cpf.isBaseComposite = false;
             cpf.baseToUSDFeed = 0x13e3Ee699D1909E989722E753853AE30b17e08c5;
