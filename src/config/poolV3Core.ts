@@ -151,7 +151,9 @@ ${creditManagers}`;
         GenericSwapPair,
         UniswapV3Pair,
         BalancerPool,
-        VelodromeV2Pool
+        VelodromeV2Pool,
+        PendlePair,
+        MellowUnderlyingConfig
     } from "@gearbox-protocol/core-v3/contracts/test/interfaces/ICreditConfig.sol";
     
     contract CONFIG_${this.id

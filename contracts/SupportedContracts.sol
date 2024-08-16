@@ -69,6 +69,13 @@ contract SupportedContracts is Test, ISupportedContracts {
 
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.PENDLE_ROUTER,
+                addr: 0x888888888889758F76e7103c6CbF23ABbF58F946,
+                name: "PENDLE_ROUTER"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_3CRV_POOL,
                 addr: 0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7,
                 name: "CURVE_3CRV_POOL"
@@ -598,6 +605,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.ZIRCUIT_POOL,
                 addr: 0xF047ab4c75cebf0eB9ed34Ae2c186f3611aEAfa6,
                 name: "ZIRCUIT_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.MELLOW_STEAKHOUSE_VAULT,
+                addr: 0xBEEF69Ac7870777598A04B2bd4771c71212E6aBc,
+                name: "MELLOW_STEAKHOUSE_VAULT"
             })
         );
         contractDataByNetwork[42161].push(

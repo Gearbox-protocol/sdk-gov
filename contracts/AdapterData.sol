@@ -71,6 +71,9 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.CAMELOT_V3_ROUTER, adapterType: AdapterType.CAMELOT_V3_ROUTER})
         );
         simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.PENDLE_ROUTER, adapterType: AdapterType.PENDLE_ROUTER})
+        );
+        simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.YEARN_DAI_VAULT, adapterType: AdapterType.YEARN_V2})
         );
         simpleAdapters.push(
@@ -192,6 +195,9 @@ contract AdapterData {
         );
         simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.ZIRCUIT_POOL, adapterType: AdapterType.ZIRCUIT_POOL})
+        );
+        simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.MELLOW_STEAKHOUSE_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
         );
         curveAdapters.push(
             CurveAdapter({
