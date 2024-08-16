@@ -124,6 +124,8 @@ export type CompoundV2PoolContract =
   | "COMPOUND_V2_LINK_POOL"
   | "FLUX_USDC_POOL";
 
+export type MellowVaultContract = "MELLOW_STEAKHOUSE_VAULT";
+
 export type SupportedContract =
   | UniswapV2Contract
   | "UNISWAP_V3_ROUTER"
@@ -144,11 +146,13 @@ export type SupportedContract =
   | AaveV2TokenWrapperContract
   | CompoundV2PoolContract
   | ERC4626VaultContract
+  | MellowVaultContract
   | "VELODROME_V2_ROUTER"
   | "VELODROME_CL_ROUTER"
   | "CAMELOT_V3_ROUTER"
   | "AAVE_V3_LENDING_POOL"
-  | "ZIRCUIT_POOL";
+  | "ZIRCUIT_POOL"
+  | "PENDLE_ROUTER";
 
 export const contractsByNetwork: Record<
   NetworkType,
@@ -163,6 +167,7 @@ export const contractsByNetwork: Record<
     VELODROME_V2_ROUTER: NOT_DEPLOYED,
     VELODROME_CL_ROUTER: NOT_DEPLOYED,
     CAMELOT_V3_ROUTER: NOT_DEPLOYED,
+    PENDLE_ROUTER: "0x888888888889758F76e7103c6CbF23ABbF58F946",
 
     // CURVE
     CURVE_3CRV_POOL: "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7", // SEPARATE TOKEN
@@ -292,6 +297,9 @@ export const contractsByNetwork: Record<
     FLUX_USDC_POOL: tokenDataByNetwork.Mainnet.fUSDC,
 
     ZIRCUIT_POOL: "0xF047ab4c75cebf0eB9ed34Ae2c186f3611aEAfa6",
+
+    // MELLOW
+    MELLOW_STEAKHOUSE_VAULT: tokenDataByNetwork.Mainnet.steakLRT,
   },
 
   //
@@ -312,6 +320,7 @@ export const contractsByNetwork: Record<
     VELODROME_V2_ROUTER: NOT_DEPLOYED,
     VELODROME_CL_ROUTER: NOT_DEPLOYED,
     CAMELOT_V3_ROUTER: "0x1F721E2E82F6676FCE4eA07A5958cF098D339e18",
+    PENDLE_ROUTER: NOT_DEPLOYED,
 
     // CURVE
     CURVE_3CRV_POOL: NOT_DEPLOYED,
@@ -441,6 +450,9 @@ export const contractsByNetwork: Record<
 
     FLUX_USDC_POOL: tokenDataByNetwork.Arbitrum.fUSDC,
     ZIRCUIT_POOL: NOT_DEPLOYED,
+
+    // MELLOW
+    MELLOW_STEAKHOUSE_VAULT: tokenDataByNetwork.Arbitrum.steakLRT,
   },
   //
   //
@@ -460,6 +472,7 @@ export const contractsByNetwork: Record<
     VELODROME_V2_ROUTER: "0xa062aE8A9c5e11aaA026fc2670B0D65cCc8B2858",
     VELODROME_CL_ROUTER: "0x0792a633F0c19c351081CF4B211F68F79bCc9676",
     CAMELOT_V3_ROUTER: NOT_DEPLOYED,
+    PENDLE_ROUTER: NOT_DEPLOYED,
 
     // CURVE
     CURVE_3CRV_POOL_OP: "0x1337BedC9D22ecbe766dF105c9623922A27963EC",
@@ -590,6 +603,9 @@ export const contractsByNetwork: Record<
 
     FLUX_USDC_POOL: tokenDataByNetwork.Optimism.fUSDC,
     ZIRCUIT_POOL: NOT_DEPLOYED,
+
+    // MELLOW
+    MELLOW_STEAKHOUSE_VAULT: tokenDataByNetwork.Optimism.steakLRT,
   },
   //
   //
@@ -609,6 +625,7 @@ export const contractsByNetwork: Record<
     VELODROME_V2_ROUTER: NOT_DEPLOYED,
     VELODROME_CL_ROUTER: NOT_DEPLOYED,
     CAMELOT_V3_ROUTER: NOT_DEPLOYED,
+    PENDLE_ROUTER: NOT_DEPLOYED,
 
     // CURVE
     CURVE_3CRV_POOL_OP: NOT_DEPLOYED,
@@ -736,6 +753,9 @@ export const contractsByNetwork: Record<
     FLUX_USDC_POOL: tokenDataByNetwork.Base.fUSDC,
     CURVE_GHO_USDE_POOL: NOT_DEPLOYED,
     ZIRCUIT_POOL: NOT_DEPLOYED,
+
+    // MELLOW
+    MELLOW_STEAKHOUSE_VAULT: tokenDataByNetwork.Base.steakLRT,
   },
 };
 
@@ -766,6 +786,11 @@ export type UniswapV2Params = {
 export type VelodromeV2Params = {
   protocol: Protocols.Velodrome;
   type: AdapterInterface.VELODROME_V2_ROUTER;
+} & BaseContractParams;
+
+export type PendleRouterParams = {
+  protocol: Protocols.Pendle;
+  type: AdapterInterface.PENDLE_ROUTER;
 } & BaseContractParams;
 
 export type UniswapV3Params = {
@@ -927,6 +952,11 @@ export type ZircuitParams = {
   type: AdapterInterface.ZIRCUIT_POOL;
 } & BaseContractParams;
 
+export type MellowVaultParams = {
+  protocol: Protocols.Mellow;
+  type: AdapterInterface.MELLOW_LRT_VAULT;
+} & BaseContractParams;
+
 export type ContractParams =
   | UniswapV2Params
   | UniswapV3Params
@@ -951,7 +981,9 @@ export type ContractParams =
   | AuraParams
   | AuraPoolParams
   | ERC4626Params
-  | ZircuitParams;
+  | ZircuitParams
+  | MellowVaultParams
+  | PendleRouterParams;
 
 export const contractParams: Record<SupportedContract, ContractParams> = {
   UNISWAP_V2_ROUTER: {
@@ -1000,6 +1032,11 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     protocol: Protocols.Camelot,
     type: AdapterInterface.CAMELOT_V3_ROUTER,
     quoter: CAMELOT_V3_QUOTER,
+  },
+  PENDLE_ROUTER: {
+    name: "Pendle Router",
+    protocol: Protocols.Pendle,
+    type: AdapterInterface.PENDLE_ROUTER,
   },
   CURVE_3CRV_POOL: {
     name: "Curve 3Pool",
@@ -2039,6 +2076,11 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Zircuit staking pool",
     protocol: Protocols.Zircuit,
     type: AdapterInterface.ZIRCUIT_POOL,
+  },
+  MELLOW_STEAKHOUSE_VAULT: {
+    name: "Mellow Steakhouse steakLRT vault",
+    protocol: Protocols.Mellow,
+    type: AdapterInterface.MELLOW_LRT_VAULT,
   },
 };
 

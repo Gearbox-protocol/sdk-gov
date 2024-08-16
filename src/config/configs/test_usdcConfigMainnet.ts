@@ -1,4 +1,10 @@
-import { UniV3Config } from "../adapters";
+import {
+  BalancerVaultConfig,
+  MellowVaultConfig,
+  PendlePairStatus,
+  PendleRouterConfig,
+  UniV3Config,
+} from "../adapters";
 import {
   CreditManagerV3DeployConfig,
   PoolV3DeployConfig,
@@ -13,6 +19,33 @@ const levUniV3Config: UniV3Config = {
     { token0: "USDC", token1: "WETH", fee: 500 },
     { token0: "LDO", token1: "WETH", fee: 3000 },
   ],
+};
+
+const levBalancerConfig: BalancerVaultConfig = {
+  contract: "BALANCER_VAULT",
+  allowed: [
+    {
+      pool: "rsETH_WETH",
+      status: 2,
+    },
+  ],
+};
+
+const levPendleConfig: PendleRouterConfig = {
+  contract: "PENDLE_ROUTER",
+  allowed: [
+    {
+      inputToken: "rsETH",
+      pendleToken: "PT_rsETH_26SEP2024",
+      market: "0x6b4740722e46048874d84306b2877600abcea3ae",
+      status: PendlePairStatus.ALLOWED,
+    },
+  ],
+};
+
+const levSteakLRTVaultConfig: MellowVaultConfig = {
+  contract: "MELLOW_STEAKHOUSE_VAULT",
+  allowed: ["wstETH"],
 };
 
 const levCreditManager: CreditManagerV3DeployConfig = {
@@ -37,14 +70,6 @@ const levCreditManager: CreditManagerV3DeployConfig = {
       lt: 9000,
     },
     {
-      token: "pufETH",
-      lt: 9000,
-    },
-    {
-      token: "zpufETH",
-      lt: 9000,
-    },
-    {
       token: "LDO",
       lt: 8250,
     },
@@ -60,6 +85,26 @@ const levCreditManager: CreditManagerV3DeployConfig = {
       token: "stkcvxGHOcrvUSD",
       lt: 9000,
     },
+    {
+      token: "STETH",
+      lt: 9000,
+    },
+    {
+      token: "wstETH",
+      lt: 9000,
+    },
+    {
+      token: "steakLRT",
+      lt: 9000,
+    },
+    {
+      token: "rsETH",
+      lt: 9000,
+    },
+    {
+      token: "PT_rsETH_26SEP2024",
+      lt: 9000,
+    },
     // Compatibility
     {
       token: "USDeUSDC",
@@ -71,6 +116,10 @@ const levCreditManager: CreditManagerV3DeployConfig = {
     },
     {
       token: "cvxGHOcrvUSD",
+      lt: 0,
+    },
+    {
+      token: "steCRV",
       lt: 0,
     },
     // Rewards
@@ -85,11 +134,15 @@ const levCreditManager: CreditManagerV3DeployConfig = {
   ],
   adapters: [
     levUniV3Config,
+    levPendleConfig,
+    levBalancerConfig,
+    levSteakLRTVaultConfig,
     { contract: "CURVE_USDE_USDC_POOL" },
     { contract: "CURVE_GHO_CRVUSD_POOL" },
-    { contract: "ZIRCUIT_POOL" },
     { contract: "CONVEX_BOOSTER" },
     { contract: "CONVEX_GHO_CRVUSD_POOL" },
+    { contract: "LIDO_WSTETH" },
+    { contract: "CURVE_STETH_GATEWAY" },
   ],
 };
 
@@ -119,18 +172,6 @@ export const testUsdcConfigMainnet: PoolV3DeployConfig = {
       limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
     WETH: {
-      minRate: 4,
-      maxRate: 1500,
-      quotaIncreaseFee: 1,
-      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
-    },
-    pufETH: {
-      minRate: 4,
-      maxRate: 1500,
-      quotaIncreaseFee: 1,
-      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
-    },
-    zpufETH: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 1,
@@ -166,6 +207,12 @@ export const testUsdcConfigMainnet: PoolV3DeployConfig = {
       quotaIncreaseFee: 0,
       limit: (BigInt(0) * POOL_DECIMALS) / POOL_DIVIDER,
     },
+    steCRV: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: (BigInt(0) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
     cvxGHOcrvUSD: {
       minRate: 4,
       maxRate: 1500,
@@ -189,6 +236,24 @@ export const testUsdcConfigMainnet: PoolV3DeployConfig = {
       maxRate: 1500,
       quotaIncreaseFee: 0,
       limit: (BigInt(0) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    STETH: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    wstETH: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    steakLRT: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
   },
   creditManagers: [levCreditManager],

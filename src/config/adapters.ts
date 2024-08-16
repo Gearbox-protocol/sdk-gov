@@ -9,12 +9,20 @@ export enum BalancerPoolStatus {
   SWAP_ONLY = 2,
 }
 
+export enum PendlePairStatus {
+  NOT_ALLOWED = 0,
+  ALLOWED = 1,
+  EXIT_ONLY = 2,
+}
+
 export type AdapterDeployConfig =
   | DefaultAdapterConfig
   | UniV3Config
   | GenericSwapConfig
   | BalancerVaultConfig
-  | VelodromeV2Config;
+  | VelodromeV2Config
+  | PendleRouterConfig
+  | MellowVaultConfig;
 
 export interface DefaultAdapterConfig {
   contract: SupportedContract;
@@ -28,6 +36,23 @@ export interface BalancerPoolConfig {
 export interface BalancerVaultConfig {
   contract: "BALANCER_VAULT";
   allowed: Array<BalancerPoolConfig>;
+}
+
+export interface PendlePairConfig {
+  market: Address;
+  inputToken: SupportedToken;
+  pendleToken: SupportedToken;
+  status: PendlePairStatus;
+}
+
+export interface PendleRouterConfig {
+  contract: "PENDLE_ROUTER";
+  allowed: Array<PendlePairConfig>;
+}
+
+export interface MellowVaultConfig {
+  contract: "MELLOW_STEAKHOUSE_VAULT";
+  allowed: Array<SupportedToken>;
 }
 
 export interface GenericSwapConfig {
@@ -80,4 +105,6 @@ export type AdapterConfig =
   | GenericSwapConfig
   | BalancerVaultConfig
   | VelodromeV2Config
+  | PendleRouterConfig
+  | MellowVaultConfig
   | VelodromeCLConfig;

@@ -8,6 +8,8 @@ import {
   AdapterConfig,
   BalancerVaultConfig,
   GenericSwapConfig,
+  MellowVaultConfig,
+  PendleRouterConfig,
   UniswapV3Pair,
   UniV3Config,
   VelodromeCLConfig,
@@ -188,7 +190,7 @@ ${contracts}
           )
           .join("\n");
         return `${contractLine}
-        BalancerPool[] storage bp = cp.balancerPools;
+        BalancerPool[] storage bp = cp.adapterConfig.balancerPools;
         ${balancerConfig}`;
       }
 
@@ -207,7 +209,7 @@ ${contracts}
           .join("\n");
 
         return `${contractLine}{
-        GenericSwapPair[] storage gsp = cp.genericSwapPairs;
+        GenericSwapPair[] storage gsp = cp.adapterConfig.genericSwapPairs;
         ${pairs}}`;
       }
 
@@ -230,7 +232,7 @@ ${contracts}
           .join("\n");
 
         return `${contractLine}{
-        UniswapV3Pair[] storage uv3p = cp.uniswapV3Pairs;
+        UniswapV3Pair[] storage uv3p = cp.adapterConfig.uniswapV3Pairs;
         ${pairs}}`;
       }
       case "VELODROME_V2_ROUTER": {
@@ -246,8 +248,39 @@ ${contracts}
           .join("\n");
 
         return `${contractLine}
-          VelodromeV2Pool[] storage vv2p = cp.velodromeV2Pools;
+          VelodromeV2Pool[] storage vv2p = cp.adapterConfig.velodromeV2Pools;
           ${pools}`;
+      }
+      case "PENDLE_ROUTER": {
+        const pairs = ((a as PendleRouterConfig).allowed || [])
+          .map(
+            pair => `pendp.push(PendlePair({
+          market: ${pair.market},
+          inputToken: Tokens.${safeEnum(pair.inputToken)},
+          pendleToken: Tokens.${safeEnum(pair.pendleToken)},
+          status: ${pair.status.toFixed()}
+        }));`,
+          )
+          .join("\n");
+
+        return `${contractLine}
+        PendlePair[] storage pendp = cp.adapterConfig.pendlePairs;
+        ${pairs}`;
+      }
+
+      case "MELLOW_STEAKHOUSE_VAULT": {
+        const underlyings = ((a as MellowVaultConfig).allowed || [])
+          .map(
+            underlying => `mu.push(MellowUnderlyingConfig({
+          vault: Contracts.${a.contract},
+          underlying: Tokens.${safeEnum(underlying)}
+        }));`,
+          )
+          .join("\n");
+
+        return `${contractLine}{
+        MellowUnderlyingConfig[] storage mu = cp.adapterConfig.mellowUnderlyings;
+        ${underlyings}}`;
       }
 
       default:

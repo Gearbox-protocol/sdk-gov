@@ -20,4 +20,6 @@ export enum Protocols {
   AaveV3,
   Pancakeswap,
   Zircuit,
+  Mellow,
+  Pendle,
 }

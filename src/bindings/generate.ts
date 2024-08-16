@@ -818,7 +818,9 @@ class BindingsGenerator {
           contractParam.type === AdapterInterface.CONVEX_L2_BOOSTER ||
           contractParam.type === AdapterInterface.CONVEX_L2_REWARD_POOL ||
           contractParam.type === AdapterInterface.AAVE_V3_LENDING_POOL ||
-          contractParam.type === AdapterInterface.ZIRCUIT_POOL,
+          contractParam.type === AdapterInterface.ZIRCUIT_POOL ||
+          contractParam.type === AdapterInterface.MELLOW_LRT_VAULT ||
+          contractParam.type === AdapterInterface.PENDLE_ROUTER,
       )
       .map(
         ([contract, contractParam]) =>
