@@ -719,11 +719,17 @@ export const priceFeedsByToken: Record<
         trusted: true,
       },
       Reserve: {
-        type: PriceFeedType.REDSTONE_ORACLE,
-        dataServiceId: "redstone-primary-prod",
-        dataId: "stETH",
-        stalenessPeriod: FOUR_MINUTES,
-        ...REDSTONE_SIGNERS,
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x86392dC19c0b719886221c78AB11eb8Cf5c52812",
+          stalenessPeriod: HOUR_24_BUFFERED,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
       },
     },
     Arbitrum: {
@@ -758,11 +764,17 @@ export const priceFeedsByToken: Record<
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.REDSTONE_ORACLE,
-        dataServiceId: "redstone-primary-prod",
-        dataId: "wstETH",
-        stalenessPeriod: FOUR_MINUTES,
-        ...REDSTONE_SIGNERS,
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0xb523AE262D20A936BC152e6023996e46FDC2A95D",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
       },
     },
     Optimism: {
@@ -781,11 +793,17 @@ export const priceFeedsByToken: Record<
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.REDSTONE_ORACLE,
-        dataServiceId: "redstone-primary-prod",
-        dataId: "wstETH",
-        stalenessPeriod: FOUR_MINUTES,
-        ...REDSTONE_SIGNERS,
+        type: PriceFeedType.COMPOSITE_ORACLE, // wstETH/ETH x ETH/USD
+        targetToBasePriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x524299Ab0987a7c4B3c8022a35669DdcdC715a10",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x13e3Ee699D1909E989722E753853AE30b17e08c5",
+          stalenessPeriod: HOUR_24_BUFFERED_L2,
+        },
       },
     },
   },
