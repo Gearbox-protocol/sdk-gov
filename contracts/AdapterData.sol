@@ -418,6 +418,14 @@ contract AdapterData {
         );
         curveAdapters.push(
             CurveAdapter({
+                targetContract: Contracts.CURVE_LBTC_WBTC_POOL,
+                adapterType: AdapterType.CURVE_STABLE_NG,
+                lpToken: Tokens.LBTCWBTC,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
                 targetContract: Contracts.CURVE_2CRV_POOL_ARB,
                 adapterType: AdapterType.CURVE_V1_2ASSETS,
                 lpToken: Tokens._2CRV,

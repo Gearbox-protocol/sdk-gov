@@ -53,6 +53,7 @@ export type CurvePoolContract =
   | "CURVE_GHO_CRVUSD_POOL"
   | "CURVE_EZETH_ETH_POOL"
   | "CURVE_EZPZ_ETH_POOL"
+  | "CURVE_LBTC_WBTC_POOL"
   | "CURVE_2CRV_POOL_ARB"
   | "CURVE_TRICRYPTO_CRVUSD_POOL_ARB"
   | "CURVE_CRVUSD_USDC_POOL_ARB"
@@ -195,6 +196,7 @@ export const contractsByNetwork: Record<
     CURVE_GHO_CRVUSD_POOL: tokenDataByNetwork.Mainnet.GHOcrvUSD,
     CURVE_EZETH_ETH_POOL: tokenDataByNetwork.Mainnet.ezETHWETH,
     CURVE_EZPZ_ETH_POOL: tokenDataByNetwork.Mainnet.ezpzETH,
+    CURVE_LBTC_WBTC_POOL: tokenDataByNetwork.Mainnet.LBTCWBTC,
 
     CURVE_GEAR_POOL: "0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2",
 
@@ -348,6 +350,7 @@ export const contractsByNetwork: Record<
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
     CURVE_EZETH_ETH_POOL: NOT_DEPLOYED,
     CURVE_EZPZ_ETH_POOL: NOT_DEPLOYED,
+    CURVE_LBTC_WBTC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -501,6 +504,7 @@ export const contractsByNetwork: Record<
     CURVE_ETH_WSTETH_GATEWAY_OP: "0xF12057505cd8e3256d3654C0dC32BEB0c531eb77",
     CURVE_EZETH_ETH_POOL: NOT_DEPLOYED,
     CURVE_EZPZ_ETH_POOL: NOT_DEPLOYED,
+    CURVE_LBTC_WBTC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -653,6 +657,7 @@ export const contractsByNetwork: Record<
     CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
     CURVE_EZETH_ETH_POOL: NOT_DEPLOYED,
     CURVE_EZPZ_ETH_POOL: NOT_DEPLOYED,
+    CURVE_LBTC_WBTC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -1324,6 +1329,14 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.CURVE_V1_2ASSETS,
     lpToken: "ezpzETH",
     tokens: ["ezETH", "pzETH"],
+  },
+  CURVE_LBTC_WBTC_POOL: {
+    name: "Curve LBTC/WBTC Pool",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "LBTCWBTC",
+    tokens: ["LBTC", "WBTC"],
   },
 
   CURVE_2CRV_POOL_ARB: {

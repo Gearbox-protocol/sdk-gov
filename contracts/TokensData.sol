@@ -306,6 +306,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.LBTC,
+                addr: 0x8236a87084f8B84306f72007F36F2618A5634494,
+                symbol: "LBTC",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.rETH,
                 addr: 0xae78736Cd615f374D3085123A210448E74Fc6393,
                 symbol: "rETH",
@@ -662,6 +670,14 @@ contract TokensDataLive {
                 id: Tokens.ezpzETH,
                 addr: 0x8c65CeC3847ad99BdC02621bDBC89F2acE56934B,
                 symbol: "ezpzETH",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.LBTCWBTC,
+                addr: 0xF130E387e2083EE79f3588e678c9B446A07860cb,
+                symbol: "LBTCWBTC",
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
         );
