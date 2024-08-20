@@ -1164,28 +1164,19 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        redStonePriceFeedsByNetwork[1].push(
-            RedStonePriceFeedData({
-                token: Tokens.STETH,
-                dataServiceId: "redstone-primary-prod",
-                dataFeedId: "stETH",
-                signers: [
-                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
-                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
-                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
-                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
-                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0)
-                ],
-                signersThreshold: 5,
-                trusted: false,
-                reserve: true
-            })
-        );
+        {
+            CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[1].push();
+            cpf.token = Tokens.STETH;
+            cpf.isTargetRedstone = false;
+            cpf.targetToBaseFeed = 0x86392dC19c0b719886221c78AB11eb8Cf5c52812;
+            cpf.targetStalenessPeriod = 87300;
+            cpf.isBaseComposite = false;
+            cpf.baseToUSDFeed = 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419;
+            cpf.baseStalenessPeriod = 4500;
+
+            cpf.trusted = false;
+            cpf.reserve = true;
+        }
         zeroPriceFeedsByNetwork[42161].push(
             SingeTokenPriceFeedData({token: Tokens.STETH, trusted: false, reserve: false})
         );
@@ -1205,28 +1196,19 @@ contract PriceFeedDataLive {
             cpf.trusted = false;
             cpf.reserve = false;
         }
-        redStonePriceFeedsByNetwork[42161].push(
-            RedStonePriceFeedData({
-                token: Tokens.wstETH,
-                dataServiceId: "redstone-primary-prod",
-                dataFeedId: "wstETH",
-                signers: [
-                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
-                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
-                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
-                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
-                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0)
-                ],
-                signersThreshold: 5,
-                trusted: false,
-                reserve: true
-            })
-        );
+        {
+            CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[42161].push();
+            cpf.token = Tokens.wstETH;
+            cpf.isTargetRedstone = false;
+            cpf.targetToBaseFeed = 0xb523AE262D20A936BC152e6023996e46FDC2A95D;
+            cpf.targetStalenessPeriod = 86520;
+            cpf.isBaseComposite = false;
+            cpf.baseToUSDFeed = 0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612;
+            cpf.baseStalenessPeriod = 86520;
+
+            cpf.trusted = false;
+            cpf.reserve = true;
+        }
         {
             CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[10].push();
             cpf.token = Tokens.wstETH;
@@ -1240,28 +1222,19 @@ contract PriceFeedDataLive {
             cpf.trusted = false;
             cpf.reserve = false;
         }
-        redStonePriceFeedsByNetwork[10].push(
-            RedStonePriceFeedData({
-                token: Tokens.wstETH,
-                dataServiceId: "redstone-primary-prod",
-                dataFeedId: "wstETH",
-                signers: [
-                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
-                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
-                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
-                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
-                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0)
-                ],
-                signersThreshold: 5,
-                trusted: false,
-                reserve: true
-            })
-        );
+        {
+            CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[10].push();
+            cpf.token = Tokens.wstETH;
+            cpf.isTargetRedstone = false;
+            cpf.targetToBaseFeed = 0x524299Ab0987a7c4B3c8022a35669DdcdC715a10;
+            cpf.targetStalenessPeriod = 86520;
+            cpf.isBaseComposite = false;
+            cpf.baseToUSDFeed = 0x13e3Ee699D1909E989722E753853AE30b17e08c5;
+            cpf.baseStalenessPeriod = 86520;
+
+            cpf.trusted = false;
+            cpf.reserve = true;
+        }
 
         // ------------------------ CVX ------------------------
         chainlinkPriceFeedsByNetwork[1].push(
