@@ -38,6 +38,7 @@ export type CurveLPToken =
   | "GHOcrvUSD"
   | "ezETHWETH"
   | "ezpzETH"
+  | "LBTCWBTC"
 
   /// Arbitrum
   | "2CRV"
@@ -364,6 +365,14 @@ export const curveTokens: Record<
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
     pool: "CURVE_EZPZ_ETH_POOL",
     tokenOut: ["ezETH", "pzETH"],
+  },
+
+  LBTCWBTC: {
+    name: "Curve LBTC/WBTC LP",
+    symbol: "LBTCWBTC",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_LBTC_WBTC_POOL",
+    tokenOut: ["LBTC", "WBTC"],
   },
   ...curveMetaTokens,
 };

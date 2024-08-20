@@ -1194,7 +1194,27 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  LBTC: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "LBTC_FUNDAMENTAL",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
+        },
 
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+        trusted: false,
+      },
+    },
+  },
   rETH: {
     Mainnet: {
       Main: {
@@ -2200,6 +2220,14 @@ export const priceFeedsByToken: Record<
   },
 
   ezpzETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  LBTCWBTC: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,

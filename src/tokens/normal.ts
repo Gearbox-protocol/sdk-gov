@@ -45,6 +45,7 @@ export type NormalToken =
   | "APE"
   | "rETH"
   | "AURA"
+  | "LBTC"
   | "osETH"
   | "weETH"
   | "SWISE"
@@ -337,6 +338,12 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
     name: "APE",
 
     symbol: "APE",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  LBTC: {
+    name: "LBTC",
+
+    symbol: "LBTC",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
   rETH: {
