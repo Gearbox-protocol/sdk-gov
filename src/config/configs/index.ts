@@ -4,6 +4,7 @@ export { ghoConfigMainnet } from "./ghoConfigMainnet";
 export { testUsdcConfigArbitrum } from "./test_usdcConfigArbitrum";
 export { testUsdcConfigMainnet } from "./test_usdcConfigMainnet";
 export { testWethConfigArbitrum } from "./test_wethConfigArbitrum";
+export { testWethConfigMainnet } from "./test_wethConfigMainnet";
 export { usdcConfigArbitrum } from "./usdcConfigArbitrum";
 export { usdcConfigMainnet } from "./usdcConfigMainnet";
 export { usdcConfigOptimism } from "./usdcConfigOptimism";
