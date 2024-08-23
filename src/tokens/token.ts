@@ -1286,7 +1286,8 @@ export type TickerToken =
   | "ezETH/ETH"
   | "rsETH/ETH"
   | "pufETH/ETH"
-  | "rswETH/ETH";
+  | "rswETH/ETH"
+  | "LBTC/BTC";
 
 export interface TickerInfo {
   symbol: TickerToken;
@@ -1329,6 +1330,12 @@ export const tickerInfoTokensByNetwork: Record<
       dataId: "rswETH_FUNDAMENTAL",
       address: "0x7fF63E75F48aad6F4bE97E75C6421f348f19fE7F",
       priceFeed: "0xB72A69e2182bE87bda706B7Ff9A539AC78338C61",
+    },
+    LBTC: {
+      symbol: "LBTC/BTC",
+      dataId: "LBTC_FUNDAMENTAL",
+      address: "0xB0EA0EC3Fd4947348816f76768b3a56249d47EEc",
+      priceFeed: "0xd7396fA3aFB9833293Ce2149EEb3Dbf5380B1e0D",
     },
   },
   Arbitrum: {
