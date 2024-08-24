@@ -1347,7 +1347,7 @@ export const tickerInfoTokensByNetwork: Record<
     },
     rsETH: {
       symbol: "rsETH/ETH",
-      dataId: "rsETH_FUNDAMENTAL",
+      dataId: "rsETH/ETH",
       address: "0x15094B05e679c9B7fDde6FB8e6BDa930ff1D6a62",
       priceFeed: "0x354A63F07A5c1605920794aFFF09963b6DF897a9",
     },
@@ -1355,7 +1355,7 @@ export const tickerInfoTokensByNetwork: Record<
   Optimism: {
     ezETH: {
       symbol: "ezETH/ETH",
-      dataId: "ezETH_FUNDAMENTAL",
+      dataId: "ezETH/ETH",
       address: "0x658f8e60c57ad62a9299ef6c7b1da9a0d1d1e681",
       priceFeed: "0xF23C91b1E3B7FD9174c82F7Fb2BD270C3CfcC3CE",
     },
