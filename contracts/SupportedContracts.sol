@@ -246,7 +246,7 @@ contract SupportedContracts is Test, ISupportedContracts {
         contractDataByNetwork[1].push(
             ContractData({
                 id: Contracts.CURVE_LBTC_WBTC_POOL,
-                addr: 0xF130E387e2083EE79f3588e678c9B446A07860cb,
+                addr: 0x2f3bC4c27A4437AeCA13dE0e37cdf1028f3706F0,
                 name: "CURVE_LBTC_WBTC_POOL"
             })
         );

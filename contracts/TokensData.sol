@@ -676,7 +676,7 @@ contract TokensDataLive {
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.LBTCWBTC,
-                addr: 0xF130E387e2083EE79f3588e678c9B446A07860cb,
+                addr: 0x2f3bC4c27A4437AeCA13dE0e37cdf1028f3706F0,
                 symbol: "LBTCWBTC",
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
