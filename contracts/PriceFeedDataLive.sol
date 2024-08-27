@@ -7466,95 +7466,231 @@ contract PriceFeedDataLive {
         mellowLRTPriceFeedsByNetwork[1].push(
             GenericLPPriceFeedData({lpToken: Tokens.steakLRT, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[1] = SingeTokenPriceFeedData({token: Tokens.steakLRT, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: Tokens.steakLRT,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
         mellowLRTPriceFeedsByNetwork[42161].push(
             GenericLPPriceFeedData({lpToken: Tokens.steakLRT, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[42161] =
-            SingeTokenPriceFeedData({token: Tokens.steakLRT, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({
+                token: Tokens.steakLRT,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
         mellowLRTPriceFeedsByNetwork[10].push(
             GenericLPPriceFeedData({lpToken: Tokens.steakLRT, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[10] = SingeTokenPriceFeedData({token: Tokens.steakLRT, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({
+                token: Tokens.steakLRT,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
         mellowLRTPriceFeedsByNetwork[8453].push(
             GenericLPPriceFeedData({lpToken: Tokens.steakLRT, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[8453] =
-            SingeTokenPriceFeedData({token: Tokens.steakLRT, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: Tokens.steakLRT,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ Re7LRT ------------------------
         mellowLRTPriceFeedsByNetwork[1].push(
             GenericLPPriceFeedData({lpToken: Tokens.Re7LRT, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[1] = SingeTokenPriceFeedData({token: Tokens.Re7LRT, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: Tokens.Re7LRT,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
         mellowLRTPriceFeedsByNetwork[42161].push(
             GenericLPPriceFeedData({lpToken: Tokens.Re7LRT, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[42161] = SingeTokenPriceFeedData({token: Tokens.Re7LRT, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({
+                token: Tokens.Re7LRT,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
         mellowLRTPriceFeedsByNetwork[10].push(
             GenericLPPriceFeedData({lpToken: Tokens.Re7LRT, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[10] = SingeTokenPriceFeedData({token: Tokens.Re7LRT, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({
+                token: Tokens.Re7LRT,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
         mellowLRTPriceFeedsByNetwork[8453].push(
             GenericLPPriceFeedData({lpToken: Tokens.Re7LRT, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[8453] = SingeTokenPriceFeedData({token: Tokens.Re7LRT, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: Tokens.Re7LRT,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ amphrETH ------------------------
         mellowLRTPriceFeedsByNetwork[1].push(
             GenericLPPriceFeedData({lpToken: Tokens.amphrETH, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[1] = SingeTokenPriceFeedData({token: Tokens.amphrETH, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: Tokens.amphrETH,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
         mellowLRTPriceFeedsByNetwork[42161].push(
             GenericLPPriceFeedData({lpToken: Tokens.amphrETH, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[42161] =
-            SingeTokenPriceFeedData({token: Tokens.amphrETH, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({
+                token: Tokens.amphrETH,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
         mellowLRTPriceFeedsByNetwork[10].push(
             GenericLPPriceFeedData({lpToken: Tokens.amphrETH, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[10] = SingeTokenPriceFeedData({token: Tokens.amphrETH, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({
+                token: Tokens.amphrETH,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
         mellowLRTPriceFeedsByNetwork[8453].push(
             GenericLPPriceFeedData({lpToken: Tokens.amphrETH, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[8453] =
-            SingeTokenPriceFeedData({token: Tokens.amphrETH, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: Tokens.amphrETH,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ rstETH ------------------------
         mellowLRTPriceFeedsByNetwork[1].push(
             GenericLPPriceFeedData({lpToken: Tokens.rstETH, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[1] = SingeTokenPriceFeedData({token: Tokens.rstETH, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: Tokens.rstETH,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
         mellowLRTPriceFeedsByNetwork[42161].push(
             GenericLPPriceFeedData({lpToken: Tokens.rstETH, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[42161] = SingeTokenPriceFeedData({token: Tokens.rstETH, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({
+                token: Tokens.rstETH,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
         mellowLRTPriceFeedsByNetwork[10].push(
             GenericLPPriceFeedData({lpToken: Tokens.rstETH, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[10] = SingeTokenPriceFeedData({token: Tokens.rstETH, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({
+                token: Tokens.rstETH,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
         mellowLRTPriceFeedsByNetwork[8453].push(
             GenericLPPriceFeedData({lpToken: Tokens.rstETH, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[8453] = SingeTokenPriceFeedData({token: Tokens.rstETH, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: Tokens.rstETH,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ pzETH ------------------------
         mellowLRTPriceFeedsByNetwork[1].push(
             GenericLPPriceFeedData({lpToken: Tokens.pzETH, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[1] = SingeTokenPriceFeedData({token: Tokens.pzETH, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: Tokens.pzETH,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
         mellowLRTPriceFeedsByNetwork[42161].push(
             GenericLPPriceFeedData({lpToken: Tokens.pzETH, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[42161] = SingeTokenPriceFeedData({token: Tokens.pzETH, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({
+                token: Tokens.pzETH,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
         mellowLRTPriceFeedsByNetwork[10].push(
             GenericLPPriceFeedData({lpToken: Tokens.pzETH, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[10] = SingeTokenPriceFeedData({token: Tokens.pzETH, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({
+                token: Tokens.pzETH,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
         mellowLRTPriceFeedsByNetwork[8453].push(
             GenericLPPriceFeedData({lpToken: Tokens.pzETH, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
-        wstethPriceFeedByNetwork[8453] = SingeTokenPriceFeedData({token: Tokens.pzETH, trusted: false, reserve: true});
+        theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: Tokens.pzETH,
+                tokenHasSamePriceFeed: Tokens.wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ PT_rsETH_26SEP2024 ------------------------
         pendlePriceFeedsByNetwork[1].push(
