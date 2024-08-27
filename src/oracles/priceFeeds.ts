@@ -3650,6 +3650,10 @@ export const priceFeedsByToken: Record<
         underlying: "WETH",
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.WSTETH_ORACLE,
+        token: "STETH",
+      },
     },
   },
   Re7LRT: {
@@ -3658,6 +3662,10 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.MELLOW_LRT_ORACLE,
         underlying: "WETH",
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.WSTETH_ORACLE,
+        token: "STETH",
       },
     },
   },
@@ -3668,6 +3676,10 @@ export const priceFeedsByToken: Record<
         underlying: "WETH",
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.WSTETH_ORACLE,
+        token: "STETH",
+      },
     },
   },
   rstETH: {
@@ -3677,6 +3689,10 @@ export const priceFeedsByToken: Record<
         underlying: "WETH",
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.WSTETH_ORACLE,
+        token: "STETH",
+      },
     },
   },
   pzETH: {
@@ -3685,6 +3701,10 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.MELLOW_LRT_ORACLE,
         underlying: "WETH",
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.WSTETH_ORACLE,
+        token: "STETH",
       },
     },
   },
