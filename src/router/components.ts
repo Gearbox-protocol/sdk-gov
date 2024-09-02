@@ -14,6 +14,8 @@ export enum RouterProtocols {
   Camelot,
   sUSDe,
   wstETH,
+  Mellow,
+  Pendle,
 }
 
 export enum RouterComponent {
@@ -53,4 +55,6 @@ export enum RouterComponent {
   RC_SUSDE_OVERRIDER = 33,
   RC_WSTETH_SWAPPER = 34,
   RC_BATCH_LIQUIDATION_ESTIMATOR = 35,
+  RC_MELLOW_VAULT_SWAPPER = 36,
+  RC_PENDLE_SWAPPER = 37,
 }
