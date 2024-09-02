@@ -1,4 +1,4 @@
-import { SupportedContract } from "../contracts/contracts";
+import { MellowVaultContract, SupportedContract } from "../contracts/contracts";
 import { BalancerLPToken } from "../tokens/balancer";
 import { SupportedToken } from "../tokens/token";
 import { Address } from "../utils/types";
@@ -51,7 +51,7 @@ export interface PendleRouterConfig {
 }
 
 export interface MellowVaultConfig {
-  contract: "MELLOW_STEAKHOUSE_VAULT";
+  contract: MellowVaultContract;
   allowed: Array<SupportedToken>;
 }
 
