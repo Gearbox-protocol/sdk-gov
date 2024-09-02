@@ -800,6 +800,9 @@ export const VELODROME_V2_DEFAULT_FACTORY: Address =
 export const VELODROME_V2_CL_FACTORY: Address =
   "0xCc0bDDB707055e04e497aB22a59c2aF4391cd12F";
 
+export const MELLOW_COLLECTOR: Address =
+  "0xce8f66b5347dcfedb3e63cb2c95e4aab9a85429e";
+
 export interface BaseContractParams {
   name: string;
 }
