@@ -621,6 +621,34 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "MELLOW_STEAKHOUSE_VAULT"
             })
         );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.MELLOW_RE7_LABS_VAULT,
+                addr: 0x84631c0d0081FDe56DeB72F6DE77abBbF6A9f93a,
+                name: "MELLOW_RE7_LABS_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.MELLOW_AMPHOR_VAULT,
+                addr: 0x5fD13359Ba15A84B76f7F87568309040176167cd,
+                name: "MELLOW_AMPHOR_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.MELLOW_RESTAKING_VAULT,
+                addr: 0x7a4EffD87C2f3C55CA251080b1343b605f327E3a,
+                name: "MELLOW_RESTAKING_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.MELLOW_RENZO_VAULT,
+                addr: 0x8c9532a60E0E7C6BbD2B2c1303F63aCE1c3E9811,
+                name: "MELLOW_RENZO_VAULT"
+            })
+        );
         contractDataByNetwork[42161].push(
             ContractData({
                 id: Contracts.UNISWAP_V3_ROUTER,

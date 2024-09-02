@@ -125,7 +125,12 @@ export type CompoundV2PoolContract =
   | "COMPOUND_V2_LINK_POOL"
   | "FLUX_USDC_POOL";
 
-export type MellowVaultContract = "MELLOW_STEAKHOUSE_VAULT";
+export type MellowVaultContract =
+  | "MELLOW_STEAKHOUSE_VAULT"
+  | "MELLOW_RE7_LABS_VAULT"
+  | "MELLOW_AMPHOR_VAULT"
+  | "MELLOW_RESTAKING_VAULT"
+  | "MELLOW_RENZO_VAULT";
 
 export type SupportedContract =
   | UniswapV2Contract
@@ -302,6 +307,10 @@ export const contractsByNetwork: Record<
 
     // MELLOW
     MELLOW_STEAKHOUSE_VAULT: tokenDataByNetwork.Mainnet.steakLRT,
+    MELLOW_RE7_LABS_VAULT: tokenDataByNetwork.Mainnet.Re7LRT,
+    MELLOW_AMPHOR_VAULT: tokenDataByNetwork.Mainnet.amphrETH,
+    MELLOW_RESTAKING_VAULT: tokenDataByNetwork.Mainnet.rstETH,
+    MELLOW_RENZO_VAULT: tokenDataByNetwork.Mainnet.pzETH,
   },
 
   //
@@ -456,6 +465,10 @@ export const contractsByNetwork: Record<
 
     // MELLOW
     MELLOW_STEAKHOUSE_VAULT: tokenDataByNetwork.Arbitrum.steakLRT,
+    MELLOW_RE7_LABS_VAULT: tokenDataByNetwork.Arbitrum.Re7LRT,
+    MELLOW_AMPHOR_VAULT: tokenDataByNetwork.Arbitrum.amphrETH,
+    MELLOW_RESTAKING_VAULT: tokenDataByNetwork.Arbitrum.rstETH,
+    MELLOW_RENZO_VAULT: tokenDataByNetwork.Arbitrum.pzETH,
   },
   //
   //
@@ -610,6 +623,10 @@ export const contractsByNetwork: Record<
 
     // MELLOW
     MELLOW_STEAKHOUSE_VAULT: tokenDataByNetwork.Optimism.steakLRT,
+    MELLOW_RE7_LABS_VAULT: tokenDataByNetwork.Optimism.Re7LRT,
+    MELLOW_AMPHOR_VAULT: tokenDataByNetwork.Optimism.amphrETH,
+    MELLOW_RESTAKING_VAULT: tokenDataByNetwork.Optimism.rstETH,
+    MELLOW_RENZO_VAULT: tokenDataByNetwork.Optimism.pzETH,
   },
   //
   //
@@ -761,6 +778,10 @@ export const contractsByNetwork: Record<
 
     // MELLOW
     MELLOW_STEAKHOUSE_VAULT: tokenDataByNetwork.Base.steakLRT,
+    MELLOW_RE7_LABS_VAULT: tokenDataByNetwork.Base.Re7LRT,
+    MELLOW_AMPHOR_VAULT: tokenDataByNetwork.Base.amphrETH,
+    MELLOW_RESTAKING_VAULT: tokenDataByNetwork.Base.rstETH,
+    MELLOW_RENZO_VAULT: tokenDataByNetwork.Base.pzETH,
   },
 };
 
@@ -2092,6 +2113,26 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
   },
   MELLOW_STEAKHOUSE_VAULT: {
     name: "Mellow Steakhouse steakLRT vault",
+    protocol: Protocols.Mellow,
+    type: AdapterInterface.MELLOW_LRT_VAULT,
+  },
+  MELLOW_RE7_LABS_VAULT: {
+    name: "Mellow Re7 Labs Re7LRT vault",
+    protocol: Protocols.Mellow,
+    type: AdapterInterface.MELLOW_LRT_VAULT,
+  },
+  MELLOW_AMPHOR_VAULT: {
+    name: "Mellow Amphor amphrETH vault",
+    protocol: Protocols.Mellow,
+    type: AdapterInterface.MELLOW_LRT_VAULT,
+  },
+  MELLOW_RESTAKING_VAULT: {
+    name: "Mellow Restaking rstETH vault",
+    protocol: Protocols.Mellow,
+    type: AdapterInterface.MELLOW_LRT_VAULT,
+  },
+  MELLOW_RENZO_VAULT: {
+    name: "Mellow Renzo pzETH vault",
     protocol: Protocols.Mellow,
     type: AdapterInterface.MELLOW_LRT_VAULT,
   },

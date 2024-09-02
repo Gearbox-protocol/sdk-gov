@@ -199,6 +199,18 @@ contract AdapterData {
         simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.MELLOW_STEAKHOUSE_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
         );
+        simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.MELLOW_RE7_LABS_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
+        );
+        simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.MELLOW_AMPHOR_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
+        );
+        simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.MELLOW_RESTAKING_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
+        );
+        simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.MELLOW_RENZO_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
+        );
         curveAdapters.push(
             CurveAdapter({
                 targetContract: Contracts.CURVE_3CRV_POOL,
