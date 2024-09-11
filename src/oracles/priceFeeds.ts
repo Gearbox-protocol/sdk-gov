@@ -2773,7 +2773,7 @@ export const priceFeedsByToken: Record<
       },
     },
   },
-  rsETH_wETH: {
+  rsETH_wETH_Arb: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
@@ -2853,7 +2853,7 @@ export const priceFeedsByToken: Record<
       },
     },
   },
-  rETH_WETH_BPT: {
+  rETH_WETH_BPT_deprecated: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,

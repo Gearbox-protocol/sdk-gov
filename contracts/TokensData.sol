@@ -1916,9 +1916,9 @@ contract TokensDataLive {
 
         tokenDataByNetwork[42161].push(
             TokenData({
-                id: Tokens.rsETH_wETH,
+                id: Tokens.rsETH_wETH_Arb,
                 addr: 0x90e6CB5249f5e1572afBF8A96D8A1ca6aCFFd739,
-                symbol: "rsETH_wETH",
+                symbol: "rsETH_wETH_Arb",
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
@@ -1957,9 +1957,9 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[42161].push(
             TokenData({
-                id: Tokens.rETH_WETH_BPT,
+                id: Tokens.rETH_WETH_BPT_deprecated,
                 addr: 0xadE4A71BB62bEc25154CFc7e6ff49A513B491E81,
-                symbol: "rETH_WETH_BPT",
+                symbol: "rETH_WETH_BPT_deprecated",
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );

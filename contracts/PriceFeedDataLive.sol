@@ -5854,10 +5854,10 @@ contract PriceFeedDataLive {
             })
         );
 
-        // ------------------------ rsETH_wETH ------------------------
+        // ------------------------ rsETH_wETH_Arb ------------------------
         balancerStableLPPriceFeedsByNetwork[1].push(
             BalancerLPPriceFeedData({
-                lpToken: Tokens.rsETH_wETH,
+                lpToken: Tokens.rsETH_wETH_Arb,
                 assets: TokensLib.arrayOf(Tokens.rsETH, Tokens.WETH),
                 trusted: false,
                 reserve: false
@@ -5865,7 +5865,7 @@ contract PriceFeedDataLive {
         );
         balancerStableLPPriceFeedsByNetwork[42161].push(
             BalancerLPPriceFeedData({
-                lpToken: Tokens.rsETH_wETH,
+                lpToken: Tokens.rsETH_wETH_Arb,
                 assets: TokensLib.arrayOf(Tokens.rsETH, Tokens.WETH),
                 trusted: false,
                 reserve: false
@@ -5873,7 +5873,7 @@ contract PriceFeedDataLive {
         );
         balancerStableLPPriceFeedsByNetwork[10].push(
             BalancerLPPriceFeedData({
-                lpToken: Tokens.rsETH_wETH,
+                lpToken: Tokens.rsETH_wETH_Arb,
                 assets: TokensLib.arrayOf(Tokens.rsETH, Tokens.WETH),
                 trusted: false,
                 reserve: false
@@ -5881,7 +5881,7 @@ contract PriceFeedDataLive {
         );
         balancerStableLPPriceFeedsByNetwork[8453].push(
             BalancerLPPriceFeedData({
-                lpToken: Tokens.rsETH_wETH,
+                lpToken: Tokens.rsETH_wETH_Arb,
                 assets: TokensLib.arrayOf(Tokens.rsETH, Tokens.WETH),
                 trusted: false,
                 reserve: false
@@ -6140,10 +6140,10 @@ contract PriceFeedDataLive {
             })
         );
 
-        // ------------------------ rETH_WETH_BPT ------------------------
+        // ------------------------ rETH_WETH_BPT_deprecated ------------------------
         balancerStableLPPriceFeedsByNetwork[1].push(
             BalancerLPPriceFeedData({
-                lpToken: Tokens.rETH_WETH_BPT,
+                lpToken: Tokens.rETH_WETH_BPT_deprecated,
                 assets: TokensLib.arrayOf(Tokens.rETH, Tokens.WETH),
                 trusted: false,
                 reserve: false
@@ -6151,7 +6151,7 @@ contract PriceFeedDataLive {
         );
         balancerStableLPPriceFeedsByNetwork[42161].push(
             BalancerLPPriceFeedData({
-                lpToken: Tokens.rETH_WETH_BPT,
+                lpToken: Tokens.rETH_WETH_BPT_deprecated,
                 assets: TokensLib.arrayOf(Tokens.rETH, Tokens.WETH),
                 trusted: false,
                 reserve: false
@@ -6159,7 +6159,7 @@ contract PriceFeedDataLive {
         );
         balancerStableLPPriceFeedsByNetwork[10].push(
             BalancerLPPriceFeedData({
-                lpToken: Tokens.rETH_WETH_BPT,
+                lpToken: Tokens.rETH_WETH_BPT_deprecated,
                 assets: TokensLib.arrayOf(Tokens.rETH, Tokens.WETH),
                 trusted: false,
                 reserve: false
@@ -6167,7 +6167,7 @@ contract PriceFeedDataLive {
         );
         balancerStableLPPriceFeedsByNetwork[8453].push(
             BalancerLPPriceFeedData({
-                lpToken: Tokens.rETH_WETH_BPT,
+                lpToken: Tokens.rETH_WETH_BPT_deprecated,
                 assets: TokensLib.arrayOf(Tokens.rETH, Tokens.WETH),
                 trusted: false,
                 reserve: false
