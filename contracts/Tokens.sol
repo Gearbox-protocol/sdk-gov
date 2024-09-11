@@ -166,6 +166,7 @@ enum Tokens {
     weETH_ezETH_rswETH,
     GHO_USDT_USDC,
     rsETH_WETH,
+    rsETH_wETH,
     BPT_rETH_ETH,
     BPT_WSTETH_ETH,
     BPT_ROAD,

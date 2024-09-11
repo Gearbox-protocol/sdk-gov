@@ -1916,6 +1916,15 @@ contract TokensDataLive {
 
         tokenDataByNetwork[42161].push(
             TokenData({
+                id: Tokens.rsETH_wETH,
+                addr: 0x90e6CB5249f5e1572afBF8A96D8A1ca6aCFFd739,
+                symbol: "rsETH_wETH",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[42161].push(
+            TokenData({
                 id: Tokens.wstETH_WETH_BPT,
                 addr: 0x9791d590788598535278552EEcD4b211bFc790CB,
                 symbol: "wstETH_WETH_BPT",
