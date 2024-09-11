@@ -24,6 +24,7 @@ const levCreditManager: CreditManagerV3DeployConfig = {
   feeLiquidationExpired: 50,
   liquidationPremiumExpired: 100,
   poolLimit: (BigInt(3e6) * POOL_DECIMALS) / POOL_DIVIDER,
+  maxEnabledTokens: 4,
   collateralTokens: [
     {
       token: "USDT",

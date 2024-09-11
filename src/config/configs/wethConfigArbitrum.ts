@@ -63,6 +63,7 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
   feeLiquidationExpired: 50,
   liquidationPremiumExpired: 100,
   poolLimit: BigInt(1000) * POOL_DECIMALS,
+  maxEnabledTokens: 4,
   collateralTokens: [
     {
       token: "USDC_e",
@@ -150,6 +151,7 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
   feeLiquidationExpired: 100,
   liquidationPremiumExpired: 200,
   poolLimit: BigInt(500) * POOL_DECIMALS,
+  maxEnabledTokens: 4,
   collateralTokens: [
     {
       token: "USDC_e",

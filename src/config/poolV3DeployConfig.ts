@@ -29,6 +29,7 @@ export interface CreditManagerV3DeployConfig {
   adapters: Array<AdapterConfig>;
   poolLimit: bigint;
   name: string;
+  maxEnabledTokens: number;
 }
 
 export interface PoolV3DeployConfig {
