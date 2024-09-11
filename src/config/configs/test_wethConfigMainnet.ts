@@ -98,6 +98,26 @@ const levCreditManager: CreditManagerV3DeployConfig = {
       token: "steCRV",
       lt: 0,
     },
+    {
+      token: "rsETH_WETH",
+      lt: 0,
+    },
+    {
+      token: "trenSTETH",
+      lt: 0,
+    },
+    {
+      token: "Re7LRT",
+      lt: 0,
+    },
+    {
+      token: "rstETH",
+      lt: 0,
+    },
+    {
+      token: "amphrETH",
+      lt: 0,
+    },
   ],
   adapters: [
     levUniswapConfig,
@@ -129,6 +149,36 @@ export const testWethConfigMainnet: PoolV3DeployConfig = {
   },
   ratesAndLimits: {
     steCRV: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0) * POOL_DECIMALS,
+    },
+    rsETH_WETH: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0) * POOL_DECIMALS,
+    },
+    trenSTETH: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0) * POOL_DECIMALS,
+    },
+    Re7LRT: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0) * POOL_DECIMALS,
+    },
+    rstETH: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0) * POOL_DECIMALS,
+    },
+    amphrETH: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 0,
