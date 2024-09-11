@@ -18,7 +18,6 @@ export type BalancerLPToken =
   | "weETH_ezETH_rswETH"
   | "GHO_USDT_USDC"
   | "rsETH_WETH"
-  | "rsETH_wETH"
   | "trenSTETH"
   // Optimism
   | "BPT_rETH_ETH"
@@ -34,7 +33,8 @@ export type BalancerLPToken =
   | "cbETH_rETH_wstETH"
   | "rETH_wETH_BPT"
   | "33AURA_33ARB_33BAL"
-  | "ezETH_wstETH";
+  | "ezETH_wstETH"
+  | "rsETH_wETH";
 
 export type BalancerLpTokenData = {
   symbol: BalancerLPToken;
