@@ -54,6 +54,7 @@ export const config: PoolV3DeployConfig = {
       liquidationPremiumExpired: 200,
       poolLimit: BigInt(0),
       name: "dUSDCV3",
+      maxEnabledTokens: 4,
       collateralTokens: [
         {
           token: "CVX",

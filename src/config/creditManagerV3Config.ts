@@ -38,6 +38,8 @@ export interface CreditManagerV3State {
   collateralTokens: Array<CollateralTokenValue>;
   adapters: Array<AdapterConfig>;
   poolLimit: bigint;
+  maxEnabledTokens: number;
+  name: string;
 }
 
 export class CreditManagerV3Configurator implements IConfigurator {
@@ -68,6 +70,8 @@ export class CreditManagerV3Configurator implements IConfigurator {
         lt: t.lt,
       })),
       adapters: config.adapters,
+      maxEnabledTokens: config.maxEnabledTokens,
+      name: config.name,
     };
 
     return new CreditManagerV3Configurator({
@@ -147,6 +151,8 @@ cp.whitelisted = ${this.state.degenNft};
 cp.expirable = ${this.state.expirable};
 cp.skipInit = false;
 cp.poolLimit = ${formatNumberToString_(this.state.poolLimit)};
+cp.maxEnabledTokens = ${this.state.maxEnabledTokens};
+cp.name = "${this.state.name}";
 
 ${collateralTokens}
 ${contracts}

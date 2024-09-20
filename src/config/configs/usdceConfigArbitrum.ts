@@ -54,6 +54,7 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
   feeLiquidationExpired: 50,
   liquidationPremiumExpired: 100,
   poolLimit: (BigInt(4e6) * POOL_DECIMALS) / POOL_DIVIDER,
+  maxEnabledTokens: 4,
   collateralTokens: [
     {
       token: "WETH",
@@ -106,6 +107,7 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
   feeLiquidationExpired: 100,
   liquidationPremiumExpired: 200,
   poolLimit: (BigInt(2e6) * POOL_DECIMALS) / POOL_DIVIDER,
+  maxEnabledTokens: 4,
   collateralTokens: [
     {
       token: "WETH",

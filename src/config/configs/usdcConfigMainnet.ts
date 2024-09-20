@@ -77,6 +77,7 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
   feeLiquidationExpired: 100,
   liquidationPremiumExpired: 200,
   poolLimit: (BigInt(30e6) * POOL_DECIMALS) / POOL_DIVIDER,
+  maxEnabledTokens: 4,
   collateralTokens: [
     {
       token: "WETH",
@@ -236,6 +237,7 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
   feeLiquidationExpired: 100,
   liquidationPremiumExpired: 200,
   poolLimit: (BigInt(3e6) * POOL_DECIMALS) / POOL_DIVIDER,
+  maxEnabledTokens: 4,
   collateralTokens: [
     {
       token: "WETH",
@@ -339,6 +341,7 @@ const tier3CreditManager: CreditManagerV3DeployConfig = {
   feeLiquidationExpired: 100,
   liquidationPremiumExpired: 200,
   poolLimit: (BigInt(3e6) * POOL_DECIMALS) / POOL_DIVIDER,
+  maxEnabledTokens: 4,
   collateralTokens: [
     {
       token: "WETH",
@@ -421,6 +424,7 @@ const farmCreditManager: CreditManagerV3DeployConfig = {
   feeLiquidationExpired: 100,
   liquidationPremiumExpired: 200,
   poolLimit: (BigInt(5e6) * POOL_DECIMALS) / POOL_DIVIDER,
+  maxEnabledTokens: 4,
   collateralTokens: [
     {
       token: "WETH",

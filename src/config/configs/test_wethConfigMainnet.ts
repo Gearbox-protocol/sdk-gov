@@ -12,6 +12,14 @@ import {
 
 const POOL_DECIMALS = BigInt(1e18);
 
+const levUniswapConfig: UniV3Config = {
+  contract: "UNISWAP_V3_ROUTER",
+  allowed: [
+    { token0: "WETH", token1: "WBTC", fee: 3000 },
+    { token0: "WETH", token1: "USDC", fee: 500 },
+  ],
+};
+
 const levBalancerConfig: BalancerVaultConfig = {
   contract: "BALANCER_VAULT",
   allowed: [
@@ -55,7 +63,16 @@ const levCreditManager: CreditManagerV3DeployConfig = {
   feeLiquidationExpired: 100,
   liquidationPremiumExpired: 200,
   poolLimit: BigInt(5000) * POOL_DECIMALS,
+  maxEnabledTokens: 4,
   collateralTokens: [
+    {
+      token: "USDC",
+      lt: 9000,
+    },
+    {
+      token: "WBTC",
+      lt: 9000,
+    },
     {
       token: "STETH",
       lt: 9000,
@@ -81,8 +98,29 @@ const levCreditManager: CreditManagerV3DeployConfig = {
       token: "steCRV",
       lt: 0,
     },
+    {
+      token: "rsETH_WETH",
+      lt: 0,
+    },
+    {
+      token: "trenSTETH",
+      lt: 0,
+    },
+    {
+      token: "Re7LRT",
+      lt: 0,
+    },
+    {
+      token: "rstETH",
+      lt: 0,
+    },
+    {
+      token: "amphrETH",
+      lt: 0,
+    },
   ],
   adapters: [
+    levUniswapConfig,
     levPendleConfig,
     levBalancerConfig,
     levSteakLRTVaultConfig,
@@ -116,6 +154,36 @@ export const testWethConfigMainnet: PoolV3DeployConfig = {
       quotaIncreaseFee: 0,
       limit: BigInt(0) * POOL_DECIMALS,
     },
+    rsETH_WETH: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0) * POOL_DECIMALS,
+    },
+    trenSTETH: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0) * POOL_DECIMALS,
+    },
+    Re7LRT: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0) * POOL_DECIMALS,
+    },
+    rstETH: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0) * POOL_DECIMALS,
+    },
+    amphrETH: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0) * POOL_DECIMALS,
+    },
     STETH: {
       minRate: 4,
       maxRate: 1500,
@@ -141,6 +209,18 @@ export const testWethConfigMainnet: PoolV3DeployConfig = {
       limit: BigInt(4000) * POOL_DECIMALS,
     },
     PT_rsETH_26SEP2024: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(4000) * POOL_DECIMALS,
+    },
+    USDC: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(4000) * POOL_DECIMALS,
+    },
+    WBTC: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 0,

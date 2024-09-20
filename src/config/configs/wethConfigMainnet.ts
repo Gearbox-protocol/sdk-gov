@@ -66,6 +66,7 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
   feeLiquidationExpired: 100,
   liquidationPremiumExpired: 200,
   poolLimit: (BigInt(3e6) * POOL_DECIMALS) / POOL_DIVIDER,
+  maxEnabledTokens: 4,
   collateralTokens: [
     {
       token: "USDC",
@@ -182,6 +183,7 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
   feeLiquidationExpired: 100,
   liquidationPremiumExpired: 200,
   poolLimit: (BigInt(3e6) * POOL_DECIMALS) / POOL_DIVIDER,
+  maxEnabledTokens: 4,
   collateralTokens: [
     {
       token: "USDC",
@@ -285,6 +287,7 @@ const tier3CreditManager: CreditManagerV3DeployConfig = {
   feeLiquidationExpired: 100,
   liquidationPremiumExpired: 200,
   poolLimit: (BigInt(3e6) * POOL_DECIMALS) / POOL_DIVIDER,
+  maxEnabledTokens: 4,
   collateralTokens: [
     {
       token: "USDC",
@@ -383,6 +386,7 @@ const farmCreditManager: CreditManagerV3DeployConfig = {
   feeLiquidationExpired: 100,
   liquidationPremiumExpired: 200,
   poolLimit: (BigInt(5e6) * POOL_DECIMALS) / POOL_DIVIDER,
+  maxEnabledTokens: 4,
   collateralTokens: [
     {
       token: "WBTC",
@@ -520,6 +524,7 @@ const restakingCreditManager: CreditManagerV3DeployConfig = {
   feeLiquidationExpired: 100,
   liquidationPremiumExpired: 200,
   poolLimit: BigInt(30000) * POOL_DECIMALS,
+  maxEnabledTokens: 4,
   collateralTokens: [
     // LRT
     {
