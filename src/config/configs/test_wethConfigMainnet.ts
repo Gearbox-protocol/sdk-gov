@@ -17,6 +17,9 @@ const levUniswapConfig: UniV3Config = {
   allowed: [
     { token0: "WETH", token1: "WBTC", fee: 3000 },
     { token0: "WETH", token1: "USDC", fee: 500 },
+    { token0: "WETH", token1: "CRV", fee: 3000 },
+    { token0: "WETH", token1: "CRV", fee: 10000 },
+    { token0: "WETH", token1: "CVX", fee: 10000 },
   ],
 };
 
@@ -93,9 +96,17 @@ const levCreditManager: CreditManagerV3DeployConfig = {
       token: "PT_rsETH_26SEP2024",
       lt: 9000,
     },
+    {
+      token: "stkcvxsteCRV",
+      lt: 9000,
+    },
     // Compatibility
     {
       token: "steCRV",
+      lt: 0,
+    },
+    {
+      token: "cvxsteCRV",
       lt: 0,
     },
     {
@@ -118,6 +129,18 @@ const levCreditManager: CreditManagerV3DeployConfig = {
       token: "amphrETH",
       lt: 0,
     },
+    {
+      token: "LDO",
+      lt: 0,
+    },
+    {
+      token: "CRV",
+      lt: 0,
+    },
+    {
+      token: "CVX",
+      lt: 0,
+    },
   ],
   adapters: [
     levUniswapConfig,
@@ -126,6 +149,8 @@ const levCreditManager: CreditManagerV3DeployConfig = {
     levSteakLRTVaultConfig,
     { contract: "LIDO_WSTETH" },
     { contract: "CURVE_STETH_GATEWAY" },
+    { contract: "CONVEX_BOOSTER" },
+    { contract: "CONVEX_STECRV_POOL" },
   ],
 };
 
@@ -148,7 +173,31 @@ export const testWethConfigMainnet: PoolV3DeployConfig = {
     isBorrowingMoreU2Forbidden: true,
   },
   ratesAndLimits: {
+    LDO: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0) * POOL_DECIMALS,
+    },
+    CRV: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0) * POOL_DECIMALS,
+    },
+    CVX: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0) * POOL_DECIMALS,
+    },
     steCRV: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0) * POOL_DECIMALS,
+    },
+    cvxsteCRV: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 0,
@@ -185,6 +234,12 @@ export const testWethConfigMainnet: PoolV3DeployConfig = {
       limit: BigInt(0) * POOL_DECIMALS,
     },
     STETH: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(4000) * POOL_DECIMALS,
+    },
+    stkcvxsteCRV: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 0,

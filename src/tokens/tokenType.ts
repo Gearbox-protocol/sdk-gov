@@ -20,12 +20,14 @@ export enum TokenType {
   AURA_STAKED_TOKEN,
   CONVEX_L2_STAKED_TOKEN,
   ZIRCUIT_STAKED_TOKEN,
+  STAKING_REWARDS_PHANTOM_TOKEN,
 }
 
 export enum PhantomTokenType {
   NO_TOKEN,
   CONVEX_PHANTOM_TOKEN,
   ZIRCUIT_PHANTOM_TOKEN,
+  STAKING_REWARDS_PHANTOM_TOKEN,
 }
 
 export type TokenNetwork = NetworkType | "AllNetworks";
