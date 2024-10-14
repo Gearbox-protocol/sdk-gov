@@ -482,6 +482,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.USDS,
+                addr: 0xdC035D45d973E3EC169d2276DDab16f1e407384F,
+                symbol: "USDS",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.sfrxETH,
                 addr: 0xac3E018457B222d93114458476f3E3416Abbe38F,
                 symbol: "sfrxETH",
@@ -1342,6 +1350,14 @@ contract TokensDataLive {
                 addr: 0x6c3f1FFBFD445354fD97EFbf42e0B1216dD2383e,
                 symbol: "zpufETH",
                 tokenType: TokenType.ZIRCUIT_STAKED_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.stkUSDS,
+                addr: 0xcB5D10A57Aeb622b92784D53F730eE2210ab370E,
+                symbol: "stkUSDS",
+                tokenType: TokenType.STAKING_REWARDS_PHANTOM_TOKEN
             })
         );
         tokenDataByNetwork[1].push(

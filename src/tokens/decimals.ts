@@ -54,6 +54,7 @@ export const decimals: Record<SupportedToken, number> = {
   USDe: 18,
   PENDLE: 18,
   pufETH: 18,
+  USDS: 18,
   PT_rsETH_26SEP2024: 18,
   "3Crv": 18,
   crvFRAX: 18,
@@ -244,4 +245,6 @@ export const decimals: Record<SupportedToken, number> = {
   YieldETH: 18,
   rETH: 18,
   rETH_f: 18,
+
+  stkUSDS: 18,
 };

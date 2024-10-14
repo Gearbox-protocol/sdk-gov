@@ -60,6 +60,11 @@ import {
   gearTokens,
 } from "./gear";
 import { NormalToken, NormalTokenData, normalTokens } from "./normal";
+import {
+  StakingRewardsPhantomToken,
+  StakingRewardsPhantomTokenData,
+  stakingRewardsPhantomTokens,
+} from "./stakingRewards";
 import { WrappedToken, WrappedTokenData, wrappedTokens } from "./wrapped";
 import {
   YearnLPToken,
@@ -87,7 +92,8 @@ export type LPTokens =
   | ERC4626LPToken
   | AuraLPToken
   | AuraStakedToken
-  | ZircuitStakedPhantomToken;
+  | ZircuitStakedPhantomToken
+  | StakingRewardsPhantomToken;
 
 export type SupportedToken =
   | NormalToken
@@ -119,7 +125,8 @@ export type LPTokenDataI =
   | ERC4626VaultOfCurveLPTokenData
   | AuraLPTokenData
   | AuraStakedTokenData
-  | ZircuitPhantomTokenData;
+  | ZircuitPhantomTokenData
+  | StakingRewardsPhantomTokenData;
 
 export type TokenDataI =
   | NormalTokenData
@@ -141,6 +148,7 @@ export const lpTokens: Record<LPTokens, LPTokenDataI> = {
   ...auraLpTokens,
   ...auraStakedTokens,
   ...zircuitStakedPhantomTokens,
+  ...stakingRewardsPhantomTokens,
 };
 
 export const supportedTokens: Record<SupportedToken, TokenDataI> = {
@@ -216,6 +224,7 @@ export const tokenDataByNetwork: Record<
     USDe: "0x4c9EDD5852cd905f086C759E8383e09bff1E68B3",
     GHO: "0x40D16FC0246aD3160Ccc09B8D0D3A2cD28aE6C2f",
     pufETH: "0xD9A442856C234a39a81a089C06451EBAa4306a72",
+    USDS: "0xdC035D45d973E3EC169d2276DDab16f1e407384F",
 
     // CURVE LP TOKENS
     "3Crv": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
@@ -424,6 +433,9 @@ export const tokenDataByNetwork: Record<
     // ZIRCUIT
     zpufETH: "0x6c3f1FFBFD445354fD97EFbf42e0B1216dD2383e",
 
+    // SKY
+    stkUSDS: "0xcB5D10A57Aeb622b92784D53F730eE2210ab370E",
+
     // MELLOW LRT
     steakLRT: "0xBEEF69Ac7870777598A04B2bd4771c71212E6aBc",
     Re7LRT: "0x84631c0d0081FDe56DeB72F6DE77abBbF6A9f93a",
@@ -494,6 +506,7 @@ export const tokenDataByNetwork: Record<
     USDe: "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34",
     GHO: NOT_DEPLOYED,
     pufETH: NOT_DEPLOYED,
+    USDS: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -706,6 +719,9 @@ export const tokenDataByNetwork: Record<
     // ZIRCUIT
     zpufETH: NOT_DEPLOYED,
 
+    // SKY
+    stkUSDS: NOT_DEPLOYED,
+
     // MELLOW LRT
     steakLRT: NOT_DEPLOYED,
     Re7LRT: NOT_DEPLOYED,
@@ -775,6 +791,7 @@ export const tokenDataByNetwork: Record<
     USDe: NOT_DEPLOYED,
     GHO: NOT_DEPLOYED,
     pufETH: NOT_DEPLOYED,
+    USDS: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -988,6 +1005,9 @@ export const tokenDataByNetwork: Record<
     // ZIRCUIT
     zpufETH: NOT_DEPLOYED,
 
+    // SKY
+    stkUSDS: NOT_DEPLOYED,
+
     // MELLOW LRT
     steakLRT: NOT_DEPLOYED,
     Re7LRT: NOT_DEPLOYED,
@@ -1061,6 +1081,7 @@ export const tokenDataByNetwork: Record<
     rswETH: NOT_DEPLOYED,
     USDe: NOT_DEPLOYED,
     pufETH: NOT_DEPLOYED,
+    USDS: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -1271,6 +1292,9 @@ export const tokenDataByNetwork: Record<
     GHO_USDT_USDC: NOT_DEPLOYED,
 
     zpufETH: NOT_DEPLOYED,
+
+    // SKY
+    stkUSDS: NOT_DEPLOYED,
 
     // MELLOW LRT
     steakLRT: NOT_DEPLOYED,

@@ -38,12 +38,19 @@ struct ConvexBasePoolAdapter {
     Tokens stakedToken;
 }
 
+struct StakingRewardsAdapter {
+    Contracts targetContract;
+    AdapterType adapterType;
+    Tokens stakedToken;
+}
+
 contract AdapterData {
     SimpleAdapter[] simpleAdapters;
     CurveAdapter[] curveAdapters;
     CurveStETHAdapter[] curveStEthAdapters;
     CurveWrapper[] curveWrappers;
     ConvexBasePoolAdapter[] convexBasePoolAdapters;
+    StakingRewardsAdapter[] stakingRewardsAdapters;
 
     constructor() {
         // $GENERATE_HERE$

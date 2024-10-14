@@ -416,6 +416,32 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ USDS ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.USDS, tokenHasSamePriceFeed: Tokens.DAI, trusted: true, reserve: false})
+        );
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.USDS, tokenHasSamePriceFeed: Tokens.DAI, trusted: false, reserve: true})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.USDS, tokenHasSamePriceFeed: Tokens.DAI, trusted: true, reserve: false})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.USDS, tokenHasSamePriceFeed: Tokens.DAI, trusted: false, reserve: true})
+        );
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({token: Tokens.USDS, tokenHasSamePriceFeed: Tokens.DAI, trusted: true, reserve: false})
+        );
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({token: Tokens.USDS, tokenHasSamePriceFeed: Tokens.DAI, trusted: false, reserve: true})
+        );
+        theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({token: Tokens.USDS, tokenHasSamePriceFeed: Tokens.DAI, trusted: true, reserve: false})
+        );
+        theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({token: Tokens.USDS, tokenHasSamePriceFeed: Tokens.DAI, trusted: false, reserve: true})
+        );
+
         // ------------------------ DPI ------------------------
         chainlinkPriceFeedsByNetwork[1].push(
             ChainlinkPriceFeedData({
@@ -7457,6 +7483,40 @@ contract PriceFeedDataLive {
             TheSamePriceFeedData({
                 token: Tokens.zpufETH,
                 tokenHasSamePriceFeed: Tokens.pufETH,
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ stkUSDS ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: Tokens.stkUSDS,
+                tokenHasSamePriceFeed: Tokens.USDS,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({
+                token: Tokens.stkUSDS,
+                tokenHasSamePriceFeed: Tokens.USDS,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({
+                token: Tokens.stkUSDS,
+                tokenHasSamePriceFeed: Tokens.USDS,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: Tokens.stkUSDS,
+                tokenHasSamePriceFeed: Tokens.USDS,
                 trusted: false,
                 reserve: false
             })

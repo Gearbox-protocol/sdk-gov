@@ -649,6 +649,16 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "MELLOW_RENZO_VAULT"
             })
         );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.SKY_STAKING_REWARDS,
+                addr: 0x0650CAF159C5A49f711e8169D4336ECB9b950275,
+                name: "SKY_STAKING_REWARDS"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({id: Contracts.DAI_USDS, addr: 0x3225737a9Bbb6473CB4a45b7244ACa2BeFdB276A, name: "DAI_USDS"})
+        );
         contractDataByNetwork[42161].push(
             ContractData({
                 id: Contracts.UNISWAP_V3_ROUTER,
