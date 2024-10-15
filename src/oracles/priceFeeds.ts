@@ -747,6 +747,13 @@ export const priceFeedsByToken: Record<
         token: "STETH",
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "wstETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
     },
     Arbitrum: {
       Main: {
@@ -1495,11 +1502,9 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: {
-          type: PriceFeedType.REDSTONE_ORACLE,
-          dataServiceId: "redstone-primary-prod",
-          dataId: "rswETH_FUNDAMENTAL",
-          ...REDSTONE_SIGNERS,
-          stalenessPeriod: FOUR_MINUTES,
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x3A236F67Fce401D87D7215695235e201966576E4",
+          stalenessPeriod: HOUR_24_BUFFERED,
         },
         baseToUsdPriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
@@ -1961,6 +1966,10 @@ export const priceFeedsByToken: Record<
         assets: ["USDe", "USDC"],
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["USDe", "USDC"],
+      },
     },
   },
 
@@ -2137,6 +2146,10 @@ export const priceFeedsByToken: Record<
         assets: ["crvUSD", "FRAX"],
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["crvUSD", "FRAX"],
+      },
     },
   },
   wstETHCRV: {
@@ -2232,6 +2245,10 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.CURVE_2LP_ORACLE,
         assets: ["USDC", "USDe"],
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["USDC", "USDe"],
       },
     },
   },
