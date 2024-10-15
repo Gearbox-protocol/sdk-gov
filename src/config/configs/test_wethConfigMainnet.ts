@@ -100,6 +100,14 @@ const levCreditManager: CreditManagerV3DeployConfig = {
       token: "stkcvxsteCRV",
       lt: 9000,
     },
+    {
+      token: "pufETH",
+      lt: 9000,
+    },
+    {
+      token: "zpufETH",
+      lt: 9000,
+    },
     // Compatibility
     {
       token: "steCRV",
@@ -141,6 +149,10 @@ const levCreditManager: CreditManagerV3DeployConfig = {
       token: "CVX",
       lt: 0,
     },
+    {
+      token: "pufETHwstE",
+      lt: 0,
+    },
   ],
   adapters: [
     levUniswapConfig,
@@ -149,8 +161,10 @@ const levCreditManager: CreditManagerV3DeployConfig = {
     levSteakLRTVaultConfig,
     { contract: "LIDO_WSTETH" },
     { contract: "CURVE_STETH_GATEWAY" },
+    { contract: "CURVE_PUFETH_WSTETH_POOL" },
     { contract: "CONVEX_BOOSTER" },
     { contract: "CONVEX_STECRV_POOL" },
+    { contract: "ZIRCUIT_POOL" },
   ],
 };
 
@@ -276,6 +290,24 @@ export const testWethConfigMainnet: PoolV3DeployConfig = {
       limit: BigInt(4000) * POOL_DECIMALS,
     },
     WBTC: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(4000) * POOL_DECIMALS,
+    },
+    pufETHwstE: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0) * POOL_DECIMALS,
+    },
+    pufETH: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(4000) * POOL_DECIMALS,
+    },
+    zpufETH: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 0,
