@@ -1,5 +1,6 @@
 import {
   BalancerVaultConfig,
+  GenericSwapConfig,
   MellowVaultConfig,
   PendlePairStatus,
   PendleRouterConfig,
@@ -12,6 +13,11 @@ import {
 
 const POOL_DECIMALS = BigInt(1e18);
 const POOL_DIVIDER = BigInt(1);
+
+const levUniV2Config: GenericSwapConfig = {
+  contract: "UNISWAP_V2_ROUTER",
+  allowed: [{ token0: "SKY", token1: "USDS" }],
+};
 
 const levCreditManager: CreditManagerV3DeployConfig = {
   name: "Test Credit Manager",
@@ -35,8 +41,16 @@ const levCreditManager: CreditManagerV3DeployConfig = {
       token: "stkUSDS",
       lt: 9000,
     },
+    {
+      token: "SKY",
+      lt: 0,
+    },
   ],
-  adapters: [{ contract: "DAI_USDS" }, { contract: "SKY_STAKING_REWARDS" }],
+  adapters: [
+    { contract: "DAI_USDS" },
+    { contract: "SKY_STAKING_REWARDS" },
+    levUniV2Config,
+  ],
 };
 
 export const testDaiConfigMainnet: PoolV3DeployConfig = {
@@ -69,6 +83,12 @@ export const testDaiConfigMainnet: PoolV3DeployConfig = {
       maxRate: 1500,
       quotaIncreaseFee: 1,
       limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    SKY: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 1,
+      limit: BigInt(0),
     },
   },
   creditManagers: [levCreditManager],

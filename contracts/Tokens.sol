@@ -69,6 +69,7 @@ enum Tokens {
     pzETH,
     PT_rsETH_26SEP2024,
     USDS,
+    SKY,
     sfrxETH,
     _3Crv,
     crvFRAX,

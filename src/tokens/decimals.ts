@@ -39,6 +39,7 @@ export const decimals: Record<SupportedToken, number> = {
   APE: 18,
   AURA: 18,
   SWISE: 18,
+  SKY: 18,
   WLD: 18,
   OP: 18,
   GHO: 18,

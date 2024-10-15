@@ -2490,6 +2490,14 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: Tokens.SWISE, trusted: false, reserve: false})
         );
 
+        // ------------------------ SKY ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.SKY, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: Tokens.SKY, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: Tokens.SKY, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[8453].push(SingeTokenPriceFeedData({token: Tokens.SKY, trusted: false, reserve: false}));
+
         // ------------------------ GHO ------------------------
         boundedPriceFeedsByNetwork[1].push(
             BoundedPriceFeedData({

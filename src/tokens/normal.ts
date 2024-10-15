@@ -60,6 +60,7 @@ export type NormalToken =
   | "pufETH"
   | "wstETH"
   | "USDS"
+  | "SKY"
   // Mellow LRTs
   | "steakLRT"
   | "Re7LRT"
@@ -455,6 +456,11 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   USDS: {
     name: "USDS",
     symbol: "USDS",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  SKY: {
+    name: "SKY Governance token",
+    symbol: "SKY",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };

@@ -1789,6 +1789,15 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  SKY: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+
   GHO: {
     Mainnet: {
       Main: {
