@@ -1355,7 +1355,7 @@ contract TokensDataLive {
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.zpufETH,
-                addr: 0x6c3f1FFBFD445354fD97EFbf42e0B1216dD2383e,
+                addr: 0xF5740711F088DF1D2fBDb8F62D4852960c139cbA,
                 symbol: "zpufETH",
                 tokenType: TokenType.ZIRCUIT_STAKED_TOKEN
             })
