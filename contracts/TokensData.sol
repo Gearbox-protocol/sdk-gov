@@ -482,6 +482,30 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.PT_sUSDe_26DEC2024,
+                addr: 0xEe9085fC268F6727d5D4293dBABccF901ffDCC29,
+                symbol: "PT_sUSDe_26DEC2024",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.PT_eETH_26DEC2024,
+                addr: 0xf7906F274c174A52d444175729E3fa98f9bde285,
+                symbol: "PT_eETH_26DEC2024",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.PT_ezETH_26DEC2024,
+                addr: 0x6ee2b5E19ECBa773a352E5B21415Dc419A700d1d,
+                symbol: "PT_ezETH_26DEC2024",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.sfrxETH,
                 addr: 0xac3E018457B222d93114458476f3E3416Abbe38F,
                 symbol: "sfrxETH",

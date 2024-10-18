@@ -68,6 +68,9 @@ enum Tokens {
     rstETH,
     pzETH,
     PT_rsETH_26SEP2024,
+    PT_sUSDe_26DEC2024,
+    PT_eETH_26DEC2024,
+    PT_ezETH_26DEC2024,
     sfrxETH,
     _3Crv,
     crvFRAX,
@@ -262,7 +265,8 @@ enum TokenType {
     AURA_STAKED_TOKEN,
     CONVEX_L2_STAKED_TOKEN,
     ZIRCUIT_STAKED_TOKEN,
-    STAKING_REWARDS_PHANTOM_TOKEN
+    STAKING_REWARDS_PHANTOM_TOKEN,
+    PENDLE_TOKEN
 }
 
 enum PhantomTokenType {
