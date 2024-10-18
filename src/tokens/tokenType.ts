@@ -21,7 +21,6 @@ export enum TokenType {
   CONVEX_L2_STAKED_TOKEN,
   ZIRCUIT_STAKED_TOKEN,
   STAKING_REWARDS_PHANTOM_TOKEN,
-  PENDLE_TOKEN,
 }
 
 export enum PhantomTokenType {
