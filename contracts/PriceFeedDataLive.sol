@@ -7885,6 +7885,16 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: Tokens.PT_sUSDe_26DEC2024,
+                underlying: Tokens.sUSDe,
+                market: 0xa0ab94DeBB3cC9A7eA77f3205ba4AB23276feD08,
+                twapWindow: 1800,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ PT_eETH_26DEC2024 ------------------------
         pendlePriceFeedsByNetwork[1].push(
@@ -7897,6 +7907,16 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: Tokens.PT_eETH_26DEC2024,
+                underlying: Tokens.weETH,
+                market: 0x7d372819240D14fB477f17b964f95F33BeB4c704,
+                twapWindow: 1800,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ PT_ezETH_26DEC2024 ------------------------
         pendlePriceFeedsByNetwork[1].push(
@@ -7907,6 +7927,16 @@ contract PriceFeedDataLive {
                 twapWindow: 1800,
                 trusted: false,
                 reserve: false
+            })
+        );
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: Tokens.PT_ezETH_26DEC2024,
+                underlying: Tokens.ezETH,
+                market: 0x7d372819240D14fB477f17b964f95F33BeB4c704,
+                twapWindow: 1800,
+                trusted: false,
+                reserve: true
             })
         );
     }
