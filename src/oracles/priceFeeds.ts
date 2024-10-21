@@ -3753,6 +3753,12 @@ export const priceFeedsByToken: Record<
         twapWindow: HOUR_1 / 2,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "sUSDe",
+        market: "0xa0ab94DeBB3cC9A7eA77f3205ba4AB23276feD08",
+        twapWindow: HOUR_1 / 2,
+      },
     },
   },
   PT_eETH_26DEC2024: {
@@ -3764,6 +3770,12 @@ export const priceFeedsByToken: Record<
         twapWindow: HOUR_1 / 2,
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "weETH",
+        market: "0x7d372819240D14fB477f17b964f95F33BeB4c704",
+        twapWindow: HOUR_1 / 2,
+      },
     },
   },
   PT_ezETH_26DEC2024: {
@@ -3774,6 +3786,12 @@ export const priceFeedsByToken: Record<
         market: "0x7d372819240D14fB477f17b964f95F33BeB4c704",
         twapWindow: HOUR_1 / 2,
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "ezETH",
+        market: "0x7d372819240D14fB477f17b964f95F33BeB4c704",
+        twapWindow: HOUR_1 / 2,
       },
     },
   },
