@@ -498,6 +498,30 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.PT_sUSDe_26DEC2024,
+                addr: 0xEe9085fC268F6727d5D4293dBABccF901ffDCC29,
+                symbol: "PT_sUSDe_26DEC2024",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.PT_eETH_26DEC2024,
+                addr: 0xf7906F274c174A52d444175729E3fa98f9bde285,
+                symbol: "PT_eETH_26DEC2024",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.PT_ezETH_26DEC2024,
+                addr: 0x6ee2b5E19ECBa773a352E5B21415Dc419A700d1d,
+                symbol: "PT_ezETH_26DEC2024",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.sfrxETH,
                 addr: 0xac3E018457B222d93114458476f3E3416Abbe38F,
                 symbol: "sfrxETH",
@@ -1940,6 +1964,15 @@ contract TokensDataLive {
 
         tokenDataByNetwork[42161].push(
             TokenData({
+                id: Tokens.rsETH_wETH_Arb,
+                addr: 0x90e6CB5249f5e1572afBF8A96D8A1ca6aCFFd739,
+                symbol: "rsETH_wETH_Arb",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[42161].push(
+            TokenData({
                 id: Tokens.wstETH_WETH_BPT,
                 addr: 0x9791d590788598535278552EEcD4b211bFc790CB,
                 symbol: "wstETH_WETH_BPT",
@@ -1972,9 +2005,9 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[42161].push(
             TokenData({
-                id: Tokens.rETH_WETH_BPT,
+                id: Tokens.rETH_WETH_BPT_deprecated,
                 addr: 0xadE4A71BB62bEc25154CFc7e6ff49A513B491E81,
-                symbol: "rETH_WETH_BPT",
+                symbol: "rETH_WETH_BPT_deprecated",
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );

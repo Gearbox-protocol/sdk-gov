@@ -821,6 +821,13 @@ export const VELODROME_V2_CL_FACTORY: Address =
 export const MELLOW_COLLECTOR: Address =
   "0xce8f66b5347dcfedb3e63cb2c95e4aab9a85429e";
 
+export const PENDLE_ROUTER_STATIC_MAINNET =
+  "0x263833d47eA3fA4a30f269323aba6a107f9eB14C";
+export const PENDLE_ROUTER_STATIC_ARBITRUM =
+  "0xAdB09F65bd90d19e3148D9ccb693F3161C6DB3E8";
+export const PENDLE_ROUTER_STATIC_OPTIMISM =
+  "0x704478Dd72FD7F9B83d1F1e0fc18C14B54F034d0";
+
 export interface BaseContractParams {
   name: string;
 }

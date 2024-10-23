@@ -29,11 +29,12 @@ export type BalancerLPToken =
   | "wstETH_WETH_BPT"
   | "wstETH_rETH_sfrxETH"
   | "wstETH_rETH_cbETH"
-  | "rETH_WETH_BPT"
+  | "rETH_WETH_BPT_deprecated"
   | "cbETH_rETH_wstETH"
   | "rETH_wETH_BPT"
   | "33AURA_33ARB_33BAL"
-  | "ezETH_wstETH";
+  | "ezETH_wstETH"
+  | "rsETH_wETH_Arb";
 
 export type BalancerLpTokenData = {
   symbol: BalancerLPToken;
@@ -190,6 +191,17 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
       "0x58aadfb1afac0ad7fca1148f3cde6aedf5236b6d00000000000000000000067f",
   },
 
+  rsETH_wETH_Arb: {
+    name: "Balancer rsETH/WETH Pool (Arbitrum)",
+    symbol: "rsETH_wETH_Arb",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["rsETH", "WETH"],
+    poolId:
+      "0x90e6cb5249f5e1572afbf8a96d8a1ca6acffd73900000000000000000000055c",
+  },
+
   BPT_rETH_ETH: {
     name: "BeethovenX rETH-ETH Pool",
     symbol: "BPT_rETH_ETH",
@@ -277,9 +289,9 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
       "0x2d6ced12420a9af5a83765a8c48be2afcd1a8feb000000000000000000000500",
   },
 
-  rETH_WETH_BPT: {
+  rETH_WETH_BPT_deprecated: {
     name: "Balancer rETH/WETH Pool (Arbitrum)",
-    symbol: "rETH_WETH_BPT",
+    symbol: "rETH_WETH_BPT_deprecated",
     type: {
       AllNetworks: TokenType.BALANCER_LP_TOKEN,
     },
