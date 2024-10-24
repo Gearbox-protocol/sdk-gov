@@ -820,7 +820,8 @@ class BindingsGenerator {
           contractParam.type === AdapterInterface.AAVE_V3_LENDING_POOL ||
           contractParam.type === AdapterInterface.ZIRCUIT_POOL ||
           contractParam.type === AdapterInterface.MELLOW_LRT_VAULT ||
-          contractParam.type === AdapterInterface.PENDLE_ROUTER,
+          contractParam.type === AdapterInterface.PENDLE_ROUTER ||
+          contractParam.type === AdapterInterface.DAI_USDS_EXCHANGE,
       )
       .map(
         ([contract, contractParam]) =>
@@ -912,6 +913,23 @@ class BindingsGenerator {
           contractParam.type === AdapterInterface.CONVEX_V1_BASE_REWARD_POOL
         ) {
           return `convexBasePoolAdapters.push(ConvexBasePoolAdapter({targetContract:  Contracts.${contract},
+  adapterType: AdapterType.${
+    AdapterInterface[contractParam.type]
+  }, stakedToken: ${this.tokensEnum(contractParam.stakedToken)}}));`;
+        }
+        return "";
+      })
+      .join("\n");
+
+    data += Object.entries(contractParams)
+      .filter(
+        ([, contractParam]) =>
+          contractParam.type === AdapterInterface.STAKING_REWARDS &&
+          this.tokens.includes(contractParam.stakedToken),
+      )
+      .map(([contract, contractParam]) => {
+        if (contractParam.type === AdapterInterface.STAKING_REWARDS) {
+          return `stakingRewardsAdapters.push(StakingRewardsAdapter({targetContract:  Contracts.${contract},
   adapterType: AdapterType.${
     AdapterInterface[contractParam.type]
   }, stakedToken: ${this.tokensEnum(contractParam.stakedToken)}}));`;

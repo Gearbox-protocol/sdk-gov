@@ -59,6 +59,8 @@ export type NormalToken =
   | "GHO"
   | "pufETH"
   | "wstETH"
+  | "USDS"
+  | "SKY"
   // Mellow LRTs
   | "steakLRT"
   | "Re7LRT"
@@ -452,6 +454,16 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   PT_rsETH_26SEP2024: {
     name: "Pendle PT rsETH 26 Sep 2024 expiry",
     symbol: "PT_rsETH_26SEP2024",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  USDS: {
+    name: "USDS",
+    symbol: "USDS",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  SKY: {
+    name: "SKY Governance token",
+    symbol: "SKY",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
   PT_sUSDe_26DEC2024: {

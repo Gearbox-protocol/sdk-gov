@@ -38,12 +38,19 @@ struct ConvexBasePoolAdapter {
     Tokens stakedToken;
 }
 
+struct StakingRewardsAdapter {
+    Contracts targetContract;
+    AdapterType adapterType;
+    Tokens stakedToken;
+}
+
 contract AdapterData {
     SimpleAdapter[] simpleAdapters;
     CurveAdapter[] curveAdapters;
     CurveStETHAdapter[] curveStEthAdapters;
     CurveWrapper[] curveWrappers;
     ConvexBasePoolAdapter[] convexBasePoolAdapters;
+    StakingRewardsAdapter[] stakingRewardsAdapters;
 
     constructor() {
         simpleAdapters.push(
@@ -210,6 +217,9 @@ contract AdapterData {
         );
         simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.MELLOW_RENZO_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
+        );
+        simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.DAI_USDS, adapterType: AdapterType.DAI_USDS_EXCHANGE})
         );
         curveAdapters.push(
             CurveAdapter({
@@ -701,6 +711,13 @@ contract AdapterData {
                 targetContract: Contracts.AURA_RETH_WETH_POOL_ARB,
                 adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
                 stakedToken: Tokens.aurarETH_wETH_BPT_vault
+            })
+        );
+        stakingRewardsAdapters.push(
+            StakingRewardsAdapter({
+                targetContract: Contracts.SKY_STAKING_REWARDS,
+                adapterType: AdapterType.STAKING_REWARDS,
+                stakedToken: Tokens.stkUSDS
             })
         );
     }

@@ -234,6 +234,20 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  USDS: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "DAI",
+        trusted: true,
+      },
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "DAI",
+      },
+    },
+  },
+
   DPI: {
     Mainnet: {
       Main: {
@@ -1767,6 +1781,15 @@ export const priceFeedsByToken: Record<
   },
 
   SWISE: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+
+  SKY: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
@@ -3663,6 +3686,15 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.THE_SAME_AS,
         token: "pufETH",
+        trusted: false,
+      },
+    },
+  },
+  stkUSDS: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "USDS",
         trusted: false,
       },
     },

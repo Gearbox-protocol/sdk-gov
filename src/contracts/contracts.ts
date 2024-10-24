@@ -11,6 +11,7 @@ import { ConvexStakedPhantomToken } from "../tokens/convex";
 import type { CurveLPToken } from "../tokens/curveLP";
 import { ERC4626LPToken } from "../tokens/erc4626";
 import { NormalToken } from "../tokens/normal";
+import { StakingRewardsPhantomToken } from "../tokens/stakingRewards";
 import { SupportedToken, tokenDataByNetwork } from "../tokens/token";
 import type { YearnLPToken } from "../tokens/yearn";
 import { TypedObjectUtils } from "../utils/mappers";
@@ -132,6 +133,8 @@ export type MellowVaultContract =
   | "MELLOW_RESTAKING_VAULT"
   | "MELLOW_RENZO_VAULT";
 
+export type StakingRewardsContract = "SKY_STAKING_REWARDS";
+
 export type SupportedContract =
   | UniswapV2Contract
   | "UNISWAP_V3_ROUTER"
@@ -158,7 +161,9 @@ export type SupportedContract =
   | "CAMELOT_V3_ROUTER"
   | "AAVE_V3_LENDING_POOL"
   | "ZIRCUIT_POOL"
-  | "PENDLE_ROUTER";
+  | "PENDLE_ROUTER"
+  | StakingRewardsContract
+  | "DAI_USDS";
 
 export const contractsByNetwork: Record<
   NetworkType,
@@ -311,6 +316,10 @@ export const contractsByNetwork: Record<
     MELLOW_AMPHOR_VAULT: tokenDataByNetwork.Mainnet.amphrETH,
     MELLOW_RESTAKING_VAULT: tokenDataByNetwork.Mainnet.rstETH,
     MELLOW_RENZO_VAULT: tokenDataByNetwork.Mainnet.pzETH,
+
+    // SKY
+    SKY_STAKING_REWARDS: "0x0650CAF159C5A49f711e8169D4336ECB9b950275",
+    DAI_USDS: "0x3225737a9Bbb6473CB4a45b7244ACa2BeFdB276A",
   },
 
   //
@@ -469,6 +478,9 @@ export const contractsByNetwork: Record<
     MELLOW_AMPHOR_VAULT: tokenDataByNetwork.Arbitrum.amphrETH,
     MELLOW_RESTAKING_VAULT: tokenDataByNetwork.Arbitrum.rstETH,
     MELLOW_RENZO_VAULT: tokenDataByNetwork.Arbitrum.pzETH,
+
+    SKY_STAKING_REWARDS: NOT_DEPLOYED,
+    DAI_USDS: NOT_DEPLOYED,
   },
   //
   //
@@ -627,6 +639,9 @@ export const contractsByNetwork: Record<
     MELLOW_AMPHOR_VAULT: tokenDataByNetwork.Optimism.amphrETH,
     MELLOW_RESTAKING_VAULT: tokenDataByNetwork.Optimism.rstETH,
     MELLOW_RENZO_VAULT: tokenDataByNetwork.Optimism.pzETH,
+
+    SKY_STAKING_REWARDS: NOT_DEPLOYED,
+    DAI_USDS: NOT_DEPLOYED,
   },
   //
   //
@@ -782,6 +797,9 @@ export const contractsByNetwork: Record<
     MELLOW_AMPHOR_VAULT: tokenDataByNetwork.Base.amphrETH,
     MELLOW_RESTAKING_VAULT: tokenDataByNetwork.Base.rstETH,
     MELLOW_RENZO_VAULT: tokenDataByNetwork.Base.pzETH,
+
+    SKY_STAKING_REWARDS: NOT_DEPLOYED,
+    DAI_USDS: NOT_DEPLOYED,
   },
 };
 
@@ -993,6 +1011,17 @@ export type MellowVaultParams = {
   type: AdapterInterface.MELLOW_LRT_VAULT;
 } & BaseContractParams;
 
+export type StakingRewardsParams = {
+  protocol: Protocols.Sky;
+  type: AdapterInterface.STAKING_REWARDS;
+  stakedToken: StakingRewardsPhantomToken;
+} & BaseContractParams;
+
+export type DaiUsdsParams = {
+  protocol: Protocols.Sky;
+  type: AdapterInterface.DAI_USDS_EXCHANGE;
+} & BaseContractParams;
+
 export type ContractParams =
   | UniswapV2Params
   | UniswapV3Params
@@ -1019,7 +1048,9 @@ export type ContractParams =
   | ERC4626Params
   | ZircuitParams
   | MellowVaultParams
-  | PendleRouterParams;
+  | PendleRouterParams
+  | StakingRewardsParams
+  | DaiUsdsParams;
 
 export const contractParams: Record<SupportedContract, ContractParams> = {
   UNISWAP_V2_ROUTER: {
@@ -2145,6 +2176,17 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Mellow Renzo pzETH vault",
     protocol: Protocols.Mellow,
     type: AdapterInterface.MELLOW_LRT_VAULT,
+  },
+  SKY_STAKING_REWARDS: {
+    name: "Sky StakingRewards contract",
+    protocol: Protocols.Sky,
+    type: AdapterInterface.STAKING_REWARDS,
+    stakedToken: "stkUSDS",
+  },
+  DAI_USDS: {
+    name: "DAI/USDS Exchange",
+    protocol: Protocols.Sky,
+    type: AdapterInterface.DAI_USDS_EXCHANGE,
   },
 };
 
