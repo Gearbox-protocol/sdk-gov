@@ -7878,7 +7878,7 @@ contract PriceFeedDataLive {
         pendlePriceFeedsByNetwork[1].push(
             PendlePriceFeedData({
                 token: Tokens.PT_sUSDe_26DEC2024,
-                underlying: Tokens.sUSDe,
+                underlying: Tokens.USDe,
                 market: 0xa0ab94DeBB3cC9A7eA77f3205ba4AB23276feD08,
                 twapWindow: 1800,
                 trusted: false,
@@ -7888,7 +7888,7 @@ contract PriceFeedDataLive {
         pendlePriceFeedsByNetwork[1].push(
             PendlePriceFeedData({
                 token: Tokens.PT_sUSDe_26DEC2024,
-                underlying: Tokens.sUSDe,
+                underlying: Tokens.USDe,
                 market: 0xa0ab94DeBB3cC9A7eA77f3205ba4AB23276feD08,
                 twapWindow: 1800,
                 trusted: false,
@@ -7900,7 +7900,7 @@ contract PriceFeedDataLive {
         pendlePriceFeedsByNetwork[1].push(
             PendlePriceFeedData({
                 token: Tokens.PT_eETH_26DEC2024,
-                underlying: Tokens.weETH,
+                underlying: Tokens.WETH,
                 market: 0x7d372819240D14fB477f17b964f95F33BeB4c704,
                 twapWindow: 1800,
                 trusted: false,
@@ -7910,7 +7910,7 @@ contract PriceFeedDataLive {
         pendlePriceFeedsByNetwork[1].push(
             PendlePriceFeedData({
                 token: Tokens.PT_eETH_26DEC2024,
-                underlying: Tokens.weETH,
+                underlying: Tokens.WETH,
                 market: 0x7d372819240D14fB477f17b964f95F33BeB4c704,
                 twapWindow: 1800,
                 trusted: false,
@@ -7922,7 +7922,7 @@ contract PriceFeedDataLive {
         pendlePriceFeedsByNetwork[1].push(
             PendlePriceFeedData({
                 token: Tokens.PT_ezETH_26DEC2024,
-                underlying: Tokens.ezETH,
+                underlying: Tokens.WETH,
                 market: 0x7d372819240D14fB477f17b964f95F33BeB4c704,
                 twapWindow: 1800,
                 trusted: false,
@@ -7932,7 +7932,7 @@ contract PriceFeedDataLive {
         pendlePriceFeedsByNetwork[1].push(
             PendlePriceFeedData({
                 token: Tokens.PT_ezETH_26DEC2024,
-                underlying: Tokens.ezETH,
+                underlying: Tokens.WETH,
                 market: 0x7d372819240D14fB477f17b964f95F33BeB4c704,
                 twapWindow: 1800,
                 trusted: false,
