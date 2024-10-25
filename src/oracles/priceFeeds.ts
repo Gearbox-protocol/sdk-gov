@@ -3780,14 +3780,14 @@ export const priceFeedsByToken: Record<
     Mainnet: {
       Main: {
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
-        underlying: "sUSDe",
+        underlying: "USDe",
         market: "0xa0ab94DeBB3cC9A7eA77f3205ba4AB23276feD08",
         twapWindow: HOUR_1 / 2,
         trusted: false,
       },
       Reserve: {
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
-        underlying: "sUSDe",
+        underlying: "USDe",
         market: "0xa0ab94DeBB3cC9A7eA77f3205ba4AB23276feD08",
         twapWindow: HOUR_1 / 2,
       },
@@ -3797,14 +3797,14 @@ export const priceFeedsByToken: Record<
     Mainnet: {
       Main: {
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
-        underlying: "weETH",
+        underlying: "WETH",
         market: "0x7d372819240D14fB477f17b964f95F33BeB4c704",
         twapWindow: HOUR_1 / 2,
         trusted: false,
       },
       Reserve: {
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
-        underlying: "weETH",
+        underlying: "WETH",
         market: "0x7d372819240D14fB477f17b964f95F33BeB4c704",
         twapWindow: HOUR_1 / 2,
       },
@@ -3814,15 +3814,15 @@ export const priceFeedsByToken: Record<
     Mainnet: {
       Main: {
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
-        underlying: "ezETH",
-        market: "0x7d372819240D14fB477f17b964f95F33BeB4c704",
+        underlying: "WETH",
+        market: "0xD8F12bCDE578c653014F27379a6114F67F0e445f",
         twapWindow: HOUR_1 / 2,
         trusted: false,
       },
       Reserve: {
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
-        underlying: "ezETH",
-        market: "0x7d372819240D14fB477f17b964f95F33BeB4c704",
+        underlying: "WETH",
+        market: "0xD8F12bCDE578c653014F27379a6114F67F0e445f",
         twapWindow: HOUR_1 / 2,
       },
     },
