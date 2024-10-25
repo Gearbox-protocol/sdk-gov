@@ -3783,14 +3783,14 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
         underlying: "WETH",
-        market: "0x7d372819240D14fB477f17b964f95F33BeB4c704",
+        market: "0xD8F12bCDE578c653014F27379a6114F67F0e445f",
         twapWindow: HOUR_1 / 2,
         trusted: false,
       },
       Reserve: {
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
         underlying: "WETH",
-        market: "0x7d372819240D14fB477f17b964f95F33BeB4c704",
+        market: "0xD8F12bCDE578c653014F27379a6114F67F0e445f",
         twapWindow: HOUR_1 / 2,
       },
     },
