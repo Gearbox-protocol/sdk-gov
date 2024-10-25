@@ -7923,7 +7923,7 @@ contract PriceFeedDataLive {
             PendlePriceFeedData({
                 token: Tokens.PT_ezETH_26DEC2024,
                 underlying: Tokens.WETH,
-                market: 0x7d372819240D14fB477f17b964f95F33BeB4c704,
+                market: 0xD8F12bCDE578c653014F27379a6114F67F0e445f,
                 twapWindow: 1800,
                 trusted: false,
                 reserve: false
@@ -7933,7 +7933,7 @@ contract PriceFeedDataLive {
             PendlePriceFeedData({
                 token: Tokens.PT_ezETH_26DEC2024,
                 underlying: Tokens.WETH,
-                market: 0x7d372819240D14fB477f17b964f95F33BeB4c704,
+                market: 0xD8F12bCDE578c653014F27379a6114F67F0e445f,
                 twapWindow: 1800,
                 trusted: false,
                 reserve: true
