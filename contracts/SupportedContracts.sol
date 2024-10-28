@@ -367,6 +367,13 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.STAKED_USDS_VAULT,
+                addr: 0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD,
+                name: "STAKED_USDS_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CONVEX_BOOSTER,
                 addr: 0xF403C135812408BFbE8713b5A23a04b3D48AAE31,
                 name: "CONVEX_BOOSTER"
@@ -735,6 +742,14 @@ contract SupportedContracts is Test, ISupportedContracts {
 
         contractDataByNetwork[42161].push(
             ContractData({
+                id: Contracts.STAKED_USDS_VAULT,
+                addr: 0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD,
+                name: "STAKED_USDS_VAULT"
+            })
+        );
+
+        contractDataByNetwork[42161].push(
+            ContractData({
                 id: Contracts.CONVEX_BOOSTER_ARB,
                 addr: 0xF403C135812408BFbE8713b5A23a04b3D48AAE31,
                 name: "CONVEX_BOOSTER_ARB"
@@ -899,6 +914,14 @@ contract SupportedContracts is Test, ISupportedContracts {
 
         contractDataByNetwork[10].push(
             ContractData({
+                id: Contracts.STAKED_USDS_VAULT,
+                addr: 0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD,
+                name: "STAKED_USDS_VAULT"
+            })
+        );
+
+        contractDataByNetwork[10].push(
+            ContractData({
                 id: Contracts.AURA_BOOSTER,
                 addr: 0x98Ef32edd24e2c92525E59afc4475C1242a30184,
                 name: "AURA_BOOSTER"
@@ -948,6 +971,14 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.PANCAKESWAP_V3_ROUTER,
                 addr: 0x1b81D678ffb9C0263b24A97847620C99d213eB14,
                 name: "PANCAKESWAP_V3_ROUTER"
+            })
+        );
+
+        contractDataByNetwork[8453].push(
+            ContractData({
+                id: Contracts.STAKED_USDS_VAULT,
+                addr: 0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD,
+                name: "STAKED_USDS_VAULT"
             })
         );
 

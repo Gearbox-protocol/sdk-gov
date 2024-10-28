@@ -202,6 +202,7 @@ enum Tokens {
     sDAI,
     YieldETH,
     sUSDe,
+    sUSDS,
     auraB_rETH_STABLE,
     auraosETH_wETH_BPT,
     auraweETH_rETH,

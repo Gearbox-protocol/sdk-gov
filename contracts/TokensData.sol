@@ -1328,6 +1328,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.sUSDS,
+                addr: 0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD,
+                symbol: "sUSDS",
+                tokenType: TokenType.ERC4626_VAULT_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.auraB_rETH_STABLE,
                 addr: 0x9497df26e5bD669Cb925eC68E730492b9300c482,
                 symbol: "auraB_rETH_STABLE",

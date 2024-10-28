@@ -3518,6 +3518,16 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+
+  sUSDS: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "USDS",
+        trusted: false,
+      },
+    },
+  },
   // AURA
   auraB_rETH_STABLE: {
     AllNetworks: {

@@ -78,7 +78,8 @@ export type YearnVaultContract =
 export type ERC4626VaultContract =
   | "MAKER_DSR_VAULT"
   | "YIELD_ETH_VAULT"
-  | "STAKED_USDE_VAULT";
+  | "STAKED_USDE_VAULT"
+  | "STAKED_USDS_VAULT";
 
 export type ConvexPoolContract =
   | "CONVEX_3CRV_POOL"
@@ -240,6 +241,7 @@ export const contractsByNetwork: Record<
     MAKER_DSR_VAULT: tokenDataByNetwork.Mainnet.sDAI,
     YIELD_ETH_VAULT: tokenDataByNetwork.Mainnet.YieldETH,
     STAKED_USDE_VAULT: tokenDataByNetwork.Mainnet.sUSDe,
+    STAKED_USDS_VAULT: tokenDataByNetwork.Mainnet.sUSDS,
 
     // CONVEX
     CONVEX_BOOSTER: "0xF403C135812408BFbE8713b5A23a04b3D48AAE31",
@@ -402,6 +404,7 @@ export const contractsByNetwork: Record<
     MAKER_DSR_VAULT: tokenDataByNetwork.Arbitrum.sDAI,
     YIELD_ETH_VAULT: tokenDataByNetwork.Arbitrum.YieldETH,
     STAKED_USDE_VAULT: tokenDataByNetwork.Arbitrum.sUSDe,
+    STAKED_USDS_VAULT: tokenDataByNetwork.Mainnet.sUSDS,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -562,6 +565,7 @@ export const contractsByNetwork: Record<
     MAKER_DSR_VAULT: tokenDataByNetwork.Optimism.sDAI,
     YIELD_ETH_VAULT: tokenDataByNetwork.Optimism.YieldETH,
     STAKED_USDE_VAULT: tokenDataByNetwork.Optimism.sUSDe,
+    STAKED_USDS_VAULT: tokenDataByNetwork.Mainnet.sUSDS,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -722,6 +726,7 @@ export const contractsByNetwork: Record<
     MAKER_DSR_VAULT: tokenDataByNetwork.Base.sDAI,
     YIELD_ETH_VAULT: tokenDataByNetwork.Base.YieldETH,
     STAKED_USDE_VAULT: tokenDataByNetwork.Base.sUSDe,
+    STAKED_USDS_VAULT: tokenDataByNetwork.Mainnet.sUSDS,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -901,7 +906,11 @@ export type YearnParams = {
 } & BaseContractParams;
 
 export type ERC4626Params = {
-  protocol: Protocols.MakerDSR | Protocols.Sommelier | Protocols.Ethena;
+  protocol:
+    | Protocols.MakerDSR
+    | Protocols.Sommelier
+    | Protocols.Ethena
+    | Protocols.Sky;
   type: AdapterInterface.ERC4626_VAULT;
   underlying: NormalToken;
 } & BaseContractParams;
@@ -1535,6 +1544,12 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     protocol: Protocols.Ethena,
     type: AdapterInterface.ERC4626_VAULT,
     underlying: "USDe",
+  },
+  STAKED_USDS_VAULT: {
+    name: "Sky Staked USDS Vault",
+    protocol: Protocols.Sky,
+    type: AdapterInterface.ERC4626_VAULT,
+    underlying: "USDS",
   },
   CONVEX_BOOSTER: {
     name: "Convex BOOSTER",
