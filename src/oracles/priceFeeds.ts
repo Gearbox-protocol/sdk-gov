@@ -3526,6 +3526,10 @@ export const priceFeedsByToken: Record<
         underlying: "USDS",
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "USDS",
+      },
     },
   },
   // AURA
