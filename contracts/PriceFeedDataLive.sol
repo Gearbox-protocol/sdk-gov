@@ -7701,7 +7701,31 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: Tokens.stkUSDS,
+                tokenHasSamePriceFeed: Tokens.USDS,
+                trusted: false,
+                reserve: true
+            })
+        );
         theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({
+                token: Tokens.stkUSDS,
+                tokenHasSamePriceFeed: Tokens.USDS,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({
+                token: Tokens.stkUSDS,
+                tokenHasSamePriceFeed: Tokens.USDS,
+                trusted: false,
+                reserve: true
+            })
+        );
+        theSamePriceFeedsByNetwork[10].push(
             TheSamePriceFeedData({
                 token: Tokens.stkUSDS,
                 tokenHasSamePriceFeed: Tokens.USDS,
@@ -7714,7 +7738,7 @@ contract PriceFeedDataLive {
                 token: Tokens.stkUSDS,
                 tokenHasSamePriceFeed: Tokens.USDS,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
@@ -7723,6 +7747,14 @@ contract PriceFeedDataLive {
                 tokenHasSamePriceFeed: Tokens.USDS,
                 trusted: false,
                 reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: Tokens.stkUSDS,
+                tokenHasSamePriceFeed: Tokens.USDS,
+                trusted: false,
+                reserve: true
             })
         );
 

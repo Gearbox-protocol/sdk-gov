@@ -3711,6 +3711,10 @@ export const priceFeedsByToken: Record<
         token: "USDS",
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "USDS",
+      },
     },
   },
   // MELLOW
