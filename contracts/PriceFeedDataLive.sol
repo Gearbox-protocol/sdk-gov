@@ -7020,6 +7020,32 @@ contract PriceFeedDataLive {
             GenericLPPriceFeedData({lpToken: Tokens.YieldETH, underlying: Tokens.WETH, trusted: false, reserve: false})
         );
 
+        // ------------------------ sUSDS ------------------------
+        erc4626PriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: Tokens.sUSDS, underlying: Tokens.USDS, trusted: false, reserve: false})
+        );
+        erc4626PriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: Tokens.sUSDS, underlying: Tokens.USDS, trusted: false, reserve: true})
+        );
+        erc4626PriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: Tokens.sUSDS, underlying: Tokens.USDS, trusted: false, reserve: false})
+        );
+        erc4626PriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: Tokens.sUSDS, underlying: Tokens.USDS, trusted: false, reserve: true})
+        );
+        erc4626PriceFeedsByNetwork[10].push(
+            GenericLPPriceFeedData({lpToken: Tokens.sUSDS, underlying: Tokens.USDS, trusted: false, reserve: false})
+        );
+        erc4626PriceFeedsByNetwork[10].push(
+            GenericLPPriceFeedData({lpToken: Tokens.sUSDS, underlying: Tokens.USDS, trusted: false, reserve: true})
+        );
+        erc4626PriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: Tokens.sUSDS, underlying: Tokens.USDS, trusted: false, reserve: false})
+        );
+        erc4626PriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: Tokens.sUSDS, underlying: Tokens.USDS, trusted: false, reserve: true})
+        );
+
         // ------------------------ auraB_rETH_STABLE ------------------------
         theSamePriceFeedsByNetwork[1].push(
             TheSamePriceFeedData({

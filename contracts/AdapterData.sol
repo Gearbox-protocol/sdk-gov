@@ -117,6 +117,9 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.STAKED_USDE_VAULT, adapterType: AdapterType.ERC4626_VAULT})
         );
         simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.STAKED_USDS_VAULT, adapterType: AdapterType.ERC4626_VAULT})
+        );
+        simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.CONVEX_BOOSTER, adapterType: AdapterType.CONVEX_V1_BOOSTER})
         );
         simpleAdapters.push(

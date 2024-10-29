@@ -415,6 +415,7 @@ export const tokenDataByNetwork: Record<
     sDAI: "0x83F20F44975D03b1b09e64809B757c47f942BEeA",
     YieldETH: "0xb5b29320d2Dde5BA5BAFA1EbcD270052070483ec",
     sUSDe: "0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
+    sUSDS: "0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD",
 
     // AAVE
     aUSDC: "0xBcca60bB61934080951369a648Fb03DF4F96263C",
@@ -725,6 +726,7 @@ export const tokenDataByNetwork: Record<
     sDAI: NOT_DEPLOYED,
     YieldETH: NOT_DEPLOYED,
     sUSDe: NOT_DEPLOYED,
+    sUSDS: NOT_DEPLOYED,
 
     // ZIRCUIT
     zpufETH: NOT_DEPLOYED,
@@ -1016,6 +1018,7 @@ export const tokenDataByNetwork: Record<
     sDAI: NOT_DEPLOYED,
     YieldETH: NOT_DEPLOYED,
     sUSDe: NOT_DEPLOYED,
+    sUSDS: NOT_DEPLOYED,
 
     // ZIRCUIT
     zpufETH: NOT_DEPLOYED,
@@ -1307,6 +1310,8 @@ export const tokenDataByNetwork: Record<
     sDAI: NOT_DEPLOYED,
     YieldETH: NOT_DEPLOYED,
     sUSDe: NOT_DEPLOYED,
+    sUSDS: NOT_DEPLOYED,
+
     GHO: NOT_DEPLOYED,
     GHOUSDe: NOT_DEPLOYED,
     GHO_USDT_USDC: NOT_DEPLOYED,

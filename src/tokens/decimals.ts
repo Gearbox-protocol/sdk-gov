@@ -244,6 +244,7 @@ export const decimals: Record<SupportedToken, number> = {
   fUSDC: 8,
   sDAI: 18,
   sUSDe: 18,
+  sUSDS: 18,
   YieldETH: 18,
   rETH: 18,
   rETH_f: 18,
