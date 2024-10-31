@@ -1501,14 +1501,14 @@ export function getTokenSymbol(address: Address): SupportedToken | undefined {
   return tokenSymbolByAddress[address.toLowerCase()];
 }
 
-// export function getTokenSymbolOrTicker(
-//   address: Address,
-// ): SupportedToken | TickerToken | undefined {
-//   return (
-//     tokenSymbolByAddress[address.toLowerCase()] ||
-//     tickerSymbolByAddress[address.toLowerCase() as Address]
-//   );
-// }
+export function getTokenSymbolOrTicker(
+  address: Address,
+): SupportedToken | TickerToken | undefined {
+  return (
+    tokenSymbolByAddress[address.toLowerCase()] ||
+    tickerSymbolByAddress[address.toLowerCase() as Address]
+  );
+}
 
 export function getTokenSymbolOrETH(
   address: Address,
