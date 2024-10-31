@@ -16,7 +16,7 @@ export enum RouterProtocols {
   wstETH,
   Mellow,
   Pendle,
-  sUSDS,
+  DaiUsdsSwap,
   SKY,
 }
 
