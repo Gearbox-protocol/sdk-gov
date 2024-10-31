@@ -16,6 +16,8 @@ export enum RouterProtocols {
   wstETH,
   Mellow,
   Pendle,
+  sUSDS,
+  SKY,
 }
 
 export enum RouterComponent {
@@ -57,4 +59,8 @@ export enum RouterComponent {
   RC_BATCH_LIQUIDATION_ESTIMATOR = 35,
   RC_MELLOW_VAULT_SWAPPER = 36,
   RC_PENDLE_SWAPPER = 37,
+  RC_DAI_USDS_SWAPPER = 38,
+  RC_STAKING_REWARDS_DEPOSITOR = 39,
+  RC_STAKING_REWARDS_WITHDRAWER = 40,
+  RC_STAKING_REWARDS_PATH_RESOLVER = 41,
 }
