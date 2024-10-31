@@ -1341,6 +1341,7 @@ export interface TickerInfo {
   dataId: string;
   address: Address;
   priceFeed: Address;
+  reserve: boolean;
 }
 
 export const tickerInfoTokensByNetwork: Record<
@@ -1354,6 +1355,7 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "weETH_FUNDAMENTAL",
         address: "0x8C23b9E4CB9884e807294c4b4C33820333cC613c",
         priceFeed: "0x6F13996411743d22566176482B6b677Ec4eb6cE6",
+        reserve: false,
       },
     ],
     ezETH: [
@@ -1362,6 +1364,7 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "ezETH_FUNDAMENTAL",
         address: "0xFb56Fb16B4F33A875b01881Da7458E09D286208e",
         priceFeed: "0xa7cB34Cd731486F61cfDb7ff5F6fC7B40537eD76",
+        reserve: false,
       },
     ],
     rsETH: [
@@ -1370,6 +1373,7 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "rsETH_FUNDAMENTAL",
         address: "0xf08D818be34C82cB5e3f33AC78F8268828764F17",
         priceFeed: "0xcf1FDc8DC6e83B38729d58C117BE704bb2AC362a",
+        reserve: false,
       },
     ],
     pufETH: [
@@ -1378,6 +1382,7 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "pufETH_FUNDAMENTAL",
         address: "0xBdb778F566b6cEd70D3d329DD1D14E221fFe1ba5",
         priceFeed: "0xE683362b8ebcbfd9332CBB79BfAF9fC42073C49b",
+        reserve: false,
       },
     ],
     rswETH: [
@@ -1386,6 +1391,7 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "rswETH_FUNDAMENTAL",
         address: "0x7fF63E75F48aad6F4bE97E75C6421f348f19fE7F",
         priceFeed: "0xB72A69e2182bE87bda706B7Ff9A539AC78338C61",
+        reserve: false,
       },
     ],
     LBTC: [
@@ -1394,6 +1400,7 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "LBTC_FUNDAMENTAL",
         address: "0xB0EA0EC3Fd4947348816f76768b3a56249d47EEc",
         priceFeed: "0xd7396fA3aFB9833293Ce2149EEb3Dbf5380B1e0D",
+        reserve: false,
       },
     ],
     stkcvxcrvUSDUSDC: [
@@ -1402,12 +1409,14 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "crvUSD",
         address: tokenDataByNetwork.Mainnet.crvUSD,
         priceFeed: "0x47c99d1A79444A91C89b33a808e1a7cb0336E428",
+        reserve: true,
       },
       {
         symbol: "USDC",
         dataId: "USDC",
         address: tokenDataByNetwork.Mainnet.USDC,
         priceFeed: "0xAFC5080CcE75B26B32A7dAbc032eB66f3b8822C3",
+        reserve: true,
       },
     ],
     stkcvxcrvUSDUSDT: [
@@ -1416,12 +1425,14 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "crvUSD",
         address: tokenDataByNetwork.Mainnet.crvUSD,
         priceFeed: "0x47c99d1A79444A91C89b33a808e1a7cb0336E428",
+        reserve: true,
       },
       {
         symbol: "USDT",
         dataId: "USDT",
         address: tokenDataByNetwork.Mainnet.USDT,
         priceFeed: "0x3D690EF566a68BF3FFE4607D11d318e9BB259C3e",
+        reserve: true,
       },
     ],
   },
@@ -1432,6 +1443,7 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "ezETH_FUNDAMENTAL",
         address: "0x07299E4E806e4253727084c0493fFDf6fB2dBa3D",
         priceFeed: "0xcB44ADd611f75F03191f8f1A2e2AF7a0113eadd1",
+        reserve: false,
       },
     ],
     rsETH: [
@@ -1440,6 +1452,7 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "rsETH/ETH",
         address: "0x15094B05e679c9B7fDde6FB8e6BDa930ff1D6a62",
         priceFeed: "0x354A63F07A5c1605920794aFFF09963b6DF897a9",
+        reserve: false,
       },
     ],
   },
@@ -1450,6 +1463,7 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "ezETH/ETH",
         address: "0x658f8e60c57ad62a9299ef6c7b1da9a0d1d1e681",
         priceFeed: "0xF23C91b1E3B7FD9174c82F7Fb2BD270C3CfcC3CE",
+        reserve: false,
       },
     ],
   },
