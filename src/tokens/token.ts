@@ -1339,7 +1339,8 @@ export type TickerToken =
   | "LBTC/BTC"
   | "crvUSD"
   | "USDC"
-  | "USDT";
+  | "USDT"
+  | "DAI";
 
 export interface TickerInfo {
   symbol: TickerToken;
@@ -1437,6 +1438,15 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "USDT",
         address: tokenDataByNetwork.Mainnet.USDT,
         priceFeed: "0x3D690EF566a68BF3FFE4607D11d318e9BB259C3e",
+        reserve: true,
+      },
+    ],
+    stkUSDS: [
+      {
+        symbol: "DAI",
+        dataId: "DAI",
+        address: tokenDataByNetwork.Mainnet.DAI,
+        priceFeed: "0xa0b9387f0a74eCB9AC1a3BFE4Ada0E001ffE006b",
         reserve: true,
       },
     ],
