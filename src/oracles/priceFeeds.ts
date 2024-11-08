@@ -1245,6 +1245,38 @@ export const priceFeedsByToken: Record<
         },
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "LBTC",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
+    },
+  },
+  eBTC: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "eBTC/WBTC",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
+        },
+
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "LBTC",
+      },
     },
   },
   rETH: {
@@ -3841,6 +3873,42 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
         underlying: "WETH",
         market: "0xD8F12bCDE578c653014F27379a6114F67F0e445f",
+        twapWindow: HOUR_1 / 2,
+      },
+    },
+  },
+
+  PT_eBTC_26DEC2024: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "eBTC",
+        market: "0x36d3ca43ae7939645C306E26603ce16e39A89192",
+        twapWindow: HOUR_1 / 2,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "eBTC",
+        market: "0x36d3ca43ae7939645C306E26603ce16e39A89192",
+        twapWindow: HOUR_1 / 2,
+      },
+    },
+  },
+
+  PT_LBTC_27MAR2025: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "LBTC",
+        market: "0x70B70Ac0445C3eF04E314DFdA6caafd825428221",
+        twapWindow: HOUR_1 / 2,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "LBTC",
+        market: "0x70B70Ac0445C3eF04E314DFdA6caafd825428221",
         twapWindow: HOUR_1 / 2,
       },
     },
