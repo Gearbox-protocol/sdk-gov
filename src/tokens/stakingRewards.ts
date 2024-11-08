@@ -1,7 +1,10 @@
 import { Token } from "yaml/dist/parse/cst";
 import { record } from "zod";
 
-import type { SupportedContract } from "../contracts/contracts";
+import type {
+  StakingRewardsContract,
+  SupportedContract,
+} from "../contracts/contracts";
 import { PartialRecord } from "../utils/types";
 import type { SupportedToken, TokenBase } from "./token";
 import { TokenNetwork, TokenType } from "./tokenType";
@@ -12,6 +15,7 @@ export type StakingRewardsPhantomTokenData = {
   symbol: StakingRewardsPhantomToken;
   type: PartialRecord<TokenNetwork, TokenType.STAKING_REWARDS_PHANTOM_TOKEN>;
   underlying: SupportedToken;
+  pool: StakingRewardsContract;
 } & TokenBase;
 
 export const stakingRewardsPhantomTokens: Record<
@@ -21,6 +25,7 @@ export const stakingRewardsPhantomTokens: Record<
   stkUSDS: {
     name: "Sky staked USDS",
     symbol: "stkUSDS",
+    pool: "SKY_STAKING_REWARDS",
     type: {
       AllNetworks: TokenType.STAKING_REWARDS_PHANTOM_TOKEN,
     },
