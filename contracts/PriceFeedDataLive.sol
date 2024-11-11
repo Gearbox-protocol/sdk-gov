@@ -8127,7 +8127,7 @@ contract PriceFeedDataLive {
         pendlePriceFeedsByNetwork[1].push(
             PendlePriceFeedData({
                 token: Tokens.PT_eBTC_26DEC2024,
-                underlying: Tokens.eBTC,
+                underlying: Tokens.WBTC,
                 market: 0x36d3ca43ae7939645C306E26603ce16e39A89192,
                 twapWindow: 1800,
                 trusted: false,
@@ -8137,7 +8137,7 @@ contract PriceFeedDataLive {
         pendlePriceFeedsByNetwork[1].push(
             PendlePriceFeedData({
                 token: Tokens.PT_eBTC_26DEC2024,
-                underlying: Tokens.eBTC,
+                underlying: Tokens.WBTC,
                 market: 0x36d3ca43ae7939645C306E26603ce16e39A89192,
                 twapWindow: 1800,
                 trusted: false,
@@ -8149,7 +8149,7 @@ contract PriceFeedDataLive {
         pendlePriceFeedsByNetwork[1].push(
             PendlePriceFeedData({
                 token: Tokens.PT_LBTC_27MAR2025,
-                underlying: Tokens.LBTC,
+                underlying: Tokens.WBTC,
                 market: 0x70B70Ac0445C3eF04E314DFdA6caafd825428221,
                 twapWindow: 1800,
                 trusted: false,
@@ -8159,7 +8159,7 @@ contract PriceFeedDataLive {
         pendlePriceFeedsByNetwork[1].push(
             PendlePriceFeedData({
                 token: Tokens.PT_LBTC_27MAR2025,
-                underlying: Tokens.LBTC,
+                underlying: Tokens.WBTC,
                 market: 0x70B70Ac0445C3eF04E314DFdA6caafd825428221,
                 twapWindow: 1800,
                 trusted: false,

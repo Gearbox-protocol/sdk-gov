@@ -3882,14 +3882,14 @@ export const priceFeedsByToken: Record<
     Mainnet: {
       Main: {
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
-        underlying: "eBTC",
+        underlying: "WBTC",
         market: "0x36d3ca43ae7939645C306E26603ce16e39A89192",
         twapWindow: HOUR_1 / 2,
         trusted: false,
       },
       Reserve: {
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
-        underlying: "eBTC",
+        underlying: "WBTC",
         market: "0x36d3ca43ae7939645C306E26603ce16e39A89192",
         twapWindow: HOUR_1 / 2,
       },
@@ -3900,14 +3900,14 @@ export const priceFeedsByToken: Record<
     Mainnet: {
       Main: {
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
-        underlying: "LBTC",
+        underlying: "WBTC",
         market: "0x70B70Ac0445C3eF04E314DFdA6caafd825428221",
         twapWindow: HOUR_1 / 2,
         trusted: false,
       },
       Reserve: {
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
-        underlying: "LBTC",
+        underlying: "WBTC",
         market: "0x70B70Ac0445C3eF04E314DFdA6caafd825428221",
         twapWindow: HOUR_1 / 2,
       },
