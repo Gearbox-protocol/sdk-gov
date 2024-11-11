@@ -8,6 +8,7 @@ export const connectors: Record<NetworkType, Array<SupportedToken>> = {
     "WETH",
     "DAI",
     "USDC",
+    "USDe",
     "FRAX",
     "rETH",
     "ezETH",
