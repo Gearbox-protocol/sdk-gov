@@ -1349,10 +1349,13 @@ export type TickerToken =
   | "pufETH/ETH"
   | "rswETH/ETH"
   | "LBTC/BTC"
+  | "eBTC/BTC"
   | "crvUSD"
   | "USDC"
   | "USDT"
-  | "DAI";
+  | "DAI"
+  | "LBTC"
+  | "eBTC";
 
 export interface TickerInfo {
   symbol: TickerToken;
@@ -1419,6 +1422,55 @@ export const tickerInfoTokensByNetwork: Record<
         address: "0xB0EA0EC3Fd4947348816f76768b3a56249d47EEc",
         priceFeed: "0xd7396fA3aFB9833293Ce2149EEb3Dbf5380B1e0D",
         reserve: false,
+      },
+    ],
+    eBTC: [
+      {
+        symbol: "eBTC/BTC",
+        dataId: "eBTC/BTC",
+        address: "0x91A8ebFA78c3F0c8a39477294f3AD739f2392163",
+        priceFeed: "0x8F56f60759BB0C321830926977be7e33717fbCf7",
+        reserve: false,
+      },
+      {
+        symbol: "LBTC",
+        dataId: "LBTC",
+        address: tokenDataByNetwork.Mainnet.LBTC,
+        priceFeed: "0x2C8283B502E390D83a68AC7A07ecbB75133fbF78",
+        reserve: true,
+      },
+    ],
+    PT_eBTC_26DEC2024: [
+      {
+        symbol: "eBTC",
+        dataId: "eBTC",
+        address: tokenDataByNetwork.Mainnet.eBTC,
+        priceFeed: "0x8F56f60759BB0C321830926977be7e33717fbCf7",
+        reserve: false,
+      },
+      {
+        symbol: "LBTC",
+        dataId: "LBTC",
+        address: tokenDataByNetwork.Mainnet.LBTC,
+        priceFeed: "0x2C8283B502E390D83a68AC7A07ecbB75133fbF78",
+
+        reserve: true,
+      },
+    ],
+    PT_LBTC_27MAR2025: [
+      {
+        symbol: "LBTC",
+        dataId: "LBTC",
+        address: tokenDataByNetwork.Mainnet.LBTC,
+        priceFeed: "0xd7396fA3aFB9833293Ce2149EEb3Dbf5380B1e0D",
+        reserve: false,
+      },
+      {
+        symbol: "LBTC",
+        dataId: "LBTC",
+        address: tokenDataByNetwork.Mainnet.LBTC,
+        priceFeed: "0x2C8283B502E390D83a68AC7A07ecbB75133fbF78",
+        reserve: true,
       },
     ],
     stkcvxcrvUSDUSDC: [
