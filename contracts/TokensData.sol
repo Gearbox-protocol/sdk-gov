@@ -314,6 +314,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.eBTC,
+                addr: 0x657e8C867D8B37dCC18fA4Caead9C45EB088C642,
+                symbol: "eBTC",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.rETH,
                 addr: 0xae78736Cd615f374D3085123A210448E74Fc6393,
                 symbol: "rETH",
@@ -517,6 +525,22 @@ contract TokensDataLive {
                 id: Tokens.PT_ezETH_26DEC2024,
                 addr: 0x6ee2b5E19ECBa773a352E5B21415Dc419A700d1d,
                 symbol: "PT_ezETH_26DEC2024",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.PT_eBTC_26DEC2024,
+                addr: 0xB997B3418935A1Df0F914Ee901ec83927c1509A0,
+                symbol: "PT_eBTC_26DEC2024",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.PT_LBTC_27MAR2025,
+                addr: 0xEc5a52C685CC3Ad79a6a347aBACe330d69e0b1eD,
+                symbol: "PT_LBTC_27MAR2025",
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
