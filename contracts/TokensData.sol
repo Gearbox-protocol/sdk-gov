@@ -515,7 +515,7 @@ contract TokensDataLive {
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.PT_eETH_26DEC2024,
-                addr: 0xf7906F274c174A52d444175729E3fa98f9bde285,
+                addr: 0x6ee2b5E19ECBa773a352E5B21415Dc419A700d1d,
                 symbol: "PT_eETH_26DEC2024",
                 tokenType: TokenType.NORMAL_TOKEN
             })
@@ -523,7 +523,7 @@ contract TokensDataLive {
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.PT_ezETH_26DEC2024,
-                addr: 0x6ee2b5E19ECBa773a352E5B21415Dc419A700d1d,
+                addr: 0xf7906F274c174A52d444175729E3fa98f9bde285,
                 symbol: "PT_ezETH_26DEC2024",
                 tokenType: TokenType.NORMAL_TOKEN
             })
