@@ -13,6 +13,7 @@ export enum RouterProtocols {
   Velodrome,
   Camelot,
   sUSDe,
+  PTsUSDe,
   wstETH,
   Mellow,
   Pendle,
@@ -63,4 +64,5 @@ export enum RouterComponent {
   RC_STAKING_REWARDS_DEPOSITOR = 39,
   RC_STAKING_REWARDS_WITHDRAWER = 40,
   RC_STAKING_REWARDS_PATH_RESOLVER = 41,
+  RC_PT_SUSDE_OVERRIDER = 42,
 }
