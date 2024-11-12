@@ -83,6 +83,8 @@ export const decimals: Record<SupportedToken, number> = {
   ezETHWETH: 18,
   ezpzETH: 18,
   LBTCWBTC: 18,
+  eBTCWBTC: 18,
+  TriBTC: 18,
   crvUSD: 18,
   crvUSDUSDC: 18,
   crvUSDUSDT: 18,

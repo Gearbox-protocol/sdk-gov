@@ -4157,6 +4157,32 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: Tokens.LBTCWBTC, trusted: false, reserve: false})
         );
 
+        // ------------------------ eBTCWBTC ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: Tokens.eBTCWBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: Tokens.eBTCWBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: Tokens.eBTCWBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: Tokens.eBTCWBTC, trusted: false, reserve: false})
+        );
+
+        // ------------------------ TriBTC ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.TriBTC, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: Tokens.TriBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: Tokens.TriBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: Tokens.TriBTC, trusted: false, reserve: false})
+        );
+
         // ------------------------ 3CRV ------------------------
         curvePriceFeedsByNetwork[1].push(
             CurvePriceFeedData({

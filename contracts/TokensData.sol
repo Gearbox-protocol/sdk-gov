@@ -747,6 +747,22 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.eBTCWBTC,
+                addr: 0x7704D01908afD31bf647d969c295BB45230cD2d6,
+                symbol: "eBTCWBTC",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.TriBTC,
+                addr: 0xabaf76590478F2fE0b396996f55F0b61101e9502,
+                symbol: "TriBTC",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.FRAX3CRV,
                 addr: 0xd632f22692FaC7611d2AA1C0D552930D43CAEd3B,
                 symbol: "FRAX3CRV",

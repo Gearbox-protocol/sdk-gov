@@ -109,6 +109,8 @@ enum Tokens {
     ezETHWETH,
     ezpzETH,
     LBTCWBTC,
+    eBTCWBTC,
+    TriBTC,
     FRAX3CRV,
     LUSD3CRV,
     gusd3CRV,

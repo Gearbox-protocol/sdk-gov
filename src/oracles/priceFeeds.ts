@@ -2316,7 +2316,22 @@ export const priceFeedsByToken: Record<
       },
     },
   },
-
+  eBTCWBTC: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  TriBTC: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
   "3CRV": {
     AllNetworks: {
       Main: {

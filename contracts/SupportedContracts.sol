@@ -252,6 +252,20 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_EBTC_WBTC_POOL,
+                addr: 0x7704D01908afD31bf647d969c295BB45230cD2d6,
+                name: "CURVE_EBTC_WBTC_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_TRIBTC_POOL,
+                addr: 0xabaf76590478F2fE0b396996f55F0b61101e9502,
+                name: "CURVE_TRIBTC_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_GEAR_POOL,
                 addr: 0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2,
                 name: "CURVE_GEAR_POOL"
