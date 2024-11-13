@@ -39,6 +39,8 @@ export type CurveLPToken =
   | "ezETHWETH"
   | "ezpzETH"
   | "LBTCWBTC"
+  | "eBTCWBTC"
+  | "TriBTC"
 
   /// Arbitrum
   | "2CRV"
@@ -373,6 +375,20 @@ export const curveTokens: Record<
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
     pool: "CURVE_LBTC_WBTC_POOL",
     tokenOut: ["LBTC", "WBTC"],
+  },
+  eBTCWBTC: {
+    name: "Curve eBTC/WBTC LP",
+    symbol: "eBTCWBTC",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_EBTC_WBTC_POOL",
+    tokenOut: ["eBTC", "WBTC"],
+  },
+  TriBTC: {
+    name: "Curve Tri BTC-Fi LP",
+    symbol: "TriBTC",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_TRIBTC_POOL",
+    tokenOut: ["eBTC", "LBTC", "WBTC"],
   },
   ...curveMetaTokens,
 };

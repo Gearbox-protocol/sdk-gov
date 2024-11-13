@@ -44,6 +44,7 @@ export const decimals: Record<SupportedToken, number> = {
   OP: 18,
   GHO: 18,
   LBTC: 8,
+  eBTC: 8,
   osETH: 18,
   weETH: 18,
   ezETH: 18,
@@ -82,6 +83,8 @@ export const decimals: Record<SupportedToken, number> = {
   ezETHWETH: 18,
   ezpzETH: 18,
   LBTCWBTC: 18,
+  eBTCWBTC: 18,
+  TriBTC: 18,
   crvUSD: 18,
   crvUSDUSDC: 18,
   crvUSDUSDT: 18,
@@ -252,4 +255,6 @@ export const decimals: Record<SupportedToken, number> = {
   PT_sUSDe_26DEC2024: 18,
   PT_eETH_26DEC2024: 18,
   PT_ezETH_26DEC2024: 18,
+  PT_eBTC_26DEC2024: 8,
+  PT_LBTC_27MAR2025: 8,
 };

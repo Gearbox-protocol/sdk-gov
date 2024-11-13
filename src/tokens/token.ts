@@ -212,6 +212,7 @@ export const tokenDataByNetwork: Record<
     WLD: "0x163f8C2467924be0ae7B5347228CABF260318753",
     OP: NOT_DEPLOYED,
     LBTC: "0x8236a87084f8B84306f72007F36F2618A5634494",
+    eBTC: "0x657e8C867D8B37dCC18fA4Caead9C45EB088C642",
     osETH: "0xf1C9acDc66974dFB6dEcB12aA385b9cD01190E38",
     weETH: "0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
     ezETH: "0xbf5495Efe5DB9ce00f80364C8B423567e58d2110",
@@ -269,6 +270,8 @@ export const tokenDataByNetwork: Record<
     ezETHWETH: "0x85dE3ADd465a219EE25E04d22c39aB027cF5C12E",
     ezpzETH: "0x8c65CeC3847ad99BdC02621bDBC89F2acE56934B",
     LBTCWBTC: "0x2f3bC4c27A4437AeCA13dE0e37cdf1028f3706F0",
+    eBTCWBTC: "0x7704D01908afD31bf647d969c295BB45230cD2d6",
+    TriBTC: "0xabaf76590478F2fE0b396996f55F0b61101e9502",
 
     // CONVEX LP TOKENS
     cvx3Crv: "0x30D9410ED1D5DA1F6C8391af5338C93ab8d4035C",
@@ -377,8 +380,10 @@ export const tokenDataByNetwork: Record<
     // PENDLE
     PT_rsETH_26SEP2024: "0x7bAf258049cc8B9A78097723dc19a8b103D4098F",
     PT_sUSDe_26DEC2024: "0xEe9085fC268F6727d5D4293dBABccF901ffDCC29",
-    PT_eETH_26DEC2024: "0xf7906F274c174A52d444175729E3fa98f9bde285",
-    PT_ezETH_26DEC2024: "0x6ee2b5E19ECBa773a352E5B21415Dc419A700d1d",
+    PT_eETH_26DEC2024: "0x6ee2b5E19ECBa773a352E5B21415Dc419A700d1d",
+    PT_ezETH_26DEC2024: "0xf7906F274c174A52d444175729E3fa98f9bde285",
+    PT_eBTC_26DEC2024: "0xB997B3418935A1Df0F914Ee901ec83927c1509A0",
+    PT_LBTC_27MAR2025: "0xEc5a52C685CC3Ad79a6a347aBACe330d69e0b1eD",
 
     // GEARBOX
     dDAI: "0x6CFaF95457d7688022FC53e7AbE052ef8DFBbdBA",
@@ -498,6 +503,7 @@ export const tokenDataByNetwork: Record<
     RPL: "0xB766039cc6DB368759C1E56B79AFfE831d0Cc507",
     APE: NOT_DEPLOYED,
     LBTC: NOT_DEPLOYED,
+    eBTC: NOT_DEPLOYED,
     rETH: "0xEC70Dcb4A1EFa46b8F2D97C310C9c4790ba5ffA8",
     WLD: NOT_DEPLOYED,
     OP: NOT_DEPLOYED,
@@ -589,6 +595,8 @@ export const tokenDataByNetwork: Record<
     ezETHWETH: NOT_DEPLOYED,
     ezpzETH: NOT_DEPLOYED,
     LBTCWBTC: NOT_DEPLOYED,
+    eBTCWBTC: NOT_DEPLOYED,
+    TriBTC: NOT_DEPLOYED,
 
     crvUSD: "0x498Bf2B1e120FeD3ad3D42EA2165E9b73f99C1e5",
 
@@ -671,6 +679,8 @@ export const tokenDataByNetwork: Record<
     PT_sUSDe_26DEC2024: NOT_DEPLOYED,
     PT_eETH_26DEC2024: NOT_DEPLOYED,
     PT_ezETH_26DEC2024: NOT_DEPLOYED,
+    PT_eBTC_26DEC2024: NOT_DEPLOYED,
+    PT_LBTC_27MAR2025: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -790,6 +800,7 @@ export const tokenDataByNetwork: Record<
     RPL: "0xC81D1F0EB955B0c020E5d5b264E1FF72c14d1401",
     APE: NOT_DEPLOYED,
     LBTC: NOT_DEPLOYED,
+    eBTC: NOT_DEPLOYED,
     rETH: "0x9Bcef72be871e61ED4fBbc7630889beE758eb81D",
     osETH: NOT_DEPLOYED,
     weETH: NOT_DEPLOYED,
@@ -847,6 +858,8 @@ export const tokenDataByNetwork: Record<
     ezETHWETH: NOT_DEPLOYED,
     ezpzETH: NOT_DEPLOYED,
     LBTCWBTC: NOT_DEPLOYED,
+    eBTCWBTC: NOT_DEPLOYED,
+    TriBTC: NOT_DEPLOYED,
 
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
@@ -963,6 +976,8 @@ export const tokenDataByNetwork: Record<
     PT_sUSDe_26DEC2024: NOT_DEPLOYED,
     PT_eETH_26DEC2024: NOT_DEPLOYED,
     PT_ezETH_26DEC2024: NOT_DEPLOYED,
+    PT_eBTC_26DEC2024: NOT_DEPLOYED,
+    PT_LBTC_27MAR2025: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -1088,6 +1103,7 @@ export const tokenDataByNetwork: Record<
     RPL: NOT_DEPLOYED,
     APE: NOT_DEPLOYED,
     LBTC: NOT_DEPLOYED,
+    eBTC: NOT_DEPLOYED,
     rETH: NOT_DEPLOYED,
     osETH: NOT_DEPLOYED,
     weETH: NOT_DEPLOYED,
@@ -1142,6 +1158,8 @@ export const tokenDataByNetwork: Record<
     ezETHWETH: NOT_DEPLOYED,
     ezpzETH: NOT_DEPLOYED,
     LBTCWBTC: NOT_DEPLOYED,
+    eBTCWBTC: NOT_DEPLOYED,
+    TriBTC: NOT_DEPLOYED,
 
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
@@ -1257,6 +1275,8 @@ export const tokenDataByNetwork: Record<
     PT_sUSDe_26DEC2024: NOT_DEPLOYED,
     PT_eETH_26DEC2024: NOT_DEPLOYED,
     PT_ezETH_26DEC2024: NOT_DEPLOYED,
+    PT_eBTC_26DEC2024: NOT_DEPLOYED,
+    PT_LBTC_27MAR2025: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -1337,10 +1357,13 @@ export type TickerToken =
   | "pufETH/ETH"
   | "rswETH/ETH"
   | "LBTC/BTC"
+  | "eBTC/BTC"
   | "crvUSD"
   | "USDC"
   | "USDT"
-  | "DAI";
+  | "DAI"
+  | "LBTC"
+  | "eBTC";
 
 export interface TickerInfo {
   symbol: TickerToken;
@@ -1407,6 +1430,55 @@ export const tickerInfoTokensByNetwork: Record<
         address: "0xB0EA0EC3Fd4947348816f76768b3a56249d47EEc",
         priceFeed: "0xd7396fA3aFB9833293Ce2149EEb3Dbf5380B1e0D",
         reserve: false,
+      },
+    ],
+    eBTC: [
+      {
+        symbol: "eBTC/BTC",
+        dataId: "eBTC/BTC",
+        address: "0x91A8ebFA78c3F0c8a39477294f3AD739f2392163",
+        priceFeed: "0x8F56f60759BB0C321830926977be7e33717fbCf7",
+        reserve: false,
+      },
+      {
+        symbol: "LBTC",
+        dataId: "LBTC",
+        address: tokenDataByNetwork.Mainnet.LBTC,
+        priceFeed: "0x2C8283B502E390D83a68AC7A07ecbB75133fbF78",
+        reserve: true,
+      },
+    ],
+    PT_eBTC_26DEC2024: [
+      {
+        symbol: "eBTC",
+        dataId: "eBTC",
+        address: tokenDataByNetwork.Mainnet.eBTC,
+        priceFeed: "0x8F56f60759BB0C321830926977be7e33717fbCf7",
+        reserve: false,
+      },
+      {
+        symbol: "LBTC",
+        dataId: "LBTC",
+        address: tokenDataByNetwork.Mainnet.LBTC,
+        priceFeed: "0x2C8283B502E390D83a68AC7A07ecbB75133fbF78",
+
+        reserve: true,
+      },
+    ],
+    PT_LBTC_27MAR2025: [
+      {
+        symbol: "LBTC",
+        dataId: "LBTC",
+        address: tokenDataByNetwork.Mainnet.LBTC,
+        priceFeed: "0xd7396fA3aFB9833293Ce2149EEb3Dbf5380B1e0D",
+        reserve: false,
+      },
+      {
+        symbol: "LBTC",
+        dataId: "LBTC",
+        address: tokenDataByNetwork.Mainnet.LBTC,
+        priceFeed: "0x2C8283B502E390D83a68AC7A07ecbB75133fbF78",
+        reserve: true,
       },
     ],
     stkcvxcrvUSDUSDC: [

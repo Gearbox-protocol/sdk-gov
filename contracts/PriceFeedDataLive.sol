@@ -1843,6 +1843,63 @@ contract PriceFeedDataLive {
             cpf.trusted = false;
             cpf.reserve = false;
         }
+        redStonePriceFeedsByNetwork[1].push(
+            RedStonePriceFeedData({
+                token: Tokens.LBTC,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "LBTC",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
+
+        // ------------------------ eBTC ------------------------
+
+        {
+            CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[1].push();
+            cpf.token = Tokens.eBTC;
+            cpf.isTargetRedstone = true;
+            cpf.redstoneTargetToBaseData = RedStonePriceFeedDataShort({
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "eBTC/WBTC",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5
+            });
+            cpf.targetStalenessPeriod = 240;
+            cpf.isBaseComposite = false;
+            cpf.baseToUSDFeed = 0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c;
+            cpf.baseStalenessPeriod = 4500;
+
+            cpf.trusted = false;
+            cpf.reserve = false;
+        }
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.eBTC, tokenHasSamePriceFeed: Tokens.LBTC, trusted: false, reserve: true})
+        );
 
         // ------------------------ rETH ------------------------
 
@@ -4098,6 +4155,32 @@ contract PriceFeedDataLive {
         );
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: Tokens.LBTCWBTC, trusted: false, reserve: false})
+        );
+
+        // ------------------------ eBTCWBTC ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: Tokens.eBTCWBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: Tokens.eBTCWBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: Tokens.eBTCWBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: Tokens.eBTCWBTC, trusted: false, reserve: false})
+        );
+
+        // ------------------------ TriBTC ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.TriBTC, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: Tokens.TriBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: Tokens.TriBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: Tokens.TriBTC, trusted: false, reserve: false})
         );
 
         // ------------------------ 3CRV ------------------------
@@ -8060,6 +8143,50 @@ contract PriceFeedDataLive {
                 token: Tokens.PT_ezETH_26DEC2024,
                 underlying: Tokens.WETH,
                 market: 0xD8F12bCDE578c653014F27379a6114F67F0e445f,
+                twapWindow: 1800,
+                trusted: false,
+                reserve: true
+            })
+        );
+
+        // ------------------------ PT_eBTC_26DEC2024 ------------------------
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: Tokens.PT_eBTC_26DEC2024,
+                underlying: Tokens.WBTC,
+                market: 0x36d3ca43ae7939645C306E26603ce16e39A89192,
+                twapWindow: 1800,
+                trusted: false,
+                reserve: false
+            })
+        );
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: Tokens.PT_eBTC_26DEC2024,
+                underlying: Tokens.WBTC,
+                market: 0x36d3ca43ae7939645C306E26603ce16e39A89192,
+                twapWindow: 1800,
+                trusted: false,
+                reserve: true
+            })
+        );
+
+        // ------------------------ PT_LBTC_27MAR2025 ------------------------
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: Tokens.PT_LBTC_27MAR2025,
+                underlying: Tokens.WBTC,
+                market: 0x70B70Ac0445C3eF04E314DFdA6caafd825428221,
+                twapWindow: 1800,
+                trusted: false,
+                reserve: false
+            })
+        );
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: Tokens.PT_LBTC_27MAR2025,
+                underlying: Tokens.WBTC,
+                market: 0x70B70Ac0445C3eF04E314DFdA6caafd825428221,
                 twapWindow: 1800,
                 trusted: false,
                 reserve: true

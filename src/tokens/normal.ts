@@ -46,6 +46,7 @@ export type NormalToken =
   | "rETH"
   | "AURA"
   | "LBTC"
+  | "eBTC"
   | "osETH"
   | "weETH"
   | "SWISE"
@@ -72,6 +73,8 @@ export type NormalToken =
   | "PT_sUSDe_26DEC2024"
   | "PT_eETH_26DEC2024"
   | "PT_ezETH_26DEC2024"
+  | "PT_eBTC_26DEC2024"
+  | "PT_LBTC_27MAR2025"
 
   // REDSTONE
   | "SHIB"
@@ -351,6 +354,12 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
     symbol: "LBTC",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
+  eBTC: {
+    name: "eBTC",
+
+    symbol: "eBTC",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
   rETH: {
     name: "Rocket Pool ETH",
     symbol: "rETH",
@@ -479,6 +488,16 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   PT_ezETH_26DEC2024: {
     name: "Pendle PT ezETH 26 Dec 2024 expiry",
     symbol: "PT_ezETH_26DEC2024",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  PT_eBTC_26DEC2024: {
+    name: "Pendle PT eBTC 26 Dec 2024 expiry",
+    symbol: "PT_eBTC_26DEC2024",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  PT_LBTC_27MAR2025: {
+    name: "Pendle PT LBTC 27 Mar 2025 expiry",
+    symbol: "PT_LBTC_27MAR2025",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };

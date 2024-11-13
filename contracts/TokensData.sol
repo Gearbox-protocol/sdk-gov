@@ -314,6 +314,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.eBTC,
+                addr: 0x657e8C867D8B37dCC18fA4Caead9C45EB088C642,
+                symbol: "eBTC",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.rETH,
                 addr: 0xae78736Cd615f374D3085123A210448E74Fc6393,
                 symbol: "rETH",
@@ -507,7 +515,7 @@ contract TokensDataLive {
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.PT_eETH_26DEC2024,
-                addr: 0xf7906F274c174A52d444175729E3fa98f9bde285,
+                addr: 0x6ee2b5E19ECBa773a352E5B21415Dc419A700d1d,
                 symbol: "PT_eETH_26DEC2024",
                 tokenType: TokenType.NORMAL_TOKEN
             })
@@ -515,8 +523,24 @@ contract TokensDataLive {
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.PT_ezETH_26DEC2024,
-                addr: 0x6ee2b5E19ECBa773a352E5B21415Dc419A700d1d,
+                addr: 0xf7906F274c174A52d444175729E3fa98f9bde285,
                 symbol: "PT_ezETH_26DEC2024",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.PT_eBTC_26DEC2024,
+                addr: 0xB997B3418935A1Df0F914Ee901ec83927c1509A0,
+                symbol: "PT_eBTC_26DEC2024",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.PT_LBTC_27MAR2025,
+                addr: 0xEc5a52C685CC3Ad79a6a347aBACe330d69e0b1eD,
+                symbol: "PT_LBTC_27MAR2025",
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
@@ -718,6 +742,22 @@ contract TokensDataLive {
                 id: Tokens.LBTCWBTC,
                 addr: 0x2f3bC4c27A4437AeCA13dE0e37cdf1028f3706F0,
                 symbol: "LBTCWBTC",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.eBTCWBTC,
+                addr: 0x7704D01908afD31bf647d969c295BB45230cD2d6,
+                symbol: "eBTCWBTC",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.TriBTC,
+                addr: 0xabaf76590478F2fE0b396996f55F0b61101e9502,
+                symbol: "TriBTC",
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
         );
