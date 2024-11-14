@@ -137,6 +137,18 @@ export const auditReports: Record<string, Report> = {
       "https://github.com/Gearbox-protocol/security/blob/main/reports/2024%20May%20-%20Pessimistic_Gearbox_Security_Scan.pdf",
     isNotSecurityAudit: true,
   },
+  "2024_Aug_ChainSecutiry_Oracles_V3": {
+    auditor: Auditor.ChainSecurity,
+    revision: "2024 Aug",
+    reportLink:
+      "https://github.com/Gearbox-protocol/security/blob/main/audits/2024%20Aug%20-%20ChainSecurity_Gearbox_Oracles_V3.pdf",
+  },
+  "2024_Aug_Decurity_Pendle_Mellow": {
+    auditor: Auditor.Decurity,
+    revision: "2024 Aug",
+    reportLink:
+      "https://github.com/Gearbox-protocol/security/blob/main/audits/2024%20Aug%20-%20Decurity_Gearbox_Pendle_Mellow.pdf",
+  },
 };
 
 export const audits: Audits = {
@@ -229,6 +241,11 @@ export const audits: Audits = {
       commit: "8f1ae29e14fa9c918b87e9ed9a2a6e93f3654dbe",
       report: auditReports["2024_May_Pessimistic"],
     },
+    {
+      type: "commit",
+      commit: "247e7b69cb39f736358de8b0ec6b7f36bc8ec53f",
+      report: auditReports["2024_Aug_Decurity_Pendle_Mellow"],
+    },
   ],
   governance: [
     {
@@ -259,6 +276,16 @@ export const audits: Audits = {
       type: "commit",
       commit: "c6e4bd0a42331daeec599f3d8a688fab79f9879a",
       report: auditReports["2024_May_Pessimistic"],
+    },
+    {
+      type: "commit",
+      commit: "9fa370b78bf3880f02f3c410e52abe21acc345da",
+      report: auditReports["2024_Aug_ChainSecutiry_Oracles_V3"],
+    },
+    {
+      type: "commit",
+      commit: "e2357489a6f39d9f1862f854e6ef66f894adc63e",
+      report: auditReports["2024_Aug_Decurity_Pendle_Mellow"],
     },
   ],
 };
