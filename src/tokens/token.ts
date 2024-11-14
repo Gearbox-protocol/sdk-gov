@@ -1435,7 +1435,7 @@ export const tickerInfoTokensByNetwork: Record<
     eBTC: [
       {
         symbol: "eBTC/BTC",
-        dataId: "eBTC/BTC",
+        dataId: "eBTC/WBTC",
         address: "0x91A8ebFA78c3F0c8a39477294f3AD739f2392163",
         priceFeed: "0x8F56f60759BB0C321830926977be7e33717fbCf7",
         reserve: false,
