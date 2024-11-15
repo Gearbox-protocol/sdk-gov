@@ -33,6 +33,7 @@ export enum Auditor {
   SigmaPrime = "Sigma Prime",
   Decurity = "Decurity",
   Pessimistic = "Pessimistic",
+  Watchpug = "Watchpug",
 }
 
 export interface Report {
@@ -149,6 +150,18 @@ export const auditReports: Record<string, Report> = {
     reportLink:
       "https://github.com/Gearbox-protocol/security/blob/main/audits/2024%20Aug%20-%20Decurity_Gearbox_Pendle_Mellow.pdf",
   },
+  "2024_Oct_Decurity_SKY": {
+    auditor: Auditor.Decurity,
+    revision: "2024 Oct",
+    reportLink:
+      "https://github.com/Gearbox-protocol/security/blob/main/audits/2024%20Oct%20-%20Decurity_Gearbox_SKY_integration.pdf",
+  },
+  "2024_Oct_Watchpug_Pendle": {
+    auditor: Auditor.Watchpug,
+    revision: "2024 Oct",
+    reportLink:
+      "https://github.com/Gearbox-protocol/security/blob/main/audits/2024%20Oct%20-%20Watchpug_Pendle_oracle.pdf",
+  },
 };
 
 export const audits: Audits = {
@@ -246,6 +259,16 @@ export const audits: Audits = {
       commit: "247e7b69cb39f736358de8b0ec6b7f36bc8ec53f",
       report: auditReports["2024_Aug_Decurity_Pendle_Mellow"],
     },
+    {
+      type: "commit",
+      commit: "7ca0f2196d643e3196f78204db9400f91c1d5c5a",
+      report: auditReports["2024_Oct_Decurity_SKY"],
+    },
+    {
+      type: "commit",
+      commit: "e3e558df565f3541ca90a2afd40d9e76eded2fa9",
+      report: auditReports["2024_Oct_Decurity_SKY"],
+    },
   ],
   governance: [
     {
@@ -286,6 +309,16 @@ export const audits: Audits = {
       type: "commit",
       commit: "e2357489a6f39d9f1862f854e6ef66f894adc63e",
       report: auditReports["2024_Aug_Decurity_Pendle_Mellow"],
+    },
+    {
+      type: "commit",
+      commit: "593aba9c41c374152e1fa57101f186a58e79c6c3",
+      report: auditReports["2024_Oct_Watchpug_Pendle"],
+    },
+    {
+      type: "commit",
+      commit: "38b3a3461143af50d14c0b34f163ad3e774ade6f",
+      report: auditReports["2024_Oct_Decurity_SKY"],
     },
   ],
 };
