@@ -1365,7 +1365,8 @@ export type TickerToken =
   | "LBTC"
   | "eBTC"
   | "ETH"
-  | "USDe";
+  | "USDe"
+  | "BTC";
 
 export interface TickerInfo {
   symbol: TickerToken;
@@ -1495,34 +1496,20 @@ export const tickerInfoTokensByNetwork: Record<
 
     PT_eBTC_26DEC2024: [
       {
-        symbol: "eBTC",
-        dataId: "eBTC",
-        address: tokenDataByNetwork.Mainnet.eBTC,
-        priceFeed: "0x8F56f60759BB0C321830926977be7e33717fbCf7",
-        reserve: false,
-      },
-      {
-        symbol: "LBTC",
-        dataId: "LBTC",
-        address: tokenDataByNetwork.Mainnet.LBTC,
-        priceFeed: "0x2C8283B502E390D83a68AC7A07ecbB75133fbF78",
+        symbol: "BTC",
+        dataId: "BTC",
+        address: tokenDataByNetwork.Mainnet.WBTC,
+        priceFeed: "0x744CB10cdf5eeaAE371df375c0367e83045F17DC",
 
         reserve: true,
       },
     ],
     PT_LBTC_27MAR2025: [
       {
-        symbol: "LBTC",
-        dataId: "LBTC",
-        address: tokenDataByNetwork.Mainnet.LBTC,
-        priceFeed: "0xd7396fA3aFB9833293Ce2149EEb3Dbf5380B1e0D",
-        reserve: false,
-      },
-      {
-        symbol: "LBTC",
-        dataId: "LBTC",
-        address: tokenDataByNetwork.Mainnet.LBTC,
-        priceFeed: "0x2C8283B502E390D83a68AC7A07ecbB75133fbF78",
+        symbol: "BTC",
+        dataId: "BTC",
+        address: tokenDataByNetwork.Mainnet.WBTC,
+        priceFeed: "0x744CB10cdf5eeaAE371df375c0367e83045F17DC",
         reserve: true,
       },
     ],
