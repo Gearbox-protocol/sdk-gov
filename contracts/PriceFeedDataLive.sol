@@ -981,7 +981,7 @@ contract PriceFeedDataLive {
             RedStonePriceFeedData({
                 token: Tokens.WBTC,
                 dataServiceId: "redstone-primary-prod",
-                dataFeedId: "WBTC",
+                dataFeedId: "BTC",
                 signers: [
                     0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
                     0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
