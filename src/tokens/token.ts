@@ -1366,7 +1366,7 @@ export type TickerToken =
   | "eBTC"
   | "ETH"
   | "USDe"
-  | "WBTC";
+  | "BTC";
 
 export interface TickerInfo {
   symbol: TickerToken;
@@ -1496,8 +1496,8 @@ export const tickerInfoTokensByNetwork: Record<
 
     PT_eBTC_26DEC2024: [
       {
-        symbol: "WBTC",
-        dataId: "WBTC",
+        symbol: "BTC",
+        dataId: "BTC",
         address: tokenDataByNetwork.Mainnet.WBTC,
         priceFeed: "0x744CB10cdf5eeaAE371df375c0367e83045F17DC",
 
@@ -1506,8 +1506,8 @@ export const tickerInfoTokensByNetwork: Record<
     ],
     PT_LBTC_27MAR2025: [
       {
-        symbol: "WBTC",
-        dataId: "WBTC",
+        symbol: "BTC",
+        dataId: "BTC",
         address: tokenDataByNetwork.Mainnet.WBTC,
         priceFeed: "0x744CB10cdf5eeaAE371df375c0367e83045F17DC",
         reserve: true,
