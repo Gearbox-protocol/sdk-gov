@@ -197,7 +197,7 @@ contract SupportedContracts is Test, ISupportedContracts {
         contractDataByNetwork[1].push(
             ContractData({
                 id: Contracts.CURVE_FRAX_SDAI_POOL,
-                addr: 0xF55B0f6F2Da5ffDDb104b58a60F2862745960442,
+                addr: 0xcE6431D21E3fb1036CE9973a3312368ED96F5CE7,
                 name: "CURVE_FRAX_SDAI_POOL"
             })
         );

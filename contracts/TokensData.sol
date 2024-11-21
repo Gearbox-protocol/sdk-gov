@@ -707,7 +707,7 @@ contract TokensDataLive {
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.FRAXsDAI,
-                addr: 0xF55B0f6F2Da5ffDDb104b58a60F2862745960442,
+                addr: 0xcE6431D21E3fb1036CE9973a3312368ED96F5CE7,
                 symbol: "FRAXsDAI",
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
