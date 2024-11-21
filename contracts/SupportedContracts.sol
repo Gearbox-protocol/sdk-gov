@@ -196,6 +196,34 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_FRAX_SDAI_POOL,
+                addr: 0xF55B0f6F2Da5ffDDb104b58a60F2862745960442,
+                name: "CURVE_FRAX_SDAI_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_DOLA_SUSDE_POOL,
+                addr: 0x744793B5110f6ca9cC7CDfe1CE16677c3Eb192ef,
+                name: "CURVE_DOLA_SUSDE_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_DOLA_FRAXBP_POOL,
+                addr: 0xE57180685E3348589E9521aa53Af0BCD497E884d,
+                name: "CURVE_DOLA_FRAXBP_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_DOLA_CRVUSD_POOL,
+                addr: 0x8272E1A3dBef607C04AA6e5BD3a1A134c8ac063B,
+                name: "CURVE_DOLA_CRVUSD_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_USDE_DAI_POOL,
                 addr: 0xF36a4BA50C603204c3FC6d2dA8b78A7b69CBC67d,
                 name: "CURVE_USDE_DAI_POOL"

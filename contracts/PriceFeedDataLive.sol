@@ -962,6 +962,20 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ DOLA ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({token: Tokens.DOLA, tokenHasSamePriceFeed: Tokens.USDC, trusted: true, reserve: false})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({token: Tokens.DOLA, tokenHasSamePriceFeed: Tokens.USDC, trusted: true, reserve: false})
+        );
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({token: Tokens.DOLA, tokenHasSamePriceFeed: Tokens.USDC, trusted: true, reserve: false})
+        );
+        theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({token: Tokens.DOLA, tokenHasSamePriceFeed: Tokens.USDC, trusted: true, reserve: false})
+        );
+
         // ------------------------ WBTC ------------------------
 
         {
@@ -3341,6 +3355,82 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ FRAXsDAI ------------------------
+        curvePriceFeedsByNetwork[1].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.FRAXsDAI,
+                assets: TokensLib.arrayOf(Tokens.FRAX, Tokens.sDAI),
+                pool: Contracts.CURVE_FRAX_SDAI_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[42161].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.FRAXsDAI,
+                assets: TokensLib.arrayOf(Tokens.FRAX, Tokens.sDAI),
+                pool: Contracts.CURVE_FRAX_SDAI_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[10].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.FRAXsDAI,
+                assets: TokensLib.arrayOf(Tokens.FRAX, Tokens.sDAI),
+                pool: Contracts.CURVE_FRAX_SDAI_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.FRAXsDAI,
+                assets: TokensLib.arrayOf(Tokens.FRAX, Tokens.sDAI),
+                pool: Contracts.CURVE_FRAX_SDAI_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ DOLAsUSDe ------------------------
+        curvePriceFeedsByNetwork[1].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.DOLAsUSDe,
+                assets: TokensLib.arrayOf(Tokens.DOLA, Tokens.sUSDe),
+                pool: Contracts.CURVE_DOLA_SUSDE_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[42161].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.DOLAsUSDe,
+                assets: TokensLib.arrayOf(Tokens.DOLA, Tokens.sUSDe),
+                pool: Contracts.CURVE_DOLA_SUSDE_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[10].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.DOLAsUSDe,
+                assets: TokensLib.arrayOf(Tokens.DOLA, Tokens.sUSDe),
+                pool: Contracts.CURVE_DOLA_SUSDE_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.DOLAsUSDe,
+                assets: TokensLib.arrayOf(Tokens.DOLA, Tokens.sUSDe),
+                pool: Contracts.CURVE_DOLA_SUSDE_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+
         // ------------------------ OHMFRAXBP ------------------------
         curveCryptoPriceFeedsByNetwork[1].push(
             CurvePriceFeedData({
@@ -3868,6 +3958,82 @@ contract PriceFeedDataLive {
                 lpToken: Tokens.rETH_f,
                 assets: TokensLib.arrayOf(Tokens.rETH, Tokens.WETH),
                 pool: Contracts.CURVE_RETH_ETH_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ DOLAFRAXBP3CRV_f ------------------------
+        curveCryptoPriceFeedsByNetwork[1].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.DOLAFRAXBP3CRV_f,
+                assets: TokensLib.arrayOf(Tokens.DOLA, Tokens.crvFRAX),
+                pool: Contracts.CURVE_DOLA_FRAXBP_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curveCryptoPriceFeedsByNetwork[42161].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.DOLAFRAXBP3CRV_f,
+                assets: TokensLib.arrayOf(Tokens.DOLA, Tokens.crvFRAX),
+                pool: Contracts.CURVE_DOLA_FRAXBP_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curveCryptoPriceFeedsByNetwork[10].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.DOLAFRAXBP3CRV_f,
+                assets: TokensLib.arrayOf(Tokens.DOLA, Tokens.crvFRAX),
+                pool: Contracts.CURVE_DOLA_FRAXBP_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curveCryptoPriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.DOLAFRAXBP3CRV_f,
+                assets: TokensLib.arrayOf(Tokens.DOLA, Tokens.crvFRAX),
+                pool: Contracts.CURVE_DOLA_FRAXBP_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ crvUSDDOLA_f ------------------------
+        curveCryptoPriceFeedsByNetwork[1].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.crvUSDDOLA_f,
+                assets: TokensLib.arrayOf(Tokens.DOLA, Tokens.crvUSD),
+                pool: Contracts.CURVE_DOLA_CRVUSD_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curveCryptoPriceFeedsByNetwork[42161].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.crvUSDDOLA_f,
+                assets: TokensLib.arrayOf(Tokens.DOLA, Tokens.crvUSD),
+                pool: Contracts.CURVE_DOLA_CRVUSD_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curveCryptoPriceFeedsByNetwork[10].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.crvUSDDOLA_f,
+                assets: TokensLib.arrayOf(Tokens.DOLA, Tokens.crvUSD),
+                pool: Contracts.CURVE_DOLA_CRVUSD_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curveCryptoPriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.crvUSDDOLA_f,
+                assets: TokensLib.arrayOf(Tokens.DOLA, Tokens.crvUSD),
+                pool: Contracts.CURVE_DOLA_CRVUSD_POOL,
                 trusted: false,
                 reserve: false
             })
@@ -5907,6 +6073,20 @@ contract PriceFeedDataLive {
         );
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: Tokens.ezETH_WETH_BPT, trusted: false, reserve: false})
+        );
+
+        // ------------------------ sUSDe_USDC_BPT ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: Tokens.sUSDe_USDC_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: Tokens.sUSDe_USDC_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: Tokens.sUSDe_USDC_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: Tokens.sUSDe_USDC_BPT, trusted: false, reserve: false})
         );
 
         // ------------------------ trenSTETH ------------------------

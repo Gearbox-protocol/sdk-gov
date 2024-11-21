@@ -1,5 +1,6 @@
 export { crvusdConfigMainnet } from "./crvusdConfigMainnet";
 export { daiConfigMainnet } from "./daiConfigMainnet";
+export { dolaConfigMainnet } from "./dolaConfigMainnet";
 export { ghoConfigMainnet } from "./ghoConfigMainnet";
 export { testDaiConfigMainnet } from "./test_daiConfigMainnet";
 export { testUsdcConfigArbitrum } from "./test_usdcConfigArbitrum";

@@ -47,6 +47,10 @@ export type CurvePoolContract =
   | "CURVE_USDE_USDC_POOL"
   | "CURVE_FRAX_USDE_POOL"
   | "CURVE_USDE_CRVUSD_POOL"
+  | "CURVE_FRAX_SDAI_POOL"
+  | "CURVE_DOLA_SUSDE_POOL"
+  | "CURVE_DOLA_FRAXBP_POOL"
+  | "CURVE_DOLA_CRVUSD_POOL"
   | "CURVE_USDE_DAI_POOL"
   | "CURVE_SDAI_SUSDE_POOL"
   | "CURVE_GHO_USDE_POOL"
@@ -202,6 +206,10 @@ export const contractsByNetwork: Record<
     CURVE_USDE_USDC_POOL: tokenDataByNetwork.Mainnet.USDeUSDC,
     CURVE_FRAX_USDE_POOL: tokenDataByNetwork.Mainnet.FRAXUSDe,
     CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Mainnet.USDecrvUSD,
+    CURVE_FRAX_SDAI_POOL: tokenDataByNetwork.Mainnet.FRAXsDAI,
+    CURVE_DOLA_SUSDE_POOL: tokenDataByNetwork.Mainnet.DOLAsUSDe,
+    CURVE_DOLA_FRAXBP_POOL: tokenDataByNetwork.Mainnet.DOLAFRAXBP3CRV_f,
+    CURVE_DOLA_CRVUSD_POOL: tokenDataByNetwork.Mainnet.crvUSDDOLA_f,
     CURVE_USDE_DAI_POOL: tokenDataByNetwork.Mainnet.USDeDAI,
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Mainnet.MtEthena,
     CURVE_GHO_USDE_POOL: tokenDataByNetwork.Mainnet.GHOUSDe,
@@ -366,6 +374,10 @@ export const contractsByNetwork: Record<
     CURVE_USDE_USDC_POOL: tokenDataByNetwork.Arbitrum.USDeUSDC,
     CURVE_FRAX_USDE_POOL: tokenDataByNetwork.Arbitrum.FRAXUSDe,
     CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Arbitrum.USDecrvUSD,
+    CURVE_FRAX_SDAI_POOL: tokenDataByNetwork.Arbitrum.FRAXsDAI,
+    CURVE_DOLA_SUSDE_POOL: tokenDataByNetwork.Arbitrum.DOLAsUSDe,
+    CURVE_DOLA_FRAXBP_POOL: tokenDataByNetwork.Arbitrum.DOLAFRAXBP3CRV_f,
+    CURVE_DOLA_CRVUSD_POOL: tokenDataByNetwork.Arbitrum.crvUSDDOLA_f,
     CURVE_USDE_DAI_POOL: tokenDataByNetwork.Arbitrum.USDeDAI,
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Arbitrum.MtEthena,
     CURVE_GHO_USDE_POOL: tokenDataByNetwork.Arbitrum.GHOUSDe,
@@ -530,6 +542,10 @@ export const contractsByNetwork: Record<
     CURVE_USDE_USDC_POOL: tokenDataByNetwork.Optimism.USDeUSDC,
     CURVE_FRAX_USDE_POOL: tokenDataByNetwork.Optimism.FRAXUSDe,
     CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Optimism.USDecrvUSD,
+    CURVE_FRAX_SDAI_POOL: tokenDataByNetwork.Optimism.FRAXsDAI,
+    CURVE_DOLA_SUSDE_POOL: tokenDataByNetwork.Optimism.DOLAsUSDe,
+    CURVE_DOLA_FRAXBP_POOL: tokenDataByNetwork.Optimism.DOLAFRAXBP3CRV_f,
+    CURVE_DOLA_CRVUSD_POOL: tokenDataByNetwork.Optimism.crvUSDDOLA_f,
     CURVE_USDE_DAI_POOL: tokenDataByNetwork.Optimism.USDeDAI,
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Optimism.MtEthena,
     CURVE_GHO_USDE_POOL: tokenDataByNetwork.Optimism.GHOUSDe,
@@ -694,6 +710,10 @@ export const contractsByNetwork: Record<
     CURVE_USDE_USDC_POOL: tokenDataByNetwork.Base.USDeUSDC,
     CURVE_FRAX_USDE_POOL: tokenDataByNetwork.Base.FRAXUSDe,
     CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Base.USDecrvUSD,
+    CURVE_FRAX_SDAI_POOL: tokenDataByNetwork.Base.FRAXsDAI,
+    CURVE_DOLA_SUSDE_POOL: tokenDataByNetwork.Base.DOLAsUSDe,
+    CURVE_DOLA_FRAXBP_POOL: tokenDataByNetwork.Base.DOLAFRAXBP3CRV_f,
+    CURVE_DOLA_CRVUSD_POOL: tokenDataByNetwork.Base.crvUSDDOLA_f,
     CURVE_USDE_DAI_POOL: tokenDataByNetwork.Base.USDeDAI,
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Base.MtEthena,
     CURVE_PUFETH_WSTETH_POOL: tokenDataByNetwork.Base.pufETHwstE,
@@ -1323,6 +1343,24 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     tokens: ["WETH", "rETH"],
   },
 
+  CURVE_DOLA_FRAXBP_POOL: {
+    name: "Curve DOLAFRAXBP3CRV",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_V1_2ASSETS,
+    lpToken: "DOLAFRAXBP3CRV_f",
+    tokens: ["DOLA", "crvFRAX"],
+  },
+
+  CURVE_DOLA_CRVUSD_POOL: {
+    name: "Curve crvUSDDOLA",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_V1_2ASSETS,
+    lpToken: "crvUSDDOLA_f",
+    tokens: ["DOLA", "crvUSD"],
+  },
+
   CURVE_USDE_USDC_POOL: {
     name: "Curve USDeUSDC",
     protocol: Protocols.Curve,
@@ -1375,6 +1413,23 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.CURVE_V1_2ASSETS, // NOTE: This is actually stable NG, however the old adapter is used in swap only mode before audits
     lpToken: "GHOUSDe",
     tokens: ["GHO", "USDe"],
+  },
+
+  CURVE_FRAX_SDAI_POOL: {
+    name: "Curve FRAXsDAI",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "FRAXsDAI",
+    tokens: ["FRAX", "sDAI"],
+  },
+  CURVE_DOLA_SUSDE_POOL: {
+    name: "Curve DOLAsUSDe",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "DOLAsUSDe",
+    tokens: ["DOLA", "sUSDe"],
   },
 
   CURVE_PUFETH_WSTETH_POOL: {

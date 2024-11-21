@@ -119,6 +119,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.DOLA,
+                addr: 0x865377367054516e17014CcdED1e7d814EDC9ce4,
+                symbol: "DOLA",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.WBTC,
                 addr: 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599,
                 symbol: "WBTC",
@@ -658,6 +666,22 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.DOLAFRAXBP3CRV_f,
+                addr: 0xE57180685E3348589E9521aa53Af0BCD497E884d,
+                symbol: "DOLAFRAXBP3CRV_f",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.crvUSDDOLA_f,
+                addr: 0x8272E1A3dBef607C04AA6e5BD3a1A134c8ac063B,
+                symbol: "crvUSDDOLA_f",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.USDeUSDC,
                 addr: 0x02950460E2b9529D0E00284A5fA2d7bDF3fA4d72,
                 symbol: "USDeUSDC",
@@ -677,6 +701,22 @@ contract TokensDataLive {
                 id: Tokens.USDecrvUSD,
                 addr: 0xF55B0f6F2Da5ffDDb104b58a60F2862745960442,
                 symbol: "USDecrvUSD",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.FRAXsDAI,
+                addr: 0xF55B0f6F2Da5ffDDb104b58a60F2862745960442,
+                symbol: "FRAXsDAI",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.DOLAsUSDe,
+                addr: 0x744793B5110f6ca9cC7CDfe1CE16677c3Eb192ef,
+                symbol: "DOLAsUSDe",
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
         );
@@ -1230,6 +1270,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.sUSDe_USDC_BPT,
+                addr: 0xb819feeF8F0fcDC268AfE14162983A69f6BF179E,
+                symbol: "sUSDe_USDC_BPT",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.trenSTETH,
                 addr: 0x4216d5900a6109bba48418b5e2AB6cc4e61Cf477,
                 symbol: "trenSTETH",
@@ -1692,6 +1740,7 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
+
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: Tokens.WBTC,
@@ -2325,6 +2374,7 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
+
         tokenDataByNetwork[10].push(
             TokenData({
                 id: Tokens.WBTC,

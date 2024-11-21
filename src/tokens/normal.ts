@@ -13,6 +13,7 @@ export type NormalToken =
   | "SNX"
   | "UNI"
   | "USDT"
+  | "DOLA"
   | "USDC"
   | "USDC_e"
   | "DAI"
@@ -176,6 +177,12 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
     name: "USDT",
 
     symbol: "USDT",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  DOLA: {
+    name: "DOLA",
+
+    symbol: "DOLA",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 

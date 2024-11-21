@@ -592,6 +592,16 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  DOLA: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "USDC",
+        trusted: true,
+      },
+    },
+  },
+
   WBTC: {
     Mainnet: {
       Main: {
@@ -2067,6 +2077,24 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  FRAXsDAI: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["FRAX", "sDAI"],
+        trusted: false,
+      },
+    },
+  },
+  DOLAsUSDe: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["DOLA", "sUSDe"],
+        trusted: false,
+      },
+    },
+  },
 
   OHMFRAXBP: {
     AllNetworks: {
@@ -2217,6 +2245,26 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CURVE_CRYPTO_ORACLE,
         assets: ["rETH", "WETH"],
+        trusted: false,
+      },
+    },
+  },
+
+  DOLAFRAXBP3CRV_f: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_CRYPTO_ORACLE,
+        assets: ["DOLA", "crvFRAX"],
+        trusted: false,
+      },
+    },
+  },
+
+  crvUSDDOLA_f: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_CRYPTO_ORACLE,
+        assets: ["DOLA", "crvUSD"],
         trusted: false,
       },
     },
@@ -2811,6 +2859,14 @@ export const priceFeedsByToken: Record<
     },
   },
   ezETH_WETH_BPT: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  sUSDe_USDC_BPT: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,

@@ -363,6 +363,22 @@ contract AdapterData {
         );
         curveAdapters.push(
             CurveAdapter({
+                targetContract: Contracts.CURVE_DOLA_FRAXBP_POOL,
+                adapterType: AdapterType.CURVE_V1_2ASSETS,
+                lpToken: Tokens.DOLAFRAXBP3CRV_f,
+                basePool: Contracts.CURVE_FRAX_USDC_POOL
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
+                targetContract: Contracts.CURVE_DOLA_CRVUSD_POOL,
+                adapterType: AdapterType.CURVE_V1_2ASSETS,
+                lpToken: Tokens.crvUSDDOLA_f,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
                 targetContract: Contracts.CURVE_USDE_USDC_POOL,
                 adapterType: AdapterType.CURVE_V1_2ASSETS,
                 lpToken: Tokens.USDeUSDC,
@@ -406,6 +422,22 @@ contract AdapterData {
                 targetContract: Contracts.CURVE_GHO_USDE_POOL,
                 adapterType: AdapterType.CURVE_V1_2ASSETS,
                 lpToken: Tokens.GHOUSDe,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
+                targetContract: Contracts.CURVE_FRAX_SDAI_POOL,
+                adapterType: AdapterType.CURVE_STABLE_NG,
+                lpToken: Tokens.FRAXsDAI,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
+                targetContract: Contracts.CURVE_DOLA_SUSDE_POOL,
+                adapterType: AdapterType.CURVE_STABLE_NG,
+                lpToken: Tokens.DOLAsUSDe,
                 basePool: Contracts.NO_CONTRACT
             })
         );

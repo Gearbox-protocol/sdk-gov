@@ -1,4 +1,5 @@
 import { PartialRecord } from "../utils/types";
+import { ERC4626LPToken } from "./erc4626";
 import { NormalToken } from "./normal";
 import type { TokenBase } from "./token";
 import { TokenNetwork, TokenType } from "./tokenType";
@@ -19,6 +20,7 @@ export type BalancerLPToken =
   | "GHO_USDT_USDC"
   | "rsETH_WETH"
   | "trenSTETH"
+  | "sUSDe_USDC_BPT"
   // Optimism
   | "BPT_rETH_ETH"
   | "BPT_WSTETH_ETH"
@@ -39,7 +41,9 @@ export type BalancerLPToken =
 export type BalancerLpTokenData = {
   symbol: BalancerLPToken;
   type: PartialRecord<TokenNetwork, TokenType.BALANCER_LP_TOKEN>;
-  underlying: Array<NormalToken | WrappedToken | BalancerLPToken>;
+  underlying: Array<
+    NormalToken | WrappedToken | BalancerLPToken | ERC4626LPToken
+  >;
   poolId: string;
 } & TokenBase;
 
@@ -147,6 +151,17 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     underlying: ["ezETH", "WETH"],
     poolId:
       "0x596192bb6e41802428ac943d2f1476c1af25cc0e000000000000000000000659",
+  },
+
+  sUSDe_USDC_BPT: {
+    name: "Balancer sUSDe/USDC Stable pool",
+    symbol: "sUSDe_USDC_BPT",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["sUSDe", "USDC"],
+    poolId:
+      "0xb819feef8f0fcdc268afe14162983a69f6bf179e000000000000000000000689",
   },
   trenSTETH: {
     name: "Balancer Total Rewards Enhanced stETH",

@@ -41,6 +41,10 @@ export type CurveLPToken =
   | "LBTCWBTC"
   | "eBTCWBTC"
   | "TriBTC"
+  | "FRAXsDAI"
+  | "DOLAsUSDe"
+  | "DOLAFRAXBP3CRV_f"
+  | "crvUSDDOLA_f"
 
   /// Arbitrum
   | "2CRV"
@@ -225,6 +229,22 @@ export const curveTokens: Record<
     tokenOut: ["rETH", "WETH"],
   },
 
+  DOLAFRAXBP3CRV_f: {
+    name: "Curve.fi Factory USD Metapool: DOLA/FRAXBP",
+    symbol: "DOLAFRAXBP3CRV_f",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_DOLA_FRAXBP_POOL",
+    tokenOut: ["DOLA", "crvFRAX"],
+  },
+
+  crvUSDDOLA_f: {
+    name: "Curve.fi Factory Plain Pool: crvUSD/DOLA",
+    symbol: "crvUSDDOLA_f",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_DOLA_CRVUSD_POOL",
+    tokenOut: ["DOLA", "crvUSD"],
+  },
+
   USDeUSDC: {
     name: "Curve USDe-USDC Pool",
     symbol: "USDeUSDC",
@@ -247,6 +267,22 @@ export const curveTokens: Record<
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
     pool: "CURVE_USDE_CRVUSD_POOL",
     tokenOut: ["USDe", "crvUSD"],
+  },
+
+  FRAXsDAI: {
+    name: "Curve FRAX-sDAI Pool",
+    symbol: "FRAXsDAI",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_FRAX_SDAI_POOL",
+    tokenOut: ["FRAX", "sDAI"],
+  },
+
+  DOLAsUSDe: {
+    name: "Curve DOLA-sUSDe Pool",
+    symbol: "DOLAsUSDe",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_DOLA_SUSDE_POOL",
+    tokenOut: ["DOLA", "sUSDe"],
   },
 
   USDeDAI: {
