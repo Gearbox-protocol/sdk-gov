@@ -114,6 +114,7 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     { token: "crvUSD", lt: 0 },
     { token: "FRAX", lt: 0 },
     { token: "3Crv", lt: 0 },
+    { token: "crvFRAX", lt: 0 },
     { token: "FRAXUSDe", lt: 0 },
     { token: "USDeUSDC", lt: 0 },
     { token: "MtEthena", lt: 0 },
@@ -321,6 +322,12 @@ export const dolaConfigMainnet: PoolV3DeployConfig = {
       limit: BigInt(0),
     },
     crvUSDDOLA_f: {
+      minRate: 1,
+      maxRate: 1,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0),
+    },
+    crvFRAX: {
       minRate: 1,
       maxRate: 1,
       quotaIncreaseFee: 0,
