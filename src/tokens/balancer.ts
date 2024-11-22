@@ -6,9 +6,6 @@ import { TokenNetwork, TokenType } from "./tokenType";
 import { WrappedToken } from "./wrapped";
 
 export type BalancerLPToken =
-  | "50OHM_50DAI"
-  | "50OHM_50WETH"
-  | "OHM_wstETH"
   | "USDC_DAI_USDT"
   | "B_rETH_STABLE"
   | "weETH_rETH"
@@ -68,36 +65,7 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     poolId:
       "0x5c6ee304399dbdb9c8ef030ab642b10820db8f56000200000000000000000014",
   },
-  "50OHM_50DAI": {
-    name: "Balancer 50OHM_50DAI",
-    symbol: "50OHM_50DAI",
-    type: {
-      AllNetworks: TokenType.BALANCER_LP_TOKEN,
-    },
-    underlying: ["OHM", "DAI"],
-    poolId:
-      "0x76fcf0e8c7ff37a47a799fa2cd4c13cde0d981c90002000000000000000003d2",
-  },
-  "50OHM_50WETH": {
-    name: "Balancer 50OHM_50WETH",
-    symbol: "50OHM_50WETH",
-    type: {
-      AllNetworks: TokenType.BALANCER_LP_TOKEN,
-    },
-    underlying: ["OHM", "WETH"],
-    poolId:
-      "0xd1ec5e215e8148d76f4460e4097fd3d5ae0a35580002000000000000000003d3",
-  },
-  OHM_wstETH: {
-    name: "Balancer OHM_wstETH",
-    symbol: "OHM_wstETH",
-    type: {
-      AllNetworks: TokenType.BALANCER_LP_TOKEN,
-    },
-    underlying: ["OHM", "wstETH"],
-    poolId:
-      "0xd4f79ca0ac83192693bce4699d0c10c66aa6cf0f00020000000000000000047e",
-  },
+
   USDC_DAI_USDT: {
     name: "Balancer USDC_DAI_USDT",
     symbol: "USDC_DAI_USDT",

@@ -6,12 +6,7 @@ import type { SupportedToken, TokenBase } from "./token";
 import { TokenNetwork, TokenType } from "./tokenType";
 import { WrappedToken } from "./wrapped";
 
-export type CurveMetaTokens =
-  | "FRAX3CRV"
-  | "LUSD3CRV"
-  | "gusd3CRV"
-  | "MIM_3LP3CRV"
-  | "OHMFRAXBP";
+export type CurveMetaTokens = "FRAX3CRV" | "LUSD3CRV" | "gusd3CRV";
 
 export type CurveLPToken =
   | CurveMetaTokens
@@ -107,21 +102,6 @@ export const curveMetaTokens: Record<CurveMetaTokens, MetaCurveLPTokenData> = {
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
     pool: "CURVE_GUSD_POOL",
     tokenOut: ["GUSD", "3Crv"],
-  },
-
-  MIM_3LP3CRV: {
-    name: "Curve MIM_3LP3CRV",
-    symbol: "MIM_3LP3CRV",
-    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
-    pool: "CURVE_MIM_POOL",
-    tokenOut: ["MIM", "3Crv"],
-  },
-  OHMFRAXBP: {
-    name: "Curve.fi Factory Crypto Pool: OHM/FRAXBP",
-    symbol: "OHMFRAXBP",
-    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
-    pool: "CURVE_OHMFRAXBP_POOL",
-    tokenOut: ["OHM", "FRAX", "USDC"],
   },
 };
 

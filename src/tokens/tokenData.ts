@@ -20,6 +20,8 @@ export const connectors: Record<NetworkType, Array<SupportedToken>> = {
     "USDS",
     "eBTC",
     "LBTC",
+    "solvBTC",
+    "pumpBTC",
   ],
   Arbitrum: ["WETH", "DAI", "USDC", "USDT", "rETH", "USDC_e", "wstETH"],
   Optimism: ["WETH", "USDC", "USDT", "USDC_e", "wstETH"],

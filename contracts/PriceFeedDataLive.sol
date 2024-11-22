@@ -234,26 +234,6 @@ contract PriceFeedDataLive {
             })
         );
 
-        // ------------------------ COMP ------------------------
-        chainlinkPriceFeedsByNetwork[1].push(
-            ChainlinkPriceFeedData({
-                token: Tokens.COMP,
-                priceFeed: 0xdbd020CAeF83eFd542f4De03e3cF0C28A4428bd5,
-                stalenessPeriod: 87300,
-                trusted: false,
-                reserve: false
-            })
-        );
-        chainlinkPriceFeedsByNetwork[42161].push(
-            ChainlinkPriceFeedData({
-                token: Tokens.COMP,
-                priceFeed: 0xe7C53FFd03Eb6ceF7d208bC4C13446c76d1E5884,
-                stalenessPeriod: 3720,
-                trusted: false,
-                reserve: false
-            })
-        );
-
         // ------------------------ CRV ------------------------
         chainlinkPriceFeedsByNetwork[1].push(
             ChainlinkPriceFeedData({
@@ -440,26 +420,6 @@ contract PriceFeedDataLive {
         );
         theSamePriceFeedsByNetwork[8453].push(
             TheSamePriceFeedData({token: Tokens.USDS, tokenHasSamePriceFeed: Tokens.DAI, trusted: false, reserve: true})
-        );
-
-        // ------------------------ DPI ------------------------
-        chainlinkPriceFeedsByNetwork[1].push(
-            ChainlinkPriceFeedData({
-                token: Tokens.DPI,
-                priceFeed: 0xD2A593BF7594aCE1faD597adb697b5645d5edDB2,
-                stalenessPeriod: 86400,
-                trusted: false,
-                reserve: false
-            })
-        );
-        zeroPriceFeedsByNetwork[42161].push(
-            SingeTokenPriceFeedData({token: Tokens.DPI, trusted: false, reserve: false})
-        );
-
-        // ------------------------ FEI ------------------------
-        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.FEI, trusted: false, reserve: false}));
-        zeroPriceFeedsByNetwork[42161].push(
-            SingeTokenPriceFeedData({token: Tokens.FEI, trusted: false, reserve: false})
         );
 
         // ------------------------ GUSD ------------------------
@@ -1625,60 +1585,6 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: Tokens.LQTY, trusted: true, reserve: false}));
         zeroPriceFeedsByNetwork[8453].push(SingeTokenPriceFeedData({token: Tokens.LQTY, trusted: true, reserve: false}));
 
-        // ------------------------ OHM ------------------------
-
-        {
-            CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[1].push();
-            cpf.token = Tokens.OHM;
-            cpf.isTargetRedstone = false;
-            cpf.targetToBaseFeed = 0x9a72298ae3886221820B1c878d12D872087D3a23;
-            cpf.targetStalenessPeriod = 87300;
-            cpf.isBaseComposite = false;
-            cpf.baseToUSDFeed = 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419;
-            cpf.baseStalenessPeriod = 87300;
-
-            cpf.trusted = false;
-            cpf.reserve = false;
-        }
-        zeroPriceFeedsByNetwork[42161].push(
-            SingeTokenPriceFeedData({token: Tokens.OHM, trusted: false, reserve: false})
-        );
-
-        // ------------------------ MIM ------------------------
-        boundedPriceFeedsByNetwork[1].push(
-            BoundedPriceFeedData({
-                token: Tokens.MIM,
-                priceFeed: 0x7A364e8770418566e3eb2001A96116E6138Eb32F,
-                stalenessPeriod: 87300,
-                upperBound: 104000000,
-                trusted: false,
-                reserve: false
-            })
-        );
-        zeroPriceFeedsByNetwork[42161].push(
-            SingeTokenPriceFeedData({token: Tokens.MIM, trusted: false, reserve: false})
-        );
-
-        // ------------------------ SPELL ------------------------
-        chainlinkPriceFeedsByNetwork[1].push(
-            ChainlinkPriceFeedData({
-                token: Tokens.SPELL,
-                priceFeed: 0x8c110B94C5f1d347fAcF5E1E938AB2db60E3c9a8,
-                stalenessPeriod: 87300,
-                trusted: false,
-                reserve: false
-            })
-        );
-        chainlinkPriceFeedsByNetwork[42161].push(
-            ChainlinkPriceFeedData({
-                token: Tokens.SPELL,
-                priceFeed: 0x383b3624478124697BEF675F07cA37570b73992f,
-                stalenessPeriod: 86520,
-                trusted: false,
-                reserve: false
-            })
-        );
-
         // ------------------------ GMX ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.GMX, trusted: false, reserve: false}));
         chainlinkPriceFeedsByNetwork[42161].push(
@@ -1749,18 +1655,6 @@ contract PriceFeedDataLive {
 
         // ------------------------ SHIB ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.SHIB, trusted: false, reserve: false}));
-
-        // ------------------------ RDNT ------------------------
-        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: Tokens.RDNT, trusted: false, reserve: false}));
-        chainlinkPriceFeedsByNetwork[42161].push(
-            ChainlinkPriceFeedData({
-                token: Tokens.RDNT,
-                priceFeed: 0x20d0Fcab0ECFD078B036b6CAf1FaC69A6453b352,
-                stalenessPeriod: 86520,
-                trusted: false,
-                reserve: false
-            })
-        );
 
         // ------------------------ BAL ------------------------
         chainlinkPriceFeedsByNetwork[1].push(
@@ -1914,6 +1808,112 @@ contract PriceFeedDataLive {
         theSamePriceFeedsByNetwork[1].push(
             TheSamePriceFeedData({token: Tokens.eBTC, tokenHasSamePriceFeed: Tokens.LBTC, trusted: false, reserve: true})
         );
+
+        // ------------------------ solvBTC ------------------------
+
+        {
+            CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[1].push();
+            cpf.token = Tokens.solvBTC;
+            cpf.isTargetRedstone = true;
+            cpf.redstoneTargetToBaseData = RedStonePriceFeedDataShort({
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "SolvBTC.BBN_FUNDAMENTAL",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5
+            });
+            cpf.targetStalenessPeriod = 240;
+            cpf.isBaseComposite = false;
+            cpf.baseToUSDFeed = 0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c;
+            cpf.baseStalenessPeriod = 4500;
+
+            cpf.trusted = false;
+            cpf.reserve = false;
+        }
+        {
+            CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[1].push();
+            cpf.token = Tokens.solvBTC;
+            cpf.isTargetRedstone = true;
+            cpf.redstoneTargetToBaseData = RedStonePriceFeedDataShort({
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "SolvBTC.BBN/BTC",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5
+            });
+            cpf.targetStalenessPeriod = 240;
+            cpf.isBaseComposite = false;
+            cpf.baseToUSDFeed = 0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c;
+            cpf.baseStalenessPeriod = 4500;
+
+            cpf.trusted = false;
+            cpf.reserve = true;
+        }
+
+        // ------------------------ pumpBTC ------------------------
+
+        {
+            CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[1].push();
+            cpf.token = Tokens.pumpBTC;
+            cpf.isTargetRedstone = false;
+            cpf.targetToBaseFeed = 0x6CE4Ef3689F26edD40ed3ccbE3Cc29dab62C915f;
+            cpf.targetStalenessPeriod = 4500;
+            cpf.isBaseComposite = false;
+            cpf.baseToUSDFeed = 0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c;
+            cpf.baseStalenessPeriod = 4500;
+
+            cpf.trusted = false;
+            cpf.reserve = false;
+        }
+        {
+            CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[1].push();
+            cpf.token = Tokens.pumpBTC;
+            cpf.isTargetRedstone = true;
+            cpf.redstoneTargetToBaseData = RedStonePriceFeedDataShort({
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "pumpBTC/BTC",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5
+            });
+            cpf.targetStalenessPeriod = 240;
+            cpf.isBaseComposite = false;
+            cpf.baseToUSDFeed = 0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c;
+            cpf.baseStalenessPeriod = 4500;
+
+            cpf.trusted = false;
+            cpf.reserve = true;
+        }
 
         // ------------------------ rETH ------------------------
 
@@ -3113,44 +3113,6 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: Tokens.gusd3CRV, trusted: true, reserve: false})
         );
 
-        // ------------------------ MIM_3LP3CRV ------------------------
-        curvePriceFeedsByNetwork[1].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.MIM_3LP3CRV,
-                assets: TokensLib.arrayOf(Tokens.MIM, Tokens.DAI, Tokens.USDC, Tokens.USDT),
-                pool: Contracts.CURVE_MIM_POOL,
-                trusted: false,
-                reserve: false
-            })
-        );
-        curvePriceFeedsByNetwork[42161].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.MIM_3LP3CRV,
-                assets: TokensLib.arrayOf(Tokens.MIM, Tokens.DAI, Tokens.USDC, Tokens.USDT),
-                pool: Contracts.CURVE_MIM_POOL,
-                trusted: false,
-                reserve: false
-            })
-        );
-        curvePriceFeedsByNetwork[10].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.MIM_3LP3CRV,
-                assets: TokensLib.arrayOf(Tokens.MIM, Tokens.DAI, Tokens.USDC, Tokens.USDT),
-                pool: Contracts.CURVE_MIM_POOL,
-                trusted: false,
-                reserve: false
-            })
-        );
-        curvePriceFeedsByNetwork[8453].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.MIM_3LP3CRV,
-                assets: TokensLib.arrayOf(Tokens.MIM, Tokens.DAI, Tokens.USDC, Tokens.USDT),
-                pool: Contracts.CURVE_MIM_POOL,
-                trusted: false,
-                reserve: false
-            })
-        );
-
         // ------------------------ USDeUSDC ------------------------
         curvePriceFeedsByNetwork[1].push(
             CurvePriceFeedData({
@@ -3426,44 +3388,6 @@ contract PriceFeedDataLive {
                 lpToken: Tokens.DOLAsUSDe,
                 assets: TokensLib.arrayOf(Tokens.DOLA, Tokens.sUSDe),
                 pool: Contracts.CURVE_DOLA_SUSDE_POOL,
-                trusted: false,
-                reserve: false
-            })
-        );
-
-        // ------------------------ OHMFRAXBP ------------------------
-        curveCryptoPriceFeedsByNetwork[1].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.OHMFRAXBP,
-                assets: TokensLib.arrayOf(Tokens.OHM, Tokens.crvFRAX),
-                pool: Contracts.CURVE_OHMFRAXBP_POOL,
-                trusted: false,
-                reserve: false
-            })
-        );
-        curveCryptoPriceFeedsByNetwork[42161].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.OHMFRAXBP,
-                assets: TokensLib.arrayOf(Tokens.OHM, Tokens.crvFRAX),
-                pool: Contracts.CURVE_OHMFRAXBP_POOL,
-                trusted: false,
-                reserve: false
-            })
-        );
-        curveCryptoPriceFeedsByNetwork[10].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.OHMFRAXBP,
-                assets: TokensLib.arrayOf(Tokens.OHM, Tokens.crvFRAX),
-                pool: Contracts.CURVE_OHMFRAXBP_POOL,
-                trusted: false,
-                reserve: false
-            })
-        );
-        curveCryptoPriceFeedsByNetwork[8453].push(
-            CurvePriceFeedData({
-                lpToken: Tokens.OHMFRAXBP,
-                assets: TokensLib.arrayOf(Tokens.OHM, Tokens.crvFRAX),
-                pool: Contracts.CURVE_OHMFRAXBP_POOL,
                 trusted: false,
                 reserve: false
             })
@@ -4691,74 +4615,6 @@ contract PriceFeedDataLive {
             })
         );
 
-        // ------------------------ cvxOHMFRAXBP ------------------------
-        theSamePriceFeedsByNetwork[1].push(
-            TheSamePriceFeedData({
-                token: Tokens.cvxOHMFRAXBP,
-                tokenHasSamePriceFeed: Tokens.OHMFRAXBP,
-                trusted: false,
-                reserve: false
-            })
-        );
-        theSamePriceFeedsByNetwork[42161].push(
-            TheSamePriceFeedData({
-                token: Tokens.cvxOHMFRAXBP,
-                tokenHasSamePriceFeed: Tokens.OHMFRAXBP,
-                trusted: false,
-                reserve: false
-            })
-        );
-        theSamePriceFeedsByNetwork[10].push(
-            TheSamePriceFeedData({
-                token: Tokens.cvxOHMFRAXBP,
-                tokenHasSamePriceFeed: Tokens.OHMFRAXBP,
-                trusted: false,
-                reserve: false
-            })
-        );
-        theSamePriceFeedsByNetwork[8453].push(
-            TheSamePriceFeedData({
-                token: Tokens.cvxOHMFRAXBP,
-                tokenHasSamePriceFeed: Tokens.OHMFRAXBP,
-                trusted: false,
-                reserve: false
-            })
-        );
-
-        // ------------------------ cvxMIM_3LP3CRV ------------------------
-        theSamePriceFeedsByNetwork[1].push(
-            TheSamePriceFeedData({
-                token: Tokens.cvxMIM_3LP3CRV,
-                tokenHasSamePriceFeed: Tokens.MIM_3LP3CRV,
-                trusted: false,
-                reserve: false
-            })
-        );
-        theSamePriceFeedsByNetwork[42161].push(
-            TheSamePriceFeedData({
-                token: Tokens.cvxMIM_3LP3CRV,
-                tokenHasSamePriceFeed: Tokens.MIM_3LP3CRV,
-                trusted: false,
-                reserve: false
-            })
-        );
-        theSamePriceFeedsByNetwork[10].push(
-            TheSamePriceFeedData({
-                token: Tokens.cvxMIM_3LP3CRV,
-                tokenHasSamePriceFeed: Tokens.MIM_3LP3CRV,
-                trusted: false,
-                reserve: false
-            })
-        );
-        theSamePriceFeedsByNetwork[8453].push(
-            TheSamePriceFeedData({
-                token: Tokens.cvxMIM_3LP3CRV,
-                tokenHasSamePriceFeed: Tokens.MIM_3LP3CRV,
-                trusted: false,
-                reserve: false
-            })
-        );
-
         // ------------------------ cvxcrvCRVETH ------------------------
         theSamePriceFeedsByNetwork[1].push(
             TheSamePriceFeedData({
@@ -5303,74 +5159,6 @@ contract PriceFeedDataLive {
             })
         );
 
-        // ------------------------ stkcvxOHMFRAXBP ------------------------
-        theSamePriceFeedsByNetwork[1].push(
-            TheSamePriceFeedData({
-                token: Tokens.stkcvxOHMFRAXBP,
-                tokenHasSamePriceFeed: Tokens.OHMFRAXBP,
-                trusted: false,
-                reserve: false
-            })
-        );
-        theSamePriceFeedsByNetwork[42161].push(
-            TheSamePriceFeedData({
-                token: Tokens.stkcvxOHMFRAXBP,
-                tokenHasSamePriceFeed: Tokens.OHMFRAXBP,
-                trusted: false,
-                reserve: false
-            })
-        );
-        theSamePriceFeedsByNetwork[10].push(
-            TheSamePriceFeedData({
-                token: Tokens.stkcvxOHMFRAXBP,
-                tokenHasSamePriceFeed: Tokens.OHMFRAXBP,
-                trusted: false,
-                reserve: false
-            })
-        );
-        theSamePriceFeedsByNetwork[8453].push(
-            TheSamePriceFeedData({
-                token: Tokens.stkcvxOHMFRAXBP,
-                tokenHasSamePriceFeed: Tokens.OHMFRAXBP,
-                trusted: false,
-                reserve: false
-            })
-        );
-
-        // ------------------------ stkcvxMIM_3LP3CRV ------------------------
-        theSamePriceFeedsByNetwork[1].push(
-            TheSamePriceFeedData({
-                token: Tokens.stkcvxMIM_3LP3CRV,
-                tokenHasSamePriceFeed: Tokens.MIM_3LP3CRV,
-                trusted: false,
-                reserve: false
-            })
-        );
-        theSamePriceFeedsByNetwork[42161].push(
-            TheSamePriceFeedData({
-                token: Tokens.stkcvxMIM_3LP3CRV,
-                tokenHasSamePriceFeed: Tokens.MIM_3LP3CRV,
-                trusted: false,
-                reserve: false
-            })
-        );
-        theSamePriceFeedsByNetwork[10].push(
-            TheSamePriceFeedData({
-                token: Tokens.stkcvxMIM_3LP3CRV,
-                tokenHasSamePriceFeed: Tokens.MIM_3LP3CRV,
-                trusted: false,
-                reserve: false
-            })
-        );
-        theSamePriceFeedsByNetwork[8453].push(
-            TheSamePriceFeedData({
-                token: Tokens.stkcvxMIM_3LP3CRV,
-                tokenHasSamePriceFeed: Tokens.MIM_3LP3CRV,
-                trusted: false,
-                reserve: false
-            })
-        );
-
         // ------------------------ stkcvxcrvCRVETH ------------------------
         theSamePriceFeedsByNetwork[1].push(
             TheSamePriceFeedData({
@@ -5775,74 +5563,6 @@ contract PriceFeedDataLive {
             })
         );
 
-        // ------------------------ 50OHM_50DAI ------------------------
-        balancerWeightedLPPriceFeedsByNetwork[1].push(
-            BalancerLPPriceFeedData({
-                lpToken: Tokens._50OHM_50DAI,
-                assets: TokensLib.arrayOf(Tokens.OHM, Tokens.DAI),
-                trusted: false,
-                reserve: false
-            })
-        );
-        balancerWeightedLPPriceFeedsByNetwork[42161].push(
-            BalancerLPPriceFeedData({
-                lpToken: Tokens._50OHM_50DAI,
-                assets: TokensLib.arrayOf(Tokens.OHM, Tokens.DAI),
-                trusted: false,
-                reserve: false
-            })
-        );
-        balancerWeightedLPPriceFeedsByNetwork[10].push(
-            BalancerLPPriceFeedData({
-                lpToken: Tokens._50OHM_50DAI,
-                assets: TokensLib.arrayOf(Tokens.OHM, Tokens.DAI),
-                trusted: false,
-                reserve: false
-            })
-        );
-        balancerWeightedLPPriceFeedsByNetwork[8453].push(
-            BalancerLPPriceFeedData({
-                lpToken: Tokens._50OHM_50DAI,
-                assets: TokensLib.arrayOf(Tokens.OHM, Tokens.DAI),
-                trusted: false,
-                reserve: false
-            })
-        );
-
-        // ------------------------ 50OHM_50WETH ------------------------
-        balancerWeightedLPPriceFeedsByNetwork[1].push(
-            BalancerLPPriceFeedData({
-                lpToken: Tokens._50OHM_50WETH,
-                assets: TokensLib.arrayOf(Tokens.OHM, Tokens.WETH),
-                trusted: false,
-                reserve: false
-            })
-        );
-        balancerWeightedLPPriceFeedsByNetwork[42161].push(
-            BalancerLPPriceFeedData({
-                lpToken: Tokens._50OHM_50WETH,
-                assets: TokensLib.arrayOf(Tokens.OHM, Tokens.WETH),
-                trusted: false,
-                reserve: false
-            })
-        );
-        balancerWeightedLPPriceFeedsByNetwork[10].push(
-            BalancerLPPriceFeedData({
-                lpToken: Tokens._50OHM_50WETH,
-                assets: TokensLib.arrayOf(Tokens.OHM, Tokens.WETH),
-                trusted: false,
-                reserve: false
-            })
-        );
-        balancerWeightedLPPriceFeedsByNetwork[8453].push(
-            BalancerLPPriceFeedData({
-                lpToken: Tokens._50OHM_50WETH,
-                assets: TokensLib.arrayOf(Tokens.OHM, Tokens.WETH),
-                trusted: false,
-                reserve: false
-            })
-        );
-
         // ------------------------ B_80BAL_20WETH ------------------------
         balancerWeightedLPPriceFeedsByNetwork[1].push(
             BalancerLPPriceFeedData({
@@ -5889,40 +5609,6 @@ contract PriceFeedDataLive {
         );
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: Tokens._50WETH_50AURA, trusted: false, reserve: false})
-        );
-
-        // ------------------------ OHM_wstETH ------------------------
-        balancerWeightedLPPriceFeedsByNetwork[1].push(
-            BalancerLPPriceFeedData({
-                lpToken: Tokens.OHM_wstETH,
-                assets: TokensLib.arrayOf(Tokens.OHM, Tokens.wstETH),
-                trusted: false,
-                reserve: false
-            })
-        );
-        balancerWeightedLPPriceFeedsByNetwork[42161].push(
-            BalancerLPPriceFeedData({
-                lpToken: Tokens.OHM_wstETH,
-                assets: TokensLib.arrayOf(Tokens.OHM, Tokens.wstETH),
-                trusted: false,
-                reserve: false
-            })
-        );
-        balancerWeightedLPPriceFeedsByNetwork[10].push(
-            BalancerLPPriceFeedData({
-                lpToken: Tokens.OHM_wstETH,
-                assets: TokensLib.arrayOf(Tokens.OHM, Tokens.wstETH),
-                trusted: false,
-                reserve: false
-            })
-        );
-        balancerWeightedLPPriceFeedsByNetwork[8453].push(
-            BalancerLPPriceFeedData({
-                lpToken: Tokens.OHM_wstETH,
-                assets: TokensLib.arrayOf(Tokens.OHM, Tokens.wstETH),
-                trusted: false,
-                reserve: false
-            })
         );
 
         // ------------------------ USDC_DAI_USDT ------------------------
@@ -8345,6 +8031,50 @@ contract PriceFeedDataLive {
                 token: Tokens.PT_eBTC_26DEC2024,
                 underlying: Tokens.WBTC,
                 market: 0x36d3ca43ae7939645C306E26603ce16e39A89192,
+                twapWindow: 1800,
+                trusted: false,
+                reserve: true
+            })
+        );
+
+        // ------------------------ PT_solvBTC_26DEC2024 ------------------------
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: Tokens.PT_solvBTC_26DEC2024,
+                underlying: Tokens.WBTC,
+                market: 0xEb4d3057738b9Ed930F451Be473C1CCC42988384,
+                twapWindow: 1800,
+                trusted: false,
+                reserve: false
+            })
+        );
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: Tokens.PT_solvBTC_26DEC2024,
+                underlying: Tokens.WBTC,
+                market: 0xEb4d3057738b9Ed930F451Be473C1CCC42988384,
+                twapWindow: 1800,
+                trusted: false,
+                reserve: true
+            })
+        );
+
+        // ------------------------ PT_pumpBTC_26DEC2024 ------------------------
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: Tokens.PT_pumpBTC_26DEC2024,
+                underlying: Tokens.WBTC,
+                market: 0xf8208fB52BA80075aF09840A683143C22DC5B4dd,
+                twapWindow: 1800,
+                trusted: false,
+                reserve: false
+            })
+        );
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: Tokens.PT_pumpBTC_26DEC2024,
+                underlying: Tokens.WBTC,
+                market: 0xf8208fB52BA80075aF09840A683143C22DC5B4dd,
                 twapWindow: 1800,
                 trusted: false,
                 reserve: true

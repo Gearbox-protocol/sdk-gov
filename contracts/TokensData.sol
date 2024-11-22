@@ -38,14 +38,6 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
-                id: Tokens.COMP,
-                addr: 0xc00e94Cb662C3520282E6f5717214004A7f26888,
-                symbol: "COMP",
-                tokenType: TokenType.NORMAL_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
                 id: Tokens.CRV,
                 addr: 0xD533a949740bb3306d119CC777fa900bA034cd52,
                 symbol: "CRV",
@@ -57,22 +49,6 @@ contract TokensDataLive {
                 id: Tokens.DAI,
                 addr: 0x6B175474E89094C44Da98b954EedeAC495271d0F,
                 symbol: "DAI",
-                tokenType: TokenType.NORMAL_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: Tokens.DPI,
-                addr: 0x1494CA1F11D487c2bBe4543E90080AeBa4BA3C2b,
-                symbol: "DPI",
-                tokenType: TokenType.NORMAL_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: Tokens.FEI,
-                addr: 0x956F47F50A910163D8BF957Cf5846D573E7f87CA,
-                symbol: "FEI",
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
@@ -230,30 +206,6 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: Tokens.OHM,
-                addr: 0x64aa3364F17a4D01c6f1751Fd97C2BD3D7e7f1D5,
-                symbol: "OHM",
-                tokenType: TokenType.NORMAL_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: Tokens.MIM,
-                addr: 0x99D8a9C45b2ecA8864373A26D1459e3Dff1e17F3,
-                symbol: "MIM",
-                tokenType: TokenType.NORMAL_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: Tokens.SPELL,
-                addr: 0x090185f2135308BaD17527004364eBcC2D37e5F6,
-                symbol: "SPELL",
-                tokenType: TokenType.NORMAL_TOKEN
-            })
-        );
 
         tokenDataByNetwork[1].push(
             TokenData({
@@ -263,7 +215,6 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
-
         tokenDataByNetwork[1].push(
             TokenData({
                 id: Tokens.BAL,
@@ -325,6 +276,22 @@ contract TokensDataLive {
                 id: Tokens.eBTC,
                 addr: 0x657e8C867D8B37dCC18fA4Caead9C45EB088C642,
                 symbol: "eBTC",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.solvBTC,
+                addr: 0xd9D920AA40f578ab794426F5C90F6C731D159DEf,
+                symbol: "solvBTC",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.pumpBTC,
+                addr: 0xF469fBD2abcd6B9de8E169d128226C0Fc90a012e,
+                symbol: "pumpBTC",
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
@@ -549,6 +516,22 @@ contract TokensDataLive {
                 id: Tokens.PT_LBTC_27MAR2025,
                 addr: 0xEc5a52C685CC3Ad79a6a347aBACe330d69e0b1eD,
                 symbol: "PT_LBTC_27MAR2025",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.PT_solvBTC_26DEC2024,
+                addr: 0x23e479ddcda990E8523494895759bD98cD2fDBF6,
+                symbol: "PT_solvBTC_26DEC2024",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.PT_pumpBTC_26DEC2024,
+                addr: 0xa76f0C6e5f286bFF151b891d2A0245077F1Ad74c,
+                symbol: "PT_pumpBTC_26DEC2024",
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
@@ -827,22 +810,6 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
-                id: Tokens.MIM_3LP3CRV,
-                addr: 0x5a6A4D54456819380173272A5E8E9B9904BdF41B,
-                symbol: "MIM_3LP3CRV",
-                tokenType: TokenType.CURVE_LP_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: Tokens.OHMFRAXBP,
-                addr: 0x5271045F7B73c17825A7A7aee6917eE46b0B7520,
-                symbol: "OHMFRAXBP",
-                tokenType: TokenType.CURVE_LP_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
                 id: Tokens.cvx3Crv,
                 addr: 0x30D9410ED1D5DA1F6C8391af5338C93ab8d4035C,
                 symbol: "cvx3Crv",
@@ -894,22 +861,6 @@ contract TokensDataLive {
                 id: Tokens.cvxgusd3CRV,
                 addr: 0x15c2471ef46Fa721990730cfa526BcFb45574576,
                 symbol: "cvxgusd3CRV",
-                tokenType: TokenType.CONVEX_LP_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: Tokens.cvxOHMFRAXBP,
-                addr: 0xd8F1B275c320819c7D752ef79988d0780bf00446,
-                symbol: "cvxOHMFRAXBP",
-                tokenType: TokenType.CONVEX_LP_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: Tokens.cvxMIM_3LP3CRV,
-                addr: 0xabB54222c2b77158CC975a2b715a3d703c256F05,
-                symbol: "cvxMIM_3LP3CRV",
                 tokenType: TokenType.CONVEX_LP_TOKEN
             })
         );
@@ -1038,22 +989,6 @@ contract TokensDataLive {
                 id: Tokens.stkcvxgusd3CRV,
                 addr: 0x34fB99abBAFb4e87e256960D572664c6ADc301B8,
                 symbol: "stkcvxgusd3CRV",
-                tokenType: TokenType.CONVEX_STAKED_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: Tokens.stkcvxOHMFRAXBP,
-                addr: 0x888407AabAfa936B90acF65C4Db19370A01d9bd8,
-                symbol: "stkcvxOHMFRAXBP",
-                tokenType: TokenType.CONVEX_STAKED_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: Tokens.stkcvxMIM_3LP3CRV,
-                addr: 0x1aAbe1B22a290cCB39FD77440D5eb96Cf40079f4,
-                symbol: "stkcvxMIM_3LP3CRV",
                 tokenType: TokenType.CONVEX_STAKED_TOKEN
             })
         );
@@ -1201,30 +1136,6 @@ contract TokensDataLive {
                 id: Tokens.B_80BAL_20WETH,
                 addr: 0x5c6Ee304399DBdB9C8Ef030aB642B10820DB8F56,
                 symbol: "B_80BAL_20WETH",
-                tokenType: TokenType.BALANCER_LP_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: Tokens._50OHM_50DAI,
-                addr: 0x76FCf0e8C7Ff37A47a799FA2cd4c13cDe0D981C9,
-                symbol: "50OHM_50DAI",
-                tokenType: TokenType.BALANCER_LP_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: Tokens._50OHM_50WETH,
-                addr: 0xD1eC5e215E8148D76F4460e4097FD3d5ae0A3558,
-                symbol: "50OHM_50WETH",
-                tokenType: TokenType.BALANCER_LP_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: Tokens.OHM_wstETH,
-                addr: 0xd4f79CA0Ac83192693bce4699d0c10C66Aa6Cf0F,
-                symbol: "OHM_wstETH",
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
@@ -1669,14 +1580,6 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[42161].push(
             TokenData({
-                id: Tokens.COMP,
-                addr: 0x354A6dA3fcde098F8389cad84b0182725c6C91dE,
-                symbol: "COMP",
-                tokenType: TokenType.NORMAL_TOKEN
-            })
-        );
-        tokenDataByNetwork[42161].push(
-            TokenData({
                 id: Tokens.CRV,
                 addr: 0x11cDb42B0EB46D95f990BeDD4695A6e3fA034978,
                 symbol: "CRV",
@@ -1691,7 +1594,6 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
-
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: Tokens.LINK,
@@ -1825,30 +1727,6 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[42161].push(
             TokenData({
-                id: Tokens.OHM,
-                addr: 0x6E6a3D8F1AfFAc703B1aEF1F43B8D2321bE40043,
-                symbol: "OHM",
-                tokenType: TokenType.NORMAL_TOKEN
-            })
-        );
-        tokenDataByNetwork[42161].push(
-            TokenData({
-                id: Tokens.MIM,
-                addr: 0xFEa7a6a0B346362BF88A9e4A88416B77a57D6c2A,
-                symbol: "MIM",
-                tokenType: TokenType.NORMAL_TOKEN
-            })
-        );
-        tokenDataByNetwork[42161].push(
-            TokenData({
-                id: Tokens.SPELL,
-                addr: 0x3E6648C5a70A150A88bCE65F4aD4d506Fe15d2AF,
-                symbol: "SPELL",
-                tokenType: TokenType.NORMAL_TOKEN
-            })
-        );
-        tokenDataByNetwork[42161].push(
-            TokenData({
                 id: Tokens.GMX,
                 addr: 0xfc5A1A6EB076a2C7aD06eD22C90d7E710E35ad0a,
                 symbol: "GMX",
@@ -1860,14 +1738,6 @@ contract TokensDataLive {
                 id: Tokens.ARB,
                 addr: 0x912CE59144191C1204E64559FE8253a0e49E6548,
                 symbol: "ARB",
-                tokenType: TokenType.NORMAL_TOKEN
-            })
-        );
-        tokenDataByNetwork[42161].push(
-            TokenData({
-                id: Tokens.RDNT,
-                addr: 0x3082CC23568eA640225c2467653dB90e9250AaA0,
-                symbol: "RDNT",
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
@@ -2308,7 +2178,6 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
-
         tokenDataByNetwork[10].push(
             TokenData({
                 id: Tokens.CRV,
@@ -2325,7 +2194,6 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
-
         tokenDataByNetwork[10].push(
             TokenData({
                 id: Tokens.LINK,
@@ -2453,15 +2321,6 @@ contract TokensDataLive {
                 id: Tokens.sUSD,
                 addr: 0x8c6f28f2F1A3C87F0f938b96d27520d9751ec8d9,
                 symbol: "sUSD",
-                tokenType: TokenType.NORMAL_TOKEN
-            })
-        );
-
-        tokenDataByNetwork[10].push(
-            TokenData({
-                id: Tokens.MIM,
-                addr: 0xB153FB3d196A8eB25522705560ac152eeEc57901,
-                symbol: "MIM",
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );

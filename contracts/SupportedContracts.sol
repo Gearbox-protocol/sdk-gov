@@ -132,20 +132,6 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
-                id: Contracts.CURVE_MIM_POOL,
-                addr: 0x5a6A4D54456819380173272A5E8E9B9904BdF41B,
-                name: "CURVE_MIM_POOL"
-            })
-        );
-        contractDataByNetwork[1].push(
-            ContractData({
-                id: Contracts.CURVE_OHMFRAXBP_POOL,
-                addr: 0xFc1e8bf3E81383Ef07Be24c3FD146745719DE48D,
-                name: "CURVE_OHMFRAXBP_POOL"
-            })
-        );
-        contractDataByNetwork[1].push(
-            ContractData({
                 id: Contracts.CURVE_CRVETH_POOL,
                 addr: 0x8301AE4fc9c624d1D396cbDAa1ed877821D7C511,
                 name: "CURVE_CRVETH_POOL"
@@ -468,20 +454,6 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.CONVEX_LUSD3CRV_POOL,
                 addr: 0x2ad92A7aE036a038ff02B96c88de868ddf3f8190,
                 name: "CONVEX_LUSD3CRV_POOL"
-            })
-        );
-        contractDataByNetwork[1].push(
-            ContractData({
-                id: Contracts.CONVEX_OHMFRAXBP_POOL,
-                addr: 0x27A8c58e3DE84280826d615D80ddb33930383fE9,
-                name: "CONVEX_OHMFRAXBP_POOL"
-            })
-        );
-        contractDataByNetwork[1].push(
-            ContractData({
-                id: Contracts.CONVEX_MIM3CRV_POOL,
-                addr: 0xFd5AbF66b003881b88567EB9Ed9c651F14Dc4771,
-                name: "CONVEX_MIM3CRV_POOL"
             })
         );
         contractDataByNetwork[1].push(

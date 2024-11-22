@@ -33,11 +33,9 @@ export type CurvePoolContract =
   | "CURVE_GUSD_POOL"
   | "CURVE_SUSD_POOL"
   | "CURVE_SUSD_DEPOSIT"
-  | "CURVE_OHMFRAXBP_POOL"
   | "CURVE_CRVETH_POOL"
   | "CURVE_CVXETH_POOL"
   | "CURVE_3CRYPTO_POOL"
-  | "CURVE_MIM_POOL"
   | "CURVE_LDOETH_POOL"
   | "CURVE_CRVUSD_USDC_POOL"
   | "CURVE_CRVUSD_USDT_POOL"
@@ -95,8 +93,6 @@ export type ConvexPoolContract =
   | "CONVEX_STECRV_POOL"
   | "CONVEX_FRAX3CRV_POOL"
   | "CONVEX_LUSD3CRV_POOL"
-  | "CONVEX_OHMFRAXBP_POOL"
-  | "CONVEX_MIM3CRV_POOL"
   | "CONVEX_CRVETH_POOL"
   | "CONVEX_CVXETH_POOL"
   | "CONVEX_3CRYPTO_POOL"
@@ -196,8 +192,6 @@ export const contractsByNetwork: Record<
     CURVE_SUSD_POOL: "0xA5407eAE9Ba41422680e2e00537571bcC53efBfD", // SEPARATE TOKEN
     CURVE_SUSD_DEPOSIT: "0xFCBa3E75865d2d561BE8D220616520c171F12851",
     CURVE_GUSD_POOL: "0x4f062658EaAF2C1ccf8C8e36D6824CDf41167956", // SEPARATE TOKEN
-    CURVE_MIM_POOL: tokenDataByNetwork.Mainnet.MIM_3LP3CRV,
-    CURVE_OHMFRAXBP_POOL: "0xFc1e8bf3E81383Ef07Be24c3FD146745719DE48D",
     CURVE_CRVETH_POOL: "0x8301AE4fc9c624d1D396cbDAa1ed877821D7C511",
     CURVE_CVXETH_POOL: "0xB576491F1E6e5E62f1d8F26062Ee822B40B0E0d4",
     CURVE_3CRYPTO_POOL: tokenDataByNetwork.Mainnet.crvUSDTWBTCWETH,
@@ -264,8 +258,6 @@ export const contractsByNetwork: Record<
     CONVEX_STECRV_POOL: "0x0A760466E1B4621579a82a39CB56Dda2F4E70f03",
     CONVEX_FRAX3CRV_POOL: "0xB900EF131301B307dB5eFcbed9DBb50A3e209B2e",
     CONVEX_LUSD3CRV_POOL: "0x2ad92A7aE036a038ff02B96c88de868ddf3f8190",
-    CONVEX_OHMFRAXBP_POOL: "0x27A8c58e3DE84280826d615D80ddb33930383fE9",
-    CONVEX_MIM3CRV_POOL: "0xFd5AbF66b003881b88567EB9Ed9c651F14Dc4771",
     CONVEX_CRVETH_POOL: "0x085A2054c51eA5c91dbF7f90d65e728c0f2A270f",
     CONVEX_CVXETH_POOL: "0xb1Fb0BA0676A1fFA83882c7F4805408bA232C1fA",
     CONVEX_3CRYPTO_POOL: "0xb05262D4aaAA38D0Af4AaB244D446ebDb5afd4A7",
@@ -365,8 +357,6 @@ export const contractsByNetwork: Record<
     CURVE_SUSD_POOL: NOT_DEPLOYED,
     CURVE_SUSD_DEPOSIT: NOT_DEPLOYED,
     CURVE_GUSD_POOL: NOT_DEPLOYED,
-    CURVE_MIM_POOL: tokenDataByNetwork.Arbitrum.MIM_3LP3CRV,
-    CURVE_OHMFRAXBP_POOL: NOT_DEPLOYED,
     CURVE_CRVETH_POOL: NOT_DEPLOYED,
     CURVE_CVXETH_POOL: NOT_DEPLOYED,
     CURVE_3CRYPTO_POOL: NOT_DEPLOYED,
@@ -433,8 +423,6 @@ export const contractsByNetwork: Record<
     CONVEX_FRAX3CRV_POOL: NOT_DEPLOYED,
     CONVEX_LUSD3CRV_POOL: NOT_DEPLOYED,
     CONVEX_GUSD_POOL: NOT_DEPLOYED,
-    CONVEX_OHMFRAXBP_POOL: NOT_DEPLOYED,
-    CONVEX_MIM3CRV_POOL: NOT_DEPLOYED,
     CONVEX_CRVETH_POOL: NOT_DEPLOYED,
     CONVEX_CVXETH_POOL: NOT_DEPLOYED,
     CONVEX_3CRYPTO_POOL: NOT_DEPLOYED,
@@ -533,8 +521,6 @@ export const contractsByNetwork: Record<
     CURVE_SUSD_POOL: NOT_DEPLOYED,
     CURVE_SUSD_DEPOSIT: NOT_DEPLOYED,
     CURVE_GUSD_POOL: NOT_DEPLOYED,
-    CURVE_MIM_POOL: tokenDataByNetwork.Optimism.MIM_3LP3CRV,
-    CURVE_OHMFRAXBP_POOL: NOT_DEPLOYED,
     CURVE_CRVETH_POOL: NOT_DEPLOYED,
     CURVE_CVXETH_POOL: NOT_DEPLOYED,
     CURVE_3CRYPTO_POOL: NOT_DEPLOYED,
@@ -600,8 +586,6 @@ export const contractsByNetwork: Record<
     CONVEX_FRAX3CRV_POOL: NOT_DEPLOYED,
     CONVEX_LUSD3CRV_POOL: NOT_DEPLOYED,
     CONVEX_GUSD_POOL: NOT_DEPLOYED,
-    CONVEX_OHMFRAXBP_POOL: NOT_DEPLOYED,
-    CONVEX_MIM3CRV_POOL: NOT_DEPLOYED,
     CONVEX_CRVETH_POOL: NOT_DEPLOYED,
     CONVEX_CVXETH_POOL: NOT_DEPLOYED,
     CONVEX_3CRYPTO_POOL: NOT_DEPLOYED,
@@ -701,8 +685,6 @@ export const contractsByNetwork: Record<
     CURVE_SUSD_POOL: NOT_DEPLOYED,
     CURVE_SUSD_DEPOSIT: NOT_DEPLOYED,
     CURVE_GUSD_POOL: NOT_DEPLOYED,
-    CURVE_MIM_POOL: tokenDataByNetwork.Base.MIM_3LP3CRV,
-    CURVE_OHMFRAXBP_POOL: NOT_DEPLOYED,
     CURVE_CRVETH_POOL: NOT_DEPLOYED,
     CURVE_CVXETH_POOL: NOT_DEPLOYED,
     CURVE_3CRYPTO_POOL: NOT_DEPLOYED,
@@ -767,8 +749,6 @@ export const contractsByNetwork: Record<
     CONVEX_FRAX3CRV_POOL: NOT_DEPLOYED,
     CONVEX_LUSD3CRV_POOL: NOT_DEPLOYED,
     CONVEX_GUSD_POOL: NOT_DEPLOYED,
-    CONVEX_OHMFRAXBP_POOL: NOT_DEPLOYED,
-    CONVEX_MIM3CRV_POOL: NOT_DEPLOYED,
     CONVEX_CRVETH_POOL: NOT_DEPLOYED,
     CONVEX_CVXETH_POOL: NOT_DEPLOYED,
     CONVEX_3CRYPTO_POOL: NOT_DEPLOYED,
@@ -1246,25 +1226,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     tokens: ["GUSD", "3Crv"],
     underlyings: ["GUSD", "DAI", "USDC", "USDT"],
   },
-  CURVE_MIM_POOL: {
-    name: "Curve MIM",
-    protocol: Protocols.Curve,
-    type: AdapterInterface.CURVE_V1_2ASSETS,
-    version: 10,
-    lpToken: "MIM_3LP3CRV",
-    tokens: ["MIM", "3Crv"],
-    underlyings: ["MIM", "DAI", "USDC", "USDT"],
-  },
 
-  CURVE_OHMFRAXBP_POOL: {
-    name: "Curve OHM_FRAXBP",
-    protocol: Protocols.Curve,
-    type: AdapterInterface.CURVE_V1_2ASSETS,
-    version: 20,
-    lpToken: "OHMFRAXBP",
-    tokens: ["OHM", "crvFRAX"],
-    underlyings: ["OHM", "FRAX", "USDC"],
-  },
   CURVE_CRVETH_POOL: {
     name: "Curve CRVETH",
     protocol: Protocols.Curve,
@@ -1728,31 +1690,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       },
     ],
   },
-  CONVEX_MIM3CRV_POOL: {
-    name: "Convex MIM3CRV",
-    protocol: Protocols.Convex,
-    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
-    stakedToken: "stkcvxMIM_3LP3CRV",
-    extraRewards: [
-      {
-        rewardToken: "SPELL",
-        poolAddress: {
-          Mainnet: "0x69a92f1656cd2e193797546cFe2EaF32EACcf6f7",
-          Arbitrum: NOT_DEPLOYED,
-          Optimism: NOT_DEPLOYED,
-          Base: NOT_DEPLOYED,
-        },
-      },
-    ],
-  },
 
-  CONVEX_OHMFRAXBP_POOL: {
-    name: "Convex OHMFRAXBP",
-    protocol: Protocols.Convex,
-    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
-    stakedToken: "stkcvxOHMFRAXBP",
-    extraRewards: [],
-  },
   CONVEX_CRVETH_POOL: {
     name: "Convex crvCRVETH",
     protocol: Protocols.Convex,
