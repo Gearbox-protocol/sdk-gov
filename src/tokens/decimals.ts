@@ -248,7 +248,7 @@ export const decimals: Record<SupportedToken, number> = {
   PT_eETH_26DEC2024: 18,
   PT_ezETH_26DEC2024: 18,
   PT_eBTC_26DEC2024: 8,
-  PT_solvBTC_26DEC2024: 8,
-  PT_pumpBTC_26DEC2024: 8,
+  PT_corn_solvBTC_BBN_26DEC2024: 8,
+  PT_corn_pumpBTC_26DEC2024: 8,
   PT_LBTC_27MAR2025: 8,
 };

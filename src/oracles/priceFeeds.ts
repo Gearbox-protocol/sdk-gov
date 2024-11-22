@@ -3824,7 +3824,7 @@ export const priceFeedsByToken: Record<
     },
   },
 
-  PT_solvBTC_26DEC2024: {
+  PT_corn_solvBTC_BBN_26DEC2024: {
     Mainnet: {
       Main: {
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
@@ -3841,7 +3841,7 @@ export const priceFeedsByToken: Record<
       },
     },
   },
-  PT_pumpBTC_26DEC2024: {
+  PT_corn_pumpBTC_26DEC2024: {
     Mainnet: {
       Main: {
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,

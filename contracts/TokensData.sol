@@ -521,17 +521,17 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
-                id: Tokens.PT_solvBTC_26DEC2024,
+                id: Tokens.PT_corn_solvBTC_BBN_26DEC2024,
                 addr: 0x23e479ddcda990E8523494895759bD98cD2fDBF6,
-                symbol: "PT_solvBTC_26DEC2024",
+                symbol: "PT_corn_solvBTC_BBN_26DEC2024",
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
         tokenDataByNetwork[1].push(
             TokenData({
-                id: Tokens.PT_pumpBTC_26DEC2024,
+                id: Tokens.PT_corn_pumpBTC_26DEC2024,
                 addr: 0xa76f0C6e5f286bFF151b891d2A0245077F1Ad74c,
-                symbol: "PT_pumpBTC_26DEC2024",
+                symbol: "PT_corn_pumpBTC_26DEC2024",
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );

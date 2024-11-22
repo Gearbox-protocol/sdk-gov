@@ -376,8 +376,8 @@ export const tokenDataByNetwork: Record<
     PT_ezETH_26DEC2024: "0xf7906F274c174A52d444175729E3fa98f9bde285",
     PT_eBTC_26DEC2024: "0xB997B3418935A1Df0F914Ee901ec83927c1509A0",
     PT_LBTC_27MAR2025: "0xEc5a52C685CC3Ad79a6a347aBACe330d69e0b1eD",
-    PT_solvBTC_26DEC2024: "0x23e479ddcda990E8523494895759bD98cD2fDBF6",
-    PT_pumpBTC_26DEC2024: "0xa76f0C6e5f286bFF151b891d2A0245077F1Ad74c",
+    PT_corn_solvBTC_BBN_26DEC2024: "0x23e479ddcda990E8523494895759bD98cD2fDBF6",
+    PT_corn_pumpBTC_26DEC2024: "0xa76f0C6e5f286bFF151b891d2A0245077F1Ad74c",
 
     // GEARBOX
     dDAI: "0x6CFaF95457d7688022FC53e7AbE052ef8DFBbdBA",
@@ -667,8 +667,8 @@ export const tokenDataByNetwork: Record<
     PT_ezETH_26DEC2024: NOT_DEPLOYED,
     PT_eBTC_26DEC2024: NOT_DEPLOYED,
     PT_LBTC_27MAR2025: NOT_DEPLOYED,
-    PT_solvBTC_26DEC2024: NOT_DEPLOYED,
-    PT_pumpBTC_26DEC2024: NOT_DEPLOYED,
+    PT_corn_solvBTC_BBN_26DEC2024: NOT_DEPLOYED,
+    PT_corn_pumpBTC_26DEC2024: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -958,8 +958,8 @@ export const tokenDataByNetwork: Record<
     PT_ezETH_26DEC2024: NOT_DEPLOYED,
     PT_eBTC_26DEC2024: NOT_DEPLOYED,
     PT_LBTC_27MAR2025: NOT_DEPLOYED,
-    PT_solvBTC_26DEC2024: NOT_DEPLOYED,
-    PT_pumpBTC_26DEC2024: NOT_DEPLOYED,
+    PT_corn_solvBTC_BBN_26DEC2024: NOT_DEPLOYED,
+    PT_corn_pumpBTC_26DEC2024: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -1251,8 +1251,8 @@ export const tokenDataByNetwork: Record<
     PT_ezETH_26DEC2024: NOT_DEPLOYED,
     PT_eBTC_26DEC2024: NOT_DEPLOYED,
     PT_LBTC_27MAR2025: NOT_DEPLOYED,
-    PT_solvBTC_26DEC2024: NOT_DEPLOYED,
-    PT_pumpBTC_26DEC2024: NOT_DEPLOYED,
+    PT_corn_solvBTC_BBN_26DEC2024: NOT_DEPLOYED,
+    PT_corn_pumpBTC_26DEC2024: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -1499,7 +1499,7 @@ export const tickerInfoTokensByNetwork: Record<
         reserve: true,
       },
     ],
-    PT_solvBTC_26DEC2024: [
+    PT_corn_solvBTC_BBN_26DEC2024: [
       {
         symbol: "BTC",
         dataId: "BTC",
@@ -1509,7 +1509,7 @@ export const tickerInfoTokensByNetwork: Record<
         reserve: true,
       },
     ],
-    PT_pumpBTC_26DEC2024: [
+    PT_corn_pumpBTC_26DEC2024: [
       {
         symbol: "BTC",
         dataId: "BTC",

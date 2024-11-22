@@ -8037,10 +8037,10 @@ contract PriceFeedDataLive {
             })
         );
 
-        // ------------------------ PT_solvBTC_26DEC2024 ------------------------
+        // ------------------------ PT_corn_solvBTC_BBN_26DEC2024 ------------------------
         pendlePriceFeedsByNetwork[1].push(
             PendlePriceFeedData({
-                token: Tokens.PT_solvBTC_26DEC2024,
+                token: Tokens.PT_corn_solvBTC_BBN_26DEC2024,
                 underlying: Tokens.WBTC,
                 market: 0xEb4d3057738b9Ed930F451Be473C1CCC42988384,
                 twapWindow: 1800,
@@ -8050,7 +8050,7 @@ contract PriceFeedDataLive {
         );
         pendlePriceFeedsByNetwork[1].push(
             PendlePriceFeedData({
-                token: Tokens.PT_solvBTC_26DEC2024,
+                token: Tokens.PT_corn_solvBTC_BBN_26DEC2024,
                 underlying: Tokens.WBTC,
                 market: 0xEb4d3057738b9Ed930F451Be473C1CCC42988384,
                 twapWindow: 1800,
@@ -8059,10 +8059,10 @@ contract PriceFeedDataLive {
             })
         );
 
-        // ------------------------ PT_pumpBTC_26DEC2024 ------------------------
+        // ------------------------ PT_corn_pumpBTC_26DEC2024 ------------------------
         pendlePriceFeedsByNetwork[1].push(
             PendlePriceFeedData({
-                token: Tokens.PT_pumpBTC_26DEC2024,
+                token: Tokens.PT_corn_pumpBTC_26DEC2024,
                 underlying: Tokens.WBTC,
                 market: 0xf8208fB52BA80075aF09840A683143C22DC5B4dd,
                 twapWindow: 1800,
@@ -8072,7 +8072,7 @@ contract PriceFeedDataLive {
         );
         pendlePriceFeedsByNetwork[1].push(
             PendlePriceFeedData({
-                token: Tokens.PT_pumpBTC_26DEC2024,
+                token: Tokens.PT_corn_pumpBTC_26DEC2024,
                 underlying: Tokens.WBTC,
                 market: 0xf8208fB52BA80075aF09840A683143C22DC5B4dd,
                 twapWindow: 1800,
