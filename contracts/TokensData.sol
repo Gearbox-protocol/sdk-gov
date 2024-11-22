@@ -1538,6 +1538,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.dDOLAV3,
+                addr: 0x31426271449F60d37Cc5C9AEf7bD12aF3BdC7A94,
+                symbol: "dDOLAV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.sdUSDCV3,
                 addr: 0x9ef444a6d7F4A5adcd68FD5329aA5240C90E14d2,
                 symbol: "sdUSDCV3",
@@ -1591,6 +1599,14 @@ contract TokensDataLive {
                 id: Tokens.sdcrvUSDV3,
                 addr: 0xfBCA378AeA93EADD6882299A3d74D8641Cc0C4BC,
                 symbol: "sdcrvUSDV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.sdDOLAV3,
+                addr: 0xb3289a45497027a2Aee88Acc89fB3dcB5C71001D,
+                symbol: "sdDOLAV3",
                 tokenType: TokenType.DIESEL_LP_TOKEN
             })
         );

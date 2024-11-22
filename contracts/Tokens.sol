@@ -240,6 +240,7 @@ enum Tokens {
     dGHOV3,
     dDAIV3,
     dcrvUSDV3,
+    dDOLAV3,
     sdUSDCV3,
     sdUSDC_eV3,
     sdWBTCV3,
@@ -249,6 +250,7 @@ enum Tokens {
     sdGHOV3,
     sdDAIV3,
     sdcrvUSDV3,
+    sdDOLAV3,
     GEAR
 }
 

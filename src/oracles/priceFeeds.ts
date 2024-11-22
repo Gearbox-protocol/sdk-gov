@@ -3067,6 +3067,14 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  dDOLAV3: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
 
   sdUSDCV3: {
     Mainnet: {
@@ -3235,6 +3243,15 @@ export const priceFeedsByToken: Record<
       },
     },
     Arbitrum: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+
+  sdDOLAV3: {
+    Mainnet: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
         trusted: false,

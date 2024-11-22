@@ -6419,6 +6419,11 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: Tokens.dcrvUSDV3, trusted: false, reserve: false})
         );
 
+        // ------------------------ dDOLAV3 ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: Tokens.dDOLAV3, trusted: false, reserve: false})
+        );
+
         // ------------------------ sdUSDCV3 ------------------------
         zeroPriceFeedsByNetwork[1].push(
             SingeTokenPriceFeedData({token: Tokens.sdUSDCV3, trusted: false, reserve: false})
@@ -6509,6 +6514,11 @@ contract PriceFeedDataLive {
         );
         zeroPriceFeedsByNetwork[42161].push(
             SingeTokenPriceFeedData({token: Tokens.sdcrvUSDV3, trusted: false, reserve: false})
+        );
+
+        // ------------------------ sdDOLAV3 ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: Tokens.sdDOLAV3, trusted: false, reserve: false})
         );
 
         // ------------------------ GEAR ------------------------
