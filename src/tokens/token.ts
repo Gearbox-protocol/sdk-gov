@@ -1432,7 +1432,7 @@ export const tickerInfoTokensByNetwork: Record<
       {
         symbol: "solvBTC/BTC",
         dataId: "SolvBTC.BBN_FUNDAMENTAL",
-        address: NOT_DEPLOYED, // TODO
+        address: "0x02CFAc3a443ce91839b992329e24eA52B9DA1b94",
         priceFeed: "0xfb38dd28Dc9Fb027A3138609f8F5B3AF2ba3f93A",
         reserve: false,
       },
