@@ -107,6 +107,9 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     },
 
     // COMPATIBILITY
+    { token: "USDC", lt: 0 },
+    { token: "USDT", lt: 0 },
+    { token: "DAI", lt: 0 },
     { token: "SKY", lt: 0 },
     { token: "crvUSD", lt: 0 },
     { token: "FRAX", lt: 0 },
@@ -227,6 +230,24 @@ export const dolaConfigMainnet: PoolV3DeployConfig = {
     },
 
     // COMPATIBILITY
+    USDC: {
+      minRate: 1,
+      maxRate: 1,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0),
+    },
+    USDT: {
+      minRate: 1,
+      maxRate: 1,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0),
+    },
+    DAI: {
+      minRate: 1,
+      maxRate: 1,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0),
+    },
     SKY: {
       minRate: 1,
       maxRate: 1,
