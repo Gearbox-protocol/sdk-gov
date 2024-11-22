@@ -316,7 +316,7 @@ contract SupportedContracts is Test, ISupportedContracts {
         contractDataByNetwork[1].push(
             ContractData({
                 id: Contracts.CURVE_CRVUSD_SUSDE_POOL,
-                addr: 0x4DEcE678ceceb27446b35C672dC7d61F30bAD69E,
+                addr: 0x57064F49Ad7123C92560882a45518374ad982e85,
                 name: "CURVE_CRVUSD_SUSDE_POOL"
             })
         );
