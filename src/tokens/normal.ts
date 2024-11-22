@@ -73,6 +73,8 @@ export type NormalToken =
   | "PT_LBTC_27MAR2025"
   | "PT_corn_solvBTC_BBN_26DEC2024"
   | "PT_corn_pumpBTC_26DEC2024"
+  | "PT_cornLBTC_26DEC2024"
+  | "PT_corn_eBTC_27MAR2025"
 
   // REDSTONE
   | "SHIB"
@@ -476,6 +478,16 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   PT_corn_pumpBTC_26DEC2024: {
     name: "Pendle PT Corn pumpBTC 26 Dec 2024 expiry",
     symbol: "PT_corn_pumpBTC_26DEC2024",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  PT_cornLBTC_26DEC2024: {
+    name: "Pendle PT Corn Lombard LBTC 26 Dec 2024 expiry",
+    symbol: "PT_cornLBTC_26DEC2024",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  PT_corn_eBTC_27MAR2025: {
+    name: "Pendle PT Corn ether.fi eBTC 27 Mar 2025 expiry",
+    symbol: "PT_corn_eBTC_27MAR2025",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };

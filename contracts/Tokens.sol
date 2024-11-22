@@ -74,6 +74,8 @@ enum Tokens {
     PT_LBTC_27MAR2025,
     PT_corn_solvBTC_BBN_26DEC2024,
     PT_corn_pumpBTC_26DEC2024,
+    PT_cornLBTC_26DEC2024,
+    PT_corn_eBTC_27MAR2025,
     sfrxETH,
     _3Crv,
     crvFRAX,

@@ -8081,6 +8081,28 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ PT_cornLBTC_26DEC2024 ------------------------
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: Tokens.PT_cornLBTC_26DEC2024,
+                underlying: Tokens.WBTC,
+                market: 0xCaE62858DB831272A03768f5844cbe1B40bB381f,
+                twapWindow: 1800,
+                trusted: false,
+                reserve: false
+            })
+        );
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: Tokens.PT_cornLBTC_26DEC2024,
+                underlying: Tokens.WBTC,
+                market: 0xCaE62858DB831272A03768f5844cbe1B40bB381f,
+                twapWindow: 1800,
+                trusted: false,
+                reserve: true
+            })
+        );
+
         // ------------------------ PT_LBTC_27MAR2025 ------------------------
         pendlePriceFeedsByNetwork[1].push(
             PendlePriceFeedData({
@@ -8097,6 +8119,28 @@ contract PriceFeedDataLive {
                 token: Tokens.PT_LBTC_27MAR2025,
                 underlying: Tokens.WBTC,
                 market: 0x70B70Ac0445C3eF04E314DFdA6caafd825428221,
+                twapWindow: 1800,
+                trusted: false,
+                reserve: true
+            })
+        );
+
+        // ------------------------ PT_corn_eBTC_27MAR2025 ------------------------
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: Tokens.PT_corn_eBTC_27MAR2025,
+                underlying: Tokens.WBTC,
+                market: 0x2C71Ead7ac9AE53D05F8664e77031d4F9ebA064B,
+                twapWindow: 1800,
+                trusted: false,
+                reserve: false
+            })
+        );
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: Tokens.PT_corn_eBTC_27MAR2025,
+                underlying: Tokens.WBTC,
+                market: 0x2C71Ead7ac9AE53D05F8664e77031d4F9ebA064B,
                 twapWindow: 1800,
                 trusted: false,
                 reserve: true

@@ -537,6 +537,22 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.PT_cornLBTC_26DEC2024,
+                addr: 0x332A8ee60EdFf0a11CF3994b1b846BBC27d3DcD6,
+                symbol: "PT_cornLBTC_26DEC2024",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.PT_corn_eBTC_27MAR2025,
+                addr: 0x44A7876cA99460ef3218bf08b5f52E2dbE199566,
+                symbol: "PT_corn_eBTC_27MAR2025",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.sfrxETH,
                 addr: 0xac3E018457B222d93114458476f3E3416Abbe38F,
                 symbol: "sfrxETH",

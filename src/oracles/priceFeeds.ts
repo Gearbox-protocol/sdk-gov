@@ -3859,6 +3859,24 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  PT_cornLBTC_26DEC2024: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "WBTC",
+        market: "0xCaE62858DB831272A03768f5844cbe1B40bB381f",
+        twapWindow: HOUR_1 / 2,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "WBTC",
+        market: "0xCaE62858DB831272A03768f5844cbe1B40bB381f",
+        twapWindow: HOUR_1 / 2,
+      },
+    },
+  },
+
   PT_LBTC_27MAR2025: {
     Mainnet: {
       Main: {
@@ -3872,6 +3890,24 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
         underlying: "WBTC",
         market: "0x70B70Ac0445C3eF04E314DFdA6caafd825428221",
+        twapWindow: HOUR_1 / 2,
+      },
+    },
+  },
+
+  PT_corn_eBTC_27MAR2025: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "WBTC",
+        market: "0x2C71Ead7ac9AE53D05F8664e77031d4F9ebA064B",
+        twapWindow: HOUR_1 / 2,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "WBTC",
+        market: "0x2C71Ead7ac9AE53D05F8664e77031d4F9ebA064B",
         twapWindow: HOUR_1 / 2,
       },
     },

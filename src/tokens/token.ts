@@ -378,6 +378,8 @@ export const tokenDataByNetwork: Record<
     PT_LBTC_27MAR2025: "0xEc5a52C685CC3Ad79a6a347aBACe330d69e0b1eD",
     PT_corn_solvBTC_BBN_26DEC2024: "0x23e479ddcda990E8523494895759bD98cD2fDBF6",
     PT_corn_pumpBTC_26DEC2024: "0xa76f0C6e5f286bFF151b891d2A0245077F1Ad74c",
+    PT_cornLBTC_26DEC2024: "0x332A8ee60EdFf0a11CF3994b1b846BBC27d3DcD6",
+    PT_corn_eBTC_27MAR2025: "0x44A7876cA99460ef3218bf08b5f52E2dbE199566",
 
     // GEARBOX
     dDAI: "0x6CFaF95457d7688022FC53e7AbE052ef8DFBbdBA",
@@ -669,6 +671,8 @@ export const tokenDataByNetwork: Record<
     PT_LBTC_27MAR2025: NOT_DEPLOYED,
     PT_corn_solvBTC_BBN_26DEC2024: NOT_DEPLOYED,
     PT_corn_pumpBTC_26DEC2024: NOT_DEPLOYED,
+    PT_cornLBTC_26DEC2024: NOT_DEPLOYED,
+    PT_corn_eBTC_27MAR2025: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -960,6 +964,8 @@ export const tokenDataByNetwork: Record<
     PT_LBTC_27MAR2025: NOT_DEPLOYED,
     PT_corn_solvBTC_BBN_26DEC2024: NOT_DEPLOYED,
     PT_corn_pumpBTC_26DEC2024: NOT_DEPLOYED,
+    PT_cornLBTC_26DEC2024: NOT_DEPLOYED,
+    PT_corn_eBTC_27MAR2025: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -1253,6 +1259,8 @@ export const tokenDataByNetwork: Record<
     PT_LBTC_27MAR2025: NOT_DEPLOYED,
     PT_corn_solvBTC_BBN_26DEC2024: NOT_DEPLOYED,
     PT_corn_pumpBTC_26DEC2024: NOT_DEPLOYED,
+    PT_cornLBTC_26DEC2024: NOT_DEPLOYED,
+    PT_corn_eBTC_27MAR2025: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -1510,6 +1518,24 @@ export const tickerInfoTokensByNetwork: Record<
       },
     ],
     PT_corn_pumpBTC_26DEC2024: [
+      {
+        symbol: "BTC",
+        dataId: "BTC",
+        address: tokenDataByNetwork.Mainnet.WBTC,
+        priceFeed: "0x744CB10cdf5eeaAE371df375c0367e83045F17DC",
+        reserve: true,
+      },
+    ],
+    PT_cornLBTC_26DEC2024: [
+      {
+        symbol: "BTC",
+        dataId: "BTC",
+        address: tokenDataByNetwork.Mainnet.WBTC,
+        priceFeed: "0x744CB10cdf5eeaAE371df375c0367e83045F17DC",
+        reserve: true,
+      },
+    ],
+    PT_corn_eBTC_27MAR2025: [
       {
         symbol: "BTC",
         dataId: "BTC",
