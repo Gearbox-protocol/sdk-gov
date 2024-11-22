@@ -322,6 +322,13 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_LLAMA_THENA_POOL,
+                addr: 0xd29f8980852c2c76fC3f6E96a7Aa06E0BedCC1B1,
+                name: "CURVE_LLAMA_THENA_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_RETH_ETH_POOL,
                 addr: 0x0f3159811670c117c372428D4E69AC32325e4D0F,
                 name: "CURVE_RETH_ETH_POOL"

@@ -67,7 +67,8 @@ export type CurvePoolContract =
   | "CURVE_USDE_USDC_POOL_ARB"
   | "CURVE_3CRV_POOL_OP"
   | "CURVE_ETH_WSTETH_GATEWAY_OP"
-  | "CURVE_CRVUSD_SUSDE_POOL";
+  | "CURVE_CRVUSD_SUSDE_POOL"
+  | "CURVE_LLAMA_THENA_POOL";
 
 export type YearnVaultContract =
   | "YEARN_DAI_VAULT"
@@ -224,6 +225,7 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Mainnet.crvUSDFRAX,
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Mainnet.crvUSDETHCRV,
     CURVE_CRVUSD_SUSDE_POOL: tokenDataByNetwork.Mainnet.crvUsUSDe,
+    CURVE_LLAMA_THENA_POOL: tokenDataByNetwork.Mainnet.scrvUsUSDe,
 
     CURVE_RETH_ETH_POOL: "0x0f3159811670c117c372428D4E69AC32325e4D0F",
 
@@ -391,6 +393,7 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Arbitrum.crvUSDFRAX,
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Arbitrum.crvUSDETHCRV,
     CURVE_CRVUSD_SUSDE_POOL: tokenDataByNetwork.Arbitrum.crvUsUSDe,
+    CURVE_LLAMA_THENA_POOL: tokenDataByNetwork.Arbitrum.scrvUsUSDe,
 
     CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
     CURVE_3CRV_POOL_OP: NOT_DEPLOYED,
@@ -557,6 +560,7 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Optimism.crvUSDFRAX,
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Optimism.crvUSDETHCRV,
     CURVE_CRVUSD_SUSDE_POOL: tokenDataByNetwork.Optimism.crvUsUSDe,
+    CURVE_LLAMA_THENA_POOL: tokenDataByNetwork.Optimism.scrvUsUSDe,
 
     CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
 
@@ -722,6 +726,7 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Base.crvUSDFRAX,
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Base.crvUSDETHCRV,
     CURVE_CRVUSD_SUSDE_POOL: tokenDataByNetwork.Base.crvUsUSDe,
+    CURVE_LLAMA_THENA_POOL: tokenDataByNetwork.Base.scrvUsUSDe,
 
     CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
 
@@ -1295,6 +1300,14 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.CURVE_V1_2ASSETS,
     lpToken: "crvUsUSDe",
     tokens: ["crvUSD", "sUSDe"],
+  },
+  CURVE_LLAMA_THENA_POOL: {
+    name: "Curve scrvUsUSDe",
+    protocol: Protocols.Curve,
+    version: 10,
+    type: AdapterInterface.CURVE_V1_2ASSETS,
+    lpToken: "scrvUsUSDe",
+    tokens: ["scrvUSD", "sUSDe"],
   },
 
   CURVE_CRVUSD_FRAX_POOL: {

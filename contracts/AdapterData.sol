@@ -334,6 +334,14 @@ contract AdapterData {
         );
         curveAdapters.push(
             CurveAdapter({
+                targetContract: Contracts.CURVE_LLAMA_THENA_POOL,
+                adapterType: AdapterType.CURVE_V1_2ASSETS,
+                lpToken: Tokens.scrvUsUSDe,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
                 targetContract: Contracts.CURVE_CRVUSD_FRAX_POOL,
                 adapterType: AdapterType.CURVE_V1_2ASSETS,
                 lpToken: Tokens.crvUSDFRAX,

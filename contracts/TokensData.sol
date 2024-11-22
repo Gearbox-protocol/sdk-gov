@@ -649,6 +649,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.scrvUsUSDe,
+                addr: 0xd29f8980852c2c76fC3f6E96a7Aa06E0BedCC1B1,
+                symbol: "scrvUsUSDe",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.crvUSDFRAX,
                 addr: 0x0CD6f267b2086bea681E922E19D40512511BE538,
                 symbol: "crvUSDFRAX",

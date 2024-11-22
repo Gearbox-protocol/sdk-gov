@@ -3759,6 +3759,80 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ scrvUsUSDe ------------------------
+        curvePriceFeedsByNetwork[1].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.scrvUsUSDe,
+                assets: TokensLib.arrayOf(Tokens.scrvUSD, Tokens.sUSDe),
+                pool: Contracts.CURVE_LLAMA_THENA_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[1].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.scrvUsUSDe,
+                assets: TokensLib.arrayOf(Tokens.scrvUSD, Tokens.sUSDe),
+                pool: Contracts.CURVE_LLAMA_THENA_POOL,
+                trusted: false,
+                reserve: true
+            })
+        );
+        curvePriceFeedsByNetwork[42161].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.scrvUsUSDe,
+                assets: TokensLib.arrayOf(Tokens.scrvUSD, Tokens.sUSDe),
+                pool: Contracts.CURVE_LLAMA_THENA_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[42161].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.scrvUsUSDe,
+                assets: TokensLib.arrayOf(Tokens.scrvUSD, Tokens.sUSDe),
+                pool: Contracts.CURVE_LLAMA_THENA_POOL,
+                trusted: false,
+                reserve: true
+            })
+        );
+        curvePriceFeedsByNetwork[10].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.scrvUsUSDe,
+                assets: TokensLib.arrayOf(Tokens.scrvUSD, Tokens.sUSDe),
+                pool: Contracts.CURVE_LLAMA_THENA_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[10].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.scrvUsUSDe,
+                assets: TokensLib.arrayOf(Tokens.scrvUSD, Tokens.sUSDe),
+                pool: Contracts.CURVE_LLAMA_THENA_POOL,
+                trusted: false,
+                reserve: true
+            })
+        );
+        curvePriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.scrvUsUSDe,
+                assets: TokensLib.arrayOf(Tokens.scrvUSD, Tokens.sUSDe),
+                pool: Contracts.CURVE_LLAMA_THENA_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: Tokens.scrvUsUSDe,
+                assets: TokensLib.arrayOf(Tokens.scrvUSD, Tokens.sUSDe),
+                pool: Contracts.CURVE_LLAMA_THENA_POOL,
+                trusted: false,
+                reserve: true
+            })
+        );
+
         // ------------------------ crvUSDUSDT ------------------------
         curvePriceFeedsByNetwork[1].push(
             CurvePriceFeedData({

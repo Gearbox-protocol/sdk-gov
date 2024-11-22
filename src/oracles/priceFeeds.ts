@@ -2133,6 +2133,19 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  scrvUsUSDe: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["scrvUSD", "sUSDe"],
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["scrvUSD", "sUSDe"],
+      },
+    },
+  },
   crvUSDUSDT: {
     AllNetworks: {
       Main: {

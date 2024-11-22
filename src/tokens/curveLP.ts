@@ -41,6 +41,7 @@ export type CurveLPToken =
   | "DOLAFRAXBP3CRV_f"
   | "crvUSDDOLA_f"
   | "crvUsUSDe"
+  | "scrvUsUSDe"
 
   /// Arbitrum
   | "2CRV"
@@ -192,6 +193,14 @@ export const curveTokens: Record<
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
     pool: "CURVE_CRVUSD_SUSDE_POOL",
     tokenOut: ["crvUSD", "sUSDe"],
+  },
+
+  scrvUsUSDe: {
+    name: "Curve scrvUsUSDe",
+    symbol: "scrvUsUSDe",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_LLAMA_THENA_POOL",
+    tokenOut: ["scrvUSD", "sUSDe"],
   },
   crvUSDFRAX: {
     name: "Curve crvUSDFRAX",
