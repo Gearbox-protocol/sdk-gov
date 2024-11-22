@@ -2120,6 +2120,19 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  crvUsUSDe: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["crvUSD", "sUSDe"],
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["crvUSD", "sUSDe"],
+      },
+    },
+  },
   crvUSDUSDT: {
     AllNetworks: {
       Main: {
@@ -3492,6 +3505,20 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  scrvUSD: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "crvUSD",
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "crvUSD",
+      },
+    },
+  },
+
   // AURA
   auraB_rETH_STABLE: {
     AllNetworks: {

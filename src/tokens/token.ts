@@ -251,6 +251,7 @@ export const tokenDataByNetwork: Record<
     crvUSDUSDT: "0x390f3595bCa2Df7d23783dFd126427CCeb997BF4",
     crvUSDFRAX: "0x0CD6f267b2086bea681E922E19D40512511BE538",
     crvUSDETHCRV: "0x4eBdF703948ddCEA3B11f675B4D1Fba9d2414A14",
+    crvUsUSDe: "0x4DEcE678ceceb27446b35C672dC7d61F30bAD69E",
 
     rETH_f: "0x6c38cE8984a890F5e46e6dF6117C26b3F1EcfC9C",
     MtEthena: "0x167478921b907422F8E88B43C4Af2B8BEa278d3A",
@@ -417,6 +418,7 @@ export const tokenDataByNetwork: Record<
     YieldETH: "0xb5b29320d2Dde5BA5BAFA1EbcD270052070483ec",
     sUSDe: "0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
     sUSDS: "0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD",
+    scrvUSD: "0x0655977FEb2f289A4aB78af67BAB0d17aAb84367",
 
     // AAVE
     aUSDC: "0xBcca60bB61934080951369a648Fb03DF4F96263C",
@@ -559,6 +561,7 @@ export const tokenDataByNetwork: Record<
     crvUSDUSDT: NOT_DEPLOYED,
     crvUSDFRAX: "0x2FE7AE43591E534C256A1594D326e5779E302Ff4",
     crvUSDETHCRV: NOT_DEPLOYED,
+    crvUsUSDe: NOT_DEPLOYED,
     crvUSDC: "0xec090cf6DD891D2d014beA6edAda6e05E025D93d",
     crvUSDT: "0x73aF1150F265419Ef8a5DB41908B700C32D49135",
     crvUSDC_e: "0x3aDf984c937FA6846E5a24E0A68521Bdaf767cE1",
@@ -729,6 +732,7 @@ export const tokenDataByNetwork: Record<
     YieldETH: NOT_DEPLOYED,
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
+    scrvUSD: NOT_DEPLOYED,
 
     // ZIRCUIT
     zpufETH: NOT_DEPLOYED,
@@ -855,6 +859,7 @@ export const tokenDataByNetwork: Record<
     crvUSDUSDT: NOT_DEPLOYED,
     crvUSDFRAX: NOT_DEPLOYED,
     crvUSDETHCRV: NOT_DEPLOYED,
+    crvUsUSDe: NOT_DEPLOYED,
 
     "2CRV": NOT_DEPLOYED,
     "3c-crvUSD": NOT_DEPLOYED,
@@ -1022,6 +1027,7 @@ export const tokenDataByNetwork: Record<
     YieldETH: NOT_DEPLOYED,
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
+    scrvUSD: NOT_DEPLOYED,
 
     // ZIRCUIT
     zpufETH: NOT_DEPLOYED,
@@ -1151,6 +1157,7 @@ export const tokenDataByNetwork: Record<
     crvUSDUSDT: NOT_DEPLOYED,
     crvUSDFRAX: NOT_DEPLOYED,
     crvUSDETHCRV: NOT_DEPLOYED,
+    crvUsUSDe: NOT_DEPLOYED,
 
     "2CRV": NOT_DEPLOYED,
     "3c-crvUSD": NOT_DEPLOYED,
@@ -1315,6 +1322,7 @@ export const tokenDataByNetwork: Record<
     YieldETH: NOT_DEPLOYED,
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
+    scrvUSD: NOT_DEPLOYED,
 
     GHO: NOT_DEPLOYED,
     GHOUSDe: NOT_DEPLOYED,
@@ -1458,6 +1466,31 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "USDT",
         address: tokenDataByNetwork.Mainnet.USDT,
         priceFeed: "0x3D690EF566a68BF3FFE4607D11d318e9BB259C3e",
+        reserve: true,
+      },
+    ],
+    crvUsUSDe: [
+      {
+        symbol: "crvUSD",
+        dataId: "crvUSD",
+        address: tokenDataByNetwork.Mainnet.crvUSD,
+        priceFeed: "0x47c99d1A79444A91C89b33a808e1a7cb0336E428",
+        reserve: true,
+      },
+      {
+        symbol: "USDe",
+        dataId: "USDe",
+        address: tokenDataByNetwork.Mainnet.USDe,
+        priceFeed: "0x8A58F957B99E1ED6B3DF20F267a6d5a6dd8e3513",
+        reserve: true,
+      },
+    ],
+    scrvUSD: [
+      {
+        symbol: "crvUSD",
+        dataId: "crvUSD",
+        address: tokenDataByNetwork.Mainnet.crvUSD,
+        priceFeed: "0x47c99d1A79444A91C89b33a808e1a7cb0336E428",
         reserve: true,
       },
     ],

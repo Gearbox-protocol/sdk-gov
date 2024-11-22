@@ -315,6 +315,13 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_CRVUSD_SUSDE_POOL,
+                addr: 0x4DEcE678ceceb27446b35C672dC7d61F30bAD69E,
+                name: "CURVE_CRVUSD_SUSDE_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_RETH_ETH_POOL,
                 addr: 0x0f3159811670c117c372428D4E69AC32325e4D0F,
                 name: "CURVE_RETH_ETH_POOL"
@@ -398,6 +405,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.STAKED_USDS_VAULT,
                 addr: 0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD,
                 name: "STAKED_USDS_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.SAVINGS_CRVUSD_VAULT,
+                addr: 0x0655977FEb2f289A4aB78af67BAB0d17aAb84367,
+                name: "SAVINGS_CRVUSD_VAULT"
             })
         );
         contractDataByNetwork[1].push(
@@ -756,14 +770,6 @@ contract SupportedContracts is Test, ISupportedContracts {
 
         contractDataByNetwork[42161].push(
             ContractData({
-                id: Contracts.STAKED_USDS_VAULT,
-                addr: 0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD,
-                name: "STAKED_USDS_VAULT"
-            })
-        );
-
-        contractDataByNetwork[42161].push(
-            ContractData({
                 id: Contracts.CONVEX_BOOSTER_ARB,
                 addr: 0xF403C135812408BFbE8713b5A23a04b3D48AAE31,
                 name: "CONVEX_BOOSTER_ARB"
@@ -928,14 +934,6 @@ contract SupportedContracts is Test, ISupportedContracts {
 
         contractDataByNetwork[10].push(
             ContractData({
-                id: Contracts.STAKED_USDS_VAULT,
-                addr: 0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD,
-                name: "STAKED_USDS_VAULT"
-            })
-        );
-
-        contractDataByNetwork[10].push(
-            ContractData({
                 id: Contracts.AURA_BOOSTER,
                 addr: 0x98Ef32edd24e2c92525E59afc4475C1242a30184,
                 name: "AURA_BOOSTER"
@@ -985,14 +983,6 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.PANCAKESWAP_V3_ROUTER,
                 addr: 0x1b81D678ffb9C0263b24A97847620C99d213eB14,
                 name: "PANCAKESWAP_V3_ROUTER"
-            })
-        );
-
-        contractDataByNetwork[8453].push(
-            ContractData({
-                id: Contracts.STAKED_USDS_VAULT,
-                addr: 0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD,
-                name: "STAKED_USDS_VAULT"
             })
         );
 

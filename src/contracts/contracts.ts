@@ -66,7 +66,8 @@ export type CurvePoolContract =
   | "CURVE_CRVUSD_USDC_E_POOL_ARB"
   | "CURVE_USDE_USDC_POOL_ARB"
   | "CURVE_3CRV_POOL_OP"
-  | "CURVE_ETH_WSTETH_GATEWAY_OP";
+  | "CURVE_ETH_WSTETH_GATEWAY_OP"
+  | "CURVE_CRVUSD_SUSDE_POOL";
 
 export type YearnVaultContract =
   | "YEARN_DAI_VAULT"
@@ -83,7 +84,8 @@ export type ERC4626VaultContract =
   | "MAKER_DSR_VAULT"
   | "YIELD_ETH_VAULT"
   | "STAKED_USDE_VAULT"
-  | "STAKED_USDS_VAULT";
+  | "STAKED_USDS_VAULT"
+  | "SAVINGS_CRVUSD_VAULT";
 
 export type ConvexPoolContract =
   | "CONVEX_3CRV_POOL"
@@ -221,6 +223,7 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_USDT_POOL: tokenDataByNetwork.Mainnet.crvUSDUSDT,
     CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Mainnet.crvUSDFRAX,
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Mainnet.crvUSDETHCRV,
+    CURVE_CRVUSD_SUSDE_POOL: tokenDataByNetwork.Mainnet.crvUsUSDe,
 
     CURVE_RETH_ETH_POOL: "0x0f3159811670c117c372428D4E69AC32325e4D0F",
 
@@ -248,6 +251,7 @@ export const contractsByNetwork: Record<
     YIELD_ETH_VAULT: tokenDataByNetwork.Mainnet.YieldETH,
     STAKED_USDE_VAULT: tokenDataByNetwork.Mainnet.sUSDe,
     STAKED_USDS_VAULT: tokenDataByNetwork.Mainnet.sUSDS,
+    SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Mainnet.scrvUSD,
 
     // CONVEX
     CONVEX_BOOSTER: "0xF403C135812408BFbE8713b5A23a04b3D48AAE31",
@@ -386,6 +390,7 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_USDT_POOL: tokenDataByNetwork.Arbitrum.crvUSDUSDT,
     CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Arbitrum.crvUSDFRAX,
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Arbitrum.crvUSDETHCRV,
+    CURVE_CRVUSD_SUSDE_POOL: tokenDataByNetwork.Arbitrum.crvUsUSDe,
 
     CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
     CURVE_3CRV_POOL_OP: NOT_DEPLOYED,
@@ -412,7 +417,8 @@ export const contractsByNetwork: Record<
     MAKER_DSR_VAULT: tokenDataByNetwork.Arbitrum.sDAI,
     YIELD_ETH_VAULT: tokenDataByNetwork.Arbitrum.YieldETH,
     STAKED_USDE_VAULT: tokenDataByNetwork.Arbitrum.sUSDe,
-    STAKED_USDS_VAULT: tokenDataByNetwork.Mainnet.sUSDS,
+    STAKED_USDS_VAULT: tokenDataByNetwork.Arbitrum.sUSDS,
+    SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Arbitrum.scrvUSD,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -550,6 +556,7 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_USDT_POOL: tokenDataByNetwork.Optimism.crvUSDUSDT,
     CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Optimism.crvUSDFRAX,
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Optimism.crvUSDETHCRV,
+    CURVE_CRVUSD_SUSDE_POOL: tokenDataByNetwork.Optimism.crvUsUSDe,
 
     CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
 
@@ -575,7 +582,8 @@ export const contractsByNetwork: Record<
     MAKER_DSR_VAULT: tokenDataByNetwork.Optimism.sDAI,
     YIELD_ETH_VAULT: tokenDataByNetwork.Optimism.YieldETH,
     STAKED_USDE_VAULT: tokenDataByNetwork.Optimism.sUSDe,
-    STAKED_USDS_VAULT: tokenDataByNetwork.Mainnet.sUSDS,
+    STAKED_USDS_VAULT: tokenDataByNetwork.Optimism.sUSDS,
+    SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Optimism.scrvUSD,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -713,6 +721,7 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_USDT_POOL: tokenDataByNetwork.Base.crvUSDUSDT,
     CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Base.crvUSDFRAX,
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Base.crvUSDETHCRV,
+    CURVE_CRVUSD_SUSDE_POOL: tokenDataByNetwork.Base.crvUsUSDe,
 
     CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
 
@@ -738,7 +747,8 @@ export const contractsByNetwork: Record<
     MAKER_DSR_VAULT: tokenDataByNetwork.Base.sDAI,
     YIELD_ETH_VAULT: tokenDataByNetwork.Base.YieldETH,
     STAKED_USDE_VAULT: tokenDataByNetwork.Base.sUSDe,
-    STAKED_USDS_VAULT: tokenDataByNetwork.Mainnet.sUSDS,
+    STAKED_USDS_VAULT: tokenDataByNetwork.Base.sUSDS,
+    SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Base.scrvUSD,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -920,7 +930,8 @@ export type ERC4626Params = {
     | Protocols.MakerDSR
     | Protocols.Sommelier
     | Protocols.Ethena
-    | Protocols.Sky;
+    | Protocols.Sky
+    | Protocols.Curve;
   type: AdapterInterface.ERC4626_VAULT;
   underlying: NormalToken;
 } & BaseContractParams;
@@ -1277,6 +1288,14 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     lpToken: "crvUSDUSDT",
     tokens: ["crvUSD", "USDT"],
   },
+  CURVE_CRVUSD_SUSDE_POOL: {
+    name: "Curve crvUsUSDe",
+    protocol: Protocols.Curve,
+    version: 10,
+    type: AdapterInterface.CURVE_V1_2ASSETS,
+    lpToken: "crvUsUSDe",
+    tokens: ["crvUSD", "sUSDe"],
+  },
 
   CURVE_CRVUSD_FRAX_POOL: {
     name: "Curve crvUSDFRAX",
@@ -1594,6 +1613,12 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     protocol: Protocols.Sky,
     type: AdapterInterface.ERC4626_VAULT,
     underlying: "USDS",
+  },
+  SAVINGS_CRVUSD_VAULT: {
+    name: "Savings crvUSD Vault",
+    protocol: Protocols.Curve,
+    type: AdapterInterface.ERC4626_VAULT,
+    underlying: "crvUSD",
   },
   CONVEX_BOOSTER: {
     name: "Convex BOOSTER",

@@ -641,6 +641,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: Tokens.crvUsUSDe,
+                addr: 0x4DEcE678ceceb27446b35C672dC7d61F30bAD69E,
+                symbol: "crvUsUSDe",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: Tokens.crvUSDFRAX,
                 addr: 0x0CD6f267b2086bea681E922E19D40512511BE538,
                 symbol: "crvUSDFRAX",
@@ -1346,6 +1354,14 @@ contract TokensDataLive {
                 id: Tokens.sUSDS,
                 addr: 0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD,
                 symbol: "sUSDS",
+                tokenType: TokenType.ERC4626_VAULT_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: Tokens.scrvUSD,
+                addr: 0x0655977FEb2f289A4aB78af67BAB0d17aAb84367,
+                symbol: "scrvUSD",
                 tokenType: TokenType.ERC4626_VAULT_TOKEN
             })
         );
