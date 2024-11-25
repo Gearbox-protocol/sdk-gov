@@ -1367,6 +1367,7 @@ export type TickerToken =
   | "LBTC/BTC"
   | "eBTC/BTC"
   | "solvBTC/BTC"
+  | "pumpBTC/BTC"
   | "crvUSD"
   | "USDC"
   | "USDT"
@@ -1441,6 +1442,15 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "LBTC_FUNDAMENTAL",
         address: "0xB0EA0EC3Fd4947348816f76768b3a56249d47EEc",
         priceFeed: "0xd7396fA3aFB9833293Ce2149EEb3Dbf5380B1e0D",
+        reserve: false,
+      },
+    ],
+    pumpBTC: [
+      {
+        symbol: "pumpBTC/BTC",
+        dataId: "pumpBTC_FUNDAMENTAL",
+        address: NOT_DEPLOYED, // TODO
+        priceFeed: NOT_DEPLOYED, // TODO
         reserve: false,
       },
     ],

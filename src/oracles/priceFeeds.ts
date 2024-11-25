@@ -1199,9 +1199,11 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: {
-          type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x6CE4Ef3689F26edD40ed3ccbE3Cc29dab62C915f",
-          stalenessPeriod: HOUR_1_BUFFERED,
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "pumpBTC_FUNDAMENTAL",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
         },
 
         baseToUsdPriceFeed: {

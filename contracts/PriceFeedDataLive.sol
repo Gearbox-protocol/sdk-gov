@@ -1866,9 +1866,25 @@ contract PriceFeedDataLive {
         {
             CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[1].push();
             cpf.token = TOKEN_pumpBTC;
-            cpf.isTargetRedstone = false;
-            cpf.targetToBaseFeed = 0x6CE4Ef3689F26edD40ed3ccbE3Cc29dab62C915f;
-            cpf.targetStalenessPeriod = 4500;
+            cpf.isTargetRedstone = true;
+            cpf.redstoneTargetToBaseData = RedStonePriceFeedDataShort({
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "pumpBTC_FUNDAMENTAL",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5
+            });
+            cpf.targetStalenessPeriod = 240;
             cpf.isBaseComposite = false;
             cpf.baseToUSDFeed = 0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c;
             cpf.baseStalenessPeriod = 4500;
