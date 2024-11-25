@@ -2,11 +2,10 @@
 // Gearbox. Generalized leverage protocol that allows to take leverage and then use it across other DeFi protocols and platforms in a composable way.
 // (c) Gearbox Foundation, 2023
 pragma solidity ^0.8.17;
-
-import {Tokens} from "./Tokens.sol";
+import "./Tokens.sol";
 
 struct QuotedTokenParams {
-    Tokens token;
+    uint256 token;
     uint16 minRiskRate;
     uint16 maxRate;
     uint96 limit;
@@ -25,8 +24,8 @@ struct PoolParams {
 }
 
 contract PoolConfigLive {
-    mapping(Tokens => PoolParams) poolParams;
-    Tokens[] underlyings;
+    mapping(uint256 => PoolParams) poolParams;
+    uint256[] underlyings;
 
     constructor() {
         PoolParams storage pp;

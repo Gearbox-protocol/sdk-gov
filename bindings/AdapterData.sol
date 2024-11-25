@@ -3,7 +3,7 @@
 // (c) Gearbox Foundation, 2023
 pragma solidity ^0.8.17;
 
-import {Tokens} from "./Tokens.sol";
+import "./Tokens.sol";
 import {Contracts} from "./SupportedContracts.sol";
 import {AdapterType} from "./AdapterType.sol";
 
@@ -15,33 +15,33 @@ struct SimpleAdapter {
 struct CurveAdapter {
     Contracts targetContract;
     AdapterType adapterType;
-    Tokens lpToken;
+    uint256 lpToken;
     Contracts basePool;
 }
 
 struct CurveStETHAdapter {
     Contracts curveETHGateway;
     AdapterType adapterType;
-    Tokens lpToken;
+    uint256 lpToken;
 }
 
 struct CurveWrapper {
     Contracts targetContract;
     AdapterType adapterType;
-    Tokens lpToken;
+    uint256 lpToken;
     uint256 nCoins;
 }
 
 struct ConvexBasePoolAdapter {
     Contracts targetContract;
     AdapterType adapterType;
-    Tokens stakedToken;
+    uint256 stakedToken;
 }
 
 struct StakingRewardsAdapter {
     Contracts targetContract;
     AdapterType adapterType;
-    Tokens stakedToken;
+    uint256 stakedToken;
 }
 
 contract AdapterData {

@@ -35,8 +35,16 @@ class BindingsGenerator {
   }
 
   generateTokens() {
-    const tokensEnum = this.tokens.map(t => safeEnum(t)).join(",\n");
-    let data = `enum Tokens {NO_TOKEN, LUNA, ${tokensEnum}}`;
+    const tokensConstants = this.tokens
+      .map(
+        (t, index) => `uint256 constant TOKEN_${safeEnum(t)} = ${index + 2};`,
+      )
+      .join("\n");
+    let data = `uint256 constant TOKEN_NO_TOKEN = 0;
+                uint256 constant TOKEN_LUNA = 1;
+                ${tokensConstants}`;
+
+    data += `uint256 constant NUM_TOKENS = ${this.tokens.length + 2};`;
 
     const tokenTypeEnum = Object.values(TokenType)
       .filter(v => isNaN(Number(v)))
@@ -859,7 +867,7 @@ class BindingsGenerator {
           return `curveAdapters.push(CurveAdapter({targetContract:  Contracts.${contract},
       adapterType: AdapterType.${
         AdapterInterface[contractParam.type]
-      }, lpToken: Tokens.${safeEnum(
+      }, lpToken: TOKEN_${safeEnum(
         contractParam.lpToken,
       )}, basePool: Contracts.${basePool}}));`;
         }
@@ -952,7 +960,7 @@ class BindingsGenerator {
   }
 
   private tokensEnum(t: string): string {
-    return `Tokens.${safeEnum(t)}`;
+    return `TOKEN_${safeEnum(t)}`;
   }
 }
 
