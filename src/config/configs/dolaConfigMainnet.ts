@@ -1,6 +1,4 @@
 import {
-  BalancerPoolStatus,
-  BalancerVaultConfig,
   GenericSwapConfig,
   PendlePairStatus,
   PendleRouterConfig,
@@ -21,7 +19,6 @@ const tier1UniV2Config: GenericSwapConfig = {
 const tier1UniV3Config: UniV3Config = {
   contract: "UNISWAP_V3_ROUTER",
   allowed: [
-    { token0: "sUSDe", token1: "USDT", fee: 500 },
     { token0: "DAI", token1: "USDC", fee: 100 },
     { token0: "USDC", token1: "WETH", fee: 500 },
     { token0: "WBTC", token1: "WETH", fee: 500 },
@@ -30,15 +27,6 @@ const tier1UniV3Config: UniV3Config = {
   ],
 };
 
-const tier1BalancerConfig: BalancerVaultConfig = {
-  contract: "BALANCER_VAULT",
-  allowed: [
-    {
-      pool: "sUSDe_USDC_BPT",
-      status: BalancerPoolStatus.ALLOWED,
-    },
-  ],
-};
 const tier1PendleConfig: PendleRouterConfig = {
   contract: "PENDLE_ROUTER",
   allowed: [
@@ -120,7 +108,6 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     { token: "MtEthena", lt: 0 },
     { token: "USDecrvUSD", lt: 0 },
     { token: "FRAXsDAI", lt: 0 },
-    { token: "DOLAsUSDe", lt: 0 },
     { token: "steCRV", lt: 0 },
     { token: "DOLAFRAXBP3CRV_f", lt: 0 },
     { token: "crvUSDDOLA_f", lt: 0 },
@@ -128,7 +115,6 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
   adapters: [
     tier1UniV2Config,
     tier1UniV3Config,
-    tier1BalancerConfig,
     tier1PendleConfig,
 
     { contract: "CURVE_3CRV_POOL" },
@@ -137,7 +123,6 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     { contract: "CURVE_SDAI_SUSDE_POOL" },
     { contract: "CURVE_USDE_CRVUSD_POOL" },
     { contract: "CURVE_FRAX_SDAI_POOL" },
-    { contract: "CURVE_DOLA_SUSDE_POOL" },
     { contract: "CURVE_STETH_GATEWAY" },
     { contract: "CURVE_DOLA_FRAXBP_POOL" },
     { contract: "CURVE_DOLA_CRVUSD_POOL" },
@@ -298,12 +283,6 @@ export const dolaConfigMainnet: PoolV3DeployConfig = {
       limit: BigInt(0),
     },
     FRAXsDAI: {
-      minRate: 1,
-      maxRate: 1,
-      quotaIncreaseFee: 0,
-      limit: BigInt(0),
-    },
-    DOLAsUSDe: {
       minRate: 1,
       maxRate: 1,
       quotaIncreaseFee: 0,
