@@ -1472,7 +1472,7 @@ export const tickerInfoTokensByNetwork: Record<
         symbol: "DAI",
         dataId: "DAI",
         address: tokenDataByNetwork.Mainnet.DAI,
-        priceFeed: "0xa0b9387f0a74ecb9ac1a3bfe4ada0e001ffe006b",
+        priceFeed: "0xa0b9387f0a74eCB9AC1a3BFE4Ada0E001ffE006b",
         reserve: true,
       },
     ],
