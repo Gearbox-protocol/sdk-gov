@@ -3,13 +3,13 @@
 // (c) Gearbox Foundation, 2023
 pragma solidity ^0.8.17;
 
-import {Tokens} from "./Tokens.sol";
+import "./Tokens.sol";
 import {Contracts} from "./SupportedContracts.sol";
 
 /// @dev A struct containing parameters for a recognized collateral token in the system
 struct CollateralTokenHuman {
     /// @dev Address of the collateral token
-    Tokens token;
+    uint256 token;
     /// @dev Address of the liquidation threshold
     uint16 liquidationThreshold;
 }
@@ -20,21 +20,21 @@ struct BalancerPool {
 }
 
 struct UniswapV2Pair {
-    Tokens token0;
-    Tokens token1;
+    uint256 token0;
+    uint256 token1;
     bool whitelisted;
 }
 
 struct UniswapV3Pool {
-    Tokens token0;
-    Tokens token1;
+    uint256 token0;
+    uint256 token1;
     uint24 fee;
     bool whitelisted;
 }
 
 /// @dev A struct representing the initial Credit Manager configuration parameters
 struct CreditManagerV3HumanOpts {
-    Tokens underlying;
+    uint256 underlying;
     /// @dev The minimal debt principal amount
     uint128 minBorrowedAmount;
     /// @dev The maximal debt principal amount

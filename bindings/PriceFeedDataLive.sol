@@ -3,13 +3,13 @@
 // (c) Gearbox Foundation, 2023
 pragma solidity ^0.8.17;
 
-import {Tokens} from "./Tokens.sol";
+import "./Tokens.sol";
 import {Contracts} from "./SupportedContracts.sol";
 
 import {TokensLib} from "./TokensLib.sol";
 
 struct ChainlinkPriceFeedData {
-    Tokens token;
+    uint256 token;
     address priceFeed;
     uint32 stalenessPeriod;
     bool reserve;
@@ -17,30 +17,30 @@ struct ChainlinkPriceFeedData {
 }
 
 struct CurvePriceFeedData {
-    Tokens lpToken;
-    Tokens[] assets;
+    uint256 lpToken;
+    uint256[] assets;
     Contracts pool;
     bool reserve;
     bool trusted;
 }
 
 struct CrvUsdPriceFeedData {
-    Tokens token;
-    Tokens underlying;
+    uint256 token;
+    uint256 underlying;
     Contracts pool;
     bool reserve;
     bool trusted;
 }
 
 struct TheSamePriceFeedData {
-    Tokens token;
-    Tokens tokenHasSamePriceFeed;
+    uint256 token;
+    uint256 tokenHasSamePriceFeed;
     bool reserve;
     bool trusted;
 }
 
 struct SingeTokenPriceFeedData {
-    Tokens token;
+    uint256 token;
     bool reserve;
     bool trusted;
 }
@@ -60,7 +60,7 @@ struct CompositePriceFeedDataShort {
 }
 
 struct CompositePriceFeedData {
-    Tokens token;
+    uint256 token;
     // Target data
     bool isTargetRedstone;
     RedStonePriceFeedDataShort redstoneTargetToBaseData;
@@ -77,7 +77,7 @@ struct CompositePriceFeedData {
 }
 
 struct BoundedPriceFeedData {
-    Tokens token;
+    uint256 token;
     address priceFeed;
     uint32 stalenessPeriod;
     uint256 upperBound;
@@ -86,21 +86,21 @@ struct BoundedPriceFeedData {
 }
 
 struct GenericLPPriceFeedData {
-    Tokens lpToken;
-    Tokens underlying;
+    uint256 lpToken;
+    uint256 underlying;
     bool reserve;
     bool trusted;
 }
 
 struct BalancerLPPriceFeedData {
-    Tokens lpToken;
-    Tokens[] assets;
+    uint256 lpToken;
+    uint256[] assets;
     bool reserve;
     bool trusted;
 }
 
 struct RedStonePriceFeedData {
-    Tokens token;
+    uint256 token;
     string dataServiceId;
     bytes32 dataFeedId;
     address[10] signers;
@@ -110,7 +110,7 @@ struct RedStonePriceFeedData {
 }
 
 struct PythPriceFeedData {
-    Tokens token;
+    uint256 token;
     bytes32 priceFeedId;
     string ticker;
     address pyth;
@@ -119,8 +119,8 @@ struct PythPriceFeedData {
 }
 
 struct PendlePriceFeedData {
-    Tokens token;
-    Tokens underlying;
+    uint256 token;
+    uint256 underlying;
     address market;
     uint32 twapWindow;
     bool reserve;

@@ -124,7 +124,7 @@ ${adapters};`;
           this.state.collateralTokens
             .map(
               ct => `
-    cts.push(CollateralTokenHuman({token: Tokens.${safeEnum(
+    cts.push(CollateralTokenHuman({token: TOKEN_${safeEnum(
       ct.token,
     )}, lt: ${formatNumberToString_(ct.lt)}}));`,
             )
@@ -208,8 +208,8 @@ ${contracts}
           .map(
             pair => `gsp.push(GenericSwapPair({
           router: Contracts.${a.contract},
-          token0: Tokens.${safeEnum(pair.token0)},
-          token1: Tokens.${safeEnum(pair.token1)}
+          token0: TOKEN_${safeEnum(pair.token0)},
+          token1: TOKEN_${safeEnum(pair.token1)}
         }));`,
           )
           .join("\n");
@@ -226,8 +226,8 @@ ${contracts}
           .map(
             pair => `uv3p.push(UniswapV3Pair({
           router: Contracts.${a.contract},
-          token0: Tokens.${safeEnum(pair.token0)},
-          token1: Tokens.${safeEnum(pair.token1)},
+          token0: TOKEN_${safeEnum(pair.token0)},
+          token1: TOKEN_${safeEnum(pair.token1)},
           fee: ${
             a.contract === "VELODROME_CL_ROUTER"
               ? (pair as VelodromeCLPool).tickSpacing
@@ -245,8 +245,8 @@ ${contracts}
         const pools = ((a as VelodromeV2Config).allowed || [])
           .map(
             pool => `vv2p.push(VelodromeV2Pool({
-            token0: Tokens.${safeEnum(pool.token0)},
-            token1: Tokens.${safeEnum(pool.token1)},
+            token0: TOKEN_${safeEnum(pool.token0)},
+            token1: TOKEN_${safeEnum(pool.token1)},
             stable: ${pool.stable},
             factory: ${pool.factory}
           }));`,
@@ -262,8 +262,8 @@ ${contracts}
           .map(
             pair => `pendp.push(PendlePair({
           market: ${pair.market},
-          inputToken: Tokens.${safeEnum(pair.inputToken)},
-          pendleToken: Tokens.${safeEnum(pair.pendleToken)},
+          inputToken: TOKEN_${safeEnum(pair.inputToken)},
+          pendleToken: TOKEN_${safeEnum(pair.pendleToken)},
           status: ${pair.status.toFixed()}
         }));`,
           )
@@ -279,7 +279,7 @@ ${contracts}
           .map(
             underlying => `mu.push(MellowUnderlyingConfig({
           vault: Contracts.${a.contract},
-          underlying: Tokens.${safeEnum(underlying)}
+          underlying: TOKEN_${safeEnum(underlying)}
         }));`,
           )
           .join("\n");
