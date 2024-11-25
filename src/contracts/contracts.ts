@@ -1305,7 +1305,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Curve scrvUsUSDe",
     protocol: Protocols.Curve,
     version: 10,
-    type: AdapterInterface.CURVE_V1_2ASSETS,
+    type: AdapterInterface.CURVE_STABLE_NG,
     lpToken: "scrvUsUSDe",
     tokens: ["scrvUSD", "sUSDe"],
   },
