@@ -1467,6 +1467,15 @@ export const tickerInfoTokensByNetwork: Record<
         reserve: true,
       },
     ],
+    sUSDS: [
+      {
+        symbol: "DAI",
+        dataId: "DAI",
+        address: tokenDataByNetwork.Mainnet.DAI,
+        priceFeed: "0xa0b9387f0a74eCB9AC1a3BFE4Ada0E001ffE006b",
+        reserve: true,
+      },
+    ],
     stkUSDS: [
       {
         symbol: "DAI",
