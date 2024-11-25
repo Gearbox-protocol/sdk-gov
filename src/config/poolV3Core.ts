@@ -138,7 +138,7 @@ ${creditManagers}`;
     // (c) Gearbox Holdings, 2022
     pragma solidity ^0.8.17;
     
-    import {Tokens} from "@gearbox-protocol/sdk-gov/contracts/Tokens.sol";
+    import "@gearbox-protocol/sdk-gov/contracts/Tokens.sol";
     import {Contracts} from "@gearbox-protocol/sdk-gov/contracts/SupportedContracts.sol";
     import {
         LinearIRMV3DeployParams,
@@ -161,7 +161,7 @@ ${creditManagers}`;
       .toUpperCase()} is IPoolV3DeployConfig {
         string public constant id = "${this.id}";
         uint256 public constant chainId = ${CHAINS[this.network]};
-        Tokens public constant underlying = Tokens.${safeEnum(this.underlying)};
+        uint256 public constant underlying = TOKEN_${safeEnum(this.underlying)};
         bool public constant supportsQuotas = ${this.supportsQuotas};
         uint256 public constant getAccountAmount = ${formatNumberToString_(
           this.accountAmount,

@@ -65,9 +65,7 @@ export class PoolQuotaKeeperV3Configurator implements IConfigurator {
     return Object.entries(this.state.quotaLimits)
       .map(
         ([token, params]) =>
-          `_quotaLimits.push(PoolQuotaLimit({token: Tokens.${safeEnum(
-            token,
-          )}, quotaIncreaseFee: ${formatNumberToString_(
+          `_quotaLimits.push(PoolQuotaLimit({token: TOKEN_${safeEnum(token)}, quotaIncreaseFee: ${formatNumberToString_(
             params.quotaIncreaseFee,
           )}, limit: ${formatNumberToString_(params.limit)}}));`,
       )

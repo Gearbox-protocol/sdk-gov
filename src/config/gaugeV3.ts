@@ -50,9 +50,7 @@ export class GaugeV3Configurator implements IConfigurator {
     return Object.entries(this.state.quotaTokenParams)
       .map(
         ([token, params]) =>
-          `_gaugeRates.push(GaugeRate({token: Tokens.${safeEnum(
-            token,
-          )}, minRate: ${formatNumberToString_(
+          `_gaugeRates.push(GaugeRate({token: TOKEN_${safeEnum(token)}, minRate: ${formatNumberToString_(
             params.minRate,
           )}, maxRate: ${formatNumberToString_(params.maxRate)}}));`,
       )

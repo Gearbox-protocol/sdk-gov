@@ -3,14 +3,14 @@
 // (c) Gearbox Foundation, 2023
 pragma solidity ^0.8.17;
 
-import {Tokens, TokenType} from "./Tokens.sol";
+import "./Tokens.sol";
 
 interface IERC20Check {
     function totalSupply() external view returns (uint256);
 }
 
 struct TokenData {
-    Tokens id;
+    uint256 id;
     address addr;
     string symbol;
     TokenType tokenType;
