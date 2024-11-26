@@ -132,20 +132,6 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
-                id: Contracts.CURVE_MIM_POOL,
-                addr: 0x5a6A4D54456819380173272A5E8E9B9904BdF41B,
-                name: "CURVE_MIM_POOL"
-            })
-        );
-        contractDataByNetwork[1].push(
-            ContractData({
-                id: Contracts.CURVE_OHMFRAXBP_POOL,
-                addr: 0xFc1e8bf3E81383Ef07Be24c3FD146745719DE48D,
-                name: "CURVE_OHMFRAXBP_POOL"
-            })
-        );
-        contractDataByNetwork[1].push(
-            ContractData({
                 id: Contracts.CURVE_CRVETH_POOL,
                 addr: 0x8301AE4fc9c624d1D396cbDAa1ed877821D7C511,
                 name: "CURVE_CRVETH_POOL"
@@ -192,6 +178,34 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.CURVE_USDE_CRVUSD_POOL,
                 addr: 0xF55B0f6F2Da5ffDDb104b58a60F2862745960442,
                 name: "CURVE_USDE_CRVUSD_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_FRAX_SDAI_POOL,
+                addr: 0xcE6431D21E3fb1036CE9973a3312368ED96F5CE7,
+                name: "CURVE_FRAX_SDAI_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_DOLA_SUSDE_POOL,
+                addr: 0x744793B5110f6ca9cC7CDfe1CE16677c3Eb192ef,
+                name: "CURVE_DOLA_SUSDE_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_DOLA_FRAXBP_POOL,
+                addr: 0xE57180685E3348589E9521aa53Af0BCD497E884d,
+                name: "CURVE_DOLA_FRAXBP_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_DOLA_CRVUSD_POOL,
+                addr: 0x8272E1A3dBef607C04AA6e5BD3a1A134c8ac063B,
+                name: "CURVE_DOLA_CRVUSD_POOL"
             })
         );
         contractDataByNetwork[1].push(
@@ -301,6 +315,20 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_CRVUSD_SUSDE_POOL,
+                addr: 0x57064F49Ad7123C92560882a45518374ad982e85,
+                name: "CURVE_CRVUSD_SUSDE_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_LLAMA_THENA_POOL,
+                addr: 0xd29f8980852c2c76fC3f6E96a7Aa06E0BedCC1B1,
+                name: "CURVE_LLAMA_THENA_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_RETH_ETH_POOL,
                 addr: 0x0f3159811670c117c372428D4E69AC32325e4D0F,
                 name: "CURVE_RETH_ETH_POOL"
@@ -388,6 +416,13 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.SAVINGS_CRVUSD_VAULT,
+                addr: 0x0655977FEb2f289A4aB78af67BAB0d17aAb84367,
+                name: "SAVINGS_CRVUSD_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CONVEX_BOOSTER,
                 addr: 0xF403C135812408BFbE8713b5A23a04b3D48AAE31,
                 name: "CONVEX_BOOSTER"
@@ -440,20 +475,6 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.CONVEX_LUSD3CRV_POOL,
                 addr: 0x2ad92A7aE036a038ff02B96c88de868ddf3f8190,
                 name: "CONVEX_LUSD3CRV_POOL"
-            })
-        );
-        contractDataByNetwork[1].push(
-            ContractData({
-                id: Contracts.CONVEX_OHMFRAXBP_POOL,
-                addr: 0x27A8c58e3DE84280826d615D80ddb33930383fE9,
-                name: "CONVEX_OHMFRAXBP_POOL"
-            })
-        );
-        contractDataByNetwork[1].push(
-            ContractData({
-                id: Contracts.CONVEX_MIM3CRV_POOL,
-                addr: 0xFd5AbF66b003881b88567EB9Ed9c651F14Dc4771,
-                name: "CONVEX_MIM3CRV_POOL"
             })
         );
         contractDataByNetwork[1].push(
@@ -756,14 +777,6 @@ contract SupportedContracts is Test, ISupportedContracts {
 
         contractDataByNetwork[42161].push(
             ContractData({
-                id: Contracts.STAKED_USDS_VAULT,
-                addr: 0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD,
-                name: "STAKED_USDS_VAULT"
-            })
-        );
-
-        contractDataByNetwork[42161].push(
-            ContractData({
                 id: Contracts.CONVEX_BOOSTER_ARB,
                 addr: 0xF403C135812408BFbE8713b5A23a04b3D48AAE31,
                 name: "CONVEX_BOOSTER_ARB"
@@ -928,14 +941,6 @@ contract SupportedContracts is Test, ISupportedContracts {
 
         contractDataByNetwork[10].push(
             ContractData({
-                id: Contracts.STAKED_USDS_VAULT,
-                addr: 0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD,
-                name: "STAKED_USDS_VAULT"
-            })
-        );
-
-        contractDataByNetwork[10].push(
-            ContractData({
                 id: Contracts.AURA_BOOSTER,
                 addr: 0x98Ef32edd24e2c92525E59afc4475C1242a30184,
                 name: "AURA_BOOSTER"
@@ -985,14 +990,6 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.PANCAKESWAP_V3_ROUTER,
                 addr: 0x1b81D678ffb9C0263b24A97847620C99d213eB14,
                 name: "PANCAKESWAP_V3_ROUTER"
-            })
-        );
-
-        contractDataByNetwork[8453].push(
-            ContractData({
-                id: Contracts.STAKED_USDS_VAULT,
-                addr: 0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD,
-                name: "STAKED_USDS_VAULT"
             })
         );
 

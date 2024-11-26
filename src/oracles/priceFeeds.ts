@@ -122,25 +122,6 @@ export const priceFeedsByToken: Record<
     },
   },
 
-  COMP: {
-    Mainnet: {
-      Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: "0xdbd020CAeF83eFd542f4De03e3cF0C28A4428bd5",
-        stalenessPeriod: HOUR_24_BUFFERED,
-        trusted: false,
-      },
-    },
-    Arbitrum: {
-      Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: "0xe7C53FFd03Eb6ceF7d208bC4C13446c76d1E5884",
-        stalenessPeriod: HOUR_1_BUFFERED_L2,
-        trusted: false,
-      },
-    },
-  },
-
   CRV: {
     Mainnet: {
       Main: {
@@ -244,38 +225,6 @@ export const priceFeedsByToken: Record<
       Reserve: {
         type: PriceFeedType.THE_SAME_AS,
         token: "DAI",
-      },
-    },
-  },
-
-  DPI: {
-    Mainnet: {
-      Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: "0xD2A593BF7594aCE1faD597adb697b5645d5edDB2",
-        stalenessPeriod: HOUR_24,
-        trusted: false,
-      },
-    },
-    Arbitrum: {
-      Main: {
-        type: PriceFeedType.ZERO_ORACLE,
-        trusted: false,
-      },
-    },
-  },
-
-  FEI: {
-    Mainnet: {
-      Main: {
-        type: PriceFeedType.ZERO_ORACLE, // OUTDATED: "0x31e0a88fecB6eC0a411DBe0e9E76391498296EE9",
-        trusted: false,
-      },
-    },
-    Arbitrum: {
-      Main: {
-        type: PriceFeedType.ZERO_ORACLE,
-        trusted: false,
       },
     },
   },
@@ -592,6 +541,16 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  DOLA: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "USDC",
+        trusted: true,
+      },
+    },
+  },
+
   WBTC: {
     Mainnet: {
       Main: {
@@ -612,7 +571,7 @@ export const priceFeedsByToken: Record<
       Reserve: {
         type: PriceFeedType.REDSTONE_ORACLE,
         dataServiceId: "redstone-primary-prod",
-        dataId: "WBTC",
+        dataId: "BTC",
         stalenessPeriod: FOUR_MINUTES,
         ...REDSTONE_SIGNERS,
       },
@@ -1056,70 +1015,6 @@ export const priceFeedsByToken: Record<
     },
   },
 
-  OHM: {
-    Mainnet: {
-      Main: {
-        type: PriceFeedType.COMPOSITE_ORACLE,
-        targetToBasePriceFeed: {
-          type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x9a72298ae3886221820B1c878d12D872087D3a23",
-          stalenessPeriod: HOUR_24_BUFFERED,
-        },
-        baseToUsdPriceFeed: {
-          type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
-          stalenessPeriod: HOUR_24_BUFFERED,
-        },
-        trusted: false,
-      },
-    },
-    Arbitrum: {
-      Main: {
-        type: PriceFeedType.ZERO_ORACLE,
-        trusted: false,
-      },
-    },
-  },
-  MIM: {
-    Mainnet: {
-      Main: {
-        type: PriceFeedType.BOUNDED_ORACLE,
-        priceFeed: {
-          type: PriceFeedType.CHAINLINK_ORACLE,
-          address: "0x7A364e8770418566e3eb2001A96116E6138Eb32F",
-          stalenessPeriod: HOUR_24_BUFFERED,
-        },
-        upperBound: (BigInt(1e8) * 104n) / 100n,
-        trusted: false,
-      },
-    },
-    Arbitrum: {
-      Main: {
-        type: PriceFeedType.ZERO_ORACLE,
-        trusted: false,
-      },
-    },
-  },
-
-  SPELL: {
-    Mainnet: {
-      Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: "0x8c110B94C5f1d347fAcF5E1E938AB2db60E3c9a8",
-        stalenessPeriod: HOUR_24_BUFFERED,
-        trusted: false,
-      },
-    },
-    Arbitrum: {
-      Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: "0x383b3624478124697BEF675F07cA37570b73992f",
-        stalenessPeriod: HOUR_24_BUFFERED_L2,
-        trusted: false,
-      },
-    },
-  },
-
   GMX: {
     Mainnet: {
       Main: {
@@ -1172,23 +1067,6 @@ export const priceFeedsByToken: Record<
     Mainnet: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
-        trusted: false,
-      },
-    },
-  },
-
-  RDNT: {
-    Mainnet: {
-      Main: {
-        type: PriceFeedType.ZERO_ORACLE,
-        trusted: false,
-      },
-    },
-    Arbitrum: {
-      Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: "0x20d0Fcab0ECFD078B036b6CAf1FaC69A6453b352",
-        stalenessPeriod: HOUR_24_BUFFERED_L2,
         trusted: false,
       },
     },
@@ -1276,6 +1154,80 @@ export const priceFeedsByToken: Record<
       Reserve: {
         type: PriceFeedType.THE_SAME_AS,
         token: "LBTC",
+      },
+    },
+  },
+  solvBTC: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "SolvBTC.BBN_FUNDAMENTAL",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
+        },
+
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "SolvBTC.BBN/BTC",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
+        },
+
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+      },
+    },
+  },
+  pumpBTC: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "pumpBTC_FUNDAMENTAL",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
+        },
+
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "pumpBTC/BTC",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
+        },
+
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
       },
     },
   },
@@ -1999,16 +1951,6 @@ export const priceFeedsByToken: Record<
     },
   },
 
-  MIM_3LP3CRV: {
-    AllNetworks: {
-      Main: {
-        type: PriceFeedType.CURVE_4LP_ORACLE,
-        assets: ["MIM", "DAI", "USDC", "USDT"],
-        trusted: false,
-      },
-    },
-  },
-
   USDeUSDC: {
     AllNetworks: {
       Main: {
@@ -2067,12 +2009,20 @@ export const priceFeedsByToken: Record<
       },
     },
   },
-
-  OHMFRAXBP: {
+  FRAXsDAI: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.CURVE_CRYPTO_ORACLE,
-        assets: ["OHM", "crvFRAX"],
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["FRAX", "sDAI"],
+        trusted: false,
+      },
+    },
+  },
+  DOLAsUSDe: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["DOLA", "sUSDe"],
         trusted: false,
       },
     },
@@ -2172,6 +2122,32 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  crvUsUSDe: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["crvUSD", "sUSDe"],
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["crvUSD", "sUSDe"],
+      },
+    },
+  },
+  scrvUsUSDe: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["scrvUSD", "sUSDe"],
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["scrvUSD", "sUSDe"],
+      },
+    },
+  },
   crvUSDUSDT: {
     AllNetworks: {
       Main: {
@@ -2217,6 +2193,26 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CURVE_CRYPTO_ORACLE,
         assets: ["rETH", "WETH"],
+        trusted: false,
+      },
+    },
+  },
+
+  DOLAFRAXBP3CRV_f: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_CRYPTO_ORACLE,
+        assets: ["DOLA", "crvFRAX"],
+        trusted: false,
+      },
+    },
+  },
+
+  crvUSDDOLA_f: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_CRYPTO_ORACLE,
+        assets: ["DOLA", "crvUSD"],
         trusted: false,
       },
     },
@@ -2436,25 +2432,6 @@ export const priceFeedsByToken: Record<
       },
     },
   },
-  cvxOHMFRAXBP: {
-    AllNetworks: {
-      Main: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "OHMFRAXBP",
-        trusted: false,
-      },
-    },
-  },
-  cvxMIM_3LP3CRV: {
-    AllNetworks: {
-      Main: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "MIM_3LP3CRV",
-        trusted: false,
-      },
-    },
-  },
-
   cvxcrvCRVETH: {
     AllNetworks: {
       Main: {
@@ -2607,24 +2584,7 @@ export const priceFeedsByToken: Record<
       },
     },
   },
-  stkcvxOHMFRAXBP: {
-    AllNetworks: {
-      Main: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "OHMFRAXBP",
-        trusted: false,
-      },
-    },
-  },
-  stkcvxMIM_3LP3CRV: {
-    AllNetworks: {
-      Main: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "MIM_3LP3CRV",
-        trusted: false,
-      },
-    },
-  },
+
   stkcvxcrvCRVETH: {
     AllNetworks: {
       Main: {
@@ -2729,24 +2689,6 @@ export const priceFeedsByToken: Record<
     },
   },
 
-  "50OHM_50DAI": {
-    AllNetworks: {
-      Main: {
-        type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
-        assets: ["OHM", "DAI"],
-        trusted: false,
-      },
-    },
-  },
-  "50OHM_50WETH": {
-    AllNetworks: {
-      Main: {
-        type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
-        assets: ["OHM", "WETH"],
-        trusted: false,
-      },
-    },
-  },
   B_80BAL_20WETH: {
     AllNetworks: {
       Main: {
@@ -2760,15 +2702,6 @@ export const priceFeedsByToken: Record<
     AllNetworks: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
-        trusted: false,
-      },
-    },
-  },
-  OHM_wstETH: {
-    AllNetworks: {
-      Main: {
-        type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
-        assets: ["OHM", "wstETH"],
         trusted: false,
       },
     },
@@ -2811,6 +2744,14 @@ export const priceFeedsByToken: Record<
     },
   },
   ezETH_WETH_BPT: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  sUSDe_USDC_BPT: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
@@ -3141,6 +3082,14 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  dDOLAV3: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
 
   sdUSDCV3: {
     Mainnet: {
@@ -3309,6 +3258,15 @@ export const priceFeedsByToken: Record<
       },
     },
     Arbitrum: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+
+  sdDOLAV3: {
+    Mainnet: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
@@ -3579,6 +3537,20 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  scrvUSD: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "crvUSD",
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "crvUSD",
+      },
+    },
+  },
+
   // AURA
   auraB_rETH_STABLE: {
     AllNetworks: {
@@ -3911,6 +3883,59 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  PT_corn_solvBTC_BBN_26DEC2024: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "WBTC",
+        market: "0xEb4d3057738b9Ed930F451Be473C1CCC42988384",
+        twapWindow: HOUR_1 / 2,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "WBTC",
+        market: "0xEb4d3057738b9Ed930F451Be473C1CCC42988384",
+        twapWindow: HOUR_1 / 2,
+      },
+    },
+  },
+  PT_corn_pumpBTC_26DEC2024: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "WBTC",
+        market: "0xf8208fB52BA80075aF09840A683143C22DC5B4dd",
+        twapWindow: HOUR_1 / 2,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "WBTC",
+        market: "0xf8208fB52BA80075aF09840A683143C22DC5B4dd",
+        twapWindow: HOUR_1 / 2,
+      },
+    },
+  },
+
+  PT_cornLBTC_26DEC2024: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "WBTC",
+        market: "0xCaE62858DB831272A03768f5844cbe1B40bB381f",
+        twapWindow: HOUR_1 / 2,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "WBTC",
+        market: "0xCaE62858DB831272A03768f5844cbe1B40bB381f",
+        twapWindow: HOUR_1 / 2,
+      },
+    },
+  },
+
   PT_LBTC_27MAR2025: {
     Mainnet: {
       Main: {
@@ -3924,6 +3949,24 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
         underlying: "WBTC",
         market: "0x70B70Ac0445C3eF04E314DFdA6caafd825428221",
+        twapWindow: HOUR_1 / 2,
+      },
+    },
+  },
+
+  PT_corn_eBTC_27MAR2025: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "WBTC",
+        market: "0x2C71Ead7ac9AE53D05F8664e77031d4F9ebA064B",
+        twapWindow: HOUR_1 / 2,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "WBTC",
+        market: "0x2C71Ead7ac9AE53D05F8664e77031d4F9ebA064B",
         twapWindow: HOUR_1 / 2,
       },
     },

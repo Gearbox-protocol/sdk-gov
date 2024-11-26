@@ -17,8 +17,6 @@ export type ConvexLPToken =
   | "cvxLUSD3CRV"
   | "cvxcrvPlain3andSUSD"
   | "cvxgusd3CRV"
-  | "cvxOHMFRAXBP"
-  | "cvxMIM_3LP3CRV"
   | "cvxcrvCRVETH"
   | "cvxcrvCVXETH"
   | "cvxcrvUSDTWBTCWETH"
@@ -37,8 +35,6 @@ export type ConvexStakedPhantomToken =
   | "stkcvxLUSD3CRV"
   | "stkcvxcrvPlain3andSUSD"
   | "stkcvxgusd3CRV"
-  | "stkcvxOHMFRAXBP"
-  | "stkcvxMIM_3LP3CRV"
   | "stkcvxcrvCRVETH"
   | "stkcvxcrvCVXETH"
   | "stkcvxcrvUSDTWBTCWETH"
@@ -164,32 +160,6 @@ export const convexLpTokens: Record<ConvexLPToken, ConvexLPTokenData> = {
     pid: 10,
     underlying: "gusd3CRV",
     stakedToken: "stkcvxgusd3CRV",
-  },
-
-  cvxOHMFRAXBP: {
-    name: "Convex cvxOHMFRAXBP",
-
-    symbol: "cvxOHMFRAXBP",
-    type: {
-      AllNetworks: TokenType.CONVEX_LP_TOKEN,
-    },
-    pool: "CONVEX_OHMFRAXBP_POOL",
-    pid: 138,
-    underlying: "OHMFRAXBP",
-    stakedToken: "stkcvxOHMFRAXBP",
-  },
-
-  cvxMIM_3LP3CRV: {
-    name: "Convex cvxMIM-3LP3CRV-f",
-
-    symbol: "cvxMIM_3LP3CRV",
-    type: {
-      AllNetworks: TokenType.CONVEX_LP_TOKEN,
-    },
-    pool: "CONVEX_MIM3CRV_POOL",
-    pid: 40,
-    underlying: "MIM_3LP3CRV",
-    stakedToken: "stkcvxMIM_3LP3CRV",
   },
 
   cvxcrvCRVETH: {
@@ -395,32 +365,6 @@ export const convexStakedPhantomTokens: Record<
     pid: 10,
     underlying: "gusd3CRV",
     lpToken: "cvxgusd3CRV",
-  },
-
-  stkcvxOHMFRAXBP: {
-    name: "Convex stkcvxOHMFRAXBP",
-
-    symbol: "stkcvxOHMFRAXBP",
-    type: {
-      AllNetworks: TokenType.CONVEX_STAKED_TOKEN,
-    },
-    pool: "CONVEX_OHMFRAXBP_POOL",
-    pid: 138,
-    underlying: "OHMFRAXBP",
-    lpToken: "cvxOHMFRAXBP",
-  },
-
-  stkcvxMIM_3LP3CRV: {
-    name: "Convex stkcvxMIM_3LP3CRV-f",
-
-    symbol: "stkcvxMIM_3LP3CRV",
-    type: {
-      AllNetworks: TokenType.CONVEX_STAKED_TOKEN,
-    },
-    pool: "CONVEX_MIM3CRV_POOL",
-    pid: 40,
-    underlying: "MIM_3LP3CRV",
-    lpToken: "cvxMIM_3LP3CRV",
   },
 
   stkcvxcrvCRVETH: {

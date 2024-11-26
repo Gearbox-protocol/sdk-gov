@@ -5,14 +5,12 @@ import { TokenNetwork, TokenType } from "./tokenType";
 export type NormalToken =
   | "1INCH"
   | "AAVE"
-  | "COMP"
   | "CRV"
-  | "DPI"
-  | "FEI"
   | "LINK"
   | "SNX"
   | "UNI"
   | "USDT"
+  | "DOLA"
   | "USDC"
   | "USDC_e"
   | "DAI"
@@ -32,12 +30,8 @@ export type NormalToken =
   | "sUSD"
   | "GUSD"
   | "LQTY"
-  | "OHM"
-  | "MIM"
-  | "SPELL"
   | "GMX"
   | "ARB"
-  | "RDNT"
   | "BAL"
   | "ARB"
   | "MKR"
@@ -47,6 +41,8 @@ export type NormalToken =
   | "AURA"
   | "LBTC"
   | "eBTC"
+  | "solvBTC"
+  | "pumpBTC"
   | "osETH"
   | "weETH"
   | "SWISE"
@@ -75,6 +71,10 @@ export type NormalToken =
   | "PT_ezETH_26DEC2024"
   | "PT_eBTC_26DEC2024"
   | "PT_LBTC_27MAR2025"
+  | "PT_corn_solvBTC_BBN_26DEC2024"
+  | "PT_corn_pumpBTC_26DEC2024"
+  | "PT_cornLBTC_26DEC2024"
+  | "PT_corn_eBTC_27MAR2025"
 
   // REDSTONE
   | "SHIB"
@@ -102,13 +102,6 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 
-  COMP: {
-    name: "COMP",
-
-    symbol: "COMP",
-    type: { AllNetworks: TokenType.NORMAL_TOKEN },
-  },
-
   CRV: {
     name: "CRV",
 
@@ -120,20 +113,6 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
     name: "DAI",
 
     symbol: "DAI",
-    type: { AllNetworks: TokenType.NORMAL_TOKEN },
-  },
-
-  DPI: {
-    name: "DPI",
-
-    symbol: "DPI",
-    type: { AllNetworks: TokenType.NORMAL_TOKEN },
-  },
-
-  FEI: {
-    name: "FEI",
-
-    symbol: "FEI",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 
@@ -176,6 +155,12 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
     name: "USDT",
 
     symbol: "USDT",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  DOLA: {
+    name: "DOLA",
+
+    symbol: "DOLA",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 
@@ -276,24 +261,6 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 
-  OHM: {
-    name: "OHM",
-
-    symbol: "OHM",
-    type: { AllNetworks: TokenType.NORMAL_TOKEN },
-  },
-  MIM: {
-    name: "MIM",
-
-    symbol: "MIM",
-    type: { AllNetworks: TokenType.NORMAL_TOKEN },
-  },
-  SPELL: {
-    name: "SPELL",
-
-    symbol: "SPELL",
-    type: { AllNetworks: TokenType.NORMAL_TOKEN },
-  },
   GMX: {
     name: "GMX",
 
@@ -304,12 +271,6 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
     name: "ARB",
 
     symbol: "ARB",
-    type: { AllNetworks: TokenType.NORMAL_TOKEN },
-  },
-  RDNT: {
-    name: "RDNT",
-
-    symbol: "RDNT",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
   BAL: {
@@ -356,8 +317,17 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   },
   eBTC: {
     name: "eBTC",
-
     symbol: "eBTC",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  solvBTC: {
+    name: "solvBTC",
+    symbol: "solvBTC",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  pumpBTC: {
+    name: "pumpBTC",
+    symbol: "pumpBTC",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
   rETH: {
@@ -498,6 +468,26 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   PT_LBTC_27MAR2025: {
     name: "Pendle PT LBTC 27 Mar 2025 expiry",
     symbol: "PT_LBTC_27MAR2025",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  PT_corn_solvBTC_BBN_26DEC2024: {
+    name: "Pendle PT Corn solvBTC Babylon 26 Dec 2024 expiry",
+    symbol: "PT_corn_solvBTC_BBN_26DEC2024",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  PT_corn_pumpBTC_26DEC2024: {
+    name: "Pendle PT Corn pumpBTC 26 Dec 2024 expiry",
+    symbol: "PT_corn_pumpBTC_26DEC2024",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  PT_cornLBTC_26DEC2024: {
+    name: "Pendle PT Corn Lombard LBTC 26 Dec 2024 expiry",
+    symbol: "PT_cornLBTC_26DEC2024",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  PT_corn_eBTC_27MAR2025: {
+    name: "Pendle PT Corn ether.fi eBTC 27 Mar 2025 expiry",
+    symbol: "PT_corn_eBTC_27MAR2025",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };
