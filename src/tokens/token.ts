@@ -1449,8 +1449,8 @@ export const tickerInfoTokensByNetwork: Record<
       {
         symbol: "pumpBTC/BTC",
         dataId: "pumpBTC_FUNDAMENTAL",
-        address: NOT_DEPLOYED, // TODO
-        priceFeed: NOT_DEPLOYED, // TODO
+        address: "0x4b984275AD7EED4842429b0dA3eB51E3Ca2da8D1",
+        priceFeed: "0x6b0f8C32992b8c824a27AB8C93E94a9DD263cd9F",
         reserve: false,
       },
     ],
