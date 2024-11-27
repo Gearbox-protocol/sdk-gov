@@ -123,6 +123,7 @@ struct PendlePriceFeedData {
     uint256 underlying;
     address market;
     uint32 twapWindow;
+    bool priceToSy;
     bool reserve;
     bool trusted;
 }
@@ -7963,6 +7964,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_rsETH,
                 market: 0x6b4740722e46048874d84306B2877600ABCea3Ae,
                 twapWindow: 3600,
+                priceToSy: true,
                 trusted: false,
                 reserve: false
             })
@@ -7975,6 +7977,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_USDe,
                 market: 0xa0ab94DeBB3cC9A7eA77f3205ba4AB23276feD08,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: false
             })
@@ -7985,6 +7988,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_USDe,
                 market: 0xa0ab94DeBB3cC9A7eA77f3205ba4AB23276feD08,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: true
             })
@@ -7997,6 +8001,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_WETH,
                 market: 0x7d372819240D14fB477f17b964f95F33BeB4c704,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: false
             })
@@ -8007,6 +8012,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_WETH,
                 market: 0x7d372819240D14fB477f17b964f95F33BeB4c704,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: true
             })
@@ -8019,6 +8025,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_WETH,
                 market: 0xD8F12bCDE578c653014F27379a6114F67F0e445f,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: false
             })
@@ -8029,6 +8036,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_WETH,
                 market: 0xD8F12bCDE578c653014F27379a6114F67F0e445f,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: true
             })
@@ -8041,6 +8049,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_WBTC,
                 market: 0x36d3ca43ae7939645C306E26603ce16e39A89192,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: false
             })
@@ -8051,6 +8060,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_WBTC,
                 market: 0x36d3ca43ae7939645C306E26603ce16e39A89192,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: true
             })
@@ -8063,6 +8073,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_WBTC,
                 market: 0x70B70Ac0445C3eF04E314DFdA6caafd825428221,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: false
             })
@@ -8073,6 +8084,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_WBTC,
                 market: 0x70B70Ac0445C3eF04E314DFdA6caafd825428221,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: true
             })

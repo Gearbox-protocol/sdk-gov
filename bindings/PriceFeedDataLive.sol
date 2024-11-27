@@ -123,6 +123,7 @@ struct PendlePriceFeedData {
     uint256 underlying;
     address market;
     uint32 twapWindow;
+    bool priceToSy;
     bool reserve;
     bool trusted;
 }
