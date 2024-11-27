@@ -750,6 +750,7 @@ class BindingsGenerator {
       )},
       market: ${priceFeedData.market},
       twapWindow: ${priceFeedData.twapWindow},
+      priceToSy: ${priceFeedData.priceToSy},
       trusted: ${
         !reserve
           ? (priceFeedData as PriceFeedData & { trusted: boolean }).trusted
