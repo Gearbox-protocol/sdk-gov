@@ -8155,6 +8155,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_WBTC,
                 market: 0xEb4d3057738b9Ed930F451Be473C1CCC42988384,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: false
             })
@@ -8165,6 +8166,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_WBTC,
                 market: 0xEb4d3057738b9Ed930F451Be473C1CCC42988384,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: true
             })
@@ -8177,6 +8179,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_WBTC,
                 market: 0xf8208fB52BA80075aF09840A683143C22DC5B4dd,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: false
             })
@@ -8187,6 +8190,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_WBTC,
                 market: 0xf8208fB52BA80075aF09840A683143C22DC5B4dd,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: true
             })
@@ -8199,6 +8203,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_WBTC,
                 market: 0xCaE62858DB831272A03768f5844cbe1B40bB381f,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: false
             })
@@ -8209,6 +8214,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_WBTC,
                 market: 0xCaE62858DB831272A03768f5844cbe1B40bB381f,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: true
             })
@@ -8245,6 +8251,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_WBTC,
                 market: 0x2C71Ead7ac9AE53D05F8664e77031d4F9ebA064B,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: false
             })
@@ -8255,6 +8262,7 @@ contract PriceFeedDataLive {
                 underlying: TOKEN_WBTC,
                 market: 0x2C71Ead7ac9AE53D05F8664e77031d4F9ebA064B,
                 twapWindow: 1800,
+                priceToSy: false,
                 trusted: false,
                 reserve: true
             })

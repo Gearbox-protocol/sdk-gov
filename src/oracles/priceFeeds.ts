@@ -3915,6 +3915,7 @@ export const priceFeedsByToken: Record<
         underlying: "WBTC",
         market: "0xEb4d3057738b9Ed930F451Be473C1CCC42988384",
         twapWindow: HOUR_1 / 2,
+        priceToSy: false,
         trusted: false,
       },
       Reserve: {
@@ -3922,6 +3923,7 @@ export const priceFeedsByToken: Record<
         underlying: "WBTC",
         market: "0xEb4d3057738b9Ed930F451Be473C1CCC42988384",
         twapWindow: HOUR_1 / 2,
+        priceToSy: false,
       },
     },
   },
@@ -3932,6 +3934,7 @@ export const priceFeedsByToken: Record<
         underlying: "WBTC",
         market: "0xf8208fB52BA80075aF09840A683143C22DC5B4dd",
         twapWindow: HOUR_1 / 2,
+        priceToSy: false,
         trusted: false,
       },
       Reserve: {
@@ -3939,6 +3942,7 @@ export const priceFeedsByToken: Record<
         underlying: "WBTC",
         market: "0xf8208fB52BA80075aF09840A683143C22DC5B4dd",
         twapWindow: HOUR_1 / 2,
+        priceToSy: false,
       },
     },
   },
@@ -3950,6 +3954,7 @@ export const priceFeedsByToken: Record<
         underlying: "WBTC",
         market: "0xCaE62858DB831272A03768f5844cbe1B40bB381f",
         twapWindow: HOUR_1 / 2,
+        priceToSy: false,
         trusted: false,
       },
       Reserve: {
@@ -3957,6 +3962,7 @@ export const priceFeedsByToken: Record<
         underlying: "WBTC",
         market: "0xCaE62858DB831272A03768f5844cbe1B40bB381f",
         twapWindow: HOUR_1 / 2,
+        priceToSy: false,
       },
     },
   },
@@ -3988,6 +3994,7 @@ export const priceFeedsByToken: Record<
         underlying: "WBTC",
         market: "0x2C71Ead7ac9AE53D05F8664e77031d4F9ebA064B",
         twapWindow: HOUR_1 / 2,
+        priceToSy: false,
         trusted: false,
       },
       Reserve: {
@@ -3995,6 +4002,7 @@ export const priceFeedsByToken: Record<
         underlying: "WBTC",
         market: "0x2C71Ead7ac9AE53D05F8664e77031d4F9ebA064B",
         twapWindow: HOUR_1 / 2,
+        priceToSy: false,
       },
     },
   },
