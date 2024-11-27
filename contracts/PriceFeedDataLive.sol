@@ -6371,37 +6371,17 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ pumpBTC_WBTC_BPT ------------------------
-        balancerStableLPPriceFeedsByNetwork[1].push(
-            BalancerLPPriceFeedData({
-                lpToken: TOKEN_pumpBTC_WBTC_BPT,
-                assets: TokensLib.arrayOf(TOKEN_pumpBTC, TOKEN_WBTC),
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTC_WBTC_BPT, trusted: false, reserve: false})
         );
-        balancerStableLPPriceFeedsByNetwork[42161].push(
-            BalancerLPPriceFeedData({
-                lpToken: TOKEN_pumpBTC_WBTC_BPT,
-                assets: TokensLib.arrayOf(TOKEN_pumpBTC, TOKEN_WBTC),
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTC_WBTC_BPT, trusted: false, reserve: false})
         );
-        balancerStableLPPriceFeedsByNetwork[10].push(
-            BalancerLPPriceFeedData({
-                lpToken: TOKEN_pumpBTC_WBTC_BPT,
-                assets: TokensLib.arrayOf(TOKEN_pumpBTC, TOKEN_WBTC),
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTC_WBTC_BPT, trusted: false, reserve: false})
         );
-        balancerStableLPPriceFeedsByNetwork[8453].push(
-            BalancerLPPriceFeedData({
-                lpToken: TOKEN_pumpBTC_WBTC_BPT,
-                assets: TokensLib.arrayOf(TOKEN_pumpBTC, TOKEN_WBTC),
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTC_WBTC_BPT, trusted: false, reserve: false})
         );
 
         // ------------------------ 33AURA_33ARB_33BAL ------------------------

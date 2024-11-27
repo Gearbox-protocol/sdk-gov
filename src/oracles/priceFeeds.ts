@@ -2902,8 +2902,7 @@ export const priceFeedsByToken: Record<
   pumpBTC_WBTC_BPT: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
-        assets: ["pumpBTC", "WBTC"],
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
