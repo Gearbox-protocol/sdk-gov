@@ -18,6 +18,7 @@ export type BalancerLPToken =
   | "rsETH_WETH"
   | "trenSTETH"
   | "sUSDe_USDC_BPT"
+  | "pumpBTC_WBTC_BPT"
   // Optimism
   | "BPT_rETH_ETH"
   | "BPT_WSTETH_ETH"
@@ -131,6 +132,17 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     poolId:
       "0xb819feef8f0fcdc268afe14162983a69f6bf179e000000000000000000000689",
   },
+  pumpBTC_WBTC_BPT: {
+    name: "Balancer pumpBTC/wBTC",
+    symbol: "pumpBTC_WBTC_BPT",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["pumpBTC", "WBTC"],
+    poolId:
+      "0x2238ab6c8c58473a5e81b86ec352322fb3f5edd80000000000000000000006de",
+  },
+
   trenSTETH: {
     name: "Balancer Total Rewards Enhanced stETH",
     symbol: "trenSTETH",

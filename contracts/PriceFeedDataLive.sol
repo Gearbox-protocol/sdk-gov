@@ -4394,6 +4394,20 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_eBTCWBTC, trusted: false, reserve: false})
         );
 
+        // ------------------------ pumpBTCWBTC ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTCWBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTCWBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTCWBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTCWBTC, trusted: false, reserve: false})
+        );
+
         // ------------------------ TriBTC ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_TriBTC, trusted: false, reserve: false}));
         zeroPriceFeedsByNetwork[42161].push(
@@ -6351,6 +6365,40 @@ contract PriceFeedDataLive {
             BalancerLPPriceFeedData({
                 lpToken: TOKEN_bpt_ethtri,
                 assets: TokensLib.arrayOf(TOKEN_wstETH, TOKEN_sfrxETH, TOKEN_rETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ pumpBTC_WBTC_BPT ------------------------
+        balancerStableLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_pumpBTC_WBTC_BPT,
+                assets: TokensLib.arrayOf(TOKEN_pumpBTC, TOKEN_WBTC),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_pumpBTC_WBTC_BPT,
+                assets: TokensLib.arrayOf(TOKEN_pumpBTC, TOKEN_WBTC),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[10].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_pumpBTC_WBTC_BPT,
+                assets: TokensLib.arrayOf(TOKEN_pumpBTC, TOKEN_WBTC),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[8453].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_pumpBTC_WBTC_BPT,
+                assets: TokensLib.arrayOf(TOKEN_pumpBTC, TOKEN_WBTC),
                 trusted: false,
                 reserve: false
             })

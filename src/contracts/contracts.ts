@@ -58,6 +58,7 @@ export type CurvePoolContract =
   | "CURVE_EZPZ_ETH_POOL"
   | "CURVE_LBTC_WBTC_POOL"
   | "CURVE_EBTC_WBTC_POOL"
+  | "CURVE_PUMPBTC_WBTC_POOL"
   | "CURVE_TRIBTC_POOL"
   | "CURVE_2CRV_POOL_ARB"
   | "CURVE_TRICRYPTO_CRVUSD_POOL_ARB"
@@ -216,6 +217,7 @@ export const contractsByNetwork: Record<
     CURVE_EZPZ_ETH_POOL: tokenDataByNetwork.Mainnet.ezpzETH,
     CURVE_LBTC_WBTC_POOL: tokenDataByNetwork.Mainnet.LBTCWBTC,
     CURVE_EBTC_WBTC_POOL: tokenDataByNetwork.Mainnet.eBTCWBTC,
+    CURVE_PUMPBTC_WBTC_POOL: tokenDataByNetwork.Mainnet.pumpBTCWBTC,
     CURVE_TRIBTC_POOL: tokenDataByNetwork.Mainnet.TriBTC,
 
     CURVE_GEAR_POOL: "0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2",
@@ -384,6 +386,7 @@ export const contractsByNetwork: Record<
     CURVE_EZPZ_ETH_POOL: NOT_DEPLOYED,
     CURVE_LBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_EBTC_WBTC_POOL: NOT_DEPLOYED,
+    CURVE_PUMPBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_TRIBTC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -551,6 +554,7 @@ export const contractsByNetwork: Record<
     CURVE_EZPZ_ETH_POOL: NOT_DEPLOYED,
     CURVE_LBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_EBTC_WBTC_POOL: NOT_DEPLOYED,
+    CURVE_PUMPBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_TRIBTC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -717,6 +721,7 @@ export const contractsByNetwork: Record<
     CURVE_EZPZ_ETH_POOL: NOT_DEPLOYED,
     CURVE_LBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_EBTC_WBTC_POOL: NOT_DEPLOYED,
+    CURVE_PUMPBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_TRIBTC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -1476,6 +1481,14 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.CURVE_STABLE_NG,
     lpToken: "eBTCWBTC",
     tokens: ["eBTC", "WBTC"],
+  },
+  CURVE_PUMPBTC_WBTC_POOL: {
+    name: "Curve pumpBTC/WBTC LP",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "pumpBTCWBTC",
+    tokens: ["pumpBTC", "WBTC"],
   },
   CURVE_TRIBTC_POOL: {
     name: "Curve Tri BTC-Fi LP",

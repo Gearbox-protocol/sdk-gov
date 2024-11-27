@@ -494,6 +494,14 @@ contract AdapterData {
         );
         curveAdapters.push(
             CurveAdapter({
+                targetContract: Contracts.CURVE_PUMPBTC_WBTC_POOL,
+                adapterType: AdapterType.CURVE_STABLE_NG,
+                lpToken: TOKEN_pumpBTCWBTC,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
                 targetContract: Contracts.CURVE_TRIBTC_POOL,
                 adapterType: AdapterType.CURVE_STABLE_NG,
                 lpToken: TOKEN_TriBTC,
