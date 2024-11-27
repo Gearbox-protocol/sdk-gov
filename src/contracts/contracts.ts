@@ -33,11 +33,9 @@ export type CurvePoolContract =
   | "CURVE_GUSD_POOL"
   | "CURVE_SUSD_POOL"
   | "CURVE_SUSD_DEPOSIT"
-  | "CURVE_OHMFRAXBP_POOL"
   | "CURVE_CRVETH_POOL"
   | "CURVE_CVXETH_POOL"
   | "CURVE_3CRYPTO_POOL"
-  | "CURVE_MIM_POOL"
   | "CURVE_LDOETH_POOL"
   | "CURVE_CRVUSD_USDC_POOL"
   | "CURVE_CRVUSD_USDT_POOL"
@@ -47,6 +45,10 @@ export type CurvePoolContract =
   | "CURVE_USDE_USDC_POOL"
   | "CURVE_FRAX_USDE_POOL"
   | "CURVE_USDE_CRVUSD_POOL"
+  | "CURVE_FRAX_SDAI_POOL"
+  | "CURVE_DOLA_SUSDE_POOL"
+  | "CURVE_DOLA_FRAXBP_POOL"
+  | "CURVE_DOLA_CRVUSD_POOL"
   | "CURVE_USDE_DAI_POOL"
   | "CURVE_SDAI_SUSDE_POOL"
   | "CURVE_GHO_USDE_POOL"
@@ -56,6 +58,7 @@ export type CurvePoolContract =
   | "CURVE_EZPZ_ETH_POOL"
   | "CURVE_LBTC_WBTC_POOL"
   | "CURVE_EBTC_WBTC_POOL"
+  | "CURVE_PUMPBTC_WBTC_POOL"
   | "CURVE_TRIBTC_POOL"
   | "CURVE_2CRV_POOL_ARB"
   | "CURVE_TRICRYPTO_CRVUSD_POOL_ARB"
@@ -64,7 +67,9 @@ export type CurvePoolContract =
   | "CURVE_CRVUSD_USDC_E_POOL_ARB"
   | "CURVE_USDE_USDC_POOL_ARB"
   | "CURVE_3CRV_POOL_OP"
-  | "CURVE_ETH_WSTETH_GATEWAY_OP";
+  | "CURVE_ETH_WSTETH_GATEWAY_OP"
+  | "CURVE_CRVUSD_SUSDE_POOL"
+  | "CURVE_LLAMA_THENA_POOL";
 
 export type YearnVaultContract =
   | "YEARN_DAI_VAULT"
@@ -81,7 +86,8 @@ export type ERC4626VaultContract =
   | "MAKER_DSR_VAULT"
   | "YIELD_ETH_VAULT"
   | "STAKED_USDE_VAULT"
-  | "STAKED_USDS_VAULT";
+  | "STAKED_USDS_VAULT"
+  | "SAVINGS_CRVUSD_VAULT";
 
 export type ConvexPoolContract =
   | "CONVEX_3CRV_POOL"
@@ -91,8 +97,6 @@ export type ConvexPoolContract =
   | "CONVEX_STECRV_POOL"
   | "CONVEX_FRAX3CRV_POOL"
   | "CONVEX_LUSD3CRV_POOL"
-  | "CONVEX_OHMFRAXBP_POOL"
-  | "CONVEX_MIM3CRV_POOL"
   | "CONVEX_CRVETH_POOL"
   | "CONVEX_CVXETH_POOL"
   | "CONVEX_3CRYPTO_POOL"
@@ -192,8 +196,6 @@ export const contractsByNetwork: Record<
     CURVE_SUSD_POOL: "0xA5407eAE9Ba41422680e2e00537571bcC53efBfD", // SEPARATE TOKEN
     CURVE_SUSD_DEPOSIT: "0xFCBa3E75865d2d561BE8D220616520c171F12851",
     CURVE_GUSD_POOL: "0x4f062658EaAF2C1ccf8C8e36D6824CDf41167956", // SEPARATE TOKEN
-    CURVE_MIM_POOL: tokenDataByNetwork.Mainnet.MIM_3LP3CRV,
-    CURVE_OHMFRAXBP_POOL: "0xFc1e8bf3E81383Ef07Be24c3FD146745719DE48D",
     CURVE_CRVETH_POOL: "0x8301AE4fc9c624d1D396cbDAa1ed877821D7C511",
     CURVE_CVXETH_POOL: "0xB576491F1E6e5E62f1d8F26062Ee822B40B0E0d4",
     CURVE_3CRYPTO_POOL: tokenDataByNetwork.Mainnet.crvUSDTWBTCWETH,
@@ -202,6 +204,10 @@ export const contractsByNetwork: Record<
     CURVE_USDE_USDC_POOL: tokenDataByNetwork.Mainnet.USDeUSDC,
     CURVE_FRAX_USDE_POOL: tokenDataByNetwork.Mainnet.FRAXUSDe,
     CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Mainnet.USDecrvUSD,
+    CURVE_FRAX_SDAI_POOL: tokenDataByNetwork.Mainnet.FRAXsDAI,
+    CURVE_DOLA_SUSDE_POOL: tokenDataByNetwork.Mainnet.DOLAsUSDe,
+    CURVE_DOLA_FRAXBP_POOL: tokenDataByNetwork.Mainnet.DOLAFRAXBP3CRV_f,
+    CURVE_DOLA_CRVUSD_POOL: tokenDataByNetwork.Mainnet.crvUSDDOLA_f,
     CURVE_USDE_DAI_POOL: tokenDataByNetwork.Mainnet.USDeDAI,
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Mainnet.MtEthena,
     CURVE_GHO_USDE_POOL: tokenDataByNetwork.Mainnet.GHOUSDe,
@@ -211,6 +217,7 @@ export const contractsByNetwork: Record<
     CURVE_EZPZ_ETH_POOL: tokenDataByNetwork.Mainnet.ezpzETH,
     CURVE_LBTC_WBTC_POOL: tokenDataByNetwork.Mainnet.LBTCWBTC,
     CURVE_EBTC_WBTC_POOL: tokenDataByNetwork.Mainnet.eBTCWBTC,
+    CURVE_PUMPBTC_WBTC_POOL: tokenDataByNetwork.Mainnet.pumpBTCWBTC,
     CURVE_TRIBTC_POOL: tokenDataByNetwork.Mainnet.TriBTC,
 
     CURVE_GEAR_POOL: "0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2",
@@ -219,6 +226,8 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_USDT_POOL: tokenDataByNetwork.Mainnet.crvUSDUSDT,
     CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Mainnet.crvUSDFRAX,
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Mainnet.crvUSDETHCRV,
+    CURVE_CRVUSD_SUSDE_POOL: tokenDataByNetwork.Mainnet.crvUsUSDe,
+    CURVE_LLAMA_THENA_POOL: tokenDataByNetwork.Mainnet.scrvUsUSDe,
 
     CURVE_RETH_ETH_POOL: "0x0f3159811670c117c372428D4E69AC32325e4D0F",
 
@@ -246,6 +255,7 @@ export const contractsByNetwork: Record<
     YIELD_ETH_VAULT: tokenDataByNetwork.Mainnet.YieldETH,
     STAKED_USDE_VAULT: tokenDataByNetwork.Mainnet.sUSDe,
     STAKED_USDS_VAULT: tokenDataByNetwork.Mainnet.sUSDS,
+    SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Mainnet.scrvUSD,
 
     // CONVEX
     CONVEX_BOOSTER: "0xF403C135812408BFbE8713b5A23a04b3D48AAE31",
@@ -256,8 +266,6 @@ export const contractsByNetwork: Record<
     CONVEX_STECRV_POOL: "0x0A760466E1B4621579a82a39CB56Dda2F4E70f03",
     CONVEX_FRAX3CRV_POOL: "0xB900EF131301B307dB5eFcbed9DBb50A3e209B2e",
     CONVEX_LUSD3CRV_POOL: "0x2ad92A7aE036a038ff02B96c88de868ddf3f8190",
-    CONVEX_OHMFRAXBP_POOL: "0x27A8c58e3DE84280826d615D80ddb33930383fE9",
-    CONVEX_MIM3CRV_POOL: "0xFd5AbF66b003881b88567EB9Ed9c651F14Dc4771",
     CONVEX_CRVETH_POOL: "0x085A2054c51eA5c91dbF7f90d65e728c0f2A270f",
     CONVEX_CVXETH_POOL: "0xb1Fb0BA0676A1fFA83882c7F4805408bA232C1fA",
     CONVEX_3CRYPTO_POOL: "0xb05262D4aaAA38D0Af4AaB244D446ebDb5afd4A7",
@@ -357,8 +365,6 @@ export const contractsByNetwork: Record<
     CURVE_SUSD_POOL: NOT_DEPLOYED,
     CURVE_SUSD_DEPOSIT: NOT_DEPLOYED,
     CURVE_GUSD_POOL: NOT_DEPLOYED,
-    CURVE_MIM_POOL: tokenDataByNetwork.Arbitrum.MIM_3LP3CRV,
-    CURVE_OHMFRAXBP_POOL: NOT_DEPLOYED,
     CURVE_CRVETH_POOL: NOT_DEPLOYED,
     CURVE_CVXETH_POOL: NOT_DEPLOYED,
     CURVE_3CRYPTO_POOL: NOT_DEPLOYED,
@@ -366,6 +372,10 @@ export const contractsByNetwork: Record<
     CURVE_USDE_USDC_POOL: tokenDataByNetwork.Arbitrum.USDeUSDC,
     CURVE_FRAX_USDE_POOL: tokenDataByNetwork.Arbitrum.FRAXUSDe,
     CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Arbitrum.USDecrvUSD,
+    CURVE_FRAX_SDAI_POOL: tokenDataByNetwork.Arbitrum.FRAXsDAI,
+    CURVE_DOLA_SUSDE_POOL: tokenDataByNetwork.Arbitrum.DOLAsUSDe,
+    CURVE_DOLA_FRAXBP_POOL: tokenDataByNetwork.Arbitrum.DOLAFRAXBP3CRV_f,
+    CURVE_DOLA_CRVUSD_POOL: tokenDataByNetwork.Arbitrum.crvUSDDOLA_f,
     CURVE_USDE_DAI_POOL: tokenDataByNetwork.Arbitrum.USDeDAI,
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Arbitrum.MtEthena,
     CURVE_GHO_USDE_POOL: tokenDataByNetwork.Arbitrum.GHOUSDe,
@@ -376,6 +386,7 @@ export const contractsByNetwork: Record<
     CURVE_EZPZ_ETH_POOL: NOT_DEPLOYED,
     CURVE_LBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_EBTC_WBTC_POOL: NOT_DEPLOYED,
+    CURVE_PUMPBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_TRIBTC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -384,6 +395,8 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_USDT_POOL: tokenDataByNetwork.Arbitrum.crvUSDUSDT,
     CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Arbitrum.crvUSDFRAX,
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Arbitrum.crvUSDETHCRV,
+    CURVE_CRVUSD_SUSDE_POOL: tokenDataByNetwork.Arbitrum.crvUsUSDe,
+    CURVE_LLAMA_THENA_POOL: tokenDataByNetwork.Arbitrum.scrvUsUSDe,
 
     CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
     CURVE_3CRV_POOL_OP: NOT_DEPLOYED,
@@ -410,7 +423,8 @@ export const contractsByNetwork: Record<
     MAKER_DSR_VAULT: tokenDataByNetwork.Arbitrum.sDAI,
     YIELD_ETH_VAULT: tokenDataByNetwork.Arbitrum.YieldETH,
     STAKED_USDE_VAULT: tokenDataByNetwork.Arbitrum.sUSDe,
-    STAKED_USDS_VAULT: tokenDataByNetwork.Mainnet.sUSDS,
+    STAKED_USDS_VAULT: tokenDataByNetwork.Arbitrum.sUSDS,
+    SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Arbitrum.scrvUSD,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -421,8 +435,6 @@ export const contractsByNetwork: Record<
     CONVEX_FRAX3CRV_POOL: NOT_DEPLOYED,
     CONVEX_LUSD3CRV_POOL: NOT_DEPLOYED,
     CONVEX_GUSD_POOL: NOT_DEPLOYED,
-    CONVEX_OHMFRAXBP_POOL: NOT_DEPLOYED,
-    CONVEX_MIM3CRV_POOL: NOT_DEPLOYED,
     CONVEX_CRVETH_POOL: NOT_DEPLOYED,
     CONVEX_CVXETH_POOL: NOT_DEPLOYED,
     CONVEX_3CRYPTO_POOL: NOT_DEPLOYED,
@@ -521,8 +533,6 @@ export const contractsByNetwork: Record<
     CURVE_SUSD_POOL: NOT_DEPLOYED,
     CURVE_SUSD_DEPOSIT: NOT_DEPLOYED,
     CURVE_GUSD_POOL: NOT_DEPLOYED,
-    CURVE_MIM_POOL: tokenDataByNetwork.Optimism.MIM_3LP3CRV,
-    CURVE_OHMFRAXBP_POOL: NOT_DEPLOYED,
     CURVE_CRVETH_POOL: NOT_DEPLOYED,
     CURVE_CVXETH_POOL: NOT_DEPLOYED,
     CURVE_3CRYPTO_POOL: NOT_DEPLOYED,
@@ -530,6 +540,10 @@ export const contractsByNetwork: Record<
     CURVE_USDE_USDC_POOL: tokenDataByNetwork.Optimism.USDeUSDC,
     CURVE_FRAX_USDE_POOL: tokenDataByNetwork.Optimism.FRAXUSDe,
     CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Optimism.USDecrvUSD,
+    CURVE_FRAX_SDAI_POOL: tokenDataByNetwork.Optimism.FRAXsDAI,
+    CURVE_DOLA_SUSDE_POOL: tokenDataByNetwork.Optimism.DOLAsUSDe,
+    CURVE_DOLA_FRAXBP_POOL: tokenDataByNetwork.Optimism.DOLAFRAXBP3CRV_f,
+    CURVE_DOLA_CRVUSD_POOL: tokenDataByNetwork.Optimism.crvUSDDOLA_f,
     CURVE_USDE_DAI_POOL: tokenDataByNetwork.Optimism.USDeDAI,
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Optimism.MtEthena,
     CURVE_GHO_USDE_POOL: tokenDataByNetwork.Optimism.GHOUSDe,
@@ -540,6 +554,7 @@ export const contractsByNetwork: Record<
     CURVE_EZPZ_ETH_POOL: NOT_DEPLOYED,
     CURVE_LBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_EBTC_WBTC_POOL: NOT_DEPLOYED,
+    CURVE_PUMPBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_TRIBTC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -548,6 +563,8 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_USDT_POOL: tokenDataByNetwork.Optimism.crvUSDUSDT,
     CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Optimism.crvUSDFRAX,
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Optimism.crvUSDETHCRV,
+    CURVE_CRVUSD_SUSDE_POOL: tokenDataByNetwork.Optimism.crvUsUSDe,
+    CURVE_LLAMA_THENA_POOL: tokenDataByNetwork.Optimism.scrvUsUSDe,
 
     CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
 
@@ -573,7 +590,8 @@ export const contractsByNetwork: Record<
     MAKER_DSR_VAULT: tokenDataByNetwork.Optimism.sDAI,
     YIELD_ETH_VAULT: tokenDataByNetwork.Optimism.YieldETH,
     STAKED_USDE_VAULT: tokenDataByNetwork.Optimism.sUSDe,
-    STAKED_USDS_VAULT: tokenDataByNetwork.Mainnet.sUSDS,
+    STAKED_USDS_VAULT: tokenDataByNetwork.Optimism.sUSDS,
+    SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Optimism.scrvUSD,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -584,8 +602,6 @@ export const contractsByNetwork: Record<
     CONVEX_FRAX3CRV_POOL: NOT_DEPLOYED,
     CONVEX_LUSD3CRV_POOL: NOT_DEPLOYED,
     CONVEX_GUSD_POOL: NOT_DEPLOYED,
-    CONVEX_OHMFRAXBP_POOL: NOT_DEPLOYED,
-    CONVEX_MIM3CRV_POOL: NOT_DEPLOYED,
     CONVEX_CRVETH_POOL: NOT_DEPLOYED,
     CONVEX_CVXETH_POOL: NOT_DEPLOYED,
     CONVEX_3CRYPTO_POOL: NOT_DEPLOYED,
@@ -685,8 +701,6 @@ export const contractsByNetwork: Record<
     CURVE_SUSD_POOL: NOT_DEPLOYED,
     CURVE_SUSD_DEPOSIT: NOT_DEPLOYED,
     CURVE_GUSD_POOL: NOT_DEPLOYED,
-    CURVE_MIM_POOL: tokenDataByNetwork.Base.MIM_3LP3CRV,
-    CURVE_OHMFRAXBP_POOL: NOT_DEPLOYED,
     CURVE_CRVETH_POOL: NOT_DEPLOYED,
     CURVE_CVXETH_POOL: NOT_DEPLOYED,
     CURVE_3CRYPTO_POOL: NOT_DEPLOYED,
@@ -694,6 +708,10 @@ export const contractsByNetwork: Record<
     CURVE_USDE_USDC_POOL: tokenDataByNetwork.Base.USDeUSDC,
     CURVE_FRAX_USDE_POOL: tokenDataByNetwork.Base.FRAXUSDe,
     CURVE_USDE_CRVUSD_POOL: tokenDataByNetwork.Base.USDecrvUSD,
+    CURVE_FRAX_SDAI_POOL: tokenDataByNetwork.Base.FRAXsDAI,
+    CURVE_DOLA_SUSDE_POOL: tokenDataByNetwork.Base.DOLAsUSDe,
+    CURVE_DOLA_FRAXBP_POOL: tokenDataByNetwork.Base.DOLAFRAXBP3CRV_f,
+    CURVE_DOLA_CRVUSD_POOL: tokenDataByNetwork.Base.crvUSDDOLA_f,
     CURVE_USDE_DAI_POOL: tokenDataByNetwork.Base.USDeDAI,
     CURVE_SDAI_SUSDE_POOL: tokenDataByNetwork.Base.MtEthena,
     CURVE_PUFETH_WSTETH_POOL: tokenDataByNetwork.Base.pufETHwstE,
@@ -703,6 +721,7 @@ export const contractsByNetwork: Record<
     CURVE_EZPZ_ETH_POOL: NOT_DEPLOYED,
     CURVE_LBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_EBTC_WBTC_POOL: NOT_DEPLOYED,
+    CURVE_PUMPBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_TRIBTC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
@@ -711,6 +730,8 @@ export const contractsByNetwork: Record<
     CURVE_CRVUSD_USDT_POOL: tokenDataByNetwork.Base.crvUSDUSDT,
     CURVE_CRVUSD_FRAX_POOL: tokenDataByNetwork.Base.crvUSDFRAX,
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Base.crvUSDETHCRV,
+    CURVE_CRVUSD_SUSDE_POOL: tokenDataByNetwork.Base.crvUsUSDe,
+    CURVE_LLAMA_THENA_POOL: tokenDataByNetwork.Base.scrvUsUSDe,
 
     CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
 
@@ -736,7 +757,8 @@ export const contractsByNetwork: Record<
     MAKER_DSR_VAULT: tokenDataByNetwork.Base.sDAI,
     YIELD_ETH_VAULT: tokenDataByNetwork.Base.YieldETH,
     STAKED_USDE_VAULT: tokenDataByNetwork.Base.sUSDe,
-    STAKED_USDS_VAULT: tokenDataByNetwork.Mainnet.sUSDS,
+    STAKED_USDS_VAULT: tokenDataByNetwork.Base.sUSDS,
+    SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Base.scrvUSD,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -747,8 +769,6 @@ export const contractsByNetwork: Record<
     CONVEX_FRAX3CRV_POOL: NOT_DEPLOYED,
     CONVEX_LUSD3CRV_POOL: NOT_DEPLOYED,
     CONVEX_GUSD_POOL: NOT_DEPLOYED,
-    CONVEX_OHMFRAXBP_POOL: NOT_DEPLOYED,
-    CONVEX_MIM3CRV_POOL: NOT_DEPLOYED,
     CONVEX_CRVETH_POOL: NOT_DEPLOYED,
     CONVEX_CVXETH_POOL: NOT_DEPLOYED,
     CONVEX_3CRYPTO_POOL: NOT_DEPLOYED,
@@ -920,7 +940,8 @@ export type ERC4626Params = {
     | Protocols.MakerDSR
     | Protocols.Sommelier
     | Protocols.Ethena
-    | Protocols.Sky;
+    | Protocols.Sky
+    | Protocols.Curve;
   type: AdapterInterface.ERC4626_VAULT;
   underlying: NormalToken;
 } & BaseContractParams;
@@ -1226,25 +1247,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     tokens: ["GUSD", "3Crv"],
     underlyings: ["GUSD", "DAI", "USDC", "USDT"],
   },
-  CURVE_MIM_POOL: {
-    name: "Curve MIM",
-    protocol: Protocols.Curve,
-    type: AdapterInterface.CURVE_V1_2ASSETS,
-    version: 10,
-    lpToken: "MIM_3LP3CRV",
-    tokens: ["MIM", "3Crv"],
-    underlyings: ["MIM", "DAI", "USDC", "USDT"],
-  },
 
-  CURVE_OHMFRAXBP_POOL: {
-    name: "Curve OHM_FRAXBP",
-    protocol: Protocols.Curve,
-    type: AdapterInterface.CURVE_V1_2ASSETS,
-    version: 20,
-    lpToken: "OHMFRAXBP",
-    tokens: ["OHM", "crvFRAX"],
-    underlyings: ["OHM", "FRAX", "USDC"],
-  },
   CURVE_CRVETH_POOL: {
     name: "Curve CRVETH",
     protocol: Protocols.Curve,
@@ -1295,6 +1298,22 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     lpToken: "crvUSDUSDT",
     tokens: ["crvUSD", "USDT"],
   },
+  CURVE_CRVUSD_SUSDE_POOL: {
+    name: "Curve crvUsUSDe",
+    protocol: Protocols.Curve,
+    version: 10,
+    type: AdapterInterface.CURVE_V1_2ASSETS,
+    lpToken: "crvUsUSDe",
+    tokens: ["crvUSD", "sUSDe"],
+  },
+  CURVE_LLAMA_THENA_POOL: {
+    name: "Curve scrvUsUSDe",
+    protocol: Protocols.Curve,
+    version: 10,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "scrvUsUSDe",
+    tokens: ["scrvUSD", "sUSDe"],
+  },
 
   CURVE_CRVUSD_FRAX_POOL: {
     name: "Curve crvUSDFRAX",
@@ -1321,6 +1340,24 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.CURVE_V1_2ASSETS,
     lpToken: "rETH_f",
     tokens: ["WETH", "rETH"],
+  },
+
+  CURVE_DOLA_FRAXBP_POOL: {
+    name: "Curve DOLAFRAXBP3CRV",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_V1_2ASSETS,
+    lpToken: "DOLAFRAXBP3CRV_f",
+    tokens: ["DOLA", "crvFRAX"],
+  },
+
+  CURVE_DOLA_CRVUSD_POOL: {
+    name: "Curve crvUSDDOLA",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_V1_2ASSETS,
+    lpToken: "crvUSDDOLA_f",
+    tokens: ["DOLA", "crvUSD"],
   },
 
   CURVE_USDE_USDC_POOL: {
@@ -1377,6 +1414,23 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     tokens: ["GHO", "USDe"],
   },
 
+  CURVE_FRAX_SDAI_POOL: {
+    name: "Curve FRAXsDAI",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "FRAXsDAI",
+    tokens: ["FRAX", "sDAI"],
+  },
+  CURVE_DOLA_SUSDE_POOL: {
+    name: "Curve DOLAsUSDe",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "DOLAsUSDe",
+    tokens: ["DOLA", "sUSDe"],
+  },
+
   CURVE_PUFETH_WSTETH_POOL: {
     name: "Curve pufETH/wstETH",
     protocol: Protocols.Curve,
@@ -1427,6 +1481,14 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.CURVE_STABLE_NG,
     lpToken: "eBTCWBTC",
     tokens: ["eBTC", "WBTC"],
+  },
+  CURVE_PUMPBTC_WBTC_POOL: {
+    name: "Curve pumpBTC/WBTC LP",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "pumpBTCWBTC",
+    tokens: ["pumpBTC", "WBTC"],
   },
   CURVE_TRIBTC_POOL: {
     name: "Curve Tri BTC-Fi LP",
@@ -1578,6 +1640,12 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.ERC4626_VAULT,
     underlying: "USDS",
   },
+  SAVINGS_CRVUSD_VAULT: {
+    name: "Savings crvUSD Vault",
+    protocol: Protocols.Curve,
+    type: AdapterInterface.ERC4626_VAULT,
+    underlying: "crvUSD",
+  },
   CONVEX_BOOSTER: {
     name: "Convex BOOSTER",
     protocol: Protocols.Convex,
@@ -1673,31 +1741,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       },
     ],
   },
-  CONVEX_MIM3CRV_POOL: {
-    name: "Convex MIM3CRV",
-    protocol: Protocols.Convex,
-    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
-    stakedToken: "stkcvxMIM_3LP3CRV",
-    extraRewards: [
-      {
-        rewardToken: "SPELL",
-        poolAddress: {
-          Mainnet: "0x69a92f1656cd2e193797546cFe2EaF32EACcf6f7",
-          Arbitrum: NOT_DEPLOYED,
-          Optimism: NOT_DEPLOYED,
-          Base: NOT_DEPLOYED,
-        },
-      },
-    ],
-  },
 
-  CONVEX_OHMFRAXBP_POOL: {
-    name: "Convex OHMFRAXBP",
-    protocol: Protocols.Convex,
-    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
-    stakedToken: "stkcvxOHMFRAXBP",
-    extraRewards: [],
-  },
   CONVEX_CRVETH_POOL: {
     name: "Convex crvCRVETH",
     protocol: Protocols.Convex,

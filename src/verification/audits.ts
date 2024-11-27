@@ -312,7 +312,12 @@ export const audits: Audits = {
     },
     {
       type: "commit",
-      commit: "593aba9c41c374152e1fa57101f186a58e79c6c3",
+      commit: "593aba9c41c374152e1fa57101f186a58e79c6c3", // v3.1
+      report: auditReports["2024_Oct_Watchpug_Pendle"],
+    },
+    {
+      type: "commit",
+      commit: "044a7059d3c098900dac8c240bc7ec4102240add", // v3.0
       report: auditReports["2024_Oct_Watchpug_Pendle"],
     },
     {
