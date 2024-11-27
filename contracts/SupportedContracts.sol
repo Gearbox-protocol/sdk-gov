@@ -273,6 +273,13 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_PUMPBTC_WBTC_POOL,
+                addr: 0xEA659B615b48EC6e2D55cD82FCBE5F43d79aeea0,
+                name: "CURVE_PUMPBTC_WBTC_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_TRIBTC_POOL,
                 addr: 0xabaf76590478F2fE0b396996f55F0b61101e9502,
                 name: "CURVE_TRIBTC_POOL"

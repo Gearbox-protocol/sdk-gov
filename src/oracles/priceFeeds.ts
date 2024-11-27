@@ -2320,6 +2320,14 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  pumpBTCWBTC: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
   TriBTC: {
     AllNetworks: {
       Main: {
@@ -2887,6 +2895,14 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
         assets: ["wstETH", "sfrxETH", "rETH"],
+        trusted: false,
+      },
+    },
+  },
+  pumpBTC_WBTC_BPT: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },

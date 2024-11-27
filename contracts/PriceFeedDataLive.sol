@@ -4394,6 +4394,20 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_eBTCWBTC, trusted: false, reserve: false})
         );
 
+        // ------------------------ pumpBTCWBTC ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTCWBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTCWBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTCWBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTCWBTC, trusted: false, reserve: false})
+        );
+
         // ------------------------ TriBTC ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_TriBTC, trusted: false, reserve: false}));
         zeroPriceFeedsByNetwork[42161].push(
@@ -6354,6 +6368,20 @@ contract PriceFeedDataLive {
                 trusted: false,
                 reserve: false
             })
+        );
+
+        // ------------------------ pumpBTC_WBTC_BPT ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTC_WBTC_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTC_WBTC_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTC_WBTC_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTC_WBTC_BPT, trusted: false, reserve: false})
         );
 
         // ------------------------ 33AURA_33ARB_33BAL ------------------------

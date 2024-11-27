@@ -35,6 +35,7 @@ export type CurveLPToken =
   | "ezpzETH"
   | "LBTCWBTC"
   | "eBTCWBTC"
+  | "pumpBTCWBTC"
   | "TriBTC"
   | "FRAXsDAI"
   | "DOLAsUSDe"
@@ -415,6 +416,13 @@ export const curveTokens: Record<
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
     pool: "CURVE_EBTC_WBTC_POOL",
     tokenOut: ["eBTC", "WBTC"],
+  },
+  pumpBTCWBTC: {
+    name: "Curve pumpBTC/WBTC LP",
+    symbol: "pumpBTCWBTC",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_PUMPBTC_WBTC_POOL",
+    tokenOut: ["pumpBTC", "WBTC"],
   },
   TriBTC: {
     name: "Curve Tri BTC-Fi LP",

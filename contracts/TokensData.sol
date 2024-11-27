@@ -810,6 +810,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_pumpBTCWBTC,
+                addr: 0xEA659B615b48EC6e2D55cD82FCBE5F43d79aeea0,
+                symbol: "pumpBTCWBTC",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_TriBTC,
                 addr: 0xabaf76590478F2fE0b396996f55F0b61101e9502,
                 symbol: "TriBTC",
@@ -1216,6 +1224,14 @@ contract TokensDataLive {
                 id: TOKEN_sUSDe_USDC_BPT,
                 addr: 0xb819feeF8F0fcDC268AfE14162983A69f6BF179E,
                 symbol: "sUSDe_USDC_BPT",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_pumpBTC_WBTC_BPT,
+                addr: 0x2238aB6c8c58473a5e81b86ec352322fB3f5Edd8,
+                symbol: "pumpBTC_WBTC_BPT",
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
