@@ -1457,14 +1457,14 @@ export const tickerInfoTokensByNetwork: Record<
       {
         symbol: "pumpBTC/BTC",
         dataId: "pumpBTC_FUNDAMENTAL",
-        address: "0x4b984275AD7EED4842429b0dA3eB51E3Ca2da8D1",
+        address: "0x590a4A5B8DbEbbc0e467D4aAf79b604E75fF80dA",
         priceFeed: "0x6b0f8C32992b8c824a27AB8C93E94a9DD263cd9F",
         reserve: false,
       },
       {
         symbol: "pumpBTC/BTC",
         dataId: "pumpBTC/BTC",
-        address: "0x590a4A5B8DbEbbc0e467D4aAf79b604E75fF80dA",
+        address: "0x4b984275AD7EED4842429b0dA3eB51E3Ca2da8D1",
         priceFeed: "0x0D5d2F7009680BDb2B042b072EA31DCbB364bc2d",
         reserve: true,
       },
