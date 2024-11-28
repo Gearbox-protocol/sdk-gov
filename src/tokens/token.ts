@@ -1466,7 +1466,7 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "pumpBTC/BTC",
         address: "0x4b984275AD7EED4842429b0dA3eB51E3Ca2da8D1",
         priceFeed: "0x0D5d2F7009680BDb2B042b072EA31DCbB364bc2d",
-        reserve: true,
+        reserve: false,
       },
     ],
     solvBTC: [
