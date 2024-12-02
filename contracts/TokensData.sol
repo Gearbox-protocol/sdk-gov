@@ -553,6 +553,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_PT_sUSDe_27MAR2025,
+                addr: 0xE00bd3Df25fb187d6ABBB620b3dfd19839947b81,
+                symbol: "PT_sUSDe_27MAR2025",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_sfrxETH,
                 addr: 0xac3E018457B222d93114458476f3E3416Abbe38F,
                 symbol: "sfrxETH",

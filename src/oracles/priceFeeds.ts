@@ -3987,4 +3987,21 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  PT_sUSDe_27MAR2025: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "USDe",
+        market: "0xcDd26Eb5EB2Ce0f203a84553853667aE69Ca29Ce",
+        twapWindow: HOUR_1 / 2,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "USDe",
+        market: "0xcDd26Eb5EB2Ce0f203a84553853667aE69Ca29Ce",
+        twapWindow: HOUR_1 / 2,
+      },
+    },
+  },
 };
