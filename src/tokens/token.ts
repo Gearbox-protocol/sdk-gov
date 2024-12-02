@@ -384,6 +384,7 @@ export const tokenDataByNetwork: Record<
     PT_corn_pumpBTC_26DEC2024: "0xa76f0C6e5f286bFF151b891d2A0245077F1Ad74c",
     PT_cornLBTC_26DEC2024: "0x332A8ee60EdFf0a11CF3994b1b846BBC27d3DcD6",
     PT_corn_eBTC_27MAR2025: "0x44A7876cA99460ef3218bf08b5f52E2dbE199566",
+    PT_sUSDe_27MAR2025: "0xE00bd3Df25fb187d6ABBB620b3dfd19839947b81",
 
     // GEARBOX
     dDAI: "0x6CFaF95457d7688022FC53e7AbE052ef8DFBbdBA",
@@ -685,6 +686,7 @@ export const tokenDataByNetwork: Record<
     PT_corn_pumpBTC_26DEC2024: NOT_DEPLOYED,
     PT_cornLBTC_26DEC2024: NOT_DEPLOYED,
     PT_corn_eBTC_27MAR2025: NOT_DEPLOYED,
+    PT_sUSDe_27MAR2025: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -986,6 +988,7 @@ export const tokenDataByNetwork: Record<
     PT_corn_pumpBTC_26DEC2024: NOT_DEPLOYED,
     PT_cornLBTC_26DEC2024: NOT_DEPLOYED,
     PT_corn_eBTC_27MAR2025: NOT_DEPLOYED,
+    PT_sUSDe_27MAR2025: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -1289,6 +1292,7 @@ export const tokenDataByNetwork: Record<
     PT_corn_pumpBTC_26DEC2024: NOT_DEPLOYED,
     PT_cornLBTC_26DEC2024: NOT_DEPLOYED,
     PT_corn_eBTC_27MAR2025: NOT_DEPLOYED,
+    PT_sUSDe_27MAR2025: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -1646,6 +1650,15 @@ export const tickerInfoTokensByNetwork: Record<
     ],
 
     PT_sUSDe_26DEC2024: [
+      {
+        symbol: "USDe",
+        dataId: "USDe",
+        address: tokenDataByNetwork.Mainnet.USDe,
+        priceFeed: "0x8A58F957B99E1ED6B3DF20F267a6d5a6dd8e3513",
+        reserve: true,
+      },
+    ],
+    PT_sUSDe_27MAR2025: [
       {
         symbol: "USDe",
         dataId: "USDe",
