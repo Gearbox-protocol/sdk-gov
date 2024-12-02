@@ -182,4 +182,5 @@ export type PriceFeedData =
       market: Address;
       underlying: SupportedToken;
       twapWindow: number;
+      priceToSy: boolean;
     };
