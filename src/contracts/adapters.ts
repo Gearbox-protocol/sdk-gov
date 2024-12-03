@@ -34,4 +34,5 @@ export enum AdapterInterface {
   MELLOW_ERC4626_VAULT,
   DAI_USDS_EXCHANGE,
   STAKING_REWARDS,
+  EQUALIZER_ROUTER,
 }
