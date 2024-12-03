@@ -23,4 +23,5 @@ export enum Protocols {
   Mellow,
   Pendle,
   Sky,
+  Equalizer,
 }
