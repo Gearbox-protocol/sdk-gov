@@ -156,11 +156,11 @@ export const auditReports: Record<string, Report> = {
     reportLink:
       "https://github.com/Gearbox-protocol/security/blob/main/audits/2024%20Oct%20-%20Decurity_Gearbox_SKY_integration.pdf",
   },
-  "2024_Oct_Watchpug_Pendle": {
+  "2024_Dec_Watchpug_Pendle": {
     auditor: Auditor.Watchpug,
     revision: "2024 Oct",
     reportLink:
-      "https://github.com/Gearbox-protocol/security/blob/main/audits/2024%20Oct%20-%20Watchpug_Pendle_oracle.pdf",
+      "https://github.com/Gearbox-protocol/security/blob/main/audits/2024%20Dec%20-%20Watchpug_Pendle_Oracle.pdf",
   },
 };
 
@@ -313,12 +313,12 @@ export const audits: Audits = {
     {
       type: "commit",
       commit: "370777f28ba4df7f6465f4deca2a337fece2abb5", // v3.1
-      report: auditReports["2024_Oct_Watchpug_Pendle"],
+      report: auditReports["2024_Dec_Watchpug_Pendle"],
     },
     {
       type: "commit",
       commit: "4f2b39e0554beeb484d07a53ce90b67f63aaa41d", // v3.0
-      report: auditReports["2024_Oct_Watchpug_Pendle"],
+      report: auditReports["2024_Dec_Watchpug_Pendle"],
     },
     {
       type: "commit",
