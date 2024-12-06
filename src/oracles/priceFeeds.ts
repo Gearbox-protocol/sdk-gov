@@ -2701,6 +2701,10 @@ export const priceFeedsByToken: Record<
         token: "scrvUsUSDe",
         trusted: false,
       },
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "scrvUsUSDe",
+      },
     },
   },
 

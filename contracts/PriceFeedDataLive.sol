@@ -5670,7 +5670,31 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxllamathena,
+                tokenHasSamePriceFeed: TOKEN_scrvUsUSDe,
+                trusted: false,
+                reserve: true
+            })
+        );
         theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxllamathena,
+                tokenHasSamePriceFeed: TOKEN_scrvUsUSDe,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxllamathena,
+                tokenHasSamePriceFeed: TOKEN_scrvUsUSDe,
+                trusted: false,
+                reserve: true
+            })
+        );
+        theSamePriceFeedsByNetwork[10].push(
             TheSamePriceFeedData({
                 token: TOKEN_stkcvxllamathena,
                 tokenHasSamePriceFeed: TOKEN_scrvUsUSDe,
@@ -5683,7 +5707,7 @@ contract PriceFeedDataLive {
                 token: TOKEN_stkcvxllamathena,
                 tokenHasSamePriceFeed: TOKEN_scrvUsUSDe,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
@@ -5692,6 +5716,14 @@ contract PriceFeedDataLive {
                 tokenHasSamePriceFeed: TOKEN_scrvUsUSDe,
                 trusted: false,
                 reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxllamathena,
+                tokenHasSamePriceFeed: TOKEN_scrvUsUSDe,
+                trusted: false,
+                reserve: true
             })
         );
 
