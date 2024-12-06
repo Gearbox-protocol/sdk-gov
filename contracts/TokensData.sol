@@ -987,7 +987,7 @@ contract TokensDataLive {
         tokenDataByNetwork[1].push(
             TokenData({
                 id: TOKEN_cvxllamathena,
-                addr: 0xd29f8980852c2c76fC3f6E96a7Aa06E0BedCC1B1,
+                addr: 0x237926E55f9deee89833a42dEb92d3a6970850B4,
                 symbol: "cvxllamathena",
                 tokenType: TokenType.CONVEX_LP_TOKEN
             })

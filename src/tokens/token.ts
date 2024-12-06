@@ -1554,6 +1554,38 @@ export const tickerInfoTokensByNetwork: Record<
         reserve: true,
       },
     ],
+    stkcvxllamathena: [
+      {
+        symbol: "crvUSD",
+        dataId: "crvUSD",
+        address: tokenDataByNetwork.Mainnet.crvUSD,
+        priceFeed: "0x47c99d1A79444A91C89b33a808e1a7cb0336E428",
+        reserve: true,
+      },
+      {
+        symbol: "USDe",
+        dataId: "USDe",
+        address: tokenDataByNetwork.Mainnet.USDe,
+        priceFeed: "0x8A58F957B99E1ED6B3DF20F267a6d5a6dd8e3513",
+        reserve: true,
+      },
+    ],
+    cvxllamathena: [
+      {
+        symbol: "crvUSD",
+        dataId: "crvUSD",
+        address: tokenDataByNetwork.Mainnet.crvUSD,
+        priceFeed: "0x47c99d1A79444A91C89b33a808e1a7cb0336E428",
+        reserve: true,
+      },
+      {
+        symbol: "USDe",
+        dataId: "USDe",
+        address: tokenDataByNetwork.Mainnet.USDe,
+        priceFeed: "0x8A58F957B99E1ED6B3DF20F267a6d5a6dd8e3513",
+        reserve: true,
+      },
+    ],
     scrvUSD: [
       {
         symbol: "crvUSD",
