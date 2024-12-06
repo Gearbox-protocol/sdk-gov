@@ -2012,8 +2012,7 @@ export const priceFeedsByToken: Record<
   FRAXsDAI: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.CURVE_2LP_ORACLE,
-        assets: ["FRAX", "sDAI"],
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2021,8 +2020,7 @@ export const priceFeedsByToken: Record<
   DOLAsUSDe: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.CURVE_2LP_ORACLE,
-        assets: ["DOLA", "sUSDe"],
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2528,6 +2526,16 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  cvxllamathena: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "scrvUsUSDe",
+        trusted: false,
+      },
+    },
+  },
+
   // CVX tokens
   stkcvx3Crv: {
     AllNetworks: {
@@ -2682,6 +2690,15 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.THE_SAME_AS,
         token: "GHOcrvUSD",
+        trusted: false,
+      },
+    },
+  },
+  stkcvxllamathena: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "scrvUsUSDe",
         trusted: false,
       },
     },

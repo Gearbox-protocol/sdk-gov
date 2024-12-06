@@ -3306,79 +3306,31 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ FRAXsDAI ------------------------
-        curvePriceFeedsByNetwork[1].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_FRAXsDAI,
-                assets: TokensLib.arrayOf(TOKEN_FRAX, TOKEN_sDAI),
-                pool: Contracts.CURVE_FRAX_SDAI_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_FRAXsDAI, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[42161].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_FRAXsDAI,
-                assets: TokensLib.arrayOf(TOKEN_FRAX, TOKEN_sDAI),
-                pool: Contracts.CURVE_FRAX_SDAI_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_FRAXsDAI, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[10].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_FRAXsDAI,
-                assets: TokensLib.arrayOf(TOKEN_FRAX, TOKEN_sDAI),
-                pool: Contracts.CURVE_FRAX_SDAI_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_FRAXsDAI, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[8453].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_FRAXsDAI,
-                assets: TokensLib.arrayOf(TOKEN_FRAX, TOKEN_sDAI),
-                pool: Contracts.CURVE_FRAX_SDAI_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_FRAXsDAI, trusted: false, reserve: false})
         );
 
         // ------------------------ DOLAsUSDe ------------------------
-        curvePriceFeedsByNetwork[1].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_DOLAsUSDe,
-                assets: TokensLib.arrayOf(TOKEN_DOLA, TOKEN_sUSDe),
-                pool: Contracts.CURVE_DOLA_SUSDE_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_DOLAsUSDe, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[42161].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_DOLAsUSDe,
-                assets: TokensLib.arrayOf(TOKEN_DOLA, TOKEN_sUSDe),
-                pool: Contracts.CURVE_DOLA_SUSDE_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_DOLAsUSDe, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[10].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_DOLAsUSDe,
-                assets: TokensLib.arrayOf(TOKEN_DOLA, TOKEN_sUSDe),
-                pool: Contracts.CURVE_DOLA_SUSDE_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_DOLAsUSDe, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[8453].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_DOLAsUSDe,
-                assets: TokensLib.arrayOf(TOKEN_DOLA, TOKEN_sUSDe),
-                pool: Contracts.CURVE_DOLA_SUSDE_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_DOLAsUSDe, trusted: false, reserve: false})
         );
 
         // ------------------------ crvCRVETH ------------------------
@@ -5067,6 +5019,40 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ cvxllamathena ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxllamathena,
+                tokenHasSamePriceFeed: TOKEN_scrvUsUSDe,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxllamathena,
+                tokenHasSamePriceFeed: TOKEN_scrvUsUSDe,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxllamathena,
+                tokenHasSamePriceFeed: TOKEN_scrvUsUSDe,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxllamathena,
+                tokenHasSamePriceFeed: TOKEN_scrvUsUSDe,
+                trusted: false,
+                reserve: false
+            })
+        );
+
         // ------------------------ stkcvx3Crv ------------------------
         theSamePriceFeedsByNetwork[1].push(
             TheSamePriceFeedData({
@@ -5670,6 +5656,40 @@ contract PriceFeedDataLive {
             TheSamePriceFeedData({
                 token: TOKEN_stkcvxGHOcrvUSD,
                 tokenHasSamePriceFeed: TOKEN_GHOcrvUSD,
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ stkcvxllamathena ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxllamathena,
+                tokenHasSamePriceFeed: TOKEN_scrvUsUSDe,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxllamathena,
+                tokenHasSamePriceFeed: TOKEN_scrvUsUSDe,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxllamathena,
+                tokenHasSamePriceFeed: TOKEN_scrvUsUSDe,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxllamathena,
+                tokenHasSamePriceFeed: TOKEN_scrvUsUSDe,
                 trusted: false,
                 reserve: false
             })

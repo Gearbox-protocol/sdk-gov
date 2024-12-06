@@ -986,6 +986,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_cvxllamathena,
+                addr: 0xd29f8980852c2c76fC3f6E96a7Aa06E0BedCC1B1,
+                symbol: "cvxllamathena",
+                tokenType: TokenType.CONVEX_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_stkcvx3Crv,
                 addr: 0xbAc7a431146aeAf3F57A16b9954f332Fd292F270,
                 symbol: "stkcvx3Crv",
@@ -1109,6 +1117,14 @@ contract TokensDataLive {
                 id: TOKEN_stkcvxGHOcrvUSD,
                 addr: 0xa19Da509625f0e36050eA2906E991A99B29D3221,
                 symbol: "stkcvxGHOcrvUSD",
+                tokenType: TokenType.CONVEX_STAKED_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_stkcvxllamathena,
+                addr: 0x72eD19788Bce2971A5ed6401662230ee57e254B7,
+                symbol: "stkcvxllamathena",
                 tokenType: TokenType.CONVEX_STAKED_TOKEN
             })
         );

@@ -547,6 +547,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "CONVEX_GHO_CRVUSD_POOL"
             })
         );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CONVEX_LLAMA_THENA_POOL,
+                addr: 0x11fD8801a051b296E337a3e1168839fb346D5940,
+                name: "CONVEX_LLAMA_THENA_POOL"
+            })
+        );
 
         contractDataByNetwork[1].push(
             ContractData({

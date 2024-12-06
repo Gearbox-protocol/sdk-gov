@@ -24,6 +24,7 @@ const tier1UniV3Config: UniV3Config = {
     { token0: "WBTC", token1: "WETH", fee: 500 },
     { token0: "WBTC", token1: "USDC", fee: 500 },
     { token0: "SKY", token1: "WETH", fee: 3000 },
+    { token0: "DAI", token1: "WETH", fee: 3000 },
   ],
 };
 
