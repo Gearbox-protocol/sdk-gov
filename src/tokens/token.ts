@@ -291,6 +291,7 @@ export const tokenDataByNetwork: Record<
     cvxcrvUSDFRAX: "0x01CcDe1dFb6c84e1Cc13a6Bf777aa2160ABd11BA",
     cvxcrvUSDETHCRV: "0xa11a2c04D62b4A2324Fc857Fa14762Ad94751b4F",
     cvxGHOcrvUSD: "0x53f4474c06c699307514bd55FB1607005F46a889",
+    cvxllamathena: "0x237926E55f9deee89833a42dEb92d3a6970850B4",
 
     // CONVEX PHANTOM TOKEN ADDRESSES
     stkcvx3Crv: "0xbAc7a431146aeAf3F57A16b9954f332Fd292F270",
@@ -309,6 +310,7 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDFRAX: "0x7376AD488AB2bd8dF7665d619A4148f0E5094813",
     stkcvxcrvUSDETHCRV: "0x0Bf1626d4925F8A872801968be11c052862AC2D3",
     stkcvxGHOcrvUSD: "0xa19Da509625f0e36050eA2906E991A99B29D3221",
+    stkcvxllamathena: "0x72eD19788Bce2971A5ed6401662230ee57e254B7",
 
     cvxcrvUSDT: NOT_DEPLOYED,
 
@@ -595,6 +597,7 @@ export const tokenDataByNetwork: Record<
     cvxcrvUSDFRAX: NOT_DEPLOYED,
     cvxcrvUSDETHCRV: NOT_DEPLOYED,
     cvxGHOcrvUSD: NOT_DEPLOYED,
+    cvxllamathena: NOT_DEPLOYED,
     ezETHWETH: NOT_DEPLOYED,
     ezpzETH: NOT_DEPLOYED,
     LBTCWBTC: NOT_DEPLOYED,
@@ -621,6 +624,7 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDFRAX: NOT_DEPLOYED,
     stkcvxcrvUSDETHCRV: NOT_DEPLOYED,
     stkcvxGHOcrvUSD: NOT_DEPLOYED,
+    stkcvxllamathena: NOT_DEPLOYED,
 
     cvxcrvUSDT: "0xf74d4C9b0F49fb70D8Ff6706ddF39e3a16D61E67",
 
@@ -903,6 +907,7 @@ export const tokenDataByNetwork: Record<
     cvxcrvUSDFRAX: NOT_DEPLOYED,
     cvxcrvUSDETHCRV: NOT_DEPLOYED,
     cvxGHOcrvUSD: NOT_DEPLOYED,
+    cvxllamathena: NOT_DEPLOYED,
 
     crvUSD: NOT_DEPLOYED,
 
@@ -923,6 +928,7 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDFRAX: NOT_DEPLOYED,
     stkcvxcrvUSDETHCRV: NOT_DEPLOYED,
     stkcvxGHOcrvUSD: NOT_DEPLOYED,
+    stkcvxllamathena: NOT_DEPLOYED,
 
     cvxcrvUSDT: NOT_DEPLOYED,
 
@@ -1208,6 +1214,7 @@ export const tokenDataByNetwork: Record<
     cvxcrvUSDFRAX: NOT_DEPLOYED,
     cvxcrvUSDETHCRV: NOT_DEPLOYED,
     cvxGHOcrvUSD: NOT_DEPLOYED,
+    cvxllamathena: NOT_DEPLOYED,
 
     crvUSD: NOT_DEPLOYED,
 
@@ -1228,6 +1235,7 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDFRAX: NOT_DEPLOYED,
     stkcvxcrvUSDETHCRV: NOT_DEPLOYED,
     stkcvxGHOcrvUSD: NOT_DEPLOYED,
+    stkcvxllamathena: NOT_DEPLOYED,
 
     cvxcrvUSDT: NOT_DEPLOYED,
 
@@ -1546,6 +1554,38 @@ export const tickerInfoTokensByNetwork: Record<
         reserve: true,
       },
     ],
+    stkcvxllamathena: [
+      {
+        symbol: "crvUSD",
+        dataId: "crvUSD",
+        address: tokenDataByNetwork.Mainnet.crvUSD,
+        priceFeed: "0x47c99d1A79444A91C89b33a808e1a7cb0336E428",
+        reserve: true,
+      },
+      {
+        symbol: "USDe",
+        dataId: "USDe",
+        address: tokenDataByNetwork.Mainnet.USDe,
+        priceFeed: "0x8A58F957B99E1ED6B3DF20F267a6d5a6dd8e3513",
+        reserve: true,
+      },
+    ],
+    cvxllamathena: [
+      {
+        symbol: "crvUSD",
+        dataId: "crvUSD",
+        address: tokenDataByNetwork.Mainnet.crvUSD,
+        priceFeed: "0x47c99d1A79444A91C89b33a808e1a7cb0336E428",
+        reserve: true,
+      },
+      {
+        symbol: "USDe",
+        dataId: "USDe",
+        address: tokenDataByNetwork.Mainnet.USDe,
+        priceFeed: "0x8A58F957B99E1ED6B3DF20F267a6d5a6dd8e3513",
+        reserve: true,
+      },
+    ],
     scrvUSD: [
       {
         symbol: "crvUSD",
@@ -1722,18 +1762,27 @@ export const tickerInfoTokensByNetwork: Record<
 
 export const tickerTokensByNetwork: Record<
   NetworkType,
-  PartialRecord<TickerToken, Address>
+  PartialRecord<TickerToken, Array<Address>>
 > = Object.fromEntries(
   Object.entries(tickerInfoTokensByNetwork).map(([network, data]) => {
     if (Object.values(data).length === 0) return [network, {}];
-    const addrs = Object.fromEntries(
-      Object.values(data)
-        .map(d => d.map(val => [val.symbol, val.address]))
-        .flat(),
+    const addrs: PartialRecord<TickerToken, Array<Address>> = {};
+
+    Object.values(data).forEach(d =>
+      d.forEach(val => {
+        if (Object.keys(addrs).includes(val.symbol)) {
+          if (!addrs[val.symbol]?.includes(val.address)) {
+            addrs[val.symbol]?.push(val.address);
+          }
+        } else {
+          addrs[val.symbol] = [val.address];
+        }
+      }),
     );
+
     return [network, addrs];
   }),
-) as Record<NetworkType, PartialRecord<TickerToken, Address>>;
+) as Record<NetworkType, PartialRecord<TickerToken, Array<Address>>>;
 
 export const tokenSymbolByAddress = TypedObjectUtils.entries(
   tokenDataByNetwork,
@@ -1753,10 +1802,11 @@ export const tickerSymbolByAddress: Record<Address, TickerToken> =
   Object.fromEntries(
     Object.values(tickerTokensByNetwork)
       .map(en =>
-        Object.entries(en).map(([symbol, addr]) => [
-          addr.toLowerCase() as Address,
-          symbol,
-        ]),
+        Object.entries(en)
+          .map(([symbol, addresses]) =>
+            addresses.map(addr => [addr.toLowerCase() as Address, symbol]),
+          )
+          .flat(),
       )
       .flat(),
   );

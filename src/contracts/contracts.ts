@@ -106,7 +106,8 @@ export type ConvexPoolContract =
   | "CONVEX_CRVUSD_FRAX_POOL"
   | "CONVEX_TRI_CRV_POOL"
   | "CONVEX_GHO_CRVUSD_POOL"
-  | "CONVEX_CRVUSD_USDT_POOL_ARB";
+  | "CONVEX_CRVUSD_USDT_POOL_ARB"
+  | "CONVEX_LLAMA_THENA_POOL";
 
 export type AuraPoolContract =
   | "AURA_B_RETH_STABLE_POOL"
@@ -275,6 +276,7 @@ export const contractsByNetwork: Record<
     CONVEX_CRVUSD_FRAX_POOL: "0x3CfB4B26dc96B124D15A6f360503d028cF2a3c00",
     CONVEX_TRI_CRV_POOL: "0xF956a46DbA1A0a567168db8655bc18E9050C7738",
     CONVEX_GHO_CRVUSD_POOL: "0x5eC758f79b96AE74e7F1Ba9583009aFB3fc8eACB",
+    CONVEX_LLAMA_THENA_POOL: "0x11fD8801a051b296E337a3e1168839fb346D5940",
 
     CONVEX_BOOSTER_ARB: NOT_DEPLOYED,
     CONVEX_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Mainnet.cvxcrvUSDT,
@@ -444,6 +446,7 @@ export const contractsByNetwork: Record<
     CONVEX_CRVUSD_FRAX_POOL: NOT_DEPLOYED,
     CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
     CONVEX_GHO_CRVUSD_POOL: NOT_DEPLOYED,
+    CONVEX_LLAMA_THENA_POOL: NOT_DEPLOYED,
 
     CONVEX_BOOSTER_ARB: "0xF403C135812408BFbE8713b5A23a04b3D48AAE31",
     CONVEX_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Arbitrum.cvxcrvUSDT,
@@ -611,6 +614,7 @@ export const contractsByNetwork: Record<
     CONVEX_CRVUSD_FRAX_POOL: NOT_DEPLOYED,
     CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
     CONVEX_GHO_CRVUSD_POOL: NOT_DEPLOYED,
+    CONVEX_LLAMA_THENA_POOL: NOT_DEPLOYED,
 
     CONVEX_BOOSTER_ARB: NOT_DEPLOYED,
     CONVEX_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Optimism.cvxcrvUSDT,
@@ -778,6 +782,7 @@ export const contractsByNetwork: Record<
     CONVEX_CRVUSD_FRAX_POOL: NOT_DEPLOYED,
     CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
     CONVEX_GHO_CRVUSD_POOL: NOT_DEPLOYED,
+    CONVEX_LLAMA_THENA_POOL: NOT_DEPLOYED,
 
     CONVEX_BOOSTER_ARB: NOT_DEPLOYED,
     CONVEX_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Base.cvxcrvUSDT,
@@ -1878,6 +1883,23 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
         rewardToken: "CVX",
         poolAddress: {
           Mainnet: "0xE7cC925739E41E2A03A53770F5E9Ed43afe13993",
+          Arbitrum: NOT_DEPLOYED,
+          Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
+        },
+      },
+    ],
+  },
+  CONVEX_LLAMA_THENA_POOL: {
+    name: "Convex todo",
+    protocol: Protocols.Convex,
+    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
+    stakedToken: "stkcvxllamathena",
+    extraRewards: [
+      {
+        rewardToken: "CVX",
+        poolAddress: {
+          Mainnet: "0xc66844E5788b7d7D6DFFa5EC1Db62d898c59D6e7",
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
