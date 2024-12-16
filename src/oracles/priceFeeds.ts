@@ -2124,25 +2124,25 @@ export const priceFeedsByToken: Record<
     AllNetworks: {
       Main: {
         type: PriceFeedType.CURVE_2LP_ORACLE,
-        assets: ["crvUSD", "sUSDe"],
+        assets: ["crvUSD", "USDe"],
         trusted: false,
       },
       Reserve: {
         type: PriceFeedType.CURVE_2LP_ORACLE,
-        assets: ["crvUSD", "sUSDe"],
+        assets: ["crvUSD", "USDe"],
       },
     },
   },
-  scrvUsUSDe: {
+  llamathena: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.CURVE_2LP_ORACLE,
-        assets: ["scrvUSD", "sUSDe"],
+        assets: ["crvUSD", "USDe"],
         trusted: false,
       },
       Reserve: {
         type: PriceFeedType.CURVE_2LP_ORACLE,
-        assets: ["scrvUSD", "sUSDe"],
+        assets: ["crvUSD", "USDe"],
       },
     },
   },
@@ -2530,12 +2530,12 @@ export const priceFeedsByToken: Record<
     AllNetworks: {
       Main: {
         type: PriceFeedType.THE_SAME_AS,
-        token: "scrvUsUSDe",
+        token: "llamathena",
         trusted: false,
       },
       Reserve: {
         type: PriceFeedType.THE_SAME_AS,
-        token: "scrvUsUSDe",
+        token: "llamathena",
       },
     },
   },
@@ -2702,12 +2702,12 @@ export const priceFeedsByToken: Record<
     AllNetworks: {
       Main: {
         type: PriceFeedType.THE_SAME_AS,
-        token: "scrvUsUSDe",
+        token: "llamathena",
         trusted: false,
       },
       Reserve: {
         type: PriceFeedType.THE_SAME_AS,
-        token: "scrvUsUSDe",
+        token: "llamathena",
       },
     },
   },

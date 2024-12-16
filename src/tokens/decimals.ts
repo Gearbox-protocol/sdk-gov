@@ -87,7 +87,7 @@ export const decimals: Record<SupportedToken, number> = {
   crvUSD: 18,
   crvUSDUSDC: 18,
   crvUsUSDe: 18,
-  scrvUsUSDe: 18,
+  llamathena: 18,
   crvUSDUSDT: 18,
   crvUSDETHCRV: 18,
   crvUSDFRAX: 18,

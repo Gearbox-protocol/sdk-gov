@@ -657,9 +657,9 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
-                id: TOKEN_scrvUsUSDe,
+                id: TOKEN_llamathena,
                 addr: 0xd29f8980852c2c76fC3f6E96a7Aa06E0BedCC1B1,
-                symbol: "scrvUsUSDe",
+                symbol: "llamathena",
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
         );

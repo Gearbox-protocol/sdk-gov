@@ -283,7 +283,7 @@ export const convexLpTokens: Record<ConvexLPToken, ConvexLPTokenData> = {
     },
     pool: "CONVEX_LLAMA_THENA_POOL",
     pid: 401,
-    underlying: "scrvUsUSDe",
+    underlying: "llamathena",
     stakedToken: "stkcvxllamathena",
   },
 };
@@ -501,7 +501,7 @@ export const convexStakedPhantomTokens: Record<
     },
     pool: "CONVEX_LLAMA_THENA_POOL",
     pid: 401,
-    underlying: "scrvUsUSDe",
+    underlying: "llamathena",
     lpToken: "cvxllamathena",
   },
 };
