@@ -110,7 +110,6 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     { token: "USDecrvUSD", lt: 0 },
     { token: "FRAXsDAI", lt: 0 },
     { token: "steCRV", lt: 0 },
-    { token: "DOLAFRAXBP3CRV_f", lt: 0 },
     { token: "crvUSDDOLA_f", lt: 0 },
   ],
   adapters: [
@@ -290,12 +289,6 @@ export const dolaConfigMainnet: PoolV3DeployConfig = {
       limit: BigInt(0),
     },
     steCRV: {
-      minRate: 1,
-      maxRate: 1,
-      quotaIncreaseFee: 0,
-      limit: BigInt(0),
-    },
-    DOLAFRAXBP3CRV_f: {
       minRate: 1,
       maxRate: 1,
       quotaIncreaseFee: 0,
