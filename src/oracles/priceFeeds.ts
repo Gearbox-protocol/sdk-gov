@@ -2199,8 +2199,7 @@ export const priceFeedsByToken: Record<
   DOLAFRAXBP3CRV_f: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.CURVE_CRYPTO_ORACLE,
-        assets: ["DOLA", "crvFRAX"],
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },

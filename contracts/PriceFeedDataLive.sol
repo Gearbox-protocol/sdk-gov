@@ -3976,41 +3976,17 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ DOLAFRAXBP3CRV_f ------------------------
-        curveCryptoPriceFeedsByNetwork[1].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_DOLAFRAXBP3CRV_f,
-                assets: TokensLib.arrayOf(TOKEN_DOLA, TOKEN_crvFRAX),
-                pool: Contracts.CURVE_DOLA_FRAXBP_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_DOLAFRAXBP3CRV_f, trusted: false, reserve: false})
         );
-        curveCryptoPriceFeedsByNetwork[42161].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_DOLAFRAXBP3CRV_f,
-                assets: TokensLib.arrayOf(TOKEN_DOLA, TOKEN_crvFRAX),
-                pool: Contracts.CURVE_DOLA_FRAXBP_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_DOLAFRAXBP3CRV_f, trusted: false, reserve: false})
         );
-        curveCryptoPriceFeedsByNetwork[10].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_DOLAFRAXBP3CRV_f,
-                assets: TokensLib.arrayOf(TOKEN_DOLA, TOKEN_crvFRAX),
-                pool: Contracts.CURVE_DOLA_FRAXBP_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_DOLAFRAXBP3CRV_f, trusted: false, reserve: false})
         );
-        curveCryptoPriceFeedsByNetwork[8453].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_DOLAFRAXBP3CRV_f,
-                assets: TokensLib.arrayOf(TOKEN_DOLA, TOKEN_crvFRAX),
-                pool: Contracts.CURVE_DOLA_FRAXBP_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_DOLAFRAXBP3CRV_f, trusted: false, reserve: false})
         );
 
         // ------------------------ crvUSDDOLA_f ------------------------
