@@ -2208,8 +2208,7 @@ export const priceFeedsByToken: Record<
   crvUSDDOLA_f: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.CURVE_CRYPTO_ORACLE,
-        assets: ["DOLA", "crvUSD"],
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
