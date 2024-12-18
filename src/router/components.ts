@@ -19,6 +19,7 @@ export enum RouterProtocols {
   Pendle,
   DaiUsdsSwap,
   SKY,
+  LlamaThena,
 }
 
 export enum RouterComponent {
