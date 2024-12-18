@@ -2124,25 +2124,25 @@ export const priceFeedsByToken: Record<
     AllNetworks: {
       Main: {
         type: PriceFeedType.CURVE_2LP_ORACLE,
-        assets: ["crvUSD", "sUSDe"],
+        assets: ["crvUSD", "USDe"],
         trusted: false,
       },
       Reserve: {
         type: PriceFeedType.CURVE_2LP_ORACLE,
-        assets: ["crvUSD", "sUSDe"],
+        assets: ["crvUSD", "USDe"],
       },
     },
   },
-  scrvUsUSDe: {
+  llamathena: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.CURVE_2LP_ORACLE,
-        assets: ["scrvUSD", "sUSDe"],
+        assets: ["crvUSD", "USDe"],
         trusted: false,
       },
       Reserve: {
         type: PriceFeedType.CURVE_2LP_ORACLE,
-        assets: ["scrvUSD", "sUSDe"],
+        assets: ["crvUSD", "USDe"],
       },
     },
   },
@@ -2199,8 +2199,7 @@ export const priceFeedsByToken: Record<
   DOLAFRAXBP3CRV_f: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.CURVE_CRYPTO_ORACLE,
-        assets: ["DOLA", "crvFRAX"],
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2209,8 +2208,7 @@ export const priceFeedsByToken: Record<
   crvUSDDOLA_f: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.CURVE_CRYPTO_ORACLE,
-        assets: ["DOLA", "crvUSD"],
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2530,12 +2528,12 @@ export const priceFeedsByToken: Record<
     AllNetworks: {
       Main: {
         type: PriceFeedType.THE_SAME_AS,
-        token: "scrvUsUSDe",
+        token: "llamathena",
         trusted: false,
       },
       Reserve: {
         type: PriceFeedType.THE_SAME_AS,
-        token: "scrvUsUSDe",
+        token: "llamathena",
       },
     },
   },
@@ -2702,12 +2700,12 @@ export const priceFeedsByToken: Record<
     AllNetworks: {
       Main: {
         type: PriceFeedType.THE_SAME_AS,
-        token: "scrvUsUSDe",
+        token: "llamathena",
         trusted: false,
       },
       Reserve: {
         type: PriceFeedType.THE_SAME_AS,
-        token: "scrvUsUSDe",
+        token: "llamathena",
       },
     },
   },

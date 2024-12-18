@@ -19,6 +19,7 @@ export enum RouterProtocols {
   Pendle,
   DaiUsdsSwap,
   SKY,
+  LlamaThena,
 }
 
 export enum RouterComponent {
@@ -65,4 +66,6 @@ export enum RouterComponent {
   RC_STAKING_REWARDS_WITHDRAWER = 40,
   RC_STAKING_REWARDS_PATH_RESOLVER = 41,
   RC_PT_SUSDE_OVERRIDER = 42,
+  RC_EQUALIZER_SWAPPER = 43,
+  RC_CONVEX_LLAMATHENA_OVERRIDER = 44,
 }

@@ -336,7 +336,7 @@ contract AdapterData {
             CurveAdapter({
                 targetContract: Contracts.CURVE_LLAMA_THENA_POOL,
                 adapterType: AdapterType.CURVE_STABLE_NG,
-                lpToken: TOKEN_scrvUsUSDe,
+                lpToken: TOKEN_llamathena,
                 basePool: Contracts.NO_CONTRACT
             })
         );
