@@ -1,6 +1,5 @@
 import {
   AdapterConfig,
-  GenericSwapConfig,
   PendlePairStatus,
   PendleRouterConfig,
   UniV3Config,
@@ -124,7 +123,7 @@ const tierMCreditManager: CreditManagerV3DeployConfig = {
   adapters,
 };
 
-export const dolaConfigMainnet: PoolV3DeployConfig = {
+export const nexoConfigMainnet: PoolV3DeployConfig = {
   id: "mainnet-nexo-v3",
   symbol: "dUSDTV3N",
   name: "Nexo USDT v3 stable",
