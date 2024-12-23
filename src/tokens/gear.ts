@@ -8,7 +8,8 @@ export type DieselSimpleTokenTypes =
   | "dWBTC"
   | "dWETH"
   | "dwstETH"
-  | "dFRAX";
+  | "dFRAX"
+  | "dDOLAV3";
 
 export type DieselTokenWithStkTypes =
   | "dUSDCV3"
@@ -18,7 +19,6 @@ export type DieselTokenWithStkTypes =
   | "dGHOV3"
   | "dDAIV3"
   | "dcrvUSDV3"
-  | "dDOLAV3"
   | "dUSDC_eV3";
 
 export type DieselTokenTypes = DieselSimpleTokenTypes | DieselTokenWithStkTypes;
@@ -100,6 +100,12 @@ const dieselSimpleTokens: Record<
     symbol: "dFRAX",
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
   },
+
+  dDOLAV3: {
+    name: "dDOLAV3",
+    symbol: "dDOLAV3",
+    type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
+  },
 };
 
 const dieselWithStkTokens: Record<
@@ -155,11 +161,6 @@ const dieselWithStkTokens: Record<
     symbol: "dcrvUSDV3",
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     stakedToken: "sdcrvUSDV3",
-  },
-  dDOLAV3: {
-    name: "dDOLAV3",
-    symbol: "dDOLAV3",
-    type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
   },
 };
 
