@@ -32,7 +32,6 @@ export type DieselStakedTokenTypes =
   | "sdGHOV3"
   | "sdDAIV3"
   | "sdcrvUSDV3"
-  | "sdDOLAV3"
   | "sdUSDC_eV3";
 
 export type GearboxToken = "GEAR";
@@ -161,7 +160,6 @@ const dieselWithStkTokens: Record<
     name: "dDOLAV3",
     symbol: "dDOLAV3",
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
-    stakedToken: "sdDOLAV3",
   },
 };
 
@@ -225,12 +223,6 @@ const dieselStakedTokens: Record<
     symbol: "sdcrvUSDV3",
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
     underlying: "dcrvUSDV3",
-  },
-  sdDOLAV3: {
-    name: "sdDOLAV3",
-    symbol: "sdDOLAV3",
-    type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
-    underlying: "dDOLAV3",
   },
 };
 
