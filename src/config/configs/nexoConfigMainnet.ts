@@ -74,6 +74,7 @@ const collateralTokens: CollateralToken[] = [
 
   { token: "WETH", lt: 0 },
   { token: "SKY", lt: 0 },
+  { token: "stkUSDS", lt: 0 },
 ];
 
 const adapters: AdapterConfig[] = [
@@ -222,6 +223,12 @@ export const nexoConfigMainnet: PoolV3DeployConfig = {
       limit: BigInt(0),
     },
     SKY: {
+      minRate: 1,
+      maxRate: 1,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0),
+    },
+    stkUSDS: {
       minRate: 1,
       maxRate: 1,
       quotaIncreaseFee: 0,
