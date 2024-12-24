@@ -14,10 +14,7 @@ const POOL_DECIMALS = BigInt(1e18);
 
 const uniV3Config: UniV3Config = {
   contract: "UNISWAP_V3_ROUTER",
-  allowed: [
-    { token0: "USDe", token1: "USDT", fee: 100 },
-    { token0: "SKY", token1: "WETH", fee: 3000 },
-  ],
+  allowed: [{ token0: "USDe", token1: "USDT", fee: 100 }],
 };
 
 const pendleConfig: PendleRouterConfig = {
@@ -71,9 +68,6 @@ const collateralTokens: CollateralToken[] = [
   { token: "MtEthena", lt: 0 },
   { token: "USDeUSDC", lt: 0 },
   { token: "USDeDAI", lt: 0 },
-
-  { token: "WETH", lt: 0 },
-  { token: "SKY", lt: 0 },
 ];
 
 const adapters: AdapterConfig[] = [
@@ -86,6 +80,7 @@ const adapters: AdapterConfig[] = [
 
   { contract: "DAI_USDS" },
   { contract: "STAKED_USDS_VAULT" },
+  { contract: "MAKER_DSR_VAULT" },
 ];
 
 const tierSCreditManager: CreditManagerV3DeployConfig = {
@@ -209,18 +204,6 @@ export const nexoConfigMainnet: PoolV3DeployConfig = {
       limit: BigInt(0),
     },
     USDeDAI: {
-      minRate: 1,
-      maxRate: 1,
-      quotaIncreaseFee: 0,
-      limit: BigInt(0),
-    },
-    WETH: {
-      minRate: 1,
-      maxRate: 1,
-      quotaIncreaseFee: 0,
-      limit: BigInt(0),
-    },
-    SKY: {
       minRate: 1,
       maxRate: 1,
       quotaIncreaseFee: 0,
