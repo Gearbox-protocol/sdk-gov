@@ -16,6 +16,7 @@ export type NormalToken =
   | "DAI"
   | "WETH"
   | "WBTC"
+  | "tBTC"
   | "YFI"
   | "WLD"
   | "OP"
@@ -169,6 +170,12 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
     name: "WBTC",
 
     symbol: "WBTC",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  tBTC: {
+    name: "tBTC",
+
+    symbol: "tBTC",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 

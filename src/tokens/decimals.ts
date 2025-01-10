@@ -13,6 +13,7 @@ export const decimals: Record<SupportedToken, number> = {
   USDT: 6,
   DOLA: 18,
   WBTC: 8,
+  tBTC: 18,
   WETH: 18,
   YFI: 18,
   STETH: 18,
@@ -84,6 +85,7 @@ export const decimals: Record<SupportedToken, number> = {
   eBTCWBTC: 18,
   pumpBTCWBTC: 18,
   TriBTC: 18,
+  "2BTC-f": 18,
   crvUSD: 18,
   crvUSDUSDC: 18,
   crvUsUSDe: 18,
@@ -202,6 +204,7 @@ export const decimals: Record<SupportedToken, number> = {
   rsETH_wETH_Arb: 18,
   bpt_ethtri: 18,
   pumpBTC_WBTC_BPT: 18,
+  eBTC_WBTC_BPT: 18,
   sUSDe_USDC_BPT: 18,
 
   auraB_rETH_STABLE: 18,

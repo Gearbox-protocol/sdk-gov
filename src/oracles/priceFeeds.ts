@@ -616,6 +616,17 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  tBTC: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+        stalenessPeriod: HOUR_1_BUFFERED,
+        trusted: true,
+      },
+    },
+  },
+
   WETH: {
     Mainnet: {
       Main: {
@@ -2332,6 +2343,14 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  "2BTC-f": {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
   "3CRV": {
     AllNetworks: {
       Main: {
@@ -2923,6 +2942,14 @@ export const priceFeedsByToken: Record<
     },
   },
   pumpBTC_WBTC_BPT: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  eBTC_WBTC_BPT: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,

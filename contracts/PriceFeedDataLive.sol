@@ -1041,6 +1041,17 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ tBTC ------------------------
+        chainlinkPriceFeedsByNetwork[1].push(
+            ChainlinkPriceFeedData({
+                token: TOKEN_tBTC,
+                priceFeed: 0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c,
+                stalenessPeriod: 4500,
+                trusted: true,
+                reserve: false
+            })
+        );
+
         // ------------------------ WETH ------------------------
         chainlinkPriceFeedsByNetwork[1].push(
             ChainlinkPriceFeedData({
@@ -4323,6 +4334,18 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_TriBTC, trusted: false, reserve: false})
         );
 
+        // ------------------------ 2BTC-f ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN__2BTC_f, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN__2BTC_f, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN__2BTC_f, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN__2BTC_f, trusted: false, reserve: false})
+        );
+
         // ------------------------ 3CRV ------------------------
         curvePriceFeedsByNetwork[1].push(
             CurvePriceFeedData({
@@ -6419,6 +6442,20 @@ contract PriceFeedDataLive {
         );
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_pumpBTC_WBTC_BPT, trusted: false, reserve: false})
+        );
+
+        // ------------------------ eBTC_WBTC_BPT ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_eBTC_WBTC_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_eBTC_WBTC_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_eBTC_WBTC_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_eBTC_WBTC_BPT, trusted: false, reserve: false})
         );
 
         // ------------------------ 33AURA_33ARB_33BAL ------------------------

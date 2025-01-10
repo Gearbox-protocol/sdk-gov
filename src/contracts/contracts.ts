@@ -60,6 +60,7 @@ export type CurvePoolContract =
   | "CURVE_EBTC_WBTC_POOL"
   | "CURVE_PUMPBTC_WBTC_POOL"
   | "CURVE_TRIBTC_POOL"
+  | "CURVE_tBTC_WBTC_POOL"
   | "CURVE_2CRV_POOL_ARB"
   | "CURVE_TRICRYPTO_CRVUSD_POOL_ARB"
   | "CURVE_CRVUSD_USDC_POOL_ARB"
@@ -220,6 +221,7 @@ export const contractsByNetwork: Record<
     CURVE_EBTC_WBTC_POOL: tokenDataByNetwork.Mainnet.eBTCWBTC,
     CURVE_PUMPBTC_WBTC_POOL: tokenDataByNetwork.Mainnet.pumpBTCWBTC,
     CURVE_TRIBTC_POOL: tokenDataByNetwork.Mainnet.TriBTC,
+    CURVE_tBTC_WBTC_POOL: tokenDataByNetwork.Mainnet["2BTC-f"],
 
     CURVE_GEAR_POOL: "0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2",
 
@@ -390,6 +392,7 @@ export const contractsByNetwork: Record<
     CURVE_EBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_PUMPBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_TRIBTC_POOL: NOT_DEPLOYED,
+    CURVE_tBTC_WBTC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -559,6 +562,7 @@ export const contractsByNetwork: Record<
     CURVE_EBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_PUMPBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_TRIBTC_POOL: NOT_DEPLOYED,
+    CURVE_tBTC_WBTC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -727,6 +731,7 @@ export const contractsByNetwork: Record<
     CURVE_EBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_PUMPBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_TRIBTC_POOL: NOT_DEPLOYED,
+    CURVE_tBTC_WBTC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -1502,6 +1507,14 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.CURVE_STABLE_NG,
     lpToken: "TriBTC",
     tokens: ["eBTC", "LBTC", "WBTC"],
+  },
+  CURVE_tBTC_WBTC_POOL: {
+    name: "Curve tBTC/WBTC LP",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_V1_2ASSETS,
+    lpToken: "2BTC-f",
+    tokens: ["WBTC", "tBTC"],
   },
 
   CURVE_2CRV_POOL_ARB: {

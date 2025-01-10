@@ -179,6 +179,7 @@ export const tokenDataByNetwork: Record<
     USDT: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
     DOLA: "0x865377367054516e17014CcdED1e7d814EDC9ce4",
     WBTC: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+    tBTC: "0x18084fbA666a33d37592fA2633fD49a74DD93a88",
     WETH: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
     YFI: "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e",
     GMX: NOT_DEPLOYED,
@@ -273,6 +274,7 @@ export const tokenDataByNetwork: Record<
     eBTCWBTC: "0x7704D01908afD31bf647d969c295BB45230cD2d6",
     pumpBTCWBTC: "0xEA659B615b48EC6e2D55cD82FCBE5F43d79aeea0",
     TriBTC: "0xabaf76590478F2fE0b396996f55F0b61101e9502",
+    "2BTC-f": "0xB7ECB2AA52AA64a717180E030241bC75Cd946726",
 
     // CONVEX LP TOKENS
     cvx3Crv: "0x30D9410ED1D5DA1F6C8391af5338C93ab8d4035C",
@@ -353,6 +355,7 @@ export const tokenDataByNetwork: Record<
     ezETH_wstETH: NOT_DEPLOYED,
     bpt_ethtri: NOT_DEPLOYED,
     pumpBTC_WBTC_BPT: "0x2238aB6c8c58473a5e81b86ec352322fB3f5Edd8",
+    eBTC_WBTC_BPT: "0xda17f3663C5D04C0B316cfA1A04Aa53eBBC8c12C",
 
     // AURA
     auraB_rETH_STABLE: "0x9497df26e5bD669Cb925eC68E730492b9300c482",
@@ -415,7 +418,7 @@ export const tokenDataByNetwork: Record<
     sdcrvUSDV3: "0xfBCA378AeA93EADD6882299A3d74D8641Cc0C4BC",
 
     dDOLAV3: "0x31426271449F60d37Cc5C9AEf7bD12aF3BdC7A94",
-    sdDOLAV3: "0xb3289a45497027a2Aee88Acc89fB3dcB5C71001D",
+    sdDOLAV3: NOT_DEPLOYED,
 
     dUSDC_eV3: NOT_DEPLOYED,
     sdUSDC_eV3: NOT_DEPLOYED,
@@ -480,6 +483,7 @@ export const tokenDataByNetwork: Record<
     USDC: "0xaf88d065e77c8cC2239327C5EDb3A432268e5831",
     USDC_e: "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
     WBTC: "0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f",
+    tBTC: NOT_DEPLOYED,
     WETH: "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
     YFI: "0x82e3A8F066a6989666b031d916c43672085b1582",
     GMX: "0xfc5A1A6EB076a2C7aD06eD22C90d7E710E35ad0a",
@@ -604,6 +608,7 @@ export const tokenDataByNetwork: Record<
     eBTCWBTC: NOT_DEPLOYED,
     pumpBTCWBTC: NOT_DEPLOYED,
     TriBTC: NOT_DEPLOYED,
+    "2BTC-f": NOT_DEPLOYED,
 
     crvUSD: "0x498Bf2B1e120FeD3ad3D42EA2165E9b73f99C1e5",
 
@@ -656,6 +661,7 @@ export const tokenDataByNetwork: Record<
     ezETH_wstETH: "0xB61371Ab661B1ACec81C699854D2f911070C059E",
     bpt_ethtri: NOT_DEPLOYED,
     pumpBTC_WBTC_BPT: NOT_DEPLOYED,
+    eBTC_WBTC_BPT: NOT_DEPLOYED,
 
     // AURA
 
@@ -783,6 +789,7 @@ export const tokenDataByNetwork: Record<
     USDC: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85",
     USDC_e: "0x7F5c764cBc14f9669B88837ca1490cCa17c31607",
     WBTC: "0x68f180fcCe6836688e9084f035309E29Bf0A2095",
+    tBTC: NOT_DEPLOYED,
     WETH: "0x4200000000000000000000000000000000000006",
     YFI: "0x9046D36440290FfDE54FE0DD84Db8b1CfEE9107B",
     GMX: NOT_DEPLOYED,
@@ -873,6 +880,7 @@ export const tokenDataByNetwork: Record<
     eBTCWBTC: NOT_DEPLOYED,
     pumpBTCWBTC: NOT_DEPLOYED,
     TriBTC: NOT_DEPLOYED,
+    "2BTC-f": NOT_DEPLOYED,
 
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
@@ -961,6 +969,7 @@ export const tokenDataByNetwork: Record<
     ECLP_wstETH_WETH: "0x7Ca75bdEa9dEde97F8B13C6641B768650CB83782",
     bpt_ethtri: "0x5F8893506Ddc4C271837187d14A9C87964a074Dc",
     pumpBTC_WBTC_BPT: NOT_DEPLOYED,
+    eBTC_WBTC_BPT: NOT_DEPLOYED,
 
     // AURA
     auraB_rETH_STABLE: NOT_DEPLOYED,
@@ -1092,6 +1101,7 @@ export const tokenDataByNetwork: Record<
     USDC: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
     USDC_e: NOT_DEPLOYED,
     WBTC: NOT_DEPLOYED,
+    tBTC: NOT_DEPLOYED,
     WETH: NOT_DEPLOYED,
     YFI: NOT_DEPLOYED,
     GMX: NOT_DEPLOYED,
@@ -1180,6 +1190,7 @@ export const tokenDataByNetwork: Record<
     eBTCWBTC: NOT_DEPLOYED,
     pumpBTCWBTC: NOT_DEPLOYED,
     TriBTC: NOT_DEPLOYED,
+    "2BTC-f": NOT_DEPLOYED,
 
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
@@ -1267,6 +1278,7 @@ export const tokenDataByNetwork: Record<
     ECLP_wstETH_WETH: NOT_DEPLOYED,
     bpt_ethtri: NOT_DEPLOYED,
     pumpBTC_WBTC_BPT: NOT_DEPLOYED,
+    eBTC_WBTC_BPT: NOT_DEPLOYED,
 
     // AURA
     auraB_rETH_STABLE: NOT_DEPLOYED,
@@ -1396,7 +1408,8 @@ export type TickerToken =
   | "eBTC"
   | "ETH"
   | "USDe"
-  | "BTC";
+  | "BTC"
+  | "PushUSDe";
 
 export interface TickerInfo {
   symbol: TickerToken;
@@ -1411,6 +1424,16 @@ export const tickerInfoTokensByNetwork: Record<
   PartialRecord<SupportedToken, Array<TickerInfo>>
 > = {
   Mainnet: {
+    USDecrvUSD: [
+      {
+        symbol: "PushUSDe",
+        dataId: "USDe",
+        address: tokenDataByNetwork.Mainnet.USDecrvUSD,
+        priceFeed: "0xbC5FBcf58CeAEa19D523aBc76515b9AEFb5cfd58",
+        reserve: false,
+      },
+    ],
+
     weETH: [
       {
         symbol: "weETH/ETH",
