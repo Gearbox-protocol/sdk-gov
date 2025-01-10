@@ -188,7 +188,7 @@ const tier1TradeCreditManager: CreditManagerV3DeployConfig = {
   ],
 };
 
-export const dolaConfigMainnet: PoolV3DeployConfig = {
+export const tbtcConfigMainnet: PoolV3DeployConfig = {
   id: "mainnet-tbtc-v3",
   symbol: "dtBTCV3",
   name: "Trade tBTC v3",
