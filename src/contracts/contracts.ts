@@ -140,7 +140,8 @@ export type MellowVaultContract =
   | "MELLOW_RE7_LABS_VAULT"
   | "MELLOW_AMPHOR_VAULT"
   | "MELLOW_RESTAKING_VAULT"
-  | "MELLOW_RENZO_VAULT";
+  | "MELLOW_RENZO_VAULT"
+  | "MELLOW_DECENTALIZED_VALIDATOR_VAULT";
 
 export type StakingRewardsContract = "SKY_STAKING_REWARDS";
 
@@ -334,6 +335,7 @@ export const contractsByNetwork: Record<
     MELLOW_AMPHOR_VAULT: tokenDataByNetwork.Mainnet.amphrETH,
     MELLOW_RESTAKING_VAULT: tokenDataByNetwork.Mainnet.rstETH,
     MELLOW_RENZO_VAULT: tokenDataByNetwork.Mainnet.pzETH,
+    MELLOW_DECENTALIZED_VALIDATOR_VAULT: tokenDataByNetwork.Mainnet.DVstETH,
 
     // SKY
     SKY_STAKING_REWARDS: "0x0650CAF159C5A49f711e8169D4336ECB9b950275",
@@ -505,6 +507,7 @@ export const contractsByNetwork: Record<
     MELLOW_AMPHOR_VAULT: tokenDataByNetwork.Arbitrum.amphrETH,
     MELLOW_RESTAKING_VAULT: tokenDataByNetwork.Arbitrum.rstETH,
     MELLOW_RENZO_VAULT: tokenDataByNetwork.Arbitrum.pzETH,
+    MELLOW_DECENTALIZED_VALIDATOR_VAULT: tokenDataByNetwork.Arbitrum.DVstETH,
 
     SKY_STAKING_REWARDS: NOT_DEPLOYED,
     DAI_USDS: NOT_DEPLOYED,
@@ -675,6 +678,7 @@ export const contractsByNetwork: Record<
     MELLOW_AMPHOR_VAULT: tokenDataByNetwork.Optimism.amphrETH,
     MELLOW_RESTAKING_VAULT: tokenDataByNetwork.Optimism.rstETH,
     MELLOW_RENZO_VAULT: tokenDataByNetwork.Optimism.pzETH,
+    MELLOW_DECENTALIZED_VALIDATOR_VAULT: tokenDataByNetwork.Optimism.DVstETH,
 
     SKY_STAKING_REWARDS: NOT_DEPLOYED,
     DAI_USDS: NOT_DEPLOYED,
@@ -842,6 +846,7 @@ export const contractsByNetwork: Record<
     MELLOW_AMPHOR_VAULT: tokenDataByNetwork.Base.amphrETH,
     MELLOW_RESTAKING_VAULT: tokenDataByNetwork.Base.rstETH,
     MELLOW_RENZO_VAULT: tokenDataByNetwork.Base.pzETH,
+    MELLOW_DECENTALIZED_VALIDATOR_VAULT: tokenDataByNetwork.Base.DVstETH,
 
     SKY_STAKING_REWARDS: NOT_DEPLOYED,
     DAI_USDS: NOT_DEPLOYED,
@@ -2295,6 +2300,11 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
   },
   MELLOW_RENZO_VAULT: {
     name: "Mellow Renzo pzETH vault",
+    protocol: Protocols.Mellow,
+    type: AdapterInterface.MELLOW_LRT_VAULT,
+  },
+  MELLOW_DECENTALIZED_VALIDATOR_VAULT: {
+    name: "Mellow Decentralized Validator Token vault",
     protocol: Protocols.Mellow,
     type: AdapterInterface.MELLOW_LRT_VAULT,
   },

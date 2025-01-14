@@ -5994,6 +5994,20 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_trenSTETH, trusted: false, reserve: false})
         );
 
+        // ------------------------ DVstETH_wstETH_BPT ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH_wstETH_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH_wstETH_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH_wstETH_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH_wstETH_BPT, trusted: false, reserve: false})
+        );
+
         // ------------------------ weETH_ezETH_rswETH ------------------------
         zeroPriceFeedsByNetwork[1].push(
             SingeTokenPriceFeedData({token: TOKEN_weETH_ezETH_rswETH, trusted: false, reserve: false})
@@ -8106,6 +8120,52 @@ contract PriceFeedDataLive {
         theSamePriceFeedsByNetwork[8453].push(
             TheSamePriceFeedData({
                 token: TOKEN_pzETH,
+                tokenHasSamePriceFeed: TOKEN_wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
+
+        // ------------------------ DVstETH ------------------------
+        mellowLRTPriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
+        );
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: TOKEN_DVstETH,
+                tokenHasSamePriceFeed: TOKEN_wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
+        mellowLRTPriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
+        );
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({
+                token: TOKEN_DVstETH,
+                tokenHasSamePriceFeed: TOKEN_wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
+        mellowLRTPriceFeedsByNetwork[10].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
+        );
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({
+                token: TOKEN_DVstETH,
+                tokenHasSamePriceFeed: TOKEN_wstETH,
+                trusted: false,
+                reserve: true
+            })
+        );
+        mellowLRTPriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
+        );
+        theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_DVstETH,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
                 reserve: true

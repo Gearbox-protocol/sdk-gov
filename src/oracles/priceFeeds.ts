@@ -2817,6 +2817,14 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  DVstETH_wstETH_BPT: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
   weETH_ezETH_rswETH: {
     AllNetworks: {
       Main: {
@@ -3856,6 +3864,19 @@ export const priceFeedsByToken: Record<
     },
   },
   pzETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.MELLOW_LRT_ORACLE,
+        underlying: "WETH",
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "wstETH",
+      },
+    },
+  },
+  DVstETH: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.MELLOW_LRT_ORACLE,

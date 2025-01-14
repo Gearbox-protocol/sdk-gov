@@ -714,6 +714,13 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.MELLOW_DECENTALIZED_VALIDATOR_VAULT,
+                addr: 0x5E362eb2c0706Bd1d134689eC75176018385430B,
+                name: "MELLOW_DECENTALIZED_VALIDATOR_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.SKY_STAKING_REWARDS,
                 addr: 0x0650CAF159C5A49f711e8169D4336ECB9b950275,
                 name: "SKY_STAKING_REWARDS"

@@ -65,6 +65,7 @@ export type NormalToken =
   | "amphrETH"
   | "rstETH"
   | "pzETH"
+  | "DVstETH"
   // Pendle
   | "PT_rsETH_26SEP2024"
   | "PT_sUSDe_26DEC2024"
@@ -436,6 +437,11 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   pzETH: {
     name: "Renzo Mellow LST",
     symbol: "pzETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  DVstETH: {
+    name: "Decentralized Validator Token",
+    symbol: "DVstETH",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
   PT_rsETH_26SEP2024: {

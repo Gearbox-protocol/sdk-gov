@@ -19,3 +19,4 @@ export { wbtcConfigMainnet } from "./wbtcConfigMainnet";
 export { wethConfigArbitrum } from "./wethConfigArbitrum";
 export { wethConfigMainnet } from "./wethConfigMainnet";
 export { wethConfigOptimism } from "./wethConfigOptimism";
+export { wstethConfigMainnet } from "./wstethConfigMainnet";

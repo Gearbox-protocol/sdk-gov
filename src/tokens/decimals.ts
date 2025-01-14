@@ -195,6 +195,7 @@ export const decimals: Record<SupportedToken, number> = {
   rETH_WETH_BPT_deprecated: 18,
   rETH_wETH_BPT: 18,
   trenSTETH: 18,
+  DVstETH_wstETH_BPT: 18,
   ezETH_WETH_BPT: 18,
   weETH_ezETH_rswETH: 18,
   "33AURA_33ARB_33BAL": 18,
@@ -233,6 +234,7 @@ export const decimals: Record<SupportedToken, number> = {
   amphrETH: 18,
   rstETH: 18,
   pzETH: 18,
+  DVstETH: 18,
 
   aDAI: 18,
   aUSDC: 6,

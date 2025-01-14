@@ -337,6 +337,7 @@ export const tokenDataByNetwork: Record<
     ezETH_WETH_BPT: "0x596192bB6e41802428Ac943D2f1476C1Af25CC0E",
     sUSDe_USDC_BPT: "0xb819feeF8F0fcDC268AfE14162983A69f6BF179E",
     trenSTETH: "0x4216d5900a6109bba48418b5e2AB6cc4e61Cf477",
+    DVstETH_wstETH_BPT: "0x632aafC2D3D2cA1764E702aa25c065c273Cd08eD",
     weETH_ezETH_rswETH: "0x848a5564158d84b8A8fb68ab5D004Fae11619A54",
     GHO_USDT_USDC: "0x8353157092ED8Be69a9DF8F95af097bbF33Cb2aF",
     rsETH_WETH: "0x58AAdFB1Afac0ad7fca1148f3cdE6aEDF5236B6D",
@@ -463,6 +464,7 @@ export const tokenDataByNetwork: Record<
     amphrETH: "0x5fD13359Ba15A84B76f7F87568309040176167cd",
     rstETH: "0x7a4EffD87C2f3C55CA251080b1343b605f327E3a",
     pzETH: "0x8c9532a60E0E7C6BbD2B2c1303F63aCE1c3E9811",
+    DVstETH: "0x5E362eb2c0706Bd1d134689eC75176018385430B",
   },
 
   ///
@@ -647,6 +649,7 @@ export const tokenDataByNetwork: Record<
     ezETH_WETH_BPT: NOT_DEPLOYED,
     sUSDe_USDC_BPT: NOT_DEPLOYED,
     trenSTETH: NOT_DEPLOYED,
+    DVstETH_wstETH_BPT: NOT_DEPLOYED,
     weETH_ezETH_rswETH: NOT_DEPLOYED,
     GHO_USDT_USDC: NOT_DEPLOYED,
     rsETH_WETH: NOT_DEPLOYED,
@@ -770,6 +773,7 @@ export const tokenDataByNetwork: Record<
     amphrETH: NOT_DEPLOYED,
     rstETH: NOT_DEPLOYED,
     pzETH: NOT_DEPLOYED,
+    DVstETH: NOT_DEPLOYED,
   },
   ///
   ///
@@ -956,6 +960,7 @@ export const tokenDataByNetwork: Record<
     ezETH_WETH_BPT: NOT_DEPLOYED,
     sUSDe_USDC_BPT: NOT_DEPLOYED,
     trenSTETH: NOT_DEPLOYED,
+    DVstETH_wstETH_BPT: NOT_DEPLOYED,
     weETH_ezETH_rswETH: NOT_DEPLOYED,
     "33AURA_33ARB_33BAL": NOT_DEPLOYED,
     ezETH_wstETH: NOT_DEPLOYED,
@@ -1077,6 +1082,7 @@ export const tokenDataByNetwork: Record<
     amphrETH: NOT_DEPLOYED,
     rstETH: NOT_DEPLOYED,
     pzETH: NOT_DEPLOYED,
+    DVstETH: NOT_DEPLOYED,
   },
   //
   //
@@ -1266,6 +1272,7 @@ export const tokenDataByNetwork: Record<
     ezETH_WETH_BPT: NOT_DEPLOYED,
     sUSDe_USDC_BPT: NOT_DEPLOYED,
     trenSTETH: NOT_DEPLOYED,
+    DVstETH_wstETH_BPT: NOT_DEPLOYED,
     weETH_ezETH_rswETH: NOT_DEPLOYED,
     rsETH_WETH: NOT_DEPLOYED,
     rsETH_wETH_Arb: NOT_DEPLOYED,
@@ -1387,6 +1394,7 @@ export const tokenDataByNetwork: Record<
     amphrETH: NOT_DEPLOYED,
     rstETH: NOT_DEPLOYED,
     pzETH: NOT_DEPLOYED,
+    DVstETH: NOT_DEPLOYED,
   },
 };
 
