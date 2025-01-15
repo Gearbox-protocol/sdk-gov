@@ -16,7 +16,7 @@ const POOL_DECIMALS = BigInt(1e18);
 
 const mellowVaultConfigList: MellowVaultConfig[] = [
   {
-    contract: "MELLOW_STEAKHOUSE_VAULT",
+    contract: "MELLOW_RESTAKING_VAULT",
     allowed: ["wstETH"],
   },
   {
