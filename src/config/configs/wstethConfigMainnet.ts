@@ -108,7 +108,7 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
 export const wstethConfigMainnet: PoolV3DeployConfig = {
   id: "mainnet-wsteth-v3",
   symbol: "dWSTETHV3",
-  name: "wstETH  v3",
+  name: "wstETH v3",
   network: "Mainnet",
   underlying: "wstETH",
   accountAmount: BigInt(100_000) * POOL_DECIMALS,
