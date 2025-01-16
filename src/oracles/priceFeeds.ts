@@ -3339,15 +3339,6 @@ export const priceFeedsByToken: Record<
     },
   },
 
-  sdDOLAV3: {
-    Mainnet: {
-      Main: {
-        type: PriceFeedType.ZERO_ORACLE,
-        trusted: false,
-      },
-    },
-  },
-
   GEAR: {
     Mainnet: {
       Main: {

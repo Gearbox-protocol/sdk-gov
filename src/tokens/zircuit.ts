@@ -1,7 +1,3 @@
-import { Token } from "yaml/dist/parse/cst";
-import { record } from "zod";
-
-import type { SupportedContract } from "../contracts/contracts";
 import { PartialRecord } from "../utils/types";
 import type { SupportedToken, TokenBase } from "./token";
 import { TokenNetwork, TokenType } from "./tokenType";
