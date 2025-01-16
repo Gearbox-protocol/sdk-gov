@@ -9,7 +9,8 @@ export type DieselSimpleTokenTypes =
   | "dWETH"
   | "dwstETH"
   | "dFRAX"
-  | "dDOLAV3";
+  | "dDOLAV3"
+  | "dtBTCV3";
 
 export type DieselTokenWithStkTypes =
   | "dUSDCV3"
@@ -104,6 +105,11 @@ const dieselSimpleTokens: Record<
   dDOLAV3: {
     name: "dDOLAV3",
     symbol: "dDOLAV3",
+    type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
+  },
+  dtBTCV3: {
+    name: "dtBTCV3",
+    symbol: "dtBTCV3",
     type: { AllNetworks: TokenType.DIESEL_LP_TOKEN },
   },
 };

@@ -1,10 +1,4 @@
-import { Token } from "yaml/dist/parse/cst";
-import { record } from "zod";
-
-import type {
-  StakingRewardsContract,
-  SupportedContract,
-} from "../contracts/contracts";
+import type { StakingRewardsContract } from "../contracts/contracts";
 import { PartialRecord } from "../utils/types";
 import type { SupportedToken, TokenBase } from "./token";
 import { TokenNetwork, TokenType } from "./tokenType";

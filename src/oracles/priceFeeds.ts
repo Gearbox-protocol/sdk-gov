@@ -3164,6 +3164,14 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  dtBTCV3: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
 
   sdUSDCV3: {
     Mainnet: {
