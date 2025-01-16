@@ -421,6 +421,7 @@ export const tokenDataByNetwork: Record<
     dDOLAV3: "0x31426271449F60d37Cc5C9AEf7bD12aF3BdC7A94",
 
     dtBTCV3: "0x7354EC6E852108411e681D13E11185c3a2567981",
+    dwstETHV3: "0xCad5edc9360825C4Ec36660dC1a6E61c74696c7B",
 
     dUSDC_eV3: NOT_DEPLOYED,
     sdUSDC_eV3: NOT_DEPLOYED,
@@ -733,6 +734,7 @@ export const tokenDataByNetwork: Record<
     dDOLAV3: NOT_DEPLOYED,
 
     dtBTCV3: NOT_DEPLOYED,
+    dwstETHV3: NOT_DEPLOYED,
 
     dUSDC_eV3: "0xa76c604145D7394DEc36C49Af494C144Ff327861",
     sdUSDC_eV3: "0x608F9e2E8933Ce6b39A8CddBc34a1e3E8D21cE75",
@@ -1041,6 +1043,7 @@ export const tokenDataByNetwork: Record<
     sdcrvUSDV3: NOT_DEPLOYED,
 
     dDOLAV3: NOT_DEPLOYED,
+    dwstETHV3: NOT_DEPLOYED,
 
     dtBTCV3: NOT_DEPLOYED,
 
@@ -1351,6 +1354,7 @@ export const tokenDataByNetwork: Record<
     sdcrvUSDV3: NOT_DEPLOYED,
 
     dDOLAV3: NOT_DEPLOYED,
+    dwstETHV3: NOT_DEPLOYED,
 
     dtBTCV3: NOT_DEPLOYED,
 
