@@ -6587,6 +6587,14 @@ contract PriceFeedDataLive {
         // ------------------------ dDOLAV3 ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_dDOLAV3, trusted: false, reserve: false}));
 
+        // ------------------------ dtBTCV3 ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_dtBTCV3, trusted: false, reserve: false}));
+
+        // ------------------------ dwstETHV3 ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_dwstETHV3, trusted: false, reserve: false})
+        );
+
         // ------------------------ sdUSDCV3 ------------------------
         zeroPriceFeedsByNetwork[1].push(
             SingeTokenPriceFeedData({token: TOKEN_sdUSDCV3, trusted: false, reserve: false})
@@ -6671,11 +6679,6 @@ contract PriceFeedDataLive {
         );
         zeroPriceFeedsByNetwork[42161].push(
             SingeTokenPriceFeedData({token: TOKEN_sdcrvUSDV3, trusted: false, reserve: false})
-        );
-
-        // ------------------------ sdDOLAV3 ------------------------
-        zeroPriceFeedsByNetwork[1].push(
-            SingeTokenPriceFeedData({token: TOKEN_sdDOLAV3, trusted: false, reserve: false})
         );
 
         // ------------------------ GEAR ------------------------
@@ -7182,6 +7185,14 @@ contract PriceFeedDataLive {
         );
         erc4626PriceFeedsByNetwork[1].push(
             GenericLPPriceFeedData({lpToken: TOKEN_scrvUSD, underlying: TOKEN_crvUSD, trusted: false, reserve: true})
+        );
+
+        // ------------------------ beraSTONE ------------------------
+        erc4626PriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_beraSTONE, underlying: TOKEN_WETH, trusted: false, reserve: false})
+        );
+        erc4626PriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_beraSTONE, underlying: TOKEN_WETH, trusted: false, reserve: true})
         );
 
         // ------------------------ auraB_rETH_STABLE ------------------------

@@ -88,7 +88,8 @@ export type ERC4626VaultContract =
   | "YIELD_ETH_VAULT"
   | "STAKED_USDE_VAULT"
   | "STAKED_USDS_VAULT"
-  | "SAVINGS_CRVUSD_VAULT";
+  | "SAVINGS_CRVUSD_VAULT"
+  | "BERACHAIN_STONE_VAULT";
 
 export type ConvexPoolContract =
   | "CONVEX_3CRV_POOL"
@@ -260,6 +261,7 @@ export const contractsByNetwork: Record<
     STAKED_USDE_VAULT: tokenDataByNetwork.Mainnet.sUSDe,
     STAKED_USDS_VAULT: tokenDataByNetwork.Mainnet.sUSDS,
     SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Mainnet.scrvUSD,
+    BERACHAIN_STONE_VAULT: tokenDataByNetwork.Mainnet.beraSTONE,
 
     // CONVEX
     CONVEX_BOOSTER: "0xF403C135812408BFbE8713b5A23a04b3D48AAE31",
@@ -432,6 +434,7 @@ export const contractsByNetwork: Record<
     STAKED_USDE_VAULT: tokenDataByNetwork.Arbitrum.sUSDe,
     STAKED_USDS_VAULT: tokenDataByNetwork.Arbitrum.sUSDS,
     SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Arbitrum.scrvUSD,
+    BERACHAIN_STONE_VAULT: tokenDataByNetwork.Arbitrum.beraSTONE,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -602,6 +605,7 @@ export const contractsByNetwork: Record<
     STAKED_USDE_VAULT: tokenDataByNetwork.Optimism.sUSDe,
     STAKED_USDS_VAULT: tokenDataByNetwork.Optimism.sUSDS,
     SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Optimism.scrvUSD,
+    BERACHAIN_STONE_VAULT: tokenDataByNetwork.Optimism.beraSTONE,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -772,6 +776,7 @@ export const contractsByNetwork: Record<
     STAKED_USDE_VAULT: tokenDataByNetwork.Base.sUSDe,
     STAKED_USDS_VAULT: tokenDataByNetwork.Base.sUSDS,
     SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Base.scrvUSD,
+    BERACHAIN_STONE_VAULT: tokenDataByNetwork.Base.beraSTONE,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -1668,6 +1673,12 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     protocol: Protocols.Curve,
     type: AdapterInterface.ERC4626_VAULT,
     underlying: "crvUSD",
+  },
+  BERACHAIN_STONE_VAULT: {
+    name: "Berachain STONE Vault",
+    protocol: Protocols.Curve,
+    type: AdapterInterface.ERC4626_VAULT,
+    underlying: "WETH",
   },
   CONVEX_BOOSTER: {
     name: "Convex BOOSTER",

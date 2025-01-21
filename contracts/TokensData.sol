@@ -1455,6 +1455,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_beraSTONE,
+                addr: 0x97Ad75064b20fb2B2447feD4fa953bF7F007a706,
+                symbol: "beraSTONE",
+                tokenType: TokenType.ERC4626_VAULT_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_auraB_rETH_STABLE,
                 addr: 0x9497df26e5bD669Cb925eC68E730492b9300c482,
                 symbol: "auraB_rETH_STABLE",
@@ -1569,6 +1577,30 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_dDOLAV3,
+                addr: 0x31426271449F60d37Cc5C9AEf7bD12aF3BdC7A94,
+                symbol: "dDOLAV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_dtBTCV3,
+                addr: 0x7354EC6E852108411e681D13E11185c3a2567981,
+                symbol: "dtBTCV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_dwstETHV3,
+                addr: 0xCad5edc9360825C4Ec36660dC1a6E61c74696c7B,
+                symbol: "dwstETHV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_dUSDCV3,
                 addr: 0xda00000035fef4082F78dEF6A8903bee419FbF8E,
                 symbol: "dUSDCV3",
@@ -1621,14 +1653,6 @@ contract TokensDataLive {
                 id: TOKEN_dcrvUSDV3,
                 addr: 0x8EF73f036fEEC873D0B2fd20892215Df5B8Bdd72,
                 symbol: "dcrvUSDV3",
-                tokenType: TokenType.DIESEL_LP_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: TOKEN_dDOLAV3,
-                addr: 0x31426271449F60d37Cc5C9AEf7bD12aF3BdC7A94,
-                symbol: "dDOLAV3",
                 tokenType: TokenType.DIESEL_LP_TOKEN
             })
         );
@@ -1690,7 +1714,6 @@ contract TokensDataLive {
                 tokenType: TokenType.DIESEL_LP_TOKEN
             })
         );
-
         tokenDataByNetwork[1].push(
             TokenData({
                 id: TOKEN_GEAR,

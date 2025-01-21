@@ -434,6 +434,7 @@ export const tokenDataByNetwork: Record<
     sUSDe: "0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
     sUSDS: "0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD",
     scrvUSD: "0x0655977FEb2f289A4aB78af67BAB0d17aAb84367",
+    beraSTONE: "0x97Ad75064b20fb2B2447feD4fa953bF7F007a706",
 
     // AAVE
     aUSDC: "0xBcca60bB61934080951369a648Fb03DF4F96263C",
@@ -764,6 +765,7 @@ export const tokenDataByNetwork: Record<
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
     scrvUSD: NOT_DEPLOYED,
+    beraSTONE: NOT_DEPLOYED,
 
     // ZIRCUIT
     zpufETH: NOT_DEPLOYED,
@@ -1075,6 +1077,7 @@ export const tokenDataByNetwork: Record<
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
     scrvUSD: NOT_DEPLOYED,
+    beraSTONE: NOT_DEPLOYED,
 
     // ZIRCUIT
     zpufETH: NOT_DEPLOYED,
@@ -1386,6 +1389,7 @@ export const tokenDataByNetwork: Record<
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
     scrvUSD: NOT_DEPLOYED,
+    beraSTONE: NOT_DEPLOYED,
 
     GHO: NOT_DEPLOYED,
     GHOUSDe: NOT_DEPLOYED,
@@ -1425,7 +1429,8 @@ export type TickerToken =
   | "ETH"
   | "USDe"
   | "BTC"
-  | "PushUSDe";
+  | "PushUSDe"
+  | "WETH";
 
 export interface TickerInfo {
   symbol: TickerToken;
@@ -1631,6 +1636,15 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "crvUSD",
         address: tokenDataByNetwork.Mainnet.crvUSD,
         priceFeed: "0x47c99d1A79444A91C89b33a808e1a7cb0336E428",
+        reserve: true,
+      },
+    ],
+    beraSTONE: [
+      {
+        symbol: "WETH",
+        dataId: "WETH",
+        address: tokenDataByNetwork.Mainnet.WETH,
+        priceFeed: NOT_DEPLOYED,
         reserve: true,
       },
     ],

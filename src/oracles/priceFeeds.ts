@@ -3631,6 +3631,19 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  beraSTONE: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "WETH",
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "WETH",
+      },
+    },
+  },
 
   // AURA
   auraB_rETH_STABLE: {
