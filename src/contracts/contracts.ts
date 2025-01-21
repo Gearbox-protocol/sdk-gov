@@ -261,7 +261,7 @@ export const contractsByNetwork: Record<
     STAKED_USDE_VAULT: tokenDataByNetwork.Mainnet.sUSDe,
     STAKED_USDS_VAULT: tokenDataByNetwork.Mainnet.sUSDS,
     SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Mainnet.scrvUSD,
-    BERACHAIN_STONE_VAULT: tokenDataByNetwork.Mainnet.beraSTONE,
+    BERACHAIN_STONE_VAULT: "0x8f88aE3798E8fF3D0e0DE7465A0863C9bbB577f0",
 
     // CONVEX
     CONVEX_BOOSTER: "0xF403C135812408BFbE8713b5A23a04b3D48AAE31",
@@ -434,7 +434,7 @@ export const contractsByNetwork: Record<
     STAKED_USDE_VAULT: tokenDataByNetwork.Arbitrum.sUSDe,
     STAKED_USDS_VAULT: tokenDataByNetwork.Arbitrum.sUSDS,
     SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Arbitrum.scrvUSD,
-    BERACHAIN_STONE_VAULT: tokenDataByNetwork.Arbitrum.beraSTONE,
+    BERACHAIN_STONE_VAULT: NOT_DEPLOYED,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -605,7 +605,7 @@ export const contractsByNetwork: Record<
     STAKED_USDE_VAULT: tokenDataByNetwork.Optimism.sUSDe,
     STAKED_USDS_VAULT: tokenDataByNetwork.Optimism.sUSDS,
     SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Optimism.scrvUSD,
-    BERACHAIN_STONE_VAULT: tokenDataByNetwork.Optimism.beraSTONE,
+    BERACHAIN_STONE_VAULT: NOT_DEPLOYED,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -776,7 +776,7 @@ export const contractsByNetwork: Record<
     STAKED_USDE_VAULT: tokenDataByNetwork.Base.sUSDe,
     STAKED_USDS_VAULT: tokenDataByNetwork.Base.sUSDS,
     SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Base.scrvUSD,
-    BERACHAIN_STONE_VAULT: tokenDataByNetwork.Base.beraSTONE,
+    BERACHAIN_STONE_VAULT: NOT_DEPLOYED,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -961,7 +961,8 @@ export type ERC4626Params = {
     | Protocols.Sommelier
     | Protocols.Ethena
     | Protocols.Sky
-    | Protocols.Curve;
+    | Protocols.Curve
+    | Protocols.Berachain;
   type: AdapterInterface.ERC4626_VAULT;
   underlying: NormalToken;
 } & BaseContractParams;
@@ -1676,7 +1677,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
   },
   BERACHAIN_STONE_VAULT: {
     name: "Berachain STONE Vault",
-    protocol: Protocols.Curve,
+    protocol: Protocols.Berachain,
     type: AdapterInterface.ERC4626_VAULT,
     underlying: "WETH",
   },

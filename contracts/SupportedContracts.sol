@@ -438,7 +438,7 @@ contract SupportedContracts is Test, ISupportedContracts {
         contractDataByNetwork[1].push(
             ContractData({
                 id: Contracts.BERACHAIN_STONE_VAULT,
-                addr: 0x97Ad75064b20fb2B2447feD4fa953bF7F007a706,
+                addr: 0x8f88aE3798E8fF3D0e0DE7465A0863C9bbB577f0,
                 name: "BERACHAIN_STONE_VAULT"
             })
         );
