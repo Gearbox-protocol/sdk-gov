@@ -1793,6 +1793,28 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  beraSTONE: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "beraSTONE_FUNDAMENTAL",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
+        },
+
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+        trusted: true,
+      },
+    },
+  },
+
   GHO: {
     Mainnet: {
       Main: {
@@ -3628,19 +3650,6 @@ export const priceFeedsByToken: Record<
       Reserve: {
         type: PriceFeedType.ERC4626_VAULT_ORACLE,
         underlying: "crvUSD",
-      },
-    },
-  },
-  beraSTONE: {
-    Mainnet: {
-      Main: {
-        type: PriceFeedType.ERC4626_VAULT_ORACLE,
-        underlying: "WETH",
-        trusted: false,
-      },
-      Reserve: {
-        type: PriceFeedType.ERC4626_VAULT_ORACLE,
-        underlying: "WETH",
       },
     },
   },

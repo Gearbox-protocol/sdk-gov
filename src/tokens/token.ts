@@ -1420,6 +1420,7 @@ export type TickerToken =
   | "eBTC/BTC"
   | "solvBTC/BTC"
   | "pumpBTC/BTC"
+  | "beraSTONE/ETH"
   | "crvUSD"
   | "USDC"
   | "USDT"
@@ -1429,8 +1430,7 @@ export type TickerToken =
   | "ETH"
   | "USDe"
   | "BTC"
-  | "PushUSDe"
-  | "WETH";
+  | "PushUSDe";
 
 export interface TickerInfo {
   symbol: TickerToken;
@@ -1531,6 +1531,15 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "SolvBTC.BBN_FUNDAMENTAL",
         address: "0x02CFAc3a443ce91839b992329e24eA52B9DA1b94",
         priceFeed: "0xfb38dd28Dc9Fb027A3138609f8F5B3AF2ba3f93A",
+        reserve: false,
+      },
+    ],
+    beraSTONE: [
+      {
+        symbol: "beraSTONE/ETH",
+        dataId: "beraSTONE_FUNDAMENTAL",
+        address: NOT_DEPLOYED,
+        priceFeed: NOT_DEPLOYED,
         reserve: false,
       },
     ],
@@ -1636,15 +1645,6 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "crvUSD",
         address: tokenDataByNetwork.Mainnet.crvUSD,
         priceFeed: "0x47c99d1A79444A91C89b33a808e1a7cb0336E428",
-        reserve: true,
-      },
-    ],
-    beraSTONE: [
-      {
-        symbol: "WETH",
-        dataId: "WETH",
-        address: tokenDataByNetwork.Mainnet.WETH,
-        priceFeed: NOT_DEPLOYED,
         reserve: true,
       },
     ],

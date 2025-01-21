@@ -361,6 +361,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_beraSTONE,
+                addr: 0x97Ad75064b20fb2B2447feD4fa953bF7F007a706,
+                symbol: "beraSTONE",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_frxETH,
                 addr: 0x5E8422345238F34275888049021821E8E08CAa1f,
                 symbol: "frxETH",
@@ -1455,14 +1463,6 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
-                id: TOKEN_beraSTONE,
-                addr: 0x97Ad75064b20fb2B2447feD4fa953bF7F007a706,
-                symbol: "beraSTONE",
-                tokenType: TokenType.ERC4626_VAULT_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
                 id: TOKEN_auraB_rETH_STABLE,
                 addr: 0x9497df26e5bD669Cb925eC68E730492b9300c482,
                 symbol: "auraB_rETH_STABLE",
@@ -1963,6 +1963,7 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
+
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: TOKEN_frxETH,

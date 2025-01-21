@@ -437,13 +437,6 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
-                id: Contracts.BERACHAIN_STONE_VAULT,
-                addr: 0x8f88aE3798E8fF3D0e0DE7465A0863C9bbB577f0,
-                name: "BERACHAIN_STONE_VAULT"
-            })
-        );
-        contractDataByNetwork[1].push(
-            ContractData({
                 id: Contracts.CONVEX_BOOSTER,
                 addr: 0xF403C135812408BFbE8713b5A23a04b3D48AAE31,
                 name: "CONVEX_BOOSTER"
