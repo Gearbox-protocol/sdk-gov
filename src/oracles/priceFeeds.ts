@@ -1800,7 +1800,7 @@ export const priceFeedsByToken: Record<
         targetToBasePriceFeed: {
           type: PriceFeedType.REDSTONE_ORACLE,
           dataServiceId: "redstone-primary-prod",
-          dataId: "beraSTONE_FUNDAMENTAL",
+          dataId: "beraETH_FUNDAMENTAL",
           ...REDSTONE_SIGNERS,
           stalenessPeriod: FOUR_MINUTES,
         },
