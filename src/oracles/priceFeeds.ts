@@ -3843,8 +3843,10 @@ export const priceFeedsByToken: Record<
   steakLRT: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.MELLOW_LRT_ORACLE,
-        underlying: "WETH",
+        // type: PriceFeedType.MELLOW_LRT_ORACLE,
+        // underlying: "WETH",
+        type: PriceFeedType.THE_SAME_AS,
+        token: "wstETH",
         trusted: false,
       },
       Reserve: {
@@ -3856,8 +3858,10 @@ export const priceFeedsByToken: Record<
   Re7LRT: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.MELLOW_LRT_ORACLE,
-        underlying: "WETH",
+        // type: PriceFeedType.MELLOW_LRT_ORACLE,
+        // underlying: "WETH",
+        type: PriceFeedType.THE_SAME_AS,
+        token: "wstETH",
         trusted: false,
       },
       Reserve: {
@@ -3869,8 +3873,10 @@ export const priceFeedsByToken: Record<
   amphrETH: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.MELLOW_LRT_ORACLE,
-        underlying: "WETH",
+        // type: PriceFeedType.MELLOW_LRT_ORACLE,
+        // underlying: "WETH",
+        type: PriceFeedType.THE_SAME_AS,
+        token: "wstETH",
         trusted: false,
       },
       Reserve: {
@@ -3882,8 +3888,10 @@ export const priceFeedsByToken: Record<
   rstETH: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.MELLOW_LRT_ORACLE,
-        underlying: "WETH",
+        // type: PriceFeedType.MELLOW_LRT_ORACLE,
+        // underlying: "WETH",
+        type: PriceFeedType.THE_SAME_AS,
+        token: "wstETH",
         trusted: false,
       },
       Reserve: {
@@ -3895,8 +3903,10 @@ export const priceFeedsByToken: Record<
   pzETH: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.MELLOW_LRT_ORACLE,
-        underlying: "WETH",
+        // type: PriceFeedType.MELLOW_LRT_ORACLE,
+        // underlying: "WETH",
+        type: PriceFeedType.THE_SAME_AS,
+        token: "wstETH",
         trusted: false,
       },
       Reserve: {
@@ -3908,8 +3918,10 @@ export const priceFeedsByToken: Record<
   DVstETH: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.MELLOW_LRT_ORACLE,
-        underlying: "WETH",
+        // type: PriceFeedType.MELLOW_LRT_ORACLE,
+        // underlying: "WETH",
+        type: PriceFeedType.THE_SAME_AS,
+        token: "wstETH",
         trusted: false,
       },
       Reserve: {
