@@ -3850,8 +3850,7 @@ export const priceFeedsByToken: Record<
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH",
+        type: PriceFeedType.ZERO_ORACLE,
       },
     },
   },
@@ -3865,8 +3864,7 @@ export const priceFeedsByToken: Record<
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH",
+        type: PriceFeedType.ZERO_ORACLE,
       },
     },
   },
@@ -3880,8 +3878,7 @@ export const priceFeedsByToken: Record<
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH",
+        type: PriceFeedType.ZERO_ORACLE,
       },
     },
   },
@@ -3895,8 +3892,7 @@ export const priceFeedsByToken: Record<
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH",
+        type: PriceFeedType.ZERO_ORACLE,
       },
     },
   },
@@ -3910,8 +3906,7 @@ export const priceFeedsByToken: Record<
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH",
+        type: PriceFeedType.ZERO_ORACLE,
       },
     },
   },
@@ -3925,8 +3920,7 @@ export const priceFeedsByToken: Record<
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH",
+        type: PriceFeedType.ZERO_ORACLE,
       },
     },
   },

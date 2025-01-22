@@ -7940,14 +7940,7 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[1].push(
-            TheSamePriceFeedData({
-                token: TOKEN_steakLRT,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
-        );
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_steakLRT, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[42161].push(
             TheSamePriceFeedData({
                 token: TOKEN_steakLRT,
@@ -7956,13 +7949,8 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[42161].push(
-            TheSamePriceFeedData({
-                token: TOKEN_steakLRT,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_steakLRT, trusted: false, reserve: true})
         );
         theSamePriceFeedsByNetwork[10].push(
             TheSamePriceFeedData({
@@ -7972,13 +7960,8 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[10].push(
-            TheSamePriceFeedData({
-                token: TOKEN_steakLRT,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_steakLRT, trusted: false, reserve: true})
         );
         theSamePriceFeedsByNetwork[8453].push(
             TheSamePriceFeedData({
@@ -7988,13 +7971,8 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[8453].push(
-            TheSamePriceFeedData({
-                token: TOKEN_steakLRT,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_steakLRT, trusted: false, reserve: true})
         );
 
         // ------------------------ Re7LRT ------------------------
@@ -8006,14 +7984,7 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[1].push(
-            TheSamePriceFeedData({
-                token: TOKEN_Re7LRT,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
-        );
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_Re7LRT, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[42161].push(
             TheSamePriceFeedData({
                 token: TOKEN_Re7LRT,
@@ -8022,13 +7993,8 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[42161].push(
-            TheSamePriceFeedData({
-                token: TOKEN_Re7LRT,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_Re7LRT, trusted: false, reserve: true})
         );
         theSamePriceFeedsByNetwork[10].push(
             TheSamePriceFeedData({
@@ -8038,14 +8004,7 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[10].push(
-            TheSamePriceFeedData({
-                token: TOKEN_Re7LRT,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
-        );
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_Re7LRT, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[8453].push(
             TheSamePriceFeedData({
                 token: TOKEN_Re7LRT,
@@ -8054,13 +8013,8 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[8453].push(
-            TheSamePriceFeedData({
-                token: TOKEN_Re7LRT,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_Re7LRT, trusted: false, reserve: true})
         );
 
         // ------------------------ amphrETH ------------------------
@@ -8072,14 +8026,7 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[1].push(
-            TheSamePriceFeedData({
-                token: TOKEN_amphrETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
-        );
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_amphrETH, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[42161].push(
             TheSamePriceFeedData({
                 token: TOKEN_amphrETH,
@@ -8088,13 +8035,8 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[42161].push(
-            TheSamePriceFeedData({
-                token: TOKEN_amphrETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_amphrETH, trusted: false, reserve: true})
         );
         theSamePriceFeedsByNetwork[10].push(
             TheSamePriceFeedData({
@@ -8104,13 +8046,8 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[10].push(
-            TheSamePriceFeedData({
-                token: TOKEN_amphrETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_amphrETH, trusted: false, reserve: true})
         );
         theSamePriceFeedsByNetwork[8453].push(
             TheSamePriceFeedData({
@@ -8120,13 +8057,8 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[8453].push(
-            TheSamePriceFeedData({
-                token: TOKEN_amphrETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_amphrETH, trusted: false, reserve: true})
         );
 
         // ------------------------ rstETH ------------------------
@@ -8138,14 +8070,7 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[1].push(
-            TheSamePriceFeedData({
-                token: TOKEN_rstETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
-        );
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_rstETH, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[42161].push(
             TheSamePriceFeedData({
                 token: TOKEN_rstETH,
@@ -8154,13 +8079,8 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[42161].push(
-            TheSamePriceFeedData({
-                token: TOKEN_rstETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_rstETH, trusted: false, reserve: true})
         );
         theSamePriceFeedsByNetwork[10].push(
             TheSamePriceFeedData({
@@ -8170,14 +8090,7 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[10].push(
-            TheSamePriceFeedData({
-                token: TOKEN_rstETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
-        );
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_rstETH, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[8453].push(
             TheSamePriceFeedData({
                 token: TOKEN_rstETH,
@@ -8186,13 +8099,8 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[8453].push(
-            TheSamePriceFeedData({
-                token: TOKEN_rstETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_rstETH, trusted: false, reserve: true})
         );
 
         // ------------------------ pzETH ------------------------
@@ -8204,14 +8112,7 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[1].push(
-            TheSamePriceFeedData({
-                token: TOKEN_pzETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
-        );
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_pzETH, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[42161].push(
             TheSamePriceFeedData({
                 token: TOKEN_pzETH,
@@ -8220,13 +8121,8 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[42161].push(
-            TheSamePriceFeedData({
-                token: TOKEN_pzETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_pzETH, trusted: false, reserve: true})
         );
         theSamePriceFeedsByNetwork[10].push(
             TheSamePriceFeedData({
@@ -8236,14 +8132,7 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[10].push(
-            TheSamePriceFeedData({
-                token: TOKEN_pzETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
-        );
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_pzETH, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[8453].push(
             TheSamePriceFeedData({
                 token: TOKEN_pzETH,
@@ -8252,14 +8141,7 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[8453].push(
-            TheSamePriceFeedData({
-                token: TOKEN_pzETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
-        );
+        zeroPriceFeedsByNetwork[8453].push(SingeTokenPriceFeedData({token: TOKEN_pzETH, trusted: false, reserve: true}));
 
         // ------------------------ DVstETH ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -8270,14 +8152,7 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[1].push(
-            TheSamePriceFeedData({
-                token: TOKEN_DVstETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
-        );
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_DVstETH, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[42161].push(
             TheSamePriceFeedData({
                 token: TOKEN_DVstETH,
@@ -8286,13 +8161,8 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[42161].push(
-            TheSamePriceFeedData({
-                token: TOKEN_DVstETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH, trusted: false, reserve: true})
         );
         theSamePriceFeedsByNetwork[10].push(
             TheSamePriceFeedData({
@@ -8302,14 +8172,7 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[10].push(
-            TheSamePriceFeedData({
-                token: TOKEN_DVstETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
-        );
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_DVstETH, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[8453].push(
             TheSamePriceFeedData({
                 token: TOKEN_DVstETH,
@@ -8318,13 +8181,8 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
-        theSamePriceFeedsByNetwork[8453].push(
-            TheSamePriceFeedData({
-                token: TOKEN_DVstETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: true
-            })
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH, trusted: false, reserve: true})
         );
 
         // ------------------------ PT_rsETH_26SEP2024 ------------------------
