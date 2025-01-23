@@ -2610,9 +2610,18 @@ contract PriceFeedDataLive {
             cpf.baseToUSDFeed = 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419;
             cpf.baseStalenessPeriod = 4500;
 
-            cpf.trusted = true;
+            cpf.trusted = false;
             cpf.reserve = false;
         }
+        chainlinkPriceFeedsByNetwork[1].push(
+            ChainlinkPriceFeedData({
+                token: TOKEN_beraSTONE,
+                priceFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
+                stalenessPeriod: 4500,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ GHO ------------------------
         boundedPriceFeedsByNetwork[1].push(
