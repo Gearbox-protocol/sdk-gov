@@ -1,4 +1,5 @@
 import { NetworkType } from "../core/chains";
+import { NOT_DEPLOYED } from "../core/constants";
 import { SupportedToken } from "../tokens/token";
 import { Address, PartialRecord } from "../utils/types";
 import {
@@ -55,6 +56,7 @@ export const pythByNetwork: Record<NetworkType, Address> = {
   Arbitrum: "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
   Optimism: "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
   Base: "0x8250f4aF4B972684F7b336503E2D6dFeDeB1487a",
+  Sonic: NOT_DEPLOYED,
 };
 
 export function getPriceFeedsByToken(

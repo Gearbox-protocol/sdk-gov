@@ -5,6 +5,7 @@ export const explorerUrls: Record<NetworkType, string> = {
   Arbitrum: "https://arbiscan.io",
   Optimism: "https://optimistic.etherscan.io",
   Base: "https://basescan.org",
+  Sonic: "https://sonicscan.org/",
 };
 
 export const explorerApiUrls: Record<NetworkType, string> = {
@@ -12,4 +13,5 @@ export const explorerApiUrls: Record<NetworkType, string> = {
   Arbitrum: "https://api.arbiscan.io/api",
   Optimism: "https://api-optimistic.etherscan.io/api",
   Base: "https://api.basescan.org/api",
+  Sonic: "https://api.sonicscan.org/api",
 };
