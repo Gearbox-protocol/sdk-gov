@@ -8480,6 +8480,30 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
+
+        // ------------------------ PT_sUSDe_29MAY2025 ------------------------
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: TOKEN_PT_sUSDe_29MAY2025,
+                underlying: TOKEN_USDe,
+                market: 0xB162B764044697cf03617C2EFbcB1f42e31E4766,
+                twapWindow: 1800,
+                priceToSy: false,
+                trusted: false,
+                reserve: false
+            })
+        );
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: TOKEN_PT_sUSDe_29MAY2025,
+                underlying: TOKEN_USDe,
+                market: 0xB162B764044697cf03617C2EFbcB1f42e31E4766,
+                twapWindow: 1800,
+                priceToSy: false,
+                trusted: false,
+                reserve: true
+            })
+        );
     }
 
     function chainlinkPriceFeeds(uint256 index) external view returns (ChainlinkPriceFeedData memory) {
