@@ -389,7 +389,7 @@ contract AdapterData {
         curveAdapters.push(
             CurveAdapter({
                 targetContract: Contracts.CURVE_USDE_USDC_POOL,
-                adapterType: AdapterType.CURVE_V1_2ASSETS,
+                adapterType: AdapterType.CURVE_STABLE_NG,
                 lpToken: TOKEN_USDeUSDC,
                 basePool: Contracts.NO_CONTRACT
             })
@@ -397,7 +397,7 @@ contract AdapterData {
         curveAdapters.push(
             CurveAdapter({
                 targetContract: Contracts.CURVE_FRAX_USDE_POOL,
-                adapterType: AdapterType.CURVE_V1_2ASSETS,
+                adapterType: AdapterType.CURVE_STABLE_NG,
                 lpToken: TOKEN_FRAXUSDe,
                 basePool: Contracts.NO_CONTRACT
             })
@@ -405,7 +405,7 @@ contract AdapterData {
         curveAdapters.push(
             CurveAdapter({
                 targetContract: Contracts.CURVE_USDE_CRVUSD_POOL,
-                adapterType: AdapterType.CURVE_V1_2ASSETS,
+                adapterType: AdapterType.CURVE_STABLE_NG,
                 lpToken: TOKEN_USDecrvUSD,
                 basePool: Contracts.NO_CONTRACT
             })
@@ -413,7 +413,7 @@ contract AdapterData {
         curveAdapters.push(
             CurveAdapter({
                 targetContract: Contracts.CURVE_USDE_DAI_POOL,
-                adapterType: AdapterType.CURVE_V1_2ASSETS,
+                adapterType: AdapterType.CURVE_STABLE_NG,
                 lpToken: TOKEN_USDeDAI,
                 basePool: Contracts.NO_CONTRACT
             })
@@ -421,7 +421,7 @@ contract AdapterData {
         curveAdapters.push(
             CurveAdapter({
                 targetContract: Contracts.CURVE_SDAI_SUSDE_POOL,
-                adapterType: AdapterType.CURVE_V1_2ASSETS,
+                adapterType: AdapterType.CURVE_STABLE_NG,
                 lpToken: TOKEN_MtEthena,
                 basePool: Contracts.NO_CONTRACT
             })
@@ -429,7 +429,7 @@ contract AdapterData {
         curveAdapters.push(
             CurveAdapter({
                 targetContract: Contracts.CURVE_GHO_USDE_POOL,
-                adapterType: AdapterType.CURVE_V1_2ASSETS,
+                adapterType: AdapterType.CURVE_STABLE_NG,
                 lpToken: TOKEN_GHOUSDe,
                 basePool: Contracts.NO_CONTRACT
             })

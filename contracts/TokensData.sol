@@ -1339,6 +1339,14 @@ contract TokensDataLive {
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_B_50WBTC_50WETH,
+                addr: 0xA6F548DF93de924d73be7D25dC02554c6bD66dB5,
+                symbol: "B_50WBTC_50WETH",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
 
         tokenDataByNetwork[1].push(
             TokenData({

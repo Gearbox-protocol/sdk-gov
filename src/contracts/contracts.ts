@@ -1379,7 +1379,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Curve USDeUSDC",
     protocol: Protocols.Curve,
     version: 20,
-    type: AdapterInterface.CURVE_V1_2ASSETS, // NOTE: This is actually stable NG, however the old adapter is used in swap only mode before audits
+    type: AdapterInterface.CURVE_STABLE_NG,
     lpToken: "USDeUSDC",
     tokens: ["USDe", "USDC"],
   },
@@ -1388,7 +1388,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Curve FRAXUSDe",
     protocol: Protocols.Curve,
     version: 20,
-    type: AdapterInterface.CURVE_V1_2ASSETS, // NOTE: This is actually stable NG, however the old adapter is used in swap only mode before audits
+    type: AdapterInterface.CURVE_STABLE_NG,
     lpToken: "FRAXUSDe",
     tokens: ["FRAX", "USDe"],
   },
@@ -1397,7 +1397,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Curve USDecrvUSD",
     protocol: Protocols.Curve,
     version: 20,
-    type: AdapterInterface.CURVE_V1_2ASSETS, // NOTE: This is actually stable NG, however the old adapter is used in swap only mode before audits
+    type: AdapterInterface.CURVE_STABLE_NG,
     lpToken: "USDecrvUSD",
     tokens: ["USDe", "crvUSD"],
   },
@@ -1406,7 +1406,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Curve USDeDAI",
     protocol: Protocols.Curve,
     version: 20,
-    type: AdapterInterface.CURVE_V1_2ASSETS, // NOTE: This is actually stable NG, however the old adapter is used in swap only mode before audits
+    type: AdapterInterface.CURVE_STABLE_NG,
     lpToken: "USDeDAI",
     tokens: ["USDe", "DAI"],
   },
@@ -1415,7 +1415,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Curve MtEthena",
     protocol: Protocols.Curve,
     version: 20,
-    type: AdapterInterface.CURVE_V1_2ASSETS, // NOTE: This is actually stable NG, however the old adapter is used in swap only mode before audits
+    type: AdapterInterface.CURVE_STABLE_NG,
     lpToken: "MtEthena",
     tokens: ["sDAI", "sUSDe"],
   },
@@ -1424,7 +1424,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Curve GHOUSDe",
     protocol: Protocols.Curve,
     version: 20,
-    type: AdapterInterface.CURVE_V1_2ASSETS, // NOTE: This is actually stable NG, however the old adapter is used in swap only mode before audits
+    type: AdapterInterface.CURVE_STABLE_NG,
     lpToken: "GHOUSDe",
     tokens: ["GHO", "USDe"],
   },
