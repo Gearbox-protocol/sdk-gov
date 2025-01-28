@@ -616,6 +616,17 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  tBTC: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+        stalenessPeriod: HOUR_1_BUFFERED,
+        trusted: true,
+      },
+    },
+  },
+
   WETH: {
     Mainnet: {
       Main: {
@@ -1782,6 +1793,33 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  beraSTONE: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "beraETH_FUNDAMENTAL",
+          ...REDSTONE_SIGNERS,
+          stalenessPeriod: FOUR_MINUTES,
+        },
+
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+        stalenessPeriod: HOUR_1_BUFFERED,
+      },
+    },
+  },
+
   GHO: {
     Mainnet: {
       Main: {
@@ -2332,6 +2370,14 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  "2BTC-f": {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
   "3CRV": {
     AllNetworks: {
       Main: {
@@ -2807,6 +2853,14 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  DVstETH_wstETH_BPT: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
   weETH_ezETH_rswETH: {
     AllNetworks: {
       Main: {
@@ -2932,6 +2986,14 @@ export const priceFeedsByToken: Record<
     },
   },
   pumpBTC_WBTC_BPT: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  eBTC_WBTC_BPT: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
@@ -3131,6 +3193,22 @@ export const priceFeedsByToken: Record<
     },
   },
   dDOLAV3: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  dtBTCV3: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  dwstETHV3: {
     Mainnet: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
@@ -3779,65 +3857,84 @@ export const priceFeedsByToken: Record<
   steakLRT: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.MELLOW_LRT_ORACLE,
-        underlying: "WETH",
+        // type: PriceFeedType.MELLOW_LRT_ORACLE,
+        // underlying: "WETH",
+        type: PriceFeedType.THE_SAME_AS,
+        token: "wstETH",
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH",
+        type: PriceFeedType.ZERO_ORACLE,
       },
     },
   },
   Re7LRT: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.MELLOW_LRT_ORACLE,
-        underlying: "WETH",
+        // type: PriceFeedType.MELLOW_LRT_ORACLE,
+        // underlying: "WETH",
+        type: PriceFeedType.THE_SAME_AS,
+        token: "wstETH",
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH",
+        type: PriceFeedType.ZERO_ORACLE,
       },
     },
   },
   amphrETH: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.MELLOW_LRT_ORACLE,
-        underlying: "WETH",
+        // type: PriceFeedType.MELLOW_LRT_ORACLE,
+        // underlying: "WETH",
+        type: PriceFeedType.THE_SAME_AS,
+        token: "wstETH",
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH",
+        type: PriceFeedType.ZERO_ORACLE,
       },
     },
   },
   rstETH: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.MELLOW_LRT_ORACLE,
-        underlying: "WETH",
+        // type: PriceFeedType.MELLOW_LRT_ORACLE,
+        // underlying: "WETH",
+        type: PriceFeedType.THE_SAME_AS,
+        token: "wstETH",
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH",
+        type: PriceFeedType.ZERO_ORACLE,
       },
     },
   },
   pzETH: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.MELLOW_LRT_ORACLE,
-        underlying: "WETH",
+        // type: PriceFeedType.MELLOW_LRT_ORACLE,
+        // underlying: "WETH",
+        type: PriceFeedType.THE_SAME_AS,
+        token: "wstETH",
         trusted: false,
       },
       Reserve: {
+        type: PriceFeedType.ZERO_ORACLE,
+      },
+    },
+  },
+  DVstETH: {
+    AllNetworks: {
+      Main: {
+        // type: PriceFeedType.MELLOW_LRT_ORACLE,
+        // underlying: "WETH",
         type: PriceFeedType.THE_SAME_AS,
         token: "wstETH",
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.ZERO_ORACLE,
       },
     },
   },

@@ -111,6 +111,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_tBTC,
+                addr: 0x18084fbA666a33d37592fA2633fD49a74DD93a88,
+                symbol: "tBTC",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_WETH,
                 addr: 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2,
                 symbol: "WETH",
@@ -353,6 +361,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_beraSTONE,
+                addr: 0x97Ad75064b20fb2B2447feD4fa953bF7F007a706,
+                symbol: "beraSTONE",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_frxETH,
                 addr: 0x5E8422345238F34275888049021821E8E08CAa1f,
                 symbol: "frxETH",
@@ -452,6 +468,14 @@ contract TokensDataLive {
                 id: TOKEN_pzETH,
                 addr: 0x8c9532a60E0E7C6BbD2B2c1303F63aCE1c3E9811,
                 symbol: "pzETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_DVstETH,
+                addr: 0x5E362eb2c0706Bd1d134689eC75176018385430B,
+                symbol: "DVstETH",
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
@@ -829,6 +853,14 @@ contract TokensDataLive {
                 id: TOKEN_TriBTC,
                 addr: 0xabaf76590478F2fE0b396996f55F0b61101e9502,
                 symbol: "TriBTC",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN__2BTC_f,
+                addr: 0xB7ECB2AA52AA64a717180E030241bC75Cd946726,
+                symbol: "2BTC-f",
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
         );
@@ -1261,9 +1293,25 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_eBTC_WBTC_BPT,
+                addr: 0xda17f3663C5D04C0B316cfA1A04Aa53eBBC8c12C,
+                symbol: "eBTC_WBTC_BPT",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_trenSTETH,
                 addr: 0x4216d5900a6109bba48418b5e2AB6cc4e61Cf477,
                 symbol: "trenSTETH",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_DVstETH_wstETH_BPT,
+                addr: 0x632aafC2D3D2cA1764E702aa25c065c273Cd08eD,
+                symbol: "DVstETH_wstETH_BPT",
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
@@ -1545,6 +1593,22 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_dtBTCV3,
+                addr: 0x7354EC6E852108411e681D13E11185c3a2567981,
+                symbol: "dtBTCV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_dwstETHV3,
+                addr: 0xCad5edc9360825C4Ec36660dC1a6E61c74696c7B,
+                symbol: "dwstETHV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_dUSDCV3,
                 addr: 0xda00000035fef4082F78dEF6A8903bee419FbF8E,
                 symbol: "dUSDCV3",
@@ -1747,6 +1811,7 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
+
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: TOKEN_WETH,
@@ -1906,6 +1971,7 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
+
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: TOKEN_frxETH,
@@ -2347,6 +2413,7 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
+
         tokenDataByNetwork[10].push(
             TokenData({
                 id: TOKEN_WETH,

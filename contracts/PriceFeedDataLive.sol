@@ -1041,6 +1041,17 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ tBTC ------------------------
+        chainlinkPriceFeedsByNetwork[1].push(
+            ChainlinkPriceFeedData({
+                token: TOKEN_tBTC,
+                priceFeed: 0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c,
+                stalenessPeriod: 4500,
+                trusted: true,
+                reserve: false
+            })
+        );
+
         // ------------------------ WETH ------------------------
         chainlinkPriceFeedsByNetwork[1].push(
             ChainlinkPriceFeedData({
@@ -2570,6 +2581,47 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: TOKEN_SKY, trusted: false, reserve: false}));
         zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_SKY, trusted: false, reserve: false}));
         zeroPriceFeedsByNetwork[8453].push(SingeTokenPriceFeedData({token: TOKEN_SKY, trusted: false, reserve: false}));
+
+        // ------------------------ beraSTONE ------------------------
+
+        {
+            CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[1].push();
+            cpf.token = TOKEN_beraSTONE;
+            cpf.isTargetRedstone = true;
+            cpf.redstoneTargetToBaseData = RedStonePriceFeedDataShort({
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "beraETH_FUNDAMENTAL",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5
+            });
+            cpf.targetStalenessPeriod = 240;
+            cpf.isBaseComposite = false;
+            cpf.baseToUSDFeed = 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419;
+            cpf.baseStalenessPeriod = 4500;
+
+            cpf.trusted = false;
+            cpf.reserve = false;
+        }
+        chainlinkPriceFeedsByNetwork[1].push(
+            ChainlinkPriceFeedData({
+                token: TOKEN_beraSTONE,
+                priceFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
+                stalenessPeriod: 4500,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ GHO ------------------------
         boundedPriceFeedsByNetwork[1].push(
@@ -4323,6 +4375,18 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_TriBTC, trusted: false, reserve: false})
         );
 
+        // ------------------------ 2BTC-f ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN__2BTC_f, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN__2BTC_f, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN__2BTC_f, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN__2BTC_f, trusted: false, reserve: false})
+        );
+
         // ------------------------ 3CRV ------------------------
         curvePriceFeedsByNetwork[1].push(
             CurvePriceFeedData({
@@ -6005,6 +6069,20 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_trenSTETH, trusted: false, reserve: false})
         );
 
+        // ------------------------ DVstETH_wstETH_BPT ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH_wstETH_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH_wstETH_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH_wstETH_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH_wstETH_BPT, trusted: false, reserve: false})
+        );
+
         // ------------------------ weETH_ezETH_rswETH ------------------------
         zeroPriceFeedsByNetwork[1].push(
             SingeTokenPriceFeedData({token: TOKEN_weETH_ezETH_rswETH, trusted: false, reserve: false})
@@ -6455,6 +6533,20 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_pumpBTC_WBTC_BPT, trusted: false, reserve: false})
         );
 
+        // ------------------------ eBTC_WBTC_BPT ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_eBTC_WBTC_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_eBTC_WBTC_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_eBTC_WBTC_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_eBTC_WBTC_BPT, trusted: false, reserve: false})
+        );
+
         // ------------------------ 33AURA_33ARB_33BAL ------------------------
         zeroPriceFeedsByNetwork[1].push(
             SingeTokenPriceFeedData({token: TOKEN__33AURA_33ARB_33BAL, trusted: true, reserve: false})
@@ -6569,6 +6661,14 @@ contract PriceFeedDataLive {
 
         // ------------------------ dDOLAV3 ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_dDOLAV3, trusted: false, reserve: false}));
+
+        // ------------------------ dtBTCV3 ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_dtBTCV3, trusted: false, reserve: false}));
+
+        // ------------------------ dwstETHV3 ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_dwstETHV3, trusted: false, reserve: false})
+        );
 
         // ------------------------ sdUSDCV3 ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -7875,233 +7975,257 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ steakLRT ------------------------
-        mellowLRTPriceFeedsByNetwork[1].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_steakLRT, underlying: TOKEN_WETH, trusted: false, reserve: false})
-        );
         theSamePriceFeedsByNetwork[1].push(
             TheSamePriceFeedData({
                 token: TOKEN_steakLRT,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
         );
-        mellowLRTPriceFeedsByNetwork[42161].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_steakLRT, underlying: TOKEN_WETH, trusted: false, reserve: false})
-        );
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_steakLRT, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[42161].push(
             TheSamePriceFeedData({
                 token: TOKEN_steakLRT,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
         );
-        mellowLRTPriceFeedsByNetwork[10].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_steakLRT, underlying: TOKEN_WETH, trusted: false, reserve: false})
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_steakLRT, trusted: false, reserve: true})
         );
         theSamePriceFeedsByNetwork[10].push(
             TheSamePriceFeedData({
                 token: TOKEN_steakLRT,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
         );
-        mellowLRTPriceFeedsByNetwork[8453].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_steakLRT, underlying: TOKEN_WETH, trusted: false, reserve: false})
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_steakLRT, trusted: false, reserve: true})
         );
         theSamePriceFeedsByNetwork[8453].push(
             TheSamePriceFeedData({
                 token: TOKEN_steakLRT,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_steakLRT, trusted: false, reserve: true})
         );
 
         // ------------------------ Re7LRT ------------------------
-        mellowLRTPriceFeedsByNetwork[1].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_Re7LRT, underlying: TOKEN_WETH, trusted: false, reserve: false})
-        );
         theSamePriceFeedsByNetwork[1].push(
             TheSamePriceFeedData({
                 token: TOKEN_Re7LRT,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
         );
-        mellowLRTPriceFeedsByNetwork[42161].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_Re7LRT, underlying: TOKEN_WETH, trusted: false, reserve: false})
-        );
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_Re7LRT, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[42161].push(
             TheSamePriceFeedData({
                 token: TOKEN_Re7LRT,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
         );
-        mellowLRTPriceFeedsByNetwork[10].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_Re7LRT, underlying: TOKEN_WETH, trusted: false, reserve: false})
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_Re7LRT, trusted: false, reserve: true})
         );
         theSamePriceFeedsByNetwork[10].push(
             TheSamePriceFeedData({
                 token: TOKEN_Re7LRT,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
         );
-        mellowLRTPriceFeedsByNetwork[8453].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_Re7LRT, underlying: TOKEN_WETH, trusted: false, reserve: false})
-        );
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_Re7LRT, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[8453].push(
             TheSamePriceFeedData({
                 token: TOKEN_Re7LRT,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_Re7LRT, trusted: false, reserve: true})
         );
 
         // ------------------------ amphrETH ------------------------
-        mellowLRTPriceFeedsByNetwork[1].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_amphrETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
-        );
         theSamePriceFeedsByNetwork[1].push(
             TheSamePriceFeedData({
                 token: TOKEN_amphrETH,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
         );
-        mellowLRTPriceFeedsByNetwork[42161].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_amphrETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
-        );
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_amphrETH, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[42161].push(
             TheSamePriceFeedData({
                 token: TOKEN_amphrETH,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
         );
-        mellowLRTPriceFeedsByNetwork[10].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_amphrETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_amphrETH, trusted: false, reserve: true})
         );
         theSamePriceFeedsByNetwork[10].push(
             TheSamePriceFeedData({
                 token: TOKEN_amphrETH,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
         );
-        mellowLRTPriceFeedsByNetwork[8453].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_amphrETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_amphrETH, trusted: false, reserve: true})
         );
         theSamePriceFeedsByNetwork[8453].push(
             TheSamePriceFeedData({
                 token: TOKEN_amphrETH,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_amphrETH, trusted: false, reserve: true})
         );
 
         // ------------------------ rstETH ------------------------
-        mellowLRTPriceFeedsByNetwork[1].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_rstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
-        );
         theSamePriceFeedsByNetwork[1].push(
             TheSamePriceFeedData({
                 token: TOKEN_rstETH,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
         );
-        mellowLRTPriceFeedsByNetwork[42161].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_rstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
-        );
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_rstETH, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[42161].push(
             TheSamePriceFeedData({
                 token: TOKEN_rstETH,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
         );
-        mellowLRTPriceFeedsByNetwork[10].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_rstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_rstETH, trusted: false, reserve: true})
         );
         theSamePriceFeedsByNetwork[10].push(
             TheSamePriceFeedData({
                 token: TOKEN_rstETH,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
         );
-        mellowLRTPriceFeedsByNetwork[8453].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_rstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
-        );
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_rstETH, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[8453].push(
             TheSamePriceFeedData({
                 token: TOKEN_rstETH,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_rstETH, trusted: false, reserve: true})
         );
 
         // ------------------------ pzETH ------------------------
-        mellowLRTPriceFeedsByNetwork[1].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_pzETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
-        );
         theSamePriceFeedsByNetwork[1].push(
             TheSamePriceFeedData({
                 token: TOKEN_pzETH,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
         );
-        mellowLRTPriceFeedsByNetwork[42161].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_pzETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
-        );
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_pzETH, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[42161].push(
             TheSamePriceFeedData({
                 token: TOKEN_pzETH,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
         );
-        mellowLRTPriceFeedsByNetwork[10].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_pzETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_pzETH, trusted: false, reserve: true})
         );
         theSamePriceFeedsByNetwork[10].push(
             TheSamePriceFeedData({
                 token: TOKEN_pzETH,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
         );
-        mellowLRTPriceFeedsByNetwork[8453].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_pzETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
-        );
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_pzETH, trusted: false, reserve: true}));
         theSamePriceFeedsByNetwork[8453].push(
             TheSamePriceFeedData({
                 token: TOKEN_pzETH,
                 tokenHasSamePriceFeed: TOKEN_wstETH,
                 trusted: false,
-                reserve: true
+                reserve: false
             })
+        );
+        zeroPriceFeedsByNetwork[8453].push(SingeTokenPriceFeedData({token: TOKEN_pzETH, trusted: false, reserve: true}));
+
+        // ------------------------ DVstETH ------------------------
+        theSamePriceFeedsByNetwork[1].push(
+            TheSamePriceFeedData({
+                token: TOKEN_DVstETH,
+                tokenHasSamePriceFeed: TOKEN_wstETH,
+                trusted: false,
+                reserve: false
+            })
+        );
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_DVstETH, trusted: false, reserve: true}));
+        theSamePriceFeedsByNetwork[42161].push(
+            TheSamePriceFeedData({
+                token: TOKEN_DVstETH,
+                tokenHasSamePriceFeed: TOKEN_wstETH,
+                trusted: false,
+                reserve: false
+            })
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH, trusted: false, reserve: true})
+        );
+        theSamePriceFeedsByNetwork[10].push(
+            TheSamePriceFeedData({
+                token: TOKEN_DVstETH,
+                tokenHasSamePriceFeed: TOKEN_wstETH,
+                trusted: false,
+                reserve: false
+            })
+        );
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_DVstETH, trusted: false, reserve: true}));
+        theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_DVstETH,
+                tokenHasSamePriceFeed: TOKEN_wstETH,
+                trusted: false,
+                reserve: false
+            })
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH, trusted: false, reserve: true})
         );
 
         // ------------------------ PT_rsETH_26SEP2024 ------------------------

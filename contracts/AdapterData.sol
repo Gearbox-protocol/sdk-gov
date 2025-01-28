@@ -225,6 +225,12 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.MELLOW_RENZO_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
         );
         simpleAdapters.push(
+            SimpleAdapter({
+                targetContract: Contracts.MELLOW_DECENTALIZED_VALIDATOR_VAULT,
+                adapterType: AdapterType.MELLOW_LRT_VAULT
+            })
+        );
+        simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.DAI_USDS, adapterType: AdapterType.DAI_USDS_EXCHANGE})
         );
         curveAdapters.push(
@@ -505,6 +511,14 @@ contract AdapterData {
                 targetContract: Contracts.CURVE_TRIBTC_POOL,
                 adapterType: AdapterType.CURVE_STABLE_NG,
                 lpToken: TOKEN_TriBTC,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
+                targetContract: Contracts.CURVE_tBTC_WBTC_POOL,
+                adapterType: AdapterType.CURVE_V1_2ASSETS,
+                lpToken: TOKEN__2BTC_f,
                 basePool: Contracts.NO_CONTRACT
             })
         );

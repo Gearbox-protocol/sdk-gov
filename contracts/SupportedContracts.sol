@@ -287,6 +287,13 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_tBTC_WBTC_POOL,
+                addr: 0xB7ECB2AA52AA64a717180E030241bC75Cd946726,
+                name: "CURVE_tBTC_WBTC_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_GEAR_POOL,
                 addr: 0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2,
                 name: "CURVE_GEAR_POOL"
@@ -703,6 +710,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.MELLOW_RENZO_VAULT,
                 addr: 0x8c9532a60E0E7C6BbD2B2c1303F63aCE1c3E9811,
                 name: "MELLOW_RENZO_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.MELLOW_DECENTALIZED_VALIDATOR_VAULT,
+                addr: 0x5E362eb2c0706Bd1d134689eC75176018385430B,
+                name: "MELLOW_DECENTALIZED_VALIDATOR_VAULT"
             })
         );
         contractDataByNetwork[1].push(

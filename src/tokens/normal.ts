@@ -16,6 +16,7 @@ export type NormalToken =
   | "DAI"
   | "WETH"
   | "WBTC"
+  | "tBTC"
   | "YFI"
   | "WLD"
   | "OP"
@@ -58,12 +59,14 @@ export type NormalToken =
   | "wstETH"
   | "USDS"
   | "SKY"
+  | "beraSTONE"
   // Mellow LRTs
   | "steakLRT"
   | "Re7LRT"
   | "amphrETH"
   | "rstETH"
   | "pzETH"
+  | "DVstETH"
   // Pendle
   | "PT_rsETH_26SEP2024"
   | "PT_sUSDe_26DEC2024"
@@ -169,6 +172,12 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
     name: "WBTC",
 
     symbol: "WBTC",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  tBTC: {
+    name: "tBTC",
+
+    symbol: "tBTC",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 
@@ -366,6 +375,11 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
     symbol: "rsETH",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
+  beraSTONE: {
+    name: "Berachain STONE",
+    symbol: "beraSTONE",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
   frxETH: {
     name: "Frax ETH",
     symbol: "frxETH",
@@ -429,6 +443,11 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   pzETH: {
     name: "Renzo Mellow LST",
     symbol: "pzETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  DVstETH: {
+    name: "Decentralized Validator Token",
+    symbol: "DVstETH",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
   PT_rsETH_26SEP2024: {
