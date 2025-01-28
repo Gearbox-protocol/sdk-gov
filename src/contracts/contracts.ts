@@ -851,171 +851,6 @@ export const contractsByNetwork: Record<
     SKY_STAKING_REWARDS: NOT_DEPLOYED,
     DAI_USDS: NOT_DEPLOYED,
   },
-  //
-  //
-  //
-  //
-  //  SONIC
-  //
-  //
-  //
-  //
-  Sonic: {
-    UNISWAP_V2_ROUTER: NOT_DEPLOYED,
-    UNISWAP_V3_ROUTER: NOT_DEPLOYED,
-    PANCAKESWAP_V3_ROUTER: NOT_DEPLOYED,
-    SUSHISWAP_ROUTER: NOT_DEPLOYED,
-    FRAXSWAP_ROUTER: NOT_DEPLOYED,
-    VELODROME_V2_ROUTER: NOT_DEPLOYED,
-    VELODROME_CL_ROUTER: NOT_DEPLOYED,
-    CAMELOT_V3_ROUTER: NOT_DEPLOYED,
-    PENDLE_ROUTER: NOT_DEPLOYED,
-
-    // CURVE
-    CURVE_3CRV_POOL_OP: NOT_DEPLOYED,
-    CURVE_3CRV_POOL: NOT_DEPLOYED,
-    CURVE_FRAX_USDC_POOL: NOT_DEPLOYED,
-    CURVE_STETH_GATEWAY: NOT_DEPLOYED,
-    CURVE_FRAX_POOL: NOT_DEPLOYED,
-    CURVE_LUSD_POOL: NOT_DEPLOYED,
-    CURVE_SUSD_POOL: NOT_DEPLOYED,
-    CURVE_SUSD_DEPOSIT: NOT_DEPLOYED,
-    CURVE_GUSD_POOL: NOT_DEPLOYED,
-    CURVE_CRVETH_POOL: NOT_DEPLOYED,
-    CURVE_CVXETH_POOL: NOT_DEPLOYED,
-    CURVE_3CRYPTO_POOL: NOT_DEPLOYED,
-    CURVE_LDOETH_POOL: NOT_DEPLOYED,
-    CURVE_USDE_USDC_POOL: NOT_DEPLOYED,
-    CURVE_FRAX_USDE_POOL: NOT_DEPLOYED,
-    CURVE_USDE_CRVUSD_POOL: NOT_DEPLOYED,
-    CURVE_FRAX_SDAI_POOL: NOT_DEPLOYED,
-    CURVE_DOLA_SUSDE_POOL: NOT_DEPLOYED,
-    CURVE_DOLA_FRAXBP_POOL: NOT_DEPLOYED,
-    CURVE_DOLA_CRVUSD_POOL: NOT_DEPLOYED,
-    CURVE_USDE_DAI_POOL: NOT_DEPLOYED,
-    CURVE_SDAI_SUSDE_POOL: NOT_DEPLOYED,
-    CURVE_GHO_USDE_POOL: NOT_DEPLOYED,
-    CURVE_PUFETH_WSTETH_POOL: NOT_DEPLOYED,
-    CURVE_GHO_CRVUSD_POOL: NOT_DEPLOYED,
-    CURVE_ETH_WSTETH_GATEWAY_OP: NOT_DEPLOYED,
-    CURVE_EZETH_ETH_POOL: NOT_DEPLOYED,
-    CURVE_EZPZ_ETH_POOL: NOT_DEPLOYED,
-    CURVE_LBTC_WBTC_POOL: NOT_DEPLOYED,
-    CURVE_EBTC_WBTC_POOL: NOT_DEPLOYED,
-    CURVE_PUMPBTC_WBTC_POOL: NOT_DEPLOYED,
-    CURVE_TRIBTC_POOL: NOT_DEPLOYED,
-    CURVE_tBTC_WBTC_POOL: NOT_DEPLOYED,
-
-    CURVE_GEAR_POOL: NOT_DEPLOYED,
-
-    CURVE_CRVUSD_USDC_POOL: NOT_DEPLOYED,
-    CURVE_CRVUSD_USDT_POOL: NOT_DEPLOYED,
-    CURVE_CRVUSD_FRAX_POOL: NOT_DEPLOYED,
-    CURVE_TRI_CRV_POOL: NOT_DEPLOYED,
-    CURVE_CRVUSD_SUSDE_POOL: NOT_DEPLOYED,
-    CURVE_LLAMA_THENA_POOL: NOT_DEPLOYED,
-
-    CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
-
-    CURVE_2CRV_POOL_ARB: NOT_DEPLOYED,
-    CURVE_TRICRYPTO_CRVUSD_POOL_ARB: NOT_DEPLOYED,
-    CURVE_CRVUSD_USDC_POOL_ARB: NOT_DEPLOYED,
-    CURVE_CRVUSD_USDT_POOL_ARB: NOT_DEPLOYED,
-    CURVE_CRVUSD_USDC_E_POOL_ARB: NOT_DEPLOYED,
-    CURVE_USDE_USDC_POOL_ARB: NOT_DEPLOYED,
-
-    // YEARN
-    YEARN_DAI_VAULT: NOT_DEPLOYED,
-    YEARN_USDC_VAULT: NOT_DEPLOYED,
-    YEARN_USDC_E_VAULT: NOT_DEPLOYED,
-    YEARN_WETH_VAULT: NOT_DEPLOYED,
-    YEARN_WBTC_VAULT: NOT_DEPLOYED,
-    YEARN_USDT_VAULT: NOT_DEPLOYED,
-    YEARN_OP_VAULT: NOT_DEPLOYED,
-    YEARN_CURVE_FRAX_VAULT: NOT_DEPLOYED,
-    YEARN_CURVE_STETH_VAULT: NOT_DEPLOYED,
-
-    /// ERC4626
-    MAKER_DSR_VAULT: NOT_DEPLOYED,
-    YIELD_ETH_VAULT: NOT_DEPLOYED,
-    STAKED_USDE_VAULT: NOT_DEPLOYED,
-    STAKED_USDS_VAULT: NOT_DEPLOYED,
-    SAVINGS_CRVUSD_VAULT: NOT_DEPLOYED,
-
-    // CONVEX
-    CONVEX_BOOSTER: NOT_DEPLOYED,
-    CONVEX_3CRV_POOL: NOT_DEPLOYED,
-    CONVEX_FRAX_USDC_POOL: NOT_DEPLOYED,
-    CONVEX_STECRV_POOL: NOT_DEPLOYED,
-    CONVEX_SUSD_POOL: NOT_DEPLOYED,
-    CONVEX_FRAX3CRV_POOL: NOT_DEPLOYED,
-    CONVEX_LUSD3CRV_POOL: NOT_DEPLOYED,
-    CONVEX_GUSD_POOL: NOT_DEPLOYED,
-    CONVEX_CRVETH_POOL: NOT_DEPLOYED,
-    CONVEX_CVXETH_POOL: NOT_DEPLOYED,
-    CONVEX_3CRYPTO_POOL: NOT_DEPLOYED,
-    CONVEX_LDOETH_POOL: NOT_DEPLOYED,
-    CONVEX_CRVUSD_USDC_POOL: NOT_DEPLOYED,
-    CONVEX_CRVUSD_USDT_POOL: NOT_DEPLOYED,
-    CONVEX_CRVUSD_FRAX_POOL: NOT_DEPLOYED,
-    CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
-    CONVEX_GHO_CRVUSD_POOL: NOT_DEPLOYED,
-    CONVEX_LLAMA_THENA_POOL: NOT_DEPLOYED,
-
-    CONVEX_BOOSTER_ARB: NOT_DEPLOYED,
-    CONVEX_CRVUSD_USDT_POOL_ARB: NOT_DEPLOYED,
-
-    // AURA
-    AURA_BOOSTER: NOT_DEPLOYED,
-    AURA_WEETH_RETH_POOL: NOT_DEPLOYED,
-    AURA_OSETH_WETH_POOL: NOT_DEPLOYED,
-    AURA_B_RETH_STABLE_POOL: NOT_DEPLOYED,
-    AURA_BPT_RETH_ETH_POOL: NOT_DEPLOYED,
-    AURA_BPT_WSTETH_ETH_POOL: NOT_DEPLOYED,
-    AURA_RETH_WETH_POOL_ARB: NOT_DEPLOYED,
-    AURA_WSTETH_WETH_POOL_ARB: NOT_DEPLOYED,
-    AURA_CBETH_RETH_WSTETH_POOL_ARB: NOT_DEPLOYED,
-    AURA_WSTETH_RETH_SFRXETH_POOL_ARB: NOT_DEPLOYED,
-
-    // LIDO
-    LIDO_STETH_GATEWAY: NOT_DEPLOYED,
-    LIDO_WSTETH: NOT_DEPLOYED,
-
-    // BALANCER
-    BALANCER_VAULT: NOT_DEPLOYED,
-
-    // GEARBOX
-    UNIVERSAL_ADAPTER: NOT_DEPLOYED,
-
-    // AAVE
-    AAVE_V2_LENDING_POOL: NOT_DEPLOYED,
-    AAVE_V3_LENDING_POOL: NOT_DEPLOYED,
-
-    AAVE_V2_DAI_TOKEN_WRAPPER: NOT_DEPLOYED,
-    AAVE_V2_USDC_TOKEN_WRAPPER: NOT_DEPLOYED,
-    AAVE_V2_USDT_TOKEN_WRAPPER: NOT_DEPLOYED,
-    AAVE_V2_WETH_TOKEN_WRAPPER: NOT_DEPLOYED,
-
-    COMPOUND_V2_DAI_POOL: NOT_DEPLOYED,
-    COMPOUND_V2_USDC_POOL: NOT_DEPLOYED,
-    COMPOUND_V2_USDT_POOL: NOT_DEPLOYED,
-    COMPOUND_V2_LINK_POOL: NOT_DEPLOYED,
-    COMPOUND_V2_ETH_GATEWAY: NOT_DEPLOYED,
-
-    FLUX_USDC_POOL: NOT_DEPLOYED,
-    ZIRCUIT_POOL: NOT_DEPLOYED,
-
-    // MELLOW
-    MELLOW_STEAKHOUSE_VAULT: NOT_DEPLOYED,
-    MELLOW_RE7_LABS_VAULT: NOT_DEPLOYED,
-    MELLOW_AMPHOR_VAULT: NOT_DEPLOYED,
-    MELLOW_RESTAKING_VAULT: NOT_DEPLOYED,
-    MELLOW_RENZO_VAULT: NOT_DEPLOYED,
-    MELLOW_DECENTALIZED_VALIDATOR_VAULT: NOT_DEPLOYED,
-
-    SKY_STAKING_REWARDS: NOT_DEPLOYED,
-    DAI_USDS: NOT_DEPLOYED,
-  },
 };
 
 export const UNISWAP_V3_QUOTER: Address =
@@ -1351,7 +1186,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       Arbitrum: NOT_DEPLOYED, // CURVE_STECRV_POOL
       Optimism: NOT_DEPLOYED,
       Base: NOT_DEPLOYED,
-      Sonic: NOT_DEPLOYED,
     },
     tokens: ["WETH", "STETH"],
     lpToken: "steCRV",
@@ -1366,7 +1200,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       Arbitrum: NOT_DEPLOYED,
       Optimism: "0xb90b9b1f91a01ea22a182cd84c1e22222e39b415",
       Base: NOT_DEPLOYED,
-      Sonic: NOT_DEPLOYED,
     },
     tokens: ["WETH", "wstETH"],
     lpToken: "wstETHCRV",
@@ -1381,7 +1214,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       Arbitrum: NOT_DEPLOYED,
       Optimism: NOT_DEPLOYED,
       Base: NOT_DEPLOYED,
-      Sonic: NOT_DEPLOYED,
     },
     tokens: ["GEAR", "WETH"],
     lpToken: "GEAR",
@@ -1877,7 +1709,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED, // CONVEX_SUSD_POOL_EXTRA_SNX
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -1895,7 +1726,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED, // CONVEX_STECRV_POOL_EXTRA_LDO
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -1913,7 +1743,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED, // CONVEX_FRAX3CRV_POOL_EXTRA_FXS
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -1931,7 +1760,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED, // CONVEX_LUSD3CRV_POOL_EXTRA_LQTY
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -1950,7 +1778,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -1968,7 +1795,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -1993,7 +1819,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -2011,7 +1836,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -2029,7 +1853,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -2047,7 +1870,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -2065,7 +1887,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -2083,7 +1904,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -2101,7 +1921,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -2140,7 +1959,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -2159,7 +1977,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -2178,7 +1995,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
       {
@@ -2188,7 +2004,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -2207,7 +2022,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: "0x0A22Ae9D9D149C14f6c15A235e715bB6C1Cfa739",
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
       {
@@ -2217,7 +2031,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: "0x81673Cdd00c2839440f31575cCFa5B6ca4a87B2B",
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -2236,7 +2049,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: "0x903d716fe68e7e091eCC43AA93c0F8cfD7e7BC0a",
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
       {
@@ -2246,7 +2058,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: NOT_DEPLOYED,
           Optimism: "0xb0709c230C06BE6e2A84b2Ba877094EB9a4fA014",
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -2264,7 +2075,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: "0xC0353d05D3F2b6e14E36c5d3B4bF8d179890A001",
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
       {
@@ -2274,7 +2084,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: "0x3a0beff39E243453960aD1198Fc3aAabdBDDe56C",
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -2292,7 +2101,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: "0x5901ce1c3Bf6C97fC49ED0fF08A88a57ea6E4Ca4",
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
       {
@@ -2302,7 +2110,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: "0x4601Ec46A285714e6F2A9466DA7f2BcB33646391",
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -2320,7 +2127,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: "0xf0dcb30811228bED2b87b2753fabAfe80A9D0fb9",
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
       {
@@ -2330,7 +2136,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: "0xE42D389058D820177b83E2863FEb13733d6Dd5f2",
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -2348,7 +2153,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: "0xeA270927C226454452DDF80e24a02087D0D7089F",
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
       {
@@ -2358,7 +2162,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
           Arbitrum: "0xB05Dc0b460Ca3ed5174b33A7dA2104388764F62D",
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,
-          Sonic: NOT_DEPLOYED,
         },
       },
     ],
@@ -2373,7 +2176,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       Arbitrum: NOT_DEPLOYED, // LIDO_ORACLE
       Optimism: NOT_DEPLOYED,
       Base: NOT_DEPLOYED,
-      Sonic: NOT_DEPLOYED,
     },
     lpToken: "steCRV",
   },
@@ -2399,7 +2201,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       Arbitrum: "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5",
       Optimism: "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5",
       Base: NOT_DEPLOYED,
-      Sonic: NOT_DEPLOYED,
     },
   },
   AAVE_V2_LENDING_POOL: {

@@ -6,5 +6,4 @@ export const nonQuoted: Record<NetworkType, Array<SupportedToken>> = {
   Arbitrum: ["WETH", "DAI", "USDC", "WBTC"],
   Optimism: ["WETH", "USDC", "OP"],
   Base: ["WETH", "USDC", "USDT"],
-  Sonic: [],
 };
