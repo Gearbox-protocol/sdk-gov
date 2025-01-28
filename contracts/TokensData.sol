@@ -1291,6 +1291,14 @@ contract TokensDataLive {
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_B_50WBTC_50WETH,
+                addr: 0xA6F548DF93de924d73be7D25dC02554c6bD66dB5,
+                symbol: "B_50WBTC_50WETH",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
 
         tokenDataByNetwork[1].push(
             TokenData({
@@ -1529,6 +1537,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_dDOLAV3,
+                addr: 0x31426271449F60d37Cc5C9AEf7bD12aF3BdC7A94,
+                symbol: "dDOLAV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_dUSDCV3,
                 addr: 0xda00000035fef4082F78dEF6A8903bee419FbF8E,
                 symbol: "dUSDCV3",
@@ -1581,14 +1597,6 @@ contract TokensDataLive {
                 id: TOKEN_dcrvUSDV3,
                 addr: 0x8EF73f036fEEC873D0B2fd20892215Df5B8Bdd72,
                 symbol: "dcrvUSDV3",
-                tokenType: TokenType.DIESEL_LP_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: TOKEN_dDOLAV3,
-                addr: 0x31426271449F60d37Cc5C9AEf7bD12aF3BdC7A94,
-                symbol: "dDOLAV3",
                 tokenType: TokenType.DIESEL_LP_TOKEN
             })
         );
@@ -1647,14 +1655,6 @@ contract TokensDataLive {
                 id: TOKEN_sdcrvUSDV3,
                 addr: 0xfBCA378AeA93EADD6882299A3d74D8641Cc0C4BC,
                 symbol: "sdcrvUSDV3",
-                tokenType: TokenType.DIESEL_LP_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: TOKEN_sdDOLAV3,
-                addr: 0xb3289a45497027a2Aee88Acc89fB3dcB5C71001D,
-                symbol: "sdDOLAV3",
                 tokenType: TokenType.DIESEL_LP_TOKEN
             })
         );

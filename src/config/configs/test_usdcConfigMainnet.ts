@@ -1,4 +1,5 @@
 import {
+  BalancerPoolStatus,
   BalancerVaultConfig,
   MellowVaultConfig,
   PendlePairStatus,
@@ -17,17 +18,17 @@ const levUniV3Config: UniV3Config = {
   contract: "UNISWAP_V3_ROUTER",
   allowed: [
     { token0: "USDC", token1: "WETH", fee: 500 },
-    { token0: "LDO", token1: "WETH", fee: 3000 },
+    { token0: "USDT", token1: "WETH", fee: 3000 },
+    { token0: "WETH", token1: "WBTC", fee: 3000 },
+    { token0: "USDe", token1: "USDT", fee: 100 },
   ],
 };
 
 const levBalancerConfig: BalancerVaultConfig = {
   contract: "BALANCER_VAULT",
   allowed: [
-    {
-      pool: "rsETH_WETH",
-      status: 2,
-    },
+    { pool: "GHO_USDT_USDC", status: BalancerPoolStatus.ALLOWED },
+    { pool: "B_50WBTC_50WETH", status: BalancerPoolStatus.ALLOWED },
   ],
 };
 
@@ -35,17 +36,12 @@ const levPendleConfig: PendleRouterConfig = {
   contract: "PENDLE_ROUTER",
   allowed: [
     {
-      inputToken: "rsETH",
-      pendleToken: "PT_rsETH_26SEP2024",
-      market: "0x6b4740722e46048874d84306b2877600abcea3ae",
+      market: "0xcDd26Eb5EB2Ce0f203a84553853667aE69Ca29Ce",
+      inputToken: "sUSDe",
+      pendleToken: "PT_sUSDe_27MAR2025",
       status: PendlePairStatus.ALLOWED,
     },
   ],
-};
-
-const levSteakLRTVaultConfig: MellowVaultConfig = {
-  contract: "MELLOW_STEAKHOUSE_VAULT",
-  allowed: ["wstETH"],
 };
 
 const levCreditManager: CreditManagerV3DeployConfig = {
@@ -63,7 +59,7 @@ const levCreditManager: CreditManagerV3DeployConfig = {
   maxEnabledTokens: 4,
   collateralTokens: [
     {
-      token: "USDe",
+      token: "DAI",
       lt: 9000,
     },
     {
@@ -71,59 +67,49 @@ const levCreditManager: CreditManagerV3DeployConfig = {
       lt: 9000,
     },
     {
-      token: "LDO",
-      lt: 8250,
+      token: "USDT",
+      lt: 9000,
+    },
+    {
+      token: "WBTC",
+      lt: 9000,
+    },
+    {
+      token: "USDe",
+      lt: 9000,
     },
     {
       token: "GHO",
       lt: 9000,
     },
     {
-      token: "crvUSD",
+      token: "sDAI",
       lt: 9000,
     },
     {
-      token: "stkcvxGHOcrvUSD",
+      token: "sUSDe",
       lt: 9000,
     },
     {
-      token: "STETH",
+      token: "PT_sUSDe_27MAR2025",
       lt: 9000,
     },
     {
-      token: "wstETH",
-      lt: 9000,
-    },
-    {
-      token: "steakLRT",
-      lt: 9000,
-    },
-    {
-      token: "rsETH",
-      lt: 9000,
-    },
-    {
-      token: "PT_rsETH_26SEP2024",
-      lt: 9000,
-    },
-    // Compatibility
-    {
-      token: "USDeUSDC",
+      token: "3Crv",
       lt: 0,
     },
     {
-      token: "GHOcrvUSD",
+      token: "MtEthena",
       lt: 0,
     },
     {
-      token: "cvxGHOcrvUSD",
+      token: "cvx3Crv",
       lt: 0,
     },
     {
-      token: "steCRV",
+      token: "stkcvx3Crv",
       lt: 0,
     },
-    // Rewards
     {
       token: "CRV",
       lt: 0,
@@ -132,18 +118,25 @@ const levCreditManager: CreditManagerV3DeployConfig = {
       token: "CVX",
       lt: 0,
     },
+    {
+      token: "GHO_USDT_USDC",
+      lt: 0,
+    },
+    {
+      token: "B_50WBTC_50WETH",
+      lt: 0,
+    },
   ],
   adapters: [
     levUniV3Config,
     levPendleConfig,
     levBalancerConfig,
-    levSteakLRTVaultConfig,
-    { contract: "CURVE_USDE_USDC_POOL" },
-    { contract: "CURVE_GHO_CRVUSD_POOL" },
+    { contract: "CURVE_3CRV_POOL" },
+    { contract: "CURVE_SDAI_SUSDE_POOL" },
     { contract: "CONVEX_BOOSTER" },
-    { contract: "CONVEX_GHO_CRVUSD_POOL" },
-    { contract: "LIDO_WSTETH" },
-    { contract: "CURVE_STETH_GATEWAY" },
+    { contract: "CONVEX_3CRV_POOL" },
+    { contract: "STAKED_USDE_VAULT" },
+    { contract: "MAKER_DSR_VAULT" },
   ],
 };
 
@@ -166,95 +159,107 @@ export const testUsdcConfigMainnet: PoolV3DeployConfig = {
     isBorrowingMoreU2Forbidden: true,
   },
   ratesAndLimits: {
-    USDe: {
-      minRate: 4,
-      maxRate: 1500,
-      quotaIncreaseFee: 1,
-      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
-    },
     WETH: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 1,
       limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
-    LDO: {
+    USDT: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 1,
       limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
     },
-    USDeUSDC: {
+    DAI: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 1,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    GHO: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 1,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    WBTC: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 1,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    USDe: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 1,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    sDAI: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 1,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    sUSDe: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 1,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    PT_sUSDe_27MAR2025: {
+      minRate: 4,
+      maxRate: 1500,
+      quotaIncreaseFee: 1,
+      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+    },
+    "3Crv": {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 0,
       limit: BigInt(0),
     },
-    GHO: {
+    MtEthena: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 0,
-      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(0),
     },
-    crvUSD: {
+    cvx3Crv: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 0,
-      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(0),
     },
-    GHOcrvUSD: {
+    stkcvx3Crv: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 0,
-      limit: (BigInt(0) * POOL_DECIMALS) / POOL_DIVIDER,
-    },
-    steCRV: {
-      minRate: 4,
-      maxRate: 1500,
-      quotaIncreaseFee: 0,
-      limit: (BigInt(0) * POOL_DECIMALS) / POOL_DIVIDER,
-    },
-    cvxGHOcrvUSD: {
-      minRate: 4,
-      maxRate: 1500,
-      quotaIncreaseFee: 0,
-      limit: (BigInt(0) * POOL_DECIMALS) / POOL_DIVIDER,
-    },
-    stkcvxGHOcrvUSD: {
-      minRate: 4,
-      maxRate: 1500,
-      quotaIncreaseFee: 0,
-      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(0),
     },
     CRV: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 0,
-      limit: (BigInt(0) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(0),
     },
     CVX: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 0,
-      limit: (BigInt(0) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(0),
     },
-    STETH: {
+    GHO_USDT_USDC: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 0,
-      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(0),
     },
-    wstETH: {
+    B_50WBTC_50WETH: {
       minRate: 4,
       maxRate: 1500,
       quotaIncreaseFee: 0,
-      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
-    },
-    steakLRT: {
-      minRate: 4,
-      maxRate: 1500,
-      quotaIncreaseFee: 0,
-      limit: (BigInt(10e6) * POOL_DECIMALS) / POOL_DIVIDER,
+      limit: BigInt(0),
     },
   },
   creditManagers: [levCreditManager],
