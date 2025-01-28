@@ -2729,6 +2729,15 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  B_50WBTC_50WETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
+        assets: ["WBTC", "WETH"],
+        trusted: false,
+      },
+    },
+  },
   "50WETH_50AURA": {
     AllNetworks: {
       Main: {

@@ -5779,6 +5779,40 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ B_50WBTC_50WETH ------------------------
+        balancerWeightedLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_B_50WBTC_50WETH,
+                assets: TokensLib.arrayOf(TOKEN_WBTC, TOKEN_WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerWeightedLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_B_50WBTC_50WETH,
+                assets: TokensLib.arrayOf(TOKEN_WBTC, TOKEN_WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerWeightedLPPriceFeedsByNetwork[10].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_B_50WBTC_50WETH,
+                assets: TokensLib.arrayOf(TOKEN_WBTC, TOKEN_WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerWeightedLPPriceFeedsByNetwork[8453].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_B_50WBTC_50WETH,
+                assets: TokensLib.arrayOf(TOKEN_WBTC, TOKEN_WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+
         // ------------------------ 50WETH_50AURA ------------------------
         zeroPriceFeedsByNetwork[1].push(
             SingeTokenPriceFeedData({token: TOKEN__50WETH_50AURA, trusted: false, reserve: false})
@@ -6620,11 +6654,6 @@ contract PriceFeedDataLive {
         );
         zeroPriceFeedsByNetwork[42161].push(
             SingeTokenPriceFeedData({token: TOKEN_sdcrvUSDV3, trusted: false, reserve: false})
-        );
-
-        // ------------------------ sdDOLAV3 ------------------------
-        zeroPriceFeedsByNetwork[1].push(
-            SingeTokenPriceFeedData({token: TOKEN_sdDOLAV3, trusted: false, reserve: false})
         );
 
         // ------------------------ GEAR ------------------------
