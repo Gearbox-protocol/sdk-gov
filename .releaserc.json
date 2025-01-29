@@ -6,11 +6,6 @@
       "name": "next",
       "channel": "next",
       "prerelease": "next"
-    },
-    {
-      "name": "sonic",
-      "channel": "sonic",
-      "prerelease": "sonic"
     }
   ],
   "plugins": [
