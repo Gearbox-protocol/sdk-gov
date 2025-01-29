@@ -118,4 +118,5 @@ export type AdapterConfig =
   | VelodromeV2Config
   | PendleRouterConfig
   | MellowVaultConfig
-  | VelodromeCLConfig;
+  | VelodromeCLConfig
+  | EqualizerConfig;
