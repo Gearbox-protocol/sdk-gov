@@ -168,6 +168,7 @@ export type SupportedContract =
   | ERC4626VaultContract
   | MellowVaultContract
   | "VELODROME_V2_ROUTER"
+  | "EQUALIZER_ROUTER"
   | "VELODROME_CL_ROUTER"
   | "SHADOW_ROUTER"
   | "CAMELOT_V3_ROUTER"
@@ -189,6 +190,7 @@ export const contractsByNetwork: Record<
     FRAXSWAP_ROUTER: "0xC14d550632db8592D1243Edc8B95b0Ad06703867",
     VELODROME_V2_ROUTER: NOT_DEPLOYED,
     VELODROME_CL_ROUTER: NOT_DEPLOYED,
+    EQUALIZER_ROUTER: NOT_DEPLOYED,
     SHADOW_ROUTER: NOT_DEPLOYED,
     CAMELOT_V3_ROUTER: NOT_DEPLOYED,
     PENDLE_ROUTER: "0x888888888889758F76e7103c6CbF23ABbF58F946",
@@ -365,6 +367,7 @@ export const contractsByNetwork: Record<
     FRAXSWAP_ROUTER: NOT_DEPLOYED,
     VELODROME_V2_ROUTER: NOT_DEPLOYED,
     VELODROME_CL_ROUTER: NOT_DEPLOYED,
+    EQUALIZER_ROUTER: NOT_DEPLOYED,
     SHADOW_ROUTER: NOT_DEPLOYED,
     CAMELOT_V3_ROUTER: "0x1F721E2E82F6676FCE4eA07A5958cF098D339e18",
     PENDLE_ROUTER: NOT_DEPLOYED,
@@ -539,6 +542,7 @@ export const contractsByNetwork: Record<
     FRAXSWAP_ROUTER: "0xB9A55F455e46e8D717eEA5E47D2c449416A0437F", // UNVERIFIED!
     VELODROME_V2_ROUTER: "0xa062aE8A9c5e11aaA026fc2670B0D65cCc8B2858",
     VELODROME_CL_ROUTER: "0x0792a633F0c19c351081CF4B211F68F79bCc9676",
+    EQUALIZER_ROUTER: NOT_DEPLOYED,
     SHADOW_ROUTER: NOT_DEPLOYED,
     CAMELOT_V3_ROUTER: NOT_DEPLOYED,
     PENDLE_ROUTER: NOT_DEPLOYED,
@@ -714,6 +718,7 @@ export const contractsByNetwork: Record<
     FRAXSWAP_ROUTER: NOT_DEPLOYED,
     VELODROME_V2_ROUTER: NOT_DEPLOYED,
     VELODROME_CL_ROUTER: NOT_DEPLOYED,
+    EQUALIZER_ROUTER: NOT_DEPLOYED,
     SHADOW_ROUTER: NOT_DEPLOYED,
     CAMELOT_V3_ROUTER: NOT_DEPLOYED,
     PENDLE_ROUTER: NOT_DEPLOYED,
@@ -886,6 +891,7 @@ export const contractsByNetwork: Record<
     FRAXSWAP_ROUTER: NOT_DEPLOYED,
     VELODROME_V2_ROUTER: NOT_DEPLOYED,
     VELODROME_CL_ROUTER: NOT_DEPLOYED,
+    EQUALIZER_ROUTER: "0xcC6169aA1E879d3a4227536671F85afdb2d23fAD",
     SHADOW_ROUTER: "0x5543c6176FEb9B4b179078205d7C29EEa2e2d695",
 
     CAMELOT_V3_ROUTER: NOT_DEPLOYED,
@@ -1086,6 +1092,11 @@ export type VelodromeV2Params = {
   type: AdapterInterface.VELODROME_V2_ROUTER;
 } & BaseContractParams;
 
+export type EqualizerParams = {
+  protocol: Protocols.Equalizer;
+  type: AdapterInterface.EQUALIZER_ROUTER;
+} & BaseContractParams;
+
 export type PendleRouterParams = {
   protocol: Protocols.Pendle;
   type: AdapterInterface.PENDLE_ROUTER;
@@ -1280,6 +1291,7 @@ export type ContractParams =
   | UniswapV3Params
   | CamelotV3Params
   | VelodromeV2Params
+  | EqualizerParams
   | CurveParams
   | CurveSteCRVPoolParams
   | CurveGEARPoolParams
@@ -1340,6 +1352,11 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Velodrome V2",
     protocol: Protocols.Velodrome,
     type: AdapterInterface.VELODROME_V2_ROUTER,
+  },
+  EQUALIZER_ROUTER: {
+    name: "Equalizer",
+    protocol: Protocols.Equalizer,
+    type: AdapterInterface.EQUALIZER_ROUTER,
   },
   VELODROME_CL_ROUTER: {
     name: "Velodrome CL Router",

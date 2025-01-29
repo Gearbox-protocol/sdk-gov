@@ -39,7 +39,10 @@ export type BalancerLPToken =
   | "ezETH_wstETH"
   | "rsETH_wETH_Arb"
   // Sonic
-  | "bpt_rsb";
+  | "bpt_rsb"
+  | "bpt_sss"
+  | "BPT_scUSD_stS"
+  | "BPT_USDCe_stS";
 
 export type BalancerLpTokenData = {
   symbol: BalancerLPToken;
@@ -382,6 +385,36 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     underlying: ["USDC", "scUSD"],
     poolId:
       "0xcd4d2b142235d5650ffa6a38787ed0b7d7a51c0c000000000000000000000037",
+  },
+  bpt_sss: {
+    name: "Staked Sonic Symphony",
+    symbol: "bpt_sss",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["wS", "stS"],
+    poolId:
+      "0x374641076b68371e69d03c417dac3e5f236c32fa000000000000000000000006",
+  },
+  BPT_scUSD_stS: {
+    name: "Put A Ring On It",
+    symbol: "BPT_scUSD_stS",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["scUSD", "stS"],
+    poolId:
+      "0x25ca5451cd5a50ab1d324b5e64f32c0799661891000200000000000000000018",
+  },
+  BPT_USDCe_stS: {
+    name: "Staked Sonic & Circle Concerto",
+    symbol: "BPT_USDCe_stS",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["USDC", "stS"],
+    poolId:
+      "0x713fb5036dc70012588d77a5b066f1dd05c712d7000200000000000000000041",
   },
 };
 

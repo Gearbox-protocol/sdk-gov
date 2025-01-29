@@ -2849,6 +2849,30 @@ contract TokensDataLive {
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
+        tokenDataByNetwork[146].push(
+            TokenData({
+                id: TOKEN_bpt_sss,
+                addr: 0x374641076B68371e69D03C417DAc3E5F236c32FA,
+                symbol: "bpt_sss",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[146].push(
+            TokenData({
+                id: TOKEN_BPT_scUSD_stS,
+                addr: 0x25ca5451CD5a50AB1d324B5E64F32C0799661891,
+                symbol: "BPT_scUSD_stS",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[146].push(
+            TokenData({
+                id: TOKEN_BPT_USDCe_stS,
+                addr: 0x713FB5036dC70012588d77a5B066f1Dd05c712d7,
+                symbol: "BPT_USDCe_stS",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
     }
 
     function getTokenData(uint256 chainId) external view returns (TokenData[] memory) {

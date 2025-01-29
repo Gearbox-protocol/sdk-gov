@@ -7614,6 +7614,132 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ bpt_sss ------------------------
+        balancerStableLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_bpt_sss,
+                assets: TokensLib.arrayOf(TOKEN_wS, TOKEN_stS),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_bpt_sss,
+                assets: TokensLib.arrayOf(TOKEN_wS, TOKEN_stS),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[10].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_bpt_sss,
+                assets: TokensLib.arrayOf(TOKEN_wS, TOKEN_stS),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[8453].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_bpt_sss,
+                assets: TokensLib.arrayOf(TOKEN_wS, TOKEN_stS),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[146].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_bpt_sss,
+                assets: TokensLib.arrayOf(TOKEN_wS, TOKEN_stS),
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ BPT_scUSD_stS ------------------------
+        balancerWeightedLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_BPT_scUSD_stS,
+                assets: TokensLib.arrayOf(TOKEN_scUSD, TOKEN_stS),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerWeightedLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_BPT_scUSD_stS,
+                assets: TokensLib.arrayOf(TOKEN_scUSD, TOKEN_stS),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerWeightedLPPriceFeedsByNetwork[10].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_BPT_scUSD_stS,
+                assets: TokensLib.arrayOf(TOKEN_scUSD, TOKEN_stS),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerWeightedLPPriceFeedsByNetwork[8453].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_BPT_scUSD_stS,
+                assets: TokensLib.arrayOf(TOKEN_scUSD, TOKEN_stS),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerWeightedLPPriceFeedsByNetwork[146].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_BPT_scUSD_stS,
+                assets: TokensLib.arrayOf(TOKEN_scUSD, TOKEN_stS),
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ BPT_USDCe_stS ------------------------
+        balancerWeightedLPPriceFeedsByNetwork[1].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_BPT_USDCe_stS,
+                assets: TokensLib.arrayOf(TOKEN_USDC, TOKEN_stS),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerWeightedLPPriceFeedsByNetwork[42161].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_BPT_USDCe_stS,
+                assets: TokensLib.arrayOf(TOKEN_USDC, TOKEN_stS),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerWeightedLPPriceFeedsByNetwork[10].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_BPT_USDCe_stS,
+                assets: TokensLib.arrayOf(TOKEN_USDC, TOKEN_stS),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerWeightedLPPriceFeedsByNetwork[8453].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_BPT_USDCe_stS,
+                assets: TokensLib.arrayOf(TOKEN_USDC, TOKEN_stS),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerWeightedLPPriceFeedsByNetwork[146].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_BPT_USDCe_stS,
+                assets: TokensLib.arrayOf(TOKEN_USDC, TOKEN_stS),
+                trusted: false,
+                reserve: false
+            })
+        );
+
         // ------------------------ pumpBTC_WBTC_BPT ------------------------
         zeroPriceFeedsByNetwork[1].push(
             SingeTokenPriceFeedData({token: TOKEN_pumpBTC_WBTC_BPT, trusted: false, reserve: false})

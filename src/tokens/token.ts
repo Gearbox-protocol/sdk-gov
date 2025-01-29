@@ -362,6 +362,9 @@ export const tokenDataByNetwork: Record<
     eBTC_WBTC_BPT: "0xda17f3663C5D04C0B316cfA1A04Aa53eBBC8c12C",
     B_50WBTC_50WETH: "0xA6F548DF93de924d73be7D25dC02554c6bD66dB5",
     bpt_rsb: NOT_DEPLOYED,
+    bpt_sss: NOT_DEPLOYED,
+    BPT_scUSD_stS: NOT_DEPLOYED,
+    BPT_USDCe_stS: NOT_DEPLOYED,
 
     // AURA
     auraB_rETH_STABLE: "0x9497df26e5bD669Cb925eC68E730492b9300c482",
@@ -679,9 +682,11 @@ export const tokenDataByNetwork: Record<
     eBTC_WBTC_BPT: NOT_DEPLOYED,
     B_50WBTC_50WETH: NOT_DEPLOYED,
     bpt_rsb: NOT_DEPLOYED,
+    bpt_sss: NOT_DEPLOYED,
+    BPT_scUSD_stS: NOT_DEPLOYED,
+    BPT_USDCe_stS: NOT_DEPLOYED,
 
     // AURA
-
     auraB_rETH_STABLE: NOT_DEPLOYED,
     auraweETH_rETH: NOT_DEPLOYED,
     auraosETH_wETH_BPT: NOT_DEPLOYED,
@@ -998,6 +1003,9 @@ export const tokenDataByNetwork: Record<
     pumpBTC_WBTC_BPT: NOT_DEPLOYED,
     eBTC_WBTC_BPT: NOT_DEPLOYED,
     bpt_rsb: NOT_DEPLOYED,
+    bpt_sss: NOT_DEPLOYED,
+    BPT_scUSD_stS: NOT_DEPLOYED,
+    BPT_USDCe_stS: NOT_DEPLOYED,
 
     // AURA
     auraB_rETH_STABLE: NOT_DEPLOYED,
@@ -1313,6 +1321,9 @@ export const tokenDataByNetwork: Record<
     pumpBTC_WBTC_BPT: NOT_DEPLOYED,
     eBTC_WBTC_BPT: NOT_DEPLOYED,
     bpt_rsb: NOT_DEPLOYED,
+    bpt_sss: NOT_DEPLOYED,
+    BPT_scUSD_stS: NOT_DEPLOYED,
+    BPT_USDCe_stS: NOT_DEPLOYED,
 
     // AURA
     auraB_rETH_STABLE: NOT_DEPLOYED,
@@ -1629,6 +1640,9 @@ export const tokenDataByNetwork: Record<
     eBTC_WBTC_BPT: NOT_DEPLOYED,
     B_50WBTC_50WETH: NOT_DEPLOYED,
     bpt_rsb: "0xCd4D2b142235D5650fFA6A38787eD0b7d7A51c0C",
+    bpt_sss: "0x374641076B68371e69D03C417DAc3E5F236c32FA",
+    BPT_scUSD_stS: "0x25ca5451CD5a50AB1d324B5E64F32C0799661891",
+    BPT_USDCe_stS: "0x713FB5036dC70012588d77a5B066f1Dd05c712d7",
 
     // AURA
     auraB_rETH_STABLE: NOT_DEPLOYED,

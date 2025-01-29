@@ -1034,6 +1034,13 @@ contract SupportedContracts is Test, ISupportedContracts {
 
         contractDataByNetwork[146].push(
             ContractData({
+                id: Contracts.EQUALIZER_ROUTER,
+                addr: 0xcC6169aA1E879d3a4227536671F85afdb2d23fAD,
+                name: "EQUALIZER_ROUTER"
+            })
+        );
+        contractDataByNetwork[146].push(
+            ContractData({
                 id: Contracts.SHADOW_ROUTER,
                 addr: 0x5543c6176FEb9B4b179078205d7C29EEa2e2d695,
                 name: "SHADOW_ROUTER"

@@ -3068,6 +3068,33 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  bpt_sss: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
+        assets: ["wS", "stS"],
+        trusted: false,
+      },
+    },
+  },
+  BPT_scUSD_stS: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
+        assets: ["scUSD", "stS"],
+        trusted: false,
+      },
+    },
+  },
+  BPT_USDCe_stS: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
+        assets: ["USDC", "stS"],
+        trusted: false,
+      },
+    },
+  },
   pumpBTC_WBTC_BPT: {
     AllNetworks: {
       Main: {

@@ -99,6 +99,17 @@ export interface VelodromeV2Config {
   allowed: Array<VelodromeV2Pool>;
 }
 
+export interface EqualizerPool {
+  token0: SupportedToken;
+  token1: SupportedToken;
+  stable: boolean;
+}
+
+export interface EqualizerConfig {
+  contract: "EQUALIZER_ROUTER";
+  allowed: Array<EqualizerPool>;
+}
+
 export type AdapterConfig =
   | DefaultAdapterConfig
   | UniV3Config
