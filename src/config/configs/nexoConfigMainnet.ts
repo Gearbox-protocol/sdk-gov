@@ -78,7 +78,6 @@ const collateralTokens: CollateralToken[] = [
   { token: "MtEthena", lt: 0 },
   { token: "USDeUSDC", lt: 0 },
   { token: "USDeDAI", lt: 0 },
-  { token: "stkUSDS", lt: 0 },
 ];
 
 const adapters: AdapterConfig[] = [
@@ -92,7 +91,6 @@ const adapters: AdapterConfig[] = [
   { contract: "DAI_USDS" },
   { contract: "STAKED_USDS_VAULT" },
   { contract: "MAKER_DSR_VAULT" },
-  { contract: "SKY_STAKING_REWARDS" },
 ];
 
 const tierSCreditManager: CreditManagerV3DeployConfig = {
@@ -222,12 +220,6 @@ export const nexoConfigMainnet: PoolV3DeployConfig = {
       limit: BigInt(0),
     },
     USDeDAI: {
-      minRate: 1,
-      maxRate: 1,
-      quotaIncreaseFee: 0,
-      limit: BigInt(0),
-    },
-    stkUSDS: {
       minRate: 1,
       maxRate: 1,
       quotaIncreaseFee: 0,
