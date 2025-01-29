@@ -91,6 +91,7 @@ const adapters: AdapterConfig[] = [
   { contract: "DAI_USDS" },
   { contract: "STAKED_USDS_VAULT" },
   { contract: "MAKER_DSR_VAULT" },
+  { contract: "SKY_STAKING_REWARDS" },
 ];
 
 const tierSCreditManager: CreditManagerV3DeployConfig = {
