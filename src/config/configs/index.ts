@@ -14,6 +14,7 @@ export { usdcConfigMainnet } from "./usdcConfigMainnet";
 export { usdcConfigOptimism } from "./usdcConfigOptimism";
 export { usdceConfigArbitrum } from "./usdceConfigArbitrum";
 export { usdceConfigOptimism } from "./usdceConfigOptimism";
+export { usdceConfigSonic } from "./usdceConfigSonic";
 export { usdtConfigMainnet } from "./usdtConfigMainnet";
 export { wbtcConfigMainnet } from "./wbtcConfigMainnet";
 export { wethConfigArbitrum } from "./wethConfigArbitrum";

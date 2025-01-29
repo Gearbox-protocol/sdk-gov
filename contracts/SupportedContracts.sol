@@ -612,6 +612,7 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "BALANCER_VAULT"
             })
         );
+
         contractDataByNetwork[1].push(
             ContractData({
                 id: Contracts.UNIVERSAL_ADAPTER,
@@ -861,6 +862,7 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "BALANCER_VAULT"
             })
         );
+
         contractDataByNetwork[42161].push(
             ContractData({
                 id: Contracts.UNIVERSAL_ADAPTER,
@@ -997,6 +999,7 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "BALANCER_VAULT"
             })
         );
+
         contractDataByNetwork[10].push(
             ContractData({
                 id: Contracts.UNIVERSAL_ADAPTER,
@@ -1026,6 +1029,22 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.AAVE_V3_LENDING_POOL,
                 addr: 0xA238Dd80C259a72e81d7e4664a9801593F98d1c5,
                 name: "AAVE_V3_LENDING_POOL"
+            })
+        );
+
+        contractDataByNetwork[146].push(
+            ContractData({
+                id: Contracts.SHADOW_ROUTER,
+                addr: 0x5543c6176FEb9B4b179078205d7C29EEa2e2d695,
+                name: "SHADOW_ROUTER"
+            })
+        );
+
+        contractDataByNetwork[146].push(
+            ContractData({
+                id: Contracts.BEETS_VAULT,
+                addr: 0xBA12222222228d8Ba445958a75a0704d566BF2C8,
+                name: "BEETS_VAULT"
             })
         );
 

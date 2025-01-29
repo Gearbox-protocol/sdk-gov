@@ -37,7 +37,9 @@ export type BalancerLPToken =
   | "rETH_wETH_BPT"
   | "33AURA_33ARB_33BAL"
   | "ezETH_wstETH"
-  | "rsETH_wETH_Arb";
+  | "rsETH_wETH_Arb"
+  // Sonic
+  | "bpt_rsb";
 
 export type BalancerLpTokenData = {
   symbol: BalancerLPToken;
@@ -370,6 +372,16 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     underlying: ["wstETH", "sfrxETH", "rETH"],
     poolId:
       "0x5f8893506ddc4c271837187d14a9c87964a074dc000000000000000000000106",
+  },
+  bpt_rsb: {
+    name: "Ringing Stable Beets",
+    symbol: "bpt_rsb",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["USDC", "scUSD"],
+    poolId:
+      "0xcd4d2b142235d5650ffa6a38787ed0b7d7a51c0c000000000000000000000037",
   },
 };
 

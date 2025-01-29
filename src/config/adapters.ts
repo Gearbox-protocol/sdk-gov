@@ -34,7 +34,7 @@ export interface BalancerPoolConfig {
 }
 
 export interface BalancerVaultConfig {
-  contract: "BALANCER_VAULT";
+  contract: "BALANCER_VAULT" | "BEETS_VAULT";
   allowed: Array<BalancerPoolConfig>;
 }
 
@@ -75,7 +75,7 @@ export interface UniV3Config {
 }
 
 export interface VelodromeCLConfig {
-  contract: "VELODROME_CL_ROUTER";
+  contract: "VELODROME_CL_ROUTER" | "SHADOW_ROUTER";
   allowed: Array<VelodromeCLPool>;
 }
 
@@ -84,7 +84,7 @@ export interface UniswapV3Pair extends GenericSwapPair {
 }
 
 export interface VelodromeCLPool extends GenericSwapPair {
-  tickSpacing: 1 | 50 | 100 | 200 | 2000;
+  tickSpacing: 1 | 5 | 50 | 100 | 200 | 2000;
 }
 
 export interface VelodromeV2Pool {

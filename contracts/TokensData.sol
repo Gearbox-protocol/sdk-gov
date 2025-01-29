@@ -367,6 +367,7 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
+
         tokenDataByNetwork[1].push(
             TokenData({
                 id: TOKEN_frxETH,
@@ -2794,6 +2795,58 @@ contract TokensDataLive {
                 addr: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913,
                 symbol: "USDC",
                 tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[146].push(
+            TokenData({
+                id: TOKEN_USDC,
+                addr: 0x29219dd400f2Bf60E5a23d13Be72B486D4038894,
+                symbol: "USDC",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[146].push(
+            TokenData({
+                id: TOKEN_WETH,
+                addr: 0x309C92261178fA0CF748A855e90Ae73FDb79EBc7,
+                symbol: "WETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[146].push(
+            TokenData({
+                id: TOKEN_wS,
+                addr: 0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38,
+                symbol: "wS",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[146].push(
+            TokenData({
+                id: TOKEN_stS,
+                addr: 0xE5DA20F15420aD15DE0fa650600aFc998bbE3955,
+                symbol: "stS",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[146].push(
+            TokenData({
+                id: TOKEN_scUSD,
+                addr: 0xd3DCe716f3eF535C5Ff8d041c1A41C3bd89b97aE,
+                symbol: "scUSD",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[146].push(
+            TokenData({
+                id: TOKEN_bpt_rsb,
+                addr: 0xCd4D2b142235D5650fFA6A38787eD0b7d7A51c0C,
+                symbol: "bpt_rsb",
+                tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
     }

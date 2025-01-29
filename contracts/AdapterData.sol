@@ -75,6 +75,9 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.VELODROME_CL_ROUTER, adapterType: AdapterType.UNISWAP_V3_ROUTER})
         );
         simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.SHADOW_ROUTER, adapterType: AdapterType.UNISWAP_V3_ROUTER})
+        );
+        simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.CAMELOT_V3_ROUTER, adapterType: AdapterType.CAMELOT_V3_ROUTER})
         );
         simpleAdapters.push(
@@ -148,6 +151,9 @@ contract AdapterData {
         );
         simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.BALANCER_VAULT, adapterType: AdapterType.BALANCER_VAULT})
+        );
+        simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.BEETS_VAULT, adapterType: AdapterType.BALANCER_VAULT})
         );
         simpleAdapters.push(
             SimpleAdapter({
