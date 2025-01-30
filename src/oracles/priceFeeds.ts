@@ -2206,6 +2206,22 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  tETHwstETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  tETHweETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
   wstETHCRV: {
     AllNetworks: {
       Main: {
@@ -2985,6 +3001,14 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  tETH_wstETH_BPT: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
   pumpBTC_WBTC_BPT: {
     AllNetworks: {
       Main: {
@@ -3664,6 +3688,22 @@ export const priceFeedsByToken: Record<
       Reserve: {
         type: PriceFeedType.ERC4626_VAULT_ORACLE,
         underlying: "crvUSD",
+      },
+    },
+  },
+  tETH: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "wstETH",
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "wstETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },

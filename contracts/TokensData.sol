@@ -874,6 +874,22 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_tETHwstETH,
+                addr: 0xA10d15538E09479186b4D3278BA5c979110dDdB1,
+                symbol: "tETHwstETH",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_tETHweETH,
+                addr: 0x394a1e1b934cb4F4a0dC17BDD592ec078741542F,
+                symbol: "tETHweETH",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_FRAX3CRV,
                 addr: 0xd632f22692FaC7611d2AA1C0D552930D43CAEd3B,
                 symbol: "FRAX3CRV",
@@ -1358,6 +1374,14 @@ contract TokensDataLive {
 
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_tETH_wstETH_BPT,
+                addr: 0x1D13531bf6344c102280CE4c458781FBF14Dad14,
+                symbol: "tETH_wstETH_BPT",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_aDAI,
                 addr: 0x028171bCA77440897B824Ca71D1c56caC55b68A3,
                 symbol: "aDAI",
@@ -1474,6 +1498,14 @@ contract TokensDataLive {
                 id: TOKEN_scrvUSD,
                 addr: 0x0655977FEb2f289A4aB78af67BAB0d17aAb84367,
                 symbol: "scrvUSD",
+                tokenType: TokenType.ERC4626_VAULT_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_tETH,
+                addr: 0xD11c452fc99cF405034ee446803b6F6c1F6d5ED8,
+                symbol: "tETH",
                 tokenType: TokenType.ERC4626_VAULT_TOKEN
             })
         );

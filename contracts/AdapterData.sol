@@ -123,6 +123,9 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.SAVINGS_CRVUSD_VAULT, adapterType: AdapterType.ERC4626_VAULT})
         );
         simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.TREEHOUSE_ETH_VAULT, adapterType: AdapterType.ERC4626_VAULT})
+        );
+        simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.CONVEX_BOOSTER, adapterType: AdapterType.CONVEX_V1_BOOSTER})
         );
         simpleAdapters.push(
@@ -519,6 +522,22 @@ contract AdapterData {
                 targetContract: Contracts.CURVE_tBTC_WBTC_POOL,
                 adapterType: AdapterType.CURVE_V1_2ASSETS,
                 lpToken: TOKEN__2BTC_f,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
+                targetContract: Contracts.CURVE_tETH_wstETH_POOL,
+                adapterType: AdapterType.CURVE_V1_2ASSETS,
+                lpToken: TOKEN_tETHwstETH,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
+                targetContract: Contracts.CURVE_tETH_weETH_POOL,
+                adapterType: AdapterType.CURVE_V1_2ASSETS,
+                lpToken: TOKEN_tETHweETH,
                 basePool: Contracts.NO_CONTRACT
             })
         );

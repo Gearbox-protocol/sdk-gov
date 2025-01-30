@@ -275,6 +275,8 @@ export const tokenDataByNetwork: Record<
     pumpBTCWBTC: "0xEA659B615b48EC6e2D55cD82FCBE5F43d79aeea0",
     TriBTC: "0xabaf76590478F2fE0b396996f55F0b61101e9502",
     "2BTC-f": "0xB7ECB2AA52AA64a717180E030241bC75Cd946726",
+    tETHwstETH: "0xA10d15538E09479186b4D3278BA5c979110dDdB1",
+    tETHweETH: "0x394a1e1b934cb4F4a0dC17BDD592ec078741542F",
 
     // CONVEX LP TOKENS
     cvx3Crv: "0x30D9410ED1D5DA1F6C8391af5338C93ab8d4035C",
@@ -358,6 +360,7 @@ export const tokenDataByNetwork: Record<
     pumpBTC_WBTC_BPT: "0x2238aB6c8c58473a5e81b86ec352322fB3f5Edd8",
     eBTC_WBTC_BPT: "0xda17f3663C5D04C0B316cfA1A04Aa53eBBC8c12C",
     B_50WBTC_50WETH: "0xA6F548DF93de924d73be7D25dC02554c6bD66dB5",
+    tETH_wstETH_BPT: "0x1D13531bf6344c102280CE4c458781FBF14Dad14",
 
     // AURA
     auraB_rETH_STABLE: "0x9497df26e5bD669Cb925eC68E730492b9300c482",
@@ -436,6 +439,8 @@ export const tokenDataByNetwork: Record<
     sUSDe: "0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
     sUSDS: "0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD",
     scrvUSD: "0x0655977FEb2f289A4aB78af67BAB0d17aAb84367",
+    tETH: "0xD11c452fc99cF405034ee446803b6F6c1F6d5ED8",
+
     beraSTONE: "0x97Ad75064b20fb2B2447feD4fa953bF7F007a706",
 
     // AAVE
@@ -590,6 +595,15 @@ export const tokenDataByNetwork: Record<
 
     rETH_f: NOT_DEPLOYED,
     "3CRV": NOT_DEPLOYED,
+    ezETHWETH: NOT_DEPLOYED,
+    ezpzETH: NOT_DEPLOYED,
+    LBTCWBTC: NOT_DEPLOYED,
+    eBTCWBTC: NOT_DEPLOYED,
+    pumpBTCWBTC: NOT_DEPLOYED,
+    TriBTC: NOT_DEPLOYED,
+    "2BTC-f": NOT_DEPLOYED,
+    tETHwstETH: NOT_DEPLOYED,
+    tETHweETH: NOT_DEPLOYED,
 
     // CONVEX LP TOKENS
     cvx3Crv: NOT_DEPLOYED,
@@ -609,13 +623,6 @@ export const tokenDataByNetwork: Record<
     cvxcrvUSDETHCRV: NOT_DEPLOYED,
     cvxGHOcrvUSD: NOT_DEPLOYED,
     cvxllamathena: NOT_DEPLOYED,
-    ezETHWETH: NOT_DEPLOYED,
-    ezpzETH: NOT_DEPLOYED,
-    LBTCWBTC: NOT_DEPLOYED,
-    eBTCWBTC: NOT_DEPLOYED,
-    pumpBTCWBTC: NOT_DEPLOYED,
-    TriBTC: NOT_DEPLOYED,
-    "2BTC-f": NOT_DEPLOYED,
 
     crvUSD: "0x498Bf2B1e120FeD3ad3D42EA2165E9b73f99C1e5",
 
@@ -671,6 +678,7 @@ export const tokenDataByNetwork: Record<
     pumpBTC_WBTC_BPT: NOT_DEPLOYED,
     eBTC_WBTC_BPT: NOT_DEPLOYED,
     B_50WBTC_50WETH: NOT_DEPLOYED,
+    tETH_wstETH_BPT: NOT_DEPLOYED,
 
     // AURA
 
@@ -769,6 +777,8 @@ export const tokenDataByNetwork: Record<
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
     scrvUSD: NOT_DEPLOYED,
+    tETH: NOT_DEPLOYED,
+
     beraSTONE: NOT_DEPLOYED,
 
     // ZIRCUIT
@@ -895,22 +905,21 @@ export const tokenDataByNetwork: Record<
     pumpBTCWBTC: NOT_DEPLOYED,
     TriBTC: NOT_DEPLOYED,
     "2BTC-f": NOT_DEPLOYED,
-
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
     crvUSDFRAX: NOT_DEPLOYED,
     crvUSDETHCRV: NOT_DEPLOYED,
     crvUsUSDe: NOT_DEPLOYED,
     llamathena: NOT_DEPLOYED,
-
     "2CRV": NOT_DEPLOYED,
     "3c-crvUSD": NOT_DEPLOYED,
     crvUSDC: NOT_DEPLOYED,
     crvUSDC_e: NOT_DEPLOYED,
     crvUSDT: NOT_DEPLOYED,
     USDEUSDC: NOT_DEPLOYED,
-
     rETH_f: NOT_DEPLOYED,
+    tETHwstETH: NOT_DEPLOYED,
+    tETHweETH: NOT_DEPLOYED,
 
     // CONVEX LP TOKENS
     cvx3Crv: NOT_DEPLOYED,
@@ -986,6 +995,7 @@ export const tokenDataByNetwork: Record<
     bpt_ethtri: "0x5F8893506Ddc4C271837187d14A9C87964a074Dc",
     pumpBTC_WBTC_BPT: NOT_DEPLOYED,
     eBTC_WBTC_BPT: NOT_DEPLOYED,
+    tETH_wstETH_BPT: NOT_DEPLOYED,
 
     // AURA
     auraB_rETH_STABLE: NOT_DEPLOYED,
@@ -1083,6 +1093,8 @@ export const tokenDataByNetwork: Record<
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
     scrvUSD: NOT_DEPLOYED,
+    tETH: NOT_DEPLOYED,
+
     beraSTONE: NOT_DEPLOYED,
 
     // ZIRCUIT
@@ -1212,22 +1224,21 @@ export const tokenDataByNetwork: Record<
     pumpBTCWBTC: NOT_DEPLOYED,
     TriBTC: NOT_DEPLOYED,
     "2BTC-f": NOT_DEPLOYED,
-
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
     crvUSDFRAX: NOT_DEPLOYED,
     crvUSDETHCRV: NOT_DEPLOYED,
     crvUsUSDe: NOT_DEPLOYED,
     llamathena: NOT_DEPLOYED,
-
     "2CRV": NOT_DEPLOYED,
     "3c-crvUSD": NOT_DEPLOYED,
     crvUSDC: NOT_DEPLOYED,
     crvUSDC_e: NOT_DEPLOYED,
     crvUSDT: NOT_DEPLOYED,
     USDEUSDC: NOT_DEPLOYED,
-
     rETH_f: NOT_DEPLOYED,
+    tETHwstETH: NOT_DEPLOYED,
+    tETHweETH: NOT_DEPLOYED,
 
     // CONVEX LP TOKENS
     cvx3Crv: NOT_DEPLOYED,
@@ -1302,6 +1313,7 @@ export const tokenDataByNetwork: Record<
     bpt_ethtri: NOT_DEPLOYED,
     pumpBTC_WBTC_BPT: NOT_DEPLOYED,
     eBTC_WBTC_BPT: NOT_DEPLOYED,
+    tETH_wstETH_BPT: NOT_DEPLOYED,
 
     // AURA
     auraB_rETH_STABLE: NOT_DEPLOYED,
@@ -1397,6 +1409,8 @@ export const tokenDataByNetwork: Record<
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
     scrvUSD: NOT_DEPLOYED,
+    tETH: NOT_DEPLOYED,
+
     beraSTONE: NOT_DEPLOYED,
 
     GHO: NOT_DEPLOYED,
