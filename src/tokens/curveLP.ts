@@ -46,6 +46,7 @@ export type CurveLPToken =
   | "llamathena"
   | "tETHwstETH"
   | "tETHweETH"
+  | "pzETHstETH"
 
   /// Arbitrum
   | "2CRV"
@@ -454,6 +455,13 @@ export const curveTokens: Record<
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
     pool: "CURVE_tETH_weETH_POOL",
     tokenOut: ["tETH", "weETH"],
+  },
+  pzETHstETH: {
+    name: "Curve pzETH/stETH LP",
+    symbol: "pzETHstETH",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_pzETH_stETH_POOL",
+    tokenOut: ["pzETH", "STETH"],
   },
   ...curveMetaTokens,
 };

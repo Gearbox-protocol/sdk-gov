@@ -91,6 +91,7 @@ export const decimals: Record<SupportedToken, number> = {
   crvUsUSDe: 18,
   tETHwstETH: 18,
   tETHweETH: 18,
+  pzETHstETH: 18,
   llamathena: 18,
   crvUSDUSDT: 18,
   crvUSDETHCRV: 18,

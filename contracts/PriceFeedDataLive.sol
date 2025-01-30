@@ -3965,6 +3965,20 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_tETHweETH, trusted: false, reserve: false})
         );
 
+        // ------------------------ pzETHstETH ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_pzETHstETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_pzETHstETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_pzETHstETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_pzETHstETH, trusted: false, reserve: false})
+        );
+
         // ------------------------ wstETHCRV ------------------------
         zeroPriceFeedsByNetwork[1].push(
             SingeTokenPriceFeedData({token: TOKEN_wstETHCRV, trusted: false, reserve: false})
@@ -8044,257 +8058,615 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ steakLRT ------------------------
-        theSamePriceFeedsByNetwork[1].push(
-            TheSamePriceFeedData({
+        erc4626PriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_steakLRT, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[1].push(
+            RedStonePriceFeedData({
                 token: TOKEN_steakLRT,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_steakLRT, trusted: false, reserve: true}));
-        theSamePriceFeedsByNetwork[42161].push(
-            TheSamePriceFeedData({
+        erc4626PriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_steakLRT, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[42161].push(
+            RedStonePriceFeedData({
                 token: TOKEN_steakLRT,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[42161].push(
-            SingeTokenPriceFeedData({token: TOKEN_steakLRT, trusted: false, reserve: true})
+        erc4626PriceFeedsByNetwork[10].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_steakLRT, underlying: TOKEN_wstETH, trusted: false, reserve: false})
         );
-        theSamePriceFeedsByNetwork[10].push(
-            TheSamePriceFeedData({
+        redStonePriceFeedsByNetwork[10].push(
+            RedStonePriceFeedData({
                 token: TOKEN_steakLRT,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[10].push(
-            SingeTokenPriceFeedData({token: TOKEN_steakLRT, trusted: false, reserve: true})
+        erc4626PriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_steakLRT, underlying: TOKEN_wstETH, trusted: false, reserve: false})
         );
-        theSamePriceFeedsByNetwork[8453].push(
-            TheSamePriceFeedData({
+        redStonePriceFeedsByNetwork[8453].push(
+            RedStonePriceFeedData({
                 token: TOKEN_steakLRT,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
-        );
-        zeroPriceFeedsByNetwork[8453].push(
-            SingeTokenPriceFeedData({token: TOKEN_steakLRT, trusted: false, reserve: true})
         );
 
         // ------------------------ Re7LRT ------------------------
-        theSamePriceFeedsByNetwork[1].push(
-            TheSamePriceFeedData({
+        erc4626PriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_Re7LRT, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[1].push(
+            RedStonePriceFeedData({
                 token: TOKEN_Re7LRT,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_Re7LRT, trusted: false, reserve: true}));
-        theSamePriceFeedsByNetwork[42161].push(
-            TheSamePriceFeedData({
+        erc4626PriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_Re7LRT, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[42161].push(
+            RedStonePriceFeedData({
                 token: TOKEN_Re7LRT,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[42161].push(
-            SingeTokenPriceFeedData({token: TOKEN_Re7LRT, trusted: false, reserve: true})
+        erc4626PriceFeedsByNetwork[10].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_Re7LRT, underlying: TOKEN_wstETH, trusted: false, reserve: false})
         );
-        theSamePriceFeedsByNetwork[10].push(
-            TheSamePriceFeedData({
+        redStonePriceFeedsByNetwork[10].push(
+            RedStonePriceFeedData({
                 token: TOKEN_Re7LRT,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_Re7LRT, trusted: false, reserve: true}));
-        theSamePriceFeedsByNetwork[8453].push(
-            TheSamePriceFeedData({
-                token: TOKEN_Re7LRT,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: false
-            })
+        erc4626PriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_Re7LRT, underlying: TOKEN_wstETH, trusted: false, reserve: false})
         );
-        zeroPriceFeedsByNetwork[8453].push(
-            SingeTokenPriceFeedData({token: TOKEN_Re7LRT, trusted: false, reserve: true})
+        redStonePriceFeedsByNetwork[8453].push(
+            RedStonePriceFeedData({
+                token: TOKEN_Re7LRT,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
         );
 
         // ------------------------ amphrETH ------------------------
-        theSamePriceFeedsByNetwork[1].push(
-            TheSamePriceFeedData({
+        erc4626PriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_amphrETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[1].push(
+            RedStonePriceFeedData({
                 token: TOKEN_amphrETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_amphrETH, trusted: false, reserve: true}));
-        theSamePriceFeedsByNetwork[42161].push(
-            TheSamePriceFeedData({
+        erc4626PriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_amphrETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[42161].push(
+            RedStonePriceFeedData({
                 token: TOKEN_amphrETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[42161].push(
-            SingeTokenPriceFeedData({token: TOKEN_amphrETH, trusted: false, reserve: true})
+        erc4626PriceFeedsByNetwork[10].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_amphrETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
         );
-        theSamePriceFeedsByNetwork[10].push(
-            TheSamePriceFeedData({
+        redStonePriceFeedsByNetwork[10].push(
+            RedStonePriceFeedData({
                 token: TOKEN_amphrETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[10].push(
-            SingeTokenPriceFeedData({token: TOKEN_amphrETH, trusted: false, reserve: true})
+        erc4626PriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_amphrETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
         );
-        theSamePriceFeedsByNetwork[8453].push(
-            TheSamePriceFeedData({
+        redStonePriceFeedsByNetwork[8453].push(
+            RedStonePriceFeedData({
                 token: TOKEN_amphrETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
-        );
-        zeroPriceFeedsByNetwork[8453].push(
-            SingeTokenPriceFeedData({token: TOKEN_amphrETH, trusted: false, reserve: true})
         );
 
         // ------------------------ rstETH ------------------------
-        theSamePriceFeedsByNetwork[1].push(
-            TheSamePriceFeedData({
+        erc4626PriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_rstETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[1].push(
+            RedStonePriceFeedData({
                 token: TOKEN_rstETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_rstETH, trusted: false, reserve: true}));
-        theSamePriceFeedsByNetwork[42161].push(
-            TheSamePriceFeedData({
+        erc4626PriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_rstETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[42161].push(
+            RedStonePriceFeedData({
                 token: TOKEN_rstETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[42161].push(
-            SingeTokenPriceFeedData({token: TOKEN_rstETH, trusted: false, reserve: true})
+        erc4626PriceFeedsByNetwork[10].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_rstETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
         );
-        theSamePriceFeedsByNetwork[10].push(
-            TheSamePriceFeedData({
+        redStonePriceFeedsByNetwork[10].push(
+            RedStonePriceFeedData({
                 token: TOKEN_rstETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_rstETH, trusted: false, reserve: true}));
-        theSamePriceFeedsByNetwork[8453].push(
-            TheSamePriceFeedData({
-                token: TOKEN_rstETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: false
-            })
+        erc4626PriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_rstETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
         );
-        zeroPriceFeedsByNetwork[8453].push(
-            SingeTokenPriceFeedData({token: TOKEN_rstETH, trusted: false, reserve: true})
+        redStonePriceFeedsByNetwork[8453].push(
+            RedStonePriceFeedData({
+                token: TOKEN_rstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
         );
 
         // ------------------------ pzETH ------------------------
-        theSamePriceFeedsByNetwork[1].push(
-            TheSamePriceFeedData({
+        erc4626PriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_pzETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[1].push(
+            RedStonePriceFeedData({
                 token: TOKEN_pzETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_pzETH, trusted: false, reserve: true}));
-        theSamePriceFeedsByNetwork[42161].push(
-            TheSamePriceFeedData({
+        erc4626PriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_pzETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[42161].push(
+            RedStonePriceFeedData({
                 token: TOKEN_pzETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[42161].push(
-            SingeTokenPriceFeedData({token: TOKEN_pzETH, trusted: false, reserve: true})
+        erc4626PriceFeedsByNetwork[10].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_pzETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
         );
-        theSamePriceFeedsByNetwork[10].push(
-            TheSamePriceFeedData({
+        redStonePriceFeedsByNetwork[10].push(
+            RedStonePriceFeedData({
                 token: TOKEN_pzETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_pzETH, trusted: false, reserve: true}));
-        theSamePriceFeedsByNetwork[8453].push(
-            TheSamePriceFeedData({
+        erc4626PriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_pzETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[8453].push(
+            RedStonePriceFeedData({
                 token: TOKEN_pzETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[8453].push(SingeTokenPriceFeedData({token: TOKEN_pzETH, trusted: false, reserve: true}));
 
         // ------------------------ DVstETH ------------------------
-        theSamePriceFeedsByNetwork[1].push(
-            TheSamePriceFeedData({
+        erc4626PriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[1].push(
+            RedStonePriceFeedData({
                 token: TOKEN_DVstETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_DVstETH, trusted: false, reserve: true}));
-        theSamePriceFeedsByNetwork[42161].push(
-            TheSamePriceFeedData({
+        erc4626PriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[42161].push(
+            RedStonePriceFeedData({
                 token: TOKEN_DVstETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[42161].push(
-            SingeTokenPriceFeedData({token: TOKEN_DVstETH, trusted: false, reserve: true})
+        erc4626PriceFeedsByNetwork[10].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
         );
-        theSamePriceFeedsByNetwork[10].push(
-            TheSamePriceFeedData({
+        redStonePriceFeedsByNetwork[10].push(
+            RedStonePriceFeedData({
                 token: TOKEN_DVstETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
                 trusted: false,
-                reserve: false
+                reserve: true
             })
         );
-        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_DVstETH, trusted: false, reserve: true}));
-        theSamePriceFeedsByNetwork[8453].push(
-            TheSamePriceFeedData({
-                token: TOKEN_DVstETH,
-                tokenHasSamePriceFeed: TOKEN_wstETH,
-                trusted: false,
-                reserve: false
-            })
+        erc4626PriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
         );
-        zeroPriceFeedsByNetwork[8453].push(
-            SingeTokenPriceFeedData({token: TOKEN_DVstETH, trusted: false, reserve: true})
+        redStonePriceFeedsByNetwork[8453].push(
+            RedStonePriceFeedData({
+                token: TOKEN_DVstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
         );
 
         // ------------------------ PT_rsETH_26SEP2024 ------------------------

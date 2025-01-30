@@ -1,13 +1,5 @@
+import { BalancerVaultConfig, MellowVaultConfig } from "../adapters";
 import {
-  BalancerVaultConfig,
-  GenericSwapConfig,
-  MellowVaultConfig,
-  PendlePairStatus,
-  PendleRouterConfig,
-  UniV3Config,
-} from "../adapters";
-import {
-  CollateralToken,
   CreditManagerV3DeployConfig,
   PoolV3DeployConfig,
 } from "../poolV3DeployConfig";

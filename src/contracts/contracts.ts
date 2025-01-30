@@ -72,7 +72,8 @@ export type CurvePoolContract =
   | "CURVE_CRVUSD_SUSDE_POOL"
   | "CURVE_LLAMA_THENA_POOL"
   | "CURVE_tETH_wstETH_POOL"
-  | "CURVE_tETH_weETH_POOL";
+  | "CURVE_tETH_weETH_POOL"
+  | "CURVE_pzETH_stETH_POOL";
 
 export type YearnVaultContract =
   | "YEARN_DAI_VAULT"
@@ -228,6 +229,7 @@ export const contractsByNetwork: Record<
     CURVE_tBTC_WBTC_POOL: tokenDataByNetwork.Mainnet["2BTC-f"],
     CURVE_tETH_wstETH_POOL: tokenDataByNetwork.Mainnet.tETHwstETH,
     CURVE_tETH_weETH_POOL: tokenDataByNetwork.Mainnet.tETHweETH,
+    CURVE_pzETH_stETH_POOL: tokenDataByNetwork.Mainnet.pzETHstETH,
 
     CURVE_GEAR_POOL: "0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2",
 
@@ -403,6 +405,7 @@ export const contractsByNetwork: Record<
     CURVE_tBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_tETH_wstETH_POOL: NOT_DEPLOYED,
     CURVE_tETH_weETH_POOL: NOT_DEPLOYED,
+    CURVE_pzETH_stETH_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -577,6 +580,7 @@ export const contractsByNetwork: Record<
     CURVE_tBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_tETH_wstETH_POOL: NOT_DEPLOYED,
     CURVE_tETH_weETH_POOL: NOT_DEPLOYED,
+    CURVE_pzETH_stETH_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -750,6 +754,7 @@ export const contractsByNetwork: Record<
     CURVE_tBTC_WBTC_POOL: NOT_DEPLOYED,
     CURVE_tETH_wstETH_POOL: NOT_DEPLOYED,
     CURVE_tETH_weETH_POOL: NOT_DEPLOYED,
+    CURVE_pzETH_stETH_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -1078,7 +1083,9 @@ export type ZircuitParams = {
 
 export type MellowVaultParams = {
   protocol: Protocols.Mellow;
-  type: AdapterInterface.MELLOW_LRT_VAULT;
+  type:
+    | AdapterInterface.MELLOW_LRT_VAULT
+    | AdapterInterface.MELLOW_ERC4626_VAULT;
 } & BaseContractParams;
 
 export type StakingRewardsParams = {
@@ -1543,6 +1550,14 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.CURVE_V1_2ASSETS,
     lpToken: "tETHwstETH",
     tokens: ["tETH", "wstETH"],
+  },
+  CURVE_pzETH_stETH_POOL: {
+    name: "Curve pzETH/stETH LP",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_V1_2ASSETS,
+    lpToken: "pzETHstETH",
+    tokens: ["pzETH", "STETH"],
   },
   CURVE_tETH_weETH_POOL: {
     name: "Curve tETH/weETH LP",
@@ -2318,27 +2333,27 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
   MELLOW_STEAKHOUSE_VAULT: {
     name: "Mellow Steakhouse steakLRT vault",
     protocol: Protocols.Mellow,
-    type: AdapterInterface.MELLOW_LRT_VAULT,
+    type: AdapterInterface.MELLOW_ERC4626_VAULT,
   },
   MELLOW_RE7_LABS_VAULT: {
     name: "Mellow Re7 Labs Re7LRT vault",
     protocol: Protocols.Mellow,
-    type: AdapterInterface.MELLOW_LRT_VAULT,
+    type: AdapterInterface.MELLOW_ERC4626_VAULT,
   },
   MELLOW_AMPHOR_VAULT: {
     name: "Mellow Amphor amphrETH vault",
     protocol: Protocols.Mellow,
-    type: AdapterInterface.MELLOW_LRT_VAULT,
+    type: AdapterInterface.MELLOW_ERC4626_VAULT,
   },
   MELLOW_RESTAKING_VAULT: {
     name: "Mellow Restaking rstETH vault",
     protocol: Protocols.Mellow,
-    type: AdapterInterface.MELLOW_LRT_VAULT,
+    type: AdapterInterface.MELLOW_ERC4626_VAULT,
   },
   MELLOW_RENZO_VAULT: {
     name: "Mellow Renzo pzETH vault",
     protocol: Protocols.Mellow,
-    type: AdapterInterface.MELLOW_LRT_VAULT,
+    type: AdapterInterface.MELLOW_ERC4626_VAULT,
   },
   MELLOW_DECENTALIZED_VALIDATOR_VAULT: {
     name: "Mellow Decentralized Validator Token vault",

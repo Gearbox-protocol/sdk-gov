@@ -213,21 +213,6 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.ZIRCUIT_POOL, adapterType: AdapterType.ZIRCUIT_POOL})
         );
         simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.MELLOW_STEAKHOUSE_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
-        );
-        simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.MELLOW_RE7_LABS_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
-        );
-        simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.MELLOW_AMPHOR_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
-        );
-        simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.MELLOW_RESTAKING_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
-        );
-        simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.MELLOW_RENZO_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
-        );
-        simpleAdapters.push(
             SimpleAdapter({
                 targetContract: Contracts.MELLOW_DECENTALIZED_VALIDATOR_VAULT,
                 adapterType: AdapterType.MELLOW_LRT_VAULT
@@ -530,6 +515,14 @@ contract AdapterData {
                 targetContract: Contracts.CURVE_tETH_wstETH_POOL,
                 adapterType: AdapterType.CURVE_V1_2ASSETS,
                 lpToken: TOKEN_tETHwstETH,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
+                targetContract: Contracts.CURVE_pzETH_stETH_POOL,
+                adapterType: AdapterType.CURVE_V1_2ASSETS,
+                lpToken: TOKEN_pzETHstETH,
                 basePool: Contracts.NO_CONTRACT
             })
         );

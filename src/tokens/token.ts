@@ -277,6 +277,7 @@ export const tokenDataByNetwork: Record<
     "2BTC-f": "0xB7ECB2AA52AA64a717180E030241bC75Cd946726",
     tETHwstETH: "0xA10d15538E09479186b4D3278BA5c979110dDdB1",
     tETHweETH: "0x394a1e1b934cb4F4a0dC17BDD592ec078741542F",
+    pzETHstETH: "0xCec99Cff3632Cf1f16652cC5b1E80eB08bE25983",
 
     // CONVEX LP TOKENS
     cvx3Crv: "0x30D9410ED1D5DA1F6C8391af5338C93ab8d4035C",
@@ -604,6 +605,7 @@ export const tokenDataByNetwork: Record<
     "2BTC-f": NOT_DEPLOYED,
     tETHwstETH: NOT_DEPLOYED,
     tETHweETH: NOT_DEPLOYED,
+    pzETHstETH: NOT_DEPLOYED,
 
     // CONVEX LP TOKENS
     cvx3Crv: NOT_DEPLOYED,
@@ -920,6 +922,7 @@ export const tokenDataByNetwork: Record<
     rETH_f: NOT_DEPLOYED,
     tETHwstETH: NOT_DEPLOYED,
     tETHweETH: NOT_DEPLOYED,
+    pzETHstETH: NOT_DEPLOYED,
 
     // CONVEX LP TOKENS
     cvx3Crv: NOT_DEPLOYED,
@@ -1239,6 +1242,7 @@ export const tokenDataByNetwork: Record<
     rETH_f: NOT_DEPLOYED,
     tETHwstETH: NOT_DEPLOYED,
     tETHweETH: NOT_DEPLOYED,
+    pzETHstETH: NOT_DEPLOYED,
 
     // CONVEX LP TOKENS
     cvx3Crv: NOT_DEPLOYED,
