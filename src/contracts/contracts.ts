@@ -1552,12 +1552,12 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     tokens: ["tETH", "wstETH"],
   },
   CURVE_pzETH_stETH_POOL: {
-    name: "Curve pzETH/stETH LP",
+    name: "Curve pzETH/wstETH LP",
     protocol: Protocols.Curve,
     version: 20,
     type: AdapterInterface.CURVE_V1_2ASSETS,
     lpToken: "pzETHstETH",
-    tokens: ["pzETH", "STETH"],
+    tokens: ["pzETH", "wstETH"],
   },
   CURVE_tETH_weETH_POOL: {
     name: "Curve tETH/weETH LP",

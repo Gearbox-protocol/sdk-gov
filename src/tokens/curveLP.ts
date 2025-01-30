@@ -457,11 +457,11 @@ export const curveTokens: Record<
     tokenOut: ["tETH", "weETH"],
   },
   pzETHstETH: {
-    name: "Curve pzETH/stETH LP",
+    name: "Curve pzETH/wstETH LP",
     symbol: "pzETHstETH",
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
     pool: "CURVE_pzETH_stETH_POOL",
-    tokenOut: ["pzETH", "STETH"],
+    tokenOut: ["pzETH", "wstETH"],
   },
   ...curveMetaTokens,
 };
