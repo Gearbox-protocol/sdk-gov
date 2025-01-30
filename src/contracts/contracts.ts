@@ -2358,7 +2358,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
   MELLOW_DECENTALIZED_VALIDATOR_VAULT: {
     name: "Mellow Decentralized Validator Token vault",
     protocol: Protocols.Mellow,
-    type: AdapterInterface.MELLOW_LRT_VAULT,
+    type: AdapterInterface.MELLOW_ERC4626_VAULT,
   },
   SKY_STAKING_REWARDS: {
     name: "Sky StakingRewards contract",

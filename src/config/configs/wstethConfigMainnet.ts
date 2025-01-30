@@ -1,21 +1,10 @@
-import { BalancerVaultConfig, MellowVaultConfig } from "../adapters";
+import { BalancerVaultConfig } from "../adapters";
 import {
   CreditManagerV3DeployConfig,
   PoolV3DeployConfig,
 } from "../poolV3DeployConfig";
 
 const POOL_DECIMALS = BigInt(1e18);
-
-const mellowVaultConfigList: MellowVaultConfig[] = [
-  {
-    contract: "MELLOW_RESTAKING_VAULT",
-    allowed: ["wstETH"],
-  },
-  {
-    contract: "MELLOW_DECENTALIZED_VALIDATOR_VAULT",
-    allowed: ["wstETH"],
-  },
-];
 
 const balancerConfig: BalancerVaultConfig = {
   contract: "BALANCER_VAULT",
@@ -61,7 +50,11 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     { token: "Re7LRT", lt: 0 },
     { token: "steakLRT", lt: 0 },
   ],
-  adapters: [...mellowVaultConfigList, balancerConfig],
+  adapters: [
+    { contract: "MELLOW_RESTAKING_VAULT" },
+    { contract: "MELLOW_DECENTALIZED_VALIDATOR_VAULT" },
+    balancerConfig,
+  ],
 };
 
 const tier2CreditManager: CreditManagerV3DeployConfig = {
@@ -94,7 +87,11 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
     { token: "Re7LRT", lt: 0 },
     { token: "steakLRT", lt: 0 },
   ],
-  adapters: [...mellowVaultConfigList, balancerConfig],
+  adapters: [
+    { contract: "MELLOW_RESTAKING_VAULT" },
+    { contract: "MELLOW_DECENTALIZED_VALIDATOR_VAULT" },
+    balancerConfig,
+  ],
 };
 
 export const wstethConfigMainnet: PoolV3DeployConfig = {

@@ -213,12 +213,6 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.ZIRCUIT_POOL, adapterType: AdapterType.ZIRCUIT_POOL})
         );
         simpleAdapters.push(
-            SimpleAdapter({
-                targetContract: Contracts.MELLOW_DECENTALIZED_VALIDATOR_VAULT,
-                adapterType: AdapterType.MELLOW_LRT_VAULT
-            })
-        );
-        simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.DAI_USDS, adapterType: AdapterType.DAI_USDS_EXCHANGE})
         );
         curveAdapters.push(
