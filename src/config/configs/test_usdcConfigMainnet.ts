@@ -1,7 +1,6 @@
 import {
   BalancerPoolStatus,
   BalancerVaultConfig,
-  MellowVaultConfig,
   PendlePairStatus,
   PendleRouterConfig,
   UniV3Config,
