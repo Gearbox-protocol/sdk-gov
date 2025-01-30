@@ -48,6 +48,7 @@ import {
   ERC4626LPToken,
   erc4626Tokens,
   ERC4626VaultOfCurveLPTokenData,
+  ERC4626VaultOfMellowLRTTokenData,
   ERC4626VaultTokenData,
 } from "./erc4626";
 import {
@@ -123,6 +124,7 @@ export type LPTokenDataI =
   | CompoundV2PoolTokenData
   | ERC4626VaultTokenData
   | ERC4626VaultOfCurveLPTokenData
+  | ERC4626VaultOfMellowLRTTokenData
   | AuraLPTokenData
   | AuraStakedTokenData
   | ZircuitPhantomTokenData
