@@ -60,6 +60,7 @@ export type NormalToken =
   | "USDS"
   | "SKY"
   | "beraSTONE"
+  | "T"
   // Pendle
   | "PT_rsETH_26SEP2024"
   | "PT_sUSDe_26DEC2024"
@@ -427,6 +428,11 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   SKY: {
     name: "SKY Governance token",
     symbol: "SKY",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  T: {
+    name: "Threshold Network Token",
+    symbol: "T",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
   PT_sUSDe_26DEC2024: {

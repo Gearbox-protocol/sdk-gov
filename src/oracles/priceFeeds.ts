@@ -1793,6 +1793,15 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  T: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+
   beraSTONE: {
     Mainnet: {
       Main: {
