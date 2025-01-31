@@ -507,8 +507,16 @@ contract AdapterData {
         curveAdapters.push(
             CurveAdapter({
                 targetContract: Contracts.CURVE_tETH_wstETH_POOL,
-                adapterType: AdapterType.CURVE_V1_2ASSETS,
+                adapterType: AdapterType.CURVE_STABLE_NG,
                 lpToken: TOKEN_tETHwstETH,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
+                targetContract: Contracts.CURVE_tETH_weETH_POOL,
+                adapterType: AdapterType.CURVE_STABLE_NG,
+                lpToken: TOKEN_tETHweETH,
                 basePool: Contracts.NO_CONTRACT
             })
         );
@@ -517,14 +525,6 @@ contract AdapterData {
                 targetContract: Contracts.CURVE_pzETH_stETH_POOL,
                 adapterType: AdapterType.CURVE_V1_2ASSETS,
                 lpToken: TOKEN_pzETHstETH,
-                basePool: Contracts.NO_CONTRACT
-            })
-        );
-        curveAdapters.push(
-            CurveAdapter({
-                targetContract: Contracts.CURVE_tETH_weETH_POOL,
-                adapterType: AdapterType.CURVE_V1_2ASSETS,
-                lpToken: TOKEN_tETHweETH,
                 basePool: Contracts.NO_CONTRACT
             })
         );

@@ -2582,6 +2582,12 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_SKY, trusted: false, reserve: false}));
         zeroPriceFeedsByNetwork[8453].push(SingeTokenPriceFeedData({token: TOKEN_SKY, trusted: false, reserve: false}));
 
+        // ------------------------ T ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_T, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: TOKEN_T, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_T, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[8453].push(SingeTokenPriceFeedData({token: TOKEN_T, trusted: false, reserve: false}));
+
         // ------------------------ beraSTONE ------------------------
 
         {

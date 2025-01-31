@@ -433,6 +433,62 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_tETH,
+                addr: 0xD11c452fc99cF405034ee446803b6F6c1F6d5ED8,
+                symbol: "tETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_steakLRT,
+                addr: 0xBEEF69Ac7870777598A04B2bd4771c71212E6aBc,
+                symbol: "steakLRT",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_Re7LRT,
+                addr: 0x84631c0d0081FDe56DeB72F6DE77abBbF6A9f93a,
+                symbol: "Re7LRT",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_amphrETH,
+                addr: 0x5fD13359Ba15A84B76f7F87568309040176167cd,
+                symbol: "amphrETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_rstETH,
+                addr: 0x7a4EffD87C2f3C55CA251080b1343b605f327E3a,
+                symbol: "rstETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_pzETH,
+                addr: 0x8c9532a60E0E7C6BbD2B2c1303F63aCE1c3E9811,
+                symbol: "pzETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_DVstETH,
+                addr: 0x5E362eb2c0706Bd1d134689eC75176018385430B,
+                symbol: "DVstETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_PT_rsETH_26SEP2024,
                 addr: 0x7bAf258049cc8B9A78097723dc19a8b103D4098F,
                 symbol: "PT_rsETH_26SEP2024",
@@ -452,6 +508,14 @@ contract TokensDataLive {
                 id: TOKEN_SKY,
                 addr: 0x56072C95FAA701256059aa122697B133aDEd9279,
                 symbol: "SKY",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_T,
+                addr: 0xCdF7028ceAB81fA0C6971208e83fa7872994beE5,
+                symbol: "T",
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
@@ -1458,62 +1522,6 @@ contract TokensDataLive {
                 id: TOKEN_scrvUSD,
                 addr: 0x0655977FEb2f289A4aB78af67BAB0d17aAb84367,
                 symbol: "scrvUSD",
-                tokenType: TokenType.ERC4626_VAULT_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: TOKEN_tETH,
-                addr: 0xD11c452fc99cF405034ee446803b6F6c1F6d5ED8,
-                symbol: "tETH",
-                tokenType: TokenType.ERC4626_VAULT_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: TOKEN_steakLRT,
-                addr: 0xBEEF69Ac7870777598A04B2bd4771c71212E6aBc,
-                symbol: "steakLRT",
-                tokenType: TokenType.ERC4626_VAULT_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: TOKEN_Re7LRT,
-                addr: 0x84631c0d0081FDe56DeB72F6DE77abBbF6A9f93a,
-                symbol: "Re7LRT",
-                tokenType: TokenType.ERC4626_VAULT_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: TOKEN_amphrETH,
-                addr: 0x5fD13359Ba15A84B76f7F87568309040176167cd,
-                symbol: "amphrETH",
-                tokenType: TokenType.ERC4626_VAULT_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: TOKEN_rstETH,
-                addr: 0x7a4EffD87C2f3C55CA251080b1343b605f327E3a,
-                symbol: "rstETH",
-                tokenType: TokenType.ERC4626_VAULT_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: TOKEN_pzETH,
-                addr: 0x8c9532a60E0E7C6BbD2B2c1303F63aCE1c3E9811,
-                symbol: "pzETH",
-                tokenType: TokenType.ERC4626_VAULT_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: TOKEN_DVstETH,
-                addr: 0x5E362eb2c0706Bd1d134689eC75176018385430B,
-                symbol: "DVstETH",
                 tokenType: TokenType.ERC4626_VAULT_TOKEN
             })
         );
