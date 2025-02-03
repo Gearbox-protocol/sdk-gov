@@ -27,20 +27,20 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
   minDebt: BigInt(50) * POOL_DECIMALS,
   maxDebt: BigInt(1_000) * POOL_DECIMALS,
   feeInterest: 2500,
-  feeLiquidation: 0,
-  liquidationPremium: 100,
-  feeLiquidationExpired: 0,
-  liquidationPremiumExpired: 100,
+  feeLiquidation: 20,
+  liquidationPremium: 200,
+  feeLiquidationExpired: 20,
+  liquidationPremiumExpired: 200,
   poolLimit: BigInt(50_000) * POOL_DECIMALS,
   maxEnabledTokens: 4,
   collateralTokens: [
     {
       token: "rstETH",
-      lt: 9600,
+      lt: 9500,
     },
     {
       token: "DVstETH",
-      lt: 9600,
+      lt: 9300,
     },
 
     // COMPATIBILITY
@@ -64,20 +64,20 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
   minDebt: BigInt(10) * POOL_DECIMALS,
   maxDebt: BigInt(200) * POOL_DECIMALS,
   feeInterest: 2500,
-  feeLiquidation: 0,
+  feeLiquidation: 30,
   liquidationPremium: 300,
-  feeLiquidationExpired: 0,
+  feeLiquidationExpired: 30,
   liquidationPremiumExpired: 300,
   poolLimit: BigInt(20_000) * POOL_DECIMALS,
   maxEnabledTokens: 4,
   collateralTokens: [
     {
       token: "rstETH",
-      lt: 9400,
+      lt: 9500,
     },
     {
       token: "DVstETH",
-      lt: 9400,
+      lt: 9300,
     },
 
     // COMPATIBILITY
@@ -107,23 +107,23 @@ export const wstethConfigMainnet: PoolV3DeployConfig = {
     U1: 7000,
     U2: 9000,
     Rbase: 0,
-    Rslope1: 25,
-    Rslope2: 50,
-    Rslope3: 2500,
+    Rslope1: 0,
+    Rslope2: 0,
+    Rslope3: 3000,
     isBorrowingMoreU2Forbidden: true,
   },
   ratesAndLimits: {
     rstETH: {
-      minRate: 5,
-      maxRate: 200,
+      minRate: 1,
+      maxRate: 1,
       quotaIncreaseFee: 0,
-      limit: BigInt(5_000) * POOL_DECIMALS,
+      limit: BigInt(2_400) * POOL_DECIMALS,
     },
     DVstETH: {
-      minRate: 5,
-      maxRate: 200,
+      minRate: 1,
+      maxRate: 1,
       quotaIncreaseFee: 0,
-      limit: BigInt(5_000) * POOL_DECIMALS,
+      limit: BigInt(1_400) * POOL_DECIMALS,
     },
 
     // COMPATIBILITY
