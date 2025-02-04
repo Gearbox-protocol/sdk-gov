@@ -10,10 +10,6 @@ const balancerConfig: BalancerVaultConfig = {
   contract: "BALANCER_VAULT",
   allowed: [
     {
-      pool: "trenSTETH",
-      status: 2,
-    },
-    {
       pool: "DVstETH_wstETH_BPT",
       status: 2,
     },
@@ -44,7 +40,6 @@ const tier1CreditManager: CreditManagerV3DeployConfig = {
     },
 
     // COMPATIBILITY
-    { token: "trenSTETH", lt: 0 },
     { token: "DVstETH_wstETH_BPT", lt: 0 },
     { token: "amphrETH", lt: 0 },
     { token: "Re7LRT", lt: 0 },
@@ -81,7 +76,6 @@ const tier2CreditManager: CreditManagerV3DeployConfig = {
     },
 
     // COMPATIBILITY
-    { token: "trenSTETH", lt: 0 },
     { token: "DVstETH_wstETH_BPT", lt: 0 },
     { token: "amphrETH", lt: 0 },
     { token: "Re7LRT", lt: 0 },
@@ -127,12 +121,6 @@ export const wstethConfigMainnet: PoolV3DeployConfig = {
     },
 
     // COMPATIBILITY
-    trenSTETH: {
-      minRate: 1,
-      maxRate: 1,
-      quotaIncreaseFee: 0,
-      limit: BigInt(0),
-    },
     DVstETH_wstETH_BPT: {
       minRate: 1,
       maxRate: 1,
