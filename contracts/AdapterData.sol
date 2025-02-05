@@ -126,6 +126,9 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.SAVINGS_CRVUSD_VAULT, adapterType: AdapterType.ERC4626_VAULT})
         );
         simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.TREEHOUSE_ETH_VAULT, adapterType: AdapterType.ERC4626_VAULT})
+        );
+        simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.CONVEX_BOOSTER, adapterType: AdapterType.CONVEX_V1_BOOSTER})
         );
         simpleAdapters.push(
@@ -214,27 +217,6 @@ contract AdapterData {
         );
         simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.ZIRCUIT_POOL, adapterType: AdapterType.ZIRCUIT_POOL})
-        );
-        simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.MELLOW_STEAKHOUSE_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
-        );
-        simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.MELLOW_RE7_LABS_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
-        );
-        simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.MELLOW_AMPHOR_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
-        );
-        simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.MELLOW_RESTAKING_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
-        );
-        simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.MELLOW_RENZO_VAULT, adapterType: AdapterType.MELLOW_LRT_VAULT})
-        );
-        simpleAdapters.push(
-            SimpleAdapter({
-                targetContract: Contracts.MELLOW_DECENTALIZED_VALIDATOR_VAULT,
-                adapterType: AdapterType.MELLOW_LRT_VAULT
-            })
         );
         simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.DAI_USDS, adapterType: AdapterType.DAI_USDS_EXCHANGE})
@@ -525,6 +507,30 @@ contract AdapterData {
                 targetContract: Contracts.CURVE_tBTC_WBTC_POOL,
                 adapterType: AdapterType.CURVE_V1_2ASSETS,
                 lpToken: TOKEN__2BTC_f,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
+                targetContract: Contracts.CURVE_tETH_wstETH_POOL,
+                adapterType: AdapterType.CURVE_STABLE_NG,
+                lpToken: TOKEN_tETHwstETH,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
+                targetContract: Contracts.CURVE_tETH_weETH_POOL,
+                adapterType: AdapterType.CURVE_STABLE_NG,
+                lpToken: TOKEN_tETHweETH,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
+                targetContract: Contracts.CURVE_pzETH_stETH_POOL,
+                adapterType: AdapterType.CURVE_V1_2ASSETS,
+                lpToken: TOKEN_pzETHstETH,
                 basePool: Contracts.NO_CONTRACT
             })
         );

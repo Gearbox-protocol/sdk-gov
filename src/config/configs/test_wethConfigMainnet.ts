@@ -1,6 +1,5 @@
 import {
   BalancerVaultConfig,
-  MellowVaultConfig,
   PendlePairStatus,
   PendleRouterConfig,
   UniV3Config,
@@ -47,11 +46,6 @@ const levPendleConfig: PendleRouterConfig = {
       status: PendlePairStatus.ALLOWED,
     },
   ],
-};
-
-const levSteakLRTVaultConfig: MellowVaultConfig = {
-  contract: "MELLOW_STEAKHOUSE_VAULT",
-  allowed: ["wstETH"],
 };
 
 const levCreditManager: CreditManagerV3DeployConfig = {
@@ -158,7 +152,7 @@ const levCreditManager: CreditManagerV3DeployConfig = {
     levUniswapConfig,
     levPendleConfig,
     levBalancerConfig,
-    levSteakLRTVaultConfig,
+    { contract: "MELLOW_STEAKHOUSE_VAULT" },
     { contract: "LIDO_WSTETH" },
     { contract: "CURVE_STETH_GATEWAY" },
     { contract: "CURVE_PUFETH_WSTETH_POOL" },

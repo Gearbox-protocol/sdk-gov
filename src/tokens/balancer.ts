@@ -22,6 +22,7 @@ export type BalancerLPToken =
   | "pumpBTC_WBTC_BPT"
   | "eBTC_WBTC_BPT"
   | "B_50WBTC_50WETH"
+  | "tETH_wstETH_BPT"
   // Optimism
   | "BPT_rETH_ETH"
   | "BPT_WSTETH_ETH"
@@ -415,6 +416,16 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     underlying: ["USDC", "stS"],
     poolId:
       "0x713fb5036dc70012588d77a5b066f1dd05c712d7000200000000000000000041",
+  },
+  tETH_wstETH_BPT: {
+    name: "Balancer tETH/wstETH",
+    symbol: "tETH_wstETH_BPT",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["tETH", "wstETH"],
+    poolId:
+      "0x1d13531bf6344c102280ce4c458781fbf14dad140000000000000000000006df",
   },
 };
 

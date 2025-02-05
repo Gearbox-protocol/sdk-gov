@@ -8,7 +8,6 @@ import {
   AdapterConfig,
   BalancerVaultConfig,
   GenericSwapConfig,
-  MellowVaultConfig,
   PendleRouterConfig,
   UniswapV3Pair,
   UniV3Config,
@@ -273,21 +272,6 @@ ${contracts}
         return `${contractLine}
         PendlePair[] storage pendp = cp.adapterConfig.pendlePairs;
         ${pairs}`;
-      }
-
-      case "MELLOW_STEAKHOUSE_VAULT": {
-        const underlyings = ((a as MellowVaultConfig).allowed || [])
-          .map(
-            underlying => `mu.push(MellowUnderlyingConfig({
-          vault: Contracts.${a.contract},
-          underlying: TOKEN_${safeEnum(underlying)}
-        }));`,
-          )
-          .join("\n");
-
-        return `${contractLine}{
-        MellowUnderlyingConfig[] storage mu = cp.adapterConfig.mellowUnderlyings;
-        ${underlyings}}`;
       }
 
       default:

@@ -10,7 +10,7 @@ import {
   PoolV3DeployConfig,
 } from "../poolV3DeployConfig";
 
-const POOL_DECIMALS = BigInt(1e18);
+const POOL_DECIMALS = BigInt(1e6);
 
 const uniV3Config: UniV3Config = {
   contract: "UNISWAP_V3_ROUTER",

@@ -294,6 +294,27 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_tETH_wstETH_POOL,
+                addr: 0xA10d15538E09479186b4D3278BA5c979110dDdB1,
+                name: "CURVE_tETH_wstETH_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_tETH_weETH_POOL,
+                addr: 0x394a1e1b934cb4F4a0dC17BDD592ec078741542F,
+                name: "CURVE_tETH_weETH_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_pzETH_stETH_POOL,
+                addr: 0xCec99Cff3632Cf1f16652cC5b1E80eB08bE25983,
+                name: "CURVE_pzETH_stETH_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_GEAR_POOL,
                 addr: 0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2,
                 name: "CURVE_GEAR_POOL"
@@ -433,6 +454,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.SAVINGS_CRVUSD_VAULT,
                 addr: 0x0655977FEb2f289A4aB78af67BAB0d17aAb84367,
                 name: "SAVINGS_CRVUSD_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.TREEHOUSE_ETH_VAULT,
+                addr: 0xD11c452fc99cF405034ee446803b6F6c1F6d5ED8,
+                name: "TREEHOUSE_ETH_VAULT"
             })
         );
         contractDataByNetwork[1].push(
