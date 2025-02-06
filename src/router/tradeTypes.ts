@@ -123,12 +123,12 @@ export type TradeAction =
     }
   | {
       type: TradeType.BalancerJoin;
-      contract: "BALANCER_VAULT" | "BEETS_VAULT";
+      contract: "BALANCER_VAULT";
       tokenOut: BalancerLPToken;
     }
   | {
       type: TradeType.BalancerExit;
-      contract: "BALANCER_VAULT" | "BEETS_VAULT";
+      contract: "BALANCER_VAULT";
       tokenOut: Array<NormalToken | BalancerLPToken>;
     }
   | {

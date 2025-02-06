@@ -33,7 +33,7 @@ export interface BalancerPoolConfig {
 }
 
 export interface BalancerVaultConfig {
-  contract: "BALANCER_VAULT" | "BEETS_VAULT";
+  contract: "BALANCER_VAULT";
   allowed: Array<BalancerPoolConfig>;
 }
 

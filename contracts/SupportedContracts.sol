@@ -640,7 +640,6 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "BALANCER_VAULT"
             })
         );
-
         contractDataByNetwork[1].push(
             ContractData({
                 id: Contracts.UNIVERSAL_ADAPTER,
@@ -890,7 +889,6 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "BALANCER_VAULT"
             })
         );
-
         contractDataByNetwork[42161].push(
             ContractData({
                 id: Contracts.UNIVERSAL_ADAPTER,
@@ -1027,7 +1025,6 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "BALANCER_VAULT"
             })
         );
-
         contractDataByNetwork[10].push(
             ContractData({
                 id: Contracts.UNIVERSAL_ADAPTER,
@@ -1077,9 +1074,9 @@ contract SupportedContracts is Test, ISupportedContracts {
 
         contractDataByNetwork[146].push(
             ContractData({
-                id: Contracts.BEETS_VAULT,
+                id: Contracts.BALANCER_VAULT,
                 addr: 0xBA12222222228d8Ba445958a75a0704d566BF2C8,
-                name: "BEETS_VAULT"
+                name: "BALANCER_VAULT"
             })
         );
 

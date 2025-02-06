@@ -156,9 +156,6 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.BALANCER_VAULT, adapterType: AdapterType.BALANCER_VAULT})
         );
         simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.BEETS_VAULT, adapterType: AdapterType.BALANCER_VAULT})
-        );
-        simpleAdapters.push(
             SimpleAdapter({
                 targetContract: Contracts.AAVE_V2_LENDING_POOL,
                 adapterType: AdapterType.AAVE_V2_LENDING_POOL

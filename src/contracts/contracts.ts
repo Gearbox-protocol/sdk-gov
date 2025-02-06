@@ -165,7 +165,6 @@ export type SupportedContract =
   | "LIDO_WSTETH"
   | "UNIVERSAL_ADAPTER"
   | "BALANCER_VAULT"
-  | "BEETS_VAULT"
   | "AAVE_V2_LENDING_POOL"
   | AaveV2TokenWrapperContract
   | CompoundV2PoolContract
@@ -319,9 +318,6 @@ export const contractsByNetwork: Record<
 
     // BALANCER
     BALANCER_VAULT: "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
-
-    // BEETS
-    BEETS_VAULT: NOT_DEPLOYED,
 
     // GEARBOX
     UNIVERSAL_ADAPTER: "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC",
@@ -502,9 +498,6 @@ export const contractsByNetwork: Record<
     // BALANCER
     BALANCER_VAULT: "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
 
-    // BEETS
-    BEETS_VAULT: NOT_DEPLOYED,
-
     // GEARBOX
     UNIVERSAL_ADAPTER: "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC",
 
@@ -682,9 +675,6 @@ export const contractsByNetwork: Record<
     // BALANCER
     BALANCER_VAULT: "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
 
-    // BEETS
-    BEETS_VAULT: NOT_DEPLOYED,
-
     // GEARBOX
     UNIVERSAL_ADAPTER: "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC",
 
@@ -858,9 +848,6 @@ export const contractsByNetwork: Record<
     // BALANCER
     BALANCER_VAULT: NOT_DEPLOYED,
 
-    // BEETS
-    BEETS_VAULT: NOT_DEPLOYED,
-
     // GEARBOX
     UNIVERSAL_ADAPTER: NOT_DEPLOYED,
 
@@ -1032,10 +1019,7 @@ export const contractsByNetwork: Record<
     LIDO_WSTETH: NOT_DEPLOYED,
 
     // BALANCER
-    BALANCER_VAULT: NOT_DEPLOYED,
-
-    // BEETS
-    BEETS_VAULT: "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+    BALANCER_VAULT: "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
 
     // GEARBOX
     UNIVERSAL_ADAPTER: NOT_DEPLOYED,
@@ -2510,18 +2494,6 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       Mainnet: "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5",
       Arbitrum: "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5",
       Optimism: "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5",
-      Base: NOT_DEPLOYED,
-      Sonic: NOT_DEPLOYED,
-    },
-  },
-  BEETS_VAULT: {
-    name: "Beets Vault",
-    protocol: Protocols.Beets,
-    type: AdapterInterface.BALANCER_VAULT,
-    queries: {
-      Mainnet: NOT_DEPLOYED,
-      Arbitrum: NOT_DEPLOYED,
-      Optimism: NOT_DEPLOYED,
       Base: NOT_DEPLOYED,
       Sonic: "0x4B29DB997Ec0efDFEF13bAeE2a2D7783bCf67f17",
     },

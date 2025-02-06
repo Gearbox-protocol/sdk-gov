@@ -29,7 +29,7 @@ const shadowConfig: VelodromeCLConfig = {
 };
 
 const beetsCorrelatedConfig: BalancerVaultConfig = {
-  contract: "BEETS_VAULT",
+  contract: "BALANCER_VAULT",
   allowed: [
     {
       pool: "bpt_rsb",
@@ -83,7 +83,7 @@ const tier2CorrelatedCreditManager: CreditManagerV3DeployConfig = {
 };
 
 const beetsVolatileConfig: BalancerVaultConfig = {
-  contract: "BEETS_VAULT",
+  contract: "BALANCER_VAULT",
   allowed: [
     {
       pool: "bpt_rsb",
