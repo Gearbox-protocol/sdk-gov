@@ -173,7 +173,7 @@ const tier2VolatileCreditManager: CreditManagerV3DeployConfig = {
 export const usdceConfigSonic: PoolV3DeployConfig = {
   id: "sonic-usdce-v3",
   symbol: "dUSDC.eV3",
-  name: "Main USDC.e v3",
+  name: "USDC.e v3 Sonic",
   network: "Sonic",
   underlying: "USDC",
   accountAmount: BigInt(10_000) * POOL_DECIMALS,
