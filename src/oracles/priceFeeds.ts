@@ -3095,8 +3095,7 @@ export const priceFeedsByToken: Record<
   bpt_rsb: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
-        assets: ["USDC", "scUSD"],
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -3104,8 +3103,7 @@ export const priceFeedsByToken: Record<
   bpt_sss: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
-        assets: ["wS", "stS"],
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -3113,8 +3111,7 @@ export const priceFeedsByToken: Record<
   BPT_scUSD_stS: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
-        assets: ["scUSD", "stS"],
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -3122,8 +3119,7 @@ export const priceFeedsByToken: Record<
   BPT_USDCe_stS: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.BALANCER_WEIGHTED_LP_ORACLE,
-        assets: ["USDC", "stS"],
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
