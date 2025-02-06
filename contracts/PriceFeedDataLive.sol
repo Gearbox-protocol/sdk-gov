@@ -1190,7 +1190,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: TOKEN_WETH,
                 priceFeed: 0x824364077993847f71293B24ccA8567c00c2de11,
-                stalenessPeriod: 4500,
+                stalenessPeriod: 86400,
                 trusted: false,
                 reserve: false
             })
