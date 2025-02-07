@@ -446,7 +446,7 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x55bCa887199d5520B3Ce285D41e6dC10C08716C9",
         trusted: false,
-        stalenessPeriod: HOUR_1_BUFFERED,
+        stalenessPeriod: HOUR_24,
       },
       Reserve: {
         type: PriceFeedType.REDSTONE_ORACLE,

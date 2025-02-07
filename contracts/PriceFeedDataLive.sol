@@ -768,7 +768,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: TOKEN_USDC,
                 priceFeed: 0x55bCa887199d5520B3Ce285D41e6dC10C08716C9,
-                stalenessPeriod: 4500,
+                stalenessPeriod: 86400,
                 trusted: false,
                 reserve: false
             })
