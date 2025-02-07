@@ -20,6 +20,7 @@ export enum RouterProtocols {
   DaiUsdsSwap,
   SKY,
   LlamaThena,
+  Equalizer,
 }
 
 export enum RouterComponent {

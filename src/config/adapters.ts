@@ -69,7 +69,7 @@ export interface UniV3Config {
 }
 
 export interface VelodromeCLConfig {
-  contract: "VELODROME_CL_ROUTER";
+  contract: "VELODROME_CL_ROUTER" | "SHADOW_ROUTER";
   allowed: Array<VelodromeCLPool>;
 }
 
@@ -78,7 +78,7 @@ export interface UniswapV3Pair extends GenericSwapPair {
 }
 
 export interface VelodromeCLPool extends GenericSwapPair {
-  tickSpacing: 1 | 50 | 100 | 200 | 2000;
+  tickSpacing: 1 | 5 | 50 | 100 | 200 | 2000;
 }
 
 export interface VelodromeV2Pool {
@@ -93,6 +93,17 @@ export interface VelodromeV2Config {
   allowed: Array<VelodromeV2Pool>;
 }
 
+export interface EqualizerPool {
+  token0: SupportedToken;
+  token1: SupportedToken;
+  stable: boolean;
+}
+
+export interface EqualizerConfig {
+  contract: "EQUALIZER_ROUTER";
+  allowed: Array<EqualizerPool>;
+}
+
 export type AdapterConfig =
   | DefaultAdapterConfig
   | UniV3Config
@@ -100,4 +111,5 @@ export type AdapterConfig =
   | BalancerVaultConfig
   | VelodromeV2Config
   | PendleRouterConfig
-  | VelodromeCLConfig;
+  | VelodromeCLConfig
+  | EqualizerConfig;

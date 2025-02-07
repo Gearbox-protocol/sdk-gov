@@ -220,7 +220,8 @@ ${contracts}
 
       case "UNISWAP_V3_ROUTER":
       case "PANCAKESWAP_V3_ROUTER":
-      case "VELODROME_CL_ROUTER": {
+      case "VELODROME_CL_ROUTER":
+      case "SHADOW_ROUTER": {
         const pairs = ((a as UniV3Config | VelodromeCLConfig).allowed || [])
           .map(
             pair => `uv3p.push(UniswapV3Pair({
@@ -228,7 +229,7 @@ ${contracts}
           token0: TOKEN_${safeEnum(pair.token0)},
           token1: TOKEN_${safeEnum(pair.token1)},
           fee: ${
-            a.contract === "VELODROME_CL_ROUTER"
+            ["VELODROME_CL_ROUTER", "SHADOW_ROUTER"].includes(a.contract)
               ? (pair as VelodromeCLPool).tickSpacing
               : (pair as UniswapV3Pair).fee
           }

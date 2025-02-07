@@ -9,6 +9,7 @@ export const LOCAL_NETWORK = 1337;
 export const HARDHAT_NETWORK = 31337;
 export const ARBITRUM_NETWORK = 42161;
 export const BASE_NETWORK = 8453;
+export const SONIC_NETWORK = 146;
 
 export const CHAINS = {
   Mainnet: MAINNET_NETWORK,
@@ -17,6 +18,7 @@ export const CHAINS = {
   Hardhat: HARDHAT_NETWORK,
   Optimism: OPTIMISM_NETWORK,
   Base: BASE_NETWORK,
+  Sonic: SONIC_NETWORK,
 } as const;
 
 export const supportedChains = [
@@ -24,6 +26,7 @@ export const supportedChains = [
   "Arbitrum",
   "Optimism",
   "Base",
+  "Sonic",
 ] as const;
 export type NetworkType = (typeof supportedChains)[number]; // "Polygon";
 
@@ -32,6 +35,7 @@ const SUPPORTED_CHAINS: Record<number, NetworkType> = {
   [CHAINS.Arbitrum]: "Arbitrum",
   [CHAINS.Local]: "Mainnet",
   [CHAINS.Optimism]: "Optimism",
+  [CHAINS.Sonic]: "Sonic",
   // [CHAINS.Base]: "Polygon",
 };
 
@@ -62,12 +66,15 @@ export const detectNetwork = async (
   const mainnetUSDC = tokenDataByNetwork.Mainnet["USDC"];
   const arbitrumUSDC = tokenDataByNetwork.Arbitrum["USDC"];
   const optimismUSDC = tokenDataByNetwork.Optimism["USDC"];
+  const sonicUSDC = tokenDataByNetwork.Sonic["USDC"];
 
   const mainnetUSDCContract = new Contract(mainnetUSDC, usdcABI, provider);
 
   const arbitrumUSDCContract = new Contract(arbitrumUSDC, usdcABI, provider);
 
   const optimismUSDCContract = new Contract(optimismUSDC, usdcABI, provider);
+
+  const sonicUSDCContract = new Contract(sonicUSDC, usdcABI, provider);
 
   try {
     await mainnetUSDCContract.symbol();
@@ -82,6 +89,11 @@ export const detectNetwork = async (
   try {
     await optimismUSDCContract.symbol();
     return "Optimism" as NetworkType;
+  } catch {}
+
+  try {
+    await sonicUSDCContract.symbol();
+    return "Sonic" as NetworkType;
   } catch {}
 
   throw new Error("Unsupported network");

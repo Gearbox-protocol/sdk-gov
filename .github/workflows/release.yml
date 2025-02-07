@@ -6,6 +6,7 @@ on:
       - "main"
       - "next"
       - "1.x"
+      - "sonic"
 
 env:
   HUSKY: 0
