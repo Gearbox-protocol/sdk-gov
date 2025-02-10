@@ -47,6 +47,7 @@ const collateralTokens: CollateralToken[] = [
   { token: "Re7LRT", lt: 0 },
   { token: "steakLRT", lt: 0 },
   { token: "waEthLidowstETH", lt: 0 },
+  { token: "rstETH_Lido_wstETH", lt: 0 },
 ];
 
 const adapters: AdapterConfig[] = [
@@ -148,6 +149,12 @@ export const wstethConfigMainnet: PoolV3DeployConfig = {
       limit: BigInt(0),
     },
     waEthLidowstETH: {
+      minRate: 1,
+      maxRate: 1,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0),
+    },
+    rstETH_Lido_wstETH: {
       minRate: 1,
       maxRate: 1,
       quotaIncreaseFee: 0,
