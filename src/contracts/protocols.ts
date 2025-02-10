@@ -24,5 +24,4 @@ export enum Protocols {
   Pendle,
   Sky,
   Equalizer,
-  BalancerV3,
 }
