@@ -4002,8 +4002,8 @@ export const priceFeedsByToken: Record<
   DVstETH: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.ERC4626_VAULT_ORACLE,
-        underlying: "wstETH",
+        type: PriceFeedType.MELLOW_LRT_ORACLE,
+        underlying: "WETH",
         trusted: false,
       },
       Reserve: {

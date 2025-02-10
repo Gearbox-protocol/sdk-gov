@@ -8579,8 +8579,8 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ DVstETH ------------------------
-        erc4626PriceFeedsByNetwork[1].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        mellowLRTPriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
         );
         redStonePriceFeedsByNetwork[1].push(
             RedStonePriceFeedData({
@@ -8604,8 +8604,8 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
-        erc4626PriceFeedsByNetwork[42161].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        mellowLRTPriceFeedsByNetwork[42161].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
         );
         redStonePriceFeedsByNetwork[42161].push(
             RedStonePriceFeedData({
@@ -8629,8 +8629,8 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
-        erc4626PriceFeedsByNetwork[10].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        mellowLRTPriceFeedsByNetwork[10].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
         );
         redStonePriceFeedsByNetwork[10].push(
             RedStonePriceFeedData({
@@ -8654,8 +8654,8 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
-        erc4626PriceFeedsByNetwork[8453].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        mellowLRTPriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
         );
         redStonePriceFeedsByNetwork[8453].push(
             RedStonePriceFeedData({

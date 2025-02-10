@@ -1,6 +1,5 @@
 import {
   AdapterConfig,
-  BalancerV3PoolConfig,
   BalancerV3VaultConfig,
   BalancerVaultConfig,
 } from "../adapters";
@@ -52,7 +51,6 @@ const collateralTokens: CollateralToken[] = [
 
 const adapters: AdapterConfig[] = [
   { contract: "MELLOW_RESTAKING_VAULT" },
-  { contract: "MELLOW_DECENTALIZED_VALIDATOR_VAULT" },
   { contract: "AAVE_WSTETH_VAULT" },
   balancerConfig,
   balancerV3Config,
