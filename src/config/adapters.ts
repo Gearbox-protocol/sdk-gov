@@ -21,6 +21,7 @@ export type AdapterDeployConfig =
   | UniV3Config
   | GenericSwapConfig
   | BalancerVaultConfig
+  | BalancerV3VaultConfig
   | VelodromeV2Config
   | PendleRouterConfig;
 
