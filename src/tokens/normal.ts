@@ -82,6 +82,8 @@ export type NormalToken =
   | "PT_corn_eBTC_27MAR2025"
   | "PT_sUSDe_27MAR2025"
   | "PT_sUSDe_29MAY2025"
+  // Balancer V3
+  | "rstETH_Lido_wstETH"
 
   // REDSTONE
   | "SHIB"
@@ -533,6 +535,12 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   PT_sUSDe_29MAY2025: {
     name: "Pendle PT Ethena sUSDE 29 May 2025 expiry",
     symbol: "PT_sUSDe_29MAY2025",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+
+  rstETH_Lido_wstETH: {
+    name: "Balancer V3 rstETH-Lido wstETH",
+    symbol: "rstETH_Lido_wstETH",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };

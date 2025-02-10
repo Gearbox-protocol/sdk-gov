@@ -3708,6 +3708,14 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  waEthLidowstETH: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
   tETH: {
     Mainnet: {
       Main: {
@@ -4231,6 +4239,15 @@ export const priceFeedsByToken: Record<
         market: "0xB162B764044697cf03617C2EFbcB1f42e31E4766",
         twapWindow: HOUR_1 / 2,
         priceToSy: false,
+      },
+    },
+  },
+
+  rstETH_Lido_wstETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
       },
     },
   },

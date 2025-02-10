@@ -225,6 +225,7 @@ export const tokenDataByNetwork: Record<
     USDS: "0xdC035D45d973E3EC169d2276DDab16f1e407384F",
     SKY: "0x56072C95FAA701256059aa122697B133aDEd9279",
     T: "0xCdF7028ceAB81fA0C6971208e83fa7872994beE5",
+    tETH: "0xD11c452fc99cF405034ee446803b6F6c1F6d5ED8",
 
     // CURVE LP TOKENS
     "3Crv": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
@@ -399,6 +400,9 @@ export const tokenDataByNetwork: Record<
     PT_sUSDe_27MAR2025: "0xE00bd3Df25fb187d6ABBB620b3dfd19839947b81",
     PT_sUSDe_29MAY2025: "0xb7de5dFCb74d25c2f21841fbd6230355C50d9308",
 
+    // Balancer V3
+    rstETH_Lido_wstETH: "0x121edB0bADc036F5FC610D015EE14093C142313B",
+
     // GEARBOX
     dDAI: "0x6CFaF95457d7688022FC53e7AbE052ef8DFBbdBA",
     dUSDC: "0xc411dB5f5Eb3f7d552F9B8454B2D74097ccdE6E3",
@@ -441,7 +445,7 @@ export const tokenDataByNetwork: Record<
     sUSDe: "0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
     sUSDS: "0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD",
     scrvUSD: "0x0655977FEb2f289A4aB78af67BAB0d17aAb84367",
-    tETH: "0xD11c452fc99cF405034ee446803b6F6c1F6d5ED8",
+    waEthLidowstETH: "0x775F661b0bD1739349b9A2A3EF60be277c5d2D29",
 
     beraSTONE: "0x97Ad75064b20fb2B2447feD4fa953bF7F007a706",
 
@@ -542,6 +546,7 @@ export const tokenDataByNetwork: Record<
     pufETH: NOT_DEPLOYED,
     USDS: NOT_DEPLOYED,
     T: NOT_DEPLOYED,
+    tETH: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -720,6 +725,9 @@ export const tokenDataByNetwork: Record<
     PT_sUSDe_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_29MAY2025: NOT_DEPLOYED,
 
+    // Balancer V3
+    rstETH_Lido_wstETH: NOT_DEPLOYED,
+
     // GEARBOX
     dDAI: NOT_DEPLOYED,
     dUSDC: NOT_DEPLOYED,
@@ -781,7 +789,7 @@ export const tokenDataByNetwork: Record<
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
     scrvUSD: NOT_DEPLOYED,
-    tETH: NOT_DEPLOYED,
+    waEthLidowstETH: NOT_DEPLOYED,
 
     beraSTONE: NOT_DEPLOYED,
 
@@ -862,6 +870,7 @@ export const tokenDataByNetwork: Record<
     USDS: NOT_DEPLOYED,
     SKY: NOT_DEPLOYED,
     T: NOT_DEPLOYED,
+    tETH: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -1038,6 +1047,9 @@ export const tokenDataByNetwork: Record<
     PT_sUSDe_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_29MAY2025: NOT_DEPLOYED,
 
+    // Balancer V3
+    rstETH_Lido_wstETH: NOT_DEPLOYED,
+
     // GEARBOX
     dDAI: NOT_DEPLOYED,
     dUSDC: NOT_DEPLOYED,
@@ -1099,7 +1111,7 @@ export const tokenDataByNetwork: Record<
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
     scrvUSD: NOT_DEPLOYED,
-    tETH: NOT_DEPLOYED,
+    waEthLidowstETH: NOT_DEPLOYED,
 
     beraSTONE: NOT_DEPLOYED,
 
@@ -1184,6 +1196,7 @@ export const tokenDataByNetwork: Record<
     pufETH: NOT_DEPLOYED,
     USDS: NOT_DEPLOYED,
     T: NOT_DEPLOYED,
+    tETH: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -1358,6 +1371,9 @@ export const tokenDataByNetwork: Record<
     PT_sUSDe_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_29MAY2025: NOT_DEPLOYED,
 
+    // Balancer V3
+    rstETH_Lido_wstETH: NOT_DEPLOYED,
+
     // GEARBOX
     dDAI: NOT_DEPLOYED,
     dUSDC: NOT_DEPLOYED,
@@ -1417,7 +1433,7 @@ export const tokenDataByNetwork: Record<
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
     scrvUSD: NOT_DEPLOYED,
-    tETH: NOT_DEPLOYED,
+    waEthLidowstETH: NOT_DEPLOYED,
 
     beraSTONE: NOT_DEPLOYED,
 
@@ -1688,6 +1704,7 @@ export const tickerInfoTokensByNetwork: Record<
         reserve: true,
       },
     ],
+
     stkUSDS: [
       {
         symbol: "DAI",

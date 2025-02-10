@@ -7324,6 +7324,11 @@ contract PriceFeedDataLive {
             GenericLPPriceFeedData({lpToken: TOKEN_scrvUSD, underlying: TOKEN_crvUSD, trusted: false, reserve: true})
         );
 
+        // ------------------------ waEthLidowstETH ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_waEthLidowstETH, trusted: false, reserve: false})
+        );
+
         // ------------------------ tETH ------------------------
         erc4626PriceFeedsByNetwork[1].push(
             GenericLPPriceFeedData({lpToken: TOKEN_tETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
@@ -8950,6 +8955,20 @@ contract PriceFeedDataLive {
                 trusted: false,
                 reserve: true
             })
+        );
+
+        // ------------------------ rstETH_Lido_wstETH ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_rstETH_Lido_wstETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_rstETH_Lido_wstETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_rstETH_Lido_wstETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_rstETH_Lido_wstETH, trusted: false, reserve: false})
         );
     }
 

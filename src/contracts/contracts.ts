@@ -92,7 +92,7 @@ export type ERC4626VaultContract =
   | "STAKED_USDE_VAULT"
   | "STAKED_USDS_VAULT"
   | "SAVINGS_CRVUSD_VAULT"
-  | "TREEHOUSE_ETH_VAULT";
+  | "AAVE_WSTETH_VAULT";
 
 export type ConvexPoolContract =
   | "CONVEX_3CRV_POOL"
@@ -165,6 +165,7 @@ export type SupportedContract =
   | "LIDO_WSTETH"
   | "UNIVERSAL_ADAPTER"
   | "BALANCER_VAULT"
+  | "BALANCER_V3_ROUTER"
   | "AAVE_V2_LENDING_POOL"
   | AaveV2TokenWrapperContract
   | CompoundV2PoolContract
@@ -267,7 +268,7 @@ export const contractsByNetwork: Record<
     STAKED_USDE_VAULT: tokenDataByNetwork.Mainnet.sUSDe,
     STAKED_USDS_VAULT: tokenDataByNetwork.Mainnet.sUSDS,
     SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Mainnet.scrvUSD,
-    TREEHOUSE_ETH_VAULT: tokenDataByNetwork.Mainnet.tETH,
+    AAVE_WSTETH_VAULT: tokenDataByNetwork.Mainnet.waEthLidowstETH,
 
     // CONVEX
     CONVEX_BOOSTER: "0xF403C135812408BFbE8713b5A23a04b3D48AAE31",
@@ -314,6 +315,7 @@ export const contractsByNetwork: Record<
 
     // BALANCER
     BALANCER_VAULT: "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+    BALANCER_V3_ROUTER: "0x5C6fb490BDFD3246EB0bB062c168DeCAF4bD9FDd",
 
     // GEARBOX
     UNIVERSAL_ADAPTER: "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC",
@@ -443,7 +445,7 @@ export const contractsByNetwork: Record<
     STAKED_USDE_VAULT: tokenDataByNetwork.Arbitrum.sUSDe,
     STAKED_USDS_VAULT: tokenDataByNetwork.Arbitrum.sUSDS,
     SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Arbitrum.scrvUSD,
-    TREEHOUSE_ETH_VAULT: tokenDataByNetwork.Arbitrum.tETH,
+    AAVE_WSTETH_VAULT: tokenDataByNetwork.Arbitrum.waEthLidowstETH,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -491,6 +493,7 @@ export const contractsByNetwork: Record<
 
     // BALANCER
     BALANCER_VAULT: "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+    BALANCER_V3_ROUTER: NOT_DEPLOYED,
 
     // GEARBOX
     UNIVERSAL_ADAPTER: "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC",
@@ -617,7 +620,7 @@ export const contractsByNetwork: Record<
     STAKED_USDE_VAULT: tokenDataByNetwork.Optimism.sUSDe,
     STAKED_USDS_VAULT: tokenDataByNetwork.Optimism.sUSDS,
     SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Optimism.scrvUSD,
-    TREEHOUSE_ETH_VAULT: tokenDataByNetwork.Optimism.tETH,
+    AAVE_WSTETH_VAULT: tokenDataByNetwork.Optimism.waEthLidowstETH,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -666,6 +669,7 @@ export const contractsByNetwork: Record<
 
     // BALANCER
     BALANCER_VAULT: "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+    BALANCER_V3_ROUTER: NOT_DEPLOYED,
 
     // GEARBOX
     UNIVERSAL_ADAPTER: "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC",
@@ -791,7 +795,7 @@ export const contractsByNetwork: Record<
     STAKED_USDE_VAULT: tokenDataByNetwork.Base.sUSDe,
     STAKED_USDS_VAULT: tokenDataByNetwork.Base.sUSDS,
     SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Base.scrvUSD,
-    TREEHOUSE_ETH_VAULT: tokenDataByNetwork.Base.tETH,
+    AAVE_WSTETH_VAULT: tokenDataByNetwork.Base.waEthLidowstETH,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -837,6 +841,7 @@ export const contractsByNetwork: Record<
 
     // BALANCER
     BALANCER_VAULT: NOT_DEPLOYED,
+    BALANCER_V3_ROUTER: NOT_DEPLOYED,
 
     // GEARBOX
     UNIVERSAL_ADAPTER: NOT_DEPLOYED,
@@ -897,6 +902,8 @@ export const PENDLE_ROUTER_STATIC_ARBITRUM =
   "0xAdB09F65bd90d19e3148D9ccb693F3161C6DB3E8";
 export const PENDLE_ROUTER_STATIC_OPTIMISM =
   "0x704478Dd72FD7F9B83d1F1e0fc18C14B54F034d0";
+
+export const BALANCER_V3_QUERIES = "0xDfC266d1581be6E5F20Fc7138A8d5B38A5E33f98";
 
 export interface BaseContractParams {
   name: string;
@@ -976,7 +983,8 @@ export type ERC4626Params = {
     | Protocols.Sommelier
     | Protocols.Ethena
     | Protocols.Sky
-    | Protocols.Curve;
+    | Protocols.Curve
+    | Protocols.AaveV3;
   type: AdapterInterface.ERC4626_VAULT;
   underlying: NormalToken;
 } & BaseContractParams;
@@ -1052,6 +1060,12 @@ export type BalancerParams = {
   queries: Record<NetworkType, Address>;
 } & BaseContractParams;
 
+export type BalancerV3Params = {
+  protocol: Protocols.Balancer;
+  type: AdapterInterface.BALANCER_V3_ROUTER;
+  queries: Record<NetworkType, Address>;
+} & BaseContractParams;
+
 export type AaveV2Params = {
   protocol: Protocols.AaveV2;
   type: AdapterInterface.AAVE_V2_LENDING_POOL;
@@ -1116,6 +1130,7 @@ export type ContractParams =
   | LidoWsthETHParams
   | UniversalParams
   | BalancerParams
+  | BalancerV3Params
   | AaveV2Params
   | AaveV3Params
   | WrapperAaveV2Params
@@ -1709,18 +1724,19 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.ERC4626_VAULT,
     underlying: "USDS",
   },
+  AAVE_WSTETH_VAULT: {
+    name: "Wrapped Aave Ethereum Lido wstETH Vault",
+    protocol: Protocols.AaveV3,
+    type: AdapterInterface.ERC4626_VAULT,
+    underlying: "wstETH",
+  },
   SAVINGS_CRVUSD_VAULT: {
     name: "Savings crvUSD Vault",
     protocol: Protocols.Curve,
     type: AdapterInterface.ERC4626_VAULT,
     underlying: "crvUSD",
   },
-  TREEHOUSE_ETH_VAULT: {
-    name: "Treehouse ETH Vault",
-    protocol: Protocols.Curve,
-    type: AdapterInterface.ERC4626_VAULT,
-    underlying: "wstETH",
-  },
+
   CONVEX_BOOSTER: {
     name: "Convex BOOSTER",
     protocol: Protocols.Convex,
@@ -2252,6 +2268,17 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
       Mainnet: "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5",
       Arbitrum: "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5",
       Optimism: "0xE39B5e3B6D74016b2F6A9673D7d7493B6DF549d5",
+      Base: NOT_DEPLOYED,
+    },
+  },
+  BALANCER_V3_ROUTER: {
+    name: "Balancer V3 Router",
+    protocol: Protocols.Balancer,
+    type: AdapterInterface.BALANCER_V3_ROUTER,
+    queries: {
+      Mainnet: BALANCER_V3_QUERIES,
+      Arbitrum: NOT_DEPLOYED,
+      Optimism: NOT_DEPLOYED,
       Base: NOT_DEPLOYED,
     },
   },

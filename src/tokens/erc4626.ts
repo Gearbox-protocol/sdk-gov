@@ -10,7 +10,8 @@ export type ERC4626LPToken =
   | "YieldETH"
   | "sUSDe"
   | "sUSDS"
-  | "scrvUSD";
+  | "scrvUSD"
+  | "waEthLidowstETH";
 
 export type ERC4626VaultTokenData = {
   symbol: ERC4626LPToken;
@@ -68,6 +69,13 @@ export const erc4626Tokens: Record<
     type: { AllNetworks: TokenType.ERC4626_VAULT_TOKEN },
     underlying: "crvUSD",
     vault: "SAVINGS_CRVUSD_VAULT",
+  },
+  waEthLidowstETH: {
+    name: "Wrapped Aave Ethereum Lido wstETH",
+    symbol: "waEthLidowstETH",
+    type: { AllNetworks: TokenType.ERC4626_VAULT_TOKEN },
+    underlying: "wstETH",
+    vault: "AAVE_WSTETH_VAULT",
   },
 };
 

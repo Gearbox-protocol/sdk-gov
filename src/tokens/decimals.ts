@@ -261,6 +261,7 @@ export const decimals: Record<SupportedToken, number> = {
   sDAI: 18,
   sUSDe: 18,
   sUSDS: 18,
+  waEthLidowstETH: 18,
   YieldETH: 18,
   scrvUSD: 18,
   tETH: 18,
@@ -280,4 +281,5 @@ export const decimals: Record<SupportedToken, number> = {
   PT_corn_eBTC_27MAR2025: 8,
   PT_sUSDe_27MAR2025: 18,
   PT_sUSDe_29MAY2025: 18,
+  rstETH_Lido_wstETH: 18,
 };

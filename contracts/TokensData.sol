@@ -609,6 +609,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_rstETH_Lido_wstETH,
+                addr: 0x121edB0bADc036F5FC610D015EE14093C142313B,
+                symbol: "rstETH_Lido_wstETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_sfrxETH,
                 addr: 0xac3E018457B222d93114458476f3E3416Abbe38F,
                 symbol: "sfrxETH",
@@ -1522,6 +1530,14 @@ contract TokensDataLive {
                 id: TOKEN_scrvUSD,
                 addr: 0x0655977FEb2f289A4aB78af67BAB0d17aAb84367,
                 symbol: "scrvUSD",
+                tokenType: TokenType.ERC4626_VAULT_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_waEthLidowstETH,
+                addr: 0x775F661b0bD1739349b9A2A3EF60be277c5d2D29,
+                symbol: "waEthLidowstETH",
                 tokenType: TokenType.ERC4626_VAULT_TOKEN
             })
         );
