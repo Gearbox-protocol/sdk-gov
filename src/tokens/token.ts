@@ -399,6 +399,7 @@ export const tokenDataByNetwork: Record<
     PT_corn_eBTC_27MAR2025: "0x44A7876cA99460ef3218bf08b5f52E2dbE199566",
     PT_sUSDe_27MAR2025: "0xE00bd3Df25fb187d6ABBB620b3dfd19839947b81",
     PT_sUSDe_29MAY2025: "0xb7de5dFCb74d25c2f21841fbd6230355C50d9308",
+    PT_beraSTONE_10APR2025: "0x40b7B4aB1E95e28DF06971581276966FDF95688E",
 
     // Balancer V3
     rstETH_Lido_wstETH: "0x121edB0bADc036F5FC610D015EE14093C142313B",
@@ -724,6 +725,7 @@ export const tokenDataByNetwork: Record<
     PT_corn_eBTC_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_29MAY2025: NOT_DEPLOYED,
+    PT_beraSTONE_10APR2025: NOT_DEPLOYED,
 
     // Balancer V3
     rstETH_Lido_wstETH: NOT_DEPLOYED,
@@ -1046,6 +1048,7 @@ export const tokenDataByNetwork: Record<
     PT_corn_eBTC_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_29MAY2025: NOT_DEPLOYED,
+    PT_beraSTONE_10APR2025: NOT_DEPLOYED,
 
     // Balancer V3
     rstETH_Lido_wstETH: NOT_DEPLOYED,
@@ -1370,6 +1373,7 @@ export const tokenDataByNetwork: Record<
     PT_corn_eBTC_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_29MAY2025: NOT_DEPLOYED,
+    PT_beraSTONE_10APR2025: NOT_DEPLOYED,
 
     // Balancer V3
     rstETH_Lido_wstETH: NOT_DEPLOYED,
@@ -1813,6 +1817,15 @@ export const tickerInfoTokensByNetwork: Record<
         dataId: "USDe",
         address: tokenDataByNetwork.Mainnet.USDe,
         priceFeed: "0x8A58F957B99E1ED6B3DF20F267a6d5a6dd8e3513",
+        reserve: true,
+      },
+    ],
+    PT_beraSTONE_10APR2025: [
+      {
+        symbol: "beraSTONE/ETH",
+        dataId: "beraSTONE_FUNDAMENTAL",
+        address: tokenDataByNetwork.Mainnet.beraSTONE,
+        priceFeed: "0xf12b7879713FA998B39b3C7C9c2631E40a0b9dfB",
         reserve: true,
       },
     ],

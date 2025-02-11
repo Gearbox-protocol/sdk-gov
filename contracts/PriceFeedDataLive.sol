@@ -8957,6 +8957,30 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ PT_beraSTONE_10APR2025 ------------------------
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: TOKEN_PT_beraSTONE_10APR2025,
+                underlying: TOKEN_beraSTONE,
+                market: 0x7561C5CCfe41A26B33944B58C70D6a3CB63E881c,
+                twapWindow: 1800,
+                priceToSy: true,
+                trusted: false,
+                reserve: false
+            })
+        );
+        pendlePriceFeedsByNetwork[1].push(
+            PendlePriceFeedData({
+                token: TOKEN_PT_beraSTONE_10APR2025,
+                underlying: TOKEN_beraSTONE,
+                market: 0x7561C5CCfe41A26B33944B58C70D6a3CB63E881c,
+                twapWindow: 1800,
+                priceToSy: true,
+                trusted: false,
+                reserve: true
+            })
+        );
+
         // ------------------------ rstETH_Lido_wstETH ------------------------
         zeroPriceFeedsByNetwork[1].push(
             SingeTokenPriceFeedData({token: TOKEN_rstETH_Lido_wstETH, trusted: false, reserve: false})

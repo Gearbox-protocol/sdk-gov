@@ -609,6 +609,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_PT_beraSTONE_10APR2025,
+                addr: 0x40b7B4aB1E95e28DF06971581276966FDF95688E,
+                symbol: "PT_beraSTONE_10APR2025",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_rstETH_Lido_wstETH,
                 addr: 0x121edB0bADc036F5FC610D015EE14093C142313B,
                 symbol: "rstETH_Lido_wstETH",

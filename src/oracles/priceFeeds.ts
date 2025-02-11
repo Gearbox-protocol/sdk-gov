@@ -4243,6 +4243,27 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  PT_beraSTONE_10APR2025: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "beraSTONE",
+
+        market: "0x7561C5CCfe41A26B33944B58C70D6a3CB63E881c",
+        twapWindow: HOUR_1 / 2,
+        priceToSy: true,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "beraSTONE",
+        market: "0x7561C5CCfe41A26B33944B58C70D6a3CB63E881c",
+        twapWindow: HOUR_1 / 2,
+        priceToSy: true,
+      },
+    },
+  },
+
   rstETH_Lido_wstETH: {
     AllNetworks: {
       Main: {

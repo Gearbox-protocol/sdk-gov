@@ -82,6 +82,8 @@ export type NormalToken =
   | "PT_corn_eBTC_27MAR2025"
   | "PT_sUSDe_27MAR2025"
   | "PT_sUSDe_29MAY2025"
+  | "PT_beraSTONE_10APR2025"
+
   // Balancer V3
   | "rstETH_Lido_wstETH"
 
@@ -535,6 +537,11 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   PT_sUSDe_29MAY2025: {
     name: "Pendle PT Ethena sUSDE 29 May 2025 expiry",
     symbol: "PT_sUSDe_29MAY2025",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  PT_beraSTONE_10APR2025: {
+    name: "Pendle PT Berachain STONE 10 April 2025 expiry",
+    symbol: "PT_beraSTONE_10APR2025",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 
