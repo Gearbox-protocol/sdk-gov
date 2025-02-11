@@ -2921,6 +2921,15 @@ contract TokensDataLive {
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );
+
+        tokenDataByNetwork[146].push(
+            TokenData({
+                id: TOKEN_GEAR,
+                addr: 0x0fDbce271bea0d9819034cd09021e0bBE94be3Fd,
+                symbol: "GEAR",
+                tokenType: TokenType.GEAR_TOKEN
+            })
+        );
     }
 
     function getTokenData(uint256 chainId) external view returns (TokenData[] memory) {

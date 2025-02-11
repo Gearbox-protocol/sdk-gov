@@ -1739,7 +1739,7 @@ export const tokenDataByNetwork: Record<
     dUSDC_eV3: NOT_DEPLOYED,
     sdUSDC_eV3: NOT_DEPLOYED,
 
-    GEAR: NOT_DEPLOYED,
+    GEAR: "0x0fDbce271bea0d9819034cd09021e0bBE94be3Fd",
 
     // AAVE
     aUSDC: NOT_DEPLOYED,
