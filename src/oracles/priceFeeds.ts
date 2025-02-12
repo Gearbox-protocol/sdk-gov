@@ -2886,14 +2886,7 @@ export const priceFeedsByToken: Record<
       },
     },
   },
-  DVstETH_wstETH_BPT: {
-    AllNetworks: {
-      Main: {
-        type: PriceFeedType.ZERO_ORACLE,
-        trusted: false,
-      },
-    },
-  },
+
   weETH_ezETH_rswETH: {
     AllNetworks: {
       Main: {
@@ -4227,7 +4220,6 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
         underlying: "USDe",
-
         market: "0xB162B764044697cf03617C2EFbcB1f42e31E4766",
         twapWindow: HOUR_1 / 2,
         priceToSy: false,
@@ -4248,7 +4240,6 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
         underlying: "beraSTONE",
-
         market: "0x7561C5CCfe41A26B33944B58C70D6a3CB63E881c",
         twapWindow: HOUR_1 / 2,
         priceToSy: true,
@@ -4265,6 +4256,14 @@ export const priceFeedsByToken: Record<
   },
 
   rstETH_Lido_wstETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  DVstETH_Prime_wstETH: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,

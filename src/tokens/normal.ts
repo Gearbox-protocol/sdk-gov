@@ -86,6 +86,7 @@ export type NormalToken =
 
   // Balancer V3
   | "rstETH_Lido_wstETH"
+  | "DVstETH_Prime_wstETH"
 
   // REDSTONE
   | "SHIB"
@@ -548,6 +549,11 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   rstETH_Lido_wstETH: {
     name: "Balancer V3 rstETH-Lido wstETH",
     symbol: "rstETH_Lido_wstETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  DVstETH_Prime_wstETH: {
+    name: "Balancer V3 DVstETH-Prime wstETH",
+    symbol: "DVstETH_Prime_wstETH",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };

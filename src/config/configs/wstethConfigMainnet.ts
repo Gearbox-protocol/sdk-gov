@@ -11,21 +11,15 @@ import {
 
 const POOL_DECIMALS = BigInt(1e18);
 
-const balancerConfig: BalancerVaultConfig = {
-  contract: "BALANCER_VAULT",
-  allowed: [
-    {
-      pool: "DVstETH_wstETH_BPT",
-      status: 2,
-    },
-  ],
-};
-
 const balancerV3Config: BalancerV3VaultConfig = {
   contract: "BALANCER_V3_ROUTER",
   allowed: [
     {
       pool: "rstETH_Lido_wstETH",
+      status: true,
+    },
+    {
+      pool: "DVstETH_Prime_wstETH",
       status: true,
     },
   ],
@@ -42,18 +36,17 @@ const collateralTokens: CollateralToken[] = [
   },
 
   // COMPATIBILITY
-  { token: "DVstETH_wstETH_BPT", lt: 0 },
   { token: "amphrETH", lt: 0 },
   { token: "Re7LRT", lt: 0 },
   { token: "steakLRT", lt: 0 },
   { token: "waEthLidowstETH", lt: 0 },
   { token: "rstETH_Lido_wstETH", lt: 0 },
+  { token: "DVstETH_Prime_wstETH", lt: 0 },
 ];
 
 const adapters: AdapterConfig[] = [
   { contract: "MELLOW_RESTAKING_VAULT" },
   { contract: "AAVE_WSTETH_VAULT" },
-  balancerConfig,
   balancerV3Config,
 ];
 
@@ -104,8 +97,8 @@ export const wstethConfigMainnet: PoolV3DeployConfig = {
     U1: 7000,
     U2: 9000,
     Rbase: 0,
-    Rslope1: 0,
-    Rslope2: 0,
+    Rslope1: 20,
+    Rslope2: 50,
     Rslope3: 3000,
     isBorrowingMoreU2Forbidden: true,
   },
@@ -124,12 +117,6 @@ export const wstethConfigMainnet: PoolV3DeployConfig = {
     },
 
     // COMPATIBILITY
-    DVstETH_wstETH_BPT: {
-      minRate: 1,
-      maxRate: 1,
-      quotaIncreaseFee: 0,
-      limit: BigInt(0),
-    },
     amphrETH: {
       minRate: 1,
       maxRate: 1,
@@ -155,6 +142,12 @@ export const wstethConfigMainnet: PoolV3DeployConfig = {
       limit: BigInt(0),
     },
     rstETH_Lido_wstETH: {
+      minRate: 1,
+      maxRate: 1,
+      quotaIncreaseFee: 0,
+      limit: BigInt(0),
+    },
+    DVstETH_Prime_wstETH: {
       minRate: 1,
       maxRate: 1,
       quotaIncreaseFee: 0,

@@ -625,6 +625,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_DVstETH_Prime_wstETH,
+                addr: 0xeb95d6BD67f613E7918A031d9F4a9a92766659aC,
+                symbol: "DVstETH_Prime_wstETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_sfrxETH,
                 addr: 0xac3E018457B222d93114458476f3E3416Abbe38F,
                 symbol: "sfrxETH",
@@ -1368,14 +1376,6 @@ contract TokensDataLive {
                 id: TOKEN_trenSTETH,
                 addr: 0x4216d5900a6109bba48418b5e2AB6cc4e61Cf477,
                 symbol: "trenSTETH",
-                tokenType: TokenType.BALANCER_LP_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: TOKEN_DVstETH_wstETH_BPT,
-                addr: 0x632aafC2D3D2cA1764E702aa25c065c273Cd08eD,
-                symbol: "DVstETH_wstETH_BPT",
                 tokenType: TokenType.BALANCER_LP_TOKEN
             })
         );

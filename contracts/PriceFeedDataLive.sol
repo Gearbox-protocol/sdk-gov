@@ -6117,20 +6117,6 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_trenSTETH, trusted: false, reserve: false})
         );
 
-        // ------------------------ DVstETH_wstETH_BPT ------------------------
-        zeroPriceFeedsByNetwork[1].push(
-            SingeTokenPriceFeedData({token: TOKEN_DVstETH_wstETH_BPT, trusted: false, reserve: false})
-        );
-        zeroPriceFeedsByNetwork[42161].push(
-            SingeTokenPriceFeedData({token: TOKEN_DVstETH_wstETH_BPT, trusted: false, reserve: false})
-        );
-        zeroPriceFeedsByNetwork[10].push(
-            SingeTokenPriceFeedData({token: TOKEN_DVstETH_wstETH_BPT, trusted: false, reserve: false})
-        );
-        zeroPriceFeedsByNetwork[8453].push(
-            SingeTokenPriceFeedData({token: TOKEN_DVstETH_wstETH_BPT, trusted: false, reserve: false})
-        );
-
         // ------------------------ weETH_ezETH_rswETH ------------------------
         zeroPriceFeedsByNetwork[1].push(
             SingeTokenPriceFeedData({token: TOKEN_weETH_ezETH_rswETH, trusted: false, reserve: false})
@@ -8993,6 +8979,20 @@ contract PriceFeedDataLive {
         );
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_rstETH_Lido_wstETH, trusted: false, reserve: false})
+        );
+
+        // ------------------------ DVstETH_Prime_wstETH ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH_Prime_wstETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH_Prime_wstETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH_Prime_wstETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH_Prime_wstETH, trusted: false, reserve: false})
         );
     }
 
