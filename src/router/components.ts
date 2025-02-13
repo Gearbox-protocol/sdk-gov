@@ -22,6 +22,7 @@ export enum RouterProtocols {
   LlamaThena,
   BalancerV3,
   Mellow4626,
+  ERC4626Swapper,
 }
 
 export enum RouterComponent {
