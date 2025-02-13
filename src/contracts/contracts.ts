@@ -91,8 +91,7 @@ export type ERC4626VaultContract =
   | "YIELD_ETH_VAULT"
   | "STAKED_USDE_VAULT"
   | "STAKED_USDS_VAULT"
-  | "SAVINGS_CRVUSD_VAULT"
-  | "AAVE_WSTETH_VAULT";
+  | "SAVINGS_CRVUSD_VAULT";
 
 export type ConvexPoolContract =
   | "CONVEX_3CRV_POOL"
@@ -145,7 +144,8 @@ export type MellowVaultContract =
   | "MELLOW_AMPHOR_VAULT"
   | "MELLOW_RESTAKING_VAULT"
   | "MELLOW_RENZO_VAULT"
-  | "MELLOW_DECENTALIZED_VALIDATOR_VAULT";
+  | "MELLOW_DECENTALIZED_VALIDATOR_VAULT"
+  | "AAVE_WSTETH_VAULT";
 
 export type StakingRewardsContract = "SKY_STAKING_REWARDS";
 
@@ -1724,12 +1724,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.ERC4626_VAULT,
     underlying: "USDS",
   },
-  AAVE_WSTETH_VAULT: {
-    name: "Wrapped Aave Ethereum Lido wstETH Vault",
-    protocol: Protocols.AaveV3,
-    type: AdapterInterface.ERC4626_VAULT,
-    underlying: "wstETH",
-  },
+
   SAVINGS_CRVUSD_VAULT: {
     name: "Savings crvUSD Vault",
     protocol: Protocols.Curve,
@@ -2384,6 +2379,11 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
   },
   MELLOW_DECENTALIZED_VALIDATOR_VAULT: {
     name: "Mellow Decentralized Validator Token vault",
+    protocol: Protocols.Mellow,
+    type: AdapterInterface.MELLOW_ERC4626_VAULT,
+  },
+  AAVE_WSTETH_VAULT: {
+    name: "Wrapped Aave Ethereum Lido wstETH Vault",
     protocol: Protocols.Mellow,
     type: AdapterInterface.MELLOW_ERC4626_VAULT,
   },

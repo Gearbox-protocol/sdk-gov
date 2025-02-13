@@ -120,9 +120,6 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.STAKED_USDS_VAULT, adapterType: AdapterType.ERC4626_VAULT})
         );
         simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.AAVE_WSTETH_VAULT, adapterType: AdapterType.ERC4626_VAULT})
-        );
-        simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.SAVINGS_CRVUSD_VAULT, adapterType: AdapterType.ERC4626_VAULT})
         );
         simpleAdapters.push(

@@ -446,7 +446,6 @@ export const tokenDataByNetwork: Record<
     sUSDe: "0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
     sUSDS: "0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD",
     scrvUSD: "0x0655977FEb2f289A4aB78af67BAB0d17aAb84367",
-    waEthLidowstETH: "0x775F661b0bD1739349b9A2A3EF60be277c5d2D29",
 
     beraSTONE: "0x97Ad75064b20fb2B2447feD4fa953bF7F007a706",
 
@@ -482,6 +481,7 @@ export const tokenDataByNetwork: Record<
     rstETH: "0x7a4EffD87C2f3C55CA251080b1343b605f327E3a",
     pzETH: "0x8c9532a60E0E7C6BbD2B2c1303F63aCE1c3E9811",
     DVstETH: "0x5E362eb2c0706Bd1d134689eC75176018385430B",
+    waEthLidowstETH: "0x775F661b0bD1739349b9A2A3EF60be277c5d2D29",
   },
 
   ///
@@ -791,7 +791,6 @@ export const tokenDataByNetwork: Record<
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
     scrvUSD: NOT_DEPLOYED,
-    waEthLidowstETH: NOT_DEPLOYED,
 
     beraSTONE: NOT_DEPLOYED,
 
@@ -808,6 +807,7 @@ export const tokenDataByNetwork: Record<
     rstETH: NOT_DEPLOYED,
     pzETH: NOT_DEPLOYED,
     DVstETH: NOT_DEPLOYED,
+    waEthLidowstETH: NOT_DEPLOYED,
   },
   ///
   ///
@@ -1114,7 +1114,6 @@ export const tokenDataByNetwork: Record<
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
     scrvUSD: NOT_DEPLOYED,
-    waEthLidowstETH: NOT_DEPLOYED,
 
     beraSTONE: NOT_DEPLOYED,
 
@@ -1131,6 +1130,7 @@ export const tokenDataByNetwork: Record<
     rstETH: NOT_DEPLOYED,
     pzETH: NOT_DEPLOYED,
     DVstETH: NOT_DEPLOYED,
+    waEthLidowstETH: NOT_DEPLOYED,
   },
   //
   //
@@ -1437,7 +1437,6 @@ export const tokenDataByNetwork: Record<
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
     scrvUSD: NOT_DEPLOYED,
-    waEthLidowstETH: NOT_DEPLOYED,
 
     beraSTONE: NOT_DEPLOYED,
 
@@ -1457,6 +1456,7 @@ export const tokenDataByNetwork: Record<
     rstETH: NOT_DEPLOYED,
     pzETH: NOT_DEPLOYED,
     DVstETH: NOT_DEPLOYED,
+    waEthLidowstETH: NOT_DEPLOYED,
   },
 };
 

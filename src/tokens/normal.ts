@@ -69,6 +69,7 @@ export type NormalToken =
   | "rstETH"
   | "pzETH"
   | "DVstETH"
+  | "waEthLidowstETH"
   // Pendle
   | "PT_rsETH_26SEP2024"
   | "PT_sUSDe_26DEC2024"
@@ -463,6 +464,11 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   DVstETH: {
     name: "Decentralized Validator Token",
     symbol: "DVstETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  waEthLidowstETH: {
+    name: "Wrapped Aave Ethereum Lido wstETH",
+    symbol: "waEthLidowstETH",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
   PT_rsETH_26SEP2024: {

@@ -21,6 +21,7 @@ export enum RouterProtocols {
   SKY,
   LlamaThena,
   BalancerV3,
+  Mellow4626,
 }
 
 export enum RouterComponent {

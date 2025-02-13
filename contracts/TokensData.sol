@@ -489,6 +489,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_waEthLidowstETH,
+                addr: 0x775F661b0bD1739349b9A2A3EF60be277c5d2D29,
+                symbol: "waEthLidowstETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_PT_rsETH_26SEP2024,
                 addr: 0x7bAf258049cc8B9A78097723dc19a8b103D4098F,
                 symbol: "PT_rsETH_26SEP2024",
@@ -1538,14 +1546,6 @@ contract TokensDataLive {
                 id: TOKEN_scrvUSD,
                 addr: 0x0655977FEb2f289A4aB78af67BAB0d17aAb84367,
                 symbol: "scrvUSD",
-                tokenType: TokenType.ERC4626_VAULT_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: TOKEN_waEthLidowstETH,
-                addr: 0x775F661b0bD1739349b9A2A3EF60be277c5d2D29,
-                symbol: "waEthLidowstETH",
                 tokenType: TokenType.ERC4626_VAULT_TOKEN
             })
         );
