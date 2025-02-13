@@ -91,7 +91,8 @@ export type ERC4626VaultContract =
   | "YIELD_ETH_VAULT"
   | "STAKED_USDE_VAULT"
   | "STAKED_USDS_VAULT"
-  | "SAVINGS_CRVUSD_VAULT";
+  | "SAVINGS_CRVUSD_VAULT"
+  | "AAVE_WSTETH_VAULT";
 
 export type ConvexPoolContract =
   | "CONVEX_3CRV_POOL"
@@ -144,8 +145,7 @@ export type MellowVaultContract =
   | "MELLOW_AMPHOR_VAULT"
   | "MELLOW_RESTAKING_VAULT"
   | "MELLOW_RENZO_VAULT"
-  | "MELLOW_DECENTALIZED_VALIDATOR_VAULT"
-  | "AAVE_WSTETH_VAULT";
+  | "MELLOW_DECENTALIZED_VALIDATOR_VAULT";
 
 export type StakingRewardsContract = "SKY_STAKING_REWARDS";
 
@@ -1732,6 +1732,13 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     underlying: "crvUSD",
   },
 
+  AAVE_WSTETH_VAULT: {
+    name: "Wrapped Aave Ethereum Lido wstETH Vault",
+    protocol: Protocols.AaveV3,
+    type: AdapterInterface.ERC4626_VAULT,
+    underlying: "wstETH",
+  },
+
   CONVEX_BOOSTER: {
     name: "Convex BOOSTER",
     protocol: Protocols.Convex,
@@ -2382,11 +2389,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     protocol: Protocols.Mellow,
     type: AdapterInterface.MELLOW_ERC4626_VAULT,
   },
-  AAVE_WSTETH_VAULT: {
-    name: "Wrapped Aave Ethereum Lido wstETH Vault",
-    protocol: Protocols.Mellow,
-    type: AdapterInterface.MELLOW_ERC4626_VAULT,
-  },
+
   SKY_STAKING_REWARDS: {
     name: "Sky StakingRewards contract",
     protocol: Protocols.Sky,
