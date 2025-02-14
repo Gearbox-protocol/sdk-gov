@@ -17,11 +17,11 @@ export type BalancerLPToken =
   | "GHO_USDT_USDC"
   | "rsETH_WETH"
   | "trenSTETH"
-  | "DVstETH_wstETH_BPT"
   | "sUSDe_USDC_BPT"
   | "pumpBTC_WBTC_BPT"
   | "eBTC_WBTC_BPT"
   | "B_50WBTC_50WETH"
+  | "tETH_wstETH_BPT"
   // Optimism
   | "BPT_rETH_ETH"
   | "BPT_WSTETH_ETH"
@@ -165,17 +165,6 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     underlying: ["amphrETH", "rstETH", "wstETH", "Re7LRT", "steakLRT"],
     poolId:
       "0x4216d5900a6109bba48418b5e2ab6cc4e61cf4770000000000000000000006a1",
-  },
-
-  DVstETH_wstETH_BPT: {
-    name: "Balancer DVstETH/wstETH ",
-    symbol: "DVstETH_wstETH_BPT",
-    type: {
-      AllNetworks: TokenType.BALANCER_LP_TOKEN,
-    },
-    underlying: ["DVstETH", "wstETH"],
-    poolId:
-      "0x632aafc2d3d2ca1764e702aa25c065c273cd08ed0000000000000000000006d6",
   },
 
   weETH_ezETH_rswETH: {
@@ -370,6 +359,16 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     underlying: ["wstETH", "sfrxETH", "rETH"],
     poolId:
       "0x5f8893506ddc4c271837187d14a9c87964a074dc000000000000000000000106",
+  },
+  tETH_wstETH_BPT: {
+    name: "Balancer tETH/wstETH",
+    symbol: "tETH_wstETH_BPT",
+    type: {
+      AllNetworks: TokenType.BALANCER_LP_TOKEN,
+    },
+    underlying: ["tETH", "wstETH"],
+    poolId:
+      "0x1d13531bf6344c102280ce4c458781fbf14dad140000000000000000000006df",
   },
 };
 

@@ -433,6 +433,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_tETH,
+                addr: 0xD11c452fc99cF405034ee446803b6F6c1F6d5ED8,
+                symbol: "tETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_steakLRT,
                 addr: 0xBEEF69Ac7870777598A04B2bd4771c71212E6aBc,
                 symbol: "steakLRT",
@@ -481,6 +489,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_waEthLidowstETH,
+                addr: 0x775F661b0bD1739349b9A2A3EF60be277c5d2D29,
+                symbol: "waEthLidowstETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_PT_rsETH_26SEP2024,
                 addr: 0x7bAf258049cc8B9A78097723dc19a8b103D4098F,
                 symbol: "PT_rsETH_26SEP2024",
@@ -500,6 +516,14 @@ contract TokensDataLive {
                 id: TOKEN_SKY,
                 addr: 0x56072C95FAA701256059aa122697B133aDEd9279,
                 symbol: "SKY",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_T,
+                addr: 0xCdF7028ceAB81fA0C6971208e83fa7872994beE5,
+                symbol: "T",
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
@@ -580,6 +604,38 @@ contract TokensDataLive {
                 id: TOKEN_PT_sUSDe_27MAR2025,
                 addr: 0xE00bd3Df25fb187d6ABBB620b3dfd19839947b81,
                 symbol: "PT_sUSDe_27MAR2025",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_PT_sUSDe_29MAY2025,
+                addr: 0xb7de5dFCb74d25c2f21841fbd6230355C50d9308,
+                symbol: "PT_sUSDe_29MAY2025",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_PT_beraSTONE_10APR2025,
+                addr: 0x40b7B4aB1E95e28DF06971581276966FDF95688E,
+                symbol: "PT_beraSTONE_10APR2025",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_rstETH_Lido_wstETH,
+                addr: 0x121edB0bADc036F5FC610D015EE14093C142313B,
+                symbol: "rstETH_Lido_wstETH",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_DVstETH_Prime_wstETH,
+                addr: 0xeb95d6BD67f613E7918A031d9F4a9a92766659aC,
+                symbol: "DVstETH_Prime_wstETH",
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
@@ -861,6 +917,30 @@ contract TokensDataLive {
                 id: TOKEN__2BTC_f,
                 addr: 0xB7ECB2AA52AA64a717180E030241bC75Cd946726,
                 symbol: "2BTC-f",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_tETHwstETH,
+                addr: 0xA10d15538E09479186b4D3278BA5c979110dDdB1,
+                symbol: "tETHwstETH",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_tETHweETH,
+                addr: 0x394a1e1b934cb4F4a0dC17BDD592ec078741542F,
+                symbol: "tETHweETH",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_pzETHstETH,
+                addr: 0xCec99Cff3632Cf1f16652cC5b1E80eB08bE25983,
+                symbol: "pzETHstETH",
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
         );
@@ -1309,14 +1389,6 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
-                id: TOKEN_DVstETH_wstETH_BPT,
-                addr: 0x632aafC2D3D2cA1764E702aa25c065c273Cd08eD,
-                symbol: "DVstETH_wstETH_BPT",
-                tokenType: TokenType.BALANCER_LP_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
                 id: TOKEN_weETH_ezETH_rswETH,
                 addr: 0x848a5564158d84b8A8fb68ab5D004Fae11619A54,
                 symbol: "weETH_ezETH_rswETH",
@@ -1348,6 +1420,14 @@ contract TokensDataLive {
             })
         );
 
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_tETH_wstETH_BPT,
+                addr: 0x1D13531bf6344c102280CE4c458781FBF14Dad14,
+                symbol: "tETH_wstETH_BPT",
+                tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
         tokenDataByNetwork[1].push(
             TokenData({
                 id: TOKEN_aDAI,

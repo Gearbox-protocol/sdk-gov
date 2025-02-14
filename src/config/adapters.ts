@@ -1,5 +1,6 @@
-import { MellowVaultContract, SupportedContract } from "../contracts/contracts";
+import { SupportedContract } from "../contracts/contracts";
 import { BalancerLPToken } from "../tokens/balancer";
+import { NormalToken } from "../tokens/normal";
 import { SupportedToken } from "../tokens/token";
 import { Address } from "../utils/types";
 
@@ -20,9 +21,9 @@ export type AdapterDeployConfig =
   | UniV3Config
   | GenericSwapConfig
   | BalancerVaultConfig
+  | BalancerV3VaultConfig
   | VelodromeV2Config
-  | PendleRouterConfig
-  | MellowVaultConfig;
+  | PendleRouterConfig;
 
 export interface DefaultAdapterConfig {
   contract: SupportedContract;
@@ -38,6 +39,16 @@ export interface BalancerVaultConfig {
   allowed: Array<BalancerPoolConfig>;
 }
 
+export interface BalancerV3PoolConfig {
+  pool: NormalToken;
+  status: boolean;
+}
+
+export interface BalancerV3VaultConfig {
+  contract: "BALANCER_V3_ROUTER";
+  allowed: Array<BalancerV3PoolConfig>;
+}
+
 export interface PendlePairConfig {
   market: Address;
   inputToken: SupportedToken;
@@ -48,11 +59,6 @@ export interface PendlePairConfig {
 export interface PendleRouterConfig {
   contract: "PENDLE_ROUTER";
   allowed: Array<PendlePairConfig>;
-}
-
-export interface MellowVaultConfig {
-  contract: MellowVaultContract;
-  allowed: Array<SupportedToken>;
 }
 
 export interface GenericSwapConfig {
@@ -106,5 +112,4 @@ export type AdapterConfig =
   | BalancerVaultConfig
   | VelodromeV2Config
   | PendleRouterConfig
-  | MellowVaultConfig
   | VelodromeCLConfig;

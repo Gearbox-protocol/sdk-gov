@@ -10,7 +10,7 @@ import {
   PoolV3DeployConfig,
 } from "../poolV3DeployConfig";
 
-const POOL_DECIMALS = BigInt(1e18);
+const POOL_DECIMALS = BigInt(1e6);
 
 const uniV3Config: UniV3Config = {
   contract: "UNISWAP_V3_ROUTER",
@@ -24,6 +24,12 @@ const pendleConfig: PendleRouterConfig = {
       inputToken: "sUSDe",
       pendleToken: "PT_sUSDe_27MAR2025",
       market: "0xcDd26Eb5EB2Ce0f203a84553853667aE69Ca29Ce",
+      status: PendlePairStatus.ALLOWED,
+    },
+    {
+      inputToken: "sUSDe",
+      pendleToken: "PT_sUSDe_29MAY2025",
+      market: "0xB162B764044697cf03617C2EFbcB1f42e31E4766",
       status: PendlePairStatus.ALLOWED,
     },
   ],
@@ -41,6 +47,10 @@ const collateralTokens: CollateralToken[] = [
   {
     token: "PT_sUSDe_27MAR2025",
     lt: 8600,
+  },
+  {
+    token: "PT_sUSDe_29MAY2025",
+    lt: 8500,
   },
   {
     token: "sDAI",
@@ -89,11 +99,11 @@ const tierSCreditManager: CreditManagerV3DeployConfig = {
   expirationDate: undefined,
   minDebt: BigInt(2e4) * POOL_DECIMALS,
   maxDebt: BigInt(4e5) * POOL_DECIMALS,
-  feeInterest: 1000,
+  feeInterest: 2500,
   feeLiquidation: 0,
-  liquidationPremium: 400,
+  liquidationPremium: 300,
   feeLiquidationExpired: 0,
-  liquidationPremiumExpired: 400,
+  liquidationPremiumExpired: 300,
   poolLimit: BigInt(100e6) * POOL_DECIMALS,
   maxEnabledTokens: 4,
   collateralTokens,
@@ -106,7 +116,7 @@ const tierMCreditManager: CreditManagerV3DeployConfig = {
   expirationDate: undefined,
   minDebt: BigInt(4e5) * POOL_DECIMALS,
   maxDebt: BigInt(8e6) * POOL_DECIMALS,
-  feeInterest: 1000,
+  feeInterest: 2500,
   feeLiquidation: 0,
   liquidationPremium: 300,
   feeLiquidationExpired: 0,
@@ -149,6 +159,12 @@ export const nexoConfigMainnet: PoolV3DeployConfig = {
       limit: BigInt(30e6) * POOL_DECIMALS,
     },
     PT_sUSDe_27MAR2025: {
+      minRate: 5,
+      maxRate: 2500,
+      quotaIncreaseFee: 0,
+      limit: BigInt(10e6) * POOL_DECIMALS,
+    },
+    PT_sUSDe_29MAY2025: {
       minRate: 5,
       maxRate: 2500,
       quotaIncreaseFee: 0,

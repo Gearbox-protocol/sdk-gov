@@ -294,6 +294,27 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_tETH_wstETH_POOL,
+                addr: 0xA10d15538E09479186b4D3278BA5c979110dDdB1,
+                name: "CURVE_tETH_wstETH_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_tETH_weETH_POOL,
+                addr: 0x394a1e1b934cb4F4a0dC17BDD592ec078741542F,
+                name: "CURVE_tETH_weETH_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_pzETH_stETH_POOL,
+                addr: 0xCec99Cff3632Cf1f16652cC5b1E80eB08bE25983,
+                name: "CURVE_pzETH_stETH_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_GEAR_POOL,
                 addr: 0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2,
                 name: "CURVE_GEAR_POOL"
@@ -433,6 +454,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.SAVINGS_CRVUSD_VAULT,
                 addr: 0x0655977FEb2f289A4aB78af67BAB0d17aAb84367,
                 name: "SAVINGS_CRVUSD_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.AAVE_WSTETH_VAULT,
+                addr: 0x775F661b0bD1739349b9A2A3EF60be277c5d2D29,
+                name: "AAVE_WSTETH_VAULT"
             })
         );
         contractDataByNetwork[1].push(
@@ -610,6 +638,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.BALANCER_VAULT,
                 addr: 0xBA12222222228d8Ba445958a75a0704d566BF2C8,
                 name: "BALANCER_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.BALANCER_V3_ROUTER,
+                addr: 0x5C6fb490BDFD3246EB0bB062c168DeCAF4bD9FDd,
+                name: "BALANCER_V3_ROUTER"
             })
         );
         contractDataByNetwork[1].push(
@@ -861,6 +896,7 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "BALANCER_VAULT"
             })
         );
+
         contractDataByNetwork[42161].push(
             ContractData({
                 id: Contracts.UNIVERSAL_ADAPTER,
@@ -997,6 +1033,7 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "BALANCER_VAULT"
             })
         );
+
         contractDataByNetwork[10].push(
             ContractData({
                 id: Contracts.UNIVERSAL_ADAPTER,

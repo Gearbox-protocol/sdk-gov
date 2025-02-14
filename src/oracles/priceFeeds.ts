@@ -1793,6 +1793,15 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  T: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+
   beraSTONE: {
     Mainnet: {
       Main: {
@@ -1800,7 +1809,7 @@ export const priceFeedsByToken: Record<
         targetToBasePriceFeed: {
           type: PriceFeedType.REDSTONE_ORACLE,
           dataServiceId: "redstone-primary-prod",
-          dataId: "beraETH_FUNDAMENTAL",
+          dataId: "beraSTONE_FUNDAMENTAL",
           ...REDSTONE_SIGNERS,
           stalenessPeriod: FOUR_MINUTES,
         },
@@ -2202,6 +2211,30 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CURVE_2LP_ORACLE,
         assets: ["crvUSD", "FRAX"],
+        trusted: false,
+      },
+    },
+  },
+  tETHwstETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  tETHweETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  pzETHstETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -2853,14 +2886,7 @@ export const priceFeedsByToken: Record<
       },
     },
   },
-  DVstETH_wstETH_BPT: {
-    AllNetworks: {
-      Main: {
-        type: PriceFeedType.ZERO_ORACLE,
-        trusted: false,
-      },
-    },
-  },
+
   weETH_ezETH_rswETH: {
     AllNetworks: {
       Main: {
@@ -2981,6 +3007,14 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
         assets: ["wstETH", "sfrxETH", "rETH"],
+        trusted: false,
+      },
+    },
+  },
+  tETH_wstETH_BPT: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
@@ -3667,6 +3701,30 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  waEthLidowstETH: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  tETH: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "wstETH",
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "wstETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
+    },
+  },
 
   // AURA
   auraB_rETH_STABLE: {
@@ -3857,84 +3915,96 @@ export const priceFeedsByToken: Record<
   steakLRT: {
     AllNetworks: {
       Main: {
-        // type: PriceFeedType.MELLOW_LRT_ORACLE,
-        // underlying: "WETH",
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH",
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "wstETH",
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.ZERO_ORACLE,
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "wstETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
   Re7LRT: {
     AllNetworks: {
       Main: {
-        // type: PriceFeedType.MELLOW_LRT_ORACLE,
-        // underlying: "WETH",
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH",
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "wstETH",
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.ZERO_ORACLE,
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "wstETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
   amphrETH: {
     AllNetworks: {
       Main: {
-        // type: PriceFeedType.MELLOW_LRT_ORACLE,
-        // underlying: "WETH",
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH",
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "wstETH",
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.ZERO_ORACLE,
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "wstETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
   rstETH: {
     AllNetworks: {
       Main: {
-        // type: PriceFeedType.MELLOW_LRT_ORACLE,
-        // underlying: "WETH",
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH",
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "wstETH",
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.ZERO_ORACLE,
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "wstETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
   pzETH: {
     AllNetworks: {
       Main: {
-        // type: PriceFeedType.MELLOW_LRT_ORACLE,
-        // underlying: "WETH",
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH",
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "wstETH",
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.ZERO_ORACLE,
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "wstETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
   DVstETH: {
     AllNetworks: {
       Main: {
-        // type: PriceFeedType.MELLOW_LRT_ORACLE,
-        // underlying: "WETH",
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wstETH",
+        type: PriceFeedType.MELLOW_LRT_ORACLE,
+        underlying: "WETH",
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.ZERO_ORACLE,
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "wstETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
       },
     },
   },
@@ -4142,6 +4212,62 @@ export const priceFeedsByToken: Record<
         market: "0xcDd26Eb5EB2Ce0f203a84553853667aE69Ca29Ce",
         twapWindow: HOUR_1 / 2,
         priceToSy: false,
+      },
+    },
+  },
+  PT_sUSDe_29MAY2025: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "USDe",
+        market: "0xB162B764044697cf03617C2EFbcB1f42e31E4766",
+        twapWindow: HOUR_1 / 2,
+        priceToSy: false,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "USDe",
+        market: "0xB162B764044697cf03617C2EFbcB1f42e31E4766",
+        twapWindow: HOUR_1 / 2,
+        priceToSy: false,
+      },
+    },
+  },
+
+  PT_beraSTONE_10APR2025: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "beraSTONE",
+        market: "0x7561C5CCfe41A26B33944B58C70D6a3CB63E881c",
+        twapWindow: HOUR_1 / 2,
+        priceToSy: true,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.PENDLE_PT_TWAP_ORACLE,
+        underlying: "beraSTONE",
+        market: "0x7561C5CCfe41A26B33944B58C70D6a3CB63E881c",
+        twapWindow: HOUR_1 / 2,
+        priceToSy: true,
+      },
+    },
+  },
+
+  rstETH_Lido_wstETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  DVstETH_Prime_wstETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
       },
     },
   },
