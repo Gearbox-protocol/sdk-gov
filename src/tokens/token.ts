@@ -433,7 +433,7 @@ export const tokenDataByNetwork: Record<
     dDOLAV3: "0x31426271449F60d37Cc5C9AEf7bD12aF3BdC7A94",
 
     dtBTCV3: "0x7354EC6E852108411e681D13E11185c3a2567981",
-    dwstETHV3: "0xCad5edc9360825C4Ec36660dC1a6E61c74696c7B",
+    dwstETHV3: "0xff94993fa7ea27efc943645f95adb36c1b81244b",
 
     dUSDC_eV3: NOT_DEPLOYED,
     sdUSDC_eV3: NOT_DEPLOYED,
@@ -1587,9 +1587,9 @@ export const tickerInfoTokensByNetwork: Record<
     beraSTONE: [
       {
         symbol: "beraSTONE/ETH",
-        dataId: "beraSTONE_FUNDAMENTAL",
+        dataId: "beraETH_FUNDAMENTAL",
         address: "0x692072eE081c9Ded28d2CfD27513E578d895FD0d",
-        priceFeed: "0xD35f2Fe7cc74e143F3f526c6e2c399fE58e31Cf1",
+        priceFeed: "0xf12b7879713FA998B39b3C7C9c2631E40a0b9dfB",
         reserve: false,
       },
     ],
