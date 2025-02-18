@@ -65,6 +65,7 @@ const EXCEPTIONS_IN_SYMBOLS: Record<NetworkType, Record<string, string>> = {
       "auraBPT-WSTETH-ETH-vault",
   },
   Base: {},
+  Sonic: {},
 };
 
 class TokenSuite {

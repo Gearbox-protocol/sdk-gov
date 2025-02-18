@@ -1,4 +1,5 @@
 import { NetworkType } from "../core/chains";
+import { NOT_DEPLOYED } from "../core/constants";
 import { SupportedToken } from "../tokens/token";
 import { Address, PartialRecord } from "../utils/types";
 import {
@@ -55,6 +56,7 @@ export const pythByNetwork: Record<NetworkType, Address> = {
   Arbitrum: "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
   Optimism: "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
   Base: "0x8250f4aF4B972684F7b336503E2D6dFeDeB1487a",
+  Sonic: NOT_DEPLOYED,
 };
 
 export function getPriceFeedsByToken(
@@ -439,6 +441,21 @@ export const priceFeedsByToken: Record<
         ...REDSTONE_SIGNERS,
       },
     },
+    Sonic: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x55bCa887199d5520B3Ce285D41e6dC10C08716C9",
+        trusted: false,
+        stalenessPeriod: HOUR_24,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "USDC",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
+    },
   },
   USDC_e: {
     Arbitrum: {
@@ -671,6 +688,63 @@ export const priceFeedsByToken: Record<
         dataId: "ETH",
         stalenessPeriod: FOUR_MINUTES,
         ...REDSTONE_SIGNERS,
+      },
+    },
+    Sonic: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x824364077993847f71293B24ccA8567c00c2de11",
+        trusted: false,
+        stalenessPeriod: HOUR_24,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "ETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
+    },
+  },
+
+  wS: {
+    Sonic: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0xc76dFb89fF298145b417d221B2c747d84952e01d",
+        trusted: false,
+        stalenessPeriod: HOUR_1_BUFFERED,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "S",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
+    },
+  },
+  stS: {
+    Sonic: {
+      Main: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "stS_FUNDAMENTAL",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+        trusted: true,
+      },
+    },
+  },
+  scUSD: {
+    Sonic: {
+      Main: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "USDC",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+        trusted: true,
       },
     },
   },
@@ -3007,6 +3081,38 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.BALANCER_STABLE_LP_ORACLE,
         assets: ["wstETH", "sfrxETH", "rETH"],
+        trusted: false,
+      },
+    },
+  },
+  bpt_rsb: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  bpt_sss: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  BPT_scUSD_stS: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  BPT_USDCe_stS: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
       },
     },
