@@ -458,9 +458,9 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
-                id: Contracts.TREEHOUSE_ETH_VAULT,
-                addr: 0xD11c452fc99cF405034ee446803b6F6c1F6d5ED8,
-                name: "TREEHOUSE_ETH_VAULT"
+                id: Contracts.AAVE_WSTETH_VAULT,
+                addr: 0x775F661b0bD1739349b9A2A3EF60be277c5d2D29,
+                name: "AAVE_WSTETH_VAULT"
             })
         );
         contractDataByNetwork[1].push(
@@ -638,6 +638,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.BALANCER_VAULT,
                 addr: 0xBA12222222228d8Ba445958a75a0704d566BF2C8,
                 name: "BALANCER_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.BALANCER_V3_ROUTER,
+                addr: 0x5C6fb490BDFD3246EB0bB062c168DeCAF4bD9FDd,
+                name: "BALANCER_V3_ROUTER"
             })
         );
         contractDataByNetwork[1].push(
@@ -889,6 +896,7 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "BALANCER_VAULT"
             })
         );
+
         contractDataByNetwork[42161].push(
             ContractData({
                 id: Contracts.UNIVERSAL_ADAPTER,
@@ -1025,6 +1033,7 @@ contract SupportedContracts is Test, ISupportedContracts {
                 name: "BALANCER_VAULT"
             })
         );
+
         contractDataByNetwork[10].push(
             ContractData({
                 id: Contracts.UNIVERSAL_ADAPTER,

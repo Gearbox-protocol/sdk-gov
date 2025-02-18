@@ -1,5 +1,6 @@
 import { SupportedContract } from "../contracts/contracts";
 import { BalancerLPToken } from "../tokens/balancer";
+import { NormalToken } from "../tokens/normal";
 import { SupportedToken } from "../tokens/token";
 import { Address } from "../utils/types";
 
@@ -20,6 +21,7 @@ export type AdapterDeployConfig =
   | UniV3Config
   | GenericSwapConfig
   | BalancerVaultConfig
+  | BalancerV3VaultConfig
   | VelodromeV2Config
   | PendleRouterConfig;
 
@@ -35,6 +37,16 @@ export interface BalancerPoolConfig {
 export interface BalancerVaultConfig {
   contract: "BALANCER_VAULT";
   allowed: Array<BalancerPoolConfig>;
+}
+
+export interface BalancerV3PoolConfig {
+  pool: NormalToken;
+  status: boolean;
+}
+
+export interface BalancerV3VaultConfig {
+  contract: "BALANCER_V3_ROUTER";
+  allowed: Array<BalancerV3PoolConfig>;
 }
 
 export interface PendlePairConfig {

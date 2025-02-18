@@ -228,6 +228,7 @@ export const tokenDataByNetwork: Record<
     stS: NOT_DEPLOYED,
     scUSD: NOT_DEPLOYED,
     T: "0xCdF7028ceAB81fA0C6971208e83fa7872994beE5",
+    tETH: "0xD11c452fc99cF405034ee446803b6F6c1F6d5ED8",
 
     // CURVE LP TOKENS
     "3Crv": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
@@ -344,7 +345,6 @@ export const tokenDataByNetwork: Record<
     ezETH_WETH_BPT: "0x596192bB6e41802428Ac943D2f1476C1Af25CC0E",
     sUSDe_USDC_BPT: "0xb819feeF8F0fcDC268AfE14162983A69f6BF179E",
     trenSTETH: "0x4216d5900a6109bba48418b5e2AB6cc4e61Cf477",
-    DVstETH_wstETH_BPT: "0x632aafC2D3D2cA1764E702aa25c065c273Cd08eD",
     weETH_ezETH_rswETH: "0x848a5564158d84b8A8fb68ab5D004Fae11619A54",
     GHO_USDT_USDC: "0x8353157092ED8Be69a9DF8F95af097bbF33Cb2aF",
     rsETH_WETH: "0x58AAdFB1Afac0ad7fca1148f3cdE6aEDF5236B6D",
@@ -405,6 +405,11 @@ export const tokenDataByNetwork: Record<
     PT_corn_eBTC_27MAR2025: "0x44A7876cA99460ef3218bf08b5f52E2dbE199566",
     PT_sUSDe_27MAR2025: "0xE00bd3Df25fb187d6ABBB620b3dfd19839947b81",
     PT_sUSDe_29MAY2025: "0xb7de5dFCb74d25c2f21841fbd6230355C50d9308",
+    PT_beraSTONE_10APR2025: "0x40b7B4aB1E95e28DF06971581276966FDF95688E",
+
+    // Balancer V3
+    rstETH_Lido_wstETH: "0x121edB0bADc036F5FC610D015EE14093C142313B",
+    DVstETH_Prime_wstETH: "0xeb95d6BD67f613E7918A031d9F4a9a92766659aC",
 
     // GEARBOX
     dDAI: "0x6CFaF95457d7688022FC53e7AbE052ef8DFBbdBA",
@@ -435,7 +440,7 @@ export const tokenDataByNetwork: Record<
     dDOLAV3: "0x31426271449F60d37Cc5C9AEf7bD12aF3BdC7A94",
 
     dtBTCV3: "0x7354EC6E852108411e681D13E11185c3a2567981",
-    dwstETHV3: "0xCad5edc9360825C4Ec36660dC1a6E61c74696c7B",
+    dwstETHV3: "0xFF94993fA7EA27Efc943645F95Adb36C1b81244b",
 
     dUSDC_eV3: NOT_DEPLOYED,
     sdUSDC_eV3: NOT_DEPLOYED,
@@ -448,7 +453,6 @@ export const tokenDataByNetwork: Record<
     sUSDe: "0x9D39A5DE30e57443BfF2A8307A4256c8797A3497",
     sUSDS: "0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD",
     scrvUSD: "0x0655977FEb2f289A4aB78af67BAB0d17aAb84367",
-    tETH: "0xD11c452fc99cF405034ee446803b6F6c1F6d5ED8",
 
     beraSTONE: "0x97Ad75064b20fb2B2447feD4fa953bF7F007a706",
 
@@ -484,6 +488,7 @@ export const tokenDataByNetwork: Record<
     rstETH: "0x7a4EffD87C2f3C55CA251080b1343b605f327E3a",
     pzETH: "0x8c9532a60E0E7C6BbD2B2c1303F63aCE1c3E9811",
     DVstETH: "0x5E362eb2c0706Bd1d134689eC75176018385430B",
+    waEthLidowstETH: "0x775F661b0bD1739349b9A2A3EF60be277c5d2D29",
   },
 
   ///
@@ -552,6 +557,7 @@ export const tokenDataByNetwork: Record<
     pufETH: NOT_DEPLOYED,
     USDS: NOT_DEPLOYED,
     T: NOT_DEPLOYED,
+    tETH: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -675,7 +681,6 @@ export const tokenDataByNetwork: Record<
     ezETH_WETH_BPT: NOT_DEPLOYED,
     sUSDe_USDC_BPT: NOT_DEPLOYED,
     trenSTETH: NOT_DEPLOYED,
-    DVstETH_wstETH_BPT: NOT_DEPLOYED,
     weETH_ezETH_rswETH: NOT_DEPLOYED,
     GHO_USDT_USDC: NOT_DEPLOYED,
     rsETH_WETH: NOT_DEPLOYED,
@@ -732,6 +737,11 @@ export const tokenDataByNetwork: Record<
     PT_corn_eBTC_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_29MAY2025: NOT_DEPLOYED,
+    PT_beraSTONE_10APR2025: NOT_DEPLOYED,
+
+    // Balancer V3
+    rstETH_Lido_wstETH: NOT_DEPLOYED,
+    DVstETH_Prime_wstETH: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -794,7 +804,6 @@ export const tokenDataByNetwork: Record<
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
     scrvUSD: NOT_DEPLOYED,
-    tETH: NOT_DEPLOYED,
 
     beraSTONE: NOT_DEPLOYED,
 
@@ -811,6 +820,7 @@ export const tokenDataByNetwork: Record<
     rstETH: NOT_DEPLOYED,
     pzETH: NOT_DEPLOYED,
     DVstETH: NOT_DEPLOYED,
+    waEthLidowstETH: NOT_DEPLOYED,
   },
   ///
   ///
@@ -878,6 +888,7 @@ export const tokenDataByNetwork: Record<
     stS: NOT_DEPLOYED,
     scUSD: NOT_DEPLOYED,
     T: NOT_DEPLOYED,
+    tETH: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -1001,7 +1012,6 @@ export const tokenDataByNetwork: Record<
     ezETH_WETH_BPT: NOT_DEPLOYED,
     sUSDe_USDC_BPT: NOT_DEPLOYED,
     trenSTETH: NOT_DEPLOYED,
-    DVstETH_wstETH_BPT: NOT_DEPLOYED,
     weETH_ezETH_rswETH: NOT_DEPLOYED,
     "33AURA_33ARB_33BAL": NOT_DEPLOYED,
     ezETH_wstETH: NOT_DEPLOYED,
@@ -1057,6 +1067,11 @@ export const tokenDataByNetwork: Record<
     PT_corn_eBTC_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_29MAY2025: NOT_DEPLOYED,
+    PT_beraSTONE_10APR2025: NOT_DEPLOYED,
+
+    // Balancer V3
+    rstETH_Lido_wstETH: NOT_DEPLOYED,
+    DVstETH_Prime_wstETH: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -1119,7 +1134,6 @@ export const tokenDataByNetwork: Record<
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
     scrvUSD: NOT_DEPLOYED,
-    tETH: NOT_DEPLOYED,
 
     beraSTONE: NOT_DEPLOYED,
 
@@ -1136,6 +1150,7 @@ export const tokenDataByNetwork: Record<
     rstETH: NOT_DEPLOYED,
     pzETH: NOT_DEPLOYED,
     DVstETH: NOT_DEPLOYED,
+    waEthLidowstETH: NOT_DEPLOYED,
   },
   //
   //
@@ -1202,6 +1217,7 @@ export const tokenDataByNetwork: Record<
     pufETH: NOT_DEPLOYED,
     USDS: NOT_DEPLOYED,
     T: NOT_DEPLOYED,
+    tETH: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -1324,7 +1340,6 @@ export const tokenDataByNetwork: Record<
     ezETH_WETH_BPT: NOT_DEPLOYED,
     sUSDe_USDC_BPT: NOT_DEPLOYED,
     trenSTETH: NOT_DEPLOYED,
-    DVstETH_wstETH_BPT: NOT_DEPLOYED,
     weETH_ezETH_rswETH: NOT_DEPLOYED,
     rsETH_WETH: NOT_DEPLOYED,
     rsETH_wETH_Arb: NOT_DEPLOYED,
@@ -1379,6 +1394,11 @@ export const tokenDataByNetwork: Record<
     PT_corn_eBTC_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_29MAY2025: NOT_DEPLOYED,
+    PT_beraSTONE_10APR2025: NOT_DEPLOYED,
+
+    // Balancer V3
+    rstETH_Lido_wstETH: NOT_DEPLOYED,
+    DVstETH_Prime_wstETH: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -1439,7 +1459,6 @@ export const tokenDataByNetwork: Record<
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
     scrvUSD: NOT_DEPLOYED,
-    tETH: NOT_DEPLOYED,
     beraSTONE: NOT_DEPLOYED,
 
     GHO: NOT_DEPLOYED,
@@ -1458,6 +1477,7 @@ export const tokenDataByNetwork: Record<
     rstETH: NOT_DEPLOYED,
     pzETH: NOT_DEPLOYED,
     DVstETH: NOT_DEPLOYED,
+    waEthLidowstETH: NOT_DEPLOYED,
   },
   //
   //
@@ -1492,6 +1512,7 @@ export const tokenDataByNetwork: Record<
     stS: "0xE5DA20F15420aD15DE0fa650600aFc998bbE3955",
     scUSD: "0xd3DCe716f3eF535C5Ff8d041c1A41C3bd89b97aE",
     T: NOT_DEPLOYED,
+    tETH: NOT_DEPLOYED,
 
     /// UPDATE
     STETH: NOT_DEPLOYED,
@@ -1649,7 +1670,6 @@ export const tokenDataByNetwork: Record<
     ezETH_WETH_BPT: NOT_DEPLOYED,
     sUSDe_USDC_BPT: NOT_DEPLOYED,
     trenSTETH: NOT_DEPLOYED,
-    DVstETH_wstETH_BPT: NOT_DEPLOYED,
     weETH_ezETH_rswETH: NOT_DEPLOYED,
     rsETH_WETH: NOT_DEPLOYED,
     rsETH_wETH_Arb: NOT_DEPLOYED,
@@ -1704,6 +1724,11 @@ export const tokenDataByNetwork: Record<
     PT_corn_eBTC_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_29MAY2025: NOT_DEPLOYED,
+    PT_beraSTONE_10APR2025: NOT_DEPLOYED,
+
+    // Balancer V3
+    rstETH_Lido_wstETH: NOT_DEPLOYED,
+    DVstETH_Prime_wstETH: NOT_DEPLOYED,
 
     // GEARBOX
     dDAI: NOT_DEPLOYED,
@@ -1764,7 +1789,6 @@ export const tokenDataByNetwork: Record<
     sUSDe: NOT_DEPLOYED,
     sUSDS: NOT_DEPLOYED,
     scrvUSD: NOT_DEPLOYED,
-    tETH: NOT_DEPLOYED,
 
     beraSTONE: NOT_DEPLOYED,
 
@@ -1784,6 +1808,7 @@ export const tokenDataByNetwork: Record<
     rstETH: NOT_DEPLOYED,
     pzETH: NOT_DEPLOYED,
     DVstETH: NOT_DEPLOYED,
+    waEthLidowstETH: NOT_DEPLOYED,
   },
 };
 
@@ -2035,6 +2060,7 @@ export const tickerInfoTokensByNetwork: Record<
         reserve: true,
       },
     ],
+
     stkUSDS: [
       {
         symbol: "DAI",
@@ -2144,6 +2170,15 @@ export const tickerInfoTokensByNetwork: Record<
         address: tokenDataByNetwork.Mainnet.USDe,
         priceFeed: "0x8A58F957B99E1ED6B3DF20F267a6d5a6dd8e3513",
         reserve: true,
+      },
+    ],
+    PT_beraSTONE_10APR2025: [
+      {
+        symbol: "beraSTONE/ETH",
+        dataId: "beraETH_FUNDAMENTAL",
+        address: "0x692072eE081c9Ded28d2CfD27513E578d895FD0d",
+        priceFeed: "0xf12b7879713FA998B39b3C7C9c2631E40a0b9dfB",
+        reserve: false,
       },
     ],
     PT_eETH_26DEC2024: [

@@ -126,7 +126,7 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.SAVINGS_CRVUSD_VAULT, adapterType: AdapterType.ERC4626_VAULT})
         );
         simpleAdapters.push(
-            SimpleAdapter({targetContract: Contracts.TREEHOUSE_ETH_VAULT, adapterType: AdapterType.ERC4626_VAULT})
+            SimpleAdapter({targetContract: Contracts.AAVE_WSTETH_VAULT, adapterType: AdapterType.ERC4626_VAULT})
         );
         simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.CONVEX_BOOSTER, adapterType: AdapterType.CONVEX_V1_BOOSTER})

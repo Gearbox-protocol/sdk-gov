@@ -162,6 +162,12 @@ export const auditReports: Record<string, Report> = {
     reportLink:
       "https://github.com/Gearbox-protocol/security/blob/main/audits/2024%20Dec%20-%20Watchpug_Pendle_Oracle.pdf",
   },
+  "2025_Feb_Decurity_BalancerV3": {
+    auditor: Auditor.Decurity,
+    revision: "2025 Feb",
+    reportLink:
+      "https://github.com/Gearbox-protocol/security/blob/main/audits/2025%20Feb%20-%20Decurity_Gearbox_BalancerV3.pdf",
+  },
 };
 
 export const audits: Audits = {
@@ -268,6 +274,16 @@ export const audits: Audits = {
       type: "commit",
       commit: "e3e558df565f3541ca90a2afd40d9e76eded2fa9",
       report: auditReports["2024_Oct_Decurity_SKY"],
+    },
+    {
+      type: "commit",
+      commit: "0af99438c80a246c4e04118d498ca3508483d8a0",
+      report: auditReports["2025_Feb_Decurity_BalancerV3"],
+    },
+    {
+      type: "commit",
+      commit: "f79aa663f3f40903429243af75ef57c9e6fcf0b8",
+      report: auditReports["2025_Feb_Decurity_BalancerV3"],
     },
   ],
   governance: [
