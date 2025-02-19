@@ -315,6 +315,13 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_USDL_USDC_POOL,
+                addr: 0xAb96AA0ee764924f49fbB372f3B4db9c2cB24Ea2,
+                name: "CURVE_USDL_USDC_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_GEAR_POOL,
                 addr: 0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2,
                 name: "CURVE_GEAR_POOL"
@@ -461,6 +468,20 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.AAVE_WSTETH_VAULT,
                 addr: 0x775F661b0bD1739349b9A2A3EF60be277c5d2D29,
                 name: "AAVE_WSTETH_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.WRAPPED_USDL_VAULT,
+                addr: 0x7751E2F4b8ae93EF6B79d86419d42FE3295A4559,
+                name: "WRAPPED_USDL_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.COINSHIFT_USDL_VAULT,
+                addr: 0xbEeFc011e94f43b8B7b455eBaB290C7Ab4E216f1,
+                name: "COINSHIFT_USDL_VAULT"
             })
         );
         contractDataByNetwork[1].push(

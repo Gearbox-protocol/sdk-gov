@@ -26,4 +26,5 @@ export enum Protocols {
   Equalizer,
   Beets,
   Shadow,
+  Lift,
 }

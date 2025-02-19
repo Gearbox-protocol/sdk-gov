@@ -2313,6 +2313,14 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  USDLUSDC: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
   wstETHCRV: {
     AllNetworks: {
       Main: {
@@ -3828,6 +3836,40 @@ export const priceFeedsByToken: Record<
         dataId: "wstETH",
         stalenessPeriod: FOUR_MINUTES,
         ...REDSTONE_SIGNERS,
+      },
+    },
+  },
+
+  USDL: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+        stalenessPeriod: HOUR_24,
+        trusted: false,
+      },
+    },
+  },
+  wUSDL: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "USDL",
+        trusted: false,
+      },
+    },
+  },
+  csUSDL: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "wUSDL",
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+        stalenessPeriod: HOUR_24,
       },
     },
   },

@@ -230,6 +230,10 @@ export const tokenDataByNetwork: Record<
     T: "0xCdF7028ceAB81fA0C6971208e83fa7872994beE5",
     tETH: "0xD11c452fc99cF405034ee446803b6F6c1F6d5ED8",
 
+    USDL: "0xbdC7c08592Ee4aa51D06C27Ee23D5087D65aDbcD",
+    wUSDL: "0x7751E2F4b8ae93EF6B79d86419d42FE3295A4559",
+    csUSDL: "0xbEeFc011e94f43b8B7b455eBaB290C7Ab4E216f1",
+
     // CURVE LP TOKENS
     "3Crv": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
     crvFRAX: "0x3175Df0976dFA876431C2E9eE6Bc45b65d3473CC",
@@ -283,6 +287,7 @@ export const tokenDataByNetwork: Record<
     tETHwstETH: "0xA10d15538E09479186b4D3278BA5c979110dDdB1",
     tETHweETH: "0x394a1e1b934cb4F4a0dC17BDD592ec078741542F",
     pzETHstETH: "0xCec99Cff3632Cf1f16652cC5b1E80eB08bE25983",
+    USDLUSDC: "0xAb96AA0ee764924f49fbB372f3B4db9c2cB24Ea2",
 
     // CONVEX LP TOKENS
     cvx3Crv: "0x30D9410ED1D5DA1F6C8391af5338C93ab8d4035C",
@@ -558,6 +563,9 @@ export const tokenDataByNetwork: Record<
     USDS: NOT_DEPLOYED,
     T: NOT_DEPLOYED,
     tETH: NOT_DEPLOYED,
+    USDL: NOT_DEPLOYED,
+    wUSDL: NOT_DEPLOYED,
+    csUSDL: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -624,6 +632,7 @@ export const tokenDataByNetwork: Record<
     tETHwstETH: NOT_DEPLOYED,
     tETHweETH: NOT_DEPLOYED,
     pzETHstETH: NOT_DEPLOYED,
+    USDLUSDC: NOT_DEPLOYED,
 
     // CONVEX LP TOKENS
     cvx3Crv: NOT_DEPLOYED,
@@ -889,6 +898,9 @@ export const tokenDataByNetwork: Record<
     scUSD: NOT_DEPLOYED,
     T: NOT_DEPLOYED,
     tETH: NOT_DEPLOYED,
+    USDL: NOT_DEPLOYED,
+    wUSDL: NOT_DEPLOYED,
+    csUSDL: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -953,6 +965,7 @@ export const tokenDataByNetwork: Record<
     tETHwstETH: NOT_DEPLOYED,
     tETHweETH: NOT_DEPLOYED,
     pzETHstETH: NOT_DEPLOYED,
+    USDLUSDC: NOT_DEPLOYED,
 
     // CONVEX LP TOKENS
     cvx3Crv: NOT_DEPLOYED,
@@ -1218,6 +1231,9 @@ export const tokenDataByNetwork: Record<
     USDS: NOT_DEPLOYED,
     T: NOT_DEPLOYED,
     tETH: NOT_DEPLOYED,
+    USDL: NOT_DEPLOYED,
+    wUSDL: NOT_DEPLOYED,
+    csUSDL: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -1281,6 +1297,7 @@ export const tokenDataByNetwork: Record<
     tETHwstETH: NOT_DEPLOYED,
     tETHweETH: NOT_DEPLOYED,
     pzETHstETH: NOT_DEPLOYED,
+    USDLUSDC: NOT_DEPLOYED,
 
     // CONVEX LP TOKENS
     cvx3Crv: NOT_DEPLOYED,
@@ -1513,6 +1530,9 @@ export const tokenDataByNetwork: Record<
     scUSD: "0xd3DCe716f3eF535C5Ff8d041c1A41C3bd89b97aE",
     T: NOT_DEPLOYED,
     tETH: NOT_DEPLOYED,
+    USDL: NOT_DEPLOYED,
+    wUSDL: NOT_DEPLOYED,
+    csUSDL: NOT_DEPLOYED,
 
     /// UPDATE
     STETH: NOT_DEPLOYED,
@@ -1595,6 +1615,7 @@ export const tokenDataByNetwork: Record<
     tETHwstETH: NOT_DEPLOYED,
     tETHweETH: NOT_DEPLOYED,
     pzETHstETH: NOT_DEPLOYED,
+    USDLUSDC: NOT_DEPLOYED,
 
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,

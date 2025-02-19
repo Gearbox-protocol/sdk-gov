@@ -73,7 +73,8 @@ export type CurvePoolContract =
   | "CURVE_LLAMA_THENA_POOL"
   | "CURVE_tETH_wstETH_POOL"
   | "CURVE_tETH_weETH_POOL"
-  | "CURVE_pzETH_stETH_POOL";
+  | "CURVE_pzETH_stETH_POOL"
+  | "CURVE_USDL_USDC_POOL";
 
 export type YearnVaultContract =
   | "YEARN_DAI_VAULT"
@@ -92,7 +93,9 @@ export type ERC4626VaultContract =
   | "STAKED_USDE_VAULT"
   | "STAKED_USDS_VAULT"
   | "SAVINGS_CRVUSD_VAULT"
-  | "AAVE_WSTETH_VAULT";
+  | "AAVE_WSTETH_VAULT"
+  | "WRAPPED_USDL_VAULT"
+  | "COINSHIFT_USDL_VAULT";
 
 export type ConvexPoolContract =
   | "CONVEX_3CRV_POOL"
@@ -235,6 +238,7 @@ export const contractsByNetwork: Record<
     CURVE_tETH_wstETH_POOL: tokenDataByNetwork.Mainnet.tETHwstETH,
     CURVE_tETH_weETH_POOL: tokenDataByNetwork.Mainnet.tETHweETH,
     CURVE_pzETH_stETH_POOL: tokenDataByNetwork.Mainnet.pzETHstETH,
+    CURVE_USDL_USDC_POOL: tokenDataByNetwork.Mainnet.USDLUSDC,
 
     CURVE_GEAR_POOL: "0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2",
 
@@ -273,6 +277,8 @@ export const contractsByNetwork: Record<
     STAKED_USDS_VAULT: tokenDataByNetwork.Mainnet.sUSDS,
     SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Mainnet.scrvUSD,
     AAVE_WSTETH_VAULT: tokenDataByNetwork.Mainnet.waEthLidowstETH,
+    WRAPPED_USDL_VAULT: tokenDataByNetwork.Mainnet.wUSDL,
+    COINSHIFT_USDL_VAULT: tokenDataByNetwork.Mainnet.csUSDL,
 
     // CONVEX
     CONVEX_BOOSTER: "0xF403C135812408BFbE8713b5A23a04b3D48AAE31",
@@ -414,6 +420,7 @@ export const contractsByNetwork: Record<
     CURVE_tETH_wstETH_POOL: NOT_DEPLOYED,
     CURVE_tETH_weETH_POOL: NOT_DEPLOYED,
     CURVE_pzETH_stETH_POOL: NOT_DEPLOYED,
+    CURVE_USDL_USDC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -452,6 +459,8 @@ export const contractsByNetwork: Record<
     STAKED_USDS_VAULT: tokenDataByNetwork.Arbitrum.sUSDS,
     SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Arbitrum.scrvUSD,
     AAVE_WSTETH_VAULT: tokenDataByNetwork.Arbitrum.waEthLidowstETH,
+    WRAPPED_USDL_VAULT: tokenDataByNetwork.Arbitrum.wUSDL,
+    COINSHIFT_USDL_VAULT: tokenDataByNetwork.Arbitrum.csUSDL,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -592,6 +601,7 @@ export const contractsByNetwork: Record<
     CURVE_tETH_wstETH_POOL: NOT_DEPLOYED,
     CURVE_tETH_weETH_POOL: NOT_DEPLOYED,
     CURVE_pzETH_stETH_POOL: NOT_DEPLOYED,
+    CURVE_USDL_USDC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -629,6 +639,8 @@ export const contractsByNetwork: Record<
     STAKED_USDS_VAULT: tokenDataByNetwork.Optimism.sUSDS,
     SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Optimism.scrvUSD,
     AAVE_WSTETH_VAULT: tokenDataByNetwork.Optimism.waEthLidowstETH,
+    WRAPPED_USDL_VAULT: tokenDataByNetwork.Optimism.wUSDL,
+    COINSHIFT_USDL_VAULT: tokenDataByNetwork.Optimism.csUSDL,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -769,6 +781,7 @@ export const contractsByNetwork: Record<
     CURVE_tETH_wstETH_POOL: NOT_DEPLOYED,
     CURVE_tETH_weETH_POOL: NOT_DEPLOYED,
     CURVE_pzETH_stETH_POOL: NOT_DEPLOYED,
+    CURVE_USDL_USDC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -806,6 +819,8 @@ export const contractsByNetwork: Record<
     STAKED_USDS_VAULT: tokenDataByNetwork.Base.sUSDS,
     SAVINGS_CRVUSD_VAULT: tokenDataByNetwork.Base.scrvUSD,
     AAVE_WSTETH_VAULT: tokenDataByNetwork.Base.waEthLidowstETH,
+    WRAPPED_USDL_VAULT: tokenDataByNetwork.Base.wUSDL,
+    COINSHIFT_USDL_VAULT: tokenDataByNetwork.Base.csUSDL,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -946,6 +961,7 @@ export const contractsByNetwork: Record<
     CURVE_tETH_wstETH_POOL: NOT_DEPLOYED,
     CURVE_tETH_weETH_POOL: NOT_DEPLOYED,
     CURVE_pzETH_stETH_POOL: NOT_DEPLOYED,
+    CURVE_USDL_USDC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -983,6 +999,8 @@ export const contractsByNetwork: Record<
     STAKED_USDS_VAULT: NOT_DEPLOYED,
     SAVINGS_CRVUSD_VAULT: NOT_DEPLOYED,
     AAVE_WSTETH_VAULT: NOT_DEPLOYED,
+    WRAPPED_USDL_VAULT: NOT_DEPLOYED,
+    COINSHIFT_USDL_VAULT: NOT_DEPLOYED,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -1182,7 +1200,8 @@ export type ERC4626Params = {
     | Protocols.Ethena
     | Protocols.Sky
     | Protocols.Curve
-    | Protocols.AaveV3;
+    | Protocols.AaveV3
+    | Protocols.Lift;
   type: AdapterInterface.ERC4626_VAULT;
   underlying: NormalToken;
 } & BaseContractParams;
@@ -1795,6 +1814,14 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     lpToken: "pzETHstETH",
     tokens: ["pzETH", "wstETH"],
   },
+  CURVE_USDL_USDC_POOL: {
+    name: "Curve pzETH/wstETH LP",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "USDLUSDC",
+    tokens: ["USDL", "USDC"],
+  },
 
   CURVE_2CRV_POOL_ARB: {
     name: "Curve USDC/USDT Pool (Arbitrum)",
@@ -1950,6 +1977,19 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     protocol: Protocols.AaveV3,
     type: AdapterInterface.ERC4626_VAULT,
     underlying: "wstETH",
+  },
+
+  WRAPPED_USDL_VAULT: {
+    name: "Wrapped USDL Vault",
+    protocol: Protocols.Lift,
+    type: AdapterInterface.ERC4626_VAULT,
+    underlying: "USDL",
+  },
+  COINSHIFT_USDL_VAULT: {
+    name: "Coinshift USDL Vault",
+    protocol: Protocols.Lift,
+    type: AdapterInterface.ERC4626_VAULT,
+    underlying: "wUSDL",
   },
 
   CONVEX_BOOSTER: {

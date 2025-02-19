@@ -442,6 +442,30 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_USDL,
+                addr: 0xbdC7c08592Ee4aa51D06C27Ee23D5087D65aDbcD,
+                symbol: "USDL",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_wUSDL,
+                addr: 0x7751E2F4b8ae93EF6B79d86419d42FE3295A4559,
+                symbol: "wUSDL",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_csUSDL,
+                addr: 0xbEeFc011e94f43b8B7b455eBaB290C7Ab4E216f1,
+                symbol: "csUSDL",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_steakLRT,
                 addr: 0xBEEF69Ac7870777598A04B2bd4771c71212E6aBc,
                 symbol: "steakLRT",
@@ -942,6 +966,14 @@ contract TokensDataLive {
                 id: TOKEN_pzETHstETH,
                 addr: 0xCec99Cff3632Cf1f16652cC5b1E80eB08bE25983,
                 symbol: "pzETHstETH",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_USDLUSDC,
+                addr: 0xAb96AA0ee764924f49fbB372f3B4db9c2cB24Ea2,
+                symbol: "USDLUSDC",
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
         );

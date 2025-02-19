@@ -65,6 +65,10 @@ export type NormalToken =
   | "scUSD"
   | "T"
   | "tETH"
+  | "USDL"
+  | "wUSDL"
+  | "csUSDL"
+
   // Mellow LRTs
   | "steakLRT"
   | "Re7LRT"
@@ -452,6 +456,21 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   tETH: {
     name: "Treehouse ETH",
     symbol: "tETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  USDL: {
+    name: "Lift Dollar",
+    symbol: "USDL",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  wUSDL: {
+    name: "Wrapped USDL",
+    symbol: "wUSDL",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  csUSDL: {
+    name: "Coinshift USDL",
+    symbol: "csUSDL",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 

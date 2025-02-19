@@ -4442,6 +4442,23 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_pzETHstETH, trusted: false, reserve: false})
         );
 
+        // ------------------------ USDLUSDC ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_USDLUSDC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_USDLUSDC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_USDLUSDC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_USDLUSDC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_USDLUSDC, trusted: false, reserve: false})
+        );
+
         // ------------------------ wstETHCRV ------------------------
         zeroPriceFeedsByNetwork[1].push(
             SingeTokenPriceFeedData({token: TOKEN_wstETHCRV, trusted: false, reserve: false})
@@ -8567,6 +8584,36 @@ contract PriceFeedDataLive {
                     address(0)
                 ],
                 signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
+
+        // ------------------------ USDL ------------------------
+        chainlinkPriceFeedsByNetwork[1].push(
+            ChainlinkPriceFeedData({
+                token: TOKEN_USDL,
+                priceFeed: 0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6,
+                stalenessPeriod: 86400,
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ wUSDL ------------------------
+        erc4626PriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_wUSDL, underlying: TOKEN_USDL, trusted: false, reserve: false})
+        );
+
+        // ------------------------ csUSDL ------------------------
+        erc4626PriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_csUSDL, underlying: TOKEN_wUSDL, trusted: false, reserve: false})
+        );
+        chainlinkPriceFeedsByNetwork[1].push(
+            ChainlinkPriceFeedData({
+                token: TOKEN_csUSDL,
+                priceFeed: 0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6,
+                stalenessPeriod: 86400,
                 trusted: false,
                 reserve: true
             })
