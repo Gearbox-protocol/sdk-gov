@@ -2882,7 +2882,7 @@ contract TokensDataLive {
         tokenDataByNetwork[146].push(
             TokenData({
                 id: TOKEN_WETH,
-                addr: 0x309C92261178fA0CF748A855e90Ae73FDb79EBc7,
+                addr: 0x50c42dEAcD8Fc9773493ED674b675bE577f2634b,
                 symbol: "WETH",
                 tokenType: TokenType.NORMAL_TOKEN
             })
