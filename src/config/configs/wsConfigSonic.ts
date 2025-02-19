@@ -88,8 +88,8 @@ export const wsConfigSonic: PoolV3DeployConfig = {
   },
   ratesAndLimits: {
     stS: {
-      minRate: 200,
-      maxRate: 200,
+      minRate: 5,
+      maxRate: 1000,
       quotaIncreaseFee: 1,
       limit: (BigInt(7_500_000) * POOL_DECIMALS) / POOL_DIVIDER,
     },
