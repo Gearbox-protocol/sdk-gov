@@ -712,8 +712,8 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xc76dFb89fF298145b417d221B2c747d84952e01d",
-        trusted: false,
         stalenessPeriod: HOUR_1_BUFFERED,
+        trusted: false,
       },
       Reserve: {
         type: PriceFeedType.REDSTONE_ORACLE,
@@ -736,17 +736,16 @@ export const priceFeedsByToken: Record<
           ...REDSTONE_SIGNERS,
         },
         baseToUsdPriceFeed: {
-          type: PriceFeedType.REDSTONE_ORACLE,
-          dataServiceId: "redstone-primary-prod",
-          dataId: "S",
-          stalenessPeriod: FOUR_MINUTES,
-          ...REDSTONE_SIGNERS,
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0xc76dFb89fF298145b417d221B2c747d84952e01d",
+          stalenessPeriod: HOUR_1_BUFFERED,
         },
         trusted: false,
       },
       Reserve: {
-        type: PriceFeedType.THE_SAME_AS,
-        token: "wS",
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0xc76dFb89fF298145b417d221B2c747d84952e01d",
+        stalenessPeriod: HOUR_1_BUFFERED,
       },
     },
   },
