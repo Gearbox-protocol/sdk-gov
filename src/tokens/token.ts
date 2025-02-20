@@ -2270,14 +2270,14 @@ export const tickerInfoTokensByNetwork: Record<
       {
         symbol: "S",
         dataId: "S",
-        address: NOT_DEPLOYED,
+        address: "0x058BCf06D466b5AAFb14C688D03C1397A01B7fD8",
         priceFeed: NOT_DEPLOYED,
         reserve: false,
       },
       {
         symbol: "stS/S",
         dataId: "stS_FUNDAMENTAL",
-        address: NOT_DEPLOYED,
+        address: "0x56a5b6267d6b8de8ade88455b9342787e49e2f1a",
         priceFeed: NOT_DEPLOYED,
         reserve: false,
       },

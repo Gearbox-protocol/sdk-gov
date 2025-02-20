@@ -1252,8 +1252,8 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ stS ------------------------
-        erc4626PriceFeedsByNetwork[146].push(
-            GenericLPPriceFeedData({lpToken: TOKEN_stS, underlying: TOKEN_wS, trusted: false, reserve: false})
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({token: TOKEN_stS, tokenHasSamePriceFeed: TOKEN_wS, trusted: false, reserve: true})
         );
 
         // ------------------------ scUSD ------------------------

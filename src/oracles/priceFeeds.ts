@@ -727,11 +727,6 @@ export const priceFeedsByToken: Record<
   stS: {
     Sonic: {
       Main: {
-        type: PriceFeedType.ERC4626_VAULT_ORACLE,
-        underlying: "wS",
-        trusted: false,
-      },
-      Reserve: {
         type: PriceFeedType.COMPOSITE_ORACLE,
         targetToBasePriceFeed: {
           type: PriceFeedType.REDSTONE_ORACLE,
@@ -747,6 +742,11 @@ export const priceFeedsByToken: Record<
           stalenessPeriod: FOUR_MINUTES,
           ...REDSTONE_SIGNERS,
         },
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "wS",
       },
     },
   },
