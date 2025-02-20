@@ -182,6 +182,8 @@ export const decimals: Record<SupportedToken, number> = {
   dtBTCV3: 18,
   dwstETHV3: 18,
 
+  dwSV3: 18,
+
   dUSDC_eV3: 6,
   sdUSDC_eV3: 6,
 

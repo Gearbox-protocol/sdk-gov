@@ -3393,6 +3393,14 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  dwSV3: {
+    Sonic: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
 
   sdWBTCV3: {
     Mainnet: {
