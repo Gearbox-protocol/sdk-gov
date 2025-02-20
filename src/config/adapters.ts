@@ -34,7 +34,7 @@ export interface BalancerPoolConfig {
 }
 
 export interface BalancerVaultConfig {
-  contract: "BALANCER_VAULT";
+  contract: "BALANCER_VAULT" | "BALANCER_V3_ROUTER";
   allowed: Array<BalancerPoolConfig>;
 }
 

@@ -12,19 +12,8 @@ import {
 
 const POOL_DECIMALS = BigInt(1e18);
 
-const levUniswapConfig: UniV3Config = {
-  contract: "UNISWAP_V3_ROUTER",
-  allowed: [
-    { token0: "WETH", token1: "WBTC", fee: 3000 },
-    { token0: "WETH", token1: "USDC", fee: 500 },
-    { token0: "WETH", token1: "CRV", fee: 3000 },
-    { token0: "WETH", token1: "CRV", fee: 10000 },
-    { token0: "WETH", token1: "CVX", fee: 10000 },
-  ],
-};
-
-const levBalancerConfig: BalancerVaultConfig = {
-  contract: "BALANCER_VAULT",
+const levBalancerV3Config: BalancerVaultConfig = {
+  contract: "BALANCER_V3_ROUTER",
   allowed: [
     {
       pool: "rsETH_WETH",
@@ -35,23 +24,6 @@ const levBalancerConfig: BalancerVaultConfig = {
       status: 2,
     },
   ],
-};
-
-const levPendleConfig: PendleRouterConfig = {
-  contract: "PENDLE_ROUTER",
-  allowed: [
-    {
-      inputToken: "rsETH",
-      pendleToken: "PT_rsETH_26SEP2024",
-      market: "0x6b4740722e46048874d84306b2877600abcea3ae",
-      status: PendlePairStatus.ALLOWED,
-    },
-  ],
-};
-
-const levSteakLRTVaultConfig: MellowVaultConfig = {
-  contract: "MELLOW_STEAKHOUSE_VAULT",
-  allowed: ["wstETH"],
 };
 
 const levCreditManager: CreditManagerV3DeployConfig = {
@@ -113,58 +85,11 @@ const levCreditManager: CreditManagerV3DeployConfig = {
       token: "steCRV",
       lt: 0,
     },
-    {
-      token: "cvxsteCRV",
-      lt: 0,
-    },
-    {
-      token: "rsETH_WETH",
-      lt: 0,
-    },
-    {
-      token: "trenSTETH",
-      lt: 0,
-    },
-    {
-      token: "Re7LRT",
-      lt: 0,
-    },
-    {
-      token: "rstETH",
-      lt: 0,
-    },
-    {
-      token: "amphrETH",
-      lt: 0,
-    },
-    {
-      token: "LDO",
-      lt: 0,
-    },
-    {
-      token: "CRV",
-      lt: 0,
-    },
-    {
-      token: "CVX",
-      lt: 0,
-    },
-    {
-      token: "pufETHwstE",
-      lt: 0,
-    },
   ],
   adapters: [
-    levUniswapConfig,
-    levPendleConfig,
     levBalancerConfig,
-    levSteakLRTVaultConfig,
     { contract: "LIDO_WSTETH" },
     { contract: "CURVE_STETH_GATEWAY" },
-    { contract: "CURVE_PUFETH_WSTETH_POOL" },
-    { contract: "CONVEX_BOOSTER" },
-    { contract: "CONVEX_STECRV_POOL" },
-    { contract: "ZIRCUIT_POOL" },
   ],
 };
 

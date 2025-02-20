@@ -171,7 +171,8 @@ export type SupportedContract =
   | "ZIRCUIT_POOL"
   | "PENDLE_ROUTER"
   | StakingRewardsContract
-  | "DAI_USDS";
+  | "DAI_USDS"
+  | "BALANCER_V3_ROUTER";
 
 export const contractsByNetwork: Record<
   NetworkType,
@@ -303,6 +304,7 @@ export const contractsByNetwork: Record<
 
     // BALANCER
     BALANCER_VAULT: "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+    BALANCER_V3_ROUTER: "0x5C6fb490BDFD3246EB0bB062c168DeCAF4bD9FDd",
 
     // GEARBOX
     UNIVERSAL_ADAPTER: "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC",
@@ -474,6 +476,7 @@ export const contractsByNetwork: Record<
 
     // BALANCER
     BALANCER_VAULT: "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+    BALANCER_V3_ROUTER: NOT_DEPLOYED,
 
     // GEARBOX
     UNIVERSAL_ADAPTER: "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC",
@@ -643,6 +646,7 @@ export const contractsByNetwork: Record<
 
     // BALANCER
     BALANCER_VAULT: "0xBA12222222228d8Ba445958a75a0704d566BF2C8",
+    BALANCER_V3_ROUTER: NOT_DEPLOYED,
 
     // GEARBOX
     UNIVERSAL_ADAPTER: "0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC",
@@ -808,7 +812,7 @@ export const contractsByNetwork: Record<
 
     // BALANCER
     BALANCER_VAULT: NOT_DEPLOYED,
-
+    BALANCER_V3_ROUTER: NOT_DEPLOYED,
     // GEARBOX
     UNIVERSAL_ADAPTER: NOT_DEPLOYED,
 
@@ -1022,6 +1026,12 @@ export type BalancerParams = {
   queries: Record<NetworkType, Address>;
 } & BaseContractParams;
 
+export type BalancerV3Params = {
+  protocol: Protocols.Balancer;
+  type: AdapterInterface.BALANCER_V3_ROUTER;
+  queries: Record<NetworkType, Address>;
+} & BaseContractParams;
+
 export type AaveV2Params = {
   protocol: Protocols.AaveV2;
   type: AdapterInterface.AAVE_V2_LENDING_POOL;
@@ -1095,8 +1105,8 @@ export type ContractParams =
   | MellowVaultParams
   | PendleRouterParams
   | StakingRewardsParams
-  | DaiUsdsParams;
-
+  | DaiUsdsParams
+  | BalancerV3Params;
 export const contractParams: Record<SupportedContract, ContractParams> = {
   UNISWAP_V2_ROUTER: {
     name: "Uniswap V2",
@@ -2295,6 +2305,17 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "DAI/USDS Exchange",
     protocol: Protocols.Sky,
     type: AdapterInterface.DAI_USDS_EXCHANGE,
+  },
+  BALANCER_V3_ROUTER: {
+    name: "Balancer V3 Router",
+    protocol: Protocols.Balancer,
+    type: AdapterInterface.BALANCER_V3_ROUTER,
+    queries: {
+      Mainnet: "0xDfC266d1581be6E5F20Fc7138A8d5B38A5E33f98",
+      Arbitrum: NOT_DEPLOYED,
+      Optimism: NOT_DEPLOYED,
+      Base: NOT_DEPLOYED,
+    },
   },
 };
 

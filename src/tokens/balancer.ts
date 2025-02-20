@@ -5,7 +5,9 @@ import type { TokenBase } from "./token";
 import { TokenNetwork, TokenType } from "./tokenType";
 import { WrappedToken } from "./wrapped";
 
-export type BalancerLPToken =
+export type BalancerLPToken = BalancerV2LPToken | BalancerV3LPToken;
+
+export type BalancerV2LPToken =
   | "USDC_DAI_USDT"
   | "B_rETH_STABLE"
   | "weETH_rETH"
@@ -34,16 +36,27 @@ export type BalancerLPToken =
   | "cbETH_rETH_wstETH"
   | "rETH_wETH_BPT"
   | "33AURA_33ARB_33BAL"
-  | "ezETH_wstETH"
-  | "rsETH_wETH_Arb";
+  | "ezETH_wstETH";
 
-export type BalancerLpTokenData = {
-  symbol: BalancerLPToken;
+export type BalancerV3LPToken = "rstETH_Lido_wstETH";
+
+export type BalancerLpTokenData = BalancerV2LpTokenData | BalancerV3LpTokenData;
+
+export type BalancerV2LpTokenData = {
+  symbol: BalancerV2LPToken;
   type: PartialRecord<TokenNetwork, TokenType.BALANCER_LP_TOKEN>;
   underlying: Array<
     NormalToken | WrappedToken | BalancerLPToken | ERC4626LPToken
   >;
   poolId: string;
+} & TokenBase;
+
+export type BalancerV3LpTokenData = {
+  symbol: BalancerV3LPToken;
+  type: PartialRecord<TokenNetwork, TokenType.BALANCER_V3_LP_TOKEN>;
+  underlying: Array<
+    NormalToken | WrappedToken | BalancerLPToken | ERC4626LPToken
+  >;
 } & TokenBase;
 
 export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
@@ -347,6 +360,14 @@ export const balancerLpTokens: Record<BalancerLPToken, BalancerLpTokenData> = {
     underlying: ["wstETH", "sfrxETH", "rETH"],
     poolId:
       "0x5f8893506ddc4c271837187d14a9c87964a074dc000000000000000000000106",
+  },
+  rstETH_Lido_wstETH: {
+    name: "Balancer rstETH/wstETH",
+    symbol: "rstETH_Lido_wstETH",
+    type: {
+      AllNetworks: TokenType.BALANCER_V3_LP_TOKEN,
+    },
+    underlying: ["rstETH", "wstETH"],
   },
 };
 
