@@ -441,21 +441,6 @@ export const priceFeedsByToken: Record<
         ...REDSTONE_SIGNERS,
       },
     },
-    Sonic: {
-      Main: {
-        type: PriceFeedType.CHAINLINK_ORACLE,
-        address: "0x55bCa887199d5520B3Ce285D41e6dC10C08716C9",
-        trusted: false,
-        stalenessPeriod: HOUR_24,
-      },
-      Reserve: {
-        type: PriceFeedType.REDSTONE_ORACLE,
-        dataServiceId: "redstone-primary-prod",
-        dataId: "USDC",
-        stalenessPeriod: FOUR_MINUTES,
-        ...REDSTONE_SIGNERS,
-      },
-    },
   },
   USDC_e: {
     Arbitrum: {
@@ -487,6 +472,21 @@ export const priceFeedsByToken: Record<
         },
         upperBound: (BigInt(1e8) * 104n) / 100n,
         trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "USDC",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
+    },
+    Sonic: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x55bCa887199d5520B3Ce285D41e6dC10C08716C9",
+        trusted: false,
+        stalenessPeriod: HOUR_24,
       },
       Reserve: {
         type: PriceFeedType.REDSTONE_ORACLE,
@@ -727,24 +727,43 @@ export const priceFeedsByToken: Record<
   stS: {
     Sonic: {
       Main: {
-        type: PriceFeedType.REDSTONE_ORACLE,
-        dataServiceId: "redstone-primary-prod",
-        dataId: "stS_FUNDAMENTAL",
-        stalenessPeriod: FOUR_MINUTES,
-        ...REDSTONE_SIGNERS,
-        trusted: true,
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "wS",
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "stS_FUNDAMENTAL",
+          stalenessPeriod: FOUR_MINUTES,
+          ...REDSTONE_SIGNERS,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "S",
+          stalenessPeriod: FOUR_MINUTES,
+          ...REDSTONE_SIGNERS,
+        },
       },
     },
   },
   scUSD: {
     Sonic: {
       Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x55bCa887199d5520B3Ce285D41e6dC10C08716C9",
+        trusted: false,
+        stalenessPeriod: HOUR_24,
+      },
+      Reserve: {
         type: PriceFeedType.REDSTONE_ORACLE,
         dataServiceId: "redstone-primary-prod",
         dataId: "USDC",
         stalenessPeriod: FOUR_MINUTES,
         ...REDSTONE_SIGNERS,
-        trusted: true,
       },
     },
   },

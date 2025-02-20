@@ -21,9 +21,9 @@ const POOL_DIVIDER = BigInt(1);
 const shadowConfig: VelodromeCLConfig = {
   contract: "SHADOW_ROUTER",
   allowed: [
-    { token0: "USDC", token1: "scUSD", tickSpacing: 5 },
-    { token0: "USDC", token1: "WETH", tickSpacing: 100 },
-    { token0: "wS", token1: "USDC", tickSpacing: 50 },
+    { token0: "USDC_e", token1: "scUSD", tickSpacing: 5 },
+    { token0: "USDC_e", token1: "WETH", tickSpacing: 100 },
+    { token0: "wS", token1: "USDC_e", tickSpacing: 50 },
     { token0: "wS", token1: "stS", tickSpacing: 1 },
   ],
 };
@@ -108,7 +108,7 @@ const equalizerConfig: EqualizerConfig = {
   contract: "EQUALIZER_ROUTER",
   allowed: [
     {
-      token0: "USDC",
+      token0: "USDC_e",
       token1: "WETH",
       stable: false,
     },
@@ -147,7 +147,7 @@ const tier1VolatileCreditManager: CreditManagerV3DeployConfig = {
   liquidationPremium: 300,
   feeLiquidationExpired: 50,
   liquidationPremiumExpired: 300,
-  poolLimit: (BigInt(0) * POOL_DECIMALS) / POOL_DIVIDER,
+  poolLimit: (BigInt(5_000_000) * POOL_DECIMALS) / POOL_DIVIDER,
   maxEnabledTokens: 4,
   collateralTokens: volatileCollateralTokens,
   adapters: [shadowConfig, beetsVolatileConfig, equalizerConfig],
@@ -164,7 +164,7 @@ const tier2VolatileCreditManager: CreditManagerV3DeployConfig = {
   liquidationPremium: 400,
   feeLiquidationExpired: 0,
   liquidationPremiumExpired: 400,
-  poolLimit: (BigInt(0) * POOL_DECIMALS) / POOL_DIVIDER,
+  poolLimit: (BigInt(5_000_000) * POOL_DECIMALS) / POOL_DIVIDER,
   maxEnabledTokens: 4,
   collateralTokens: volatileCollateralTokens,
   adapters: [shadowConfig, beetsVolatileConfig, equalizerConfig],
@@ -175,7 +175,7 @@ export const usdceConfigSonic: PoolV3DeployConfig = {
   symbol: "dUSDC.eV3",
   name: "USDC.e v3 Sonic",
   network: "Sonic",
-  underlying: "USDC",
+  underlying: "USDC_e",
   accountAmount: BigInt(10_000) * POOL_DECIMALS,
   withdrawalFee: 0,
   totalDebtLimit: BigInt(50_000_000) * POOL_DECIMALS,

@@ -764,37 +764,6 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
-        chainlinkPriceFeedsByNetwork[146].push(
-            ChainlinkPriceFeedData({
-                token: TOKEN_USDC,
-                priceFeed: 0x55bCa887199d5520B3Ce285D41e6dC10C08716C9,
-                stalenessPeriod: 86400,
-                trusted: false,
-                reserve: false
-            })
-        );
-        redStonePriceFeedsByNetwork[146].push(
-            RedStonePriceFeedData({
-                token: TOKEN_USDC,
-                dataServiceId: "redstone-primary-prod",
-                dataFeedId: "USDC",
-                signers: [
-                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
-                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
-                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
-                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
-                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0)
-                ],
-                signersThreshold: 5,
-                trusted: false,
-                reserve: true
-            })
-        );
 
         // ------------------------ USDC_e ------------------------
         boundedPriceFeedsByNetwork[42161].push(
@@ -840,6 +809,37 @@ contract PriceFeedDataLive {
             })
         );
         redStonePriceFeedsByNetwork[10].push(
+            RedStonePriceFeedData({
+                token: TOKEN_USDC_e,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "USDC",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
+        chainlinkPriceFeedsByNetwork[146].push(
+            ChainlinkPriceFeedData({
+                token: TOKEN_USDC_e,
+                priceFeed: 0x55bCa887199d5520B3Ce285D41e6dC10C08716C9,
+                stalenessPeriod: 86400,
+                trusted: false,
+                reserve: false
+            })
+        );
+        redStonePriceFeedsByNetwork[146].push(
             RedStonePriceFeedData({
                 token: TOKEN_USDC_e,
                 dataServiceId: "redstone-primary-prod",
@@ -1252,30 +1252,20 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ stS ------------------------
-        redStonePriceFeedsByNetwork[146].push(
-            RedStonePriceFeedData({
-                token: TOKEN_stS,
-                dataServiceId: "redstone-primary-prod",
-                dataFeedId: "stS_FUNDAMENTAL",
-                signers: [
-                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
-                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
-                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
-                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
-                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0)
-                ],
-                signersThreshold: 5,
-                trusted: true,
-                reserve: false
-            })
+        erc4626PriceFeedsByNetwork[146].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_stS, underlying: TOKEN_wS, trusted: false, reserve: false})
         );
 
         // ------------------------ scUSD ------------------------
+        chainlinkPriceFeedsByNetwork[146].push(
+            ChainlinkPriceFeedData({
+                token: TOKEN_scUSD,
+                priceFeed: 0x55bCa887199d5520B3Ce285D41e6dC10C08716C9,
+                stalenessPeriod: 86400,
+                trusted: false,
+                reserve: false
+            })
+        );
         redStonePriceFeedsByNetwork[146].push(
             RedStonePriceFeedData({
                 token: TOKEN_scUSD,
@@ -1294,8 +1284,8 @@ contract PriceFeedDataLive {
                     address(0)
                 ],
                 signersThreshold: 5,
-                trusted: true,
-                reserve: false
+                trusted: false,
+                reserve: true
             })
         );
 
@@ -7892,6 +7882,9 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[42161].push(
             SingeTokenPriceFeedData({token: TOKEN_sdUSDC_eV3, trusted: false, reserve: false})
         );
+
+        // ------------------------ dwSV3 ------------------------
+        zeroPriceFeedsByNetwork[146].push(SingeTokenPriceFeedData({token: TOKEN_dwSV3, trusted: false, reserve: false}));
 
         // ------------------------ sdWBTCV3 ------------------------
         zeroPriceFeedsByNetwork[1].push(

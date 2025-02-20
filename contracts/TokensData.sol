@@ -1720,6 +1720,7 @@ contract TokensDataLive {
                 tokenType: TokenType.DIESEL_LP_TOKEN
             })
         );
+
         tokenDataByNetwork[1].push(
             TokenData({
                 id: TOKEN_dUSDCV3,
@@ -2910,6 +2911,14 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
+        tokenDataByNetwork[146].push(
+            TokenData({
+                id: TOKEN_USDC_e,
+                addr: 0x29219dd400f2Bf60E5a23d13Be72B486D4038894,
+                symbol: "USDC_e",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
 
         tokenDataByNetwork[146].push(
             TokenData({
@@ -2975,6 +2984,24 @@ contract TokensDataLive {
                 addr: 0x713FB5036dC70012588d77a5B066f1Dd05c712d7,
                 symbol: "BPT_USDCe_stS",
                 tokenType: TokenType.BALANCER_LP_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[146].push(
+            TokenData({
+                id: TOKEN_dwSV3,
+                addr: 0xCf4d737C38ef2ac9C7bdb4DbbC954b1932EA4a40,
+                symbol: "dwSV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
+            })
+        );
+
+        tokenDataByNetwork[146].push(
+            TokenData({
+                id: TOKEN_dUSDC_eV3,
+                addr: 0x6F6bda069FB05baB5E83B22FbDb54CBdF33f78ee,
+                symbol: "dUSDC_eV3",
+                tokenType: TokenType.DIESEL_LP_TOKEN
             })
         );
 

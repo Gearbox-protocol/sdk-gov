@@ -1863,7 +1863,9 @@ export type TickerToken =
   | "ETH"
   | "USDe"
   | "BTC"
-  | "PushUSDe";
+  | "PushUSDe"
+  | "stS_FUNDAMENTAL"
+  | "S";
 
 export interface TickerInfo {
   symbol: TickerToken;
@@ -2263,7 +2265,24 @@ export const tickerInfoTokensByNetwork: Record<
     ],
   },
   Base: {},
-  Sonic: {},
+  Sonic: {
+    stS: [
+      {
+        symbol: "S",
+        dataId: "S",
+        address: NOT_DEPLOYED,
+        priceFeed: NOT_DEPLOYED,
+        reserve: false,
+      },
+      {
+        symbol: "stS_FUNDAMENTAL",
+        dataId: "stS_FUNDAMENTAL",
+        address: NOT_DEPLOYED,
+        priceFeed: NOT_DEPLOYED,
+        reserve: false,
+      },
+    ],
+  },
 };
 
 export const tickerTokensByNetwork: Record<
