@@ -66,7 +66,7 @@ export const detectNetwork = async (
   const mainnetUSDC = tokenDataByNetwork.Mainnet["USDC"];
   const arbitrumUSDC = tokenDataByNetwork.Arbitrum["USDC"];
   const optimismUSDC = tokenDataByNetwork.Optimism["USDC"];
-  const sonicUSDC = tokenDataByNetwork.Sonic["USDC"];
+  const sonicUSDC = tokenDataByNetwork.Sonic["USDC_e"];
 
   const mainnetUSDCContract = new Contract(mainnetUSDC, usdcABI, provider);
 

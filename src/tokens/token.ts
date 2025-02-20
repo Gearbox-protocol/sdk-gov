@@ -1864,7 +1864,7 @@ export type TickerToken =
   | "USDe"
   | "BTC"
   | "PushUSDe"
-  | "stS_FUNDAMENTAL"
+  | "stS/S"
   | "S";
 
 export interface TickerInfo {
@@ -2275,7 +2275,7 @@ export const tickerInfoTokensByNetwork: Record<
         reserve: false,
       },
       {
-        symbol: "stS_FUNDAMENTAL",
+        symbol: "stS/S",
         dataId: "stS_FUNDAMENTAL",
         address: NOT_DEPLOYED,
         priceFeed: NOT_DEPLOYED,
