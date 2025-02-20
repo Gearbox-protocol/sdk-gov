@@ -1971,9 +1971,9 @@ export const tickerInfoTokensByNetwork: Record<
     beraSTONE: [
       {
         symbol: "beraSTONE/ETH",
-        dataId: "beraETH_FUNDAMENTAL",
+        dataId: "beraSTONE_FUNDAMENTAL",
         address: "0x692072eE081c9Ded28d2CfD27513E578d895FD0d",
-        priceFeed: "0xf12b7879713FA998B39b3C7C9c2631E40a0b9dfB",
+        priceFeed: "0xD35f2Fe7cc74e143F3f526c6e2c399fE58e31Cf1",
         reserve: false,
       },
     ],
@@ -2270,7 +2270,7 @@ export const tickerInfoTokensByNetwork: Record<
         symbol: "stS/S",
         dataId: "stS_FUNDAMENTAL",
         address: "0x56a5b6267d6b8de8ade88455b9342787e49e2f1a",
-        priceFeed: NOT_DEPLOYED,
+        priceFeed: "0xd979d375b4D7d7539DE6D653DD40f0fFc8A2F83D",
         reserve: false,
       },
     ],
