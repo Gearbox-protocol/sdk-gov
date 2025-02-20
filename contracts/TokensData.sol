@@ -2905,14 +2905,6 @@ contract TokensDataLive {
 
         tokenDataByNetwork[146].push(
             TokenData({
-                id: TOKEN_USDC,
-                addr: 0x29219dd400f2Bf60E5a23d13Be72B486D4038894,
-                symbol: "USDC",
-                tokenType: TokenType.NORMAL_TOKEN
-            })
-        );
-        tokenDataByNetwork[146].push(
-            TokenData({
                 id: TOKEN_USDC_e,
                 addr: 0x29219dd400f2Bf60E5a23d13Be72B486D4038894,
                 symbol: "USDC_e",

@@ -11,6 +11,7 @@ interface IERC20Check {
 
 contract NetworkDetector is Test {
     mapping(uint256 => address) usdcByNetwork;
+    mapping(uint256 => address) usdceByNetwork;
 
     uint16[] public connectedNetworks;
 
@@ -33,8 +34,10 @@ contract NetworkDetector is Test {
     }
 
     function checkNetworkId(uint16 _networkId) internal view returns (bool) {
-        address tokenToCheck = usdcByNetwork[_networkId];
+        return _checkToken(usdcByNetwork[_networkId]) || _checkToken(usdceByNetwork[_networkId]);
+    }
 
+    function _checkToken(address tokenToCheck) internal view returns (bool) {
         if (!isContract(tokenToCheck)) {
             return false;
         }

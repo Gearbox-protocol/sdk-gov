@@ -71,7 +71,12 @@ class BindingsGenerator {
 
     for (const chain of supportedChains) {
       const chainId = CHAINS[chain];
-      data += `usdcByNetwork[${chainId}] = ${tokenDataByNetwork[chain].USDC};\n`;
+      if (tokenDataByNetwork[chain].USDC !== NOT_DEPLOYED) {
+        data += `usdcByNetwork[${chainId}] = ${tokenDataByNetwork[chain].USDC};\n`;
+      }
+      if (tokenDataByNetwork[chain].USDC_e !== NOT_DEPLOYED) {
+        data += `usdceByNetwork[${chainId}] = ${tokenDataByNetwork[chain].USDC_e};\n`;
+      }
     }
 
     this.makeBindings("NetworkDetector.sol", data);
@@ -160,7 +165,7 @@ class BindingsGenerator {
           chainId,
           true,
         );
-        if (priceFeedData) {
+        if (priceFeedDataReserve) {
           data += priceFeedDataReserve;
         } else {
           console.warn(`No price feed data for ${token}`);
@@ -539,6 +544,11 @@ class BindingsGenerator {
       });`;
           isBaseComposite = true;
         } else throw new Error("Unsupported baseToUsdPriceFeed type");
+      } else if (
+        priceFeedData.baseToUsdPriceFeed.type === PriceFeedType.REDSTONE_ORACLE
+      ) {
+        console.log("returning undefined");
+        return undefined;
       } else throw new Error("Unsupported baseToUsdPriceFeed type");
 
       return `
