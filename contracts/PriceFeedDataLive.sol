@@ -422,6 +422,12 @@ contract PriceFeedDataLive {
         theSamePriceFeedsByNetwork[8453].push(
             TheSamePriceFeedData({token: TOKEN_USDS, tokenHasSamePriceFeed: TOKEN_DAI, trusted: false, reserve: true})
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({token: TOKEN_USDS, tokenHasSamePriceFeed: TOKEN_DAI, trusted: true, reserve: false})
+        );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({token: TOKEN_USDS, tokenHasSamePriceFeed: TOKEN_DAI, trusted: false, reserve: true})
+        );
 
         // ------------------------ GUSD ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_GUSD, trusted: true, reserve: false}));
@@ -824,6 +830,37 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
+        chainlinkPriceFeedsByNetwork[146].push(
+            ChainlinkPriceFeedData({
+                token: TOKEN_USDC_e,
+                priceFeed: 0x55bCa887199d5520B3Ce285D41e6dC10C08716C9,
+                stalenessPeriod: 86400,
+                trusted: false,
+                reserve: false
+            })
+        );
+        redStonePriceFeedsByNetwork[146].push(
+            RedStonePriceFeedData({
+                token: TOKEN_USDC_e,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "USDC",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ USDT ------------------------
         boundedPriceFeedsByNetwork[1].push(
@@ -934,6 +971,9 @@ contract PriceFeedDataLive {
             TheSamePriceFeedData({token: TOKEN_DOLA, tokenHasSamePriceFeed: TOKEN_USDC, trusted: true, reserve: false})
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({token: TOKEN_DOLA, tokenHasSamePriceFeed: TOKEN_USDC, trusted: true, reserve: false})
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({token: TOKEN_DOLA, tokenHasSamePriceFeed: TOKEN_USDC, trusted: true, reserve: false})
         );
 
@@ -1129,6 +1169,144 @@ contract PriceFeedDataLive {
                 token: TOKEN_WETH,
                 dataServiceId: "redstone-primary-prod",
                 dataFeedId: "ETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
+        chainlinkPriceFeedsByNetwork[146].push(
+            ChainlinkPriceFeedData({
+                token: TOKEN_WETH,
+                priceFeed: 0x824364077993847f71293B24ccA8567c00c2de11,
+                stalenessPeriod: 86400,
+                trusted: false,
+                reserve: false
+            })
+        );
+        redStonePriceFeedsByNetwork[146].push(
+            RedStonePriceFeedData({
+                token: TOKEN_WETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "ETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
+
+        // ------------------------ wS ------------------------
+        chainlinkPriceFeedsByNetwork[146].push(
+            ChainlinkPriceFeedData({
+                token: TOKEN_wS,
+                priceFeed: 0xc76dFb89fF298145b417d221B2c747d84952e01d,
+                stalenessPeriod: 4500,
+                trusted: false,
+                reserve: false
+            })
+        );
+        redStonePriceFeedsByNetwork[146].push(
+            RedStonePriceFeedData({
+                token: TOKEN_wS,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "S",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
+
+        // ------------------------ stS ------------------------
+
+        {
+            CompositePriceFeedData storage cpf = compositePriceFeedsByNetwork[146].push();
+            cpf.token = TOKEN_stS;
+            cpf.isTargetRedstone = true;
+            cpf.redstoneTargetToBaseData = RedStonePriceFeedDataShort({
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "stS_FUNDAMENTAL",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5
+            });
+            cpf.targetStalenessPeriod = 240;
+            cpf.isBaseComposite = false;
+            cpf.baseToUSDFeed = 0xc76dFb89fF298145b417d221B2c747d84952e01d;
+            cpf.baseStalenessPeriod = 4500;
+
+            cpf.trusted = false;
+            cpf.reserve = false;
+        }
+        chainlinkPriceFeedsByNetwork[146].push(
+            ChainlinkPriceFeedData({
+                token: TOKEN_stS,
+                priceFeed: 0xc76dFb89fF298145b417d221B2c747d84952e01d,
+                stalenessPeriod: 4500,
+                trusted: false,
+                reserve: true
+            })
+        );
+
+        // ------------------------ scUSD ------------------------
+        chainlinkPriceFeedsByNetwork[146].push(
+            ChainlinkPriceFeedData({
+                token: TOKEN_scUSD,
+                priceFeed: 0x55bCa887199d5520B3Ce285D41e6dC10C08716C9,
+                stalenessPeriod: 86400,
+                trusted: false,
+                reserve: false
+            })
+        );
+        redStonePriceFeedsByNetwork[146].push(
+            RedStonePriceFeedData({
+                token: TOKEN_scUSD,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "USDC",
                 signers: [
                     0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
                     0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
@@ -1587,6 +1765,7 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: TOKEN_LQTY, trusted: true, reserve: false}));
         zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_LQTY, trusted: true, reserve: false}));
         zeroPriceFeedsByNetwork[8453].push(SingeTokenPriceFeedData({token: TOKEN_LQTY, trusted: true, reserve: false}));
+        zeroPriceFeedsByNetwork[146].push(SingeTokenPriceFeedData({token: TOKEN_LQTY, trusted: true, reserve: false}));
 
         // ------------------------ GMX ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_GMX, trusted: false, reserve: false}));
@@ -2558,6 +2737,19 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ MORPHO ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_MORPHO, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_MORPHO, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_MORPHO, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_MORPHO, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_MORPHO, trusted: false, reserve: false})
+        );
+
         // ------------------------ AURA ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_AURA, trusted: false, reserve: false}));
         zeroPriceFeedsByNetwork[42161].push(
@@ -2565,6 +2757,7 @@ contract PriceFeedDataLive {
         );
         zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_AURA, trusted: false, reserve: false}));
         zeroPriceFeedsByNetwork[8453].push(SingeTokenPriceFeedData({token: TOKEN_AURA, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[146].push(SingeTokenPriceFeedData({token: TOKEN_AURA, trusted: false, reserve: false}));
 
         // ------------------------ SWISE ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_SWISE, trusted: false, reserve: false}));
@@ -2575,18 +2768,21 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_SWISE, trusted: false, reserve: false})
         );
+        zeroPriceFeedsByNetwork[146].push(SingeTokenPriceFeedData({token: TOKEN_SWISE, trusted: false, reserve: false}));
 
         // ------------------------ SKY ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_SKY, trusted: false, reserve: false}));
         zeroPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: TOKEN_SKY, trusted: false, reserve: false}));
         zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_SKY, trusted: false, reserve: false}));
         zeroPriceFeedsByNetwork[8453].push(SingeTokenPriceFeedData({token: TOKEN_SKY, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[146].push(SingeTokenPriceFeedData({token: TOKEN_SKY, trusted: false, reserve: false}));
 
         // ------------------------ T ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_T, trusted: false, reserve: false}));
         zeroPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: TOKEN_T, trusted: false, reserve: false}));
         zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_T, trusted: false, reserve: false}));
         zeroPriceFeedsByNetwork[8453].push(SingeTokenPriceFeedData({token: TOKEN_T, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[146].push(SingeTokenPriceFeedData({token: TOKEN_T, trusted: false, reserve: false}));
 
         // ------------------------ beraSTONE ------------------------
 
@@ -2672,6 +2868,9 @@ contract PriceFeedDataLive {
         yearnPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_yvDAI, trusted: false, reserve: false})
         );
+        yearnPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_yvDAI, trusted: false, reserve: false})
+        );
 
         // ------------------------ yvUSDC ------------------------
         yearnPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_yvUSDC, trusted: false, reserve: false}));
@@ -2682,6 +2881,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_yvUSDC, trusted: false, reserve: false})
         );
         yearnPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_yvUSDC, trusted: false, reserve: false})
+        );
+        yearnPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_yvUSDC, trusted: false, reserve: false})
         );
 
@@ -2698,6 +2900,9 @@ contract PriceFeedDataLive {
         yearnPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_yvUSDC_e, trusted: false, reserve: false})
         );
+        yearnPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_yvUSDC_e, trusted: false, reserve: false})
+        );
 
         // ------------------------ yvUSDT ------------------------
         yearnPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_yvUSDT, trusted: false, reserve: false}));
@@ -2708,6 +2913,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_yvUSDT, trusted: false, reserve: false})
         );
         yearnPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_yvUSDT, trusted: false, reserve: false})
+        );
+        yearnPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_yvUSDT, trusted: false, reserve: false})
         );
 
@@ -2722,6 +2930,9 @@ contract PriceFeedDataLive {
         yearnPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_yvWETH, trusted: false, reserve: false})
         );
+        yearnPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_yvWETH, trusted: false, reserve: false})
+        );
 
         // ------------------------ yvWBTC ------------------------
         yearnPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_yvWBTC, trusted: false, reserve: false}));
@@ -2734,6 +2945,9 @@ contract PriceFeedDataLive {
         yearnPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_yvWBTC, trusted: false, reserve: false})
         );
+        yearnPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_yvWBTC, trusted: false, reserve: false})
+        );
 
         // ------------------------ yvOP ------------------------
         yearnPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_yvOP, trusted: false, reserve: false}));
@@ -2744,6 +2958,7 @@ contract PriceFeedDataLive {
         yearnPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_yvOP, trusted: false, reserve: false})
         );
+        yearnPriceFeedsByNetwork[146].push(SingeTokenPriceFeedData({token: TOKEN_yvOP, trusted: false, reserve: false}));
 
         // ------------------------ 3Crv ------------------------
         curvePriceFeedsByNetwork[1].push(
@@ -2849,6 +3064,37 @@ contract PriceFeedDataLive {
             })
         );
         redStonePriceFeedsByNetwork[8453].push(
+            RedStonePriceFeedData({
+                token: TOKEN__3Crv,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "3Crv",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN__3Crv,
+                assets: TokensLib.arrayOf(TOKEN_DAI, TOKEN_USDC, TOKEN_USDT),
+                pool: Contracts.CURVE_3CRV_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        redStonePriceFeedsByNetwork[146].push(
             RedStonePriceFeedData({
                 token: TOKEN__3Crv,
                 dataServiceId: "redstone-primary-prod",
@@ -2996,6 +3242,37 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_crvFRAX,
+                assets: TokensLib.arrayOf(TOKEN_FRAX, TOKEN_USDC),
+                pool: Contracts.CURVE_FRAX_USDC_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        redStonePriceFeedsByNetwork[146].push(
+            RedStonePriceFeedData({
+                token: TOKEN_crvFRAX,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "crvFRAX",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ steCRV ------------------------
         curvePriceFeedsByNetwork[1].push(
@@ -3026,6 +3303,15 @@ contract PriceFeedDataLive {
             })
         );
         curvePriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_steCRV,
+                assets: TokensLib.arrayOf(TOKEN_STETH, TOKEN_WETH),
+                pool: Contracts.CURVE_STETH_GATEWAY,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[146].push(
             CurvePriceFeedData({
                 lpToken: TOKEN_steCRV,
                 assets: TokensLib.arrayOf(TOKEN_STETH, TOKEN_WETH),
@@ -3072,6 +3358,15 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_FRAX3CRV,
+                assets: TokensLib.arrayOf(TOKEN_FRAX, TOKEN_DAI, TOKEN_USDC, TOKEN_USDT),
+                pool: Contracts.CURVE_FRAX_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ LUSD3CRV ------------------------
         curvePriceFeedsByNetwork[1].push(
@@ -3102,6 +3397,15 @@ contract PriceFeedDataLive {
             })
         );
         curvePriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_LUSD3CRV,
+                assets: TokensLib.arrayOf(TOKEN_LUSD, TOKEN_DAI, TOKEN_USDC, TOKEN_USDT),
+                pool: Contracts.CURVE_LUSD_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[146].push(
             CurvePriceFeedData({
                 lpToken: TOKEN_LUSD3CRV,
                 assets: TokensLib.arrayOf(TOKEN_LUSD, TOKEN_DAI, TOKEN_USDC, TOKEN_USDT),
@@ -3148,6 +3452,15 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_crvPlain3andSUSD,
+                assets: TokensLib.arrayOf(TOKEN_DAI, TOKEN_USDC, TOKEN_USDT, TOKEN_sUSD),
+                pool: Contracts.CURVE_SUSD_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ gusd3CRV ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_gusd3CRV, trusted: true, reserve: false}));
@@ -3158,6 +3471,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_gusd3CRV, trusted: true, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_gusd3CRV, trusted: true, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_gusd3CRV, trusted: true, reserve: false})
         );
 
@@ -3190,6 +3506,15 @@ contract PriceFeedDataLive {
             })
         );
         curvePriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_USDeUSDC,
+                assets: TokensLib.arrayOf(TOKEN_USDe, TOKEN_USDC),
+                pool: Contracts.CURVE_USDE_USDC_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[146].push(
             CurvePriceFeedData({
                 lpToken: TOKEN_USDeUSDC,
                 assets: TokensLib.arrayOf(TOKEN_USDe, TOKEN_USDC),
@@ -3236,6 +3561,15 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_USDeDAI,
+                assets: TokensLib.arrayOf(TOKEN_USDe, TOKEN_DAI),
+                pool: Contracts.CURVE_USDE_DAI_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ MtEthena ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_MtEthena, trusted: true, reserve: false}));
@@ -3246,6 +3580,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_MtEthena, trusted: true, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_MtEthena, trusted: true, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_MtEthena, trusted: true, reserve: false})
         );
 
@@ -3278,6 +3615,15 @@ contract PriceFeedDataLive {
             })
         );
         curvePriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_GHOUSDe,
+                assets: TokensLib.arrayOf(TOKEN_GHO, TOKEN_USDe),
+                pool: Contracts.CURVE_GHO_USDE_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[146].push(
             CurvePriceFeedData({
                 lpToken: TOKEN_GHOUSDe,
                 assets: TokensLib.arrayOf(TOKEN_GHO, TOKEN_USDe),
@@ -3324,6 +3670,15 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_FRAXUSDe,
+                assets: TokensLib.arrayOf(TOKEN_FRAX, TOKEN_USDe),
+                pool: Contracts.CURVE_FRAX_USDE_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ USDecrvUSD ------------------------
         curvePriceFeedsByNetwork[1].push(
@@ -3362,6 +3717,15 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_USDecrvUSD,
+                assets: TokensLib.arrayOf(TOKEN_USDe, TOKEN_crvUSD),
+                pool: Contracts.CURVE_USDE_CRVUSD_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ FRAXsDAI ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -3376,6 +3740,9 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_FRAXsDAI, trusted: false, reserve: false})
         );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_FRAXsDAI, trusted: false, reserve: false})
+        );
 
         // ------------------------ DOLAsUSDe ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -3388,6 +3755,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_DOLAsUSDe, trusted: false, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_DOLAsUSDe, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_DOLAsUSDe, trusted: false, reserve: false})
         );
 
@@ -3420,6 +3790,15 @@ contract PriceFeedDataLive {
             })
         );
         curveCryptoPriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_crvCRVETH,
+                assets: TokensLib.arrayOf(TOKEN_WETH, TOKEN_CRV),
+                pool: Contracts.CURVE_CRVETH_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curveCryptoPriceFeedsByNetwork[146].push(
             CurvePriceFeedData({
                 lpToken: TOKEN_crvCRVETH,
                 assets: TokensLib.arrayOf(TOKEN_WETH, TOKEN_CRV),
@@ -3466,6 +3845,15 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        curveCryptoPriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_crvCVXETH,
+                assets: TokensLib.arrayOf(TOKEN_WETH, TOKEN_CVX),
+                pool: Contracts.CURVE_CVXETH_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ crvUSDTWBTCWETH ------------------------
         curveCryptoPriceFeedsByNetwork[1].push(
@@ -3504,6 +3892,15 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        curveCryptoPriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_crvUSDTWBTCWETH,
+                assets: TokensLib.arrayOf(TOKEN_USDT, TOKEN_WBTC, TOKEN_WETH),
+                pool: Contracts.CURVE_3CRYPTO_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ LDOETH ------------------------
         curveCryptoPriceFeedsByNetwork[1].push(
@@ -3534,6 +3931,15 @@ contract PriceFeedDataLive {
             })
         );
         curveCryptoPriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_LDOETH,
+                assets: TokensLib.arrayOf(TOKEN_LDO, TOKEN_WETH),
+                pool: Contracts.CURVE_LDOETH_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curveCryptoPriceFeedsByNetwork[146].push(
             CurvePriceFeedData({
                 lpToken: TOKEN_LDOETH,
                 assets: TokensLib.arrayOf(TOKEN_LDO, TOKEN_WETH),
@@ -3682,6 +4088,24 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_crvUSDUSDC,
+                assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_USDC),
+                pool: Contracts.CURVE_CRVUSD_USDC_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_crvUSDUSDC,
+                assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_USDC),
+                pool: Contracts.CURVE_CRVUSD_USDC_POOL,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ crvUsUSDe ------------------------
         curvePriceFeedsByNetwork[1].push(
@@ -3748,6 +4172,24 @@ contract PriceFeedDataLive {
             })
         );
         curvePriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_crvUsUSDe,
+                assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_USDe),
+                pool: Contracts.CURVE_CRVUSD_SUSDE_POOL,
+                trusted: false,
+                reserve: true
+            })
+        );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_crvUsUSDe,
+                assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_USDe),
+                pool: Contracts.CURVE_CRVUSD_SUSDE_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[146].push(
             CurvePriceFeedData({
                 lpToken: TOKEN_crvUsUSDe,
                 assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_USDe),
@@ -3830,6 +4272,24 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_llamathena,
+                assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_USDe),
+                pool: Contracts.CURVE_LLAMA_THENA_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_llamathena,
+                assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_USDe),
+                pool: Contracts.CURVE_LLAMA_THENA_POOL,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ crvUSDUSDT ------------------------
         curvePriceFeedsByNetwork[1].push(
@@ -3904,6 +4364,24 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_crvUSDUSDT,
+                assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_USDT),
+                pool: Contracts.CURVE_CRVUSD_USDT_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_crvUSDUSDT,
+                assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_USDT),
+                pool: Contracts.CURVE_CRVUSD_USDT_POOL,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ crvUSDFRAX ------------------------
         curvePriceFeedsByNetwork[1].push(
@@ -3942,6 +4420,15 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_crvUSDFRAX,
+                assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_FRAX),
+                pool: Contracts.CURVE_CRVUSD_FRAX_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ tETHwstETH ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -3954,6 +4441,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_tETHwstETH, trusted: false, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_tETHwstETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_tETHwstETH, trusted: false, reserve: false})
         );
 
@@ -3970,6 +4460,9 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_tETHweETH, trusted: false, reserve: false})
         );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_tETHweETH, trusted: false, reserve: false})
+        );
 
         // ------------------------ pzETHstETH ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -3984,6 +4477,26 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_pzETHstETH, trusted: false, reserve: false})
         );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_pzETHstETH, trusted: false, reserve: false})
+        );
+
+        // ------------------------ USDLUSDC ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_USDLUSDC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_USDLUSDC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_USDLUSDC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_USDLUSDC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_USDLUSDC, trusted: false, reserve: false})
+        );
 
         // ------------------------ wstETHCRV ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -3996,6 +4509,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_wstETHCRV, trusted: false, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_wstETHCRV, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_wstETHCRV, trusted: false, reserve: false})
         );
 
@@ -4028,6 +4544,15 @@ contract PriceFeedDataLive {
             })
         );
         curveCryptoPriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_crvUSDETHCRV,
+                assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_WETH, TOKEN_CRV),
+                pool: Contracts.CURVE_TRI_CRV_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curveCryptoPriceFeedsByNetwork[146].push(
             CurvePriceFeedData({
                 lpToken: TOKEN_crvUSDETHCRV,
                 assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_WETH, TOKEN_CRV),
@@ -4074,6 +4599,15 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        curveCryptoPriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_rETH_f,
+                assets: TokensLib.arrayOf(TOKEN_rETH, TOKEN_WETH),
+                pool: Contracts.CURVE_RETH_ETH_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ DOLAFRAXBP3CRV_f ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -4086,6 +4620,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_DOLAFRAXBP3CRV_f, trusted: false, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_DOLAFRAXBP3CRV_f, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_DOLAFRAXBP3CRV_f, trusted: false, reserve: false})
         );
 
@@ -4102,6 +4639,9 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_crvUSDDOLA_f, trusted: false, reserve: false})
         );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_crvUSDDOLA_f, trusted: false, reserve: false})
+        );
 
         // ------------------------ pufETHwstE ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -4114,6 +4654,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_pufETHwstE, trusted: false, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_pufETHwstE, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_pufETHwstE, trusted: false, reserve: false})
         );
 
@@ -4146,6 +4689,15 @@ contract PriceFeedDataLive {
             })
         );
         curvePriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_GHOcrvUSD,
+                assets: TokensLib.arrayOf(TOKEN_GHO, TOKEN_crvUSD),
+                pool: Contracts.CURVE_GHO_CRVUSD_POOL,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[146].push(
             CurvePriceFeedData({
                 lpToken: TOKEN_GHOcrvUSD,
                 assets: TokensLib.arrayOf(TOKEN_GHO, TOKEN_crvUSD),
@@ -4192,6 +4744,15 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN__2CRV,
+                assets: TokensLib.arrayOf(TOKEN_USDC_e, TOKEN_USDT),
+                pool: Contracts.CURVE_2CRV_POOL_ARB,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ 3c-crvUSD ------------------------
         curveCryptoPriceFeedsByNetwork[1].push(
@@ -4222,6 +4783,15 @@ contract PriceFeedDataLive {
             })
         );
         curveCryptoPriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN__3c_crvUSD,
+                assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_WBTC, TOKEN_WETH),
+                pool: Contracts.CURVE_TRICRYPTO_CRVUSD_POOL_ARB,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curveCryptoPriceFeedsByNetwork[146].push(
             CurvePriceFeedData({
                 lpToken: TOKEN__3c_crvUSD,
                 assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_WBTC, TOKEN_WETH),
@@ -4268,6 +4838,15 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_crvUSDC,
+                assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_USDC),
+                pool: Contracts.CURVE_CRVUSD_USDC_POOL_ARB,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ crvUSDC_e ------------------------
         curvePriceFeedsByNetwork[1].push(
@@ -4298,6 +4877,15 @@ contract PriceFeedDataLive {
             })
         );
         curvePriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_crvUSDC_e,
+                assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_USDC_e),
+                pool: Contracts.CURVE_CRVUSD_USDC_E_POOL_ARB,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[146].push(
             CurvePriceFeedData({
                 lpToken: TOKEN_crvUSDC_e,
                 assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_USDC_e),
@@ -4344,6 +4932,15 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_USDEUSDC,
+                assets: TokensLib.arrayOf(TOKEN_USDC, TOKEN_USDe),
+                pool: Contracts.CURVE_USDE_USDC_POOL_ARB,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ ezETHWETH ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -4358,6 +4955,9 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_ezETHWETH, trusted: false, reserve: false})
         );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_ezETHWETH, trusted: false, reserve: false})
+        );
 
         // ------------------------ ezpzETH ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_ezpzETH, trusted: false, reserve: false}));
@@ -4368,6 +4968,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_ezpzETH, trusted: false, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_ezpzETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_ezpzETH, trusted: false, reserve: false})
         );
 
@@ -4384,6 +4987,9 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_LBTCWBTC, trusted: false, reserve: false})
         );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_LBTCWBTC, trusted: false, reserve: false})
+        );
 
         // ------------------------ eBTCWBTC ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -4396,6 +5002,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_eBTCWBTC, trusted: false, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_eBTCWBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_eBTCWBTC, trusted: false, reserve: false})
         );
 
@@ -4412,6 +5021,9 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_pumpBTCWBTC, trusted: false, reserve: false})
         );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTCWBTC, trusted: false, reserve: false})
+        );
 
         // ------------------------ TriBTC ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_TriBTC, trusted: false, reserve: false}));
@@ -4420,6 +5032,9 @@ contract PriceFeedDataLive {
         );
         zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_TriBTC, trusted: false, reserve: false}));
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_TriBTC, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_TriBTC, trusted: false, reserve: false})
         );
 
@@ -4432,6 +5047,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN__2BTC_f, trusted: false, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN__2BTC_f, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN__2BTC_f, trusted: false, reserve: false})
         );
 
@@ -4464,6 +5082,15 @@ contract PriceFeedDataLive {
             })
         );
         curvePriceFeedsByNetwork[8453].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN__3CRV,
+                assets: TokensLib.arrayOf(TOKEN_DAI, TOKEN_USDC_e, TOKEN_USDT),
+                pool: Contracts.CURVE_3CRV_POOL_OP,
+                trusted: false,
+                reserve: false
+            })
+        );
+        curvePriceFeedsByNetwork[146].push(
             CurvePriceFeedData({
                 lpToken: TOKEN__3CRV,
                 assets: TokensLib.arrayOf(TOKEN_DAI, TOKEN_USDC_e, TOKEN_USDT),
@@ -4510,6 +5137,15 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        curvePriceFeedsByNetwork[146].push(
+            CurvePriceFeedData({
+                lpToken: TOKEN_crvUSDT,
+                assets: TokensLib.arrayOf(TOKEN_crvUSD, TOKEN_USDT),
+                pool: Contracts.CURVE_CRVUSD_USDT_POOL_ARB,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ yvCurve_stETH ------------------------
         yearnPriceFeedsByNetwork[1].push(
@@ -4524,6 +5160,9 @@ contract PriceFeedDataLive {
         yearnPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_yvCurve_stETH, trusted: false, reserve: false})
         );
+        yearnPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_yvCurve_stETH, trusted: false, reserve: false})
+        );
 
         // ------------------------ yvCurve_FRAX ------------------------
         yearnPriceFeedsByNetwork[1].push(
@@ -4536,6 +5175,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_yvCurve_FRAX, trusted: false, reserve: false})
         );
         yearnPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_yvCurve_FRAX, trusted: false, reserve: false})
+        );
+        yearnPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_yvCurve_FRAX, trusted: false, reserve: false})
         );
 
@@ -4565,6 +5207,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvx3Crv,
+                tokenHasSamePriceFeed: TOKEN__3Crv,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_cvx3Crv,
                 tokenHasSamePriceFeed: TOKEN__3Crv,
@@ -4606,6 +5256,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxcrvFRAX,
+                tokenHasSamePriceFeed: TOKEN_crvFRAX,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ cvxsteCRV ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -4633,6 +5291,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxsteCRV,
+                tokenHasSamePriceFeed: TOKEN_steCRV,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_cvxsteCRV,
                 tokenHasSamePriceFeed: TOKEN_steCRV,
@@ -4674,6 +5340,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxFRAX3CRV,
+                tokenHasSamePriceFeed: TOKEN_FRAX3CRV,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ cvxLUSD3CRV ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -4701,6 +5375,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxLUSD3CRV,
+                tokenHasSamePriceFeed: TOKEN_LUSD3CRV,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_cvxLUSD3CRV,
                 tokenHasSamePriceFeed: TOKEN_LUSD3CRV,
@@ -4742,6 +5424,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxcrvPlain3andSUSD,
+                tokenHasSamePriceFeed: TOKEN_crvPlain3andSUSD,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ cvxgusd3CRV ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -4769,6 +5459,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxgusd3CRV,
+                tokenHasSamePriceFeed: TOKEN_gusd3CRV,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_cvxgusd3CRV,
                 tokenHasSamePriceFeed: TOKEN_gusd3CRV,
@@ -4810,6 +5508,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxcrvCRVETH,
+                tokenHasSamePriceFeed: TOKEN_crvCRVETH,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ cvxcrvCVXETH ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -4837,6 +5543,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxcrvCVXETH,
+                tokenHasSamePriceFeed: TOKEN_crvCVXETH,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_cvxcrvCVXETH,
                 tokenHasSamePriceFeed: TOKEN_crvCVXETH,
@@ -4878,6 +5592,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxcrvUSDTWBTCWETH,
+                tokenHasSamePriceFeed: TOKEN_crvUSDTWBTCWETH,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ cvxLDOETH ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -4905,6 +5627,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxLDOETH,
+                tokenHasSamePriceFeed: TOKEN_LDOETH,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_cvxLDOETH,
                 tokenHasSamePriceFeed: TOKEN_LDOETH,
@@ -4946,6 +5676,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxcrvUSDUSDC,
+                tokenHasSamePriceFeed: TOKEN_crvUSDUSDC,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ cvxcrvUSDUSDT ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -4973,6 +5711,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxcrvUSDUSDT,
+                tokenHasSamePriceFeed: TOKEN_crvUSDUSDT,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_cvxcrvUSDUSDT,
                 tokenHasSamePriceFeed: TOKEN_crvUSDUSDT,
@@ -5014,6 +5760,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxcrvUSDFRAX,
+                tokenHasSamePriceFeed: TOKEN_crvUSDFRAX,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ cvxcrvUSDETHCRV ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -5048,6 +5802,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxcrvUSDETHCRV,
+                tokenHasSamePriceFeed: TOKEN_crvUSDETHCRV,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ cvxGHOcrvUSD ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -5075,6 +5837,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxGHOcrvUSD,
+                tokenHasSamePriceFeed: TOKEN_GHOcrvUSD,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_cvxGHOcrvUSD,
                 tokenHasSamePriceFeed: TOKEN_GHOcrvUSD,
@@ -5148,6 +5918,22 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxllamathena,
+                tokenHasSamePriceFeed: TOKEN_llamathena,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxllamathena,
+                tokenHasSamePriceFeed: TOKEN_llamathena,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ stkcvx3Crv ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -5175,6 +5961,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvx3Crv,
+                tokenHasSamePriceFeed: TOKEN__3Crv,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_stkcvx3Crv,
                 tokenHasSamePriceFeed: TOKEN__3Crv,
@@ -5216,6 +6010,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxcrvFRAX,
+                tokenHasSamePriceFeed: TOKEN_crvFRAX,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ stkcvxsteCRV ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -5243,6 +6045,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxsteCRV,
+                tokenHasSamePriceFeed: TOKEN_steCRV,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_stkcvxsteCRV,
                 tokenHasSamePriceFeed: TOKEN_steCRV,
@@ -5284,6 +6094,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxFRAX3CRV,
+                tokenHasSamePriceFeed: TOKEN_FRAX3CRV,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ stkcvxLUSD3CRV ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -5311,6 +6129,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxLUSD3CRV,
+                tokenHasSamePriceFeed: TOKEN_LUSD3CRV,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_stkcvxLUSD3CRV,
                 tokenHasSamePriceFeed: TOKEN_LUSD3CRV,
@@ -5352,6 +6178,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxcrvPlain3andSUSD,
+                tokenHasSamePriceFeed: TOKEN_crvPlain3andSUSD,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ stkcvxgusd3CRV ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -5379,6 +6213,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxgusd3CRV,
+                tokenHasSamePriceFeed: TOKEN_gusd3CRV,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_stkcvxgusd3CRV,
                 tokenHasSamePriceFeed: TOKEN_gusd3CRV,
@@ -5420,6 +6262,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxcrvCRVETH,
+                tokenHasSamePriceFeed: TOKEN_crvCRVETH,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ stkcvxcrvCVXETH ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -5447,6 +6297,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxcrvCVXETH,
+                tokenHasSamePriceFeed: TOKEN_crvCVXETH,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_stkcvxcrvCVXETH,
                 tokenHasSamePriceFeed: TOKEN_crvCVXETH,
@@ -5488,6 +6346,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxcrvUSDTWBTCWETH,
+                tokenHasSamePriceFeed: TOKEN_crvUSDTWBTCWETH,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ stkcvxLDOETH ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -5515,6 +6381,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxLDOETH,
+                tokenHasSamePriceFeed: TOKEN_LDOETH,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_stkcvxLDOETH,
                 tokenHasSamePriceFeed: TOKEN_LDOETH,
@@ -5588,6 +6462,22 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxcrvUSDUSDC,
+                tokenHasSamePriceFeed: TOKEN_crvUSDUSDC,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxcrvUSDUSDC,
+                tokenHasSamePriceFeed: TOKEN_crvUSDUSDC,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ stkcvxcrvUSDUSDT ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -5654,6 +6544,22 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxcrvUSDUSDT,
+                tokenHasSamePriceFeed: TOKEN_crvUSDUSDT,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxcrvUSDUSDT,
+                tokenHasSamePriceFeed: TOKEN_crvUSDUSDT,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ stkcvxcrvUSDFRAX ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -5681,6 +6587,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxcrvUSDFRAX,
+                tokenHasSamePriceFeed: TOKEN_crvUSDFRAX,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_stkcvxcrvUSDFRAX,
                 tokenHasSamePriceFeed: TOKEN_crvUSDFRAX,
@@ -5722,6 +6636,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxcrvUSDETHCRV,
+                tokenHasSamePriceFeed: TOKEN_crvUSDETHCRV,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ stkcvxGHOcrvUSD ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -5749,6 +6671,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxGHOcrvUSD,
+                tokenHasSamePriceFeed: TOKEN_GHOcrvUSD,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_stkcvxGHOcrvUSD,
                 tokenHasSamePriceFeed: TOKEN_GHOcrvUSD,
@@ -5822,6 +6752,22 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxllamathena,
+                tokenHasSamePriceFeed: TOKEN_llamathena,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkcvxllamathena,
+                tokenHasSamePriceFeed: TOKEN_llamathena,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ cvxcrvUSDT ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -5849,6 +6795,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_cvxcrvUSDT,
+                tokenHasSamePriceFeed: TOKEN_crvUSDT,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_cvxcrvUSDT,
                 tokenHasSamePriceFeed: TOKEN_crvUSDT,
@@ -5890,6 +6844,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        balancerWeightedLPPriceFeedsByNetwork[146].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_B_80BAL_20WETH,
+                assets: TokensLib.arrayOf(TOKEN_BAL, TOKEN_WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ B_50WBTC_50WETH ------------------------
         balancerWeightedLPPriceFeedsByNetwork[1].push(
@@ -5924,6 +6886,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        balancerWeightedLPPriceFeedsByNetwork[146].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_B_50WBTC_50WETH,
+                assets: TokensLib.arrayOf(TOKEN_WBTC, TOKEN_WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ 50WETH_50AURA ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -5936,6 +6906,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN__50WETH_50AURA, trusted: false, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN__50WETH_50AURA, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN__50WETH_50AURA, trusted: false, reserve: false})
         );
 
@@ -5965,6 +6938,14 @@ contract PriceFeedDataLive {
             })
         );
         balancerStableLPPriceFeedsByNetwork[8453].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_USDC_DAI_USDT,
+                assets: TokensLib.arrayOf(TOKEN_USDC, TOKEN_DAI, TOKEN_USDT),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[146].push(
             BalancerLPPriceFeedData({
                 lpToken: TOKEN_USDC_DAI_USDT,
                 assets: TokensLib.arrayOf(TOKEN_USDC, TOKEN_DAI, TOKEN_USDT),
@@ -6006,6 +6987,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        balancerStableLPPriceFeedsByNetwork[146].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_B_rETH_STABLE,
+                assets: TokensLib.arrayOf(TOKEN_rETH, TOKEN_WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ weETH_rETH ------------------------
         balancerStableLPPriceFeedsByNetwork[1].push(
@@ -6033,6 +7022,14 @@ contract PriceFeedDataLive {
             })
         );
         balancerStableLPPriceFeedsByNetwork[8453].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_weETH_rETH,
+                assets: TokensLib.arrayOf(TOKEN_weETH, TOKEN_rETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[146].push(
             BalancerLPPriceFeedData({
                 lpToken: TOKEN_weETH_rETH,
                 assets: TokensLib.arrayOf(TOKEN_weETH, TOKEN_rETH),
@@ -6074,6 +7071,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        balancerStableLPPriceFeedsByNetwork[146].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_osETH_wETH_BPT,
+                assets: TokensLib.arrayOf(TOKEN_WETH, TOKEN_osETH),
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ ezETH_WETH_BPT ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -6086,6 +7091,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_ezETH_WETH_BPT, trusted: false, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_ezETH_WETH_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_ezETH_WETH_BPT, trusted: false, reserve: false})
         );
 
@@ -6102,6 +7110,9 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_sUSDe_USDC_BPT, trusted: false, reserve: false})
         );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_sUSDe_USDC_BPT, trusted: false, reserve: false})
+        );
 
         // ------------------------ trenSTETH ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -6116,6 +7127,9 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_trenSTETH, trusted: false, reserve: false})
         );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_trenSTETH, trusted: false, reserve: false})
+        );
 
         // ------------------------ weETH_ezETH_rswETH ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -6128,6 +7142,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_weETH_ezETH_rswETH, trusted: false, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_weETH_ezETH_rswETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_weETH_ezETH_rswETH, trusted: false, reserve: false})
         );
 
@@ -6157,6 +7174,14 @@ contract PriceFeedDataLive {
             })
         );
         balancerStableLPPriceFeedsByNetwork[8453].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_rsETH_WETH,
+                assets: TokensLib.arrayOf(TOKEN_rsETH, TOKEN_WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[146].push(
             BalancerLPPriceFeedData({
                 lpToken: TOKEN_rsETH_WETH,
                 assets: TokensLib.arrayOf(TOKEN_rsETH, TOKEN_WETH),
@@ -6198,6 +7223,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        balancerStableLPPriceFeedsByNetwork[146].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_rsETH_wETH_Arb,
+                assets: TokensLib.arrayOf(TOKEN_rsETH, TOKEN_WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ BPT_rETH_ETH ------------------------
         balancerStableLPPriceFeedsByNetwork[1].push(
@@ -6225,6 +7258,14 @@ contract PriceFeedDataLive {
             })
         );
         balancerStableLPPriceFeedsByNetwork[8453].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_BPT_rETH_ETH,
+                assets: TokensLib.arrayOf(TOKEN_rETH, TOKEN_WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[146].push(
             BalancerLPPriceFeedData({
                 lpToken: TOKEN_BPT_rETH_ETH,
                 assets: TokensLib.arrayOf(TOKEN_rETH, TOKEN_WETH),
@@ -6266,6 +7307,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        balancerStableLPPriceFeedsByNetwork[146].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_BPT_WSTETH_ETH,
+                assets: TokensLib.arrayOf(TOKEN_wstETH, TOKEN_WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ BPT_ROAD ------------------------
         balancerWeightedLPPriceFeedsByNetwork[1].push(
@@ -6300,6 +7349,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        balancerWeightedLPPriceFeedsByNetwork[146].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_BPT_ROAD,
+                assets: TokensLib.arrayOf(TOKEN_WETH, TOKEN_OP, TOKEN_USDC),
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ ECLP_wstETH_WETH ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -6312,6 +7369,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_ECLP_wstETH_WETH, trusted: true, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_ECLP_wstETH_WETH, trusted: true, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_ECLP_wstETH_WETH, trusted: true, reserve: false})
         );
 
@@ -6341,6 +7401,14 @@ contract PriceFeedDataLive {
             })
         );
         balancerStableLPPriceFeedsByNetwork[8453].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_wstETH_WETH_BPT,
+                assets: TokensLib.arrayOf(TOKEN_wstETH, TOKEN_WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[146].push(
             BalancerLPPriceFeedData({
                 lpToken: TOKEN_wstETH_WETH_BPT,
                 assets: TokensLib.arrayOf(TOKEN_wstETH, TOKEN_WETH),
@@ -6382,6 +7450,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        balancerStableLPPriceFeedsByNetwork[146].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_wstETH_rETH_cbETH,
+                assets: TokensLib.arrayOf(TOKEN_wstETH, TOKEN_rETH, TOKEN_cbETH),
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ cbETH_rETH_wstETH ------------------------
         balancerStableLPPriceFeedsByNetwork[1].push(
@@ -6409,6 +7485,14 @@ contract PriceFeedDataLive {
             })
         );
         balancerStableLPPriceFeedsByNetwork[8453].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_cbETH_rETH_wstETH,
+                assets: TokensLib.arrayOf(TOKEN_cbETH, TOKEN_wstETH, TOKEN_rETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[146].push(
             BalancerLPPriceFeedData({
                 lpToken: TOKEN_cbETH_rETH_wstETH,
                 assets: TokensLib.arrayOf(TOKEN_cbETH, TOKEN_wstETH, TOKEN_rETH),
@@ -6450,6 +7534,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        balancerStableLPPriceFeedsByNetwork[146].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_wstETH_rETH_sfrxETH,
+                assets: TokensLib.arrayOf(TOKEN_wstETH, TOKEN_rETH, TOKEN_sfrxETH),
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ rETH_WETH_BPT_deprecated ------------------------
         balancerStableLPPriceFeedsByNetwork[1].push(
@@ -6477,6 +7569,14 @@ contract PriceFeedDataLive {
             })
         );
         balancerStableLPPriceFeedsByNetwork[8453].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_rETH_WETH_BPT_deprecated,
+                assets: TokensLib.arrayOf(TOKEN_rETH, TOKEN_WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+        balancerStableLPPriceFeedsByNetwork[146].push(
             BalancerLPPriceFeedData({
                 lpToken: TOKEN_rETH_WETH_BPT_deprecated,
                 assets: TokensLib.arrayOf(TOKEN_rETH, TOKEN_WETH),
@@ -6518,6 +7618,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        balancerStableLPPriceFeedsByNetwork[146].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_rETH_wETH_BPT,
+                assets: TokensLib.arrayOf(TOKEN_rETH, TOKEN_WETH),
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ bpt_ethtri ------------------------
         balancerStableLPPriceFeedsByNetwork[1].push(
@@ -6552,6 +7660,78 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        balancerStableLPPriceFeedsByNetwork[146].push(
+            BalancerLPPriceFeedData({
+                lpToken: TOKEN_bpt_ethtri,
+                assets: TokensLib.arrayOf(TOKEN_wstETH, TOKEN_sfrxETH, TOKEN_rETH),
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ bpt_rsb ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_bpt_rsb, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_bpt_rsb, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_bpt_rsb, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_bpt_rsb, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_bpt_rsb, trusted: false, reserve: false})
+        );
+
+        // ------------------------ bpt_sss ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_bpt_sss, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_bpt_sss, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_bpt_sss, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_bpt_sss, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_bpt_sss, trusted: false, reserve: false})
+        );
+
+        // ------------------------ BPT_scUSD_stS ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_BPT_scUSD_stS, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_BPT_scUSD_stS, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_BPT_scUSD_stS, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_BPT_scUSD_stS, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_BPT_scUSD_stS, trusted: false, reserve: false})
+        );
+
+        // ------------------------ BPT_USDCe_stS ------------------------
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_BPT_USDCe_stS, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_BPT_USDCe_stS, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_BPT_USDCe_stS, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_BPT_USDCe_stS, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_BPT_USDCe_stS, trusted: false, reserve: false})
+        );
 
         // ------------------------ tETH_wstETH_BPT ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -6564,6 +7744,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_tETH_wstETH_BPT, trusted: false, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_tETH_wstETH_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_tETH_wstETH_BPT, trusted: false, reserve: false})
         );
 
@@ -6580,6 +7763,9 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_pumpBTC_WBTC_BPT, trusted: false, reserve: false})
         );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_pumpBTC_WBTC_BPT, trusted: false, reserve: false})
+        );
 
         // ------------------------ eBTC_WBTC_BPT ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -6592,6 +7778,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_eBTC_WBTC_BPT, trusted: false, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_eBTC_WBTC_BPT, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_eBTC_WBTC_BPT, trusted: false, reserve: false})
         );
 
@@ -6608,6 +7797,9 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN__33AURA_33ARB_33BAL, trusted: true, reserve: false})
         );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN__33AURA_33ARB_33BAL, trusted: true, reserve: false})
+        );
 
         // ------------------------ ezETH_wstETH ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -6622,6 +7814,9 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_ezETH_wstETH, trusted: true, reserve: false})
         );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_ezETH_wstETH, trusted: true, reserve: false})
+        );
 
         // ------------------------ GHO_USDT_USDC ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -6634,6 +7829,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_GHO_USDT_USDC, trusted: true, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_GHO_USDT_USDC, trusted: true, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_GHO_USDT_USDC, trusted: true, reserve: false})
         );
 
@@ -6734,6 +7932,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_sdUSDC_eV3, trusted: false, reserve: false})
         );
 
+        // ------------------------ dwSV3 ------------------------
+        zeroPriceFeedsByNetwork[146].push(SingeTokenPriceFeedData({token: TOKEN_dwSV3, trusted: false, reserve: false}));
+
         // ------------------------ sdWBTCV3 ------------------------
         zeroPriceFeedsByNetwork[1].push(
             SingeTokenPriceFeedData({token: TOKEN_sdWBTCV3, trusted: false, reserve: false})
@@ -6823,6 +8024,9 @@ contract PriceFeedDataLive {
         theSamePriceFeedsByNetwork[8453].push(
             TheSamePriceFeedData({token: TOKEN_aDAI, tokenHasSamePriceFeed: TOKEN_DAI, trusted: false, reserve: false})
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({token: TOKEN_aDAI, tokenHasSamePriceFeed: TOKEN_DAI, trusted: false, reserve: false})
+        );
 
         // ------------------------ aUSDC ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -6835,6 +8039,9 @@ contract PriceFeedDataLive {
             TheSamePriceFeedData({token: TOKEN_aUSDC, tokenHasSamePriceFeed: TOKEN_USDC, trusted: false, reserve: false})
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({token: TOKEN_aUSDC, tokenHasSamePriceFeed: TOKEN_USDC, trusted: false, reserve: false})
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({token: TOKEN_aUSDC, tokenHasSamePriceFeed: TOKEN_USDC, trusted: false, reserve: false})
         );
 
@@ -6851,6 +8058,9 @@ contract PriceFeedDataLive {
         theSamePriceFeedsByNetwork[8453].push(
             TheSamePriceFeedData({token: TOKEN_aUSDT, tokenHasSamePriceFeed: TOKEN_USDT, trusted: false, reserve: false})
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({token: TOKEN_aUSDT, tokenHasSamePriceFeed: TOKEN_USDT, trusted: false, reserve: false})
+        );
 
         // ------------------------ aWETH ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -6863,6 +8073,9 @@ contract PriceFeedDataLive {
             TheSamePriceFeedData({token: TOKEN_aWETH, tokenHasSamePriceFeed: TOKEN_WETH, trusted: false, reserve: false})
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({token: TOKEN_aWETH, tokenHasSamePriceFeed: TOKEN_WETH, trusted: false, reserve: false})
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({token: TOKEN_aWETH, tokenHasSamePriceFeed: TOKEN_WETH, trusted: false, reserve: false})
         );
 
@@ -6879,6 +8092,9 @@ contract PriceFeedDataLive {
         wrappedAaveV2PriceFeedsByNetwork[8453].push(
             GenericLPPriceFeedData({lpToken: TOKEN_waDAI, underlying: TOKEN_aDAI, trusted: false, reserve: false})
         );
+        wrappedAaveV2PriceFeedsByNetwork[146].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_waDAI, underlying: TOKEN_aDAI, trusted: false, reserve: false})
+        );
 
         // ------------------------ waUSDC ------------------------
         wrappedAaveV2PriceFeedsByNetwork[1].push(
@@ -6891,6 +8107,9 @@ contract PriceFeedDataLive {
             GenericLPPriceFeedData({lpToken: TOKEN_waUSDC, underlying: TOKEN_aUSDC, trusted: false, reserve: false})
         );
         wrappedAaveV2PriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_waUSDC, underlying: TOKEN_aUSDC, trusted: false, reserve: false})
+        );
+        wrappedAaveV2PriceFeedsByNetwork[146].push(
             GenericLPPriceFeedData({lpToken: TOKEN_waUSDC, underlying: TOKEN_aUSDC, trusted: false, reserve: false})
         );
 
@@ -6907,6 +8126,9 @@ contract PriceFeedDataLive {
         wrappedAaveV2PriceFeedsByNetwork[8453].push(
             GenericLPPriceFeedData({lpToken: TOKEN_waUSDT, underlying: TOKEN_aUSDT, trusted: false, reserve: false})
         );
+        wrappedAaveV2PriceFeedsByNetwork[146].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_waUSDT, underlying: TOKEN_aUSDT, trusted: false, reserve: false})
+        );
 
         // ------------------------ waWETH ------------------------
         wrappedAaveV2PriceFeedsByNetwork[1].push(
@@ -6919,6 +8141,9 @@ contract PriceFeedDataLive {
             GenericLPPriceFeedData({lpToken: TOKEN_waWETH, underlying: TOKEN_aWETH, trusted: false, reserve: false})
         );
         wrappedAaveV2PriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_waWETH, underlying: TOKEN_aWETH, trusted: false, reserve: false})
+        );
+        wrappedAaveV2PriceFeedsByNetwork[146].push(
             GenericLPPriceFeedData({lpToken: TOKEN_waWETH, underlying: TOKEN_aWETH, trusted: false, reserve: false})
         );
 
@@ -6935,6 +8160,9 @@ contract PriceFeedDataLive {
         compoundV2PriceFeedsByNetwork[8453].push(
             GenericLPPriceFeedData({lpToken: TOKEN_cDAI, underlying: TOKEN_DAI, trusted: false, reserve: false})
         );
+        compoundV2PriceFeedsByNetwork[146].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_cDAI, underlying: TOKEN_DAI, trusted: false, reserve: false})
+        );
 
         // ------------------------ cUSDC ------------------------
         compoundV2PriceFeedsByNetwork[1].push(
@@ -6947,6 +8175,9 @@ contract PriceFeedDataLive {
             GenericLPPriceFeedData({lpToken: TOKEN_cUSDC, underlying: TOKEN_USDC, trusted: false, reserve: false})
         );
         compoundV2PriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_cUSDC, underlying: TOKEN_USDC, trusted: false, reserve: false})
+        );
+        compoundV2PriceFeedsByNetwork[146].push(
             GenericLPPriceFeedData({lpToken: TOKEN_cUSDC, underlying: TOKEN_USDC, trusted: false, reserve: false})
         );
 
@@ -6963,6 +8194,9 @@ contract PriceFeedDataLive {
         compoundV2PriceFeedsByNetwork[8453].push(
             GenericLPPriceFeedData({lpToken: TOKEN_cUSDT, underlying: TOKEN_USDT, trusted: false, reserve: false})
         );
+        compoundV2PriceFeedsByNetwork[146].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_cUSDT, underlying: TOKEN_USDT, trusted: false, reserve: false})
+        );
 
         // ------------------------ cLINK ------------------------
         compoundV2PriceFeedsByNetwork[1].push(
@@ -6975,6 +8209,9 @@ contract PriceFeedDataLive {
             GenericLPPriceFeedData({lpToken: TOKEN_cLINK, underlying: TOKEN_LINK, trusted: false, reserve: false})
         );
         compoundV2PriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_cLINK, underlying: TOKEN_LINK, trusted: false, reserve: false})
+        );
+        compoundV2PriceFeedsByNetwork[146].push(
             GenericLPPriceFeedData({lpToken: TOKEN_cLINK, underlying: TOKEN_LINK, trusted: false, reserve: false})
         );
 
@@ -6991,6 +8228,9 @@ contract PriceFeedDataLive {
         compoundV2PriceFeedsByNetwork[8453].push(
             GenericLPPriceFeedData({lpToken: TOKEN_cETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
         );
+        compoundV2PriceFeedsByNetwork[146].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_cETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
+        );
 
         // ------------------------ fUSDC ------------------------
         compoundV2PriceFeedsByNetwork[1].push(
@@ -7003,6 +8243,9 @@ contract PriceFeedDataLive {
             GenericLPPriceFeedData({lpToken: TOKEN_fUSDC, underlying: TOKEN_USDC, trusted: false, reserve: false})
         );
         compoundV2PriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_fUSDC, underlying: TOKEN_USDC, trusted: false, reserve: false})
+        );
+        compoundV2PriceFeedsByNetwork[146].push(
             GenericLPPriceFeedData({lpToken: TOKEN_fUSDC, underlying: TOKEN_USDC, trusted: false, reserve: false})
         );
 
@@ -7211,6 +8454,31 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
+        erc4626PriceFeedsByNetwork[146].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_sDAI, underlying: TOKEN_DAI, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[146].push(
+            RedStonePriceFeedData({
+                token: TOKEN_sDAI,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "sDAI",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ sUSDe ------------------------
         erc4626PriceFeedsByNetwork[1].push(
@@ -7261,6 +8529,18 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
+        erc4626PriceFeedsByNetwork[146].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_sUSDe, underlying: TOKEN_USDe, trusted: false, reserve: false})
+        );
+        chainlinkPriceFeedsByNetwork[146].push(
+            ChainlinkPriceFeedData({
+                token: TOKEN_sUSDe,
+                priceFeed: 0xb99D174ED06c83588Af997c8859F93E83dD4733f,
+                stalenessPeriod: 87300,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ YieldETH ------------------------
         erc4626PriceFeedsByNetwork[1].push(
@@ -7273,6 +8553,9 @@ contract PriceFeedDataLive {
             GenericLPPriceFeedData({lpToken: TOKEN_YieldETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
         );
         erc4626PriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_YieldETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
+        );
+        erc4626PriceFeedsByNetwork[146].push(
             GenericLPPriceFeedData({lpToken: TOKEN_YieldETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
         );
 
@@ -7299,6 +8582,12 @@ contract PriceFeedDataLive {
             GenericLPPriceFeedData({lpToken: TOKEN_sUSDS, underlying: TOKEN_USDS, trusted: false, reserve: false})
         );
         erc4626PriceFeedsByNetwork[8453].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_sUSDS, underlying: TOKEN_USDS, trusted: false, reserve: true})
+        );
+        erc4626PriceFeedsByNetwork[146].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_sUSDS, underlying: TOKEN_USDS, trusted: false, reserve: false})
+        );
+        erc4626PriceFeedsByNetwork[146].push(
             GenericLPPriceFeedData({lpToken: TOKEN_sUSDS, underlying: TOKEN_USDS, trusted: false, reserve: true})
         );
 
@@ -7342,6 +8631,36 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ USDL ------------------------
+        chainlinkPriceFeedsByNetwork[1].push(
+            ChainlinkPriceFeedData({
+                token: TOKEN_USDL,
+                priceFeed: 0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6,
+                stalenessPeriod: 86400,
+                trusted: false,
+                reserve: false
+            })
+        );
+
+        // ------------------------ wUSDL ------------------------
+        erc4626PriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_wUSDL, underlying: TOKEN_USDL, trusted: false, reserve: false})
+        );
+
+        // ------------------------ csUSDL ------------------------
+        erc4626PriceFeedsByNetwork[1].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_csUSDL, underlying: TOKEN_wUSDL, trusted: false, reserve: false})
+        );
+        chainlinkPriceFeedsByNetwork[1].push(
+            ChainlinkPriceFeedData({
+                token: TOKEN_csUSDL,
+                priceFeed: 0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6,
+                stalenessPeriod: 86400,
+                trusted: false,
+                reserve: true
+            })
+        );
+
         // ------------------------ auraB_rETH_STABLE ------------------------
         theSamePriceFeedsByNetwork[1].push(
             TheSamePriceFeedData({
@@ -7368,6 +8687,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_auraB_rETH_STABLE,
+                tokenHasSamePriceFeed: TOKEN_B_rETH_STABLE,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_auraB_rETH_STABLE,
                 tokenHasSamePriceFeed: TOKEN_B_rETH_STABLE,
@@ -7409,6 +8736,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_auraB_rETH_STABLE_vault,
+                tokenHasSamePriceFeed: TOKEN_B_rETH_STABLE,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ auraweETH_rETH ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -7436,6 +8771,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_auraweETH_rETH,
+                tokenHasSamePriceFeed: TOKEN_weETH_rETH,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_auraweETH_rETH,
                 tokenHasSamePriceFeed: TOKEN_weETH_rETH,
@@ -7477,6 +8820,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_auraweETH_rETH_vault,
+                tokenHasSamePriceFeed: TOKEN_weETH_rETH,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ auraosETH_wETH_BPT ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -7504,6 +8855,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_auraosETH_wETH_BPT,
+                tokenHasSamePriceFeed: TOKEN_osETH_wETH_BPT,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_auraosETH_wETH_BPT,
                 tokenHasSamePriceFeed: TOKEN_osETH_wETH_BPT,
@@ -7545,6 +8904,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_aurarETH_wETH_BPT,
+                tokenHasSamePriceFeed: TOKEN_rETH_wETH_BPT,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ auracbETH_rETH_wstETH ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -7572,6 +8939,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_auracbETH_rETH_wstETH,
+                tokenHasSamePriceFeed: TOKEN_cbETH_rETH_wstETH,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_auracbETH_rETH_wstETH,
                 tokenHasSamePriceFeed: TOKEN_cbETH_rETH_wstETH,
@@ -7613,6 +8988,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_aurawstETH_rETH_sfrxETH,
+                tokenHasSamePriceFeed: TOKEN_wstETH_rETH_sfrxETH,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ aurawstETH_WETH_BPT ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -7640,6 +9023,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_aurawstETH_WETH_BPT,
+                tokenHasSamePriceFeed: TOKEN_wstETH_WETH_BPT,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_aurawstETH_WETH_BPT,
                 tokenHasSamePriceFeed: TOKEN_wstETH_WETH_BPT,
@@ -7681,6 +9072,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_auraosETH_wETH_BPT_vault,
+                tokenHasSamePriceFeed: TOKEN_osETH_wETH_BPT,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ auraBPT_rETH_ETH ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -7708,6 +9107,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_auraBPT_rETH_ETH,
+                tokenHasSamePriceFeed: TOKEN_BPT_rETH_ETH,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_auraBPT_rETH_ETH,
                 tokenHasSamePriceFeed: TOKEN_BPT_rETH_ETH,
@@ -7749,6 +9156,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_auraBPT_rETH_ETH_vault,
+                tokenHasSamePriceFeed: TOKEN_BPT_rETH_ETH,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ auraBPT_WSTETH_ETH ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -7776,6 +9191,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_auraBPT_WSTETH_ETH,
+                tokenHasSamePriceFeed: TOKEN_BPT_WSTETH_ETH,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_auraBPT_WSTETH_ETH,
                 tokenHasSamePriceFeed: TOKEN_BPT_WSTETH_ETH,
@@ -7817,6 +9240,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_auraBPT_WSTETH_ETH_vault,
+                tokenHasSamePriceFeed: TOKEN_BPT_WSTETH_ETH,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ aurarETH_wETH_BPT_vault ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -7844,6 +9275,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_aurarETH_wETH_BPT_vault,
+                tokenHasSamePriceFeed: TOKEN_rETH_wETH_BPT,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_aurarETH_wETH_BPT_vault,
                 tokenHasSamePriceFeed: TOKEN_rETH_wETH_BPT,
@@ -7885,6 +9324,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_auracbETH_rETH_wstETH_vault,
+                tokenHasSamePriceFeed: TOKEN_cbETH_rETH_wstETH,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ aurawstETH_rETH_sfrxETH_vault ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -7912,6 +9359,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_aurawstETH_rETH_sfrxETH_vault,
+                tokenHasSamePriceFeed: TOKEN_wstETH_rETH_sfrxETH,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_aurawstETH_rETH_sfrxETH_vault,
                 tokenHasSamePriceFeed: TOKEN_wstETH_rETH_sfrxETH,
@@ -7953,6 +9408,14 @@ contract PriceFeedDataLive {
                 reserve: false
             })
         );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_aurawstETH_WETH_BPT_vault,
+                tokenHasSamePriceFeed: TOKEN_wstETH_WETH_BPT,
+                trusted: false,
+                reserve: false
+            })
+        );
 
         // ------------------------ zpufETH ------------------------
         theSamePriceFeedsByNetwork[1].push(
@@ -7980,6 +9443,14 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_zpufETH,
+                tokenHasSamePriceFeed: TOKEN_pufETH,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_zpufETH,
                 tokenHasSamePriceFeed: TOKEN_pufETH,
@@ -8046,6 +9517,22 @@ contract PriceFeedDataLive {
             })
         );
         theSamePriceFeedsByNetwork[8453].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkUSDS,
+                tokenHasSamePriceFeed: TOKEN_USDS,
+                trusted: false,
+                reserve: true
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
+            TheSamePriceFeedData({
+                token: TOKEN_stkUSDS,
+                tokenHasSamePriceFeed: TOKEN_USDS,
+                trusted: false,
+                reserve: false
+            })
+        );
+        theSamePriceFeedsByNetwork[146].push(
             TheSamePriceFeedData({
                 token: TOKEN_stkUSDS,
                 tokenHasSamePriceFeed: TOKEN_USDS,
@@ -8134,6 +9621,31 @@ contract PriceFeedDataLive {
             GenericLPPriceFeedData({lpToken: TOKEN_steakLRT, underlying: TOKEN_wstETH, trusted: false, reserve: false})
         );
         redStonePriceFeedsByNetwork[8453].push(
+            RedStonePriceFeedData({
+                token: TOKEN_steakLRT,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
+        erc4626PriceFeedsByNetwork[146].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_steakLRT, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[146].push(
             RedStonePriceFeedData({
                 token: TOKEN_steakLRT,
                 dataServiceId: "redstone-primary-prod",
@@ -8257,6 +9769,31 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
+        erc4626PriceFeedsByNetwork[146].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_Re7LRT, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[146].push(
+            RedStonePriceFeedData({
+                token: TOKEN_Re7LRT,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ amphrETH ------------------------
         erc4626PriceFeedsByNetwork[1].push(
@@ -8338,6 +9875,31 @@ contract PriceFeedDataLive {
             GenericLPPriceFeedData({lpToken: TOKEN_amphrETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
         );
         redStonePriceFeedsByNetwork[8453].push(
+            RedStonePriceFeedData({
+                token: TOKEN_amphrETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
+        erc4626PriceFeedsByNetwork[146].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_amphrETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[146].push(
             RedStonePriceFeedData({
                 token: TOKEN_amphrETH,
                 dataServiceId: "redstone-primary-prod",
@@ -8461,6 +10023,31 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
+        erc4626PriceFeedsByNetwork[146].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_rstETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[146].push(
+            RedStonePriceFeedData({
+                token: TOKEN_rstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ pzETH ------------------------
         erc4626PriceFeedsByNetwork[1].push(
@@ -8563,6 +10150,31 @@ contract PriceFeedDataLive {
                 reserve: true
             })
         );
+        erc4626PriceFeedsByNetwork[146].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_pzETH, underlying: TOKEN_wstETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[146].push(
+            RedStonePriceFeedData({
+                token: TOKEN_pzETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
 
         // ------------------------ DVstETH ------------------------
         mellowLRTPriceFeedsByNetwork[1].push(
@@ -8644,6 +10256,31 @@ contract PriceFeedDataLive {
             GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
         );
         redStonePriceFeedsByNetwork[8453].push(
+            RedStonePriceFeedData({
+                token: TOKEN_DVstETH,
+                dataServiceId: "redstone-primary-prod",
+                dataFeedId: "wstETH",
+                signers: [
+                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
+                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
+                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
+                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
+                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0),
+                    address(0)
+                ],
+                signersThreshold: 5,
+                trusted: false,
+                reserve: true
+            })
+        );
+        mellowLRTPriceFeedsByNetwork[146].push(
+            GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
+        );
+        redStonePriceFeedsByNetwork[146].push(
             RedStonePriceFeedData({
                 token: TOKEN_DVstETH,
                 dataServiceId: "redstone-primary-prod",
@@ -8980,6 +10617,9 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[8453].push(
             SingeTokenPriceFeedData({token: TOKEN_rstETH_Lido_wstETH, trusted: false, reserve: false})
         );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_rstETH_Lido_wstETH, trusted: false, reserve: false})
+        );
 
         // ------------------------ DVstETH_Prime_wstETH ------------------------
         zeroPriceFeedsByNetwork[1].push(
@@ -8992,6 +10632,9 @@ contract PriceFeedDataLive {
             SingeTokenPriceFeedData({token: TOKEN_DVstETH_Prime_wstETH, trusted: false, reserve: false})
         );
         zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_DVstETH_Prime_wstETH, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_DVstETH_Prime_wstETH, trusted: false, reserve: false})
         );
     }

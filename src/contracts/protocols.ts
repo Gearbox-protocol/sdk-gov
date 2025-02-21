@@ -24,4 +24,7 @@ export enum Protocols {
   Pendle,
   Sky,
   Equalizer,
+  Beets,
+  Shadow,
+  Lift,
 }

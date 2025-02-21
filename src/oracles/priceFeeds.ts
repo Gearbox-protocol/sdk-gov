@@ -1,4 +1,5 @@
 import { NetworkType } from "../core/chains";
+import { NOT_DEPLOYED } from "../core/constants";
 import { SupportedToken } from "../tokens/token";
 import { Address, PartialRecord } from "../utils/types";
 import {
@@ -55,6 +56,7 @@ export const pythByNetwork: Record<NetworkType, Address> = {
   Arbitrum: "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
   Optimism: "0xff1a0f4744e8582DF1aE09D5611b887B6a12925C",
   Base: "0x8250f4aF4B972684F7b336503E2D6dFeDeB1487a",
+  Sonic: NOT_DEPLOYED,
 };
 
 export function getPriceFeedsByToken(
@@ -479,6 +481,21 @@ export const priceFeedsByToken: Record<
         ...REDSTONE_SIGNERS,
       },
     },
+    Sonic: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x55bCa887199d5520B3Ce285D41e6dC10C08716C9",
+        trusted: false,
+        stalenessPeriod: HOUR_24,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "USDC",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
+    },
   },
 
   USDT: {
@@ -669,6 +686,81 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.REDSTONE_ORACLE,
         dataServiceId: "redstone-primary-prod",
         dataId: "ETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
+    },
+    Sonic: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x824364077993847f71293B24ccA8567c00c2de11",
+        trusted: false,
+        stalenessPeriod: HOUR_24,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "ETH",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
+    },
+  },
+
+  wS: {
+    Sonic: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0xc76dFb89fF298145b417d221B2c747d84952e01d",
+        stalenessPeriod: HOUR_1_BUFFERED,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "S",
+        stalenessPeriod: FOUR_MINUTES,
+        ...REDSTONE_SIGNERS,
+      },
+    },
+  },
+  stS: {
+    Sonic: {
+      Main: {
+        type: PriceFeedType.COMPOSITE_ORACLE,
+        targetToBasePriceFeed: {
+          type: PriceFeedType.REDSTONE_ORACLE,
+          dataServiceId: "redstone-primary-prod",
+          dataId: "stS_FUNDAMENTAL",
+          stalenessPeriod: FOUR_MINUTES,
+          ...REDSTONE_SIGNERS,
+        },
+        baseToUsdPriceFeed: {
+          type: PriceFeedType.CHAINLINK_ORACLE,
+          address: "0xc76dFb89fF298145b417d221B2c747d84952e01d",
+          stalenessPeriod: HOUR_1_BUFFERED,
+        },
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0xc76dFb89fF298145b417d221B2c747d84952e01d",
+        stalenessPeriod: HOUR_1_BUFFERED,
+      },
+    },
+  },
+  scUSD: {
+    Sonic: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x55bCa887199d5520B3Ce285D41e6dC10C08716C9",
+        trusted: false,
+        stalenessPeriod: HOUR_24,
+      },
+      Reserve: {
+        type: PriceFeedType.REDSTONE_ORACLE,
+        dataServiceId: "redstone-primary-prod",
+        dataId: "USDC",
         stalenessPeriod: FOUR_MINUTES,
         ...REDSTONE_SIGNERS,
       },
@@ -1766,6 +1858,15 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  MORPHO: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+
   AURA: {
     AllNetworks: {
       Main: {
@@ -2232,6 +2333,14 @@ export const priceFeedsByToken: Record<
     },
   },
   pzETHstETH: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  USDLUSDC: {
     AllNetworks: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
@@ -3011,6 +3120,38 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  bpt_rsb: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  bpt_sss: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  BPT_scUSD_stS: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  BPT_USDCe_stS: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
   tETH_wstETH_BPT: {
     AllNetworks: {
       Main: {
@@ -3273,6 +3414,14 @@ export const priceFeedsByToken: Record<
       },
     },
     Arbitrum: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+  dwSV3: {
+    Sonic: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
         trusted: false,
@@ -3722,6 +3871,40 @@ export const priceFeedsByToken: Record<
         dataId: "wstETH",
         stalenessPeriod: FOUR_MINUTES,
         ...REDSTONE_SIGNERS,
+      },
+    },
+  },
+
+  USDL: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+        stalenessPeriod: HOUR_24,
+        trusted: false,
+      },
+    },
+  },
+  wUSDL: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "USDL",
+        trusted: false,
+      },
+    },
+  },
+  csUSDL: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ERC4626_VAULT_ORACLE,
+        underlying: "wUSDL",
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+        stalenessPeriod: HOUR_24,
       },
     },
   },

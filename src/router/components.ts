@@ -20,6 +20,7 @@ export enum RouterProtocols {
   DaiUsdsSwap,
   SKY,
   LlamaThena,
+  Equalizer,
   BalancerV3,
   Mellow4626,
   ERC4626Swapper,

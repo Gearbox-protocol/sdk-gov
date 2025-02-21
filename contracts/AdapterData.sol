@@ -75,6 +75,9 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.VELODROME_CL_ROUTER, adapterType: AdapterType.UNISWAP_V3_ROUTER})
         );
         simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.SHADOW_ROUTER, adapterType: AdapterType.UNISWAP_V3_ROUTER})
+        );
+        simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.CAMELOT_V3_ROUTER, adapterType: AdapterType.CAMELOT_V3_ROUTER})
         );
         simpleAdapters.push(
@@ -124,6 +127,12 @@ contract AdapterData {
         );
         simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.AAVE_WSTETH_VAULT, adapterType: AdapterType.ERC4626_VAULT})
+        );
+        simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.WRAPPED_USDL_VAULT, adapterType: AdapterType.ERC4626_VAULT})
+        );
+        simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.COINSHIFT_USDL_VAULT, adapterType: AdapterType.ERC4626_VAULT})
         );
         simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.CONVEX_BOOSTER, adapterType: AdapterType.CONVEX_V1_BOOSTER})
@@ -525,6 +534,14 @@ contract AdapterData {
                 targetContract: Contracts.CURVE_pzETH_stETH_POOL,
                 adapterType: AdapterType.CURVE_V1_2ASSETS,
                 lpToken: TOKEN_pzETHstETH,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
+                targetContract: Contracts.CURVE_USDL_USDC_POOL,
+                adapterType: AdapterType.CURVE_STABLE_NG,
+                lpToken: TOKEN_USDLUSDC,
                 basePool: Contracts.NO_CONTRACT
             })
         );
