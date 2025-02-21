@@ -2737,6 +2737,19 @@ contract PriceFeedDataLive {
             })
         );
 
+        // ------------------------ MORPHO ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_MORPHO, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_MORPHO, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_MORPHO, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_MORPHO, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_MORPHO, trusted: false, reserve: false})
+        );
+
         // ------------------------ AURA ------------------------
         zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_AURA, trusted: false, reserve: false}));
         zeroPriceFeedsByNetwork[42161].push(

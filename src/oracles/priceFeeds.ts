@@ -1858,6 +1858,15 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  MORPHO: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: false,
+      },
+    },
+  },
+
   AURA: {
     AllNetworks: {
       Main: {

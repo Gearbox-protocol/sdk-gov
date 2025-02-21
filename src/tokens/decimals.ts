@@ -55,6 +55,7 @@ export const decimals: Record<SupportedToken, number> = {
   cbETH: 18,
   USDe: 18,
   PENDLE: 18,
+  MORPHO: 18,
   pufETH: 18,
   USDS: 18,
   PT_rsETH_26SEP2024: 18,

@@ -68,6 +68,7 @@ export type NormalToken =
   | "USDL"
   | "wUSDL"
   | "csUSDL"
+  | "MORPHO"
 
   // Mellow LRTs
   | "steakLRT"
@@ -421,6 +422,11 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   PENDLE: {
     name: "Pendle",
     symbol: "PENDLE",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  MORPHO: {
+    name: "Morpho Token",
+    symbol: "MORPHO",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
   cbETH: {

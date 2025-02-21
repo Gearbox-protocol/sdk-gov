@@ -386,6 +386,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_MORPHO,
+                addr: 0x58D97B57BB95320F9a05dC918Aef65434969c2B2,
+                symbol: "MORPHO",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_cbETH,
                 addr: 0xBe9895146f7AF43049ca1c1AE358B0541Ea49704,
                 symbol: "cbETH",
@@ -2102,6 +2110,7 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
+
         tokenDataByNetwork[42161].push(
             TokenData({
                 id: TOKEN_cbETH,
@@ -2662,6 +2671,7 @@ contract TokensDataLive {
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
+
         tokenDataByNetwork[10].push(
             TokenData({
                 id: TOKEN_cbETH,

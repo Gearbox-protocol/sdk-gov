@@ -229,6 +229,7 @@ export const tokenDataByNetwork: Record<
     scUSD: NOT_DEPLOYED,
     T: "0xCdF7028ceAB81fA0C6971208e83fa7872994beE5",
     tETH: "0xD11c452fc99cF405034ee446803b6F6c1F6d5ED8",
+    MORPHO: "0x58D97B57BB95320F9a05dC918Aef65434969c2B2",
 
     USDL: "0xbdC7c08592Ee4aa51D06C27Ee23D5087D65aDbcD",
     wUSDL: "0x7751E2F4b8ae93EF6B79d86419d42FE3295A4559",
@@ -568,6 +569,7 @@ export const tokenDataByNetwork: Record<
     USDL: NOT_DEPLOYED,
     wUSDL: NOT_DEPLOYED,
     csUSDL: NOT_DEPLOYED,
+    MORPHO: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -905,6 +907,7 @@ export const tokenDataByNetwork: Record<
     USDL: NOT_DEPLOYED,
     wUSDL: NOT_DEPLOYED,
     csUSDL: NOT_DEPLOYED,
+    MORPHO: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -1240,6 +1243,7 @@ export const tokenDataByNetwork: Record<
     USDL: NOT_DEPLOYED,
     wUSDL: NOT_DEPLOYED,
     csUSDL: NOT_DEPLOYED,
+    MORPHO: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -1573,6 +1577,7 @@ export const tokenDataByNetwork: Record<
     USDe: NOT_DEPLOYED,
     pufETH: NOT_DEPLOYED,
     USDS: NOT_DEPLOYED,
+    MORPHO: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
