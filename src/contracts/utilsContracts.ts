@@ -15,7 +15,7 @@ export const TIMELOCK: Record<NetworkType, Address> = {
   Arbitrum: "0x148DD932eCe1155c11006F5650c6Ff428f8D374A",
   Optimism: "0x148DD932eCe1155c11006F5650c6Ff428f8D374A",
   Base: NOT_DEPLOYED,
-  Sonic: NOT_DEPLOYED,
+  Sonic: "0x3655fe44BfDD63BB29a31DA6ffe6a254427F0149",
 };
 
 export const GOVERNOR: Record<NetworkType, Address> = {
@@ -23,7 +23,7 @@ export const GOVERNOR: Record<NetworkType, Address> = {
   Arbitrum: "0xF0C89a0eDCD68B4176A26B3bf7574498DD3E6d09",
   Optimism: "0xF0C89a0eDCD68B4176A26B3bf7574498DD3E6d09",
   Base: NOT_DEPLOYED,
-  Sonic: NOT_DEPLOYED,
+  Sonic: "0x7fb60a4eD89E18369b52319c849F7478ebf071c6",
 };
 
 export const BATCH_CHAIN: Record<NetworkType, Address> = {
@@ -31,7 +31,7 @@ export const BATCH_CHAIN: Record<NetworkType, Address> = {
   Arbitrum: "0xAEbaa1015D0bc250F5b38aac9b8f65E0668cE3c2",
   Optimism: "0x5CfB7F186dEA745381ccb1D532e43223B5a6AD10",
   Base: NOT_DEPLOYED,
-  Sonic: NOT_DEPLOYED,
+  Sonic: "0x896f9F6F27AAC7FD0794a1644aDfec4723E9879b",
 };
 
 export const BLACKLIST_HELPER: Record<NetworkType, Address> = {
@@ -47,7 +47,7 @@ export const CREATE2FACTORY: Record<NetworkType, Address> = {
   Arbitrum: "0xad1231A64eE68D6BF721a1E8e177776cc49bAA2C",
   Optimism: "0xad1231A64eE68D6BF721a1E8e177776cc49bAA2C",
   Base: NOT_DEPLOYED,
-  Sonic: NOT_DEPLOYED,
+  Sonic: "0x33363D8f37EEBa5ae41a22cc12537054f3Fcf704",
 };
 
 export const MULTISIG: Record<NetworkType, Address> = {
@@ -87,7 +87,7 @@ export const ROUTER_CREATE2FACTORY: Record<NetworkType, Address> = {
   Arbitrum: "0x95345A4d55DAf6864924fC8861b311B9BC860E5f",
   Optimism: "0x95345A4d55DAf6864924fC8861b311B9BC860E5f",
   Base: NOT_DEPLOYED,
-  Sonic: NOT_DEPLOYED,
+  Sonic: "0x4971F74e0cA0dcAba385ee80dD9812C04fA19F99",
 };
 
 export const emergencyLiquidators: Array<Address> = [
