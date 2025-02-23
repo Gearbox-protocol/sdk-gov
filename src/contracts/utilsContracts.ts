@@ -55,7 +55,7 @@ export const MULTISIG: Record<NetworkType, Address> = {
   Arbitrum: "0x57Fd8B1a9213624157786Fff4a7bc532Ce717773",
   Optimism: "0x8bA8cd6D00919ceCc19D9B4A2c8669a524883C4c",
   Base: NOT_DEPLOYED,
-  Sonic: "0xAF960f5F599E02Ff4A86cdA3640c5257D710e70a",
+  Sonic: "0xacEB9dc6a81f1C9E2d8a86c3bFec3f6EF584139D",
 };
 
 export const VETO_ADMIN: Record<NetworkType, Address> = {
@@ -63,7 +63,7 @@ export const VETO_ADMIN: Record<NetworkType, Address> = {
   Arbitrum: "0x746fb3AcAfF6Bfe246206EC2E51F587d2E57abb6",
   Optimism: "0x9744f76dc5239Eb4DC2CE8D5538e1BA89C8FA90f",
   Base: NOT_DEPLOYED,
-  Sonic: "0xeadd68e4F5C91D7241ae8b01E8aF57E0F7A4D5e5",
+  Sonic: "0x393eC629b90389F957c5a2E4FC2F8F488e735BFC",
 };
 
 export const TREASURY: Record<NetworkType, Address> = {
@@ -79,7 +79,7 @@ export const ROUTER_MULTISIG_ADDRESS: Record<NetworkType, Address> = {
   Arbitrum: "0xEAb23245937A4F0894B0c92f08992C2c45Fc8df5",
   Optimism: "0x4cda5Fa96B5d436002175d958667C7EF3B644aA1",
   Base: NOT_DEPLOYED,
-  Sonic: "0x496DF8434f1D434702B1ef7cc4aC3b7d0b2efb0E",
+  Sonic: "0x21DEE3c9bAc88F8cb96b7e7d19D3DFDB071EC81d",
 };
 
 export const ROUTER_CREATE2FACTORY: Record<NetworkType, Address> = {
