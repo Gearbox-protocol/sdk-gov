@@ -2274,8 +2274,8 @@ export const tickerInfoTokensByNetwork: Record<
       {
         symbol: "stS/S",
         dataId: "stS_FUNDAMENTAL",
-        address: "0x56a5b6267d6b8de8ade88455b9342787e49e2f1a",
-        priceFeed: "0x2aB3593845C0d717b4cd7cB8DCA4c762eD98b6A3",
+        address: "0x2aB3593845C0d717b4cd7cB8DCA4c762eD98b6A3",
+        priceFeed: "0xd979d375b4D7d7539DE6D653DD40f0fFc8A2F83D",
         reserve: false,
       },
     ],
