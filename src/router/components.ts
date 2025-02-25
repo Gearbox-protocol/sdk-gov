@@ -24,6 +24,7 @@ export enum RouterProtocols {
   BalancerV3,
   Mellow4626,
   ERC4626Swapper,
+  Coinshift,
 }
 
 export enum RouterComponent {
