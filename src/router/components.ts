@@ -24,6 +24,7 @@ export enum RouterProtocols {
   BalancerV3,
   Mellow4626,
   ERC4626Swapper,
+  Coinshift,
 }
 
 export enum RouterComponent {
@@ -75,4 +76,5 @@ export enum RouterComponent {
   RC_BALANCER_V3_SWAPPER = 45,
   RC_MELLOW_4626_SWAPPER = 46,
   RC_ERC4626_SWAPPER = 47,
+  RC_CSUSDL_OVERRIDER = 48,
 }

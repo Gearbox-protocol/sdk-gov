@@ -1810,7 +1810,7 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Curve pzETH/wstETH LP",
     protocol: Protocols.Curve,
     version: 20,
-    type: AdapterInterface.CURVE_V1_2ASSETS,
+    type: AdapterInterface.CURVE_STABLE_NG,
     lpToken: "pzETHstETH",
     tokens: ["pzETH", "wstETH"],
   },

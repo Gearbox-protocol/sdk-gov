@@ -10180,24 +10180,11 @@ contract PriceFeedDataLive {
         mellowLRTPriceFeedsByNetwork[1].push(
             GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
         );
-        redStonePriceFeedsByNetwork[1].push(
-            RedStonePriceFeedData({
+        chainlinkPriceFeedsByNetwork[1].push(
+            ChainlinkPriceFeedData({
                 token: TOKEN_DVstETH,
-                dataServiceId: "redstone-primary-prod",
-                dataFeedId: "wstETH",
-                signers: [
-                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
-                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
-                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
-                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
-                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0)
-                ],
-                signersThreshold: 5,
+                priceFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
+                stalenessPeriod: 4500,
                 trusted: false,
                 reserve: true
             })
@@ -10205,24 +10192,11 @@ contract PriceFeedDataLive {
         mellowLRTPriceFeedsByNetwork[42161].push(
             GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
         );
-        redStonePriceFeedsByNetwork[42161].push(
-            RedStonePriceFeedData({
+        chainlinkPriceFeedsByNetwork[42161].push(
+            ChainlinkPriceFeedData({
                 token: TOKEN_DVstETH,
-                dataServiceId: "redstone-primary-prod",
-                dataFeedId: "wstETH",
-                signers: [
-                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
-                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
-                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
-                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
-                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0)
-                ],
-                signersThreshold: 5,
+                priceFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
+                stalenessPeriod: 4500,
                 trusted: false,
                 reserve: true
             })
@@ -10230,24 +10204,11 @@ contract PriceFeedDataLive {
         mellowLRTPriceFeedsByNetwork[10].push(
             GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
         );
-        redStonePriceFeedsByNetwork[10].push(
-            RedStonePriceFeedData({
+        chainlinkPriceFeedsByNetwork[10].push(
+            ChainlinkPriceFeedData({
                 token: TOKEN_DVstETH,
-                dataServiceId: "redstone-primary-prod",
-                dataFeedId: "wstETH",
-                signers: [
-                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
-                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
-                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
-                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
-                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0)
-                ],
-                signersThreshold: 5,
+                priceFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
+                stalenessPeriod: 4500,
                 trusted: false,
                 reserve: true
             })
@@ -10255,24 +10216,11 @@ contract PriceFeedDataLive {
         mellowLRTPriceFeedsByNetwork[8453].push(
             GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
         );
-        redStonePriceFeedsByNetwork[8453].push(
-            RedStonePriceFeedData({
+        chainlinkPriceFeedsByNetwork[8453].push(
+            ChainlinkPriceFeedData({
                 token: TOKEN_DVstETH,
-                dataServiceId: "redstone-primary-prod",
-                dataFeedId: "wstETH",
-                signers: [
-                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
-                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
-                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
-                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
-                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0)
-                ],
-                signersThreshold: 5,
+                priceFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
+                stalenessPeriod: 4500,
                 trusted: false,
                 reserve: true
             })
@@ -10280,24 +10228,11 @@ contract PriceFeedDataLive {
         mellowLRTPriceFeedsByNetwork[146].push(
             GenericLPPriceFeedData({lpToken: TOKEN_DVstETH, underlying: TOKEN_WETH, trusted: false, reserve: false})
         );
-        redStonePriceFeedsByNetwork[146].push(
-            RedStonePriceFeedData({
+        chainlinkPriceFeedsByNetwork[146].push(
+            ChainlinkPriceFeedData({
                 token: TOKEN_DVstETH,
-                dataServiceId: "redstone-primary-prod",
-                dataFeedId: "wstETH",
-                signers: [
-                    0x8BB8F32Df04c8b654987DAaeD53D6B6091e3B774,
-                    0xdEB22f54738d54976C4c0fe5ce6d408E40d88499,
-                    0x51Ce04Be4b3E32572C4Ec9135221d0691Ba7d202,
-                    0xDD682daEC5A90dD295d14DA4b0bec9281017b5bE,
-                    0x9c5AE89C4Af6aA32cE58588DBaF90d18a855B6de,
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0),
-                    address(0)
-                ],
-                signersThreshold: 5,
+                priceFeed: 0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419,
+                stalenessPeriod: 4500,
                 trusted: false,
                 reserve: true
             })

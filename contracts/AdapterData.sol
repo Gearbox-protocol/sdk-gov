@@ -532,7 +532,7 @@ contract AdapterData {
         curveAdapters.push(
             CurveAdapter({
                 targetContract: Contracts.CURVE_pzETH_stETH_POOL,
-                adapterType: AdapterType.CURVE_V1_2ASSETS,
+                adapterType: AdapterType.CURVE_STABLE_NG,
                 lpToken: TOKEN_pzETHstETH,
                 basePool: Contracts.NO_CONTRACT
             })
