@@ -712,7 +712,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xc76dFb89fF298145b417d221B2c747d84952e01d",
-        stalenessPeriod: HOUR_1_BUFFERED,
+        stalenessPeriod: HOUR_24,
         trusted: false,
       },
       Reserve: {
@@ -738,14 +738,14 @@ export const priceFeedsByToken: Record<
         baseToUsdPriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
           address: "0xc76dFb89fF298145b417d221B2c747d84952e01d",
-          stalenessPeriod: HOUR_1_BUFFERED,
+          stalenessPeriod: HOUR_24,
         },
         trusted: false,
       },
       Reserve: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xc76dFb89fF298145b417d221B2c747d84952e01d",
-        stalenessPeriod: HOUR_1_BUFFERED,
+        stalenessPeriod: HOUR_24,
       },
     },
   },

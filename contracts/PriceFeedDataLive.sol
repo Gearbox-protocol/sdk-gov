@@ -1223,7 +1223,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: TOKEN_wS,
                 priceFeed: 0xc76dFb89fF298145b417d221B2c747d84952e01d,
-                stalenessPeriod: 4500,
+                stalenessPeriod: 86400,
                 trusted: false,
                 reserve: false
             })
@@ -1277,7 +1277,7 @@ contract PriceFeedDataLive {
             cpf.targetStalenessPeriod = 240;
             cpf.isBaseComposite = false;
             cpf.baseToUSDFeed = 0xc76dFb89fF298145b417d221B2c747d84952e01d;
-            cpf.baseStalenessPeriod = 4500;
+            cpf.baseStalenessPeriod = 86400;
 
             cpf.trusted = false;
             cpf.reserve = false;
@@ -1286,7 +1286,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: TOKEN_stS,
                 priceFeed: 0xc76dFb89fF298145b417d221B2c747d84952e01d,
-                stalenessPeriod: 4500,
+                stalenessPeriod: 86400,
                 trusted: false,
                 reserve: true
             })
