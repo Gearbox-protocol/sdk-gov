@@ -94,3 +94,59 @@ export const emergencyLiquidators: Array<Address> = [
   "0x7BD9c8161836b1F402233E80F55E3CaE0Fde4d87",
   "0x16040e932b5Ac7A3aB23b88a2f230B4185727b0d",
 ];
+
+export const NEXO_MULTISIG: Record<NetworkType, Address> = {
+  Mainnet: "0x0a4c2738Aec6703f8300F30075b1cbD237b75C47",
+  Arbitrum: NOT_DEPLOYED,
+  Optimism: NOT_DEPLOYED,
+  Base: NOT_DEPLOYED,
+  Sonic: NOT_DEPLOYED,
+};
+
+export const NEXO_ADDRESS_PROVIDER: Record<NetworkType, Address> = {
+  Mainnet: NOT_DEPLOYED,
+  Arbitrum: NOT_DEPLOYED,
+  Optimism: NOT_DEPLOYED,
+  Base: NOT_DEPLOYED,
+  Sonic: NOT_DEPLOYED,
+};
+
+export const NEXO_TIMELOCK: Record<NetworkType, Address> = {
+  Mainnet: NOT_DEPLOYED,
+  Arbitrum: NOT_DEPLOYED,
+  Optimism: NOT_DEPLOYED,
+  Base: NOT_DEPLOYED,
+  Sonic: NOT_DEPLOYED,
+};
+
+export const NEXO_GOVERNOR: Record<NetworkType, Address> = {
+  Mainnet: NOT_DEPLOYED,
+  Arbitrum: NOT_DEPLOYED,
+  Optimism: NOT_DEPLOYED,
+  Base: NOT_DEPLOYED,
+  Sonic: NOT_DEPLOYED,
+};
+
+export const NEXO_BATCH_CHAIN: Record<NetworkType, Address> = {
+  Mainnet: NOT_DEPLOYED,
+  Arbitrum: NOT_DEPLOYED,
+  Optimism: NOT_DEPLOYED,
+  Base: NOT_DEPLOYED,
+  Sonic: NOT_DEPLOYED,
+};
+
+export const NEXO_CREATE2FACTORY: Record<NetworkType, Address> = {
+  Mainnet: NOT_DEPLOYED,
+  Arbitrum: NOT_DEPLOYED,
+  Optimism: NOT_DEPLOYED,
+  Base: NOT_DEPLOYED,
+  Sonic: NOT_DEPLOYED,
+};
+
+export const NEXO_VETO_ADMIN: Record<NetworkType, Address> = {
+  Mainnet: NOT_DEPLOYED,
+  Arbitrum: NOT_DEPLOYED,
+  Optimism: NOT_DEPLOYED,
+  Base: NOT_DEPLOYED,
+  Sonic: NOT_DEPLOYED,
+};
