@@ -151,7 +151,7 @@ export const NEXO_VETO_ADMIN: Record<NetworkType, Address> = {
   Sonic: NOT_DEPLOYED,
 };
 
-export const NexoEmergencyLiquidators: Array<Address> = [
+export const nexoEmergencyLiquidators: Array<Address> = [
   "0xbd796DdE46DEB00B1840e7be311eF469c375c940",
   "0x98b0EB10A3a2aaf72CA2C362f8D8360FE6037E8b",
   "0x16040e932b5Ac7A3aB23b88a2f230B4185727b0d",
