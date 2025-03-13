@@ -120,7 +120,7 @@ export const NEXO_ADDRESS_PROVIDER: Record<NetworkType, Address> = {
 };
 
 export const NEXO_TIMELOCK: Record<NetworkType, Address> = {
-  Mainnet: NOT_DEPLOYED,
+  Mainnet: "0xdcC3FD83DBF480e8Ad74DD3A634CaE29B68b9814",
   Arbitrum: NOT_DEPLOYED,
   Optimism: NOT_DEPLOYED,
   Base: NOT_DEPLOYED,
@@ -128,7 +128,7 @@ export const NEXO_TIMELOCK: Record<NetworkType, Address> = {
 };
 
 export const NEXO_GOVERNOR: Record<NetworkType, Address> = {
-  Mainnet: NOT_DEPLOYED,
+  Mainnet: "0x42Cf536467f4fa474010a16f66A3fa7576f987D6",
   Arbitrum: NOT_DEPLOYED,
   Optimism: NOT_DEPLOYED,
   Base: NOT_DEPLOYED,
@@ -136,7 +136,7 @@ export const NEXO_GOVERNOR: Record<NetworkType, Address> = {
 };
 
 export const NEXO_BATCH_CHAIN: Record<NetworkType, Address> = {
-  Mainnet: NOT_DEPLOYED,
+  Mainnet: "0xcba71ACEDe17d2CABBfADBab30cc08F20eeaca52",
   Arbitrum: NOT_DEPLOYED,
   Optimism: NOT_DEPLOYED,
   Base: NOT_DEPLOYED,
@@ -144,7 +144,7 @@ export const NEXO_BATCH_CHAIN: Record<NetworkType, Address> = {
 };
 
 export const NEXO_CREATE2FACTORY: Record<NetworkType, Address> = {
-  Mainnet: NOT_DEPLOYED,
+  Mainnet: "0x48D945ACc64043B10A781917bfB88dDF49e06Fc6",
   Arbitrum: NOT_DEPLOYED,
   Optimism: NOT_DEPLOYED,
   Base: NOT_DEPLOYED,
