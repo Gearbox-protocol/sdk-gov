@@ -96,7 +96,7 @@ export const emergencyLiquidators: Array<Address> = [
 ];
 
 export const NEXO_MULTISIG: Record<NetworkType, Address> = {
-  Mainnet: "0x0a4c2738Aec6703f8300F30075b1cbD237b75C47",
+  Mainnet: "0x3655Ae71eB5437F8FbD0187C012e4619064F9B41",
   Arbitrum: NOT_DEPLOYED,
   Optimism: NOT_DEPLOYED,
   Base: NOT_DEPLOYED,
@@ -104,7 +104,7 @@ export const NEXO_MULTISIG: Record<NetworkType, Address> = {
 };
 
 export const NEXO_TREASURY: Record<NetworkType, Address> = {
-  Mainnet: "0xA6bABb9054F39C8A16439D5B58B185F77987AdDf",
+  Mainnet: "0x349e22baeB15Da6fad00093b3873D5E16d5Bb842",
   Arbitrum: NOT_DEPLOYED,
   Optimism: NOT_DEPLOYED,
   Base: NOT_DEPLOYED,
