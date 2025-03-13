@@ -112,7 +112,7 @@ export const NEXO_TREASURY: Record<NetworkType, Address> = {
 };
 
 export const NEXO_ADDRESS_PROVIDER: Record<NetworkType, Address> = {
-  Mainnet: NOT_DEPLOYED,
+  Mainnet: "0x2Eb0BE5585E49190414307597912BD039a029Eda",
   Arbitrum: NOT_DEPLOYED,
   Optimism: NOT_DEPLOYED,
   Base: NOT_DEPLOYED,
