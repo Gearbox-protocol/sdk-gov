@@ -103,6 +103,14 @@ export const NEXO_MULTISIG: Record<NetworkType, Address> = {
   Sonic: NOT_DEPLOYED,
 };
 
+export const NEXO_TREASURY: Record<NetworkType, Address> = {
+  Mainnet: "0xA6bABb9054F39C8A16439D5B58B185F77987AdDf",
+  Arbitrum: NOT_DEPLOYED,
+  Optimism: NOT_DEPLOYED,
+  Base: NOT_DEPLOYED,
+  Sonic: NOT_DEPLOYED,
+};
+
 export const NEXO_ADDRESS_PROVIDER: Record<NetworkType, Address> = {
   Mainnet: NOT_DEPLOYED,
   Arbitrum: NOT_DEPLOYED,
