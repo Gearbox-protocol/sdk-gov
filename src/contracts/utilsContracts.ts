@@ -144,7 +144,7 @@ export const NEXO_CREATE2FACTORY: Record<NetworkType, Address> = {
 };
 
 export const NEXO_VETO_ADMIN: Record<NetworkType, Address> = {
-  Mainnet: "0x0a4c2738Aec6703f8300F30075b1cbD237b75C47",
+  Mainnet: "0xdD84A24eeddE63F10Ec3e928f1c8302A47538b6B",
   Arbitrum: NOT_DEPLOYED,
   Optimism: NOT_DEPLOYED,
   Base: NOT_DEPLOYED,
@@ -156,4 +156,5 @@ export const nexoEmergencyLiquidators: Array<Address> = [
   "0x98b0EB10A3a2aaf72CA2C362f8D8360FE6037E8b",
   "0x16040e932b5Ac7A3aB23b88a2f230B4185727b0d",
   "0x3c2E5548bCe88315D50eAB4f6b1Ffb2f1B8eBd7A",
+  "0x1a396F9209BDbF7E1Bc95c488E7F1237DA796a03",
 ];
