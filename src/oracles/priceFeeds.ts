@@ -486,7 +486,7 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x55bCa887199d5520B3Ce285D41e6dC10C08716C9",
         trusted: false,
-        stalenessPeriod: HOUR_24,
+        stalenessPeriod: HOUR_24_BUFFERED,
       },
       Reserve: {
         type: PriceFeedType.REDSTONE_ORACLE,
@@ -695,7 +695,7 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x824364077993847f71293B24ccA8567c00c2de11",
         trusted: false,
-        stalenessPeriod: HOUR_24,
+        stalenessPeriod: HOUR_24_BUFFERED,
       },
       Reserve: {
         type: PriceFeedType.REDSTONE_ORACLE,
@@ -712,7 +712,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xc76dFb89fF298145b417d221B2c747d84952e01d",
-        stalenessPeriod: HOUR_24,
+        stalenessPeriod: HOUR_24_BUFFERED,
         trusted: false,
       },
       Reserve: {
@@ -738,14 +738,14 @@ export const priceFeedsByToken: Record<
         baseToUsdPriceFeed: {
           type: PriceFeedType.CHAINLINK_ORACLE,
           address: "0xc76dFb89fF298145b417d221B2c747d84952e01d",
-          stalenessPeriod: HOUR_24,
+          stalenessPeriod: HOUR_24_BUFFERED,
         },
         trusted: false,
       },
       Reserve: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xc76dFb89fF298145b417d221B2c747d84952e01d",
-        stalenessPeriod: HOUR_24,
+        stalenessPeriod: HOUR_24_BUFFERED,
       },
     },
   },
@@ -755,7 +755,7 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x55bCa887199d5520B3Ce285D41e6dC10C08716C9",
         trusted: false,
-        stalenessPeriod: HOUR_24,
+        stalenessPeriod: HOUR_24_BUFFERED,
       },
       Reserve: {
         type: PriceFeedType.REDSTONE_ORACLE,
@@ -1180,7 +1180,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0xdF2917806E30300537aEB49A7663062F4d1F2b5F",
-        stalenessPeriod: HOUR_24,
+        stalenessPeriod: HOUR_24_BUFFERED,
         trusted: false,
       },
       Reserve: {
@@ -3880,7 +3880,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
-        stalenessPeriod: HOUR_24,
+        stalenessPeriod: HOUR_24_BUFFERED,
         trusted: false,
       },
     },
@@ -3904,7 +3904,7 @@ export const priceFeedsByToken: Record<
       Reserve: {
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
-        stalenessPeriod: HOUR_24,
+        stalenessPeriod: HOUR_24_BUFFERED,
       },
     },
   },
