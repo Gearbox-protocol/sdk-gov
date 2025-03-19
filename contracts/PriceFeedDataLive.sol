@@ -834,7 +834,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: TOKEN_USDC_e,
                 priceFeed: 0x55bCa887199d5520B3Ce285D41e6dC10C08716C9,
-                stalenessPeriod: 86400,
+                stalenessPeriod: 87300,
                 trusted: false,
                 reserve: false
             })
@@ -1190,7 +1190,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: TOKEN_WETH,
                 priceFeed: 0x824364077993847f71293B24ccA8567c00c2de11,
-                stalenessPeriod: 86400,
+                stalenessPeriod: 87300,
                 trusted: false,
                 reserve: false
             })
@@ -1223,7 +1223,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: TOKEN_wS,
                 priceFeed: 0xc76dFb89fF298145b417d221B2c747d84952e01d,
-                stalenessPeriod: 86400,
+                stalenessPeriod: 87300,
                 trusted: false,
                 reserve: false
             })
@@ -1277,7 +1277,7 @@ contract PriceFeedDataLive {
             cpf.targetStalenessPeriod = 240;
             cpf.isBaseComposite = false;
             cpf.baseToUSDFeed = 0xc76dFb89fF298145b417d221B2c747d84952e01d;
-            cpf.baseStalenessPeriod = 86400;
+            cpf.baseStalenessPeriod = 87300;
 
             cpf.trusted = false;
             cpf.reserve = false;
@@ -1286,7 +1286,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: TOKEN_stS,
                 priceFeed: 0xc76dFb89fF298145b417d221B2c747d84952e01d,
-                stalenessPeriod: 86400,
+                stalenessPeriod: 87300,
                 trusted: false,
                 reserve: true
             })
@@ -1297,7 +1297,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: TOKEN_scUSD,
                 priceFeed: 0x55bCa887199d5520B3Ce285D41e6dC10C08716C9,
-                stalenessPeriod: 86400,
+                stalenessPeriod: 87300,
                 trusted: false,
                 reserve: false
             })
@@ -1843,7 +1843,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: TOKEN_BAL,
                 priceFeed: 0xdF2917806E30300537aEB49A7663062F4d1F2b5F,
-                stalenessPeriod: 86400,
+                stalenessPeriod: 87300,
                 trusted: false,
                 reserve: false
             })
@@ -3681,50 +3681,20 @@ contract PriceFeedDataLive {
         );
 
         // ------------------------ USDecrvUSD ------------------------
-        curvePriceFeedsByNetwork[1].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_USDecrvUSD,
-                assets: TokensLib.arrayOf(TOKEN_USDe, TOKEN_crvUSD),
-                pool: Contracts.CURVE_USDE_CRVUSD_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[1].push(
+            SingeTokenPriceFeedData({token: TOKEN_USDecrvUSD, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[42161].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_USDecrvUSD,
-                assets: TokensLib.arrayOf(TOKEN_USDe, TOKEN_crvUSD),
-                pool: Contracts.CURVE_USDE_CRVUSD_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_USDecrvUSD, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[10].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_USDecrvUSD,
-                assets: TokensLib.arrayOf(TOKEN_USDe, TOKEN_crvUSD),
-                pool: Contracts.CURVE_USDE_CRVUSD_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[10].push(
+            SingeTokenPriceFeedData({token: TOKEN_USDecrvUSD, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[8453].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_USDecrvUSD,
-                assets: TokensLib.arrayOf(TOKEN_USDe, TOKEN_crvUSD),
-                pool: Contracts.CURVE_USDE_CRVUSD_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[8453].push(
+            SingeTokenPriceFeedData({token: TOKEN_USDecrvUSD, trusted: false, reserve: false})
         );
-        curvePriceFeedsByNetwork[146].push(
-            CurvePriceFeedData({
-                lpToken: TOKEN_USDecrvUSD,
-                assets: TokensLib.arrayOf(TOKEN_USDe, TOKEN_crvUSD),
-                pool: Contracts.CURVE_USDE_CRVUSD_POOL,
-                trusted: false,
-                reserve: false
-            })
+        zeroPriceFeedsByNetwork[146].push(
+            SingeTokenPriceFeedData({token: TOKEN_USDecrvUSD, trusted: false, reserve: false})
         );
 
         // ------------------------ FRAXsDAI ------------------------
@@ -8636,7 +8606,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: TOKEN_USDL,
                 priceFeed: 0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6,
-                stalenessPeriod: 86400,
+                stalenessPeriod: 87300,
                 trusted: false,
                 reserve: false
             })
@@ -8655,7 +8625,7 @@ contract PriceFeedDataLive {
             ChainlinkPriceFeedData({
                 token: TOKEN_csUSDL,
                 priceFeed: 0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6,
-                stalenessPeriod: 86400,
+                stalenessPeriod: 87300,
                 trusted: false,
                 reserve: true
             })
