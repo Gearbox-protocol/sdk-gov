@@ -94,7 +94,7 @@ const adapters: AdapterConfig[] = [
 ];
 
 const tierSCreditManager: CreditManagerV3DeployConfig = {
-  name: "NEXO USDT stable S",
+  name: "K3 USDT stable S",
   degenNft: false,
   expirationDate: undefined,
   minDebt: BigInt(2e4) * POOL_DECIMALS,
@@ -111,7 +111,7 @@ const tierSCreditManager: CreditManagerV3DeployConfig = {
 };
 
 const tierMCreditManager: CreditManagerV3DeployConfig = {
-  name: "NEXO USDT stable M",
+  name: "K3 USDT stable M",
   degenNft: false,
   expirationDate: undefined,
   minDebt: BigInt(4e5) * POOL_DECIMALS,
@@ -128,9 +128,9 @@ const tierMCreditManager: CreditManagerV3DeployConfig = {
 };
 
 export const nexoConfigMainnet: PoolV3DeployConfig = {
-  id: "mainnet-nexo-v3",
-  symbol: "dUSDTV3N",
-  name: "Nexo USDT v3 stable",
+  id: "mainnet-k3-v3",
+  symbol: "dUSDTV3K3",
+  name: "K3 USDT v3 stable",
   network: "Mainnet",
   underlying: "USDT",
   accountAmount: BigInt(100_000) * POOL_DECIMALS,

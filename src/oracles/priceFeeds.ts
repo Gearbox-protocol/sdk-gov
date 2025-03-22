@@ -7,6 +7,7 @@ import {
   HOUR_1,
   HOUR_1_BUFFERED,
   HOUR_1_BUFFERED_L2,
+  HOUR_24,
   HOUR_24_BUFFERED,
   HOUR_24_BUFFERED_L2,
   MINUTES_20_BUFFERED_L2,
@@ -2150,7 +2151,8 @@ export const priceFeedsByToken: Record<
   USDecrvUSD: {
     AllNetworks: {
       Main: {
-        type: PriceFeedType.ZERO_ORACLE,
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["USDe", "crvUSD"],
         trusted: false,
       },
     },
