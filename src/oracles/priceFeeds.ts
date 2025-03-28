@@ -7,7 +7,6 @@ import {
   HOUR_1,
   HOUR_1_BUFFERED,
   HOUR_1_BUFFERED_L2,
-  HOUR_24,
   HOUR_24_BUFFERED,
   HOUR_24_BUFFERED_L2,
   MINUTES_20_BUFFERED_L2,
@@ -2348,6 +2347,15 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  RLUSDUSDC: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["USDC", "RLUSD"],
+        trusted: false,
+      },
+    },
+  },
   wstETHCRV: {
     AllNetworks: {
       Main: {
@@ -2726,6 +2734,16 @@ export const priceFeedsByToken: Record<
     },
   },
 
+  cvxRLUSDUSDC: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "RLUSDUSDC",
+        trusted: true,
+      },
+    },
+  },
+
   // CVX tokens
   stkcvx3Crv: {
     AllNetworks: {
@@ -2894,6 +2912,16 @@ export const priceFeedsByToken: Record<
       Reserve: {
         type: PriceFeedType.THE_SAME_AS,
         token: "llamathena",
+      },
+    },
+  },
+
+  stkcvxRLUSDUSDC: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "RLUSDUSDC",
+        trusted: true,
       },
     },
   },
@@ -3905,6 +3933,17 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
         stalenessPeriod: HOUR_24_BUFFERED,
+      },
+    },
+  },
+
+  RLUSD: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x26C46B7aD0012cA71F2298ada567dC9Af14E7f2A",
+        stalenessPeriod: HOUR_24_BUFFERED,
+        trusted: true,
       },
     },
   },

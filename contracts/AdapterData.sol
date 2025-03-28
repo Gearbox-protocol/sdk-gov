@@ -547,6 +547,14 @@ contract AdapterData {
         );
         curveAdapters.push(
             CurveAdapter({
+                targetContract: Contracts.CURVE_RLUSD_USDC_POOL,
+                adapterType: AdapterType.CURVE_STABLE_NG,
+                lpToken: TOKEN_RLUSDUSDC,
+                basePool: Contracts.NO_CONTRACT
+            })
+        );
+        curveAdapters.push(
+            CurveAdapter({
                 targetContract: Contracts.CURVE_2CRV_POOL_ARB,
                 adapterType: AdapterType.CURVE_V1_2ASSETS,
                 lpToken: TOKEN__2CRV,
@@ -740,6 +748,13 @@ contract AdapterData {
                 targetContract: Contracts.CONVEX_LLAMA_THENA_POOL,
                 adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
                 stakedToken: TOKEN_stkcvxllamathena
+            })
+        );
+        convexBasePoolAdapters.push(
+            ConvexBasePoolAdapter({
+                targetContract: Contracts.CONVEX_RLUSD_USDC_POOL,
+                adapterType: AdapterType.CONVEX_V1_BASE_REWARD_POOL,
+                stakedToken: TOKEN_stkcvxRLUSDUSDC
             })
         );
         convexBasePoolAdapters.push(
