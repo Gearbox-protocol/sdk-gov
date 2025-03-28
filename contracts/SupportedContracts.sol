@@ -322,6 +322,13 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_RLUSD_USDC_POOL,
+                addr: 0xD001aE433f254283FeCE51d4ACcE8c53263aa186,
+                name: "CURVE_RLUSD_USDC_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_GEAR_POOL,
                 addr: 0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2,
                 name: "CURVE_GEAR_POOL"
@@ -608,6 +615,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.CONVEX_LLAMA_THENA_POOL,
                 addr: 0x11fD8801a051b296E337a3e1168839fb346D5940,
                 name: "CONVEX_LLAMA_THENA_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CONVEX_RLUSD_USDC_POOL,
+                addr: 0x5A71E7e04F8725fD42a216949E7099ebd08A42E3,
+                name: "CONVEX_RLUSD_USDC_POOL"
             })
         );
 

@@ -74,7 +74,8 @@ export type CurvePoolContract =
   | "CURVE_tETH_wstETH_POOL"
   | "CURVE_tETH_weETH_POOL"
   | "CURVE_pzETH_stETH_POOL"
-  | "CURVE_USDL_USDC_POOL";
+  | "CURVE_USDL_USDC_POOL"
+  | "CURVE_RLUSD_USDC_POOL";
 
 export type YearnVaultContract =
   | "YEARN_DAI_VAULT"
@@ -115,7 +116,8 @@ export type ConvexPoolContract =
   | "CONVEX_TRI_CRV_POOL"
   | "CONVEX_GHO_CRVUSD_POOL"
   | "CONVEX_CRVUSD_USDT_POOL_ARB"
-  | "CONVEX_LLAMA_THENA_POOL";
+  | "CONVEX_LLAMA_THENA_POOL"
+  | "CONVEX_RLUSD_USDC_POOL";
 
 export type AuraPoolContract =
   | "AURA_B_RETH_STABLE_POOL"
@@ -239,6 +241,7 @@ export const contractsByNetwork: Record<
     CURVE_tETH_weETH_POOL: tokenDataByNetwork.Mainnet.tETHweETH,
     CURVE_pzETH_stETH_POOL: tokenDataByNetwork.Mainnet.pzETHstETH,
     CURVE_USDL_USDC_POOL: tokenDataByNetwork.Mainnet.USDLUSDC,
+    CURVE_RLUSD_USDC_POOL: tokenDataByNetwork.Mainnet.RLUSDUSDC,
 
     CURVE_GEAR_POOL: "0x0E9B5B092caD6F1c5E6bc7f89Ffe1abb5c95F1C2",
 
@@ -299,6 +302,7 @@ export const contractsByNetwork: Record<
     CONVEX_TRI_CRV_POOL: "0xF956a46DbA1A0a567168db8655bc18E9050C7738",
     CONVEX_GHO_CRVUSD_POOL: "0x5eC758f79b96AE74e7F1Ba9583009aFB3fc8eACB",
     CONVEX_LLAMA_THENA_POOL: "0x11fD8801a051b296E337a3e1168839fb346D5940",
+    CONVEX_RLUSD_USDC_POOL: "0x5A71E7e04F8725fD42a216949E7099ebd08A42E3",
 
     CONVEX_BOOSTER_ARB: NOT_DEPLOYED,
     CONVEX_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Mainnet.cvxcrvUSDT,
@@ -421,6 +425,7 @@ export const contractsByNetwork: Record<
     CURVE_tETH_weETH_POOL: NOT_DEPLOYED,
     CURVE_pzETH_stETH_POOL: NOT_DEPLOYED,
     CURVE_USDL_USDC_POOL: NOT_DEPLOYED,
+    CURVE_RLUSD_USDC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -481,6 +486,7 @@ export const contractsByNetwork: Record<
     CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
     CONVEX_GHO_CRVUSD_POOL: NOT_DEPLOYED,
     CONVEX_LLAMA_THENA_POOL: NOT_DEPLOYED,
+    CONVEX_RLUSD_USDC_POOL: NOT_DEPLOYED,
 
     CONVEX_BOOSTER_ARB: "0xF403C135812408BFbE8713b5A23a04b3D48AAE31",
     CONVEX_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Arbitrum.cvxcrvUSDT,
@@ -602,6 +608,7 @@ export const contractsByNetwork: Record<
     CURVE_tETH_weETH_POOL: NOT_DEPLOYED,
     CURVE_pzETH_stETH_POOL: NOT_DEPLOYED,
     CURVE_USDL_USDC_POOL: NOT_DEPLOYED,
+    CURVE_RLUSD_USDC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -661,6 +668,7 @@ export const contractsByNetwork: Record<
     CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
     CONVEX_GHO_CRVUSD_POOL: NOT_DEPLOYED,
     CONVEX_LLAMA_THENA_POOL: NOT_DEPLOYED,
+    CONVEX_RLUSD_USDC_POOL: NOT_DEPLOYED,
 
     CONVEX_BOOSTER_ARB: NOT_DEPLOYED,
     CONVEX_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Optimism.cvxcrvUSDT,
@@ -782,6 +790,7 @@ export const contractsByNetwork: Record<
     CURVE_tETH_weETH_POOL: NOT_DEPLOYED,
     CURVE_pzETH_stETH_POOL: NOT_DEPLOYED,
     CURVE_USDL_USDC_POOL: NOT_DEPLOYED,
+    CURVE_RLUSD_USDC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -841,6 +850,7 @@ export const contractsByNetwork: Record<
     CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
     CONVEX_GHO_CRVUSD_POOL: NOT_DEPLOYED,
     CONVEX_LLAMA_THENA_POOL: NOT_DEPLOYED,
+    CONVEX_RLUSD_USDC_POOL: NOT_DEPLOYED,
 
     CONVEX_BOOSTER_ARB: NOT_DEPLOYED,
     CONVEX_CRVUSD_USDT_POOL_ARB: tokenDataByNetwork.Base.cvxcrvUSDT,
@@ -962,6 +972,7 @@ export const contractsByNetwork: Record<
     CURVE_tETH_weETH_POOL: NOT_DEPLOYED,
     CURVE_pzETH_stETH_POOL: NOT_DEPLOYED,
     CURVE_USDL_USDC_POOL: NOT_DEPLOYED,
+    CURVE_RLUSD_USDC_POOL: NOT_DEPLOYED,
 
     CURVE_GEAR_POOL: NOT_DEPLOYED,
 
@@ -1021,6 +1032,7 @@ export const contractsByNetwork: Record<
     CONVEX_TRI_CRV_POOL: NOT_DEPLOYED,
     CONVEX_GHO_CRVUSD_POOL: NOT_DEPLOYED,
     CONVEX_LLAMA_THENA_POOL: NOT_DEPLOYED,
+    CONVEX_RLUSD_USDC_POOL: NOT_DEPLOYED,
 
     CONVEX_BOOSTER_ARB: NOT_DEPLOYED,
     CONVEX_CRVUSD_USDT_POOL_ARB: NOT_DEPLOYED,
@@ -1822,6 +1834,14 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     lpToken: "USDLUSDC",
     tokens: ["USDL", "USDC"],
   },
+  CURVE_RLUSD_USDC_POOL: {
+    name: "Curve RLUSD/USDC LP",
+    protocol: Protocols.Curve,
+    version: 20,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "RLUSDUSDC",
+    tokens: ["USDC", "RLUSD"],
+  },
 
   CURVE_2CRV_POOL_ARB: {
     name: "Curve USDC/USDT Pool (Arbitrum)",
@@ -2253,6 +2273,24 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
         rewardToken: "CVX",
         poolAddress: {
           Mainnet: "0xc66844E5788b7d7D6DFFa5EC1Db62d898c59D6e7",
+          Arbitrum: NOT_DEPLOYED,
+          Optimism: NOT_DEPLOYED,
+          Base: NOT_DEPLOYED,
+          Sonic: NOT_DEPLOYED,
+        },
+      },
+    ],
+  },
+  CONVEX_RLUSD_USDC_POOL: {
+    name: "Convex RLUSD/USDC",
+    protocol: Protocols.Convex,
+    type: AdapterInterface.CONVEX_V1_BASE_REWARD_POOL,
+    stakedToken: "stkcvxRLUSDUSDC",
+    extraRewards: [
+      {
+        rewardToken: "CVX",
+        poolAddress: {
+          Mainnet: "0x51218C37A6EB0dE2F3DBBE4d2977d2008E24fB31",
           Arbitrum: NOT_DEPLOYED,
           Optimism: NOT_DEPLOYED,
           Base: NOT_DEPLOYED,

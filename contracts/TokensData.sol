@@ -474,6 +474,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_RLUSD,
+                addr: 0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD,
+                symbol: "RLUSD",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_steakLRT,
                 addr: 0xBEEF69Ac7870777598A04B2bd4771c71212E6aBc,
                 symbol: "steakLRT",
@@ -987,6 +995,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_RLUSDUSDC,
+                addr: 0xD001aE433f254283FeCE51d4ACcE8c53263aa186,
+                symbol: "RLUSDUSDC",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_FRAX3CRV,
                 addr: 0xd632f22692FaC7611d2AA1C0D552930D43CAEd3B,
                 symbol: "FRAX3CRV",
@@ -1147,6 +1163,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_cvxRLUSDUSDC,
+                addr: 0xBd5D4c539B3773086632416A4EC8ceF57c945319,
+                symbol: "cvxRLUSDUSDC",
+                tokenType: TokenType.CONVEX_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_stkcvx3Crv,
                 addr: 0xbAc7a431146aeAf3F57A16b9954f332Fd292F270,
                 symbol: "stkcvx3Crv",
@@ -1278,6 +1302,14 @@ contract TokensDataLive {
                 id: TOKEN_stkcvxllamathena,
                 addr: 0x72eD19788Bce2971A5ed6401662230ee57e254B7,
                 symbol: "stkcvxllamathena",
+                tokenType: TokenType.CONVEX_STAKED_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_stkcvxRLUSDUSDC,
+                addr: 0x444FA0ffb033265591895b66c81c2e5fF606E097,
+                symbol: "stkcvxRLUSDUSDC",
                 tokenType: TokenType.CONVEX_STAKED_TOKEN
             })
         );

@@ -234,6 +234,7 @@ export const tokenDataByNetwork: Record<
     USDL: "0xbdC7c08592Ee4aa51D06C27Ee23D5087D65aDbcD",
     wUSDL: "0x7751E2F4b8ae93EF6B79d86419d42FE3295A4559",
     csUSDL: "0xbEeFc011e94f43b8B7b455eBaB290C7Ab4E216f1",
+    RLUSD: "0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
 
     // CURVE LP TOKENS
     "3Crv": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
@@ -289,6 +290,7 @@ export const tokenDataByNetwork: Record<
     tETHweETH: "0x394a1e1b934cb4F4a0dC17BDD592ec078741542F",
     pzETHstETH: "0xCec99Cff3632Cf1f16652cC5b1E80eB08bE25983",
     USDLUSDC: "0xAb96AA0ee764924f49fbB372f3B4db9c2cB24Ea2",
+    RLUSDUSDC: "0xD001aE433f254283FeCE51d4ACcE8c53263aa186",
 
     // CONVEX LP TOKENS
     cvx3Crv: "0x30D9410ED1D5DA1F6C8391af5338C93ab8d4035C",
@@ -308,6 +310,7 @@ export const tokenDataByNetwork: Record<
     cvxcrvUSDETHCRV: "0xa11a2c04D62b4A2324Fc857Fa14762Ad94751b4F",
     cvxGHOcrvUSD: "0x53f4474c06c699307514bd55FB1607005F46a889",
     cvxllamathena: "0x237926E55f9deee89833a42dEb92d3a6970850B4",
+    cvxRLUSDUSDC: "0xBd5D4c539B3773086632416A4EC8ceF57c945319",
 
     // CONVEX PHANTOM TOKEN ADDRESSES
     stkcvx3Crv: "0xbAc7a431146aeAf3F57A16b9954f332Fd292F270",
@@ -327,6 +330,7 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDETHCRV: "0x0Bf1626d4925F8A872801968be11c052862AC2D3",
     stkcvxGHOcrvUSD: "0xa19Da509625f0e36050eA2906E991A99B29D3221",
     stkcvxllamathena: "0x72eD19788Bce2971A5ed6401662230ee57e254B7",
+    stkcvxRLUSDUSDC: "0x444FA0ffb033265591895b66c81c2e5fF606E097",
 
     cvxcrvUSDT: NOT_DEPLOYED,
 
@@ -570,7 +574,7 @@ export const tokenDataByNetwork: Record<
     wUSDL: NOT_DEPLOYED,
     csUSDL: NOT_DEPLOYED,
     MORPHO: NOT_DEPLOYED,
-
+    RLUSD: NOT_DEPLOYED,
     // REDSTONE
     SHIB: NOT_DEPLOYED,
 
@@ -637,6 +641,7 @@ export const tokenDataByNetwork: Record<
     tETHweETH: NOT_DEPLOYED,
     pzETHstETH: NOT_DEPLOYED,
     USDLUSDC: NOT_DEPLOYED,
+    RLUSDUSDC: NOT_DEPLOYED,
 
     // CONVEX LP TOKENS
     cvx3Crv: NOT_DEPLOYED,
@@ -656,7 +661,7 @@ export const tokenDataByNetwork: Record<
     cvxcrvUSDETHCRV: NOT_DEPLOYED,
     cvxGHOcrvUSD: NOT_DEPLOYED,
     cvxllamathena: NOT_DEPLOYED,
-
+    cvxRLUSDUSDC: NOT_DEPLOYED,
     crvUSD: "0x498Bf2B1e120FeD3ad3D42EA2165E9b73f99C1e5",
 
     // CONVEX PHANTOM TOKEN ADDRESSES
@@ -677,7 +682,7 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDETHCRV: NOT_DEPLOYED,
     stkcvxGHOcrvUSD: NOT_DEPLOYED,
     stkcvxllamathena: NOT_DEPLOYED,
-
+    stkcvxRLUSDUSDC: NOT_DEPLOYED,
     cvxcrvUSDT: "0xf74d4C9b0F49fb70D8Ff6706ddF39e3a16D61E67",
 
     // BALANCER TOKENS
@@ -908,6 +913,7 @@ export const tokenDataByNetwork: Record<
     wUSDL: NOT_DEPLOYED,
     csUSDL: NOT_DEPLOYED,
     MORPHO: NOT_DEPLOYED,
+    RLUSD: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -973,6 +979,7 @@ export const tokenDataByNetwork: Record<
     tETHweETH: NOT_DEPLOYED,
     pzETHstETH: NOT_DEPLOYED,
     USDLUSDC: NOT_DEPLOYED,
+    RLUSDUSDC: NOT_DEPLOYED,
 
     // CONVEX LP TOKENS
     cvx3Crv: NOT_DEPLOYED,
@@ -992,7 +999,7 @@ export const tokenDataByNetwork: Record<
     cvxcrvUSDETHCRV: NOT_DEPLOYED,
     cvxGHOcrvUSD: NOT_DEPLOYED,
     cvxllamathena: NOT_DEPLOYED,
-
+    cvxRLUSDUSDC: NOT_DEPLOYED,
     crvUSD: NOT_DEPLOYED,
 
     // CONVEX PHANTOM TOKEN ADDRESSES
@@ -1013,7 +1020,7 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDETHCRV: NOT_DEPLOYED,
     stkcvxGHOcrvUSD: NOT_DEPLOYED,
     stkcvxllamathena: NOT_DEPLOYED,
-
+    stkcvxRLUSDUSDC: NOT_DEPLOYED,
     cvxcrvUSDT: NOT_DEPLOYED,
 
     // BALANCER TOKENS
@@ -1244,6 +1251,7 @@ export const tokenDataByNetwork: Record<
     wUSDL: NOT_DEPLOYED,
     csUSDL: NOT_DEPLOYED,
     MORPHO: NOT_DEPLOYED,
+    RLUSD: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -1308,6 +1316,7 @@ export const tokenDataByNetwork: Record<
     tETHweETH: NOT_DEPLOYED,
     pzETHstETH: NOT_DEPLOYED,
     USDLUSDC: NOT_DEPLOYED,
+    RLUSDUSDC: NOT_DEPLOYED,
 
     // CONVEX LP TOKENS
     cvx3Crv: NOT_DEPLOYED,
@@ -1327,6 +1336,7 @@ export const tokenDataByNetwork: Record<
     cvxcrvUSDETHCRV: NOT_DEPLOYED,
     cvxGHOcrvUSD: NOT_DEPLOYED,
     cvxllamathena: NOT_DEPLOYED,
+    cvxRLUSDUSDC: NOT_DEPLOYED,
 
     crvUSD: NOT_DEPLOYED,
 
@@ -1348,6 +1358,7 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDETHCRV: NOT_DEPLOYED,
     stkcvxGHOcrvUSD: NOT_DEPLOYED,
     stkcvxllamathena: NOT_DEPLOYED,
+    stkcvxRLUSDUSDC: NOT_DEPLOYED,
 
     cvxcrvUSDT: NOT_DEPLOYED,
 
@@ -1545,6 +1556,7 @@ export const tokenDataByNetwork: Record<
     USDL: NOT_DEPLOYED,
     wUSDL: NOT_DEPLOYED,
     csUSDL: NOT_DEPLOYED,
+    RLUSD: NOT_DEPLOYED,
 
     /// UPDATE
     STETH: NOT_DEPLOYED,
@@ -1629,6 +1641,7 @@ export const tokenDataByNetwork: Record<
     tETHweETH: NOT_DEPLOYED,
     pzETHstETH: NOT_DEPLOYED,
     USDLUSDC: NOT_DEPLOYED,
+    RLUSDUSDC: NOT_DEPLOYED,
 
     crvUSDUSDC: NOT_DEPLOYED,
     crvUSDUSDT: NOT_DEPLOYED,
@@ -1664,6 +1677,7 @@ export const tokenDataByNetwork: Record<
     cvxcrvUSDETHCRV: NOT_DEPLOYED,
     cvxGHOcrvUSD: NOT_DEPLOYED,
     cvxllamathena: NOT_DEPLOYED,
+    cvxRLUSDUSDC: NOT_DEPLOYED,
 
     crvUSD: NOT_DEPLOYED,
 
@@ -1685,6 +1699,7 @@ export const tokenDataByNetwork: Record<
     stkcvxcrvUSDETHCRV: NOT_DEPLOYED,
     stkcvxGHOcrvUSD: NOT_DEPLOYED,
     stkcvxllamathena: NOT_DEPLOYED,
+    stkcvxRLUSDUSDC: NOT_DEPLOYED,
 
     cvxcrvUSDT: NOT_DEPLOYED,
 
