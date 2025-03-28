@@ -2352,7 +2352,11 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CURVE_2LP_ORACLE,
         assets: ["USDC", "RLUSD"],
-        trusted: true,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.CURVE_2LP_ORACLE,
+        assets: ["RLUSD", "RLUSD"],
       },
     },
   },
@@ -2739,7 +2743,11 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.THE_SAME_AS,
         token: "RLUSDUSDC",
-        trusted: true,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "RLUSDUSDC",
       },
     },
   },
@@ -2921,7 +2929,11 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.THE_SAME_AS,
         token: "RLUSDUSDC",
-        trusted: true,
+        trusted: false,
+      },
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "RLUSDUSDC",
       },
     },
   },
@@ -3943,7 +3955,12 @@ export const priceFeedsByToken: Record<
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x26C46B7aD0012cA71F2298ada567dC9Af14E7f2A",
         stalenessPeriod: HOUR_24_BUFFERED,
-        trusted: true,
+        trusted: false,
+      },
+      // @note: set this feed mannualy, use main usdc price feed
+      Reserve: {
+        type: PriceFeedType.THE_SAME_AS,
+        token: "USDC",
       },
     },
   },
