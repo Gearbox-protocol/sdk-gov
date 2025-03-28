@@ -2352,7 +2352,7 @@ export const priceFeedsByToken: Record<
       Main: {
         type: PriceFeedType.CURVE_2LP_ORACLE,
         assets: ["USDC", "RLUSD"],
-        trusted: false,
+        trusted: true,
       },
     },
   },
