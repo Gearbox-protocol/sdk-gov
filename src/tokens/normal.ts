@@ -67,7 +67,6 @@ export type NormalToken =
   | "tETH"
   | "USDL"
   | "wUSDL"
-  | "csUSDL"
   | "RLUSD"
   | "MORPHO"
 
@@ -475,11 +474,7 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
     symbol: "wUSDL",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
-  csUSDL: {
-    name: "Coinshift USDL",
-    symbol: "csUSDL",
-    type: { AllNetworks: TokenType.NORMAL_TOKEN },
-  },
+
   RLUSD: {
     name: "RLUSD",
     symbol: "RLUSD",
