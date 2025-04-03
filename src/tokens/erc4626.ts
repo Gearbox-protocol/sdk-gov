@@ -10,8 +10,7 @@ export type ERC4626LPToken =
   | "YieldETH"
   | "sUSDe"
   | "sUSDS"
-  | "scrvUSD"
-  | "csUSDL";
+  | "scrvUSD";
 
 export type ERC4626VaultTokenData = {
   symbol: ERC4626LPToken;
@@ -69,14 +68,6 @@ export const erc4626Tokens: Record<
     type: { AllNetworks: TokenType.ERC4626_VAULT_TOKEN },
     underlying: "crvUSD",
     vault: "SAVINGS_CRVUSD_VAULT",
-  },
-
-  csUSDL: {
-    name: "Coinshift USDL",
-    symbol: "csUSDL",
-    type: { AllNetworks: TokenType.ERC4626_VAULT_TOKEN },
-    underlying: "USDL",
-    vault: "COINSHIFT_USDL_VAULT",
   },
 };
 
