@@ -5,13 +5,7 @@ import { NormalToken } from "./normal";
 import type { TokenBase } from "./token";
 import { TokenNetwork, TokenType } from "./tokenType";
 
-export type ERC4626LPToken =
-  | "sDAI"
-  | "YieldETH"
-  | "sUSDe"
-  | "sUSDS"
-  | "scrvUSD"
-  | "csUSDL";
+export type ERC4626LPToken = "sDAI" | "YieldETH" | "sUSDe" | "sUSDS" | "csUSDL";
 
 export type ERC4626VaultTokenData = {
   symbol: ERC4626LPToken;
@@ -62,13 +56,6 @@ export const erc4626Tokens: Record<
     type: { AllNetworks: TokenType.ERC4626_VAULT_TOKEN },
     underlying: "USDS",
     vault: "STAKED_USDS_VAULT",
-  },
-  scrvUSD: {
-    name: "Savings crvUSD",
-    symbol: "scrvUSD",
-    type: { AllNetworks: TokenType.ERC4626_VAULT_TOKEN },
-    underlying: "crvUSD",
-    vault: "SAVINGS_CRVUSD_VAULT",
   },
   csUSDL: {
     name: "Coinshift USDL",

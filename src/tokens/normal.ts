@@ -71,6 +71,7 @@ export type NormalToken =
   | "MORPHO"
   | "lvlUSD"
   | "slvlUSD"
+  | "scrvUSD"
 
   // Mellow LRTs
   | "steakLRT"
@@ -490,7 +491,12 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   },
   slvlUSD: {
     name: "Staked lvlUSD",
-    symbol: "lvlUSD",
+    symbol: "slvlUSD",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  scrvUSD: {
+    name: "Savings crvUSD",
+    symbol: "scrvUSD",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 

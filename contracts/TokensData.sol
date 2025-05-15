@@ -490,6 +490,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_scrvUSD,
+                addr: 0x0655977FEb2f289A4aB78af67BAB0d17aAb84367,
+                symbol: "scrvUSD",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_steakLRT,
                 addr: 0xBEEF69Ac7870777598A04B2bd4771c71212E6aBc,
                 symbol: "steakLRT",
@@ -1659,14 +1667,6 @@ contract TokensDataLive {
                 id: TOKEN_sUSDS,
                 addr: 0xa3931d71877C0E7a3148CB7Eb4463524FEc27fbD,
                 symbol: "sUSDS",
-                tokenType: TokenType.ERC4626_VAULT_TOKEN
-            })
-        );
-        tokenDataByNetwork[1].push(
-            TokenData({
-                id: TOKEN_scrvUSD,
-                addr: 0x0655977FEb2f289A4aB78af67BAB0d17aAb84367,
-                symbol: "scrvUSD",
                 tokenType: TokenType.ERC4626_VAULT_TOKEN
             })
         );
