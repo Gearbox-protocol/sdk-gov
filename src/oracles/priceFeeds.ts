@@ -4547,7 +4547,7 @@ export const priceFeedsByToken: Record<
     Mainnet: {
       Main: {
         // @note this is Gearbox 3.1 PendleTWAP price feed, but sdk-gov and deploy-v3 unsuited for bcr deployd feeds
-        // therefore it is apssing as external (aka chainlink) type
+        // therefore it is passing as external (aka chainlink) type
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x5EDCDBa573f656881826Ccb73c6a27B00858340d",
         stalenessPeriod: 0,
