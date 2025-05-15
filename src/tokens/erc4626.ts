@@ -11,8 +11,7 @@ export type ERC4626LPToken =
   | "sUSDe"
   | "sUSDS"
   | "scrvUSD"
-  | "csUSDL"
-  | "slvlUSD";
+  | "csUSDL";
 
 export type ERC4626VaultTokenData = {
   symbol: ERC4626LPToken;
@@ -77,13 +76,6 @@ export const erc4626Tokens: Record<
     type: { AllNetworks: TokenType.ERC4626_VAULT_TOKEN },
     underlying: "USDL",
     vault: "COINSHIFT_USDL_VAULT",
-  },
-  slvlUSD: {
-    name: "Staked lvlUSD",
-    symbol: "slvlUSD",
-    type: { AllNetworks: TokenType.ERC4626_VAULT_TOKEN },
-    underlying: "lvlUSD",
-    vault: "LEVELED_USD_VAULT",
   },
 };
 
