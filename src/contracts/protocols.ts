@@ -27,4 +27,5 @@ export enum Protocols {
   Beets,
   Shadow,
   Lift,
+  LevelMoney,
 }

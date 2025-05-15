@@ -2293,6 +2293,38 @@ export const priceFeedsByToken: Record<
       },
     },
   },
+  dolaSave: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: true,
+      },
+    },
+  },
+  lvlUSDUSDC: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: true,
+      },
+    },
+  },
+  slvlUSDlvlUSDNG: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: true,
+      },
+    },
+  },
+  slvlUSDlvlUSD: {
+    AllNetworks: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: true,
+      },
+    },
+  },
   crvUSDUSDT: {
     AllNetworks: {
       Main: {
@@ -3618,7 +3650,7 @@ export const priceFeedsByToken: Record<
     Mainnet: {
       Main: {
         type: PriceFeedType.ZERO_ORACLE,
-        trusted: false,
+        trusted: true,
       },
     },
     Arbitrum: {
@@ -3961,6 +3993,26 @@ export const priceFeedsByToken: Record<
       Reserve: {
         type: PriceFeedType.THE_SAME_AS,
         token: "USDC",
+      },
+    },
+  },
+  lvlUSD: {
+    Mainnet: {
+      Main: {
+        type: PriceFeedType.ZERO_ORACLE,
+        trusted: true,
+      },
+    },
+  },
+  slvlUSD: {
+    Mainnet: {
+      Main: {
+        // @note this is Gearbox 3.1 ERC4626 price feed, but sdk-gov and deploy-v3 unsuited for bcr deployd feeds
+        // therefore it is apssing as external (aka chainlink) type
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0xaE837845B2a64F69223f8BeEDDB40f99A8A8E0A8",
+        stalenessPeriod: 0,
+        trusted: true,
       },
     },
   },
@@ -4488,6 +4540,18 @@ export const priceFeedsByToken: Record<
         market: "0x7561C5CCfe41A26B33944B58C70D6a3CB63E881c",
         twapWindow: HOUR_1 / 2,
         priceToSy: true,
+      },
+    },
+  },
+  PT_slvlUSD_25SEP2025: {
+    Mainnet: {
+      Main: {
+        // @note this is Gearbox 3.1 PendleTWAP price feed, but sdk-gov and deploy-v3 unsuited for bcr deployd feeds
+        // therefore it is apssing as external (aka chainlink) type
+        type: PriceFeedType.CHAINLINK_ORACLE,
+        address: "0x5EDCDBa573f656881826Ccb73c6a27B00858340d",
+        stalenessPeriod: 0,
+        trusted: true,
       },
     },
   },

@@ -99,6 +99,10 @@ export const decimals: Record<SupportedToken, number> = {
   USDLUSDC: 18,
   RLUSDUSDC: 18,
   llamathena: 18,
+  dolaSave: 18,
+  lvlUSDUSDC: 18,
+  slvlUSDlvlUSDNG: 18,
+  slvlUSDlvlUSD: 18,
   crvUSDUSDT: 18,
   crvUSDETHCRV: 18,
   crvUSDFRAX: 18,
@@ -283,6 +287,9 @@ export const decimals: Record<SupportedToken, number> = {
   wUSDL: 18,
   csUSDL: 18,
   RLUSD: 18,
+  lvlUSD: 18,
+  slvlUSD: 18,
+
   beraSTONE: 18,
   rETH: 18,
   rETH_f: 18,
@@ -299,6 +306,7 @@ export const decimals: Record<SupportedToken, number> = {
   PT_sUSDe_27MAR2025: 18,
   PT_sUSDe_29MAY2025: 18,
   PT_beraSTONE_10APR2025: 18,
+  PT_slvlUSD_25SEP2025: 18,
 
   rstETH_Lido_wstETH: 18,
   DVstETH_Prime_wstETH: 18,
