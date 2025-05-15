@@ -4550,7 +4550,7 @@ export const priceFeedsByToken: Record<
         // therefore it is passing as external (aka chainlink) type
         type: PriceFeedType.CHAINLINK_ORACLE,
         address: "0x5EDCDBa573f656881826Ccb73c6a27B00858340d",
-        stalenessPeriod: 0,
+        stalenessPeriod: HOUR_24_BUFFERED,
         trusted: true,
       },
     },
