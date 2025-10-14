@@ -20,10 +20,13 @@ export const repos = [
   "oracles-v3",
 ] as const;
 
+export const allRepos = [...repos, "periphery-v3"] as const;
+
 export type Repo = (typeof repos)[number];
+export type AllRepos = (typeof allRepos)[number];
 
 export type Audits = Record<
-  (typeof repos)[number],
+  (typeof allRepos)[number],
   Array<CommitLink | BranchLink>
 >;
 
@@ -168,6 +171,12 @@ export const auditReports: Record<string, Report> = {
     reportLink:
       "https://github.com/Gearbox-protocol/security/blob/main/audits/2025%20Feb%20-%20Decurity_Gearbox_BalancerV3.pdf",
   },
+  "2025_Jul_ChainSecutiry_Migration_Bot": {
+    auditor: Auditor.ChainSecurity,
+    revision: "2025 Jul",
+    reportLink:
+      "https://github.com/Gearbox-protocol/security/blob/main/audits/2025-07-chainsecurity-account-migration.pdf",
+  },
 };
 
 export const audits: Audits = {
@@ -303,6 +312,13 @@ export const audits: Audits = {
       type: "commit",
       commit: "0f500f03bf924715fb88844d942837a914b16b5b",
       report: auditReports["2022_Aug_Sigma"],
+    },
+  ],
+  "periphery-v3": [
+    {
+      type: "commit",
+      commit: "0b1827d061f1d5340b71e6670bd3c56b47f55070",
+      report: auditReports["2025_Jul_ChainSecutiry_Migration_Bot"],
     },
   ],
   "oracles-v3": [
