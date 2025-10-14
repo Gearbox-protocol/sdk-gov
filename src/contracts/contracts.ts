@@ -71,6 +71,10 @@ export type CurvePoolContract =
   | "CURVE_ETH_WSTETH_GATEWAY_OP"
   | "CURVE_CRVUSD_SUSDE_POOL"
   | "CURVE_LLAMA_THENA_POOL"
+  | "CURVE_DOLA_SCRVUSD_POOL"
+  | "CURVE_LVLUSD_USDC_POOL"
+  | "CURVE_SLVLUSD_LVLUSD_NG_POOL"
+  | "CURVE_SLVLUSD_LVLUSD_POOL"
   | "CURVE_tETH_wstETH_POOL"
   | "CURVE_tETH_weETH_POOL"
   | "CURVE_pzETH_stETH_POOL"
@@ -96,7 +100,8 @@ export type ERC4626VaultContract =
   | "SAVINGS_CRVUSD_VAULT"
   | "AAVE_WSTETH_VAULT"
   | "WRAPPED_USDL_VAULT"
-  | "COINSHIFT_USDL_VAULT";
+  | "COINSHIFT_USDL_VAULT"
+  | "LEVELED_USD_VAULT";
 
 export type ConvexPoolContract =
   | "CONVEX_3CRV_POOL"
@@ -251,6 +256,10 @@ export const contractsByNetwork: Record<
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Mainnet.crvUSDETHCRV,
     CURVE_CRVUSD_SUSDE_POOL: tokenDataByNetwork.Mainnet.crvUsUSDe,
     CURVE_LLAMA_THENA_POOL: tokenDataByNetwork.Mainnet.llamathena,
+    CURVE_DOLA_SCRVUSD_POOL: tokenDataByNetwork.Mainnet.dolaSave,
+    CURVE_LVLUSD_USDC_POOL: tokenDataByNetwork.Mainnet.lvlUSDUSDC,
+    CURVE_SLVLUSD_LVLUSD_NG_POOL: tokenDataByNetwork.Mainnet.slvlUSDlvlUSDNG,
+    CURVE_SLVLUSD_LVLUSD_POOL: tokenDataByNetwork.Mainnet.slvlUSDlvlUSD,
 
     CURVE_RETH_ETH_POOL: "0x0f3159811670c117c372428D4E69AC32325e4D0F",
 
@@ -282,6 +291,7 @@ export const contractsByNetwork: Record<
     AAVE_WSTETH_VAULT: tokenDataByNetwork.Mainnet.waEthLidowstETH,
     WRAPPED_USDL_VAULT: tokenDataByNetwork.Mainnet.wUSDL,
     COINSHIFT_USDL_VAULT: tokenDataByNetwork.Mainnet.csUSDL,
+    LEVELED_USD_VAULT: tokenDataByNetwork.Mainnet.slvlUSD,
 
     // CONVEX
     CONVEX_BOOSTER: "0xF403C135812408BFbE8713b5A23a04b3D48AAE31",
@@ -435,6 +445,10 @@ export const contractsByNetwork: Record<
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Arbitrum.crvUSDETHCRV,
     CURVE_CRVUSD_SUSDE_POOL: tokenDataByNetwork.Arbitrum.crvUsUSDe,
     CURVE_LLAMA_THENA_POOL: tokenDataByNetwork.Arbitrum.llamathena,
+    CURVE_DOLA_SCRVUSD_POOL: tokenDataByNetwork.Arbitrum.dolaSave,
+    CURVE_LVLUSD_USDC_POOL: tokenDataByNetwork.Arbitrum.lvlUSDUSDC,
+    CURVE_SLVLUSD_LVLUSD_NG_POOL: tokenDataByNetwork.Arbitrum.slvlUSDlvlUSDNG,
+    CURVE_SLVLUSD_LVLUSD_POOL: tokenDataByNetwork.Arbitrum.slvlUSDlvlUSD,
 
     CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
     CURVE_3CRV_POOL_OP: NOT_DEPLOYED,
@@ -466,6 +480,7 @@ export const contractsByNetwork: Record<
     AAVE_WSTETH_VAULT: tokenDataByNetwork.Arbitrum.waEthLidowstETH,
     WRAPPED_USDL_VAULT: tokenDataByNetwork.Arbitrum.wUSDL,
     COINSHIFT_USDL_VAULT: tokenDataByNetwork.Arbitrum.csUSDL,
+    LEVELED_USD_VAULT: tokenDataByNetwork.Arbitrum.slvlUSD,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -618,6 +633,10 @@ export const contractsByNetwork: Record<
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Optimism.crvUSDETHCRV,
     CURVE_CRVUSD_SUSDE_POOL: tokenDataByNetwork.Optimism.crvUsUSDe,
     CURVE_LLAMA_THENA_POOL: tokenDataByNetwork.Optimism.llamathena,
+    CURVE_DOLA_SCRVUSD_POOL: tokenDataByNetwork.Optimism.dolaSave,
+    CURVE_LVLUSD_USDC_POOL: tokenDataByNetwork.Optimism.lvlUSDUSDC,
+    CURVE_SLVLUSD_LVLUSD_NG_POOL: tokenDataByNetwork.Optimism.slvlUSDlvlUSDNG,
+    CURVE_SLVLUSD_LVLUSD_POOL: tokenDataByNetwork.Optimism.slvlUSDlvlUSD,
 
     CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
 
@@ -648,6 +667,7 @@ export const contractsByNetwork: Record<
     AAVE_WSTETH_VAULT: tokenDataByNetwork.Optimism.waEthLidowstETH,
     WRAPPED_USDL_VAULT: tokenDataByNetwork.Optimism.wUSDL,
     COINSHIFT_USDL_VAULT: tokenDataByNetwork.Optimism.csUSDL,
+    LEVELED_USD_VAULT: tokenDataByNetwork.Optimism.slvlUSD,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -800,6 +820,10 @@ export const contractsByNetwork: Record<
     CURVE_TRI_CRV_POOL: tokenDataByNetwork.Base.crvUSDETHCRV,
     CURVE_CRVUSD_SUSDE_POOL: tokenDataByNetwork.Base.crvUsUSDe,
     CURVE_LLAMA_THENA_POOL: tokenDataByNetwork.Base.llamathena,
+    CURVE_DOLA_SCRVUSD_POOL: tokenDataByNetwork.Base.dolaSave,
+    CURVE_LVLUSD_USDC_POOL: tokenDataByNetwork.Base.lvlUSDUSDC,
+    CURVE_SLVLUSD_LVLUSD_NG_POOL: tokenDataByNetwork.Base.slvlUSDlvlUSDNG,
+    CURVE_SLVLUSD_LVLUSD_POOL: tokenDataByNetwork.Base.slvlUSDlvlUSD,
 
     CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
 
@@ -830,6 +854,7 @@ export const contractsByNetwork: Record<
     AAVE_WSTETH_VAULT: tokenDataByNetwork.Base.waEthLidowstETH,
     WRAPPED_USDL_VAULT: tokenDataByNetwork.Base.wUSDL,
     COINSHIFT_USDL_VAULT: tokenDataByNetwork.Base.csUSDL,
+    LEVELED_USD_VAULT: tokenDataByNetwork.Base.slvlUSD,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -982,6 +1007,10 @@ export const contractsByNetwork: Record<
     CURVE_TRI_CRV_POOL: NOT_DEPLOYED,
     CURVE_CRVUSD_SUSDE_POOL: NOT_DEPLOYED,
     CURVE_LLAMA_THENA_POOL: NOT_DEPLOYED,
+    CURVE_DOLA_SCRVUSD_POOL: NOT_DEPLOYED,
+    CURVE_LVLUSD_USDC_POOL: NOT_DEPLOYED,
+    CURVE_SLVLUSD_LVLUSD_NG_POOL: NOT_DEPLOYED,
+    CURVE_SLVLUSD_LVLUSD_POOL: NOT_DEPLOYED,
 
     CURVE_RETH_ETH_POOL: NOT_DEPLOYED,
 
@@ -1012,6 +1041,7 @@ export const contractsByNetwork: Record<
     AAVE_WSTETH_VAULT: NOT_DEPLOYED,
     WRAPPED_USDL_VAULT: NOT_DEPLOYED,
     COINSHIFT_USDL_VAULT: NOT_DEPLOYED,
+    LEVELED_USD_VAULT: NOT_DEPLOYED,
 
     // CONVEX
     CONVEX_BOOSTER: NOT_DEPLOYED,
@@ -1213,7 +1243,8 @@ export type ERC4626Params = {
     | Protocols.Sky
     | Protocols.Curve
     | Protocols.AaveV3
-    | Protocols.Lift;
+    | Protocols.Lift
+    | Protocols.LevelMoney;
   type: AdapterInterface.ERC4626_VAULT;
   underlying: NormalToken;
 } & BaseContractParams;
@@ -1609,6 +1640,39 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     type: AdapterInterface.CURVE_STABLE_NG,
     lpToken: "llamathena",
     tokens: ["scrvUSD", "sUSDe"],
+  },
+  CURVE_DOLA_SCRVUSD_POOL: {
+    name: "Curve dola save",
+    protocol: Protocols.Curve,
+    version: 10,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "dolaSave",
+    tokens: ["DOLA", "scrvUSD"],
+  },
+
+  CURVE_LVLUSD_USDC_POOL: {
+    name: "Curve lvlUSD/USDC",
+    protocol: Protocols.Curve,
+    version: 10,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "lvlUSDUSDC",
+    tokens: ["USDC", "lvlUSD"],
+  },
+  CURVE_SLVLUSD_LVLUSD_NG_POOL: {
+    name: "Curve slvlUSD/lvlUSD (ng)",
+    protocol: Protocols.Curve,
+    version: 10,
+    type: AdapterInterface.CURVE_STABLE_NG,
+    lpToken: "slvlUSDlvlUSDNG",
+    tokens: ["slvlUSD", "lvlUSD"],
+  },
+  CURVE_SLVLUSD_LVLUSD_POOL: {
+    name: "Curve slvlUSD/lvlUSD",
+    protocol: Protocols.Curve,
+    version: 10,
+    type: AdapterInterface.CURVE_V1_2ASSETS,
+    lpToken: "slvlUSDlvlUSD",
+    tokens: ["lvlUSD", "slvlUSD"],
   },
 
   CURVE_CRVUSD_FRAX_POOL: {
@@ -2010,6 +2074,12 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     protocol: Protocols.Lift,
     type: AdapterInterface.ERC4626_VAULT,
     underlying: "wUSDL",
+  },
+  LEVELED_USD_VAULT: {
+    name: "Leveled USD Vault",
+    protocol: Protocols.LevelMoney,
+    type: AdapterInterface.ERC4626_VAULT,
+    underlying: "lvlUSD",
   },
 
   CONVEX_BOOSTER: {

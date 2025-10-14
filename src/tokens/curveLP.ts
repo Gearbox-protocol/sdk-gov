@@ -44,6 +44,10 @@ export type CurveLPToken =
   | "crvUSDDOLA_f"
   | "crvUsUSDe"
   | "llamathena"
+  | "dolaSave"
+  | "lvlUSDUSDC"
+  | "slvlUSDlvlUSDNG"
+  | "slvlUSDlvlUSD"
   | "tETHwstETH"
   | "tETHweETH"
   | "pzETHstETH"
@@ -208,6 +212,34 @@ export const curveTokens: Record<
     type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
     pool: "CURVE_LLAMA_THENA_POOL",
     tokenOut: ["scrvUSD", "sUSDe"],
+  },
+  dolaSave: {
+    name: "Curve dola save",
+    symbol: "dolaSave",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_DOLA_SCRVUSD_POOL",
+    tokenOut: ["DOLA", "scrvUSD"],
+  },
+  lvlUSDUSDC: {
+    name: "Curve lvlUSD/USDC",
+    symbol: "lvlUSDUSDC",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_LVLUSD_USDC_POOL",
+    tokenOut: ["USDC", "lvlUSD"],
+  },
+  slvlUSDlvlUSDNG: {
+    name: "Curve slvlUSD/lvlUSD (ng)",
+    symbol: "slvlUSDlvlUSDNG",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_SLVLUSD_LVLUSD_NG_POOL",
+    tokenOut: ["slvlUSD", "lvlUSD"],
+  },
+  slvlUSDlvlUSD: {
+    name: "Curve slvlUSD/lvlUSD",
+    symbol: "slvlUSDlvlUSD",
+    type: { AllNetworks: TokenType.CURVE_LP_TOKEN },
+    pool: "CURVE_SLVLUSD_LVLUSD_POOL",
+    tokenOut: ["lvlUSD", "slvlUSD"],
   },
   crvUSDFRAX: {
     name: "Curve crvUSDFRAX",

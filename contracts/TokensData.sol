@@ -466,17 +466,33 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
-                id: TOKEN_csUSDL,
-                addr: 0xbEeFc011e94f43b8B7b455eBaB290C7Ab4E216f1,
-                symbol: "csUSDL",
+                id: TOKEN_RLUSD,
+                addr: 0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD,
+                symbol: "RLUSD",
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
         tokenDataByNetwork[1].push(
             TokenData({
-                id: TOKEN_RLUSD,
-                addr: 0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD,
-                symbol: "RLUSD",
+                id: TOKEN_lvlUSD,
+                addr: 0x7C1156E515aA1A2E851674120074968C905aAF37,
+                symbol: "lvlUSD",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_slvlUSD,
+                addr: 0x4737D9b4592B40d51e110b94c9C043c6654067Ae,
+                symbol: "slvlUSD",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_scrvUSD,
+                addr: 0x0655977FEb2f289A4aB78af67BAB0d17aAb84367,
+                symbol: "scrvUSD",
                 tokenType: TokenType.NORMAL_TOKEN
             })
         );
@@ -666,6 +682,14 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_PT_slvlUSD_25SEP2025,
+                addr: 0x2CA5f2C4300450D53214B00546795c1c07B89acB,
+                symbol: "PT_slvlUSD_25SEP2025",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_rstETH_Lido_wstETH,
                 addr: 0x121edB0bADc036F5FC610D015EE14093C142313B,
                 symbol: "rstETH_Lido_wstETH",
@@ -781,6 +805,38 @@ contract TokensDataLive {
                 id: TOKEN_llamathena,
                 addr: 0xd29f8980852c2c76fC3f6E96a7Aa06E0BedCC1B1,
                 symbol: "llamathena",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_dolaSave,
+                addr: 0xff17dAb22F1E61078aBa2623c89cE6110E878B3c,
+                symbol: "dolaSave",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_lvlUSDUSDC,
+                addr: 0x1220868672D5B10F3E1cB9Ab519E4d0B08545ea4,
+                symbol: "lvlUSDUSDC",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_slvlUSDlvlUSDNG,
+                addr: 0xd89760b5b188D77dA878Ab09fF475569883A5B96,
+                symbol: "slvlUSDlvlUSDNG",
+                tokenType: TokenType.CURVE_LP_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_slvlUSDlvlUSD,
+                addr: 0xF244324FBB57f09F0606FF088bC894b051d632Eb,
+                symbol: "slvlUSDlvlUSD",
                 tokenType: TokenType.CURVE_LP_TOKEN
             })
         );
@@ -1616,9 +1672,9 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
-                id: TOKEN_scrvUSD,
-                addr: 0x0655977FEb2f289A4aB78af67BAB0d17aAb84367,
-                symbol: "scrvUSD",
+                id: TOKEN_csUSDL,
+                addr: 0xbEeFc011e94f43b8B7b455eBaB290C7Ab4E216f1,
+                symbol: "csUSDL",
                 tokenType: TokenType.ERC4626_VAULT_TOKEN
             })
         );

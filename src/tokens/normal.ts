@@ -67,9 +67,11 @@ export type NormalToken =
   | "tETH"
   | "USDL"
   | "wUSDL"
-  | "csUSDL"
   | "RLUSD"
   | "MORPHO"
+  | "lvlUSD"
+  | "slvlUSD"
+  | "scrvUSD"
 
   // Mellow LRTs
   | "steakLRT"
@@ -93,6 +95,7 @@ export type NormalToken =
   | "PT_sUSDe_27MAR2025"
   | "PT_sUSDe_29MAY2025"
   | "PT_beraSTONE_10APR2025"
+  | "PT_slvlUSD_25SEP2025"
 
   // Balancer V3
   | "rstETH_Lido_wstETH"
@@ -475,14 +478,25 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
     symbol: "wUSDL",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
-  csUSDL: {
-    name: "Coinshift USDL",
-    symbol: "csUSDL",
-    type: { AllNetworks: TokenType.NORMAL_TOKEN },
-  },
+
   RLUSD: {
     name: "RLUSD",
     symbol: "RLUSD",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  lvlUSD: {
+    name: "Level USD",
+    symbol: "lvlUSD",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  slvlUSD: {
+    name: "Staked lvlUSD",
+    symbol: "slvlUSD",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  scrvUSD: {
+    name: "Savings crvUSD",
+    symbol: "scrvUSD",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 
@@ -600,6 +614,11 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   PT_beraSTONE_10APR2025: {
     name: "Pendle PT Berachain STONE 10 April 2025 expiry",
     symbol: "PT_beraSTONE_10APR2025",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  PT_slvlUSD_25SEP2025: {
+    name: "Pendle PT lvlUSD 25 September 2025 expiry",
+    symbol: "PT_slvlUSD_25SEP2025",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 

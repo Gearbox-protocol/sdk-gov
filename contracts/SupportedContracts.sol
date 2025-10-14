@@ -378,6 +378,34 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.CURVE_DOLA_SCRVUSD_POOL,
+                addr: 0xff17dAb22F1E61078aBa2623c89cE6110E878B3c,
+                name: "CURVE_DOLA_SCRVUSD_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_LVLUSD_USDC_POOL,
+                addr: 0x1220868672D5B10F3E1cB9Ab519E4d0B08545ea4,
+                name: "CURVE_LVLUSD_USDC_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_SLVLUSD_LVLUSD_NG_POOL,
+                addr: 0xd89760b5b188D77dA878Ab09fF475569883A5B96,
+                name: "CURVE_SLVLUSD_LVLUSD_NG_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.CURVE_SLVLUSD_LVLUSD_POOL,
+                addr: 0xF244324FBB57f09F0606FF088bC894b051d632Eb,
+                name: "CURVE_SLVLUSD_LVLUSD_POOL"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.CURVE_RETH_ETH_POOL,
                 addr: 0x0f3159811670c117c372428D4E69AC32325e4D0F,
                 name: "CURVE_RETH_ETH_POOL"
@@ -489,6 +517,13 @@ contract SupportedContracts is Test, ISupportedContracts {
                 id: Contracts.COINSHIFT_USDL_VAULT,
                 addr: 0xbEeFc011e94f43b8B7b455eBaB290C7Ab4E216f1,
                 name: "COINSHIFT_USDL_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
+                id: Contracts.LEVELED_USD_VAULT,
+                addr: 0x4737D9b4592B40d51e110b94c9C043c6654067Ae,
+                name: "LEVELED_USD_VAULT"
             })
         );
         contractDataByNetwork[1].push(

@@ -236,6 +236,9 @@ export const tokenDataByNetwork: Record<
     csUSDL: "0xbEeFc011e94f43b8B7b455eBaB290C7Ab4E216f1",
     RLUSD: "0x8292Bb45bf1Ee4d140127049757C2E0fF06317eD",
 
+    lvlUSD: "0x7C1156E515aA1A2E851674120074968C905aAF37",
+    slvlUSD: "0x4737D9b4592B40d51e110b94c9C043c6654067Ae",
+
     // CURVE LP TOKENS
     "3Crv": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
     crvFRAX: "0x3175Df0976dFA876431C2E9eE6Bc45b65d3473CC",
@@ -265,6 +268,10 @@ export const tokenDataByNetwork: Record<
     crvUSDETHCRV: "0x4eBdF703948ddCEA3B11f675B4D1Fba9d2414A14",
     crvUsUSDe: "0x57064F49Ad7123C92560882a45518374ad982e85",
     llamathena: "0xd29f8980852c2c76fC3f6E96a7Aa06E0BedCC1B1",
+    dolaSave: "0xff17dAb22F1E61078aBa2623c89cE6110E878B3c",
+    lvlUSDUSDC: "0x1220868672D5B10F3E1cB9Ab519E4d0B08545ea4",
+    slvlUSDlvlUSDNG: "0xd89760b5b188D77dA878Ab09fF475569883A5B96",
+    slvlUSDlvlUSD: "0xF244324FBB57f09F0606FF088bC894b051d632Eb",
 
     rETH_f: "0x6c38cE8984a890F5e46e6dF6117C26b3F1EcfC9C",
     MtEthena: "0x167478921b907422F8E88B43C4Af2B8BEa278d3A",
@@ -416,6 +423,7 @@ export const tokenDataByNetwork: Record<
     PT_sUSDe_27MAR2025: "0xE00bd3Df25fb187d6ABBB620b3dfd19839947b81",
     PT_sUSDe_29MAY2025: "0xb7de5dFCb74d25c2f21841fbd6230355C50d9308",
     PT_beraSTONE_10APR2025: "0x40b7B4aB1E95e28DF06971581276966FDF95688E",
+    PT_slvlUSD_25SEP2025: "0x2CA5f2C4300450D53214B00546795c1c07B89acB",
 
     // Balancer V3
     rstETH_Lido_wstETH: "0x121edB0bADc036F5FC610D015EE14093C142313B",
@@ -575,6 +583,9 @@ export const tokenDataByNetwork: Record<
     csUSDL: NOT_DEPLOYED,
     MORPHO: NOT_DEPLOYED,
     RLUSD: NOT_DEPLOYED,
+    lvlUSD: NOT_DEPLOYED,
+    slvlUSD: NOT_DEPLOYED,
+
     // REDSTONE
     SHIB: NOT_DEPLOYED,
 
@@ -623,6 +634,11 @@ export const tokenDataByNetwork: Record<
     crvUSDETHCRV: NOT_DEPLOYED,
     crvUsUSDe: NOT_DEPLOYED,
     llamathena: NOT_DEPLOYED,
+    dolaSave: NOT_DEPLOYED,
+    lvlUSDUSDC: NOT_DEPLOYED,
+    slvlUSDlvlUSDNG: NOT_DEPLOYED,
+    slvlUSDlvlUSD: NOT_DEPLOYED,
+
     crvUSDC: "0xec090cf6DD891D2d014beA6edAda6e05E025D93d",
     crvUSDT: "0x73aF1150F265419Ef8a5DB41908B700C32D49135",
     crvUSDC_e: "0x3aDf984c937FA6846E5a24E0A68521Bdaf767cE1",
@@ -756,6 +772,7 @@ export const tokenDataByNetwork: Record<
     PT_sUSDe_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_29MAY2025: NOT_DEPLOYED,
     PT_beraSTONE_10APR2025: NOT_DEPLOYED,
+    PT_slvlUSD_25SEP2025: NOT_DEPLOYED,
 
     // Balancer V3
     rstETH_Lido_wstETH: NOT_DEPLOYED,
@@ -914,6 +931,8 @@ export const tokenDataByNetwork: Record<
     csUSDL: NOT_DEPLOYED,
     MORPHO: NOT_DEPLOYED,
     RLUSD: NOT_DEPLOYED,
+    lvlUSD: NOT_DEPLOYED,
+    slvlUSD: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -968,6 +987,11 @@ export const tokenDataByNetwork: Record<
     crvUSDETHCRV: NOT_DEPLOYED,
     crvUsUSDe: NOT_DEPLOYED,
     llamathena: NOT_DEPLOYED,
+    dolaSave: NOT_DEPLOYED,
+    lvlUSDUSDC: NOT_DEPLOYED,
+    slvlUSDlvlUSDNG: NOT_DEPLOYED,
+    slvlUSDlvlUSD: NOT_DEPLOYED,
+
     "2CRV": NOT_DEPLOYED,
     "3c-crvUSD": NOT_DEPLOYED,
     crvUSDC: NOT_DEPLOYED,
@@ -1095,6 +1119,7 @@ export const tokenDataByNetwork: Record<
     PT_sUSDe_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_29MAY2025: NOT_DEPLOYED,
     PT_beraSTONE_10APR2025: NOT_DEPLOYED,
+    PT_slvlUSD_25SEP2025: NOT_DEPLOYED,
 
     // Balancer V3
     rstETH_Lido_wstETH: NOT_DEPLOYED,
@@ -1252,6 +1277,8 @@ export const tokenDataByNetwork: Record<
     csUSDL: NOT_DEPLOYED,
     MORPHO: NOT_DEPLOYED,
     RLUSD: NOT_DEPLOYED,
+    lvlUSD: NOT_DEPLOYED,
+    slvlUSD: NOT_DEPLOYED,
 
     // REDSTONE
     SHIB: NOT_DEPLOYED,
@@ -1305,6 +1332,11 @@ export const tokenDataByNetwork: Record<
     crvUSDETHCRV: NOT_DEPLOYED,
     crvUsUSDe: NOT_DEPLOYED,
     llamathena: NOT_DEPLOYED,
+    dolaSave: NOT_DEPLOYED,
+    lvlUSDUSDC: NOT_DEPLOYED,
+    slvlUSDlvlUSDNG: NOT_DEPLOYED,
+    slvlUSDlvlUSD: NOT_DEPLOYED,
+
     "2CRV": NOT_DEPLOYED,
     "3c-crvUSD": NOT_DEPLOYED,
     crvUSDC: NOT_DEPLOYED,
@@ -1433,6 +1465,7 @@ export const tokenDataByNetwork: Record<
     PT_sUSDe_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_29MAY2025: NOT_DEPLOYED,
     PT_beraSTONE_10APR2025: NOT_DEPLOYED,
+    PT_slvlUSD_25SEP2025: NOT_DEPLOYED,
 
     // Balancer V3
     rstETH_Lido_wstETH: NOT_DEPLOYED,
@@ -1557,6 +1590,8 @@ export const tokenDataByNetwork: Record<
     wUSDL: NOT_DEPLOYED,
     csUSDL: NOT_DEPLOYED,
     RLUSD: NOT_DEPLOYED,
+    lvlUSD: NOT_DEPLOYED,
+    slvlUSD: NOT_DEPLOYED,
 
     /// UPDATE
     STETH: NOT_DEPLOYED,
@@ -1649,6 +1684,10 @@ export const tokenDataByNetwork: Record<
     crvUSDETHCRV: NOT_DEPLOYED,
     crvUsUSDe: NOT_DEPLOYED,
     llamathena: NOT_DEPLOYED,
+    dolaSave: NOT_DEPLOYED,
+    lvlUSDUSDC: NOT_DEPLOYED,
+    slvlUSDlvlUSDNG: NOT_DEPLOYED,
+    slvlUSDlvlUSD: NOT_DEPLOYED,
 
     "2CRV": NOT_DEPLOYED,
     "3c-crvUSD": NOT_DEPLOYED,
@@ -1774,6 +1813,7 @@ export const tokenDataByNetwork: Record<
     PT_sUSDe_27MAR2025: NOT_DEPLOYED,
     PT_sUSDe_29MAY2025: NOT_DEPLOYED,
     PT_beraSTONE_10APR2025: NOT_DEPLOYED,
+    PT_slvlUSD_25SEP2025: NOT_DEPLOYED,
 
     // Balancer V3
     rstETH_Lido_wstETH: NOT_DEPLOYED,
