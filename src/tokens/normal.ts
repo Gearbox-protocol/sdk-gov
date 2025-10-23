@@ -72,6 +72,8 @@ export type NormalToken =
   | "lvlUSD"
   | "slvlUSD"
   | "scrvUSD"
+  | "SSV"
+  | "OBOL"
 
   // Mellow LRTs
   | "steakLRT"
@@ -630,6 +632,16 @@ export const normalTokens: Record<NormalToken, NormalTokenData> = {
   DVstETH_Prime_wstETH: {
     name: "Balancer V3 DVstETH-Prime wstETH",
     symbol: "DVstETH_Prime_wstETH",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  SSV: {
+    name: "SSV",
+    symbol: "SSV",
+    type: { AllNetworks: TokenType.NORMAL_TOKEN },
+  },
+  OBOL: {
+    name: "Obol Network",
+    symbol: "OBOL",
     type: { AllNetworks: TokenType.NORMAL_TOKEN },
   },
 };

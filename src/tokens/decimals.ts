@@ -310,4 +310,7 @@ export const decimals: Record<SupportedToken, number> = {
 
   rstETH_Lido_wstETH: 18,
   DVstETH_Prime_wstETH: 18,
+
+  SSV: 18,
+  OBOL: 18,
 };

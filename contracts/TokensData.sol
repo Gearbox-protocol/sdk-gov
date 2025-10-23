@@ -706,6 +706,22 @@ contract TokensDataLive {
         );
         tokenDataByNetwork[1].push(
             TokenData({
+                id: TOKEN_SSV,
+                addr: 0x9D65fF81a3c488d585bBfb0Bfe3c7707c7917f54,
+                symbol: "SSV",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
+                id: TOKEN_OBOL,
+                addr: 0x0B010000b7624eb9B3DfBC279673C76E9D29D5F7,
+                symbol: "OBOL",
+                tokenType: TokenType.NORMAL_TOKEN
+            })
+        );
+        tokenDataByNetwork[1].push(
+            TokenData({
                 id: TOKEN_sfrxETH,
                 addr: 0xac3E018457B222d93114458476f3E3416Abbe38F,
                 symbol: "sfrxETH",

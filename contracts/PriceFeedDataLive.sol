@@ -10933,6 +10933,22 @@ contract PriceFeedDataLive {
         zeroPriceFeedsByNetwork[146].push(
             SingeTokenPriceFeedData({token: TOKEN_DVstETH_Prime_wstETH, trusted: false, reserve: false})
         );
+
+        // ------------------------ SSV ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_SSV, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[42161].push(SingeTokenPriceFeedData({token: TOKEN_SSV, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_SSV, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[8453].push(SingeTokenPriceFeedData({token: TOKEN_SSV, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[146].push(SingeTokenPriceFeedData({token: TOKEN_SSV, trusted: false, reserve: false}));
+
+        // ------------------------ OBOL ------------------------
+        zeroPriceFeedsByNetwork[1].push(SingeTokenPriceFeedData({token: TOKEN_OBOL, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[42161].push(
+            SingeTokenPriceFeedData({token: TOKEN_OBOL, trusted: false, reserve: false})
+        );
+        zeroPriceFeedsByNetwork[10].push(SingeTokenPriceFeedData({token: TOKEN_OBOL, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[8453].push(SingeTokenPriceFeedData({token: TOKEN_OBOL, trusted: false, reserve: false}));
+        zeroPriceFeedsByNetwork[146].push(SingeTokenPriceFeedData({token: TOKEN_OBOL, trusted: false, reserve: false}));
     }
 
     function chainlinkPriceFeeds(uint256 index) external view returns (ChainlinkPriceFeedData memory) {
