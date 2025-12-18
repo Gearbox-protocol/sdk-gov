@@ -826,6 +826,13 @@ contract SupportedContracts is Test, ISupportedContracts {
         );
         contractDataByNetwork[1].push(
             ContractData({
+                id: Contracts.RESTAKING_VAULT,
+                addr: 0x7a4EffD87C2f3C55CA251080b1343b605f327E3a,
+                name: "RESTAKING_VAULT"
+            })
+        );
+        contractDataByNetwork[1].push(
+            ContractData({
                 id: Contracts.SKY_STAKING_REWARDS,
                 addr: 0x0650CAF159C5A49f711e8169D4336ECB9b950275,
                 name: "SKY_STAKING_REWARDS"

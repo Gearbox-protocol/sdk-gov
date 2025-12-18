@@ -101,7 +101,8 @@ export type ERC4626VaultContract =
   | "AAVE_WSTETH_VAULT"
   | "WRAPPED_USDL_VAULT"
   | "COINSHIFT_USDL_VAULT"
-  | "LEVELED_USD_VAULT";
+  | "LEVELED_USD_VAULT"
+  | "RESTAKING_VAULT";
 
 export type ConvexPoolContract =
   | "CONVEX_3CRV_POOL"
@@ -371,6 +372,8 @@ export const contractsByNetwork: Record<
     MELLOW_RENZO_VAULT: tokenDataByNetwork.Mainnet.pzETH,
     MELLOW_DECENTALIZED_VALIDATOR_VAULT: tokenDataByNetwork.Mainnet.DVstETH,
 
+    RESTAKING_VAULT: tokenDataByNetwork.Mainnet.rstETH,
+
     // SKY
     SKY_STAKING_REWARDS: "0x0650CAF159C5A49f711e8169D4336ECB9b950275",
     DAI_USDS: "0x3225737a9Bbb6473CB4a45b7244ACa2BeFdB276A",
@@ -560,6 +563,8 @@ export const contractsByNetwork: Record<
     MELLOW_RENZO_VAULT: tokenDataByNetwork.Arbitrum.pzETH,
     MELLOW_DECENTALIZED_VALIDATOR_VAULT: tokenDataByNetwork.Arbitrum.DVstETH,
 
+    RESTAKING_VAULT: tokenDataByNetwork.Arbitrum.rstETH,
+
     SKY_STAKING_REWARDS: NOT_DEPLOYED,
     DAI_USDS: NOT_DEPLOYED,
   },
@@ -748,6 +753,8 @@ export const contractsByNetwork: Record<
     MELLOW_RENZO_VAULT: tokenDataByNetwork.Optimism.pzETH,
     MELLOW_DECENTALIZED_VALIDATOR_VAULT: tokenDataByNetwork.Optimism.DVstETH,
 
+    RESTAKING_VAULT: tokenDataByNetwork.Optimism.rstETH,
+
     SKY_STAKING_REWARDS: NOT_DEPLOYED,
     DAI_USDS: NOT_DEPLOYED,
   },
@@ -933,6 +940,8 @@ export const contractsByNetwork: Record<
     MELLOW_RENZO_VAULT: tokenDataByNetwork.Base.pzETH,
     MELLOW_DECENTALIZED_VALIDATOR_VAULT: tokenDataByNetwork.Base.DVstETH,
 
+    RESTAKING_VAULT: tokenDataByNetwork.Base.rstETH,
+
     SKY_STAKING_REWARDS: NOT_DEPLOYED,
     DAI_USDS: NOT_DEPLOYED,
   },
@@ -1116,6 +1125,8 @@ export const contractsByNetwork: Record<
     MELLOW_RENZO_VAULT: NOT_DEPLOYED,
     MELLOW_DECENTALIZED_VALIDATOR_VAULT: NOT_DEPLOYED,
 
+    RESTAKING_VAULT: NOT_DEPLOYED,
+
     SKY_STAKING_REWARDS: NOT_DEPLOYED,
     DAI_USDS: NOT_DEPLOYED,
   },
@@ -1244,7 +1255,8 @@ export type ERC4626Params = {
     | Protocols.Curve
     | Protocols.AaveV3
     | Protocols.Lift
-    | Protocols.LevelMoney;
+    | Protocols.LevelMoney
+    | Protocols.Mellow;
   type: AdapterInterface.ERC4626_VAULT;
   underlying: NormalToken;
 } & BaseContractParams;
@@ -2781,6 +2793,12 @@ export const contractParams: Record<SupportedContract, ContractParams> = {
     name: "Mellow Decentralized Validator Token vault",
     protocol: Protocols.Mellow,
     type: AdapterInterface.MELLOW_ERC4626_VAULT,
+  },
+  RESTAKING_VAULT: {
+    name: "Mellow Restaking rstETH vault",
+    protocol: Protocols.Mellow,
+    type: AdapterInterface.ERC4626_VAULT,
+    underlying: "wstETH",
   },
 
   SKY_STAKING_REWARDS: {

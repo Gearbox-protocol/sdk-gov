@@ -225,6 +225,9 @@ contract AdapterData {
             SimpleAdapter({targetContract: Contracts.ZIRCUIT_POOL, adapterType: AdapterType.ZIRCUIT_POOL})
         );
         simpleAdapters.push(
+            SimpleAdapter({targetContract: Contracts.RESTAKING_VAULT, adapterType: AdapterType.ERC4626_VAULT})
+        );
+        simpleAdapters.push(
             SimpleAdapter({targetContract: Contracts.DAI_USDS, adapterType: AdapterType.DAI_USDS_EXCHANGE})
         );
         curveAdapters.push(
